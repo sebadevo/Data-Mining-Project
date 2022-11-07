@@ -15,19 +15,18 @@ df_mode = pd.read_csv(file_mode)
 df_trips = pd.read_csv(file_trips)
 df_routes = pd.read_csv(file_routes)
 df_stop_times = pd.read_csv(file_stop_times)
-# df_stops = pd.read_csv(file_stops)
+df_stops = pd.read_csv(file_stops)
 df_calendar = pd.read_csv(file_calendar)
 
 """
 creation of the metro trips dataset
 """
 df_mode_metro = df_mode[df_mode["mode"]=="M"]
-df_mode_metro.numero_lig = df_mode_metro.numero_lig.astype(str)
-df_routes_metro = df_routes[df_routes.route_short_name.isin(df_mode_metro.numero_lig)]
+df_metro_id_str= df_mode_metro.numero_lig.astype(str)
+df_routes_metro = df_routes[df_routes.route_short_name.isin(df_metro_id_str)]
 
 df_metro_trips = df_trips[df_trips.route_id.isin(df_routes_metro.route_id)]
-
-df_metro_trips.drop(["trip_headsign", "block_id", "shape_id"], inplace=True, axis=1)
+df_metro_trips = df_metro_trips.drop(["trip_headsign", "block_id", "shape_id"], axis=1)
 
 print(df_metro_trips.head())
 
@@ -53,12 +52,17 @@ print(df_metro_trip_calendar)
 """
 merging stop_times and metro_trip_calendar
 """
-df_stop_times.drop(["pickup_type", "drop_off_type", "departure_time"], inplace=True, axis=1)
+df_stop_times.drop(["pickup_type", "drop_off_type"], inplace=True, axis=1)
 df_metro_time = pd.merge(df_metro_trip_calendar, df_stop_times, on="trip_id")
 print(df_metro_time )
+print(df_metro_time.stop_id.unique())
+print(len(df_metro_time.stop_id.unique()))
 
+# for i in range(len(df_metro_time)):
+#     if df_metro_time.stop_id[i] == 8743:
+#         pass
 
-
+# df_metro_time["headway"] = df_metro_time.arrival_time.apply(lambda x: )
 
 
 
