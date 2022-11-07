@@ -17,6 +17,6 @@ def show_schedulde_headways(direction_id, saterday, stop_id, short_name, start_d
 
 
 
-if __name__ == "__main__":
-    show_schedulde_headways(direction_id =0, saterday=1, stop_id= '5705', short_name = '3', start_date= 20210911)
+
+
 
