@@ -11,3 +11,5 @@ def plot_schedulde_headways(x,y, line, line_name, trip_headsign, stop_name,color
         plt.scatter(x, y,color)
     plt.title(title)
     plt.show()
+
+

@@ -34,7 +34,7 @@ def compute_time_difference(data):
     return x,y
 
 def retrieve_info_title(data,stop_id):
-    stop = pd.read_csv("data/gtfs3Sept/stops.txt", sep=",")
+    stop = pd.read_csv("data/gtfs3Sept/stops.csv", sep=",")
 
     name_stop = stop.loc[stop['stop_id'] == stop_id]
 
