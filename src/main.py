@@ -4,10 +4,10 @@ from plotting import plot_schedulde_headways
 
 
 def show_schedulde_headways(direction_id, saterday, stop_id, short_name, start_date):
-    route = 'data/gtfs3Sept/routes.txt'
-    trips = 'data/gtfs3Sept/trips.txt'
-    stop_times = 'data/gtfs3Sept/stop_times.txt'
-    calendar = 'data/gtfs3Sept/calendar.txt'
+    route = 'data/gtfs3Sept/routes.csv'
+    trips = 'data/gtfs3Sept/trips.csv'
+    stop_times = 'data/gtfs3Sept/stop_times.csv'
+    calendar = 'data/gtfs3Sept/calendar.csv'
     data = load_data_and_merge(route,trips,stop_times,calendar)
     data = filter(data, direction_id= direction_id, saterday=saterday, stop_id=stop_id,short_name= short_name,start_date= start_date)
     x,y = compute_time_difference(data)
