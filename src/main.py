@@ -1,7 +1,8 @@
 from preprocessing import load_data_and_merge,filter,compute_time_difference,retrieve_info_title
 from plotting import plot_schedulde_headways
-from enumeration import Type,Day
+from dashboard.enumeration import Type,Day
 
+import mysql.connector
 
 
 def show_schedulde_headways(type, day, direction_id, stop_id, short_name, start_date):

@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn import cluster
 from utils import time_to_sec
-from enumeration import Type,Day
+from dashboard.enumeration import Type,Day
 
 
 
