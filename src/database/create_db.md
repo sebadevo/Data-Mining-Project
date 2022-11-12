@@ -50,7 +50,7 @@ block_id INT NOT NULL,
 shape_id VARCHAR(32) NOT NULL);
 
 CREATE TABLE IF NOT EXISTS routes (
-route_id INT PRIMARY KEY,
+routes_id INT PRIMARY KEY,
 routes_short_name VARCHAR(8) NOT NULL,
 routes_long_name VARCHAR(128) NOT NULL,
 route_type INT NOT NULL,
@@ -79,9 +79,9 @@ parent_station FLOAT(8));
 
 CREATE TABLE IF NOT EXISTS stop_times (
 trip_id BIGINT NOT NULL,
-stop_id VARCHAR(8) NOT NULL,
-departure_time VARCHAR(32) NOT NULL,
 arrival_time VARCHAR(32) NOT NULL,
+departure_time VARCHAR(32) NOT NULL,
+stop_id VARCHAR(8) NOT NULL,
 stop_sequence INT NOT NULL,
 pickup_type INT NOT NULL,
 drop_off_type INT NOT NULL,

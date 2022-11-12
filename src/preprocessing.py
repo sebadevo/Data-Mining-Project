@@ -1,9 +1,9 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
 from sklearn import cluster
-from utils import time_to_sec
-from dashboard.enumeration import Type,Day
 
+from dashboard.enumeration import Day, Type
+from utils import time_to_sec
 
 
 def load_data_and_merge(type,route,trips,stop_times,calendar):
@@ -16,7 +16,7 @@ def load_data_and_merge(type,route,trips,stop_times,calendar):
     trips_routes_calendar = pd.merge(trips_routes_merge, calendar_data, on='service_id')
     trips_routes_calender_stops = pd.merge(stop_times_data, trips_routes_calendar, on='trip_id')
     trips_routes_calender_stops["weekday"] = trips_routes_calender_stops['monday']*trips_routes_calender_stops['tuesday']*trips_routes_calender_stops['wednesday']*trips_routes_calender_stops['thursday']*trips_routes_calender_stops['friday']
-    trips_routes_calender_stops.drop(['route_desc','route_type','route_color','route_text_color', 'shape_id','route_url','end_date','monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'block_id','pickup_type', 'drop_off_type', 'stop_sequence', 'departure_time', 'trip_id'], inplace=True, axis=1)
+    trips_routes_calender_stops.drop(['route_type','route_text_color', 'shape_id','route_url','end_date','monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'block_id','pickup_type', 'drop_off_type', 'stop_sequence', 'departure_time', 'trip_id'], inplace=True, axis=1)
     return trips_routes_calender_stops
 
 def filter(data,day, direction_id, stop_id, short_name, start_date):
@@ -37,6 +37,10 @@ def retrieve_info_title(data,stop_id):
     stop = pd.read_csv("data/gtfs3Sept/stops.csv", sep=",")
     name_stop = stop.loc[stop['stop_id'] == stop_id]
     name_stop = name_stop["stop_name"].item()
-    trip_headsign = data['trip_headsign'].iat[0]
-    route_name = data['route_long_name'].iat[0]
+    if len(data) != 0:
+        trip_headsign = data['trip_headsign'].iat[0]
+        route_name = data['routes_long_name'].iat[0]
+    else:
+        trip_headsign = "HEADSIGN"
+        route_name = "ROUTE NAME"
     return trip_headsign,route_name, name_stop
