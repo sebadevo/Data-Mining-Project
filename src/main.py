@@ -12,7 +12,7 @@ def show_schedulde_headways(type, day, direction_id, stop_id, short_name, start_
     print(f"Time taken for the database is {time_taken}")
     x,y = compute_time_difference(data)
     trip_headsign, long_name, stop_name = retrieve_info_title(data,stop_id=stop_id)
-    #plot_schedulde_headways(x,y,line=short_name,line_name=long_name,trip_headsign=trip_headsign,stop_name=stop_name,type = type)
+    plot_schedulde_headways(x,y,line=short_name,line_name=long_name,trip_headsign=trip_headsign,stop_name=stop_name,type = type)
 
 
 
