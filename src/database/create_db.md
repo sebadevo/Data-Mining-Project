@@ -38,6 +38,10 @@ grant all privileges on stib.* to 'stib'@'localhost';
 ```
 
 ## Create table
+Connect yourself to the database
+```bash
+use stib;
+```
 
 ```bash
 CREATE TABLE IF NOT EXISTS trips (
@@ -103,9 +107,6 @@ SHOW VARIABLES LIKE "secure_file_priv";
 ```
 -> Sur mon ubuntu, l'output est dans : */var/lib/mysql-files*
 
-```bash
-SHOW VARIABLES LIKE "secure_file_priv";
-```
 
 **Attention :** 
 * pour  **routes.csv**, il faut retirer les deux colonnes vides pour pas que ca crash
@@ -174,4 +175,8 @@ pip install mysql-connector-python
 
 
 
+## Library compability
+```bash
+pip uninstall SQLAlchemy, sqlalchemy-migrate, sqlparse
+```
 
