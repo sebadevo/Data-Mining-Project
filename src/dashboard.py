@@ -5,14 +5,16 @@ from dashboard.enumeration import Type,Day
 from database.load_db import load_dataframe
 from preprocessing import load_data_and_merge,filter,compute_time_difference,retrieve_info_title
 import pandas as pd
+import plotly.express as px
 
 
 
 def main() -> None: 
-    app = Dash(external_stylesheets=[BOOTSTRAP]) #Create an app. the Bootstrap is to change the font
+    app = Dash(__name__,external_stylesheets=[BOOTSTRAP]) #Create an app. the Bootstrap is to change the font
     app.title = "Dashboard"
     data = load_data()
-    app.layout = create_layout(app,data) #Creation of layout. 
+    fig = px.line(data,x="x",y="y")
+    app.layout = create_layout(app,fig) #Creation of layout. 
     app.run()
 
 
