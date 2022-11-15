@@ -42,7 +42,7 @@ def line_name_render(app: Dash):
         connection = get_connection()
         data = pd.read_sql(query, params=[mode], con= connection)
 
-        data['name'] = data.iloc[:,:2].apply(lambda x: ','.join(x.astype(str)), axis=1)
+        data['name'] = data.iloc[:,:2].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
         return data.name.tolist()
 
     return dcc.Dropdown(
