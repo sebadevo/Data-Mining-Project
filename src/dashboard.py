@@ -10,7 +10,7 @@ import plotly.express as px
 
 
 def main() -> None: 
-    app = Dash(__name__,use_pages=True ,external_stylesheets=[BOOTSTRAP]) #Create an app. the Bootstrap is to change the font
+    app = Dash(__name__ ,external_stylesheets=[BOOTSTRAP]) #Create an app. the Bootstrap is to change the font
     app.title = "Dashboard"
     app.layout = create_layout(app) #Creation of layout. 
     app.run()
