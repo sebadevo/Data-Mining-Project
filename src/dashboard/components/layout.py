@@ -2,7 +2,7 @@ from dash import Dash, html ,dcc
 from . import dropdown, bar_chart
 import plotly.express as px
 
-def create_layout(app: Dash, fig) -> html.Div: 
+def create_layout(app: Dash) -> html.Div: 
         return html.Div(
         className= "app-div", 
         children=[

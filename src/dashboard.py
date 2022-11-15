@@ -12,20 +12,10 @@ import plotly.express as px
 def main() -> None: 
     app = Dash(__name__,external_stylesheets=[BOOTSTRAP]) #Create an app. the Bootstrap is to change the font
     app.title = "Dashboard"
-    data = load_data()
-    fig = px.line(data,x="x",y="y")
-    app.layout = create_layout(app,fig) #Creation of layout. 
+    app.layout = create_layout(app) #Creation of layout. 
     app.run()
 
 
-def load_data(type = Type.Tram,day= Day.Saterday, direction_id =0, stop_id= '5705', short_name = '3', start_date= 20210911):
-    data = load_dataframe(day,type.value,direction_id =direction_id, stop_id= stop_id, short_name = short_name, start_date= start_date)
-    x,y = compute_time_difference(data)
-    data = pd.DataFrame()
-    data["x"] = x
-    data["y"] = y
-    print(data)
-    return data
 
 if __name__ == "__main__": 
     main()
