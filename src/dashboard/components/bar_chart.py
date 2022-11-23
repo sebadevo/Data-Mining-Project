@@ -24,7 +24,7 @@ def render(app: Dash) -> html.Div:
             print(data)
             return data
 
-        if mode not in ["Bus","Metro","Tram"] :
+        if mode not in ["0","1","3"] :
             return html.Div("chey",id=ids.BAR_CHART)
         data = load_data(type = Type.Tram,day= Day.Saterday, direction_id =0, stop_id= '5705', short_name = '3', start_date= 20210911)
         fig = px.line(data,x="x",y="y")
