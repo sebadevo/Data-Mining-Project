@@ -2,7 +2,7 @@ import geopandas
 import matplotlib.pyplot as plt
 import numpy as np
 import folium
-
+from IPython.display import display
 
 #https://geopandas.org/en/stable/docs/user_guide/interactive_mapping.html
 if __name__ == "__main__":
@@ -28,4 +28,4 @@ if __name__ == "__main__":
     folium.LayerControl().add_to(m)  # use folium to add layer control
     #df.plot(figsize=(10, 10), alpha=0.5, edgecolor='k',ax=ax)
 
-    plt.show()
+    m.save('index.html')
