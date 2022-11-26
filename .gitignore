@@ -1,3 +1,7 @@
 ./data/*
 data
+<<<<<<< HEAD
 *.pyc
+=======
+*.pyd
+>>>>>>> origin/seb
