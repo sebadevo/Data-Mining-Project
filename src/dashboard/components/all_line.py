@@ -30,7 +30,10 @@ def create_all_line(app: Dash) -> html.Div:
         return False, True, [generate_line_selected(msg),  html.Button("X", className="line line--X", id="button_selected")]  
     return html.Div(
     className= "box all-lines",
-    children=[
+    children=[html.Div([
+            html.Button("1", id="chosen_line",className="line line--1"),
+            html.Button("X", className="line line--X", id="button_selected"),]
+            ,id="lineis",style={"hidden":"True"}),
             html.Div(className="container",id="box-all-lines",
             children = [
             html.Div(className="col--12",children=[
@@ -51,11 +54,8 @@ def create_all_line(app: Dash) -> html.Div:
                     html.Div(children = [generate_noctis(i) for i in noctis]),
                 ])
             ]),
-            ]),
-            html.Div([
-                html.Button("1", id="chosen_line",style={"display":"none"},className="line line--1"),
-                html.Button("X",style={"display":"none"}, className="line line--X", id="button_selected"),
-                ],id="lineis",),
+        ]),
+              
     ])
 
 
