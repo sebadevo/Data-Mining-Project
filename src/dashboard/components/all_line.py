@@ -14,17 +14,24 @@ noctis = ["04","05","06","08","09","10","11","12","13","16","18"]
 all_line = metro + tram + bus
 def create_all_line(app: Dash) -> html.Div: 
 
-    @app.callback(Output('lineis', 'children'),
-    [Input("button_{}".format(_), "n_clicks") for _ in all_line],)
-    def display_click(*clicks):
+    @app.callback(Output('lineis', 'hidden'),
+    Output('box-all-lines',"hidden"),
+    Output('lineis',"children"),
+    [Input("button_{}".format(_), "n_clicks") for _ in all_line],
+    [Input("noctis_{}".format(_), "n_clicks") for _ in noctis],
+    Input("button_selected","n_clicks"))
+    def display_click_hide_lines(*clicks):
+        if dash.callback_context.triggered_id == "button_selected":
+            return html.Div(),False,[html.Button("1", id="chosen_line",className="line line--1"),html.Button("X", className="line line--X", id="button_selected")]
         msg=[p['prop_id'] for p in dash.callback_context.triggered][0]
         msg = msg.split("_")[1].split(".")[0]
-        return html.H1(msg)
-
+        if "noctis" in dash.callback_context.triggered_id:
+            return False, True, [generate_noctis_selected(msg),  html.Button("X", className="line line--X", id="button_selected")]  
+        return False, True, [generate_line_selected(msg),  html.Button("X", className="line line--X", id="button_selected")]  
     return html.Div(
-    className= "box all-lines", 
+    className= "box all-lines",
     children=[
-            html.Div(className="container",
+            html.Div(className="container",id="box-all-lines",
             children = [
             html.Div(className="col--12",children=[
                 html.Div(className="all-lines__item", children=[
@@ -43,17 +50,26 @@ def create_all_line(app: Dash) -> html.Div:
                     html.H2(children=[html.Span(className="mode",children=[html.Span("N",className="mode__inner")]),"Noctis"]),
                     html.Div(children = [generate_noctis(i) for i in noctis]),
                 ])
-            ]),html.Div(id="lineis")
             ]),
-    ]
-    )
+            ]),
+            html.Div([
+                html.Button("1", id="chosen_line",style={"hidden":"True"},className="line line--1"),
+                html.Button("X",style={"hidden":"True"}, className="line line--X", id="button_selected"),
+                ],id="lineis",),
+    ])
 
+
+
+def generate_line_selected(i):
+    return html.Button(f"{i}", className=f"line line--{i}", id="chosen_line")
 
 def generate_line(i):
     return html.Button(f"{i}",className=f"line line--{i}",id=f"button_{i}")
 
+def generate_noctis_selected(i):
+    return html.Button([html.Span("n"),f"{i}"],className=f"line line--N{i}",id="chosen_line")
 def generate_noctis(i):
-    return html.Button([html.Span("n"),f"{i}"],className=f"line line--N{i}")
+    return html.Button([html.Span("n"),f"{i}"],className=f"line line--N{i}",id=f"noctis_{i}")
 
 
 
