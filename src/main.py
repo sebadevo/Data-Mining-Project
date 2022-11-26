@@ -3,6 +3,7 @@ from plotting import plot_schedulde_headways
 from dashboard.enumeration import Type,Day
 from database.load_db import load_dataframe
 from time import process_time
+from utils import get_interval
 
 def show_schedulde_headways(type, day, direction_id, stop_id, short_name, start_date):  
     start_time = process_time()
@@ -11,8 +12,9 @@ def show_schedulde_headways(type, day, direction_id, stop_id, short_name, start_
     print(data.columns)
     print(f"Time taken for the database is {time_taken}")
     x,y = compute_time_difference(data)
+    intervals = get_interval(x, y)
     trip_headsign, long_name, stop_name = retrieve_info_title(data,stop_id=stop_id)
-    plot_schedulde_headways(x,y,line=short_name,line_name=long_name,trip_headsign=trip_headsign,stop_name=stop_name,type = type)
+    plot_schedulde_headways(x,y,line=short_name,line_name=long_name,trip_headsign=trip_headsign, intervals=intervals,stop_name=stop_name,type = type)
 
 
 
