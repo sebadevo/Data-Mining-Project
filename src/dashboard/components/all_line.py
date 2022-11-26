@@ -53,8 +53,8 @@ def create_all_line(app: Dash) -> html.Div:
             ]),
             ]),
             html.Div([
-                html.Button("1", id="chosen_line",style={"hidden":"True"},className="line line--1"),
-                html.Button("X",style={"hidden":"True"}, className="line line--X", id="button_selected"),
+                html.Button("1", id="chosen_line",style={"display":"none"},className="line line--1"),
+                html.Button("X",style={"display":"none"}, className="line line--X", id="button_selected"),
                 ],id="lineis",),
     ])
 
