@@ -147,6 +147,11 @@ h2{
     font-family: TradeGothic,Brusseline,Arial, Helvetica, sans-serif;
     text-transform: uppercase;
 }
+h1 {
+    margin: 0 0 .2em;
+    font-size: 2.5em;
+    color: #d62027;
+}
 
 .mode {
     display: inline-block;
