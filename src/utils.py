@@ -165,6 +165,23 @@ def mean_filter(y, k=3):
     output.append(y[len(y)-floor(k/2):])
     return output
 
+def get_categories(x, y, intervals):
+    categories = []
+    length = len(intervals)-1
+    for i in range(length):
+        beg = x.index(intervals[i])
+        end = x.index(intervals[i+1])
+
+        if i != length-1:
+            end -= 1
+            
+        average = mean(y[beg:end])
+        cat = 'P' if average > 12 else 'R'
+
+        categories.append(cat)
+
+    return categories
+
 
 def load_data():
     routes_data = pd.read_csv('../../data/gtfs23Sept/routes.csv', sep=",")
