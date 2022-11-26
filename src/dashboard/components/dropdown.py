@@ -164,7 +164,6 @@ def day_render(app: Dash):
                 [Input('dir-name','value')]
     )
     def enable_dropdown_stop(dir_name): 
-        # print("debug line_name", len(stop_name), type(stop_name)) 
         return len(dir_name) ==0
     
     @app.callback(
@@ -194,17 +193,14 @@ def day_render(app: Dash):
 
         data.rename(columns={'monday' : "weekday"}, inplace=True)
 
-        data["days"] = data[['weekday', 'saturday', 'sunday']].apply(lambda x: x.weekday*100 + x.saturday*10 + x.sunday)
-        print("Debugging days : ", data.days.unique())
 
+        data["days"] = data.apply(lambda x: x.weekday*100 + x.saturday*10 + x.sunday, axis=1)
 
-        # data['dir_desc'] = data[["direction_id", "trip_headsign"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
-        # print("DEBUGGING: \n", data.dir_desc)
-
+        data.days.replace([100, 10, 1], ["Weekday", "Saturday", "Sunday"], inplace=True)
         return data.days.unique().tolist()
 
     return dcc.Dropdown(
-                # options = ["Bus","Tram","Metro"],
+                # options=[{"label": "Weekday", "value" : 100},{"label":"Saturday", "value":10}, {"label": "Sunday", "value":1}],
                 id="day-name",
                 multi=False,
                 clearable=False,
