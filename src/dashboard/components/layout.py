@@ -1,5 +1,5 @@
 from dash import Dash, html ,dcc
-from . import dropdown, bar_chart,navbar
+from . import dropdown, bar_chart,navbar, all_line
 import plotly.express as px
 import dash
 
@@ -8,6 +8,7 @@ def create_layout(app: Dash) -> html.Div:
         className= "app-div", 
         children=[
             navbar.render(app),
+            all_line.create_all_line(app),
             html.Div(className="dropdown-menu",children=[
                 dropdown.mode_render(),
                 dropdown.line_name_render(app),
