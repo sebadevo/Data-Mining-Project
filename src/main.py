@@ -24,4 +24,3 @@ def show_schedulde_headways(type, day, direction_id, stop_id, short_name, start_
 if __name__ == "__main__":
     show_schedulde_headways(type = Type.Tram,day= Day.Saterday, direction_id =0, stop_id= '5705', short_name = '3', start_date= 20210911)
 
-

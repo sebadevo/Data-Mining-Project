@@ -50,3 +50,4 @@ def load_dataframe(day,type,direction_id, stop_id, short_name, start_date):
     data = pd.read_sql(query,params=[type,direction_id, stop_id, short_name, start_date],con= connection)
     close_connection(connection)
     return data;
+
