@@ -22,10 +22,10 @@ def create_layout(app: Dash) -> html.Div:
 
 def create_dropdown_menu(app):
     return  html.Div(className="dropdown-menu",children=[
-                dropdown.mode_render(),
-                dropdown.line_name_render(app),
+                # dropdown.mode_render(),
+                # dropdown.line_name_render(app),
                 dropdown.stop_id_render(app), 
-                dropdown.direction_id_render(app),
+                # dropdown.direction_id_render(app),
                 dropdown.day_render(app),
                 dcc.Dropdown(id="start-date",
                     options=[{'label':"po",'value':'yes'},{'label':"za",'value':'no'}],
@@ -33,5 +33,9 @@ def create_dropdown_menu(app):
                     disabled=True,
                     clearable=False,
                     className='form-dropdown drop',
+                    style={"margin-left": "35px"},
                     persistence="string"),
-                ])
+                ], 
+     )
+
+    #  style = {"align-items": "center", "justify-content": "center"}
