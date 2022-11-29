@@ -1,15 +1,10 @@
-from dash import Dash, html, dcc
-import plotly.express as px
-from dashboard.enumeration import Type,Day
+from dash import Dash, dcc
 
 from dash.dependencies import Output, Input
-from . import ids
 
-from database.load_db import load_dataframe
-from preprocessing import load_data_and_merge,filter,compute_time_difference,retrieve_info_title
 import pandas as pd
 
-from database.load_db import get_connection, close_connection
+from database.load_db import get_connection
 
 
 

@@ -126,7 +126,7 @@ ul{
 }
 .direction.direction--2{
     color: #fff;
-    background: #F57000;
+    background: #02538a;
 }
 .direction.direction{
     width: 98%;
@@ -142,7 +142,7 @@ ul{
 }
 .direction.direction--inactive:hover{
     color: white;
-    background: #a94d00;
+    background: #01395e;
 }
 
 
