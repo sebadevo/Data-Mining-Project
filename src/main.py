@@ -15,13 +15,12 @@ def show_schedulde_headways(type, day, direction_id, stop_id, short_name, start_
     x,y = compute_time_difference(data)
     intervals = get_interval(x, y)
     print(intervals)
-    trip_headsign, long_name, stop_name = retrieve_info_title(data,stop_id=stop_id)
+    #trip_headsign, long_name, stop_name = retrieve_info_title(data,stop_id=stop_id)
 
-    plot_schedulde_headways(x,y,line=short_name,line_name=long_name,trip_headsign=trip_headsign, intervals=intervals, stop_name=stop_name,type = type)
+    plot_schedulde_headways(x,y,line=short_name,line_name="blajbalj",trip_headsign="bobo", intervals=intervals, stop_name='hihi',type = type)
 
 
 
 if __name__ == "__main__":
     show_schedulde_headways(type = Type.Tram,day= Day.Saterday, direction_id =0, stop_id= '5705', short_name = '3', start_date= 20210911)
-
 

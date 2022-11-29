@@ -1,15 +1,10 @@
-from dash import Dash, html, dcc
-import plotly.express as px
-from dashboard.enumeration import Type,Day
+from dash import Dash, dcc
 
 from dash.dependencies import Output, Input
-from . import ids
 
-from database.load_db import load_dataframe
-from preprocessing import load_data_and_merge,filter,compute_time_difference,retrieve_info_title
 import pandas as pd
 
-from database.load_db import get_connection, close_connection
+from database.load_db import get_connection
 
 
 
@@ -84,7 +79,7 @@ def stop_id_render(app: Dash):
         connection = get_connection()
         data = pd.read_sql(query, params=[mode, line_name], con= connection)
         data['stop_desc'] = data[["stop_id", "stop_name"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
-        # print("debug", mode)
+        print("debug", line_name)
         return data.stop_desc.tolist()
 
     return dcc.Dropdown(
@@ -129,7 +124,7 @@ def direction_id_render(app: Dash):
         connection = get_connection()
         data = pd.read_sql(query, params=[mode, line_name, stop_name ], con= connection)
         data['dir_desc'] = data[["direction_id", "trip_headsign"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
-        print("DEBUGGING: \n", data.dir_desc)
+        #print("DEBUGGING: \n", data.dir_desc)
 
         return data.dir_desc.unique().tolist()
 
