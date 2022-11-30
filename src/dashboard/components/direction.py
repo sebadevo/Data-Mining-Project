@@ -1,6 +1,8 @@
 from dash import Dash, html
 from dash.dependencies import Output, Input
 import dash
+from . import ids
+
 
 
 import pandas as pd
@@ -36,7 +38,7 @@ def render(app : Dash):
 
     @app.callback(
         Output('directions-container', 'children'),
-        Input('actual_line', 'data'),
+        Input(ids.SELECTED_LINE, 'data'),
         )
     def change_button(value):
         query = (
@@ -52,10 +54,10 @@ def render(app : Dash):
 
     return html.Div([
         html.Div([
-            html.Button(["Simonis"],className="direction direction--2 v direction--inactive navigable" ,disabled=False,id="dir-1",tabIndex="0"),
+            html.Button(["Simonis"],className="direction direction--2 v direction--inactive navigable" ,disabled=False,id='dir-1',tabIndex="0"),
         ],className="direction-container"),
         html.Div([
-            html.Button(["Elisabeth"],className="direction direction--2 f navigable" ,id="dir-2",disabled=True,tabIndex="0"),
+            html.Button(["Elisabeth"],className="direction direction--2 f navigable" ,id='dir-2',disabled=True,tabIndex="0"),
         ],className="direction-container"),
     ],  
         className="directions-container",

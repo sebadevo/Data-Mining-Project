@@ -2,6 +2,7 @@ from dash import Dash, html ,dcc
 from . import dropdown, bar_chart,navbar, all_line,all_stop,direction
 import plotly.express as px
 from dash.dependencies import Output, Input,MATCH,State
+from . import ids
 
 import dash
 
@@ -9,7 +10,8 @@ def create_layout(app: Dash) -> html.Div:
     return html.Div(
         className= "app-div", 
         children=[
-            dcc.Store(id='actual_line'),
+            # dcc.Store(id='actual_line'),
+            dcc.Store(id=ids.SELECTED_LINE),
             navbar.render(app),
             all_line.render(app),
             direction.render(app),
@@ -21,6 +23,7 @@ def create_layout(app: Dash) -> html.Div:
             html.H1("About",id="about"),])
 
 def create_dropdown_menu(app):
+
     return  html.Div(className="dropdown-menu",children=[
                 # dropdown.mode_render(),
                 # dropdown.line_name_render(app),
