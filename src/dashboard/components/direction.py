@@ -1,4 +1,4 @@
-from dash import Dash, html
+from dash import Dash, html, ctx
 from dash.dependencies import Output, Input
 import dash
 from . import ids
@@ -20,14 +20,24 @@ def which_type(value):
         return 1
     return 0 if value in tram else 3
 
+
+
+# def render(app : Dash):
+#     @app.callback(
+#     Output('container-button-timestamp', 'children'),
+#     Input('btn-dir-left', 'n_clicks'),
+#     Input('btn-dir-right', 'n_clicks'),
+# )
+
+
 def render(app : Dash):
     @app.callback(
-        Output('dir-1',"className"),
-        Output('dir-2', "className"),
-        Output('dir-1',"disabled"),
-        Output('dir-2', "disabled"),
-        [Input('dir-1','n_clicks'),
-        Input('dir-2','n_clicks')]
+        Output(ids.DIRECTION_1,"className"),
+        Output(ids.DIRECTION_2, "className"),
+        Output(ids.DIRECTION_1,"disabled"),
+        Output(ids.DIRECTION_2, "disabled"),
+        [Input(ids.DIRECTION_1,'n_clicks'),
+        Input(ids.DIRECTION_2,'n_clicks')]
     )
     def enable_dropdown_stop(*clicks): 
         if "1" in dash.callback_context.triggered_id:
@@ -49,15 +59,15 @@ def render(app : Dash):
         connection = get_connection()
         data = pd.read_sql(query, params=[which_type(value), value ], con= connection)
         headsign = data.routes_long_name.tolist()[0].split("-")
-        return [html.Div([html.Button([headsign[0].strip()], className="direction direction--2 v direction--inactive navigable", disabled=False, id="dir-1", tabIndex="0")], className="direction-container"), html.Div([html.Button([headsign[1].strip()], className="direction direction--2 f navigable", id="dir-2", disabled=True, tabIndex="0")], className="direction-container")]
+        return [html.Div([html.Button([headsign[0].strip()], className="direction direction--2 v direction--inactive navigable", disabled=False, id=ids.DIRECTION_1, tabIndex="0", type="submit")], className="direction-container"), html.Div([html.Button([headsign[1].strip()], className="direction direction--2 f navigable", id=ids.DIRECTION_2, disabled=True, tabIndex="0",type="submit")], className="direction-container")]
 
 
     return html.Div([
         html.Div([
-            html.Button(["Simonis"],className="direction direction--2 v direction--inactive navigable" ,disabled=False,id='dir-1',tabIndex="0"),
+            html.Button(["Simonis"],className="direction direction--2 v direction--inactive navigable" ,disabled=False,id=ids.DIRECTION_1,tabIndex="0"),
         ],className="direction-container"),
         html.Div([
-            html.Button(["Elisabeth"],className="direction direction--2 f navigable" ,id='dir-2',disabled=True,tabIndex="0"),
+            html.Button(["Elisabeth"],className="direction direction--2 f navigable" ,id=ids.DIRECTION_2,disabled=True,tabIndex="0"),
         ],className="direction-container"),
     ],  
         className="directions-container",

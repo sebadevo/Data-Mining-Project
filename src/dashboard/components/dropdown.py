@@ -68,20 +68,25 @@ def which_type(value):
 def stop_id_render(app: Dash):
     @app.callback(
                 Output('stop-name', "disabled"),
-                [Input(ids.SELECTED_LINE,'data')]
+                [Input(ids.SELECTED_LINE,'data'), 
+                Input(ids.DIRECTION_1, 'data'), 
+                Input(ids.DIRECTION_2, 'data')]
     )
    
 
-    def enable_dropdown_stop(line_name): 
-
-        return len(line_name) ==0
+    def enable_dropdown_stop(line_name, dir_left, dir_right): 
+        print("the chosen line is: ", line_name, "\nThe chosen dir is: ", dir_left, dir_right)
+        return len(line_name) !=0 #test
     
     @app.callback(
                 Output('stop-name', 'options'), #Input('mode', 'value'), 
-                [Input(ids.SELECTED_LINE,'data')]
+                [Input(ids.SELECTED_LINE,'data'),
+                Input(ids.DIRECTION_1, 'value'),
+                Input(ids.DIRECTION_2, 'value')
+                ]
     )
 
-    def query_route_short_name(line_name):
+    def query_route_short_name(line_name, dir_left, dir_right):
         query = (
             "select st.stop_id,ro.routes_short_name, ro.routes_long_name, s.stop_name"
             " from trips tr" 
