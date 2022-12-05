@@ -1,13 +1,11 @@
-from dash import Dash, html, ctx
+from dash import Dash, html
 from dash.dependencies import Output, Input
 import dash
 from . import ids
 
-
-
 import pandas as pd
-import numpy as np
 from database.load_db import get_connection
+
 metro = ["1","2","5","6"]
 tram = ["3","4","7","8","9","19","25","39","44","51","55","62","81","82","92","93","97"]
 bus = ["12","13","14","T19","20","21","27","28","29","33","34","36","37","38",
@@ -20,16 +18,6 @@ def which_type(value):
         return 1
     return 0 if value in tram else 3
 
-
-
-# def render(app : Dash):
-#     @app.callback(
-#     Output('container-button-timestamp', 'children'),
-#     Input('btn-dir-left', 'n_clicks'),
-#     Input('btn-dir-right', 'n_clicks'),
-# )
-
-
 def render(app : Dash):
     @app.callback(
         Output(ids.DIRECTION_1,"className"),
@@ -40,15 +28,17 @@ def render(app : Dash):
         Input(ids.DIRECTION_2,'n_clicks')]
     )
     def enable_dropdown_stop(*clicks): 
-        if "1" in dash.callback_context.triggered_id:
-            return  "direction direction--2 v navigable", "direction direction--2 f direction--inactive navigable", True,False
-        if "2" in dash.callback_context.triggered_id:
-            return  "direction direction--2 v direction--inactive navigable", "direction direction--2 f navigable", False,True
+        if dash.callback_context.triggered_id is not None:
+            if "1" in dash.callback_context.triggered_id:
+                return  "direction direction--2 v navigable", "direction direction--2 f direction--inactive navigable", True,False
+            elif "2" in dash.callback_context.triggered_id:
+                return  "direction direction--2 v direction--inactive navigable", "direction direction--2 f navigable", False,True
         return "direction direction--2 v direction--inactive navigable", "direction direction--2 f navigable", False,True
 
     @app.callback(
         Output('directions-container', 'children'),
         Input(ids.SELECTED_LINE, 'data'),
+        prevent_initial_call=True
         )
     def change_button(value):
         query = (

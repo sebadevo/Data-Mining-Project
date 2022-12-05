@@ -14,7 +14,6 @@ def create_layout(app: Dash) -> html.Div:
             navbar.render(app),
             all_line.render(app),
             direction.render(app),
-            all_stop.render(app),
             create_dropdown_menu(app),
             html.H1("Headways",id="headway"),
             bar_chart.render(app),

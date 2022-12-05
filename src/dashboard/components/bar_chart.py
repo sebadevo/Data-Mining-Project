@@ -1,19 +1,16 @@
 from dash import Dash, html, dcc
 import plotly.express as px
-from dashboard.enumeration import Type,Day
 from utils import *
-from dash.dependencies import Output, Input
+from dash.dependencies import Output, Input, State
 from . import ids
 from utils import get_interval
 
-from database.load_db import load_dataframe
-from preprocessing import load_data_and_merge,filter,compute_time_difference,retrieve_info_title
+from preprocessing import compute_time_difference
 import pandas as pd
 from database.load_db import get_connection
-from plotting import plot_schedulde_headways
-from plotly.tools import mpl_to_plotly
 
-
+import warnings
+warnings.simplefilter(action='ignore', category=UserWarning)
 
 metro = ["1","2","5","6"]
 tram = ["3","4","7","8","9","19","25","39","44","51","55","62","81","82","92","93","97"]
@@ -33,12 +30,13 @@ def which_date(value):
 def render(app: Dash) -> html.Div:
     @app.callback(
             Output(ids.BAR_CHART, "children"),
-            [Input(ids.SELECTED_LINE,'data'), 
-            Input(ids.STOP, 'value'),
+            State(ids.STOP, 'value'),
             Input(ids.DATE, 'value'),
-            Input(ids.DAY, 'value'),
-            ])
-    def update_bar_chart(line_name, stop_name,date_name,day_name) -> html.Div:  
+            State(ids.DAY, 'value'),
+            State(ids.SELECTED_LINE,'data'),
+            prevent_initial_call=True
+            )
+    def update_bar_chart(stop_name,date_name,day_name, line_name) -> html.Div:  
         # print("the args list: ", which_type(line_name), line_name, stop_name, int(which_date(date_name)[0]), int(which_date(date_name)[1]))
         stop_name = stop_name.split(' - ')[0]
         query = (
@@ -70,17 +68,9 @@ def render(app: Dash) -> html.Div:
         data = create_data(x,y)
         fig = px.bar(data,x="x",y="y")
         fig.update_traces(width=0.05)
-        # fig.add_trace(mpl_to_plotly(plot_schedulde_headways))
-
-        # for line in lines:
-        #     fig.add_vline(x = line, line_color = 'red')
-
-        x = data.x.tolist()
-        y = data.y.tolist()
 
         for i in range(len(lines)-1):
             beg = x.index(lines[i])
-            print(x[beg])
             end = x.index(lines[i+1])
             if i != len(lines)-2:
                 end -= 1
@@ -94,24 +84,7 @@ def render(app: Dash) -> html.Div:
                 fig.add_shape(type="rect",
                     x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=mean(y[beg:end])+3,
                 line=dict(color='green'))
-
-
-        # for i in range(len(lines)-1):
-        #     beg = x.index(lines[i])
-        #     end = x.index(lines[i+1])
-        #     width = 0
-        #     if i != len(lines)-2:
-        #         end -= 1
-
-        #     average = mean(y[beg:end])
-        #     color = 'red' if average > 12 else 'green'
-            
-        #     fig.add_shape(type="rect",
-        #         x0=x[beg]-0.075, y0=0, x1=x[end] +0.075 , y1=mean(y[beg:end])+3,
-        #         line=dict(color=color))
-
         return html.Div(dcc.Graph(figure=fig), id=ids.BAR_CHART)
-
     return html.Div(id=ids.BAR_CHART)
 
 

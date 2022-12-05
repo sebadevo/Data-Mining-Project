@@ -1,13 +1,15 @@
-from dash import Dash, dcc, html, ctx
-
-
-from dash.dependencies import Output, Input
+from dash import Dash, dcc, ctx
+from dash.dependencies import Output, Input, State
 
 import pandas as pd
 
 from database.load_db import get_connection
-
+from time import process_time
 from . import ids
+
+import warnings
+warnings.simplefilter(action='ignore', category=UserWarning)
+
 metro = ["1","2","5","6"]
 tram = ["3","4","7","8","9","19","25","39","44","51","55","62","81","82","92","93","97"]
 bus = ["12","13","14","T19","20","21","27","28","29","33","34","36","37","38",
@@ -28,14 +30,15 @@ def stop_id_render(app: Dash):
                     Output(ids.STOP, "disabled"),
                     [Input(ids.SELECTED_LINE,'data'), 
                     Input(ids.DIRECTION_1, 'value'), 
-                    Input(ids.DIRECTION_2, 'value')]
+                    Input(ids.DIRECTION_2, 'value')],
+                     prevent_initial_call=True
         )
     def enable_dropdown_stop(line_name, dir_left, dir_right): 
         button_clicked = ctx.triggered_id
         if button_clicked == ids.DIRECTION_1: 
             print("the chosen line is: ", line_name, "\nThe chosen left dir is: ", dir_left)
         elif button_clicked == ids.DIRECTION_2: 
-            print("the chosen line is: ", line_name, "\nThe chosen right dir is: ", dir_right)
+            print("the chosen line is: ", line_name, "\nThe chosen right dir is: ", dir_right)            
         return button_clicked is None and line_name is None
 
     @app.callback(
@@ -43,7 +46,7 @@ def stop_id_render(app: Dash):
                 [Input(ids.SELECTED_LINE,'data'),
                 Input(ids.DIRECTION_1, 'value'),
                 Input(ids.DIRECTION_2, 'value')
-                ]
+                ], prevent_initial_call=True
     )
 
     def query_route_short_name(line_name, dir_left, dir_right):
@@ -62,13 +65,16 @@ def stop_id_render(app: Dash):
             " where ro.route_type = %s and ro.routes_short_name = %s" # how do I use direction in this SQL querry ????
             )
         connection = get_connection()
+        start_time = process_time()
         data = pd.read_sql(query, params=[which_type(line_name), line_name], con= connection)
         data['stop_desc'] = data[["stop_id", "stop_name"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
         data = data[data['routes_long_name'].str.contains(direction)] #NECESSARY ???????
+        print(f"Time for the query is {process_time() - start_time}")
         return data.stop_desc.tolist()
     return dcc.Dropdown(
                 id="stop-name",
                 multi=False,
+                disabled=True,
                 clearable=False,
                 className='form-dropdown drop',
                 placeholder="Select the stop",
@@ -81,84 +87,46 @@ def stop_id_render(app: Dash):
 
 def day_render(app: Dash):
     @app.callback(
-                Output(ids.DAY, "disabled"),
-                [Input(ids.SELECTED_LINE,'data'),
-                Input(ids.DIRECTION_1, 'value'),
-                Input(ids.DIRECTION_2, 'value')
-                ]
-    )
-    def enable_dropdown_stop(line_name, dir_left, dir_right): 
-        button_clicked = ctx.triggered_id
-        if button_clicked == ids.DIRECTION_1: 
-            print("the chosen line is: ", line_name, "\nThe chosen left dir is: ", dir_left)
-        elif button_clicked == ids.DIRECTION_2: 
-            print("the chosen line is: ", line_name, "\nThe chosen right dir is: ", dir_right)
-        return button_clicked is None and line_name is None
-    
+                    Output(ids.DAY, "disabled"),
+                    Input(ids.STOP,'value'),
+                     prevent_initial_call=True
+        )
+    def enable_dropdown_stop(stop): 
+        return not stop
     @app.callback(
-                Output(ids.DAY, 'options'), 
-                [
-                Input(ids.SELECTED_LINE,'data'), 
-                Input(ids.STOP, 'value'), 
-                ]
-    )
-
-    def query_route_short_name(line_name, stop_name):
-        stop_name = stop_name.split(' - ')[0]
-        query = (
-            "select st.stop_id,ro.routes_short_name, ro.routes_long_name, s.stop_name, tr.direction_id, tr.trip_headsign, c.monday, c.saturday, c.sunday"
-            " from trips tr" 
-            " inner join routes ro on tr.route_id = ro.routes_id"
-            " inner join stop_times st on st.trip_id = tr.trip_id"
-            " inner join stops s on s.stop_id = st.stop_id"
-            " inner join calendar c on c.service_id = tr.service_id"
-            " where ro.route_type = %s and ro.routes_short_name = %s and st.stop_id = %s"
-            )
-        connection = get_connection()
-        data = pd.read_sql(query, params=[which_type(line_name), line_name, stop_name], con= connection)
-
-        data.rename(columns={'monday' : "weekday"}, inplace=True)
-
-
-        data["days"] = data.apply(lambda x: x.weekday*100 + x.saturday*10 + x.sunday, axis=1)
-
-        data.days.replace([100, 10, 1], ["Weekday", "Saturday", "Sunday"], inplace=True)
-        return data.days.unique().tolist()
-
-    return dcc.Dropdown(
+        Output(ids.DAY, 'options'), 
+        [
+        Input(ids.STOP, 'value')
+        ], prevent_initial_call=True
+        )
+    def query_date_name(stop):               
+        return ["Weekday", "Saturday", "Sunday"]
+    return dcc.Dropdown(["Weekday", "Saturday", "Sunday"],
                 id="day-name",
-                multi=False,
+                disabled=True,
                 clearable=False,
                 className='form-dropdown drop',
-                placeholder="Select the day",
-                persistence="string") #To check ? 
+                placeholder="Select the day") #To check ? 
 
 # # --------------------DATE DROPDOWN-----------------------------
 # # --------------------------------------------------------------
 
 def date_render(app: Dash):
     @app.callback(
-                Output(ids.DATE, "disabled"),
-                [Input(ids.SELECTED_LINE,'data'),
-                Input(ids.DIRECTION_1, 'value'),
-                Input(ids.DIRECTION_2, 'value')
-                ]
+            Output(ids.DATE, "disabled"),
+                Input(ids.DAY,'value'),
+                    prevent_initial_call=True
     )
-    def enable_dropdown_stop(line_name, dir_left, dir_right): 
-        button_clicked = ctx.triggered_id
-        if button_clicked == ids.DIRECTION_1: 
-            print("the chosen line is: ", line_name, "\nThe chosen left dir is: ", dir_left)
-        elif button_clicked == ids.DIRECTION_2: 
-            print("the chosen line is: ", line_name, "\nThe chosen right dir is: ", dir_right)
-        return button_clicked is None and line_name is None
+    def enable_dropdown_stop(day): 
+        return not day
 
     @app.callback(
                     Output(ids.DATE, 'options'), 
                     [
-                    Input(ids.SELECTED_LINE,'data'), 
-                    Input(ids.STOP, 'value'), 
+                    State(ids.SELECTED_LINE,'data'), 
+                    State(ids.STOP, 'value'), 
                     Input(ids.DAY, 'value')
-                    ]
+                    ], prevent_initial_call=True
         )
     def query_date_name(line_name, stop_name, day_name):
         stop_name = stop_name.split(' - ')[0]
@@ -187,8 +155,7 @@ def date_render(app: Dash):
 
     return dcc.Dropdown(
                 id="date-name",
-                multi=False,
                 clearable=False,
                 className='form-dropdown drop',
-                placeholder="Select the date",
-                persistence="string") #To check ? 
+                disabled=True,
+                placeholder="Select the date",) 

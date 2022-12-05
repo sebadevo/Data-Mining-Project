@@ -20,11 +20,13 @@ def render(app: Dash) -> html.Div:
         Output('actual_line',"data"),
         [Input("button_{}".format(_), "n_clicks") for _ in all_line],
         [Input("noctis_{}".format(_), "n_clicks") for _ in noctis],
-        Input("button_selected","n_clicks"))
+        Input("button_selected","n_clicks"),
+        prevent_initial_call=True)
     def display_click_hide_lines(*clicks):
         if dash.callback_context.triggered_id == "button_selected":
             return html.Div(),False,[html.Button("1", id="chosen_line",className="line line--1"),html.Button("X", className="line line--X", id="button_selected")],0
         msg=[p['prop_id'] for p in dash.callback_context.triggered][0]
+        print("balbal ", msg)
         msg = msg.split("_")[1].split(".")[0]
         if "noctis" in dash.callback_context.triggered_id:
             return False, True, [generate_noctis_selected(msg), html.Button("X", className="line line--X", id="button_selected")], f'n{str(msg)}'
