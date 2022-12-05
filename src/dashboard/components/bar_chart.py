@@ -10,6 +10,8 @@ from database.load_db import load_dataframe
 from preprocessing import load_data_and_merge,filter,compute_time_difference,retrieve_info_title
 import pandas as pd
 from database.load_db import get_connection
+from plotting import plot_schedulde_headways
+from plotly.tools import mpl_to_plotly
 
 
 
@@ -56,7 +58,6 @@ def render(app: Dash) -> html.Div:
             data = data[data.saturday == 1]
         else: 
             data = data[data.sunday == 1]
-        print("checking: ", data.head())
         x,y = compute_time_difference(data)
         lines = get_interval(x,y)
 
@@ -64,26 +65,50 @@ def render(app: Dash) -> html.Div:
             data = pd.DataFrame()
             data["x"] = x
             data["y"] = y
-            return data, lines
+            return data
 
-        data, lines = create_data(x,y)
-        # def load_data(type = Type.Tram,day= Day.Saterday, direction_id =0, stop_id= '5705', short_name = '3', start_date= 20210911):
-        #     data = load_dataframe(day,type.value,direction_id =direction_id, stop_id= stop_id, short_name = short_name, start_date= start_date)
-        #     x,y = compute_time_difference(data)
-        #     lines = get_interval(x, y)
-        #     data = pd.DataFrame()
-        #     data["x"] = x
-        #     data["y"] = y
-        #     print(data)
-        #     return data, lines
-
-        # if mode not in ["0","1","3"] :
-        #     return html.Div("chey",id=ids.BAR_CHART)
-        # data, lines = load_data(type = Type.Tram,day= Day.Saterday, direction_id =0, stop_id= '5705', short_name = '3', start_date= 20210911)
+        data = create_data(x,y)
         fig = px.line(data,x="x",y="y")
-        for line in lines:
-            fig.add_vline(x = line, line_color = 'red')
+        # fig.add_trace(mpl_to_plotly(plot_schedulde_headways))
 
+        # for line in lines:
+        #     fig.add_vline(x = line, line_color = 'red')
+
+        x = data.x.tolist()
+        y = data.y.tolist()
+
+        for i in range(len(lines)-1):
+            beg = x.index(lines[i])
+            print(x[beg])
+            end = x.index(lines[i+1])
+            width = 0
+            if i != len(lines)-2:
+                end -= 1
+
+            average = mean(y[beg:end])
+            if average > 12 :
+                fig.add_shape(type="rect",
+                    x0=x[beg]-0.075, y0=0, x1=x[end] +0.075 , y1=max(y[beg:end])+1.5,
+                line=dict(color='red'))
+            else :
+                fig.add_shape(type="rect",
+                    x0=x[beg]-0.075, y0=0, x1=x[end] +0.075 , y1=mean(y[beg:end])+3,
+                line=dict(color='green'))
+
+
+        # for i in range(len(lines)-1):
+        #     beg = x.index(lines[i])
+        #     end = x.index(lines[i+1])
+        #     width = 0
+        #     if i != len(lines)-2:
+        #         end -= 1
+
+        #     average = mean(y[beg:end])
+        #     color = 'red' if average > 12 else 'green'
+            
+        #     fig.add_shape(type="rect",
+        #         x0=x[beg]-0.075, y0=0, x1=x[end] +0.075 , y1=mean(y[beg:end])+3,
+        #         line=dict(color=color))
 
         return html.Div(dcc.Graph(figure=fig), id=ids.BAR_CHART)
 
