@@ -59,15 +59,24 @@ def render(app : Dash):
         connection = get_connection()
         data = pd.read_sql(query, params=[which_type(value), value ], con= connection)
         headsign = data.routes_long_name.tolist()[0].split("-")
-        return [html.Div([html.Button([headsign[0].strip()], className="direction direction--2 v direction--inactive navigable", disabled=False, id=ids.DIRECTION_1, tabIndex="0", type="submit")], className="direction-container"), html.Div([html.Button([headsign[1].strip()], className="direction direction--2 f navigable", id=ids.DIRECTION_2, disabled=True, tabIndex="0",type="submit")], className="direction-container")]
+        return [
+            html.Div([
+                html.Button(
+                    [headsign[0].strip()], className="direction direction--2 v direction--inactive navigable", disabled=False, id=ids.DIRECTION_1, tabIndex="0", value=headsign[0].strip())],
+                className="direction-container"), 
+            html.Div([
+                html.Button(
+                    [headsign[1].strip()], className="direction direction--2 f navigable", id=ids.DIRECTION_2, disabled=True, tabIndex="0", value=headsign[1].strip())], 
+                className="direction-container")
+            ]
 
 
     return html.Div([
         html.Div([
-            html.Button(["Simonis"],className="direction direction--2 v direction--inactive navigable" ,disabled=False,id=ids.DIRECTION_1,tabIndex="0"),
+            html.Button(["Simonis"],className="direction direction--2 v direction--inactive navigable" ,disabled=False,id=ids.DIRECTION_1,tabIndex="0", value=["Simonis"]),
         ],className="direction-container"),
         html.Div([
-            html.Button(["Elisabeth"],className="direction direction--2 f navigable" ,id=ids.DIRECTION_2,disabled=True,tabIndex="0"),
+            html.Button(["Elisabeth"],className="direction direction--2 f navigable" ,id=ids.DIRECTION_2,disabled=True,tabIndex="0", value=["Elisabeth"]),
         ],className="direction-container"),
     ],  
         className="directions-container",
