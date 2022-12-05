@@ -68,7 +68,8 @@ def render(app: Dash) -> html.Div:
             return data
 
         data = create_data(x,y)
-        fig = px.line(data,x="x",y="y")
+        fig = px.bar(data,x="x",y="y")
+        fig.update_traces(width=0.05)
         # fig.add_trace(mpl_to_plotly(plot_schedulde_headways))
 
         # for line in lines:
@@ -81,18 +82,17 @@ def render(app: Dash) -> html.Div:
             beg = x.index(lines[i])
             print(x[beg])
             end = x.index(lines[i+1])
-            width = 0
             if i != len(lines)-2:
                 end -= 1
 
             average = mean(y[beg:end])
             if average > 12 :
                 fig.add_shape(type="rect",
-                    x0=x[beg]-0.075, y0=0, x1=x[end] +0.075 , y1=max(y[beg:end])+1.5,
+                    x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=max(y[beg:end])+1.5,
                 line=dict(color='red'))
             else :
                 fig.add_shape(type="rect",
-                    x0=x[beg]-0.075, y0=0, x1=x[end] +0.075 , y1=mean(y[beg:end])+3,
+                    x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=mean(y[beg:end])+3,
                 line=dict(color='green'))
 
 
