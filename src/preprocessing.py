@@ -22,11 +22,13 @@ def load_data_and_merge(type,route,trips,stop_times,calendar):
 def filter(data,day, direction_id, stop_id, short_name, start_date):
     return data.loc[(data['direction_id'] == direction_id) & (data[day.value] == 1) & (data['stop_id'] == stop_id) & (data['route_short_name'] == short_name)& (data['start_date'] == start_date)] 
 
-
-def compute_time_difference(data):
+def convert_dataframe_to_time_sorted(data): 
     arrival_times = data['arrival_time'].tolist()
     arrival_times_minutes = map(time_to_sec, arrival_times)
     arrival_times_minutes = sorted(arrival_times_minutes)
+    return arrival_times_minutes
+    
+def compute_time_difference(arrival_times_minutes):
     x, y = [], []
     for i in range(len(arrival_times_minutes)-1):
         y.append(round((arrival_times_minutes[i+1]-arrival_times_minutes[i])/60, 2))

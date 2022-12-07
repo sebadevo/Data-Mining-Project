@@ -14,6 +14,8 @@ def time_to_sec(time:str):
     """
     time = time.split(":")
     hours, minutes, seconds = int(time[0]), int(time[1]), int(time[2])
+    if hours < 5:
+        return 86400 + hours*60*60+minutes*60+seconds
     return hours*60*60+minutes*60+seconds
 
 def get_times(direction:int, weekday:int, route_short_name:str, stop_id:str, start_date:int, dataframe:pd.DataFrame):
@@ -204,3 +206,8 @@ def get_arrival_time(routes_data, trips_data, stop_times_data, calendar_data,
     data = dataframe.loc[(dataframe['direction_id'] == direction) & (dataframe['weekday'] == 1) & (dataframe['route_short_name'] == route_short_name) & (dataframe['stop_id'] == stop_id)  & (dataframe['start_date'] == start_date)]
     return data['arrival_time'].tolist(), data
 
+def sec_to_time(time:int):
+    hours = time//3600
+    minutes = (time % 3600)//60
+    seconds = time % 60
+    return f'{hours}:{minutes}:{seconds}'
