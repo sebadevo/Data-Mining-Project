@@ -48,9 +48,9 @@ def stop_id_render(app: Dash):
                 Input(ids.DIRECTION_2, 'value')
                 ], prevent_initial_call=True
     )
-
     def query_route_short_name(line_name, dir_left, dir_right):
         button_clicked = ctx.triggered_id
+        print(button_clicked)
         direction = ""
         if button_clicked == ids.DIRECTION_1: 
             direction = dir_left
