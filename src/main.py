@@ -42,16 +42,34 @@ def remove_duplicates(real):
             real.pop(i)
         i -= 1
     return real
+
+def find_match_drop(real_times, scheduled_times):
+    shorted = []
+    j = 0
+    for i in range(len(real_times)):
+        index = 0
+        dist = 9999999
+        for t in range(6):
+            if abs(real_times[i]-scheduled_times[min(max(0, j+t), len(scheduled_times)-1)]) < dist:
+                dist = abs(real_times[i]-scheduled_times[min(max(0, j+t), len(scheduled_times)-1)])
+                index = min(max(0, j+t), len(scheduled_times)-1)
+        j = index 
+        shorted.append(scheduled_times[j])
+        j+=1
+    return real_times, shorted
+
+
 if __name__ == "__main__":
     real_time = real_data_processing(date=20210908, lineID=1, pointID=8081, distanceFromPoint=0, duplicates=1)
     predict_time = show_schedulde_headways(type = Type.Metro,day= Day.Weekday, direction_id =1, stop_id= '8081', short_name = '1', start_date= 20210901)
     # x,y = compute_time_difference(predict_time)
     real_time = sorted(map(time_to_sec, real_time))
     predict_time = sorted(map(time_to_sec, predict_time))
-    print(real_time)
-    print(predict_time)
+    # print(real_time)
+    # print(predict_time)
     print("real_time is :")
     real_time = remove_duplicates(real_time)
+    temp_real, temp_theory = find_match_drop(real_time, predict_time)
     real_time = list(map(sec_to_time,real_time))
     print(real_time)
     print("the length of the real data is:", len(real_time))
@@ -60,5 +78,19 @@ if __name__ == "__main__":
     predict_time = list(map(sec_to_time,predict_time))
     print(predict_time)
     print("the length of the theoritical data is:", len(predict_time))
+
+    print("###################################################")
+    print("##########comparaison with same length#############")
+    print("###################################################")
+    
+    temp_real = list(map(sec_to_time,temp_real))
+    temp_theory = list(map(sec_to_time,temp_theory))
+    print(temp_real)
+    print(temp_theory)
+    print(len(temp_real))
+    print(len(temp_theory))
+
+
+
     
     
