@@ -43,12 +43,13 @@ def stop_id_render(app: Dash):
 
     @app.callback(
                 Output(ids.STOP, 'options'),
-                [Input(ids.SELECTED_LINE,'data'),
+                [State(ids.SELECTED_LINE,'data'),
                 Input(ids.DIRECTION_1, 'value'),
                 Input(ids.DIRECTION_2, 'value')
                 ], prevent_initial_call=True
     )
     def query_route_short_name(line_name, dir_left, dir_right):
+        print("[Debug] : starting all stops function")
         button_clicked = ctx.triggered_id
         print(button_clicked)
         direction = ""
@@ -57,7 +58,7 @@ def stop_id_render(app: Dash):
         elif button_clicked == ids.DIRECTION_2: 
             direction = dir_right
         query = (
-            "select st.stop_id,ro.routes_short_name, ro.routes_long_name, s.stop_name"
+            "select ro.routes_long_name, CONCAT(st.stop_id,' - ',s.stop_name) as stops "
             " from trips tr" 
             " inner join routes ro on tr.route_id = ro.routes_id"
             " inner join stop_times st on st.trip_id = tr.trip_id"
@@ -66,11 +67,12 @@ def stop_id_render(app: Dash):
             )
         connection = get_connection()
         start_time = process_time()
+        print("type is ", which_type(line_name), "   ", line_name)
         data = pd.read_sql(query, params=[which_type(line_name), line_name], con= connection)
-        data['stop_desc'] = data[["stop_id", "stop_name"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
-        data = data[data['routes_long_name'].str.contains(direction)] #NECESSARY ???????
+        #data['stop_desc'] = data[["stop_id", "stop_name"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
+        #data = data[data['routes_long_name'].str.contains(direction)] #NECESSARY ???????
         print(f"Time for the query is {process_time() - start_time}")
-        return data.stop_desc.tolist()
+        return data.stops.unique().tolist()
     return dcc.Dropdown(
                 id="stop-name",
                 multi=False,
