@@ -38,7 +38,6 @@ def render(app: Dash) -> html.Div:
             prevent_initial_call=True
             )
     def update_bar_chart(stop_name,date_name,day_name, line_name) -> html.Div:  
-        # print("the args list: ", which_type(line_name), line_name, stop_name, int(which_date(date_name)[0]), int(which_date(date_name)[1]))
         stop_name = stop_name.split(' - ')[0]
         query = (
             "select time, lineID, pointID, date"
@@ -49,13 +48,12 @@ def render(app: Dash) -> html.Div:
         start_time = process_time()
         data = pd.read_sql(query, params=[line_name, stop_name, int(which_date(date_name)[0]), int(which_date(date_name)[1])], con= connection)
         print(f"The time taken is {process_time() - start_time}")
-        print("test : ", len(data))
         data.rename(columns={'time':'arrival_time'}, inplace=True)
+        if( len(data) < 5):
+            return html.Div(html.H4("There is not enough data to plot a graph."))
         data = convert_dataframe_to_time_sorted(data)
-        print("debug3: ", data[:10])
 
         x,y = compute_time_difference(data)
-        # print("debug3: ", x)
 
         lines = get_interval(x,y)
 
@@ -66,7 +64,6 @@ def render(app: Dash) -> html.Div:
             return data
 
         data = create_data(x,y)
-        print("debug: ", data.head())
         fig = px.bar(data,x="x",y="y")
         fig.update_traces(width=0.05)
 
