@@ -59,6 +59,48 @@ def find_match_drop(real_times, scheduled_times):
     return real_times, shorted
 
 
+def find_match(short, long):
+    index_short_list = []
+    index_long_list = []
+    test = 0
+    while len(index_short_list) < len(short):
+        print("I'm in loop :", test)
+        test +=1
+        column = []
+        for i in range(len(short)):
+            if i not in index_short_list:
+                min_value = 9999
+                index_short = None
+                index_long = None
+                for j in range(len(long)):
+                    if j not in index_long_list:
+                        if abs(long[j]-short[i]) < min_value:
+                            min_value = abs(long[j]-short[i])
+                            index_short = i
+                            index_long = j
+                print(min_value, index_short, index_long)
+                column.append([min_value, index_short, index_long])
+        for i in range(len(column)):
+            index_long = column[i][2]
+            if index_long not in index_long_list:
+                index_short = column[i][1]
+                min_value = column[i][0]
+                for j in range(len(column)):
+                    if column[j][2] == index_long and min_value > column[j][0]:
+                        min_value = column[j][0]
+                        index_short = column[j][1]
+                index_short_list.append(index_short)
+                index_long_list.append(index_long)
+
+
+    shortened  = [long[i] for i in index_long_list]
+    shortened = sorted(shortened)
+    return short, shortened
+
+
+        
+
+
 if __name__ == "__main__":
     real_time = real_data_processing(date=20210908, lineID=1, pointID=8081, distanceFromPoint=0, duplicates=1)
     predict_time = show_schedulde_headways(type = Type.Metro,day= Day.Weekday, direction_id =1, stop_id= '8081', short_name = '1', start_date= 20210901)
@@ -69,7 +111,7 @@ if __name__ == "__main__":
     # print(predict_time)
     print("real_time is :")
     real_time = remove_duplicates(real_time)
-    temp_real, temp_theory = find_match_drop(real_time, predict_time)
+    temp_real, temp_theory = find_match(real_time, predict_time)
     real_time = list(map(sec_to_time,real_time))
     print(real_time)
     print("the length of the real data is:", len(real_time))
@@ -89,6 +131,13 @@ if __name__ == "__main__":
     print(temp_theory)
     print(len(temp_real))
     print(len(temp_theory))
+
+    # real = [1, 2, 4.1, 4.4, 5.1, 10]
+    # theory = [i+1 for i in range(10)]
+
+    # real, theory = find_match(real, theory)
+    # print(real)
+    # print(theory)
 
 
 
