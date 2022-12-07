@@ -46,13 +46,12 @@ def stop_id_render(app: Dash):
                 ], prevent_initial_call=True
     )
     def query_route_short_name(line_name, dir_left, dir_right,left_class,right_class):
+        print("starting")
         direction = ""
         if "direction--inactive" in left_class: 
             direction = dir_right
         elif "direction--inactive" in right_class: 
             direction = dir_left
-        print("The direction is ", direction)
-        start_time = process_time()
         query = (
             "select distinct tr.direction_id"
             " from trips tr" 
@@ -60,9 +59,7 @@ def stop_id_render(app: Dash):
             " where ro.route_type = %s and ro.routes_short_name = %s and  tr.trip_headsign = %s" # how do I use direction in this SQL querry ????
             )
         connection = get_connection()
-        direction = int(pd.read_sql(query, params=[which_type(line_name), line_name,direction], con= connection).iat[0,0])
-        print("The direction is ",direction)
-        
+        direction = int(pd.read_sql(query, params=[which_type(line_name), line_name,direction], con= connection).iat[0,0])        
         query = (
             "select distinct CONCAT(st.stop_id,' - ',s.stop_name) as stops, st.stop_sequence "
             " from trips tr" 
@@ -73,9 +70,6 @@ def stop_id_render(app: Dash):
             " order by st.stop_sequence ASC"
             )
         data = pd.read_sql(query, params=[which_type(line_name), line_name, direction], con= connection)
-        #data['stop_desc'] = data[["stop_id", "stop_name"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
-        #data = data[data['routes_long_name'].str.contains(direction)] #NECESSARY ???????
-        print(f"Time for the query is {process_time() - start_time}")
         return data.stops.unique().tolist()
     return dcc.Dropdown(
                 id="stop-name",
@@ -137,11 +131,10 @@ def date_render(app: Dash):
     def query_date_name(line_name, stop_name, day_name):
         stop_name = stop_name.split(' - ')[0]
         query = (
-            "select st.stop_id,ro.routes_short_name, ro.routes_long_name, s.stop_name, tr.direction_id, tr.trip_headsign, c.monday, c.saturday, c.sunday, c.start_date, c.end_date"
+            "select c.monday, c.saturday, c.sunday, c.start_date, c.end_date"
             " from trips tr" 
             " inner join routes ro on tr.route_id = ro.routes_id"
             " inner join stop_times st on st.trip_id = tr.trip_id"
-            " inner join stops s on s.stop_id = st.stop_id"
             " inner join calendar c on c.service_id = tr.service_id"
             " where ro.route_type = %s and ro.routes_short_name = %s and st.stop_id = %s"
             )

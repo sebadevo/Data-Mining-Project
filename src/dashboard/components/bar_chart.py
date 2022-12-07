@@ -84,7 +84,7 @@ def render(app: Dash) -> html.Div:
                 fig.add_shape(type="rect",
                     x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=mean(y[beg:end])+3,
                 line=dict(color='green'))
-        return html.Div(dcc.Graph(figure=fig), id=ids.BAR_CHART)
+        return html.Div([html.H4("Theoretical Data"),dcc.Graph(figure=fig)], id=ids.BAR_CHART)
     return html.Div(id=ids.BAR_CHART)
 
 
