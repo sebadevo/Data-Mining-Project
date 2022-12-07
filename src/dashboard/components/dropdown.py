@@ -49,7 +49,6 @@ def stop_id_render(app: Dash):
                 ], prevent_initial_call=True
     )
     def query_route_short_name(line_name, dir_left, dir_right):
-        print("[Debug] : starting all stops function")
         button_clicked = ctx.triggered_id
         print(button_clicked)
         direction = ""
@@ -57,18 +56,27 @@ def stop_id_render(app: Dash):
             direction = dir_left
         elif button_clicked == ids.DIRECTION_2: 
             direction = dir_right
+        start_time = process_time()
         query = (
-            "select ro.routes_long_name, CONCAT(st.stop_id,' - ',s.stop_name) as stops "
+            "select distinct tr.direction_id"
+            " from trips tr" 
+            " inner join routes ro on tr.route_id = ro.routes_id"
+            " where ro.route_type = %s and ro.routes_short_name = %s and  tr.trip_headsign = %s" # how do I use direction in this SQL querry ????
+            )
+        connection = get_connection()
+        direction = int(pd.read_sql(query, params=[which_type(line_name), line_name,direction], con= connection).iat[0,0])
+        print("The direction is ",type(direction))
+        
+        query = (
+            "select distinct CONCAT(st.stop_id,' - ',s.stop_name) as stops, st.stop_sequence "
             " from trips tr" 
             " inner join routes ro on tr.route_id = ro.routes_id"
             " inner join stop_times st on st.trip_id = tr.trip_id"
             " inner join stops s on s.stop_id = st.stop_id"
-            " where ro.route_type = %s and ro.routes_short_name = %s" # how do I use direction in this SQL querry ????
+            " where ro.route_type = %s and ro.routes_short_name = %s and tr.direction_id = %s" 
+            " order by st.stop_sequence ASC"
             )
-        connection = get_connection()
-        start_time = process_time()
-        print("type is ", which_type(line_name), "   ", line_name)
-        data = pd.read_sql(query, params=[which_type(line_name), line_name], con= connection)
+        data = pd.read_sql(query, params=[which_type(line_name), line_name, direction], con= connection)
         #data['stop_desc'] = data[["stop_id", "stop_name"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
         #data = data[data['routes_long_name'].str.contains(direction)] #NECESSARY ???????
         print(f"Time for the query is {process_time() - start_time}")
