@@ -2,6 +2,7 @@
 # SELECT_ALL_MODES_BUTTON="select-all-modes-button"
 
 BAR_CHART = "bar-chart"
+REAL_DATA_CHART = "real-data-chart"
 
 DIRECTION_1 = "dir-1"
 DIRECTION_2 = "dir-2"
