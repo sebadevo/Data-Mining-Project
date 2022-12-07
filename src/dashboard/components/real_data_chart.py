@@ -9,6 +9,7 @@ from preprocessing import compute_time_difference, convert_dataframe_to_time_sor
 import pandas as pd
 from database.load_db import get_connection
 
+from time import process_time
 import warnings
 warnings.simplefilter(action='ignore', category=UserWarning)
 
@@ -45,13 +46,10 @@ def render(app: Dash) -> html.Div:
             " where lineID = %s and pointID = %s and date >= %s and date <=  %s"
             )
         connection = get_connection()
+        start_time = process_time()
         data = pd.read_sql(query, params=[line_name, stop_name, int(which_date(date_name)[0]), int(which_date(date_name)[1])], con= connection)
-        # if day_name == "Weekday": 
-        #     data = data[data.monday == 1]
-        # elif day_name == "Saturday": 
-        #     data = data[data.saturday == 1]
-        # else: 
-        #     data = data[data.sunday == 1]
+        print(f"The time taken is {process_time() - start_time}")
+        print("test : ", len(data))
         data.rename(columns={'time':'arrival_time'}, inplace=True)
         data = convert_dataframe_to_time_sorted(data)
         print("debug3: ", data[:10])
