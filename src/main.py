@@ -28,11 +28,11 @@ def real_data_processing(date, lineID, pointID, distanceFromPoint, duplicates):
     query = (
             "select rd.time"
             " from real_data rd" 
-            " where rd.date = %s and rd.lineID = %s and rd.pointID = %s and rd.distanceFromPoint = %s"
+            " where rd.date = %s and rd.lineID = %s and rd.pointID = %s and rd.distanceFromPoint <= %s"
             )
     connection = get_connection()
     data = pd.read_sql(query, params=[date, lineID, pointID, distanceFromPoint], con= connection)
-    print(data)
+    print(data[4:15])
     return data['time'].tolist()
 
 def remove_duplicates(real):
@@ -43,18 +43,22 @@ def remove_duplicates(real):
         i -= 1
     return real
 if __name__ == "__main__":
-    real_time = real_data_processing(date=20210909, lineID=1, pointID=8081, distanceFromPoint=0, duplicates=1)
+    real_time = real_data_processing(date=20210908, lineID=1, pointID=8081, distanceFromPoint=0, duplicates=1)
     predict_time = show_schedulde_headways(type = Type.Metro,day= Day.Weekday, direction_id =1, stop_id= '8081', short_name = '1', start_date= 20210901)
     # x,y = compute_time_difference(predict_time)
     real_time = sorted(map(time_to_sec, real_time))
     predict_time = sorted(map(time_to_sec, predict_time))
     print(real_time)
+    print(predict_time)
     print("real_time is :")
     real_time = remove_duplicates(real_time)
+    real_time = list(map(sec_to_time,real_time))
     print(real_time)
-    print(len(real_time))
+    print("the length of the real data is:", len(real_time))
     print("############################")
     print("theorical time is :")
+    predict_time = list(map(sec_to_time,predict_time))
     print(predict_time)
+    print("the length of the theoritical data is:", len(predict_time))
     
     
