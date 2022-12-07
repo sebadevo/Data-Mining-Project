@@ -3,24 +3,58 @@ from plotting import plot_schedulde_headways
 from dashboard.enumeration import Type,Day
 from database.load_db import load_dataframe
 from time import process_time
-from utils import get_interval
+from utils import get_interval, time_to_sec, sec_to_time
 from statistics import mean
+from database.load_db import get_connection
+import pandas as pd
 
 def show_schedulde_headways(type, day, direction_id, stop_id, short_name, start_date):  
-    start_time = process_time()
+    # start_time = process_time()
     data = load_dataframe(day,type.value,direction_id =direction_id, stop_id= stop_id, short_name = short_name, start_date= start_date)
-    time_taken = process_time() - start_time
-    print(data.columns)
-    print(f"Time taken for the database is {time_taken}")
-    x,y = compute_time_difference(data)
-    intervals = get_interval(x, y)
-    print(intervals)
+    # data['arrival_time'].tolist()
+    # time_taken = process_time() - start_time
+    # print(data.columns)
+    # print(f"Time taken for the database is {time_taken}")
+    # x,y = compute_time_difference(data)
+    # intervals = get_interval(x, y)
+    # print(intervals)
     #trip_headsign, long_name, stop_name = retrieve_info_title(data,stop_id=stop_id)
+    print(data['arrival_time'])
+    return data['arrival_time'].tolist()
+    # plot_schedulde_headways(x,y,line=short_name,line_name="blajbalj",trip_headsign="bobo", intervals=intervals, stop_name='hihi',type = type)
 
-    plot_schedulde_headways(x,y,line=short_name,line_name="blajbalj",trip_headsign="bobo", intervals=intervals, stop_name='hihi',type = type)
 
+def real_data_processing(date, lineID, pointID, distanceFromPoint, duplicates):
+    query = (
+            "select rd.time"
+            " from real_data rd" 
+            " where rd.date = %s and rd.lineID = %s and rd.pointID = %s and rd.distanceFromPoint = %s"
+            )
+    connection = get_connection()
+    data = pd.read_sql(query, params=[date, lineID, pointID, distanceFromPoint], con= connection)
+    print(data)
+    return data['time'].tolist()
 
-
+def remove_duplicates(real):
+    i = len(real)-1
+    while i > 0:
+        if real[i] - 45 < real[i-1]:
+            real.pop(i)
+        i -= 1
+    return real
 if __name__ == "__main__":
-    show_schedulde_headways(type = Type.Tram,day= Day.Saterday, direction_id =0, stop_id= '5705', short_name = '3', start_date= 20210911)
-
+    real_time = real_data_processing(date=20210909, lineID=1, pointID=8081, distanceFromPoint=0, duplicates=1)
+    predict_time = show_schedulde_headways(type = Type.Metro,day= Day.Weekday, direction_id =1, stop_id= '8081', short_name = '1', start_date= 20210901)
+    # x,y = compute_time_difference(predict_time)
+    real_time = sorted(map(time_to_sec, real_time))
+    predict_time = sorted(map(time_to_sec, predict_time))
+    print(real_time)
+    print("real_time is :")
+    real_time = remove_duplicates(real_time)
+    print(real_time)
+    print(len(real_time))
+    print("############################")
+    print("theorical time is :")
+    print(predict_time)
+    
+    
