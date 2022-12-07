@@ -29,33 +29,29 @@ def stop_id_render(app: Dash):
     @app.callback(
                     Output(ids.STOP, "disabled"),
                     [Input(ids.SELECTED_LINE,'data'), 
-                    Input(ids.DIRECTION_1, 'value'), 
-                    Input(ids.DIRECTION_2, 'value')],
-                     prevent_initial_call=True
+                    State(ids.DIRECTION_1, 'value'), 
+                    State(ids.DIRECTION_2, 'value')],
+                    prevent_initial_call=True
         )
     def enable_dropdown_stop(line_name, dir_left, dir_right): 
-        button_clicked = ctx.triggered_id
-        if button_clicked == ids.DIRECTION_1: 
-            print("the chosen line is: ", line_name, "\nThe chosen left dir is: ", dir_left)
-        elif button_clicked == ids.DIRECTION_2: 
-            print("the chosen line is: ", line_name, "\nThe chosen right dir is: ", dir_right)            
-        return button_clicked is None and line_name is None
+        return ctx.triggered_id is None and line_name is None
 
     @app.callback(
                 Output(ids.STOP, 'options'),
                 [State(ids.SELECTED_LINE,'data'),
-                Input(ids.DIRECTION_1, 'value'),
-                Input(ids.DIRECTION_2, 'value')
+                State(ids.DIRECTION_1, 'value'),
+                State(ids.DIRECTION_2, 'value'),
+                Input(ids.DIRECTION_1,"className"),
+                Input(ids.DIRECTION_2,"className"),
                 ], prevent_initial_call=True
     )
-    def query_route_short_name(line_name, dir_left, dir_right):
-        button_clicked = ctx.triggered_id
-        print(button_clicked)
+    def query_route_short_name(line_name, dir_left, dir_right,left_class,right_class):
         direction = ""
-        if button_clicked == ids.DIRECTION_1: 
-            direction = dir_left
-        elif button_clicked == ids.DIRECTION_2: 
+        if "direction--inactive" in left_class: 
             direction = dir_right
+        elif "direction--inactive" in right_class: 
+            direction = dir_left
+        print("The direction is ", direction)
         start_time = process_time()
         query = (
             "select distinct tr.direction_id"
@@ -65,7 +61,7 @@ def stop_id_render(app: Dash):
             )
         connection = get_connection()
         direction = int(pd.read_sql(query, params=[which_type(line_name), line_name,direction], con= connection).iat[0,0])
-        print("The direction is ",type(direction))
+        print("The direction is ",direction)
         
         query = (
             "select distinct CONCAT(st.stop_id,' - ',s.stop_name) as stops, st.stop_sequence "
