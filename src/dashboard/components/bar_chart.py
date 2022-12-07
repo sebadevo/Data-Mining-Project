@@ -5,7 +5,7 @@ from dash.dependencies import Output, Input, State
 from . import ids
 from utils import get_interval
 
-from preprocessing import compute_time_difference
+from preprocessing import compute_time_difference, convert_dataframe_to_time_sorted
 import pandas as pd
 from database.load_db import get_connection
 
@@ -56,6 +56,7 @@ def render(app: Dash) -> html.Div:
             data = data[data.saturday == 1]
         else: 
             data = data[data.sunday == 1]
+        data = convert_dataframe_to_time_sorted(data)
         x,y = compute_time_difference(data)
         lines = get_interval(x,y)
 

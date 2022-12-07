@@ -5,7 +5,7 @@ from dash.dependencies import Output, Input, State
 from . import ids
 from utils import get_interval
 
-from preprocessing import compute_time_difference
+from preprocessing import compute_time_difference, convert_dataframe_to_time_sorted
 import pandas as pd
 from database.load_db import get_connection
 
@@ -53,8 +53,12 @@ def render(app: Dash) -> html.Div:
         # else: 
         #     data = data[data.sunday == 1]
         data.rename(columns={'time':'arrival_time'}, inplace=True)
-        print("debug: ", data.head())
+        data = convert_dataframe_to_time_sorted(data)
+        print("debug3: ", data[:10])
+
         x,y = compute_time_difference(data)
+        # print("debug3: ", x)
+
         lines = get_interval(x,y)
 
         def create_data(x,y):
@@ -64,6 +68,7 @@ def render(app: Dash) -> html.Div:
             return data
 
         data = create_data(x,y)
+        print("debug: ", data.head())
         fig = px.bar(data,x="x",y="y")
         fig.update_traces(width=0.05)
 
