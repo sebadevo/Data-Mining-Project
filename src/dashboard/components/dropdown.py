@@ -184,21 +184,37 @@ def real_date_render(app: Dash):
                     State(ids.DAY, 'value')
                     ], prevent_initial_call=True
         )
-    def get_specific_date(date, day):
-        date_df = pd.DataFrame({'date': pd.date_range(start= date.split(" - ")[0],end= date.split(" - ")[1])})
-        date_df['date'] = pd.to_datetime(date_df['date'])
-        date_df['dayOfWeek'] = date_df['date'].dt.day_name()
-        
-        Weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-
-        if day == "Weekday": 
-            date_df.drop(date_df[~date_df.dayOfWeek.isin(Weekdays)].index, inplace=True)
-        else: 
-            date_df.drop(date_df[~(date_df.dayOfWeek == day)].index, inplace=True)
-        
-
-        date_df['res'] = date_df[["date", "dayOfWeek"]].apply(lambda x: ' ; '.join(x.astype(str)), axis=1)
-        return date_df.res.unique()
+    def get_specific_date(date, day_type):
+        start_date, end_date = date.split(" - ")
+        start_year, start_month, start_day = int(start_date[:4]), int(start_date[4:6]), int(start_date[6:])
+        end_year, end_month, end_day = int(end_date[:4]), int(end_date[4:6]), int(end_date[6:])
+        start_date = datetime.date(start_year, start_month, start_day)
+        end_date = datetime.date(end_year, end_month, end_day)
+        delta = datetime.timedelta(days=1)
+        dates = []
+        while start_date <= end_date:
+            day_value = start_date.weekday()
+            date = "".join(str(start_date).split("-"))
+            if day_value  < 5 and day_type == "Weekday":
+                if day_value == 0:
+                    day = "Monday"
+                elif day_value == 1:
+                    day = "Tuesday"
+                elif day_value == 2:
+                    day = "Wednesday"
+                elif day_value == 3:
+                    day = "Thursday"
+                elif day_value == 4:
+                    day = "Friday"
+                dates.append(f"{date} - {day}")
+            elif day_value  == 5 and day_type == "Saturday":
+                day = "Saturday"
+                dates.append(f"{date} - {day}")
+            elif day_value  == 6 and day_type == "Sunday":
+                day = "Sunday"
+                dates.append(f"{date} - {day}")
+            start_date += delta
+        return dates
 
     return dcc.Dropdown(
                 id="real-date-name",

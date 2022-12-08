@@ -20,6 +20,16 @@ def read_database_version():
     except (Exception, mysql.connector.Error) as error:
         print("Error while getting data", error)
 
+def get_real_data(date, lineID, pointID, distanceFromPoint, duplicates):
+    query = (
+            "select rd.time"
+            " from real_data rd" 
+            " where rd.date = %s and rd.lineID = %s and rd.pointID = %s and rd.distanceFromPoint <= %s"
+            )
+    connection = get_connection()
+    data = pd.read_sql(query, params=[date, lineID, pointID, distanceFromPoint], con= connection)
+    return data['time'].tolist()
+
 def load_dataframe(day,type,direction_id, stop_id, short_name, start_date):
     if day == Day.Saterday:
         query = ("select st.arrival_time, st.stop_id, tr.route_id, tr.service_id, tr.trip_headsign, tr.direction_id, ro.routes_short_name, ro.routes_long_name, ca.saturday, ca.sunday, ca.monday, ca.start_date"

@@ -32,12 +32,13 @@ def render(app: Dash) -> html.Div:
     @app.callback(
             Output(ids.REAL_DATA_CHART, "children"),
             State(ids.STOP, 'value'),
-            Input(ids.DATE, 'value'),
+            State(ids.DATE, 'value'),
             State(ids.DAY, 'value'),
+            Input("real-date-name", 'value'),
             State(ids.SELECTED_LINE,'data'),
             prevent_initial_call=True
             )
-    def update_bar_chart(stop_name,date_name,day_name, line_name) -> html.Div:  
+    def update_bar_chart(stop_name,date_name,day_name, real_date, line_name) -> html.Div:  
         stop_name = stop_name.split(' - ')[0]
         query = (
             "select time, lineID, pointID, date"

@@ -35,10 +35,10 @@ def real_data_processing(date, lineID, pointID, distanceFromPoint, duplicates):
     print(data[4:15])
     return data['time'].tolist()
 
-def remove_duplicates(real):
+def remove_duplicates(real, threshold=45):
     i = len(real)-1
     while i > 0:
-        if real[i] - 45 < real[i-1]:
+        if real[i] - threshold < real[i-1]:
             real.pop(i)
         i -= 1
     return real

@@ -15,8 +15,8 @@ def time_to_sec(time:str):
     time = time.split(":")
     hours, minutes, seconds = int(time[0]), int(time[1]), int(time[2])
     if hours < 5:
-        return 86400 + hours*60*60+minutes*60+seconds
-    return hours*60*60+minutes*60+seconds
+        return 86400 + hours*3600+minutes*60+seconds
+    return hours*3600+minutes*60+seconds
 
 
 
@@ -213,3 +213,79 @@ def sec_to_time(time:int):
     minutes = (time % 3600)//60
     seconds = time % 60
     return f'{hours}:{minutes}:{seconds}'
+
+def remove_duplicates(real, threshold=45):
+    i = len(real)-1
+    while i > 0:
+        if real[i] - threshold < real[i-1]:
+            real.pop(i)
+        i -= 1
+    return real
+
+def find_match_V1(short, long):
+    shorted_index = []
+    j = 0
+    for i in range(len(short)):
+        index = 0
+        dist = 9999
+        for t in range(6):
+            a = min(max(0, j+t), len(long)-1)
+            if a not in shorted_index and abs(short[i]-long[a]) < dist:
+                dist = abs(short[i]-long[a])
+                index = a
+        j = index 
+        shorted_index.append(j)
+        j+=1
+    shorted = sorted([long[i] for i in shorted_index])
+    return short, shorted
+
+def find_match_V2(short, long):
+    index_short_list = []
+    index_long_list = []
+    while len(index_short_list) < len(short):
+        column = []
+        for i in range(len(short)):
+            if i not in index_short_list:
+                min_value = 9999
+                index_short = None
+                index_long = None
+                for j in range(len(long)):
+                    if j not in index_long_list and abs(long[j] - short[i]) < min_value:
+                        min_value = abs(long[j]-short[i])
+                        index_short = i
+                        index_long = j
+                if index_long:
+                    column.append([min_value, index_short, index_long])
+        for item in column:
+            index_long = item[2]
+            if index_long not in index_long_list:
+                index_short = item[1]
+                min_value = item[0]
+                for item_ in column:
+                    if item_[2] == index_long and min_value > item_[0]:
+                        min_value = item_[0]
+                        index_short = item_[1]
+                index_short_list.append(index_short)
+                index_long_list.append(index_long)
+
+    shortened = sorted([long[i] for i in index_long_list])
+    return short, shortened
+
+def punctuality(scheduled_times, real_times):
+    time_diffs = [abs(scheduled_times[i]-real_times[i]) for i in range(len(scheduled_times))]
+    quality_index = 1 - (mean(time_diffs) / (12*60))
+    return max(0, quality_index)
+
+def regularity(scheduled_times, real_times):
+    scheduled_headways = [scheduled_times[i+1]-scheduled_times[i] for i in range(len(scheduled_times)-1)]
+    real_headways = [real_times[i+1]-real_times[i] for i in range(len(real_times)-1)]
+    awt = sum(h**2 for h in real_headways) / (2*sum(real_headways))
+    swt = sum(h**2 for h in scheduled_headways) / (2*sum(scheduled_headways))
+    ewt = abs(awt - swt)
+    quality_index = 1 - (ewt/swt)
+    return max(0, quality_index)
+
+def hamronic_mean(qualities):
+    return 1/sum(1/quality for quality in qualities)
+
+
