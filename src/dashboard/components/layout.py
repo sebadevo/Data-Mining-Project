@@ -17,7 +17,7 @@ def create_layout(app: Dash) -> html.Div:
             create_dropdown_menu(app),
             html.H1("Headways",id="headway"),
             bar_chart.render(app),
-            real_data_chart.render(app),
+            # real_data_chart.render(app),
             html.H1("Statistics",id="statistics"),
             html.H1("About",id="about"),])
 
@@ -27,6 +27,7 @@ def create_dropdown_menu(app):
                 dropdown.stop_id_render(app), 
                 dropdown.day_render(app),
                 dropdown.date_render(app),
+                dropdown.real_date_render(app),
                 ], 
      )
 

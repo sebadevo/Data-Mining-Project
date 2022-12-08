@@ -11,3 +11,4 @@ SELECTED_LINE = 'actual_line'
 STOP = "stop-name"
 DAY = "day-name"
 DATE = "date-name"
+REAL_DATE = 'real-date-name'

@@ -5,7 +5,7 @@ from dash.dependencies import Output, Input, State
 from . import ids
 from utils import get_interval
 
-from preprocessing import compute_time_difference, convert_dataframe_to_time_sorted
+from preprocessing import compute_time_difference, convert_dataframe_to_time_sorted, real_data_processing
 import pandas as pd
 from database.load_db import get_connection
 
@@ -51,6 +51,8 @@ def render(app: Dash) -> html.Div:
         data.rename(columns={'time':'arrival_time'}, inplace=True)
         if( len(data) < 5):
             return html.Div(html.H4(f"There is not enough data to plot a graph (number of lines in the data is: {len(data)})"))
+        
+        # data = real_data_processing()
         data = convert_dataframe_to_time_sorted(data)
 
         x,y = compute_time_difference(data)

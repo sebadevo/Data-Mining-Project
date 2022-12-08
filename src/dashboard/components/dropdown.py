@@ -2,6 +2,7 @@ from dash import Dash, dcc, ctx
 from dash.dependencies import Output, Input, State
 
 import pandas as pd
+import datetime
 
 from database.load_db import get_connection
 from time import process_time
@@ -161,4 +162,48 @@ def date_render(app: Dash):
                 className='form-dropdown drop',
                 disabled=True,
                 placeholder="Select the date",
+                persistence_type='memory') 
+
+
+# # --------------------SPECIFIC DATE DROPDOWN--------------------
+# # --------------------------------------------------------------
+
+def real_date_render(app: Dash):
+    @app.callback(
+            Output(ids.REAL_DATE, "disabled"),
+            Input(ids.DATE,'value'),
+            prevent_initial_call=True
+    )
+    def enable_dropdown_stop(date): 
+        return not date
+
+    @app.callback(
+                    Output(ids.REAL_DATE, 'options'), 
+                    [
+                    Input(ids.DATE, 'value'), 
+                    State(ids.DAY, 'value')
+                    ], prevent_initial_call=True
+        )
+    def get_specific_date(date, day):
+        date_df = pd.DataFrame({'date': pd.date_range(start= date.split(" - ")[0],end= date.split(" - ")[1])})
+        date_df['date'] = pd.to_datetime(date_df['date'])
+        date_df['dayOfWeek'] = date_df['date'].dt.day_name()
+        
+        Weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+        if day == "Weekday": 
+            date_df.drop(date_df[~date_df.dayOfWeek.isin(Weekdays)].index, inplace=True)
+        else: 
+            date_df.drop(date_df[~(date_df.dayOfWeek == day)].index, inplace=True)
+        
+
+        date_df['res'] = date_df[["date", "dayOfWeek"]].apply(lambda x: ' ; '.join(x.astype(str)), axis=1)
+        return date_df.res.unique()
+
+    return dcc.Dropdown(
+                id="real-date-name",
+                clearable=False,
+                className='form-dropdown drop',
+                disabled=True,
+                placeholder="Select the date for the real data",
                 persistence_type='memory') 
