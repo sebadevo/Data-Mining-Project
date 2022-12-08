@@ -50,7 +50,7 @@ def render(app: Dash) -> html.Div:
         print(f"The time taken is {process_time() - start_time}")
         data.rename(columns={'time':'arrival_time'}, inplace=True)
         if( len(data) < 5):
-            return html.Div(html.H4("There is not enough data to plot a graph."))
+            return html.Div(html.H4(f"There is not enough data to plot a graph (number of lines in the data is: {len(data)})"))
         data = convert_dataframe_to_time_sorted(data)
 
         x,y = compute_time_difference(data)
