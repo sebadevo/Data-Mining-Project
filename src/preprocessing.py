@@ -4,6 +4,8 @@ from sklearn import cluster
 
 from dashboard.enumeration import Day, Type
 from utils import time_to_sec
+from database.load_db import get_connection
+
 
 
 def load_data_and_merge(type,route,trips,stop_times,calendar):
@@ -46,3 +48,14 @@ def retrieve_info_title(data,stop_id):
         trip_headsign = "HEADSIGN"
         route_name = "ROUTE NAME"
     return trip_headsign,route_name, name_stop
+
+def real_data_processing(date, lineID, pointID, distanceFromPoint, duplicates):
+    query = (
+            "select rd.time"
+            " from real_data rd" 
+            " where rd.date = %s and rd.lineID = %s and rd.pointID = %s and rd.distanceFromPoint <= %s"
+            )
+    connection = get_connection()
+    data = pd.read_sql(query, params=[date, lineID, pointID, distanceFromPoint], con= connection)
+    print(data[4:15])
+    return data['time'].tolist()

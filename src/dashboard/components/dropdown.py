@@ -78,7 +78,9 @@ def stop_id_render(app: Dash):
                 clearable=False,
                 className='form-dropdown drop',
                 placeholder="Select the stop",
-                persistence="numeric")
+                persistence="numeric",
+                persistence_type='memory'
+                )
 
 
 # # --------------------DAY DROPDOWN------------------------------
@@ -106,7 +108,8 @@ def day_render(app: Dash):
                 disabled=True,
                 clearable=False,
                 className='form-dropdown drop',
-                placeholder="Select the day") #To check ? 
+                placeholder="Select the day", 
+                persistence_type='memory') #To check ? 
 
 # # --------------------DATE DROPDOWN-----------------------------
 # # --------------------------------------------------------------
@@ -157,4 +160,5 @@ def date_render(app: Dash):
                 clearable=False,
                 className='form-dropdown drop',
                 disabled=True,
-                placeholder="Select the date",) 
+                placeholder="Select the date",
+                persistence_type='memory') 

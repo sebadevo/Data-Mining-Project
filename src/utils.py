@@ -18,6 +18,8 @@ def time_to_sec(time:str):
         return 86400 + hours*60*60+minutes*60+seconds
     return hours*60*60+minutes*60+seconds
 
+
+
 def get_times(direction:int, weekday:int, route_short_name:str, stop_id:str, start_date:int, dataframe:pd.DataFrame):
     """generates a list of all the arrival time at a stop station given *All arguments*.
 

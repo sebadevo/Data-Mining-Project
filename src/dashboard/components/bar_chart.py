@@ -57,39 +57,38 @@ def render(app: Dash) -> html.Div:
         else: 
             data = data[data.sunday == 1]
         
-        if (len(data) > 5):
-            data = convert_dataframe_to_time_sorted(data)
-            x,y = compute_time_difference(data)
-            lines = get_interval(x,y)
-
-            def create_data(x,y):
-                data = pd.DataFrame()
-                data["x"] = x
-                data["y"] = y
-                return data
-
-            data = create_data(x,y)
-            fig = px.bar(data,x="x",y="y")
-            fig.update_traces(width=0.05)
-
-            for i in range(len(lines)-1):
-                beg = x.index(lines[i])
-                end = x.index(lines[i+1])
-                if i != len(lines)-2:
-                    end -= 1
-
-                average = mean(y[beg:end])
-                if average > 12 :
-                    fig.add_shape(type="rect",
-                        x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=max(y[beg:end])+1.5,
-                    line=dict(color='red'))
-                else :
-                    fig.add_shape(type="rect",
-                        x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=mean(y[beg:end])+3,
-                    line=dict(color='green'))
-            return html.Div([html.H4("Theoretical Data"),dcc.Graph(figure=fig)], id=ids.BAR_CHART)
-        else:
+        if (len(data) < 5):
             return html.Div(html.H4("Sorry there is not enough data to compute a graph"))
+        data = convert_dataframe_to_time_sorted(data)
+        x,y = compute_time_difference(data)
+        lines = get_interval(x,y)
+
+        def create_data(x,y):
+            data = pd.DataFrame()
+            data["x"] = x
+            data["y"] = y
+            return data
+
+        data = create_data(x,y)
+        fig = px.bar(data,x="x",y="y")
+        fig.update_traces(width=0.05)
+
+        for i in range(len(lines)-1):
+            beg = x.index(lines[i])
+            end = x.index(lines[i+1])
+            if i != len(lines)-2:
+                end -= 1
+
+            average = mean(y[beg:end])
+            if average > 12 :
+                fig.add_shape(type="rect",
+                    x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=max(y[beg:end])+1.5,
+                line=dict(color='red'))
+            else :
+                fig.add_shape(type="rect",
+                    x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=mean(y[beg:end])+3,
+                line=dict(color='green'))
+        return html.Div([html.H4("Theoretical Data"),dcc.Graph(figure=fig)], id=ids.BAR_CHART)
     return html.Div(id=ids.BAR_CHART)
 
 
