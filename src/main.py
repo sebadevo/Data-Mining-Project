@@ -44,28 +44,27 @@ def remove_duplicates(real):
     return real
 
 def find_match_drop(real_times, scheduled_times):
-    shorted = []
+    shorted_index = []
     j = 0
     for i in range(len(real_times)):
         index = 0
-        dist = 9999999
+        dist = 9999
         for t in range(6):
-            if abs(real_times[i]-scheduled_times[min(max(0, j+t), len(scheduled_times)-1)]) < dist:
-                dist = abs(real_times[i]-scheduled_times[min(max(0, j+t), len(scheduled_times)-1)])
-                index = min(max(0, j+t), len(scheduled_times)-1)
+            a = min(max(0, j+t), len(scheduled_times)-1)
+            if a not in shorted_index and abs(real_times[i]-scheduled_times[a]) < dist:
+                dist = abs(real_times[i]-scheduled_times[a])
+                index = a
         j = index 
-        shorted.append(scheduled_times[j])
+        shorted_index.append(j)
         j+=1
+    shorted = sorted([scheduled_times[i] for i in shorted_index])
     return real_times, shorted
 
 
 def find_match(short, long):
     index_short_list = []
     index_long_list = []
-    test = 0
     while len(index_short_list) < len(short):
-        print("I'm in loop :", test)
-        test +=1
         column = []
         for i in range(len(short)):
             if i not in index_short_list:
@@ -73,32 +72,26 @@ def find_match(short, long):
                 index_short = None
                 index_long = None
                 for j in range(len(long)):
-                    if j not in index_long_list:
-                        if abs(long[j]-short[i]) < min_value:
-                            min_value = abs(long[j]-short[i])
-                            index_short = i
-                            index_long = j
-                print(min_value, index_short, index_long)
-                column.append([min_value, index_short, index_long])
-        for i in range(len(column)):
-            index_long = column[i][2]
+                    if j not in index_long_list and abs(long[j] - short[i]) < min_value:
+                        min_value = abs(long[j]-short[i])
+                        index_short = i
+                        index_long = j
+                if index_long:
+                    column.append([min_value, index_short, index_long])
+        for item in column:
+            index_long = item[2]
             if index_long not in index_long_list:
-                index_short = column[i][1]
-                min_value = column[i][0]
-                for j in range(len(column)):
-                    if column[j][2] == index_long and min_value > column[j][0]:
-                        min_value = column[j][0]
-                        index_short = column[j][1]
+                index_short = item[1]
+                min_value = item[0]
+                for item_ in column:
+                    if item_[2] == index_long and min_value > item_[0]:
+                        min_value = item_[0]
+                        index_short = item_[1]
                 index_short_list.append(index_short)
                 index_long_list.append(index_long)
 
-
-    shortened  = [long[i] for i in index_long_list]
-    shortened = sorted(shortened)
+    shortened = sorted([long[i] for i in index_long_list])
     return short, shortened
-
-
-        
 
 
 if __name__ == "__main__":
