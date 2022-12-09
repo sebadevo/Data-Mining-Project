@@ -76,8 +76,7 @@ def find_match(short, long):
                         min_value = abs(long[j]-short[i])
                         index_short = i
                         index_long = j
-                if index_long:
-                    column.append([min_value, index_short, index_long])
+                column.append([min_value, index_short, index_long])
         for item in column:
             index_long = item[2]
             if index_long not in index_long_list:

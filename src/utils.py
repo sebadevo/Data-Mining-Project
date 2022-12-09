@@ -2,6 +2,12 @@ import pandas as pd
 from math import floor, ceil
 from statistics import mean
 
+weekday_weights  = [4, 1, 0, 0, 0, 0, 20, 71, 100, 64, 35, 47, 61, 61, 66, 76, 64, 84, 76, 64, 48, 33, 20, 11]
+saturday_weights = [11, 1, 0, 0, 0, 3, 8, 14, 23, 32, 40, 46, 50, 52, 54, 57, 61, 62, 58, 49, 36, 26, 24, 23]
+sunday_weights   = [1, 0, 0, 0, 0, 0, 4, 10, 17, 25, 33, 39, 44, 46, 47, 49, 51, 51, 47, 40, 30, 20, 11, 5]
+
+Weights = {"Weekday":weekday_weights, "Saturday":saturday_weights, "Sunday":sunday_weights}
+
 def time_to_sec(time:str):
     """converts a string time format into an int seconds format.
 
@@ -17,7 +23,6 @@ def time_to_sec(time:str):
     if hours < 5:
         return 86400 + hours*3600+minutes*60+seconds
     return hours*3600+minutes*60+seconds
-
 
 
 def get_times(direction:int, weekday:int, route_short_name:str, stop_id:str, start_date:int, dataframe:pd.DataFrame):
@@ -37,6 +42,7 @@ def get_times(direction:int, weekday:int, route_short_name:str, stop_id:str, sta
     data = dataframe.loc[(dataframe['direction_id'] == direction) & (dataframe['weekday'] == weekday) & (dataframe['route_short_name'] == route_short_name) & (dataframe['stop_id'] == stop_id)  & (dataframe['start_date'] == start_date)]
     return data['arrival_time'].tolist()
 
+
 def map_to_min(arrival_times:list):
     """transfroms the arrival times, which is a list of str of time, into a sorted list of the times in minutes.
 
@@ -50,20 +56,23 @@ def map_to_min(arrival_times:list):
     arrival_times_minutes = list(arrival_times_minutes)
     return sorted(arrival_times_minutes)
 
-def get_headway(arrival_times_minutes):
+
+def get_headway(arrival_times):
     """generates a headway.
 
     Args:
-        arrival_times_minutes (list): list of the arrival times in minutes at a stop.
+        arrival_times (list): list of the arrival times in seconds at a stop.
 
     Returns:
-        tuple(list, list): returns the time associated with each headway. (the times of the day are in x, the headway are in y)
+        tuple(list, list): returns the time associated with each headway. 
+                           (the times of the day in hours are in x, the headway in miniutes are in y)
     """
     x, y = [], []
-    for i in range(len(arrival_times_minutes)-1):
-        y.append(round((arrival_times_minutes[i+1]-arrival_times_minutes[i])/60, 2))
-        x.append(round(arrival_times_minutes[i]/3600, 2))
+    for i in range(len(arrival_times)-1):
+        y.append(round((arrival_times[i+1]-arrival_times[i])/60, 2))
+        x.append(round(arrival_times[i]/3600, 2))
     return x, y
+
 
 def gradient(y):
     """computes a special gradient to detect when there are variation in the headway.
@@ -117,8 +126,10 @@ def get_interval(x, y):
 
     return lines
 
+
 def check_mode(y, i, distance=7, threshold=4):
     return "zero" if sum(y[i:i+distance]) < threshold else "diff"
+
 
 def diff_mode(y, start, i, index):
     count_zeros = 0
@@ -137,6 +148,7 @@ def diff_mode(y, start, i, index):
         i+=1   
     return i, index
 
+
 def zero_mode(y, start, i, index):
     count_diff = 0
     temp = 0
@@ -153,6 +165,7 @@ def zero_mode(y, start, i, index):
         i+=1
     return i, index
 
+
 def check_index(i, index, y):
     if index > len(y) - 4:
             index = len(y)-1
@@ -163,11 +176,13 @@ def check_index(i, index, y):
         index = len(y)-1
     return i, index
 
+
 def mean_filter(y, k=3):
     output = [y[:floor(k/2)]] 
     output.extend(mean(y[i-floor(k/2):i+floor(k/2)]) for i in range(floor(k/2), len(y)-floor(k/2)))
     output.append(y[len(y)-floor(k/2):])
     return output
+
 
 def get_categories(x, y, intervals):
     categories = []
@@ -194,6 +209,7 @@ def load_data():
     calendar_data = pd.read_csv('../../data/gtfs23Sept/calendar.csv', sep=",")
     return routes_data, trips_data, stop_times_data, calendar_data
 
+
 def get_arrival_time(routes_data, trips_data, stop_times_data, calendar_data, 
                      route_type, direction, day, route_short_name, stop_id, start_date):
     trips_routes_merge = pd.merge(trips_data, routes_data, on='route_id')
@@ -208,11 +224,13 @@ def get_arrival_time(routes_data, trips_data, stop_times_data, calendar_data,
     data = dataframe.loc[(dataframe['direction_id'] == direction) & (dataframe['weekday'] == 1) & (dataframe['route_short_name'] == route_short_name) & (dataframe['stop_id'] == stop_id)  & (dataframe['start_date'] == start_date)]
     return data['arrival_time'].tolist(), data
 
+
 def sec_to_time(time:int):
     hours = time//3600
     minutes = (time % 3600)//60
     seconds = time % 60
     return f'{hours}:{minutes}:{seconds}'
+
 
 def remove_duplicates(real, threshold=45):
     i = len(real)-1
@@ -221,6 +239,7 @@ def remove_duplicates(real, threshold=45):
             real.pop(i)
         i -= 1
     return real
+
 
 def find_match_V1(short, long):
     shorted_index = []
@@ -239,6 +258,7 @@ def find_match_V1(short, long):
     shorted = sorted([long[i] for i in shorted_index])
     return short, shorted
 
+
 def find_match_V2(short, long):
     index_short_list = []
     index_long_list = []
@@ -254,8 +274,7 @@ def find_match_V2(short, long):
                         min_value = abs(long[j]-short[i])
                         index_short = i
                         index_long = j
-                if index_long:
-                    column.append([min_value, index_short, index_long])
+                column.append([min_value, index_short, index_long])
         for item in column:
             index_long = item[2]
             if index_long not in index_long_list:
@@ -271,21 +290,108 @@ def find_match_V2(short, long):
     shortened = sorted([long[i] for i in index_long_list])
     return short, shortened
 
+
 def punctuality(scheduled_times, real_times):
     time_diffs = [abs(scheduled_times[i]-real_times[i]) for i in range(len(scheduled_times))]
     quality_index = 1 - (mean(time_diffs) / (12*60))
     return max(0, quality_index)
 
-def regularity(scheduled_times, real_times):
-    scheduled_headways = [scheduled_times[i+1]-scheduled_times[i] for i in range(len(scheduled_times)-1)]
-    real_headways = [real_times[i+1]-real_times[i] for i in range(len(real_times)-1)]
+
+def regularity(scheduled_headways, real_headways):
     awt = sum(h**2 for h in real_headways) / (2*sum(real_headways))
     swt = sum(h**2 for h in scheduled_headways) / (2*sum(scheduled_headways))
     ewt = abs(awt - swt)
     quality_index = 1 - (ewt/swt)
     return max(0, quality_index)
 
+
 def hamronic_mean(qualities):
     return 1/sum(1/quality for quality in qualities)
+
+def stop_score(qualities, interval, day, precision=60):
+    """computes the score for a given stop. 
+    The length of the interval list should be 1 greater then of qualities.
+
+    Args:
+        qualities (list): list of scores between 0 and 1 representing the quality for a time frame (associeted to the intervals).
+        interval (list): list of int containing the interval for each quality score.
+        day (str): The day it represents (either Weekday, Saturday or Sunday).
+        precision (int): The precision of the measures. A higher number leads to a higher precision. A precision of 1 is equal to a quality per hour,
+                         60 to a quality per minute, 3600 to a quality per second. Default is 60.
+    return:
+        score (int): score between 0 and 1 representing the quality at a stop.
+    """
+    if day in Weights:
+        weights = Weights[day]
+    else: 
+        print(f"the day received is not in the available days : {list(Weights.keys())}. day received =", day)
+        return 0
+    if len(qualities) != len(interval) -1:
+        print("the qualities and interval don't correspond. qualities = ", qualities, "interval = ", interval)
+        return 0
+
+    interval = [i*precision for i in interval] # preperation variables
+    values = 24*precision
+    adjusted_qualities = []
+    length = len(qualities)
+    j = 0
+
+    for i in range(max(ceil(interval[-1]), values)): # converting the quality to a one to one match with time with the required precision.
+        if j < length:
+            if i < interval[0]:
+                adjusted_qualities.append(0)
+            elif interval[j] <= i < interval[j+1]:
+                adjusted_qualities.append(qualities[j])
+            elif i >= interval[j+1]:
+                j+=1
+                if j < length:
+                    adjusted_qualities.append(qualities[j])
+                else:
+                    adjusted_qualities.append(0)
+        else:
+            adjusted_qualities.append(0)
+
+    for i in range(len(adjusted_qualities)-values): # adjusting the time from [0,R] to [0,values - 1]
+        adjusted_qualities[i] = adjusted_qualities[i+values]
+    adjusted_qualities = adjusted_qualities[:values]
+    weights = [weights[floor(i/precision)] for i in range(values)]
+
+    # compute the integral of the scalar product betwen adjusted_qualities and weights divided by integral of wieghts
+    score = sum(q * w for q, w in zip(adjusted_qualities, weights))/sum(weights)
+    return round(score,4)
+
+
+def interval_score(scheduled_times, real_times, scheduled_headways_x, real_headways_x, scheduled_headways_y, real_headways_y, intervals):
+    """computes the score for each interval based on the average headway. If the average headway is over 12 minutes, then the 
+    poncutality metric will be used, otherwise the regularity metric will be used. (refer to get_categories for more details).
+
+    Args:
+        schedule_times (list): list of the scheduled times in seconds.
+        real_times (list): list of the real arrival times at a stop in seconds.
+        scheduled_headways_x (list): list of scheaduled_headways on x axis in hours.
+        scheduled_headways_y (list): list of scheaduled_headways on y axis in minutes.
+        real_headways_x (list): list of real_headways on x axis in hours.
+        real_headways_y (list): list of real_headways on y axis in minutes.
+        interval (list): list of times seperating each interval in which to compute the metrics.
+    
+    return:
+        qualities (list): list of (int) quality for each interval.
+    """
+    categories = get_categories(scheduled_headways_x, scheduled_headways_y, intervals)
+    qualities = []
+    length = len(intervals)-1
+    for i in range(length):
+        beg = scheduled_headways_x.index(intervals[i])
+        end = scheduled_headways_x.index(intervals[i+1])
+        if i != length-1:
+            end -= 1
+        if categories[i] == "P":
+            end += 1
+            score = punctuality(scheduled_times[beg:end], real_times[beg:end])
+        elif categories[i] == "R":
+            score = regularity(scheduled_headways_y[beg:end], real_headways_y[beg:end])
+        qualities.append(score)
+
+    return qualities
 
 
