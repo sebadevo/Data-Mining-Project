@@ -62,7 +62,7 @@ def render(app: Dash) -> html.Div:
         data = convert_dataframe_to_time_sorted(data)
         x,y = compute_time_difference(data)
         lines = get_interval(x,y)
-
+        print("[Debug] : ", lines)
         def create_data(x,y):
             data = pd.DataFrame()
             data["x"] = x
