@@ -222,7 +222,7 @@ def remove_duplicates(real, threshold=45):
         i -= 1
     return real
 
-def find_match_V1(short, long):
+def find_match_V1(short, long): 
     shorted_index = []
     j = 0
     for i in range(len(short)):
@@ -242,7 +242,10 @@ def find_match_V1(short, long):
 def find_match_V2(short, long):
     index_short_list = []
     index_long_list = []
+    test = 0
     while len(index_short_list) < len(short):
+        print(test)
+        test +=1
         column = []
         for i in range(len(short)):
             if i not in index_short_list:
@@ -254,8 +257,7 @@ def find_match_V2(short, long):
                         min_value = abs(long[j]-short[i])
                         index_short = i
                         index_long = j
-                if index_long:
-                    column.append([min_value, index_short, index_long])
+                column.append([min_value, index_short, index_long])
         for item in column:
             index_long = item[2]
             if index_long not in index_long_list:
@@ -268,7 +270,9 @@ def find_match_V2(short, long):
                 index_short_list.append(index_short)
                 index_long_list.append(index_long)
 
-    shortened = sorted([long[i] for i in index_long_list])
+    to_sort = [long[i] for i in index_long_list]
+    shortened = sorted(to_sort)
+
     return short, shortened
 
 def punctuality(scheduled_times, real_times):
