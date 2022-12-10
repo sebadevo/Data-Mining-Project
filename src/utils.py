@@ -242,10 +242,7 @@ def find_match_V1(short, long):
 def find_match_V2(short, long):
     index_short_list = []
     index_long_list = []
-    test = 0
     while len(index_short_list) < len(short):
-        print(test)
-        test +=1
         column = []
         for i in range(len(short)):
             if i not in index_short_list:

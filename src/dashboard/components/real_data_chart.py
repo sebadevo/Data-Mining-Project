@@ -43,16 +43,16 @@ def render(app: Dash) -> html.Div:
         real_date_name = real_date_name.split('-')[0]
         if (which_type(line_name)==1): #For metros
             query = ( 
-                "select rd.time, rd.lineID, rd.pointID, rd.date"
+                "select rd.time"
                 " from real_data rd" 
-                " where rd.lineID = %s and rd.pointID = %s"#and rd.date = %s"# and rd.distanceFromPoint = 0"
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint = 0"
                 )
         else : 
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"
             "from the developpers team."))
         connection = get_connection()
         start_time = process_time()
-        real_data = pd.read_sql(query, params=[line_name, stop_name], con= connection) #real_date_name
+        real_data = pd.read_sql(query, params=[line_name, stop_name, real_date_name], con= connection)
         query = (
             "select st.arrival_time, c.monday, c.saturday, c.sunday"
             " from trips tr" 
@@ -74,26 +74,20 @@ def render(app: Dash) -> html.Div:
         time_real = convert_dataframe_to_time_sorted(real_data.time.tolist())
         time_th = convert_dataframe_to_time_sorted(data.arrival_time.tolist())
 
+
         time_real = remove_duplicates(time_real)
 
 
         x,y = compute_time_difference(time_th)
         lines = get_interval(x,y)
 
-
         if (len(time_th) < len(time_real)): 
             time_th, time_real = find_match_V2(time_th, time_real)
-            print("I AM HERE")
-
-
         else: 
             time_real, time_th = find_match_V2(time_real, time_th)
-            print("I AM HERE")
 
 
-
-
-        x,y = compute_time_difference(time_real)
+        x_r,y_r = compute_time_difference(time_real)
         x_th,y_th = compute_time_difference(time_th)
 
         def create_data(x,y):
@@ -102,16 +96,16 @@ def render(app: Dash) -> html.Div:
             data["y"] = y
             return data
 
-        data = create_data(x,y)
+        data = create_data(x_r,y_r)
 
         fig = px.bar(data,x="x",y="y")
         fig.update_traces(width=0.05)
+
         for i in range(len(lines)-1):
             beg = x.index(lines[i])
             end = x.index(lines[i+1])
             if i != len(lines)-2:
                 end -= 1
-
             average = mean(y[beg:end])
             if average > 12 :
                 fig.add_shape(type="rect",
