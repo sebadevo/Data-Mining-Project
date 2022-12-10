@@ -9,6 +9,7 @@
 }
 *, ::after, ::before{
     box-sizing: inherit !important;
+    font-family :Arial, Helvetica, sans-serif;
 }
 #react-entry-point{
     padding: 0;
@@ -32,6 +33,15 @@
     border: 1px solid #111111;
 } */
 
+.metric-plot{
+    text-align: center;
+    margin-top: 20px;
+}
+.metric-plot a{
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: -200px;
+}
 .mynav{
     height: 50px;
     font-size: 20px;
