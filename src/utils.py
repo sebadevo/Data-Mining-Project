@@ -307,7 +307,7 @@ def regularity(scheduled_headways, real_headways):
     return max(0, quality_index)
 
 
-def hamronic_mean(qualities):
+def harmonic_mean(qualities):
     return 1/sum(1/quality for quality in qualities)
 
 def stop_score(qualities, interval, day, precision=60):
