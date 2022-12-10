@@ -287,7 +287,9 @@ def find_match_V2(short, long):
                 index_short_list.append(index_short)
                 index_long_list.append(index_long)
 
-    shortened = sorted([long[i] for i in index_long_list])
+    to_sort = [long[i] for i in index_long_list]
+    shortened = sorted(to_sort)
+
     return short, shortened
 
 

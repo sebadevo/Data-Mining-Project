@@ -28,6 +28,7 @@ def which_date(value):
     return value.split(" - ")
 
 def render(app: Dash) -> html.Div:
+
     @app.callback(
             Output(ids.BAR_CHART, "children"),
             State(ids.STOP, 'value'),
@@ -37,10 +38,9 @@ def render(app: Dash) -> html.Div:
             prevent_initial_call=True
             )
     def update_bar_chart(stop_name,date_name,day_name, line_name) -> html.Div:  
-        # print("the args list: ", which_type(line_name), line_name, stop_name, int(which_date(date_name)[0]), int(which_date(date_name)[1]))
         stop_name = stop_name.split(' - ')[0]
         query = (
-            "select st.stop_id, st.arrival_time, st.departure_time, ro.routes_short_name, ro.routes_long_name, s.stop_name, tr.direction_id, tr.trip_headsign, c.monday, c.saturday, c.sunday, c.start_date, c.end_date"
+            "select st.arrival_time, c.monday, c.saturday, c.sunday"
             " from trips tr" 
             " inner join routes ro on tr.route_id = ro.routes_id"
             " inner join stop_times st on st.trip_id = tr.trip_id"
@@ -59,9 +59,10 @@ def render(app: Dash) -> html.Div:
         
         if (len(data) < 5):
             return html.Div(html.H4("Sorry there is not enough data to compute a graph"))
-        data = convert_dataframe_to_time_sorted(data)
+        data = convert_dataframe_to_time_sorted(data.arrival_time.tolist())
         x,y = compute_time_difference(data)
         lines = get_interval(x,y)
+
 
         def create_data(x,y):
             data = pd.DataFrame()
@@ -88,7 +89,7 @@ def render(app: Dash) -> html.Div:
                 fig.add_shape(type="rect",
                     x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=mean(y[beg:end])+3,
                 line=dict(color='green'))
-        return html.Div([html.H4("Theoretical Data"),dcc.Graph(figure=fig)], id=ids.BAR_CHART)
+        return html.Div([html.H4("Scheduled Data"),dcc.Graph(figure=fig)], id=ids.BAR_CHART)
     return html.Div(id=ids.BAR_CHART)
 
 

@@ -24,8 +24,8 @@ def load_data_and_merge(type,route,trips,stop_times,calendar):
 def filter(data,day, direction_id, stop_id, short_name, start_date):
     return data.loc[(data['direction_id'] == direction_id) & (data[day.value] == 1) & (data['stop_id'] == stop_id) & (data['route_short_name'] == short_name)& (data['start_date'] == start_date)] 
 
-def convert_dataframe_to_time_sorted(data): 
-    arrival_times = data['arrival_time'].tolist()
+def convert_dataframe_to_time_sorted(arrival_times): 
+    # arrival_times = data['arrival_time'].tolist()
     arrival_times_minutes = map(time_to_sec, arrival_times)
     arrival_times_minutes = sorted(arrival_times_minutes)
     return arrival_times_minutes
@@ -49,13 +49,13 @@ def retrieve_info_title(data,stop_id):
         route_name = "ROUTE NAME"
     return trip_headsign,route_name, name_stop
 
-def real_data_processing(date, lineID, pointID, distanceFromPoint, duplicates):
-    query = (
-            "select rd.time"
-            " from real_data rd" 
-            " where rd.date = %s and rd.lineID = %s and rd.pointID = %s and rd.distanceFromPoint <= %s"
-            )
-    connection = get_connection()
-    data = pd.read_sql(query, params=[date, lineID, pointID, distanceFromPoint], con= connection)
-    print(data[4:15])
-    return data['time'].tolist()
+# def real_data_processing(date, lineID, pointID, distanceFromPoint, duplicates):
+#     query = (
+#             "select rd.time"
+#             " from real_data rd" 
+#             " where rd.date = %s and rd.lineID = %s and rd.pointID = %s and rd.distanceFromPoint <= %s"
+#             )
+#     connection = get_connection()
+#     data = pd.read_sql(query, params=[date, lineID, pointID, distanceFromPoint], con= connection)
+#     # print(data[4:15])
+#     return data['time'].tolist()
