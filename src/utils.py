@@ -43,7 +43,7 @@ def get_times(direction:int, weekday:int, route_short_name:str, stop_id:str, sta
     return data['arrival_time'].tolist()
 
 
-def map_to_min(arrival_times:list):
+def map_to_sec(arrival_times:list):
     """transfroms the arrival times, which is a list of str of time, into a sorted list of the times in minutes.
 
     Args:
@@ -53,8 +53,8 @@ def map_to_min(arrival_times:list):
         list: list of int of the arrival times in minutes.
     """
     arrival_times_minutes = map(time_to_sec, arrival_times)
-    arrival_times_minutes = list(arrival_times_minutes)
-    return sorted(arrival_times_minutes)
+    arrival_times = list(arrival_times_minutes)
+    return sorted(arrival_times)
 
 
 def get_headway(arrival_times):
