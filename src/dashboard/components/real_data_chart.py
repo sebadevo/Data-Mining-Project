@@ -34,9 +34,7 @@ def render(app: Dash) -> html.Div:
             State(ids.SELECTED_LINE,'data'),
             State(ids.STOP, 'value'),
             State(ids.DATE, 'value'),
-            State(ids.DAY, 'value'),
             Input(ids.REAL_DATE, 'value'),
-            State(ids.SELECTED_LINE,'data'),
             prevent_initial_call=True
             )
 
