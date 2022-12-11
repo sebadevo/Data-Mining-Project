@@ -1,5 +1,5 @@
 from dash import Dash, html ,dcc
-from . import dropdown, bar_chart,navbar, all_line,all_stop,direction, real_data_chart, metric_plot, statistics
+from . import dropdown, bar_chart,navbar, all_line,all_stop,direction, real_data_chart, metric_plot, statistics, stop_score_chart
 import plotly.express as px
 from dash.dependencies import Output, Input,MATCH,State
 from . import ids
@@ -20,6 +20,7 @@ def create_layout(app: Dash) -> html.Div:
             real_data_chart.render(app),
             html.H1("Statistics",id="statistics"),
             statistics.render(app),
+            # stop_score_chart.render(app),
             # metric_plot.render(app),
             html.H1("About",id="about"),])
 

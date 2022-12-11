@@ -191,12 +191,8 @@ def get_categories(x, y, intervals):
     for i in range(length):
         beg = get_closest_index(x, intervals[i], intervals[i], intervals[i+1])
         end = get_closest_index(x, intervals[i+1], intervals[i], intervals[i+1])
-
-        if beg and end :
-            if i != length-1:
-                end -= 1
+        if beg is not None  and end is not None :
             if beg < end:
-                print("beg and end: ", beg, end)
                 average = mean(y[beg:end])
                 cat = 'P' if average > 12 else 'R'
             else: 
@@ -393,9 +389,7 @@ def interval_score(scheduled_times, real_times, scheduled_headways_x, real_headw
     for i in range(length):
         beg = get_closest_index(scheduled_headways_x, intervals[i], intervals[i], intervals[i+1])
         end = get_closest_index(scheduled_headways_x, intervals[i+1], intervals[i], intervals[i+1])
-        if beg and end:
-            if i != length-1:
-                end -= 1
+        if beg is not None  and end is not None :
             if beg >= end: 
                 score =0
             elif categories[i] == "P":
@@ -411,15 +405,15 @@ def interval_score(scheduled_times, real_times, scheduled_headways_x, real_headw
 
 def get_closest_index(elements: list, value: int, beg: int, end:int) -> int: 
 
-    # if value in elements : 
-    #     return elements.index(value)
+    if value in elements : 
+        return elements.index(value)
 
     dist = 99999
     index = None
     for i in range(len(elements)):
-        if beg < elements[i] < end and elements[i] - value < dist:
+        if beg < elements[i] < end and abs(elements[i] - value) < dist:
             index = i
-            dist = elements[i] -value
+            dist = abs(elements[i] -value)
         elif elements[i] > end: 
             break
     return index

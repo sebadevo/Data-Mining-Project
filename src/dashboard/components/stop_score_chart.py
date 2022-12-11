@@ -32,42 +32,38 @@ def which_type(value):
 def which_date(value): 
     return value.split(" - ")
 
-def which_day(value): 
-    Weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-    return "Weekday" if value in Weekdays else value
 
 
-def plot_interval_scores(qualities, intervals, day):
-    stat = qualities
-    stat = [round(i*100,2) for i in qualities]
-    x = intervals
-    middle = []
-    width = []
-    for i in range(len(x)-1):
-        middle.append((x[i+1] + x[i])/2)
-        width.append((x[i+1] - x[i]))
+# def plot_interval_scores(qualities, intervals):
+#     stat = qualities
+#     stat = [round(i*100,2) for i in qualities]
+#     x = intervals
+#     middle = []
+#     width = []
+#     for i in range(len(x)-1):
+#         middle.append((x[i+1] + x[i])/2)
+#         width.append((x[i+1] - x[i]))
 
-    fig = go.Figure(data=[go.Bar(
-        x=middle,
-        y=stat,
-        text = stat,
-        textposition='inside', 
-        # insidetextfont = 21,
-        width=width,
-            marker=dict(
-            color=stat,
-            colorscale='RdYlGn',
-            showscale=True
-    ))])
-    fig.update_yaxes(title_text="Quality")
-    fig.update_xaxes(title_text="Time") 
-    return html.Div([
-            html.A("The quality depending on the time interval of the stop"),
-            dcc.Graph(figure=fig), 
-            html.A(f"The quality of the stop is: {round(stop_score(qualities, intervals, day)*100, 3)}%")
-        ],
-        className="metric-plot"
-    )
+#     fig = go.Figure(data=[go.Bar(
+#         x=middle,
+#         y=stat,
+#         text = stat,
+#         textposition='inside', 
+#         # insidetextfont = 21,
+#         width=width,
+#             marker=dict(
+#             color=stat,
+#             colorscale='RdYlGn',
+#             showscale=True
+#     ))])
+#     fig.update_yaxes(title_text="Quality")
+#     fig.update_xaxes(title_text="Time") 
+#     return html.Div([
+#             html.A("The quality depending on the time interval of the bus stop"),
+#             dcc.Graph(figure=fig)
+#         ],
+#         className="metric-plot"
+#     )
 
 
 def render(app: Dash) -> html.Div:
@@ -79,11 +75,10 @@ def render(app: Dash) -> html.Div:
             Input(ids.REAL_DATE, 'value'),
             prevent_initial_call=True
             )
-
     def update_bar_chart(line_name, stop_name,date, real_date_name ) -> html.Div:  
         stop_name = stop_name.split(' - ')[0]
-        real_date_name, day = real_date_name.split(' - ')
-        day = which_day(day)
+        real_date_name, day = real_date_name.split('-')
+        print('I MA HERE')
         if (which_type(line_name)==1): #For metros
             query = ( 
                 "select rd.time"
@@ -94,7 +89,6 @@ def render(app: Dash) -> html.Div:
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"
             "from the developpers team."))
         connection = get_connection()
-        start_time = process_time()
         real_data = pd.read_sql(query, params=[line_name, stop_name, real_date_name], con= connection)
         query = (
             "select st.arrival_time, c.monday, c.saturday, c.sunday"
@@ -110,7 +104,6 @@ def render(app: Dash) -> html.Div:
 
         if( len(real_data) < 5):
             return html.Div(html.H4(f"There is not enough data to plot a graph (number of lines in the data is: {len(real_data)})"))
-        
         
         
         time_real = map_to_sec(real_data.time.tolist())
@@ -133,5 +126,6 @@ def render(app: Dash) -> html.Div:
         scheduled_headways_x,scheduled_headways_y = get_headway(scheduled_times)
         qualities = interval_score(scheduled_times, real_times, scheduled_headways_x, real_headways_x, scheduled_headways_y, real_headways_y, intervals)
 
-        return plot_interval_scores(qualities, intervals, day)
-    return html.Div(id=ids.INTERVAL_SCORE_CHART)
+        return html.Div([
+            html.A(f"The quality of the given stop is: {stop_score(qualities, intervals, day)}")])
+    return html.Div(id=ids.STOP_SCORE_CHART)
