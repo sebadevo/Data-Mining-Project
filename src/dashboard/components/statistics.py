@@ -68,7 +68,7 @@ def plot_interval_scores(qualities, intervals):
 
 def render(app: Dash) -> html.Div:
     @app.callback(
-            Output(ids.STAT_CHART, "children"),
+            Output(ids.INTERVAL_SCORE_CHART, "children"),
             State(ids.SELECTED_LINE,'data'),
             State(ids.STOP, 'value'),
             State(ids.DATE, 'value'),
@@ -126,8 +126,7 @@ def render(app: Dash) -> html.Div:
 
         real_headways_x,real_headways_y = get_headway(real_times)
         scheduled_headways_x,scheduled_headways_y = get_headway(scheduled_times)
-
         qualities = interval_score(scheduled_times, real_times, scheduled_headways_x, real_headways_x, scheduled_headways_y, real_headways_y, intervals)
 
         return plot_interval_scores(qualities, intervals)
-    return html.Div(id=ids.STAT_CHART)
+    return html.Div(id=ids.INTERVAL_SCORE_CHART)

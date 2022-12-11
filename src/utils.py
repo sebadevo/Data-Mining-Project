@@ -20,6 +20,7 @@ def time_to_sec(time:str):
     """
     time = time.split(":")
     hours, minutes, seconds = int(time[0]), int(time[1]), int(time[2])
+    # print("checking2: ", hours)
     if hours < 5:
         return 86400 + hours*3600+minutes*60+seconds
     return hours*3600+minutes*60+seconds
@@ -188,15 +189,20 @@ def get_categories(x, y, intervals):
     categories = []
     length = len(intervals)-1
     for i in range(length):
-        beg = x.index(intervals[i])
-        end = x.index(intervals[i+1])
+        beg = get_closest_index(x, intervals[i], intervals[i], intervals[i+1])
+        end = get_closest_index(x, intervals[i+1], intervals[i], intervals[i+1])
 
-        if i != length-1:
-            end -= 1
-            
-        average = mean(y[beg:end])
-        cat = 'P' if average > 12 else 'R'
-
+        if beg and end :
+            if i != length-1:
+                end -= 1
+            if beg < end:
+                print("beg and end: ", beg, end)
+                average = mean(y[beg:end])
+                cat = 'P' if average > 12 else 'R'
+            else: 
+                cat = None
+        else: 
+            cat = None
         categories.append(cat)
 
     return categories
@@ -266,9 +272,9 @@ def find_match_V2(short, long):
         column = []
         for i in range(len(short)):
             if i not in index_short_list:
-                min_value = 9999
-                index_short = None
-                index_long = None
+                min_value = 99999
+                index_short = i
+                index_long = 1
                 for j in range(len(long)):
                     if j not in index_long_list and abs(long[j] - short[i]) < min_value:
                         min_value = abs(long[j]-short[i])
@@ -300,6 +306,8 @@ def punctuality(scheduled_times, real_times):
 
 
 def regularity(scheduled_headways, real_headways):
+    if not len(scheduled_headways) or not len(real_headways): 
+        return 0
     awt = sum(h**2 for h in real_headways) / (2*sum(real_headways))
     swt = sum(h**2 for h in scheduled_headways) / (2*sum(scheduled_headways))
     ewt = abs(awt - swt)
@@ -383,17 +391,35 @@ def interval_score(scheduled_times, real_times, scheduled_headways_x, real_headw
     qualities = []
     length = len(intervals)-1
     for i in range(length):
-        beg = scheduled_headways_x.index(intervals[i])
-        end = scheduled_headways_x.index(intervals[i+1])
-        if i != length-1:
-            end -= 1
-        if categories[i] == "P":
-            end += 1
-            score = punctuality(scheduled_times[beg:end], real_times[beg:end])
-        elif categories[i] == "R":
-            score = regularity(scheduled_headways_y[beg:end], real_headways_y[beg:end])
+        beg = get_closest_index(scheduled_headways_x, intervals[i], intervals[i], intervals[i+1])
+        end = get_closest_index(scheduled_headways_x, intervals[i+1], intervals[i], intervals[i+1])
+        if beg and end:
+            if i != length-1:
+                end -= 1
+            if beg >= end: 
+                score =0
+            elif categories[i] == "P":
+                end += 1
+                score = punctuality(scheduled_times[beg:end], real_times[beg:end])
+            elif categories[i] == "R":
+                score = regularity(scheduled_headways_y[beg:end], real_headways_y[beg:end])
+        else: 
+            score=0
         qualities.append(score)
-
     return qualities
 
 
+def get_closest_index(elements: list, value: int, beg: int, end:int) -> int: 
+
+    # if value in elements : 
+    #     return elements.index(value)
+
+    dist = 99999
+    index = None
+    for i in range(len(elements)):
+        if beg < elements[i] < end and elements[i] - value < dist:
+            index = i
+            dist = elements[i] -value
+        elif elements[i] > end: 
+            break
+    return index

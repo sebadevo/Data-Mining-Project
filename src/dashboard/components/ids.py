@@ -3,7 +3,7 @@
 
 BAR_CHART = "bar-chart"
 REAL_DATA_CHART = "real-data-chart"
-STAT_CHART = 'statistics-chart'
+INTERVAL_SCORE_CHART = 'interval-score-chart'
 DIRECTION_1 = "dir-1"
 DIRECTION_2 = "dir-2"
 DIRECTION = "directions-container"

@@ -70,25 +70,24 @@ def render(app: Dash) -> html.Div:
             return html.Div(html.H4(f"There is not enough data to plot a graph (number of lines in the data is: {len(real_data)})"))
         
         
-        
-        time_real = convert_dataframe_to_time_sorted(real_data.time.tolist())
-        time_th = convert_dataframe_to_time_sorted(data.arrival_time.tolist())
+        time_real = map_to_sec(real_data.time.tolist())
+        time_th = map_to_sec(data.arrival_time.tolist())
 
 
         time_real = remove_duplicates(time_real)
 
-
-        x,y = compute_time_difference(time_th)
-        lines = get_interval(x,y)
+        x,y = get_headway(time_th)
+        intervals = get_interval(x,y)
 
         if (len(time_th) < len(time_real)): 
-            time_th, time_real = find_match_V2(time_th, time_real)
+            scheduled_times, real_times = find_match_V2(time_th, time_real)
         else: 
-            time_real, time_th = find_match_V2(time_real, time_th)
+            real_times, scheduled_times = find_match_V2(time_real, time_th)
 
 
-        x_r,y_r = compute_time_difference(time_real)
-        x_th,y_th = compute_time_difference(time_th)
+
+        real_headways_x,real_headways_y = get_headway(real_times)
+        scheduled_headways_x,scheduled_headways_y = get_headway(scheduled_times)
 
         def create_data(x,y):
             data = pd.DataFrame()
@@ -96,15 +95,15 @@ def render(app: Dash) -> html.Div:
             data["y"] = y
             return data
 
-        data = create_data(x_r,y_r)
+        data = create_data(real_headways_x,real_headways_y )
 
         fig = px.bar(data,x="x",y="y")
         fig.update_traces(width=0.05)
 
-        for i in range(len(lines)-1):
-            beg = x.index(lines[i])
-            end = x.index(lines[i+1])
-            if i != len(lines)-2:
+        for i in range(len(intervals)-1):
+            beg = x.index(intervals[i])
+            end = x.index(intervals[i+1])
+            if i != len(intervals)-2:
                 end -= 1
             average = mean(y[beg:end])
             if average > 12 :
