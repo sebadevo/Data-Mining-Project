@@ -103,7 +103,7 @@ def render(app: Dash) -> html.Div:
             query = ( 
                 "select rd.time"
                 " from real_data rd" 
-                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint = 0"
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint <= 1"
                 )
         elif (which_type(line_name) == 0): #For trams
             query = ( 

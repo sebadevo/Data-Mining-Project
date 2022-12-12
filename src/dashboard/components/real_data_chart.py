@@ -20,6 +20,13 @@ bus = ["12","13","14","T19","20","21","27","28","29","33","34","36","37","38",
     "64","65","66","69","70","71","72","73","74","75","76","77","78","79","80","T81","T82","83","86","87","88","89","90","T92","95"]
 noctis = ["04","05","06","08","09","10","11","12","13","16","18"]
 
+
+def create_data(x,y):
+    data = pd.DataFrame()
+    data["x"] = x
+    data["y"] = y
+    return data
+
 def which_type(value):
     if value in metro:
         return 1
@@ -68,7 +75,7 @@ def render(app: Dash) -> html.Div:
             query = ( 
                 "select rd.time"
                 " from real_data rd" 
-                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint =0"
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint <= 1"
                 )
 
 
@@ -120,11 +127,7 @@ def render(app: Dash) -> html.Div:
         real_headways_x,real_headways_y = get_headway(real_times)
         scheduled_headways_x,scheduled_headways_y = get_headway(scheduled_times)
 
-        def create_data(x,y):
-            data = pd.DataFrame()
-            data["x"] = x
-            data["y"] = y
-            return data
+        
 
         scheduled_data = create_data(scheduled_headways_x,scheduled_headways_y )
 
@@ -134,7 +137,7 @@ def render(app: Dash) -> html.Div:
         fig_real = draw_fig(real_data, intervals, real_headways_x, real_headways_y)
         fig_scheduled = draw_fig(scheduled_data, intervals, scheduled_headways_x, scheduled_headways_y)
         
-        return html.Div([html.A("Real Data"),dcc.Graph(figure=fig_real),html.A("Scheduled Headway After Match"),dcc.Graph(figure=fig_scheduled) ], className="metric-plot", id=ids.REAL_DATA_CHART)
+        return html.Div([html.A(f"Real Data (There are {len(real_headways_x)} data samples)"),dcc.Graph(figure=fig_real),html.A("Scheduled Headway After Match"),dcc.Graph(figure=fig_scheduled) ], className="metric-plot", id=ids.REAL_DATA_CHART)
     return html.Div(id=ids.REAL_DATA_CHART)
 
 
