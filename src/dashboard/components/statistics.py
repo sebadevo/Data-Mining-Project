@@ -72,7 +72,7 @@ def plot_interval_scores(qualities, intervals, day):
         x=middle,
         y=stat,
         text = stat,
-        textposition='inside', 
+        textposition='outside', 
         # insidetextfont = 21,
         width=width,
             marker=dict(
@@ -113,7 +113,13 @@ def render(app: Dash) -> html.Div:
                 " from real_data rd" 
                 " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 50"
                 )
-        else : 
+        elif (which_type(line_name) == 3): #for buses
+            query = ( 
+                "select rd.time"
+                " from real_data rd" 
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 10"
+                )
+        else: 
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"
             "from the developpers team."))
         connection = get_connection()

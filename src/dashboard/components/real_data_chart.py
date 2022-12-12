@@ -39,23 +39,9 @@ def draw_fig(data, intervals, x, y):
 
     fig = px.bar(data,x="x",y="y")
     fig.update_traces(width=0.05)   
-
-    for i in range(len(intervals)-1):
-
-        beg = get_closest_index(x, intervals[i], intervals[i], intervals[i+1])
-        end = get_closest_index(x, intervals[i+1], intervals[i], intervals[i+1])
-        average = mean(y[beg:end])
-
-        if average > 12 :
-            fig.add_shape(type="rect",
-                x0=intervals[i]-0.05, y0=0, x1=intervals[i+1]-0.05 , y1=max(y[beg:end])+1.5,
-            line=dict(color='red'))
-
-        else :
-            fig.add_shape(type="rect",
-                x0=intervals[i]-0.05, y0=0, x1=intervals[i+1]-0.05 , y1=mean(y[beg:end])+3,
-            line=dict(color='green'))
-
+    for line in intervals:
+            fig.add_vline(x = line, line_color = 'red')
+   
     return fig
 
 def render(app: Dash) -> html.Div:
@@ -77,19 +63,22 @@ def render(app: Dash) -> html.Div:
                 " from real_data rd" 
                 " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint <= 1"
                 )
-
-
         elif (which_type(line_name) == 0): #For trams
             query = ( 
                 "select rd.time"
                 " from real_data rd" 
                 " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 50"
                 )
-        else : 
+        elif (which_type(line_name) == 3): #for buses
+            query = ( 
+                "select rd.time"
+                " from real_data rd" 
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 10"
+                )
+        else: 
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"
             "from the developpers team."))
         connection = get_connection()
-        start_time = process_time()
         real_data = pd.read_sql(query, params=[line_name, stop_name, real_date_name], con= connection)
         query = (
             "select st.arrival_time, c.monday, c.saturday, c.sunday"
