@@ -72,8 +72,10 @@ def render(app: Dash) -> html.Div:
         if (which_type(line_name)==1): #For metros
             query = ( 
                 "select rd.time"
-                " from real_data rd" 
-                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint = 0"
+                " from routes ro, trips tr, stop_times st" 
+                " inner join routes ro on tr.route_id = ro.routes_id"
+                " inner join stop_times st on st.trip_id = tr.trip_id"
+                " where ro.route_short_name = %s and "
                 )
         else : 
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"

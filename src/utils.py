@@ -21,7 +21,7 @@ def time_to_sec(time:str):
     time = time.split(":")
     hours, minutes, seconds = int(time[0]), int(time[1]), int(time[2])
     # print("checking2: ", hours)
-    if hours < 5:
+    if hours < 4:
         return 86400 + hours*3600+minutes*60+seconds
     return hours*3600+minutes*60+seconds
 

@@ -36,6 +36,27 @@ def which_day(value):
     Weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     return "Weekday" if value in Weekdays else value
 
+def plot_weight( day, precision=60):
+
+    if day in Weights:
+        weights = Weights[day]
+    else: 
+        print(f"the day received is not in the available days : {list(Weights.keys())}. day received =", day)
+        return 0
+    
+    x = [i/precision for i in range(24*precision) ]
+    weights = [weights[floor(i/precision)] for i in range(24*precision)]
+    fig = go.Figure(data=[go.Bar(
+        x=x,
+        y=weights,
+    )])
+    fig.update_yaxes(title_text="Weights")
+    fig.update_xaxes(title_text="Time") 
+    return fig
+    
+
+
+
 
 def plot_interval_scores(qualities, intervals, day):
     stat = qualities
@@ -61,13 +82,7 @@ def plot_interval_scores(qualities, intervals, day):
     ))])
     fig.update_yaxes(title_text="Quality")
     fig.update_xaxes(title_text="Time") 
-    return html.Div([
-            html.A("The quality depending on the time interval of the stop"),
-            dcc.Graph(figure=fig), 
-            html.A(f"The quality of the stop is: {round(stop_score(qualities, intervals, day)*100, 3)}%")
-        ],
-        className="metric-plot"
-    )
+    return fig
 
 
 def render(app: Dash) -> html.Div:
@@ -84,11 +99,17 @@ def render(app: Dash) -> html.Div:
         stop_name = stop_name.split(' - ')[0]
         real_date_name, day = real_date_name.split(' - ')
         day = which_day(day)
-        if (which_type(line_name)==1): #For metros
+        if (which_type(line_name) == 1): #For metros
             query = ( 
                 "select rd.time"
                 " from real_data rd" 
                 " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint = 0"
+                )
+        elif (which_type(line_name) == 0): #For trams
+            query = ( 
+                "select rd.time"
+                " from real_data rd" 
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 50"
                 )
         else : 
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"
@@ -132,6 +153,15 @@ def render(app: Dash) -> html.Div:
         real_headways_x,real_headways_y = get_headway(real_times)
         scheduled_headways_x,scheduled_headways_y = get_headway(scheduled_times)
         qualities = interval_score(scheduled_times, real_times, scheduled_headways_x, real_headways_x, scheduled_headways_y, real_headways_y, intervals)
+        fig_weights = plot_weight(day)
+        fig_interval_scores = plot_interval_scores(qualities, intervals, day)
 
-        return plot_interval_scores(qualities, intervals, day)
+        return html.Div([html.Div([
+            html.A("The quality depending on the time interval of the stop"),
+            dcc.Graph(figure=fig_interval_scores), 
+            html.A("Weights for personnalised metric"),
+            dcc.Graph(figure=fig_weights),
+            html.A(f"The quality of the stop is: {round(stop_score(qualities, intervals, day)*100, 3)}%")],
+            
+    )], className="metric-plot", id=ids.INTERVAL_SCORE_CHART)
     return html.Div(id=ids.INTERVAL_SCORE_CHART)

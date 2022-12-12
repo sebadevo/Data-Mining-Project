@@ -28,6 +28,29 @@ def which_type(value):
 def which_date(value): 
     return value.split(" - ")
 
+def draw_fig(data, intervals, x, y): 
+
+    fig = px.bar(data,x="x",y="y")
+    fig.update_traces(width=0.05)   
+
+    for i in range(len(intervals)-1):
+
+        beg = get_closest_index(x, intervals[i], intervals[i], intervals[i+1])
+        end = get_closest_index(x, intervals[i+1], intervals[i], intervals[i+1])
+        average = mean(y[beg:end])
+
+        if average > 12 :
+            fig.add_shape(type="rect",
+                x0=intervals[i]-0.05, y0=0, x1=intervals[i+1]-0.05 , y1=max(y[beg:end])+1.5,
+            line=dict(color='red'))
+
+        else :
+            fig.add_shape(type="rect",
+                x0=intervals[i]-0.05, y0=0, x1=intervals[i+1]-0.05 , y1=mean(y[beg:end])+3,
+            line=dict(color='green'))
+
+    return fig
+
 def render(app: Dash) -> html.Div:
     @app.callback(
             Output(ids.REAL_DATA_CHART, "children"),
@@ -41,11 +64,19 @@ def render(app: Dash) -> html.Div:
     def update_bar_chart(line_name, stop_name,date, real_date_name ) -> html.Div:  
         stop_name = stop_name.split(' - ')[0]
         real_date_name = real_date_name.split('-')[0]
-        if (which_type(line_name)==1): #For metros
+        if (which_type(line_name) == 1): #For metros
             query = ( 
                 "select rd.time"
                 " from real_data rd" 
-                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint = 0"
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint =0"
+                )
+
+
+        elif (which_type(line_name) == 0): #For trams
+            query = ( 
+                "select rd.time"
+                " from real_data rd" 
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 50"
                 )
         else : 
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"
@@ -95,26 +126,15 @@ def render(app: Dash) -> html.Div:
             data["y"] = y
             return data
 
-        data = create_data(real_headways_x,real_headways_y )
+        scheduled_data = create_data(scheduled_headways_x,scheduled_headways_y )
 
-        fig = px.bar(data,x="x",y="y")
-        fig.update_traces(width=0.05)
+        real_data = create_data(real_headways_x,real_headways_y )
 
-        for i in range(len(intervals)-1):
-            beg = x.index(intervals[i])
-            end = x.index(intervals[i+1])
-            if i != len(intervals)-2:
-                end -= 1
-            average = mean(y[beg:end])
-            if average > 12 :
-                fig.add_shape(type="rect",
-                    x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=max(y[beg:end])+1.5,
-                line=dict(color='red'))
-            else :
-                fig.add_shape(type="rect",
-                    x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=mean(y[beg:end])+3,
-                line=dict(color='green'))
-        return html.Div([html.A("Real Data"),dcc.Graph(figure=fig)], className="metric-plot", id=ids.REAL_DATA_CHART)
+
+        fig_real = draw_fig(real_data, intervals, real_headways_x, real_headways_y)
+        fig_scheduled = draw_fig(scheduled_data, intervals, scheduled_headways_x, scheduled_headways_y)
+        
+        return html.Div([html.A("Real Data"),dcc.Graph(figure=fig_real),html.A("Scheduled Headway After Match"),dcc.Graph(figure=fig_scheduled) ], className="metric-plot", id=ids.REAL_DATA_CHART)
     return html.Div(id=ids.REAL_DATA_CHART)
 
 

@@ -20,10 +20,8 @@ def create_layout(app: Dash) -> html.Div:
             real_data_chart.render(app),
             html.H1("Statistics",id="statistics"),
             statistics.render(app),
-            # stop_score_chart.render(app),
-            # metric_plot.render(app),
             html.H1("About",id="about"),
-            map.display_map()
+            # map.display_map()
         ]
     )
 
