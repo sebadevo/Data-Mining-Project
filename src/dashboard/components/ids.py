@@ -13,3 +13,4 @@ DAY = "day-name"
 DATE = "date-name"
 REAL_DATE = 'real-date-name'
 STOP_SCORE_CHART = 'stop-score-chart'
+MAP = 'map'

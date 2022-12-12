@@ -23,6 +23,24 @@ bus = ["12","13","14","T19","20","21","27","28","29","33","34","36","37","38",
     "64","65","66","69","70","71","72","73","74","75","76","77","78","79","80","T81","T82","83","86","87","88","89","90","T92","95"]
 noctis = ["04","05","06","08","09","10","11","12","13","16","18"]
 
+stib_map = folium.Map(
+        location=[50.8476, 4.3572],
+        zoom_start=12,
+        # tiles = 'MapBox Bright'
+        # tiles = 'Stamen Terrain'
+        # tiles = 'Stamen Toner'
+        # tiles='cartodbdark_matter'
+        tiles='cartodbpositron'
+    )
+
+stib_map.save('map_save.html')
+
+def display_map():
+    return html.Div([
+        html.A('Interactive STIB Map'),
+        html.Iframe(id=ids.MAP, srcDoc=open('map_save.html', 'r').read(), width='100%', height='600')
+    ])
+
 def which_type(value):
     if value in metro:
         return 1
@@ -37,43 +55,9 @@ def which_day(value):
     Weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     return "Weekday" if value in Weekdays else value
 
-
-def plot_interval_scores(qualities, intervals, day):
-    stat = qualities
-    stat = [round(i*100,2) for i in qualities]
-    x = intervals
-    middle = []
-    width = []
-    for i in range(len(x)-1):
-        middle.append((x[i+1] + x[i])/2)
-        width.append((x[i+1] - x[i]))
-
-    fig = go.Figure(data=[go.Bar(
-        x=middle,
-        y=stat,
-        text = stat,
-        textposition='inside', 
-        # insidetextfont = 21,
-        width=width,
-            marker=dict(
-            color=stat,
-            colorscale='RdYlGn',
-            showscale=True
-    ))])
-    fig.update_yaxes(title_text="Quality")
-    fig.update_xaxes(title_text="Time") 
-    return html.Div([
-            html.A("The quality depending on the time interval of the stop"),
-            dcc.Graph(figure=fig), 
-            html.A(f"The quality of the stop is: {round(stop_score(qualities, intervals, day)*100, 3)}%")
-        ],
-        className="metric-plot"
-    )
-
-
 def render(app: Dash) -> html.Div:
     @app.callback(
-            Output(ids.INTERVAL_SCORE_CHART, "children"),
+            Output(ids.MAP, "data"),
             State(ids.SELECTED_LINE,'data'),
             State(ids.STOP, 'value'),
             State(ids.DATE, 'value'),
@@ -81,7 +65,7 @@ def render(app: Dash) -> html.Div:
             prevent_initial_call=True
             )
 
-    def update_bar_chart(line_name, stop_name,date, real_date_name ) -> html.Div:  
+    def update_map(line_name, stop_name,date, real_date_name) -> html.Div:  
         stop_name = stop_name.split(' - ')[0]
         real_date_name, day = real_date_name.split(' - ')
         day = which_day(day)
