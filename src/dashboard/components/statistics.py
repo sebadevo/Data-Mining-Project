@@ -73,9 +73,13 @@ def plot_interval_scores(qualities, intervals, day):
         y=stat,
         text = stat,
         textposition='outside', 
-        # insidetextfont = 21,
+        cliponaxis = False,
+        textfont = dict(
+            size= 20, color='black',
+        ), 
+        # insidetextanchor = "middle"
         width=width,
-            marker=dict(
+        marker=dict(
             color=stat,
             colorscale='RdYlGn',
             showscale=True,
