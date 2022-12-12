@@ -78,7 +78,9 @@ def plot_interval_scores(qualities, intervals, day):
             marker=dict(
             color=stat,
             colorscale='RdYlGn',
-            showscale=True
+            showscale=True,
+            cmin=0,
+            cmax=100,
     ))])
     fig.update_yaxes(title_text="Quality")
     fig.update_xaxes(title_text="Time") 
