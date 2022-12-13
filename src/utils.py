@@ -367,7 +367,7 @@ def stop_score(qualities, interval, day, precision=60):
     return round(score,4)
 
 
-def interval_score(scheduled_times, real_times, scheduled_headways_x, real_headways_x, scheduled_headways_y, real_headways_y, intervals):
+def interval_score(scheduled_times, real_times, scheduled_headways_x, real_headways_x, scheduled_headways_y, real_headways_y, intervals, categories):
     """computes the score for each interval based on the average headway. If the average headway is over 12 minutes, then the 
     poncutality metric will be used, otherwise the regularity metric will be used. (refer to get_categories for more details).
 
@@ -379,11 +379,11 @@ def interval_score(scheduled_times, real_times, scheduled_headways_x, real_headw
         real_headways_x (list): list of real_headways on x axis in hours.
         real_headways_y (list): list of real_headways on y axis in minutes.
         interval (list): list of times seperating each interval in which to compute the metrics.
+        categories (list): list of the string (either "P" or "R") corresponding to the metric that should be applied to an interval .
     
     return:
         qualities (list): list of (int) quality for each interval.
     """
-    categories = get_categories(scheduled_headways_x, scheduled_headways_y, intervals)
     qualities = []
     length = len(intervals)-1
     for i in range(length):
@@ -405,7 +405,7 @@ def interval_score(scheduled_times, real_times, scheduled_headways_x, real_headw
 
 def get_closest_index(elements: list, value: int, beg: int, end:int) -> int: 
 
-    if value in elements : 
+    if (value != end and value in elements) or value == elements[-1] : # we want to get the interval [ elem[i], elem[i+1] [ but if we have the last elem then we accept the [ elem[i], elem[i+1] ]
         return elements.index(value)
 
     dist = 99999
@@ -416,4 +416,5 @@ def get_closest_index(elements: list, value: int, beg: int, end:int) -> int:
             dist = abs(elements[i] -value)
         elif elements[i] > end: 
             break
+    
     return index

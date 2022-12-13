@@ -35,13 +35,22 @@ def which_type(value):
 def which_date(value): 
     return value.split(" - ")
 
-def draw_fig(data, intervals, x, y): 
+def draw_fig(data, intervals, x, y, title): 
 
     fig = px.bar(data,x="x",y="y")
     fig.update_traces(width=0.05)   
     for line in intervals:
             fig.add_vline(x = line, line_color = 'red')
-   
+    fig.update_xaxes(
+            range=[0,27],  # sets the range of xaxis
+    )
+    fig.update_layout(title={
+                    'text': f"<b>{title}<b>",
+                    'y':0.96,
+                    'x':0.5,
+                    'xanchor': 'center',
+                    'yanchor': 'top'},
+                    font=dict(size=18,))
     return fig
 
 def render(app: Dash) -> html.Div:
@@ -73,7 +82,7 @@ def render(app: Dash) -> html.Div:
             query = ( 
                 "select rd.time"
                 " from real_data rd" 
-                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 10"
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 50"
                 )
         else: 
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"
@@ -123,10 +132,10 @@ def render(app: Dash) -> html.Div:
         real_data = create_data(real_headways_x,real_headways_y )
 
 
-        fig_real = draw_fig(real_data, intervals, real_headways_x, real_headways_y)
-        fig_scheduled = draw_fig(scheduled_data, intervals, scheduled_headways_x, scheduled_headways_y)
+        fig_real = draw_fig(real_data, intervals, real_headways_x, real_headways_y, f"Real Data (There are {len(real_headways_x)} data samples)")
+        fig_scheduled = draw_fig(scheduled_data, intervals, scheduled_headways_x, scheduled_headways_y, "Scheduled Headway After Match")
         
-        return html.Div([html.A(f"Real Data (There are {len(real_headways_x)} data samples)"),dcc.Graph(figure=fig_real),html.A("Scheduled Headway After Match"),dcc.Graph(figure=fig_scheduled) ], className="metric-plot", id=ids.REAL_DATA_CHART)
+        return html.Div([dcc.Graph(figure=fig_real),dcc.Graph(figure=fig_scheduled) ], className="metric-plot", id=ids.REAL_DATA_CHART)
     return html.Div(id=ids.REAL_DATA_CHART)
 
 

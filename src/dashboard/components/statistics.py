@@ -51,7 +51,15 @@ def plot_weight( day, precision=60):
         y=weights,
     )])
     fig.update_yaxes(title_text="Weights")
-    fig.update_xaxes(title_text="Time") 
+    fig.update_xaxes(title_text="Time",
+                    range=[0,27]) 
+    fig.update_layout(title={
+                    'text': "<b>Weights for personnalised metric<b>",
+                    'y':0.87,
+                    'x':0.5,
+                    'xanchor': 'center',
+                    'yanchor': 'top'},
+                    font=dict(size=18,))
     return fig
     
 
@@ -87,7 +95,15 @@ def plot_interval_scores(qualities, intervals, day):
             cmax=100,
     ))])
     fig.update_yaxes(title_text="Quality")
-    fig.update_xaxes(title_text="Time") 
+    fig.update_xaxes(title_text="Time", 
+                     range=[0,26.4])  # sets the range of xaxis) 
+    fig.update_layout(title={
+                    'text': "<b>The quality depending on the time interval of the stop<b>",
+                    'y':0.89,
+                    'x':0.5,
+                    'xanchor': 'center',
+                    'yanchor': 'top'},
+                    font=dict(size=18,))
     return fig
 
 
@@ -121,7 +137,7 @@ def render(app: Dash) -> html.Div:
             query = ( 
                 "select rd.time"
                 " from real_data rd" 
-                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 10"
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 50"
                 )
         else: 
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"
@@ -149,12 +165,14 @@ def render(app: Dash) -> html.Div:
         time_real = map_to_sec(real_data.time.tolist())
         time_th = map_to_sec(data.arrival_time.tolist())
 
+        
 
         time_real = remove_duplicates(time_real)
 
 
         x,y = get_headway(time_th)
         intervals = get_interval(x,y)
+        categories = get_categories(x, y, intervals)
 
         if (len(time_th) < len(time_real)): 
             scheduled_times, real_times = find_match_V2(time_th, time_real)
@@ -164,16 +182,14 @@ def render(app: Dash) -> html.Div:
 
         real_headways_x,real_headways_y = get_headway(real_times)
         scheduled_headways_x,scheduled_headways_y = get_headway(scheduled_times)
-        qualities = interval_score(scheduled_times, real_times, scheduled_headways_x, real_headways_x, scheduled_headways_y, real_headways_y, intervals)
+        qualities = interval_score(scheduled_times, real_times, scheduled_headways_x, real_headways_x, scheduled_headways_y, real_headways_y, intervals, categories)
         fig_weights = plot_weight(day)
         fig_interval_scores = plot_interval_scores(qualities, intervals, day)
 
         return html.Div([html.Div([
-            html.A("The quality depending on the time interval of the stop"),
             dcc.Graph(figure=fig_interval_scores), 
-            html.A("Weights for personnalised metric"),
             dcc.Graph(figure=fig_weights),
-            html.A(f"The quality of the stop is: {round(stop_score(qualities, intervals, day)*100, 3)}%")],
+            html.H1(f"The quality of the stop is: {round(stop_score(qualities, intervals, day)*100, 3)}%", style={'color': 'black', 'fontSize': 28})],
             
     )], className="metric-plot", id=ids.INTERVAL_SCORE_CHART)
     return html.Div(id=ids.INTERVAL_SCORE_CHART)

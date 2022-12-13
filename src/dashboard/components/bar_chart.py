@@ -89,7 +89,17 @@ def render(app: Dash) -> html.Div:
                 fig.add_shape(type="rect",
                     x0=x[beg]-0.05, y0=0, x1=x[end]+0.05 , y1=mean(y[beg:end])+3,
                 line=dict(color='green'))
-        return html.Div([html.A(f"Scheduled Data (There are {len(x)} data samples)"),dcc.Graph(figure=fig)], className="metric-plot", id=ids.BAR_CHART)
+        fig.update_xaxes(
+            range=[0,27],  # sets the range of xaxis
+        )
+        fig.update_layout(title={
+                    'text': f"<b>Scheduled Data (There are {len(x)} data samples)<b>",
+                    'y':0.96,
+                    'x':0.5,
+                    'xanchor': 'center',
+                    'yanchor': 'top'},
+                    font=dict(size=18,))
+        return html.Div([dcc.Graph(figure=fig)], className="metric-plot", id=ids.BAR_CHART)
     return html.Div(id=ids.BAR_CHART)
 
 
