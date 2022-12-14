@@ -98,9 +98,7 @@ ul{
     width: 100%;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
     color: white;
-    padding-top: 15px;
     transform: skewX(-5deg);
 }
 #blue-nav a:hover{
@@ -197,7 +195,7 @@ transform: translateZ(0);
 }
 
 .all-lines h2{
-    color: #ef3f44;
+    color: #02538a;
     font-weight: initial !important;
 }
 .line.line span{
@@ -212,7 +210,7 @@ h2{
 h1 {
     margin: 0 0 .2em;
     font-size: 2.5em;
-    color: #d62027;
+    color: #02538a;
 }
 
 .mode {

@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8f7a9f545982ea683929009941d8fb4d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8f7a9f545982ea683929009941d8fb4d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8f7a9f545982ea683929009941d8fb4d = L.map(
+                "map_8f7a9f545982ea683929009941d8fb4d",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1ef1faf17ba7d26020477589fae910ae = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8f7a9f545982ea683929009941d8fb4d);
+        
+    
+            var poly_line_b724d8beeccb17df17dc0a12caa276f0 = L.polyline(
+                [[50.80307, 4.341829], [50.803067, 4.341787], [50.803072, 4.341711], [50.803078, 4.341667], [50.803088, 4.341605], [50.803142, 4.341392], [50.803632, 4.341707], [50.803671, 4.341737], [50.803701, 4.341783], [50.803713, 4.341829], [50.803712, 4.341881], [50.803696, 4.341965], [50.803623, 4.342098], [50.803544, 4.342233], [50.803325, 4.342609], [50.803231, 4.34277], [50.803195, 4.342832], [50.803176, 4.342879], [50.803185, 4.342954], [50.80319, 4.342995], [50.803201, 4.34308], [50.803213, 4.343225], [50.803217, 4.343269], [50.80324, 4.343466], [50.803253, 4.343578], [50.803266, 4.343692], [50.803317, 4.344126], [50.803322, 4.344168], [50.803451, 4.345266], [50.80348, 4.345529], [50.803513, 4.345825], [50.803519, 4.345873], [50.80366, 4.347089], [50.803774, 4.34812], [50.803779, 4.348163], [50.803814, 4.34841], [50.803931, 4.349482], [50.803931, 4.349482], [50.804179, 4.351752], [50.804223, 4.352524], [50.804259, 4.353518], [50.804282, 4.354103], [50.804284, 4.354158], [50.80429, 4.354341], [50.804293, 4.354383], [50.804317, 4.354742], [50.804322, 4.354863], [50.804322, 4.354863], [50.804322, 4.35487], [50.804328, 4.355043], [50.804337, 4.355638], [50.804314, 4.356513], [50.804281, 4.357024], [50.80424, 4.35733], [50.804122, 4.358056], [50.804122, 4.358056], [50.804085, 4.358286], [50.804058, 4.358448], [50.803983, 4.35879], [50.803974, 4.358832], [50.80389, 4.359233], [50.803839, 4.359543], [50.803834, 4.359586], [50.803801, 4.359888], [50.803775, 4.360167], [50.803755, 4.360593], [50.803749, 4.360826], [50.803737, 4.361189], [50.803734, 4.361395], [50.80374, 4.361874], [50.803741, 4.361924], [50.803741, 4.361924], [50.803758, 4.3623], [50.803791, 4.3626], [50.803795, 4.362644], [50.803837, 4.362941], [50.803952, 4.363649], [50.804, 4.363913], [50.804227, 4.36528], [50.804248, 4.365418], [50.804556, 4.367275], [50.804588, 4.367482], [50.804805, 4.368828], [50.804805, 4.368828], [50.80483, 4.368984], [50.80512, 4.370779], [50.805138, 4.3709], [50.805158, 4.371034], [50.805291, 4.371922], [50.805284, 4.372013], [50.805228, 4.372077], [50.805191, 4.372103], [50.805138, 4.372128], [50.805041, 4.372145], [50.80489, 4.372178], [50.804746, 4.372217], [50.804285, 4.372281], [50.804053, 4.372348], [50.803296, 4.372613], [50.803269, 4.372622], [50.803138, 4.37267], [50.802994, 4.372722], [50.802694, 4.372834], [50.802668, 4.372843], [50.802518, 4.372895], [50.802361, 4.372966], [50.802357, 4.372968], [50.802357, 4.372968], [50.802174, 4.373048], [50.801976, 4.373141], [50.801949, 4.373151], [50.801879, 4.373178], [50.801751, 4.373251], [50.801726, 4.37327], [50.801694, 4.373295], [50.801634, 4.373349], [50.801455, 4.373521], [50.800804, 4.374199], [50.800781, 4.374223], [50.800615, 4.374404], [50.800456, 4.37457], [50.800382, 4.374653], [50.800028, 4.374966], [50.800003, 4.374986], [50.799881, 4.37509], [50.799762, 4.375182], [50.799748, 4.375238], [50.799735, 4.375336], [50.799712, 4.375519], [50.799684, 4.375726], [50.799619, 4.376145], [50.799594, 4.376346], [50.799594, 4.376346], [50.799588, 4.376393], [50.799352, 4.378202], [50.799282, 4.378739], [50.799274, 4.3788], [50.799263, 4.378884], [50.799258, 4.378926], [50.799206, 4.379346], [50.799197, 4.379414], [50.799197, 4.379414], [50.799172, 4.3796], [50.799081, 4.380314], [50.798988, 4.381063], [50.798811, 4.382451], [50.798798, 4.382545], [50.798561, 4.384291], [50.798553, 4.384345], [50.798441, 4.385169], [50.798441, 4.385169], [50.798364, 4.385725], [50.798165, 4.387192], [50.797995, 4.388472], [50.797873, 4.389363], [50.797851, 4.389542], [50.797837, 4.389684], [50.797831, 4.389728], [50.797622, 4.391214], [50.797489, 4.39221], [50.797422, 4.392749], [50.797413, 4.392815], [50.797349, 4.393336], [50.797343, 4.393388], [50.797169, 4.39463], [50.797113, 4.394957], [50.797113, 4.394957], [50.797093, 4.395098], [50.79708, 4.395241], [50.797072, 4.395366], [50.797086, 4.395476], [50.79712, 4.395591], [50.797159, 4.395683], [50.797223, 4.395769], [50.797287, 4.395783], [50.797335, 4.395756], [50.797476, 4.395464], [50.797583, 4.395234], [50.797727, 4.394926], [50.797849, 4.39467], [50.798035, 4.394315], [50.798335, 4.39383], [50.79851, 4.393554], [50.798829, 4.393086], [50.799114, 4.392675], [50.799134, 4.392646], [50.79971, 4.391863], [50.800013, 4.391465], [50.800356, 4.391055], [50.800379, 4.391028], [50.800697, 4.390662], [50.800937, 4.390403], [50.800961, 4.390379], [50.801574, 4.389708], [50.801978, 4.389301], [50.802195, 4.389076], [50.802366, 4.388921], [50.802438, 4.388862], [50.802483, 4.388839], [50.802527, 4.388853], [50.80258, 4.388896], [50.802637, 4.388984], [50.802908, 4.389652], [50.803022, 4.389958], [50.803037, 4.390031], [50.803036, 4.390083], [50.803023, 4.390124], [50.803017, 4.390147], [50.802999, 4.390173], [50.802869, 4.39031], [50.802639, 4.390592], [50.802639, 4.390592], [50.802501, 4.390771], [50.802338, 4.391028], [50.802267, 4.39115], [50.802245, 4.391185], [50.80217, 4.391316], [50.802039, 4.391551], [50.801808, 4.392036], [50.801643, 4.392428], [50.801349, 4.393114], [50.801301, 4.393244], [50.801196, 4.393481], [50.801196, 4.393481], [50.801102, 4.393642], [50.800924, 4.393881], [50.800836, 4.393968], [50.800764, 4.394039], [50.800759, 4.394044], [50.800632, 4.394156], [50.800469, 4.394302], [50.800461, 4.394356], [50.80051, 4.394488], [50.800779, 4.395271], [50.800861, 4.395538], [50.800943, 4.395852], [50.80103, 4.396298], [50.801068, 4.396579], [50.801099, 4.396867], [50.801099, 4.396867], [50.801113, 4.39708], [50.801093, 4.397177], [50.801082, 4.397219], [50.801079, 4.39724], [50.801078, 4.397286], [50.801083, 4.397323], [50.801097, 4.397362], [50.801108, 4.397384], [50.801129, 4.397411], [50.80114, 4.397421], [50.801169, 4.397429], [50.801196, 4.397428], [50.801196, 4.397428], [50.80122, 4.397416], [50.801242, 4.397398], [50.801246, 4.397394], [50.801246, 4.397394], [50.801264, 4.397363], [50.801267, 4.397357], [50.801276, 4.39732], [50.801285, 4.397262], [50.801281, 4.397225], [50.801316, 4.397188], [50.801329, 4.397175], [50.801626, 4.396868], [50.801626, 4.396868], [50.801697, 4.396837], [50.801725, 4.396837], [50.801743, 4.396844], [50.801762, 4.396888], [50.801864, 4.397075], [50.801886, 4.397115], [50.801907, 4.397154], [50.801933, 4.397198], [50.801969, 4.397259], [50.802162, 4.397594], [50.802196, 4.397662], [50.802328, 4.397874], [50.802503, 4.398166], [50.802603, 4.398324], [50.802647, 4.398379], [50.803106, 4.398723], [50.803132, 4.398741], [50.803255, 4.398829], [50.803345, 4.3989], [50.803486, 4.399017], [50.803559, 4.399103], [50.803702, 4.399359], [50.803874, 4.399699], [50.803995, 4.399931], [50.804012, 4.399963], [50.804079, 4.400088], [50.804153, 4.400236], [50.804153, 4.400236], [50.804184, 4.400295], [50.804201, 4.400334], [50.804222, 4.400373], [50.804285, 4.400451], [50.804364, 4.400528], [50.804482, 4.400618], [50.804836, 4.400841], [50.805004, 4.400923], [50.80519, 4.400973], [50.805278, 4.400974], [50.805409, 4.400953], [50.805836, 4.400776], [50.806165, 4.40065], [50.806249, 4.400616], [50.806249, 4.400616], [50.80644, 4.400539], [50.80658, 4.400479], [50.806606, 4.400467], [50.806711, 4.400423], [50.80685, 4.40036], [50.807038, 4.400283], [50.807249, 4.400202], [50.808831, 4.399542], [50.809134, 4.399449], [50.809186, 4.39943], [50.809252, 4.399421], [50.809298, 4.399419], [50.809349, 4.399426], [50.809409, 4.399441], [50.809438, 4.399441], [50.809656, 4.399358], [50.809656, 4.399358], [50.810105, 4.399207], [50.810137, 4.399215], [50.810168, 4.399238], [50.810198, 4.399296], [50.810221, 4.399336], [50.810242, 4.399467], [50.810297, 4.39978], [50.81032, 4.400073], [50.810405, 4.400288], [50.810542, 4.400547], [50.810614, 4.400754], [50.810644, 4.401019], [50.810649, 4.401134], [50.81063, 4.401284], [50.810586, 4.401483], [50.810079, 4.402782], [50.809917, 4.403097], [50.809637, 4.40348], [50.809637, 4.40348], [50.809576, 4.403559], [50.809566, 4.403616], [50.809568, 4.403673], [50.809692, 4.404052], [50.809859, 4.404625], [50.809916, 4.404832], [50.809927, 4.404872], [50.810094, 4.405427], [50.810203, 4.405809], [50.810243, 4.405935], [50.810278, 4.406036], [50.810291, 4.406074], [50.810334, 4.406189], [50.81038, 4.406296], [50.810557, 4.406663], [50.810682, 4.406907], [50.810721, 4.407028], [50.810735, 4.407134], [50.810735, 4.407134], [50.81082, 4.407753], [50.810878, 4.408326], [50.810995, 4.409327], [50.811073, 4.409886], [50.811101, 4.410124], [50.811105, 4.410226], [50.811104, 4.410256], [50.811106, 4.410313], [50.811107, 4.410354], [50.811103, 4.410453], [50.811082, 4.410626], [50.811062, 4.410743], [50.811055, 4.410784], [50.811027, 4.410949], [50.811003, 4.41108], [50.810928, 4.411515], [50.810928, 4.411515], [50.810904, 4.411649], [50.810545, 4.413641], [50.810464, 4.414116], [50.810176, 4.415667], [50.810148, 4.415772], [50.810103, 4.415881], [50.810046, 4.41584], [50.809944, 4.415796], [50.809868, 4.415788], [50.80979, 4.4158], [50.809717, 4.415827], [50.80968, 4.415846], [50.809622, 4.4159], [50.809599, 4.415923], [50.809559, 4.415967], [50.809504, 4.41608], [50.809473, 4.41617], [50.809449, 4.416295], [50.809434, 4.416391], [50.809432, 4.416493], [50.809434, 4.416537], [50.80944, 4.41661], [50.809452, 4.41671], [50.809493, 4.416849], [50.809493, 4.416849], [50.809501, 4.416879], [50.809519, 4.416923], [50.809539, 4.416963], [50.809557, 4.416994], [50.809587, 4.417033], [50.809622, 4.417058], [50.809683, 4.417108], [50.809772, 4.417155], [50.809845, 4.41717], [50.809897, 4.417169], [50.809965, 4.417155], [50.810039, 4.417117], [50.810093, 4.41707], [50.810127, 4.417036], [50.810775, 4.418413], [50.810943, 4.418746], [50.810947, 4.418758], [50.810947, 4.418758], [50.811015, 4.418913], [50.811053, 4.41893], [50.811133, 4.418873], [50.811232, 4.418785], [50.811368, 4.418669], [50.81157, 4.418517], [50.811777, 4.418356], [50.811959, 4.4182], [50.811984, 4.418177], [50.812082, 4.418092], [50.812549, 4.417711], [50.813187, 4.417201], [50.813186, 4.417202], [50.813359, 4.417063], [50.813424, 4.417055], [50.813571, 4.416971], [50.813596, 4.416957], [50.813629, 4.416936], [50.813681, 4.416912], [50.813775, 4.416889], [50.813804, 4.416932], [50.813807, 4.416935], [50.813808, 4.416936], [50.813831, 4.416953], [50.813857, 4.416966], [50.813904, 4.416972], [50.813905, 4.416972], [50.813908, 4.41697], [50.813933, 4.416959], [50.813961, 4.416939], [50.813984, 4.416914], [50.814001, 4.416882], [50.814008, 4.416865], [50.81402, 4.41688], [50.814094, 4.416955], [50.814167, 4.417006], [50.814484, 4.417145], [50.814531, 4.417246], [50.814534, 4.417263], [50.81452, 4.417368], [50.814446, 4.417736], [50.814357, 4.418083], [50.814271, 4.418364], [50.814183, 4.418632], [50.814141, 4.418743], [50.814061, 4.418933], [50.81385, 4.419401], [50.813643, 4.419862], [50.813643, 4.419862], [50.813517, 4.420192], [50.813496, 4.420252], [50.813386, 4.420554], [50.813331, 4.420657], [50.812917, 4.421805], [50.812806, 4.42216], [50.81273, 4.422457], [50.812669, 4.422845], [50.812636, 4.423127], [50.812636, 4.423127], [50.812603, 4.423336], [50.812589, 4.423502], [50.812457, 4.42456], [50.812251, 4.426025], [50.812191, 4.426668], [50.812172, 4.426912], [50.812167, 4.427197], [50.812178, 4.427421], [50.812209, 4.427634], [50.812221, 4.427817], [50.812235, 4.428061], [50.812243, 4.428188], [50.812234, 4.428253], [50.812249, 4.428368], [50.81228, 4.428626], [50.81235, 4.429114], [50.81235, 4.429114], [50.812352, 4.429123], [50.812405, 4.429393], [50.812391, 4.429421], [50.812374, 4.429458], [50.812366, 4.429476], [50.812358, 4.429512], [50.812339, 4.429661], [50.812289, 4.430039], [50.812188, 4.430722], [50.812121, 4.431092], [50.811984, 4.431784], [50.811957, 4.431825], [50.811921, 4.431898], [50.811892, 4.431964], [50.81187, 4.432025], [50.811858, 4.432068], [50.811837, 4.432174], [50.811832, 4.432218], [50.811845, 4.432377], [50.811741, 4.432776], [50.811741, 4.432776], [50.811709, 4.432872], [50.811604, 4.433206], [50.811524, 4.433432], [50.811364, 4.433824], [50.811235, 4.434119], [50.811088, 4.434414], [50.810959, 4.434665], [50.810763, 4.435013], [50.810476, 4.435443], [50.810418, 4.435519], [50.810252, 4.435731], [50.809906, 4.436144], [50.809892, 4.436159], [50.809892, 4.436159], [50.809832, 4.436221], [50.809719, 4.436337], [50.809609, 4.436436], [50.809575, 4.436431], [50.809515, 4.436409], [50.80948, 4.436389], [50.809275, 4.436265], [50.808615, 4.435903], [50.80862, 4.435893], [50.808644, 4.435832], [50.808645, 4.435828], [50.808645, 4.435825], [50.808651, 4.435781], [50.808652, 4.435745], [50.808652, 4.435744], [50.808651, 4.435738], [50.808642, 4.435687], [50.808641, 4.435681], [50.808638, 4.435677], [50.808617, 4.435646], [50.808578, 4.435608], [50.80849, 4.435556], [50.808465, 4.435542], [50.808375, 4.435498], [50.808372, 4.435497], [50.80837, 4.435497], [50.808337, 4.435501], [50.808335, 4.435502], [50.808333, 4.435502], [50.8083, 4.435523], [50.8083, 4.435525], [50.808297, 4.435528], [50.808271, 4.435563], [50.808246, 4.435607]],
+                {"bubblingMouseEvents": true, "color": "#91BEE7", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#91BEE7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_8f7a9f545982ea683929009941d8fb4d);
+        
+    
+            var feature_group_eef67d2a7fb04a49f69d64c95f5e30ae = L.featureGroup(
+                {}
+            ).addTo(map_8f7a9f545982ea683929009941d8fb4d);
+        
+    
+            var marker_5a67f3425133d3548dd84d9975777323 = L.marker(
+                [50.803083, 4.341826],
+                {"name": "HEROS"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_b8eae1a213c940093a3796e36206f6c6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5a67f3425133d3548dd84d9975777323.setIcon(icon_b8eae1a213c940093a3796e36206f6c6);
+        
+    
+        var popup_a098da07e86c9a479825a91af2a5f5ce = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_bb53b06d954de0177380be2a6837a8c6 = $(`<div id="html_bb53b06d954de0177380be2a6837a8c6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HEROS</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_a098da07e86c9a479825a91af2a5f5ce.setContent(html_bb53b06d954de0177380be2a6837a8c6);
+            
+        
+
+        marker_5a67f3425133d3548dd84d9975777323.bindPopup(popup_a098da07e86c9a479825a91af2a5f5ce)
+        ;
+
+        
+    
+    
+            marker_5a67f3425133d3548dd84d9975777323.bindTooltip(
+                `<div>
+                     HEROS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_61f21c76e53a6873257e1389dbb0574b = L.marker(
+                [50.803912, 4.349486],
+                {"name": "STATUAIRES"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_3b6bd9b7bd9323f268111f515d93a866 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_61f21c76e53a6873257e1389dbb0574b.setIcon(icon_3b6bd9b7bd9323f268111f515d93a866);
+        
+    
+        var popup_89d5e63d2615f197b25e620ef9055e45 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_51fbc96794d0f79e94902f7b638151ae = $(`<div id="html_51fbc96794d0f79e94902f7b638151ae" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: STATUAIRES</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 93.1</h6></center>         </div>`)[0];
+                popup_89d5e63d2615f197b25e620ef9055e45.setContent(html_51fbc96794d0f79e94902f7b638151ae);
+            
+        
+
+        marker_61f21c76e53a6873257e1389dbb0574b.bindPopup(popup_89d5e63d2615f197b25e620ef9055e45)
+        ;
+
+        
+    
+    
+            marker_61f21c76e53a6873257e1389dbb0574b.bindTooltip(
+                `<div>
+                     STATUAIRES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4cc6e126ebf4eba5550487ac3de2d27c = L.marker(
+                [50.804317, 4.354863],
+                {"name": "ZEECRABBE"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_cad146c678d0ab7f0c030f97dcded1f0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4cc6e126ebf4eba5550487ac3de2d27c.setIcon(icon_cad146c678d0ab7f0c030f97dcded1f0);
+        
+    
+        var popup_f7fcf16a9cb51b8f3c69dc3be71fa039 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_faa58a9165dec677f24a10886fdc01e5 = $(`<div id="html_faa58a9165dec677f24a10886fdc01e5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ZEECRABBE</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 86.21</h6></center>         </div>`)[0];
+                popup_f7fcf16a9cb51b8f3c69dc3be71fa039.setContent(html_faa58a9165dec677f24a10886fdc01e5);
+            
+        
+
+        marker_4cc6e126ebf4eba5550487ac3de2d27c.bindPopup(popup_f7fcf16a9cb51b8f3c69dc3be71fa039)
+        ;
+
+        
+    
+    
+            marker_4cc6e126ebf4eba5550487ac3de2d27c.bindTooltip(
+                `<div>
+                     ZEECRABBE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a6991ee5e454a5718960bac75bd054e4 = L.marker(
+                [50.804084, 4.358041],
+                {"name": "HOUZEAU"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_75e9d87baacc1300710c2b9587815426 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a6991ee5e454a5718960bac75bd054e4.setIcon(icon_75e9d87baacc1300710c2b9587815426);
+        
+    
+        var popup_67ea7b064faf9c67496a62559463138e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_088b2c7a0091eb4169274c5749569e54 = $(`<div id="html_088b2c7a0091eb4169274c5749569e54" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HOUZEAU</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 79.31</h6></center>         </div>`)[0];
+                popup_67ea7b064faf9c67496a62559463138e.setContent(html_088b2c7a0091eb4169274c5749569e54);
+            
+        
+
+        marker_a6991ee5e454a5718960bac75bd054e4.bindPopup(popup_67ea7b064faf9c67496a62559463138e)
+        ;
+
+        
+    
+    
+            marker_a6991ee5e454a5718960bac75bd054e4.bindTooltip(
+                `<div>
+                     HOUZEAU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a610577692b3204c8bab4b0f0c3b5db7 = L.marker(
+                [50.803733, 4.361942],
+                {"name": "FLORIDE"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_96eda51e714d0dd876ed771696fdc96f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a610577692b3204c8bab4b0f0c3b5db7.setIcon(icon_96eda51e714d0dd876ed771696fdc96f);
+        
+    
+        var popup_0b9bd177a0b7f68200af1febaf730270 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_4c19fcf5be001f5022f399970cb4e2f5 = $(`<div id="html_4c19fcf5be001f5022f399970cb4e2f5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FLORIDE</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 72.41</h6></center>         </div>`)[0];
+                popup_0b9bd177a0b7f68200af1febaf730270.setContent(html_4c19fcf5be001f5022f399970cb4e2f5);
+            
+        
+
+        marker_a610577692b3204c8bab4b0f0c3b5db7.bindPopup(popup_0b9bd177a0b7f68200af1febaf730270)
+        ;
+
+        
+    
+    
+            marker_a610577692b3204c8bab4b0f0c3b5db7.bindTooltip(
+                `<div>
+                     FLORIDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5cc5251419d3e5a8ea1a3c0fc4ef7ee4 = L.marker(
+                [50.804785, 4.368837],
+                {"name": "HOP.STE-ELISABETH"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_b0fa10e19eff64ea41b4f0f6c98a6d34 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5cc5251419d3e5a8ea1a3c0fc4ef7ee4.setIcon(icon_b0fa10e19eff64ea41b4f0f6c98a6d34);
+        
+    
+        var popup_9d64cab57476a32842562427537c9628 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e4e71ce00181da1cad00bbd433baf6c6 = $(`<div id="html_e4e71ce00181da1cad00bbd433baf6c6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HOP.STE-ELISABETH</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 65.52</h6></center>         </div>`)[0];
+                popup_9d64cab57476a32842562427537c9628.setContent(html_e4e71ce00181da1cad00bbd433baf6c6);
+            
+        
+
+        marker_5cc5251419d3e5a8ea1a3c0fc4ef7ee4.bindPopup(popup_9d64cab57476a32842562427537c9628)
+        ;
+
+        
+    
+    
+            marker_5cc5251419d3e5a8ea1a3c0fc4ef7ee4.bindTooltip(
+                `<div>
+                     HOP.STE-ELISABETH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6474ff5195123740f283a6944f3e8e0d = L.marker(
+                [50.802349, 4.372922],
+                {"name": "VERT CHASSEUR"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_dd9a579f09487842660f171ff019048f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6474ff5195123740f283a6944f3e8e0d.setIcon(icon_dd9a579f09487842660f171ff019048f);
+        
+    
+        var popup_70b6e570327fd4c4dd7d9fbeca0303e1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3dc3583c8f6a8dee3d91beceb516a3e2 = $(`<div id="html_3dc3583c8f6a8dee3d91beceb516a3e2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VERT CHASSEUR</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 58.62</h6></center>         </div>`)[0];
+                popup_70b6e570327fd4c4dd7d9fbeca0303e1.setContent(html_3dc3583c8f6a8dee3d91beceb516a3e2);
+            
+        
+
+        marker_6474ff5195123740f283a6944f3e8e0d.bindPopup(popup_70b6e570327fd4c4dd7d9fbeca0303e1)
+        ;
+
+        
+    
+    
+            marker_6474ff5195123740f283a6944f3e8e0d.bindTooltip(
+                `<div>
+                     VERT CHASSEUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ef385fdb2f82425645b437448939bf94 = L.marker(
+                [50.79958, 4.376341],
+                {"name": "MONTANA"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_18233cb35b4e4a39b3128526c2c54087 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ef385fdb2f82425645b437448939bf94.setIcon(icon_18233cb35b4e4a39b3128526c2c54087);
+        
+    
+        var popup_a5d8bbbbff1e1ea944cae4a4f6f3d419 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a573d1a9a8acdcf603279a0047b5989e = $(`<div id="html_a573d1a9a8acdcf603279a0047b5989e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MONTANA</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 51.72</h6></center>         </div>`)[0];
+                popup_a5d8bbbbff1e1ea944cae4a4f6f3d419.setContent(html_a573d1a9a8acdcf603279a0047b5989e);
+            
+        
+
+        marker_ef385fdb2f82425645b437448939bf94.bindPopup(popup_a5d8bbbbff1e1ea944cae4a4f6f3d419)
+        ;
+
+        
+    
+    
+            marker_ef385fdb2f82425645b437448939bf94.bindTooltip(
+                `<div>
+                     MONTANA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fc7b6f1c406b2b6ae9dd96d2b33b6e3a = L.marker(
+                [50.799184, 4.379419],
+                {"name": "GENDARMES"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_a1b91ffb4c668c055310ef20feb9786e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fc7b6f1c406b2b6ae9dd96d2b33b6e3a.setIcon(icon_a1b91ffb4c668c055310ef20feb9786e);
+        
+    
+        var popup_f696292970bdcaf4764d39558ad34960 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_5c0b2a4b92a905d6e3a17a912e0c44e6 = $(`<div id="html_5c0b2a4b92a905d6e3a17a912e0c44e6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GENDARMES</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 44.83</h6></center>         </div>`)[0];
+                popup_f696292970bdcaf4764d39558ad34960.setContent(html_5c0b2a4b92a905d6e3a17a912e0c44e6);
+            
+        
+
+        marker_fc7b6f1c406b2b6ae9dd96d2b33b6e3a.bindPopup(popup_f696292970bdcaf4764d39558ad34960)
+        ;
+
+        
+    
+    
+            marker_fc7b6f1c406b2b6ae9dd96d2b33b6e3a.bindTooltip(
+                `<div>
+                     GENDARMES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_82a977b6efed08b42f1df388113ab0bb = L.marker(
+                [50.798383, 4.385149],
+                {"name": "RESERVOIR"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_7e2d17a9f4f7c2767b6a26bb70cf05e9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_82a977b6efed08b42f1df388113ab0bb.setIcon(icon_7e2d17a9f4f7c2767b6a26bb70cf05e9);
+        
+    
+        var popup_f80627626604f0544882e9aedfdb059d = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d9987f1e1a60d69c8b83b5e836c0f14a = $(`<div id="html_d9987f1e1a60d69c8b83b5e836c0f14a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: RESERVOIR</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 37.93</h6></center>         </div>`)[0];
+                popup_f80627626604f0544882e9aedfdb059d.setContent(html_d9987f1e1a60d69c8b83b5e836c0f14a);
+            
+        
+
+        marker_82a977b6efed08b42f1df388113ab0bb.bindPopup(popup_f80627626604f0544882e9aedfdb059d)
+        ;
+
+        
+    
+    
+            marker_82a977b6efed08b42f1df388113ab0bb.bindTooltip(
+                `<div>
+                     RESERVOIR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a4276c8a344477c61346150ef15aacb0 = L.marker(
+                [50.797123, 4.394944],
+                {"name": "HIPPOD. BOITSFORT"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_3152f7e61c4f74b6338cd3941682f1da = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a4276c8a344477c61346150ef15aacb0.setIcon(icon_3152f7e61c4f74b6338cd3941682f1da);
+        
+    
+        var popup_5dcbe5e3697481c2cd5330c510131344 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2170ba103b38396dc423269b2e3259ad = $(`<div id="html_2170ba103b38396dc423269b2e3259ad" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HIPPOD. BOITSFORT</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 31.03</h6></center>         </div>`)[0];
+                popup_5dcbe5e3697481c2cd5330c510131344.setContent(html_2170ba103b38396dc423269b2e3259ad);
+            
+        
+
+        marker_a4276c8a344477c61346150ef15aacb0.bindPopup(popup_5dcbe5e3697481c2cd5330c510131344)
+        ;
+
+        
+    
+    
+            marker_a4276c8a344477c61346150ef15aacb0.bindTooltip(
+                `<div>
+                     HIPPOD. BOITSFORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7f1606054806f68c3ae3fff5efdeb475 = L.marker(
+                [50.802634, 4.390584],
+                {"name": "BRESIL"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_d4045a45e9a713935c4daa29a098415c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7f1606054806f68c3ae3fff5efdeb475.setIcon(icon_d4045a45e9a713935c4daa29a098415c);
+        
+    
+        var popup_dd9a1d6e47cdcd9a779ee55ae33b9359 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2afbffb43a05a561274f7987238c7b38 = $(`<div id="html_2afbffb43a05a561274f7987238c7b38" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BRESIL</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 24.14</h6></center>         </div>`)[0];
+                popup_dd9a1d6e47cdcd9a779ee55ae33b9359.setContent(html_2afbffb43a05a561274f7987238c7b38);
+            
+        
+
+        marker_7f1606054806f68c3ae3fff5efdeb475.bindPopup(popup_dd9a1d6e47cdcd9a779ee55ae33b9359)
+        ;
+
+        
+    
+    
+            marker_7f1606054806f68c3ae3fff5efdeb475.bindTooltip(
+                `<div>
+                     BRESIL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8c1dead4482a098ea1141afd97a5eb00 = L.marker(
+                [50.801169, 4.393449],
+                {"name": "BOONDAEL GARE"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_5c3d6a05359e8c3b322bed7e72f2743e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8c1dead4482a098ea1141afd97a5eb00.setIcon(icon_5c3d6a05359e8c3b322bed7e72f2743e);
+        
+    
+        var popup_4b4da9b0538e03d53de4d8b66965b5ec = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_99b2aed7d654ef8a46f65320a9a562cc = $(`<div id="html_99b2aed7d654ef8a46f65320a9a562cc" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BOONDAEL GARE</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 17.24</h6></center>         </div>`)[0];
+                popup_4b4da9b0538e03d53de4d8b66965b5ec.setContent(html_99b2aed7d654ef8a46f65320a9a562cc);
+            
+        
+
+        marker_8c1dead4482a098ea1141afd97a5eb00.bindPopup(popup_4b4da9b0538e03d53de4d8b66965b5ec)
+        ;
+
+        
+    
+    
+            marker_8c1dead4482a098ea1141afd97a5eb00.bindTooltip(
+                `<div>
+                     BOONDAEL GARE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d825a286a9869bcbd9f77e1333f40f68 = L.marker(
+                [50.801644, 4.39691],
+                {"name": "FUTAIE"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_8b2b675845d5f2ca3c320efbf1914b04 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d825a286a9869bcbd9f77e1333f40f68.setIcon(icon_8b2b675845d5f2ca3c320efbf1914b04);
+        
+    
+        var popup_cd991a0face2deaa3c114086e60c94d8 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_b6d13b3ef4891772418894d40fcf4b14 = $(`<div id="html_b6d13b3ef4891772418894d40fcf4b14" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FUTAIE</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 10.34</h6></center>         </div>`)[0];
+                popup_cd991a0face2deaa3c114086e60c94d8.setContent(html_b6d13b3ef4891772418894d40fcf4b14);
+            
+        
+
+        marker_d825a286a9869bcbd9f77e1333f40f68.bindPopup(popup_cd991a0face2deaa3c114086e60c94d8)
+        ;
+
+        
+    
+    
+            marker_d825a286a9869bcbd9f77e1333f40f68.bindTooltip(
+                `<div>
+                     FUTAIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1eb428ee36d5918f2a422b6997e49016 = L.marker(
+                [50.804133, 4.40026],
+                {"name": "DRIES"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_3238b15cee0ba9ed15c1b24f59fb76e9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1eb428ee36d5918f2a422b6997e49016.setIcon(icon_3238b15cee0ba9ed15c1b24f59fb76e9);
+        
+    
+        var popup_e9096d7fd3bdd84135504d042efef4f5 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6f5bc5a5398226603393ad33e6ee95f3 = $(`<div id="html_6f5bc5a5398226603393ad33e6ee95f3" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DRIES</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 3.45</h6></center>         </div>`)[0];
+                popup_e9096d7fd3bdd84135504d042efef4f5.setContent(html_6f5bc5a5398226603393ad33e6ee95f3);
+            
+        
+
+        marker_1eb428ee36d5918f2a422b6997e49016.bindPopup(popup_e9096d7fd3bdd84135504d042efef4f5)
+        ;
+
+        
+    
+    
+            marker_1eb428ee36d5918f2a422b6997e49016.bindTooltip(
+                `<div>
+                     DRIES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bbd8354bdf51e62e28622fa22701fdb1 = L.marker(
+                [50.806255, 4.400659],
+                {"name": "BIEN-FAIRE"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_1c4fcec6cc32adf13a395e6e23c62286 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_bbd8354bdf51e62e28622fa22701fdb1.setIcon(icon_1c4fcec6cc32adf13a395e6e23c62286);
+        
+    
+        var popup_72b2b1e811f3079e25788a94acfb236f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_b0670b3f1380f2c02e81a14d84330670 = $(`<div id="html_b0670b3f1380f2c02e81a14d84330670" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BIEN-FAIRE</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 3.45</h6></center>         </div>`)[0];
+                popup_72b2b1e811f3079e25788a94acfb236f.setContent(html_b0670b3f1380f2c02e81a14d84330670);
+            
+        
+
+        marker_bbd8354bdf51e62e28622fa22701fdb1.bindPopup(popup_72b2b1e811f3079e25788a94acfb236f)
+        ;
+
+        
+    
+    
+            marker_bbd8354bdf51e62e28622fa22701fdb1.bindTooltip(
+                `<div>
+                     BIEN-FAIRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4dc4e82eddebe5e8c20e5705b81dd84e = L.marker(
+                [50.809661, 4.399387],
+                {"name": "WATERMAEL GARE"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_1503ace5a6f19c0e1e2988ff1ac742f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4dc4e82eddebe5e8c20e5705b81dd84e.setIcon(icon_1503ace5a6f19c0e1e2988ff1ac742f2);
+        
+    
+        var popup_f6bc73b8024e7c03ab66b93a01503574 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_7564e3e5c0fbf94d3a1e62e133708a3c = $(`<div id="html_7564e3e5c0fbf94d3a1e62e133708a3c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WATERMAEL GARE</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 10.34</h6></center>         </div>`)[0];
+                popup_f6bc73b8024e7c03ab66b93a01503574.setContent(html_7564e3e5c0fbf94d3a1e62e133708a3c);
+            
+        
+
+        marker_4dc4e82eddebe5e8c20e5705b81dd84e.bindPopup(popup_f6bc73b8024e7c03ab66b93a01503574)
+        ;
+
+        
+    
+    
+            marker_4dc4e82eddebe5e8c20e5705b81dd84e.bindTooltip(
+                `<div>
+                     WATERMAEL GARE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0ee7a5c6692a448dbc6b75fcd80853eb = L.marker(
+                [50.809616, 4.403442],
+                {"name": "KEYM"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_53e82a49910cb2468cff24ea18edc11a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0ee7a5c6692a448dbc6b75fcd80853eb.setIcon(icon_53e82a49910cb2468cff24ea18edc11a);
+        
+    
+        var popup_4c93feb7e6efce944c58f4af868eee91 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_64e37e51586d09c2722806d5ba169199 = $(`<div id="html_64e37e51586d09c2722806d5ba169199" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: KEYM</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 17.24</h6></center>         </div>`)[0];
+                popup_4c93feb7e6efce944c58f4af868eee91.setContent(html_64e37e51586d09c2722806d5ba169199);
+            
+        
+
+        marker_0ee7a5c6692a448dbc6b75fcd80853eb.bindPopup(popup_4c93feb7e6efce944c58f4af868eee91)
+        ;
+
+        
+    
+    
+            marker_0ee7a5c6692a448dbc6b75fcd80853eb.bindTooltip(
+                `<div>
+                     KEYM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5778506ccc9a2441741b5cb163507f4a = L.marker(
+                [50.810748, 4.407132],
+                {"name": "LOUTRIER"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_b4444b4033fb46cf141f6c571fe368c2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5778506ccc9a2441741b5cb163507f4a.setIcon(icon_b4444b4033fb46cf141f6c571fe368c2);
+        
+    
+        var popup_759aa04f9b40481cd2f9b8d75e1c9aa7 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_82e05120c993c7d12f7f160cb951d635 = $(`<div id="html_82e05120c993c7d12f7f160cb951d635" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LOUTRIER</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 24.14</h6></center>         </div>`)[0];
+                popup_759aa04f9b40481cd2f9b8d75e1c9aa7.setContent(html_82e05120c993c7d12f7f160cb951d635);
+            
+        
+
+        marker_5778506ccc9a2441741b5cb163507f4a.bindPopup(popup_759aa04f9b40481cd2f9b8d75e1c9aa7)
+        ;
+
+        
+    
+    
+            marker_5778506ccc9a2441741b5cb163507f4a.bindTooltip(
+                `<div>
+                     LOUTRIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c67ba780146d5a28146273d565045bd5 = L.marker(
+                [50.810899, 4.411502],
+                {"name": "HANNETONS"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_0636113f22318e75b4e8623d33caa9d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c67ba780146d5a28146273d565045bd5.setIcon(icon_0636113f22318e75b4e8623d33caa9d5);
+        
+    
+        var popup_6408d1ed6cf7147374c083ede3b720e8 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6435c6654d56d7fac8031b30d534fefb = $(`<div id="html_6435c6654d56d7fac8031b30d534fefb" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HANNETONS</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 31.03</h6></center>         </div>`)[0];
+                popup_6408d1ed6cf7147374c083ede3b720e8.setContent(html_6435c6654d56d7fac8031b30d534fefb);
+            
+        
+
+        marker_c67ba780146d5a28146273d565045bd5.bindPopup(popup_6408d1ed6cf7147374c083ede3b720e8)
+        ;
+
+        
+    
+    
+            marker_c67ba780146d5a28146273d565045bd5.bindTooltip(
+                `<div>
+                     HANNETONS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b3a167c20ce71208b6f1e257fd26a20b = L.marker(
+                [50.809495, 4.416849],
+                {"name": "ARCHIDUCS"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_9df7d9575efb45f0f6f565b93c033713 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b3a167c20ce71208b6f1e257fd26a20b.setIcon(icon_9df7d9575efb45f0f6f565b93c033713);
+        
+    
+        var popup_46a2ab328794279f3329e456eb8f435e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_9ecef4003f8380e71e78f549b2b1bf84 = $(`<div id="html_9ecef4003f8380e71e78f549b2b1bf84" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ARCHIDUCS</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 37.93</h6></center>         </div>`)[0];
+                popup_46a2ab328794279f3329e456eb8f435e.setContent(html_9ecef4003f8380e71e78f549b2b1bf84);
+            
+        
+
+        marker_b3a167c20ce71208b6f1e257fd26a20b.bindPopup(popup_46a2ab328794279f3329e456eb8f435e)
+        ;
+
+        
+    
+    
+            marker_b3a167c20ce71208b6f1e257fd26a20b.bindTooltip(
+                `<div>
+                     ARCHIDUCS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_448e2080c338c43105102c5ffe93234b = L.marker(
+                [50.810914, 4.418795],
+                {"name": "TRITOMAS"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_9e606a725c57c442ff58f474c6a61b2e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_448e2080c338c43105102c5ffe93234b.setIcon(icon_9e606a725c57c442ff58f474c6a61b2e);
+        
+    
+        var popup_8f298c8b378333776779758ae8550ba6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_14b3d38608bfd9cc7709bc1dd48f4807 = $(`<div id="html_14b3d38608bfd9cc7709bc1dd48f4807" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TRITOMAS</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 44.83</h6></center>         </div>`)[0];
+                popup_8f298c8b378333776779758ae8550ba6.setContent(html_14b3d38608bfd9cc7709bc1dd48f4807);
+            
+        
+
+        marker_448e2080c338c43105102c5ffe93234b.bindPopup(popup_8f298c8b378333776779758ae8550ba6)
+        ;
+
+        
+    
+    
+            marker_448e2080c338c43105102c5ffe93234b.bindTooltip(
+                `<div>
+                     TRITOMAS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_65043ef90b39c78438609f9ecc19204e = L.marker(
+                [50.813198, 4.417236],
+                {"name": "PECHERIES"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_5531291577b70f1a820d1dfefed21d85 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_65043ef90b39c78438609f9ecc19204e.setIcon(icon_5531291577b70f1a820d1dfefed21d85);
+        
+    
+        var popup_00ab851dfd8711ae09c81bac65821275 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a652edef3ac48a884dd7fac5334a3a2a = $(`<div id="html_a652edef3ac48a884dd7fac5334a3a2a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PECHERIES</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 51.72</h6></center>         </div>`)[0];
+                popup_00ab851dfd8711ae09c81bac65821275.setContent(html_a652edef3ac48a884dd7fac5334a3a2a);
+            
+        
+
+        marker_65043ef90b39c78438609f9ecc19204e.bindPopup(popup_00ab851dfd8711ae09c81bac65821275)
+        ;
+
+        
+    
+    
+            marker_65043ef90b39c78438609f9ecc19204e.bindTooltip(
+                `<div>
+                     PECHERIES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_58ad0818c12467de4a4f127dc1454633 = L.marker(
+                [50.813655, 4.419876],
+                {"name": "VIGNETTE"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_11b3185722c6b5c3687d818499ff64b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_58ad0818c12467de4a4f127dc1454633.setIcon(icon_11b3185722c6b5c3687d818499ff64b2);
+        
+    
+        var popup_1298f71b5a106eb122a422fa3e3a4f89 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3c20027689ea9150827f41f8ef8bd822 = $(`<div id="html_3c20027689ea9150827f41f8ef8bd822" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VIGNETTE</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 58.62</h6></center>         </div>`)[0];
+                popup_1298f71b5a106eb122a422fa3e3a4f89.setContent(html_3c20027689ea9150827f41f8ef8bd822);
+            
+        
+
+        marker_58ad0818c12467de4a4f127dc1454633.bindPopup(popup_1298f71b5a106eb122a422fa3e3a4f89)
+        ;
+
+        
+    
+    
+            marker_58ad0818c12467de4a4f127dc1454633.bindTooltip(
+                `<div>
+                     VIGNETTE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_262a050151485b0713d89f8d26b618c6 = L.marker(
+                [50.81262, 4.423124],
+                {"name": "DEMEY"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_10d11d357bacd1f82453f21077e8090b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_262a050151485b0713d89f8d26b618c6.setIcon(icon_10d11d357bacd1f82453f21077e8090b);
+        
+    
+        var popup_a013dac1c1af79f4f757760f1d87abe4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_9095a754725a1dd62ad5e0ef7f24f1db = $(`<div id="html_9095a754725a1dd62ad5e0ef7f24f1db" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DEMEY</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 65.52</h6></center>         </div>`)[0];
+                popup_a013dac1c1af79f4f757760f1d87abe4.setContent(html_9095a754725a1dd62ad5e0ef7f24f1db);
+            
+        
+
+        marker_262a050151485b0713d89f8d26b618c6.bindPopup(popup_a013dac1c1af79f4f757760f1d87abe4)
+        ;
+
+        
+    
+    
+            marker_262a050151485b0713d89f8d26b618c6.bindTooltip(
+                `<div>
+                     DEMEY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ad21171503bc402e41cd79c882488b8b = L.marker(
+                [50.812357, 4.429112],
+                {"name": "HERRMANN-DEBROUX"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_74e153ee7dea6be406feb1f6383e5da1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ad21171503bc402e41cd79c882488b8b.setIcon(icon_74e153ee7dea6be406feb1f6383e5da1);
+        
+    
+        var popup_030ae34fe62924859ae2cf081cf097f4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_69525ebeb13c6cdfaa88187b17d5d5f3 = $(`<div id="html_69525ebeb13c6cdfaa88187b17d5d5f3" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HERRMANN-DEBROUX</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 72.41</h6></center>         </div>`)[0];
+                popup_030ae34fe62924859ae2cf081cf097f4.setContent(html_69525ebeb13c6cdfaa88187b17d5d5f3);
+            
+        
+
+        marker_ad21171503bc402e41cd79c882488b8b.bindPopup(popup_030ae34fe62924859ae2cf081cf097f4)
+        ;
+
+        
+    
+    
+            marker_ad21171503bc402e41cd79c882488b8b.bindTooltip(
+                `<div>
+                     HERRMANN-DEBROUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0feb6c0628c12305ac456780a5fed7e2 = L.marker(
+                [50.811714, 4.432757],
+                {"name": "SCHOONEJANS"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_f63b6a5cd5c3390339e3856d0712caa7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0feb6c0628c12305ac456780a5fed7e2.setIcon(icon_f63b6a5cd5c3390339e3856d0712caa7);
+        
+    
+        var popup_b33dc107a41322b8cbd2835a111a819a = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_eb1b6c7e19d44c5dfd7bffb4d6d93681 = $(`<div id="html_eb1b6c7e19d44c5dfd7bffb4d6d93681" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SCHOONEJANS</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 79.31</h6></center>         </div>`)[0];
+                popup_b33dc107a41322b8cbd2835a111a819a.setContent(html_eb1b6c7e19d44c5dfd7bffb4d6d93681);
+            
+        
+
+        marker_0feb6c0628c12305ac456780a5fed7e2.bindPopup(popup_b33dc107a41322b8cbd2835a111a819a)
+        ;
+
+        
+    
+    
+            marker_0feb6c0628c12305ac456780a5fed7e2.bindTooltip(
+                `<div>
+                     SCHOONEJANS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3af2b6829308f93c12c6fdc135c2fdd8 = L.marker(
+                [50.809898, 4.436174],
+                {"name": "SACRE-COEUR"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_a148c1717c3741357b1ac93b98f0a24a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3af2b6829308f93c12c6fdc135c2fdd8.setIcon(icon_a148c1717c3741357b1ac93b98f0a24a);
+        
+    
+        var popup_58f043fc7a526f72f5d06905de46396b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6d1ceaecc2573a6c88e75d5aa7456349 = $(`<div id="html_6d1ceaecc2573a6c88e75d5aa7456349" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SACRE-COEUR</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 86.21</h6></center>         </div>`)[0];
+                popup_58f043fc7a526f72f5d06905de46396b.setContent(html_6d1ceaecc2573a6c88e75d5aa7456349);
+            
+        
+
+        marker_3af2b6829308f93c12c6fdc135c2fdd8.bindPopup(popup_58f043fc7a526f72f5d06905de46396b)
+        ;
+
+        
+    
+    
+            marker_3af2b6829308f93c12c6fdc135c2fdd8.bindTooltip(
+                `<div>
+                     SACRE-COEUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e84d3cae1dac0b98f8916876d6c1a061 = L.marker(
+                [50.808245, 4.435562],
+                {"name": "TRANSVAAL"}
+            ).addTo(feature_group_eef67d2a7fb04a49f69d64c95f5e30ae);
+        
+    
+            var icon_0306577921f6b5d4d1a2c6319ee88292 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e84d3cae1dac0b98f8916876d6c1a061.setIcon(icon_0306577921f6b5d4d1a2c6319ee88292);
+        
+    
+        var popup_87e57e60fca56264131beab0a403798f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3e8335af73d88be29ec54de77abdfb24 = $(`<div id="html_3e8335af73d88be29ec54de77abdfb24" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TRANSVAAL</h4></center>         <center><h5>Line: 41 HEROS - TRANSVAAL</h5></center>         <center><h6>Score: 93.1</h6></center>         </div>`)[0];
+                popup_87e57e60fca56264131beab0a403798f.setContent(html_3e8335af73d88be29ec54de77abdfb24);
+            
+        
+
+        marker_e84d3cae1dac0b98f8916876d6c1a061.bindPopup(popup_87e57e60fca56264131beab0a403798f)
+        ;
+
+        
+    
+    
+            marker_e84d3cae1dac0b98f8916876d6c1a061.bindTooltip(
+                `<div>
+                     TRANSVAAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_50628265b5865b7e29e88a4341f1b42b = L.featureGroup(
+                {}
+            ).addTo(map_8f7a9f545982ea683929009941d8fb4d);
+        
+    
+            var marker_1d5455408bd97ea65b9743145cd4b133 = L.marker(
+                [50.803093000000004, 4.341836],
+                {"name": "HEROS"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_cc7d31528c1e8ee54a2065fd6ce37421 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1d5455408bd97ea65b9743145cd4b133.setIcon(icon_cc7d31528c1e8ee54a2065fd6ce37421);
+        
+    
+            marker_1d5455408bd97ea65b9743145cd4b133.bindTooltip(
+                `<div>
+                     HEROS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1193111232bbfb2ec9daaec9eb6e6f29 = L.marker(
+                [50.803922, 4.349495999999999],
+                {"name": "STATUAIRES"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_95838be8643b007fa8a2a2968fb411a2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1193111232bbfb2ec9daaec9eb6e6f29.setIcon(icon_95838be8643b007fa8a2a2968fb411a2);
+        
+    
+            marker_1193111232bbfb2ec9daaec9eb6e6f29.bindTooltip(
+                `<div>
+                     STATUAIRES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c37841bea3ae4555847b5495926ac414 = L.marker(
+                [50.804327, 4.3548729999999995],
+                {"name": "ZEECRABBE"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_38bf96349e9eaf36a8630eea3d80af4e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c37841bea3ae4555847b5495926ac414.setIcon(icon_38bf96349e9eaf36a8630eea3d80af4e);
+        
+    
+            marker_c37841bea3ae4555847b5495926ac414.bindTooltip(
+                `<div>
+                     ZEECRABBE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_96357b6cd34511b77fc860c12f9f3618 = L.marker(
+                [50.804094000000006, 4.358051],
+                {"name": "HOUZEAU"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_76dee970ce4546d41f38598048451c3f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_96357b6cd34511b77fc860c12f9f3618.setIcon(icon_76dee970ce4546d41f38598048451c3f);
+        
+    
+            marker_96357b6cd34511b77fc860c12f9f3618.bindTooltip(
+                `<div>
+                     HOUZEAU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3c7dea2f0673a7c6ac91f96b00f55375 = L.marker(
+                [50.803743000000004, 4.361952],
+                {"name": "FLORIDE"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_77ba16073f697ac6caa917e29dcc3dff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3c7dea2f0673a7c6ac91f96b00f55375.setIcon(icon_77ba16073f697ac6caa917e29dcc3dff);
+        
+    
+            marker_3c7dea2f0673a7c6ac91f96b00f55375.bindTooltip(
+                `<div>
+                     FLORIDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c4c8de13be2fb61e8a9df08a4d55d952 = L.marker(
+                [50.804795000000006, 4.368847],
+                {"name": "HOP.STE-ELISABETH"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_62cc1145782175dbc228331acbf43ef8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c4c8de13be2fb61e8a9df08a4d55d952.setIcon(icon_62cc1145782175dbc228331acbf43ef8);
+        
+    
+            marker_c4c8de13be2fb61e8a9df08a4d55d952.bindTooltip(
+                `<div>
+                     HOP.STE-ELISABETH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4d4b12751083da5d0a03287ee3060adf = L.marker(
+                [50.802359, 4.372932],
+                {"name": "VERT CHASSEUR"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_19f6d8de147901b8163f1b4b0ef7ea46 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4d4b12751083da5d0a03287ee3060adf.setIcon(icon_19f6d8de147901b8163f1b4b0ef7ea46);
+        
+    
+            marker_4d4b12751083da5d0a03287ee3060adf.bindTooltip(
+                `<div>
+                     VERT CHASSEUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4945ab23b9a8bb8b05a957456de375db = L.marker(
+                [50.79959, 4.376351],
+                {"name": "MONTANA"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_279f118fe7c14d4656a6b4b1d92f5d98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4945ab23b9a8bb8b05a957456de375db.setIcon(icon_279f118fe7c14d4656a6b4b1d92f5d98);
+        
+    
+            marker_4945ab23b9a8bb8b05a957456de375db.bindTooltip(
+                `<div>
+                     MONTANA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_878d947bc2dde0d6412f2a8d7b931c21 = L.marker(
+                [50.799194, 4.379429],
+                {"name": "GENDARMES"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_b0ef17f86ea5d85f52c8ac15750648b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_878d947bc2dde0d6412f2a8d7b931c21.setIcon(icon_b0ef17f86ea5d85f52c8ac15750648b2);
+        
+    
+            marker_878d947bc2dde0d6412f2a8d7b931c21.bindTooltip(
+                `<div>
+                     GENDARMES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a5354606032adfd4db68593cd9106cc3 = L.marker(
+                [50.798393000000004, 4.385159],
+                {"name": "RESERVOIR"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_6e47a2c0538e3d5535abe76ad4828a68 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a5354606032adfd4db68593cd9106cc3.setIcon(icon_6e47a2c0538e3d5535abe76ad4828a68);
+        
+    
+            marker_a5354606032adfd4db68593cd9106cc3.bindTooltip(
+                `<div>
+                     RESERVOIR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_35f027d2843f5d54543fe98641b87043 = L.marker(
+                [50.797133, 4.394953999999999],
+                {"name": "HIPPOD. BOITSFORT"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_553917ee7afe6f3a308ad16a25ac0884 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_35f027d2843f5d54543fe98641b87043.setIcon(icon_553917ee7afe6f3a308ad16a25ac0884);
+        
+    
+            marker_35f027d2843f5d54543fe98641b87043.bindTooltip(
+                `<div>
+                     HIPPOD. BOITSFORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_06ae7e192e54d6b7e6a51e935d6e8e06 = L.marker(
+                [50.802644, 4.390593999999999],
+                {"name": "BRESIL"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_c2e52eb869179b628a45775fd8318a21 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_06ae7e192e54d6b7e6a51e935d6e8e06.setIcon(icon_c2e52eb869179b628a45775fd8318a21);
+        
+    
+            marker_06ae7e192e54d6b7e6a51e935d6e8e06.bindTooltip(
+                `<div>
+                     BRESIL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1066064d7837ae323ab1b50704b0bfd9 = L.marker(
+                [50.801179000000005, 4.393459],
+                {"name": "BOONDAEL GARE"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_28ef33ebd756c4474f67392de1a112ca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1066064d7837ae323ab1b50704b0bfd9.setIcon(icon_28ef33ebd756c4474f67392de1a112ca);
+        
+    
+            marker_1066064d7837ae323ab1b50704b0bfd9.bindTooltip(
+                `<div>
+                     BOONDAEL GARE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_00a93eafaea8c295b09d020a5584a758 = L.marker(
+                [50.801654000000006, 4.39692],
+                {"name": "FUTAIE"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_9dc304e84e350c4c71bd3d92053f09d1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_00a93eafaea8c295b09d020a5584a758.setIcon(icon_9dc304e84e350c4c71bd3d92053f09d1);
+        
+    
+            marker_00a93eafaea8c295b09d020a5584a758.bindTooltip(
+                `<div>
+                     FUTAIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed0b800dcd9ee394af82233c71e15d12 = L.marker(
+                [50.804143, 4.40027],
+                {"name": "DRIES"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_46df0eb33fa3f03ed87a49c5e709c5c7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ed0b800dcd9ee394af82233c71e15d12.setIcon(icon_46df0eb33fa3f03ed87a49c5e709c5c7);
+        
+    
+            marker_ed0b800dcd9ee394af82233c71e15d12.bindTooltip(
+                `<div>
+                     DRIES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_155a8dbf85235a8809a85db5518de94b = L.marker(
+                [50.806265, 4.400669],
+                {"name": "BIEN-FAIRE"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_18032fbd50e2932e16d10ffbffce2b95 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_155a8dbf85235a8809a85db5518de94b.setIcon(icon_18032fbd50e2932e16d10ffbffce2b95);
+        
+    
+            marker_155a8dbf85235a8809a85db5518de94b.bindTooltip(
+                `<div>
+                     BIEN-FAIRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2df987007b0f6e12180549bb0d6c72fb = L.marker(
+                [50.809671, 4.399397],
+                {"name": "WATERMAEL GARE"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_f49c802fc0c8e490a3f5fc6064ba1b02 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2df987007b0f6e12180549bb0d6c72fb.setIcon(icon_f49c802fc0c8e490a3f5fc6064ba1b02);
+        
+    
+            marker_2df987007b0f6e12180549bb0d6c72fb.bindTooltip(
+                `<div>
+                     WATERMAEL GARE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4cb3cf4b82762f059d484f1b2f60bf63 = L.marker(
+                [50.809626, 4.403452],
+                {"name": "KEYM"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_4fb1a62b767eb27d756c92ce750aef20 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4cb3cf4b82762f059d484f1b2f60bf63.setIcon(icon_4fb1a62b767eb27d756c92ce750aef20);
+        
+    
+            marker_4cb3cf4b82762f059d484f1b2f60bf63.bindTooltip(
+                `<div>
+                     KEYM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_306b041864500202a621801ad1241247 = L.marker(
+                [50.810758, 4.4071419999999994],
+                {"name": "LOUTRIER"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_6a5a4398cb906c28f68f1df2929b5e95 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_306b041864500202a621801ad1241247.setIcon(icon_6a5a4398cb906c28f68f1df2929b5e95);
+        
+    
+            marker_306b041864500202a621801ad1241247.bindTooltip(
+                `<div>
+                     LOUTRIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2844af576c1cfb97a9c359791175d2af = L.marker(
+                [50.810909, 4.411511999999999],
+                {"name": "HANNETONS"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_2895403a7f9b23b550f5c92dac770cbf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2844af576c1cfb97a9c359791175d2af.setIcon(icon_2895403a7f9b23b550f5c92dac770cbf);
+        
+    
+            marker_2844af576c1cfb97a9c359791175d2af.bindTooltip(
+                `<div>
+                     HANNETONS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0bc337bc10968e01f4601a23e1911433 = L.marker(
+                [50.809505, 4.416859],
+                {"name": "ARCHIDUCS"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_1c2f0f83cd12366ab1ab12338cda6b8d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0bc337bc10968e01f4601a23e1911433.setIcon(icon_1c2f0f83cd12366ab1ab12338cda6b8d);
+        
+    
+            marker_0bc337bc10968e01f4601a23e1911433.bindTooltip(
+                `<div>
+                     ARCHIDUCS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b0c7c2c77b03a4277d332e774770a8f4 = L.marker(
+                [50.810924, 4.418805],
+                {"name": "TRITOMAS"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_de157d8f55368d4e28678930167cadf5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b0c7c2c77b03a4277d332e774770a8f4.setIcon(icon_de157d8f55368d4e28678930167cadf5);
+        
+    
+            marker_b0c7c2c77b03a4277d332e774770a8f4.bindTooltip(
+                `<div>
+                     TRITOMAS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_995fb235ae26591b85f37d710d6d43ba = L.marker(
+                [50.813208, 4.417246],
+                {"name": "PECHERIES"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_6c86b150b2a19ba52ea6e4b013f1162e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_995fb235ae26591b85f37d710d6d43ba.setIcon(icon_6c86b150b2a19ba52ea6e4b013f1162e);
+        
+    
+            marker_995fb235ae26591b85f37d710d6d43ba.bindTooltip(
+                `<div>
+                     PECHERIES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ae020dce0584453060d5654908a08299 = L.marker(
+                [50.813665, 4.419886],
+                {"name": "VIGNETTE"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_40e7ec256a3b553790fae98b664f2193 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ae020dce0584453060d5654908a08299.setIcon(icon_40e7ec256a3b553790fae98b664f2193);
+        
+    
+            marker_ae020dce0584453060d5654908a08299.bindTooltip(
+                `<div>
+                     VIGNETTE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_715f4b24f6aeb7c31423b562902402d8 = L.marker(
+                [50.812630000000006, 4.423133999999999],
+                {"name": "DEMEY"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_82b3532b40ba53c7866a1832e7f9eb1b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_715f4b24f6aeb7c31423b562902402d8.setIcon(icon_82b3532b40ba53c7866a1832e7f9eb1b);
+        
+    
+            marker_715f4b24f6aeb7c31423b562902402d8.bindTooltip(
+                `<div>
+                     DEMEY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_497b2b67d7f9c5d8b9e1583acb5cb002 = L.marker(
+                [50.812367, 4.429122],
+                {"name": "HERRMANN-DEBROUX"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_5a9f414607dd098814c0fc1205ac1ce9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_497b2b67d7f9c5d8b9e1583acb5cb002.setIcon(icon_5a9f414607dd098814c0fc1205ac1ce9);
+        
+    
+            marker_497b2b67d7f9c5d8b9e1583acb5cb002.bindTooltip(
+                `<div>
+                     HERRMANN-DEBROUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b5ee7e5339f9b7c63429260544eb0e3c = L.marker(
+                [50.811724000000005, 4.432766999999999],
+                {"name": "SCHOONEJANS"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_326546bc018dcb6e01ee708341abf399 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b5ee7e5339f9b7c63429260544eb0e3c.setIcon(icon_326546bc018dcb6e01ee708341abf399);
+        
+    
+            marker_b5ee7e5339f9b7c63429260544eb0e3c.bindTooltip(
+                `<div>
+                     SCHOONEJANS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fb732670e8b0dead950a2d6c170fb399 = L.marker(
+                [50.809908, 4.436184],
+                {"name": "SACRE-COEUR"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_80724823b7bfee37418d58fd3c983262 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fb732670e8b0dead950a2d6c170fb399.setIcon(icon_80724823b7bfee37418d58fd3c983262);
+        
+    
+            marker_fb732670e8b0dead950a2d6c170fb399.bindTooltip(
+                `<div>
+                     SACRE-COEUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_85db9584d0313ddd60e9dc4dccbb72d0 = L.marker(
+                [50.808255, 4.435572],
+                {"name": "TRANSVAAL"}
+            ).addTo(feature_group_50628265b5865b7e29e88a4341f1b42b);
+        
+    
+            var icon_9d53a77707fdab5b71dd20c58c5f0157 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_85db9584d0313ddd60e9dc4dccbb72d0.setIcon(icon_9d53a77707fdab5b71dd20c58c5f0157);
+        
+    
+            marker_85db9584d0313ddd60e9dc4dccbb72d0.bindTooltip(
+                `<div>
+                     TRANSVAAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_a6c55f7dfd1f224f4847780105aec203 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_1ef1faf17ba7d26020477589fae910ae,
+                },
+                overlays :  {
+                    "41 HEROS - TRANSVAAL" : feature_group_eef67d2a7fb04a49f69d64c95f5e30ae,
+                    "41 HEROS - TRANSVAAL SCORES" : feature_group_50628265b5865b7e29e88a4341f1b42b,
+                },
+            };
+            L.control.layers(
+                layer_control_a6c55f7dfd1f224f4847780105aec203.base_layers,
+                layer_control_a6c55f7dfd1f224f4847780105aec203.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_8f7a9f545982ea683929009941d8fb4d);
+            feature_group_50628265b5865b7e29e88a4341f1b42b.remove();
+        
+</script>
+</html>

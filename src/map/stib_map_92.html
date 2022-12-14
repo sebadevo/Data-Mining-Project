@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e0c30a5e745acf695bdbbac0c68f44a0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e0c30a5e745acf695bdbbac0c68f44a0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e0c30a5e745acf695bdbbac0c68f44a0 = L.map(
+                "map_e0c30a5e745acf695bdbbac0c68f44a0",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0fd841cf686090e20a96d02a993fbba6 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e0c30a5e745acf695bdbbac0c68f44a0);
+        
+    
+            var poly_line_e66cc733f96f84968ef46f9c55f0e2cb = L.polyline(
+                [[50.812914, 4.34744], [50.812344, 4.347075], [50.809805, 4.345467], [50.809805, 4.345467], [50.809435, 4.345234], [50.809067, 4.345001], [50.806729, 4.343525], [50.806643, 4.343471], [50.806643, 4.343471], [50.804841, 4.34233], [50.803951, 4.341766], [50.8033, 4.341355], [50.8033, 4.341355], [50.802147, 4.340625], [50.801949, 4.340501], [50.8019, 4.340476], [50.801878, 4.340468], [50.801832, 4.340458], [50.801783, 4.340455], [50.801733, 4.340462], [50.801683, 4.340478], [50.801645, 4.340496], [50.80156, 4.340542], [50.801437, 4.340609], [50.800824, 4.340954], [50.800824, 4.340954], [50.800667, 4.341043], [50.800595, 4.341086], [50.800473, 4.341161], [50.800374, 4.341226], [50.800225, 4.34133], [50.800148, 4.341387], [50.800078, 4.341439], [50.799661, 4.34176], [50.799457, 4.341923], [50.799313, 4.342043], [50.799108, 4.34222], [50.798925, 4.342386], [50.798874, 4.342433], [50.798812, 4.342491], [50.798667, 4.342632], [50.798518, 4.342779], [50.798424, 4.342876], [50.798312, 4.342993], [50.7983, 4.343005], [50.798217, 4.343094], [50.798119, 4.343205], [50.798001, 4.343347], [50.797968, 4.343391], [50.797968, 4.343391], [50.797934, 4.343433], [50.797881, 4.34351], [50.797826, 4.343594], [50.797756, 4.34371], [50.797713, 4.343788], [50.797649, 4.343913], [50.797579, 4.344053], [50.797486, 4.344252], [50.797428, 4.344381], [50.797413, 4.344415], [50.797406, 4.344434], [50.797341, 4.344587], [50.797334, 4.344605], [50.796718, 4.346153], [50.796584, 4.346489], [50.79652, 4.34665], [50.795732, 4.348622], [50.795662, 4.348803], [50.79562, 4.348915], [50.79562, 4.348915], [50.795576, 4.349037], [50.795493, 4.349274], [50.795426, 4.349476], [50.795327, 4.349788], [50.795256, 4.350026], [50.795213, 4.350176], [50.795202, 4.350215], [50.795173, 4.35032], [50.795154, 4.350392], [50.795121, 4.350517], [50.795056, 4.350775], [50.795001, 4.351009], [50.794957, 4.35121], [50.794921, 4.351378], [50.794884, 4.351562], [50.794825, 4.351876], [50.794807, 4.351979], [50.794775, 4.352172], [50.794749, 4.352338], [50.794734, 4.352443], [50.794734, 4.352443], [50.794729, 4.35247], [50.794708, 4.352622], [50.794664, 4.352957], [50.794631, 4.353245], [50.794604, 4.35352], [50.79458, 4.353809], [50.79456, 4.354091], [50.794546, 4.354354], [50.794534, 4.35466], [50.794527, 4.354887], [50.794524, 4.355094], [50.794522, 4.355335], [50.794523, 4.355571], [50.794528, 4.355863], [50.794537, 4.356132], [50.794547, 4.356351], [50.794563, 4.356623], [50.794582, 4.356898], [50.794599, 4.357104], [50.794619, 4.357312], [50.794643, 4.357531], [50.794674, 4.357789], [50.794685, 4.35787], [50.794685, 4.35787], [50.794757, 4.358414], [50.794782, 4.358604], [50.794789, 4.358688], [50.794791, 4.358761], [50.794788, 4.358833], [50.794782, 4.358901], [50.794771, 4.358979], [50.794677, 4.359482], [50.79443, 4.360824], [50.794407, 4.360962], [50.794394, 4.361046], [50.794377, 4.361186], [50.794367, 4.361329], [50.794364, 4.361396], [50.794363, 4.361471], [50.794368, 4.361616], [50.794379, 4.36176], [50.794387, 4.36183], [50.794398, 4.361902], [50.794411, 4.361967], [50.794427, 4.362036], [50.794465, 4.362163], [50.794487, 4.36223], [50.794494, 4.362251], [50.794494, 4.362251], [50.794505, 4.362294], [50.794513, 4.362325], [50.794518, 4.362358], [50.794522, 4.362428], [50.794521, 4.362455], [50.794517, 4.362482], [50.794511, 4.362514], [50.794503, 4.362543], [50.794493, 4.36257], [50.79448, 4.362596], [50.794449, 4.362643], [50.794407, 4.362682], [50.794336, 4.36274], [50.794299, 4.362776], [50.794281, 4.362799], [50.794256, 4.362845], [50.794247, 4.362867], [50.794233, 4.362912], [50.794226, 4.362945], [50.794221, 4.362979], [50.79422, 4.363024], [50.794222, 4.363068], [50.794232, 4.363123], [50.794257, 4.363209], [50.794271, 4.36325], [50.794315, 4.363383], [50.794348, 4.363504], [50.794372, 4.363614], [50.794389, 4.363718], [50.79441, 4.363857], [50.794425, 4.363983], [50.794436, 4.364138], [50.794442, 4.364265], [50.794443, 4.364387], [50.794443, 4.364587], [50.794439, 4.364651], [50.794433, 4.364701], [50.794419, 4.364756], [50.794402, 4.3648], [50.794387, 4.364831], [50.794361, 4.364872], [50.79432, 4.364921], [50.794098, 4.365146], [50.794078, 4.365174], [50.794069, 4.36519], [50.794057, 4.365214], [50.794043, 4.365252], [50.794032, 4.365301], [50.794026, 4.365352], [50.794027, 4.365403], [50.79403, 4.365433], [50.794042, 4.365495], [50.794137, 4.365937], [50.794147, 4.366], [50.79415, 4.366044], [50.79415, 4.366102], [50.794143, 4.366156], [50.79413, 4.366203], [50.794117, 4.366234], [50.794097, 4.366268], [50.794071, 4.366299], [50.794043, 4.366323], [50.794002, 4.366353], [50.79378, 4.366489], [50.793664, 4.366563], [50.793664, 4.366563], [50.793594, 4.366607], [50.793495, 4.366665], [50.793432, 4.366695], [50.793365, 4.366719], [50.79327, 4.366746], [50.793193, 4.366763], [50.793113, 4.366773], [50.793056, 4.366777], [50.792687, 4.366787], [50.792521, 4.366789], [50.792433, 4.366793], [50.79238, 4.3668], [50.792306, 4.366815], [50.792224, 4.366841], [50.792115, 4.366885], [50.791988, 4.366945], [50.791851, 4.367004], [50.791728, 4.367065], [50.791673, 4.367102], [50.791577, 4.367186], [50.791535, 4.367232], [50.791489, 4.367293], [50.791448, 4.367354], [50.79141, 4.36742], [50.791385, 4.367471], [50.791332, 4.3676], [50.79131, 4.367661], [50.791284, 4.367757], [50.791259, 4.367868], [50.791201, 4.368154], [50.791141, 4.368478], [50.791098, 4.368698], [50.791098, 4.368698], [50.791, 4.369214], [50.790956, 4.369452], [50.790822, 4.370134], [50.790806, 4.370208], [50.79078, 4.370292], [50.790752, 4.370355], [50.790736, 4.370387], [50.790718, 4.370416], [50.790664, 4.37049], [50.790297, 4.370941], [50.789923, 4.371399], [50.789639, 4.371751], [50.789575, 4.371825], [50.789485, 4.371914], [50.789433, 4.371958], [50.789354, 4.372013], [50.78925, 4.372073], [50.789186, 4.372103], [50.789084, 4.372138], [50.788997, 4.372158], [50.788891, 4.372169], [50.788755, 4.372172], [50.78873, 4.372178], [50.788704, 4.372189], [50.788692, 4.372196], [50.788666, 4.37222], [50.788652, 4.372236], [50.788627, 4.372276], [50.788608, 4.372321], [50.788597, 4.372361], [50.78859, 4.372406], [50.788588, 4.372456], [50.788592, 4.372505], [50.788601, 4.372556], [50.78886, 4.373383], [50.788967, 4.373726], [50.789029, 4.373931], [50.789067, 4.374043], [50.789081, 4.374075], [50.789095, 4.374098], [50.789112, 4.374119], [50.789142, 4.374148], [50.789169, 4.374163], [50.789197, 4.374172], [50.789227, 4.374172], [50.789258, 4.374163], [50.789309, 4.374129], [50.789525, 4.373963], [50.789557, 4.373934], [50.789573, 4.373915], [50.789599, 4.373874], [50.78961, 4.373851], [50.789617, 4.373827]],
+                {"bubblingMouseEvents": true, "color": "#E43C2E", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#E43C2E", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_e0c30a5e745acf695bdbbac0c68f44a0);
+        
+    
+            var feature_group_2b577e4053ddd89708b84e26bd93d54a = L.featureGroup(
+                {}
+            ).addTo(map_e0c30a5e745acf695bdbbac0c68f44a0);
+        
+    
+            var marker_386b357876e642dbfe3d47c900cea763 = L.marker(
+                [50.812915, 4.34744],
+                {"name": "VANDERKINDERE"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_ee0bccc2ec0b81db24166ad8dc4c2206 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_386b357876e642dbfe3d47c900cea763.setIcon(icon_ee0bccc2ec0b81db24166ad8dc4c2206);
+        
+    
+        var popup_1d0dd082d233cd7c4001190b0051715a = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_8d9c55d1f13595fa7debdc9731ec912a = $(`<div id="html_8d9c55d1f13595fa7debdc9731ec912a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VANDERKINDERE</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_1d0dd082d233cd7c4001190b0051715a.setContent(html_8d9c55d1f13595fa7debdc9731ec912a);
+            
+        
+
+        marker_386b357876e642dbfe3d47c900cea763.bindPopup(popup_1d0dd082d233cd7c4001190b0051715a)
+        ;
+
+        
+    
+    
+            marker_386b357876e642dbfe3d47c900cea763.bindTooltip(
+                `<div>
+                     VANDERKINDERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f3b8f1c46e175ae5294ebbf333588ad8 = L.marker(
+                [50.809808, 4.345455],
+                {"name": "MESSIDOR"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_2eabb8d28954a5a55d970654c104567a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f3b8f1c46e175ae5294ebbf333588ad8.setIcon(icon_2eabb8d28954a5a55d970654c104567a);
+        
+    
+        var popup_a17b32e30f77654965f7b8872803c234 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a093465ecad8b76d5bf771a34933d408 = $(`<div id="html_a093465ecad8b76d5bf771a34933d408" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MESSIDOR</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 84.62</h6></center>         </div>`)[0];
+                popup_a17b32e30f77654965f7b8872803c234.setContent(html_a093465ecad8b76d5bf771a34933d408);
+            
+        
+
+        marker_f3b8f1c46e175ae5294ebbf333588ad8.bindPopup(popup_a17b32e30f77654965f7b8872803c234)
+        ;
+
+        
+    
+    
+            marker_f3b8f1c46e175ae5294ebbf333588ad8.bindTooltip(
+                `<div>
+                     MESSIDOR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1dba20912f1b1b8ee3e869422424bb14 = L.marker(
+                [50.80664, 4.343477],
+                {"name": "BOETENDAEL"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_040d13bbe3718b9ec6b8191279a42b93 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1dba20912f1b1b8ee3e869422424bb14.setIcon(icon_040d13bbe3718b9ec6b8191279a42b93);
+        
+    
+        var popup_23f8099c038821236d45fee476e428da = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_fe37b3dd289884cdbdb8128f1c918d40 = $(`<div id="html_fe37b3dd289884cdbdb8128f1c918d40" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BOETENDAEL</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 69.23</h6></center>         </div>`)[0];
+                popup_23f8099c038821236d45fee476e428da.setContent(html_fe37b3dd289884cdbdb8128f1c918d40);
+            
+        
+
+        marker_1dba20912f1b1b8ee3e869422424bb14.bindPopup(popup_23f8099c038821236d45fee476e428da)
+        ;
+
+        
+    
+    
+            marker_1dba20912f1b1b8ee3e869422424bb14.bindTooltip(
+                `<div>
+                     BOETENDAEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2cfb1392a653429fe4375745f71d0d00 = L.marker(
+                [50.803308, 4.341358],
+                {"name": "HEROS"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_a129f32fea4e506748c578b8d11171c2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2cfb1392a653429fe4375745f71d0d00.setIcon(icon_a129f32fea4e506748c578b8d11171c2);
+        
+    
+        var popup_4f33aa1d6652adf96d0acd2faf12e3a4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ec346d48490a3c49240af0274dfc4a5c = $(`<div id="html_ec346d48490a3c49240af0274dfc4a5c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HEROS</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 53.85</h6></center>         </div>`)[0];
+                popup_4f33aa1d6652adf96d0acd2faf12e3a4.setContent(html_ec346d48490a3c49240af0274dfc4a5c);
+            
+        
+
+        marker_2cfb1392a653429fe4375745f71d0d00.bindPopup(popup_4f33aa1d6652adf96d0acd2faf12e3a4)
+        ;
+
+        
+    
+    
+            marker_2cfb1392a653429fe4375745f71d0d00.bindTooltip(
+                `<div>
+                     HEROS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_76292e31f288f360a7ead59173fa671d = L.marker(
+                [50.800814, 4.34091],
+                {"name": "MARLOW"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_ed5863acc0688ba0575837b42d263a2c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_76292e31f288f360a7ead59173fa671d.setIcon(icon_ed5863acc0688ba0575837b42d263a2c);
+        
+    
+        var popup_91950991aea3ea055911f00f288fa739 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_43ddd7053191f7bfff9e0c24f935d332 = $(`<div id="html_43ddd7053191f7bfff9e0c24f935d332" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MARLOW</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 38.46</h6></center>         </div>`)[0];
+                popup_91950991aea3ea055911f00f288fa739.setContent(html_43ddd7053191f7bfff9e0c24f935d332);
+            
+        
+
+        marker_76292e31f288f360a7ead59173fa671d.bindPopup(popup_91950991aea3ea055911f00f288fa739)
+        ;
+
+        
+    
+    
+            marker_76292e31f288f360a7ead59173fa671d.bindTooltip(
+                `<div>
+                     MARLOW
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_30c129ac35842cb884d602a6950c2c64 = L.marker(
+                [50.797959, 4.343375],
+                {"name": "WOLVENDAEL"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_318b20d622a7e7b0eb02f30a29777d9f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_30c129ac35842cb884d602a6950c2c64.setIcon(icon_318b20d622a7e7b0eb02f30a29777d9f);
+        
+    
+        var popup_bc3033bdca9a10de4fd67eb4504048a1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_5c19b1ba2442d6e3c9b0787c4643c158 = $(`<div id="html_5c19b1ba2442d6e3c9b0787c4643c158" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WOLVENDAEL</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 23.08</h6></center>         </div>`)[0];
+                popup_bc3033bdca9a10de4fd67eb4504048a1.setContent(html_5c19b1ba2442d6e3c9b0787c4643c158);
+            
+        
+
+        marker_30c129ac35842cb884d602a6950c2c64.bindPopup(popup_bc3033bdca9a10de4fd67eb4504048a1)
+        ;
+
+        
+    
+    
+            marker_30c129ac35842cb884d602a6950c2c64.bindTooltip(
+                `<div>
+                     WOLVENDAEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f03f936986c9067ee6817694e9780c10 = L.marker(
+                [50.795614, 4.348908],
+                {"name": "DIEWEG"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_0c00ff7f20d8191b64e016968ddc8e5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f03f936986c9067ee6817694e9780c10.setIcon(icon_0c00ff7f20d8191b64e016968ddc8e5c);
+        
+    
+        var popup_1324861fb74b516427ac11aa92465abb = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_29aa490c05948f8f6f4aae22ae8be19f = $(`<div id="html_29aa490c05948f8f6f4aae22ae8be19f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DIEWEG</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 7.69</h6></center>         </div>`)[0];
+                popup_1324861fb74b516427ac11aa92465abb.setContent(html_29aa490c05948f8f6f4aae22ae8be19f);
+            
+        
+
+        marker_f03f936986c9067ee6817694e9780c10.bindPopup(popup_1324861fb74b516427ac11aa92465abb)
+        ;
+
+        
+    
+    
+            marker_f03f936986c9067ee6817694e9780c10.bindTooltip(
+                `<div>
+                     DIEWEG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9f8d3b126aea8704249423f75498fe60 = L.marker(
+                [50.794725, 4.35244],
+                {"name": "THEVENET"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_0e9cb5542202db1e554caa6169497657 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9f8d3b126aea8704249423f75498fe60.setIcon(icon_0e9cb5542202db1e554caa6169497657);
+        
+    
+        var popup_3555435727e1c65806be4e08b55aab16 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ae29662d9beb35303e65d68bdc3173ff = $(`<div id="html_ae29662d9beb35303e65d68bdc3173ff" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: THEVENET</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 7.69</h6></center>         </div>`)[0];
+                popup_3555435727e1c65806be4e08b55aab16.setContent(html_ae29662d9beb35303e65d68bdc3173ff);
+            
+        
+
+        marker_9f8d3b126aea8704249423f75498fe60.bindPopup(popup_3555435727e1c65806be4e08b55aab16)
+        ;
+
+        
+    
+    
+            marker_9f8d3b126aea8704249423f75498fe60.bindTooltip(
+                `<div>
+                     THEVENET
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7af0e15d921651eac59c3155efc56ada = L.marker(
+                [50.794671, 4.357873],
+                {"name": "LANCASTER"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_b04dd051eff0cf81f4a4f4058dd8eae2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7af0e15d921651eac59c3155efc56ada.setIcon(icon_b04dd051eff0cf81f4a4f4058dd8eae2);
+        
+    
+        var popup_a3e46929f068447b11875d1dd098d629 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0b2adf988cdb7ac5ddae93296d74be17 = $(`<div id="html_0b2adf988cdb7ac5ddae93296d74be17" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LANCASTER</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 23.08</h6></center>         </div>`)[0];
+                popup_a3e46929f068447b11875d1dd098d629.setContent(html_0b2adf988cdb7ac5ddae93296d74be17);
+            
+        
+
+        marker_7af0e15d921651eac59c3155efc56ada.bindPopup(popup_a3e46929f068447b11875d1dd098d629)
+        ;
+
+        
+    
+    
+            marker_7af0e15d921651eac59c3155efc56ada.bindTooltip(
+                `<div>
+                     LANCASTER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_973bef3972a7a2f945fc00da85e6f1a7 = L.marker(
+                [50.794465, 4.36227],
+                {"name": "GARE DE SAINT-JOB"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_621961435d09bf6e276c346d1dfc845a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_973bef3972a7a2f945fc00da85e6f1a7.setIcon(icon_621961435d09bf6e276c346d1dfc845a);
+        
+    
+        var popup_1b79fa8d0e18fe68797468f8dea3039b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_4c61e277e8fd4287b8b37932352e877b = $(`<div id="html_4c61e277e8fd4287b8b37932352e877b" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARE DE SAINT-JOB</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 38.46</h6></center>         </div>`)[0];
+                popup_1b79fa8d0e18fe68797468f8dea3039b.setContent(html_4c61e277e8fd4287b8b37932352e877b);
+            
+        
+
+        marker_973bef3972a7a2f945fc00da85e6f1a7.bindPopup(popup_1b79fa8d0e18fe68797468f8dea3039b)
+        ;
+
+        
+    
+    
+            marker_973bef3972a7a2f945fc00da85e6f1a7.bindTooltip(
+                `<div>
+                     GARE DE SAINT-JOB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_da4a73a4ba92f962156718865a199ce4 = L.marker(
+                [50.793665, 4.366567],
+                {"name": "PLACE SAINT-JOB"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_7ad07e75ec4499778770379940366da0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_da4a73a4ba92f962156718865a199ce4.setIcon(icon_7ad07e75ec4499778770379940366da0);
+        
+    
+        var popup_677290bf48bfebc65aefe8f3da30b11a = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_cb03410b49e78c023141a03a260de2b3 = $(`<div id="html_cb03410b49e78c023141a03a260de2b3" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PLACE SAINT-JOB</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 53.85</h6></center>         </div>`)[0];
+                popup_677290bf48bfebc65aefe8f3da30b11a.setContent(html_cb03410b49e78c023141a03a260de2b3);
+            
+        
+
+        marker_da4a73a4ba92f962156718865a199ce4.bindPopup(popup_677290bf48bfebc65aefe8f3da30b11a)
+        ;
+
+        
+    
+    
+            marker_da4a73a4ba92f962156718865a199ce4.bindTooltip(
+                `<div>
+                     PLACE SAINT-JOB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3dd69072166d1c6e14a9c0d9dd5a2830 = L.marker(
+                [50.791094, 4.368695],
+                {"name": "ALPHONSE XIII"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_9c609fdcdb9165ccc3651e582102bd01 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3dd69072166d1c6e14a9c0d9dd5a2830.setIcon(icon_9c609fdcdb9165ccc3651e582102bd01);
+        
+    
+        var popup_33b0be64b7d14fe056614870fde9dc55 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_628f0a198698d59f7a7ff0054926affb = $(`<div id="html_628f0a198698d59f7a7ff0054926affb" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ALPHONSE XIII</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 69.23</h6></center>         </div>`)[0];
+                popup_33b0be64b7d14fe056614870fde9dc55.setContent(html_628f0a198698d59f7a7ff0054926affb);
+            
+        
+
+        marker_3dd69072166d1c6e14a9c0d9dd5a2830.bindPopup(popup_33b0be64b7d14fe056614870fde9dc55)
+        ;
+
+        
+    
+    
+            marker_3dd69072166d1c6e14a9c0d9dd5a2830.bindTooltip(
+                `<div>
+                     ALPHONSE XIII
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d8f0a7c6609474b5dcb04119b6793281 = L.marker(
+                [50.78962, 4.373829],
+                {"name": "FORT-JACO"}
+            ).addTo(feature_group_2b577e4053ddd89708b84e26bd93d54a);
+        
+    
+            var icon_afc0a5b628f6e5b8f2bce60fb2dfd0e0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d8f0a7c6609474b5dcb04119b6793281.setIcon(icon_afc0a5b628f6e5b8f2bce60fb2dfd0e0);
+        
+    
+        var popup_3b030070ffcce2cc4f170da1c36d30bc = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c73b491e134095b7e1845a990f840ddc = $(`<div id="html_c73b491e134095b7e1845a990f840ddc" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FORT-JACO</h4></center>         <center><h5>Line: 92 SCHAERBEEK GARE - FORT-JACO</h5></center>         <center><h6>Score: 84.62</h6></center>         </div>`)[0];
+                popup_3b030070ffcce2cc4f170da1c36d30bc.setContent(html_c73b491e134095b7e1845a990f840ddc);
+            
+        
+
+        marker_d8f0a7c6609474b5dcb04119b6793281.bindPopup(popup_3b030070ffcce2cc4f170da1c36d30bc)
+        ;
+
+        
+    
+    
+            marker_d8f0a7c6609474b5dcb04119b6793281.bindTooltip(
+                `<div>
+                     FORT-JACO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_06741bda7a4d7c02780a1f27c7810ddf = L.featureGroup(
+                {}
+            ).addTo(map_e0c30a5e745acf695bdbbac0c68f44a0);
+        
+    
+            var marker_e59ac786e1fb09fd849df2622107f524 = L.marker(
+                [50.812925, 4.347449999999999],
+                {"name": "VANDERKINDERE"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_3889c45e42bfa1512d57379554c400f8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e59ac786e1fb09fd849df2622107f524.setIcon(icon_3889c45e42bfa1512d57379554c400f8);
+        
+    
+            marker_e59ac786e1fb09fd849df2622107f524.bindTooltip(
+                `<div>
+                     VANDERKINDERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4364ac54e90007c87dce62d033e45db5 = L.marker(
+                [50.809818, 4.345465],
+                {"name": "MESSIDOR"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_3a57f4ebca39ff2c866eead4f466c900 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4364ac54e90007c87dce62d033e45db5.setIcon(icon_3a57f4ebca39ff2c866eead4f466c900);
+        
+    
+            marker_4364ac54e90007c87dce62d033e45db5.bindTooltip(
+                `<div>
+                     MESSIDOR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_23bc5ed1623ce369b5ee88ccca3216ea = L.marker(
+                [50.806650000000005, 4.343487],
+                {"name": "BOETENDAEL"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_9d1c2b845d5f637267c553a58ff3d7b1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_23bc5ed1623ce369b5ee88ccca3216ea.setIcon(icon_9d1c2b845d5f637267c553a58ff3d7b1);
+        
+    
+            marker_23bc5ed1623ce369b5ee88ccca3216ea.bindTooltip(
+                `<div>
+                     BOETENDAEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e7860f742ce163169fbc05219d1d2761 = L.marker(
+                [50.803318000000004, 4.341367999999999],
+                {"name": "HEROS"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_175c84c351a2285ecc937625c39aea37 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e7860f742ce163169fbc05219d1d2761.setIcon(icon_175c84c351a2285ecc937625c39aea37);
+        
+    
+            marker_e7860f742ce163169fbc05219d1d2761.bindTooltip(
+                `<div>
+                     HEROS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a3e574e25fb18486b3746da136e32994 = L.marker(
+                [50.800824000000006, 4.34092],
+                {"name": "MARLOW"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_320056e961f39eeb38565e27e9bd925d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a3e574e25fb18486b3746da136e32994.setIcon(icon_320056e961f39eeb38565e27e9bd925d);
+        
+    
+            marker_a3e574e25fb18486b3746da136e32994.bindTooltip(
+                `<div>
+                     MARLOW
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_85685642fc1804e755e0759a30809c0c = L.marker(
+                [50.797969, 4.343385],
+                {"name": "WOLVENDAEL"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_6c7f97f4f7df9d5d54c71037b7f757bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_85685642fc1804e755e0759a30809c0c.setIcon(icon_6c7f97f4f7df9d5d54c71037b7f757bc);
+        
+    
+            marker_85685642fc1804e755e0759a30809c0c.bindTooltip(
+                `<div>
+                     WOLVENDAEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_820752a927689bb59ec9a664a3063a13 = L.marker(
+                [50.795624000000004, 4.348917999999999],
+                {"name": "DIEWEG"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_9841e814ea9cfc5e3d15a9af65cf8430 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_820752a927689bb59ec9a664a3063a13.setIcon(icon_9841e814ea9cfc5e3d15a9af65cf8430);
+        
+    
+            marker_820752a927689bb59ec9a664a3063a13.bindTooltip(
+                `<div>
+                     DIEWEG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_06297f2a7e8491321780c73b03f8bb29 = L.marker(
+                [50.794735, 4.352449999999999],
+                {"name": "THEVENET"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_cbbc3a61df591e07b508f9b35447fe13 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_06297f2a7e8491321780c73b03f8bb29.setIcon(icon_cbbc3a61df591e07b508f9b35447fe13);
+        
+    
+            marker_06297f2a7e8491321780c73b03f8bb29.bindTooltip(
+                `<div>
+                     THEVENET
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af4fea977c7aef5d510c3f98a069c67f = L.marker(
+                [50.794681000000004, 4.357882999999999],
+                {"name": "LANCASTER"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_6ffd6999c3157343ea6d429499233663 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_af4fea977c7aef5d510c3f98a069c67f.setIcon(icon_6ffd6999c3157343ea6d429499233663);
+        
+    
+            marker_af4fea977c7aef5d510c3f98a069c67f.bindTooltip(
+                `<div>
+                     LANCASTER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_01bd58a95b324473a998bab53c96a458 = L.marker(
+                [50.794475000000006, 4.362279999999999],
+                {"name": "GARE DE SAINT-JOB"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_0a526ecb93165286f91cc1d2df916cdf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_01bd58a95b324473a998bab53c96a458.setIcon(icon_0a526ecb93165286f91cc1d2df916cdf);
+        
+    
+            marker_01bd58a95b324473a998bab53c96a458.bindTooltip(
+                `<div>
+                     GARE DE SAINT-JOB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4214acebbaddd441a25a67a3b9904deb = L.marker(
+                [50.793675, 4.3665769999999995],
+                {"name": "PLACE SAINT-JOB"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_0368bb21164be48c6e8ebc72f89f6ff1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4214acebbaddd441a25a67a3b9904deb.setIcon(icon_0368bb21164be48c6e8ebc72f89f6ff1);
+        
+    
+            marker_4214acebbaddd441a25a67a3b9904deb.bindTooltip(
+                `<div>
+                     PLACE SAINT-JOB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af9bd33e2d882231b62ba1cdb74ef491 = L.marker(
+                [50.791104000000004, 4.368704999999999],
+                {"name": "ALPHONSE XIII"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_952662c2a5e92d9aa3f5fefa7e50a029 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_af9bd33e2d882231b62ba1cdb74ef491.setIcon(icon_952662c2a5e92d9aa3f5fefa7e50a029);
+        
+    
+            marker_af9bd33e2d882231b62ba1cdb74ef491.bindTooltip(
+                `<div>
+                     ALPHONSE XIII
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_733798675f71884fc5a9e6d1e181196b = L.marker(
+                [50.78963, 4.373838999999999],
+                {"name": "FORT-JACO"}
+            ).addTo(feature_group_06741bda7a4d7c02780a1f27c7810ddf);
+        
+    
+            var icon_b68ab40285c8ca1cfa4fd17c77ea5023 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_733798675f71884fc5a9e6d1e181196b.setIcon(icon_b68ab40285c8ca1cfa4fd17c77ea5023);
+        
+    
+            marker_733798675f71884fc5a9e6d1e181196b.bindTooltip(
+                `<div>
+                     FORT-JACO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_ed031f6f52a58b8c0d79fc6c6d2155c4 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_0fd841cf686090e20a96d02a993fbba6,
+                },
+                overlays :  {
+                    "92 SCHAERBEEK GARE - FORT-JACO" : feature_group_2b577e4053ddd89708b84e26bd93d54a,
+                    "92 SCHAERBEEK GARE - FORT-JACO SCORES" : feature_group_06741bda7a4d7c02780a1f27c7810ddf,
+                },
+            };
+            L.control.layers(
+                layer_control_ed031f6f52a58b8c0d79fc6c6d2155c4.base_layers,
+                layer_control_ed031f6f52a58b8c0d79fc6c6d2155c4.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_e0c30a5e745acf695bdbbac0c68f44a0);
+            feature_group_06741bda7a4d7c02780a1f27c7810ddf.remove();
+        
+</script>
+</html>

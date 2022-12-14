@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ae23aaca9a3f9d7777fc2f1c7f26b8b6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ae23aaca9a3f9d7777fc2f1c7f26b8b6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ae23aaca9a3f9d7777fc2f1c7f26b8b6 = L.map(
+                "map_ae23aaca9a3f9d7777fc2f1c7f26b8b6",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_be0f552482a59f8da3887d9ba13117f5 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ae23aaca9a3f9d7777fc2f1c7f26b8b6);
+        
+    
+            var poly_line_32668328bc13ba622bd19b0c6a960031 = L.polyline(
+                [[50.84481, 4.352025], [50.84478, 4.352107], [50.844719, 4.352309], [50.844719, 4.352309], [50.844648, 4.352546], [50.844628, 4.352611], [50.844568, 4.352749], [50.844546, 4.352807], [50.844514, 4.352874], [50.844412, 4.353046], [50.844271, 4.353235], [50.844113, 4.353496], [50.843957, 4.353761], [50.843825, 4.354004], [50.843721, 4.35416], [50.843622, 4.354291], [50.84353, 4.354388], [50.843487, 4.354446], [50.843446, 4.354491], [50.843444, 4.354493], [50.843444, 4.354493], [50.843394, 4.354537], [50.843268, 4.354677], [50.843247, 4.3547], [50.843182, 4.354746], [50.843136, 4.354763], [50.843095, 4.354767], [50.843052, 4.354753], [50.843021, 4.354743], [50.842986, 4.354723], [50.842946, 4.35469], [50.842886, 4.354628], [50.842803, 4.35451], [50.842692, 4.354367], [50.842581, 4.354255], [50.842511, 4.354205], [50.84245, 4.354168], [50.842381, 4.354137], [50.842301, 4.354114], [50.842227, 4.354107], [50.842049, 4.354098], [50.841954, 4.354087], [50.84185, 4.354064], [50.841755, 4.354039], [50.841725, 4.354032], [50.841725, 4.354032], [50.841613, 4.353959], [50.841584, 4.353933], [50.84157, 4.353918], [50.841551, 4.353901], [50.841549, 4.353898], [50.841547, 4.353897], [50.841535, 4.353887], [50.841509, 4.353874], [50.841499, 4.353873], [50.841497, 4.353873], [50.841493, 4.353874], [50.841482, 4.35388], [50.841459, 4.353903], [50.841444, 4.353938], [50.84143, 4.353991], [50.841412, 4.354076], [50.84133, 4.354153], [50.841221, 4.35428], [50.841153, 4.354356], [50.84113, 4.354378], [50.84104, 4.354471], [50.840962, 4.354563], [50.840753, 4.354799], [50.840611, 4.354951], [50.84049, 4.355093], [50.840468, 4.35512], [50.840111, 4.355533], [50.840078, 4.355605], [50.840038, 4.355695], [50.839976, 4.355823], [50.839927, 4.355914], [50.839927, 4.355914], [50.839858, 4.356038], [50.83985, 4.356084], [50.839971, 4.356268], [50.839991, 4.356297], [50.840363, 4.356812], [50.840386, 4.356845], [50.840507, 4.357012], [50.840526, 4.357041], [50.840596, 4.357139], [50.84063, 4.357191], [50.840671, 4.357249], [50.840787, 4.357413], [50.840808, 4.357442], [50.841122, 4.357895], [50.841512, 4.358433], [50.841566, 4.358511], [50.841566, 4.358511], [50.841923, 4.359037], [50.841956, 4.359115], [50.841997, 4.3592], [50.842007, 4.359228], [50.842004, 4.359302], [50.842018, 4.359382], [50.842035, 4.359443], [50.842055, 4.359504], [50.842079, 4.359553], [50.842097, 4.359576], [50.842299, 4.359853], [50.842353, 4.35988], [50.842398, 4.359903], [50.842424, 4.359905], [50.842448, 4.359907], [50.842457, 4.359907], [50.842467, 4.359908], [50.842494, 4.359921], [50.842529, 4.359931], [50.842601, 4.359962], [50.842629, 4.360002], [50.842836, 4.360287], [50.842867, 4.360362], [50.84289, 4.360426], [50.842909, 4.360524], [50.842918, 4.360601], [50.84291, 4.360791], [50.842672, 4.361967], [50.842337, 4.363584], [50.8422, 4.364276], [50.842152, 4.364527], [50.84212, 4.364588], [50.842007, 4.364684], [50.841282, 4.364788], [50.84109, 4.364815], [50.841056, 4.364818], [50.840924, 4.364821], [50.840855, 4.364859], [50.840824, 4.364876], [50.840784, 4.36491], [50.840757, 4.364976], [50.840725, 4.365102], [50.840656, 4.365514], [50.840635, 4.36562], [50.840622, 4.365691], [50.840597, 4.365823], [50.84058, 4.36589], [50.840563, 4.36596], [50.840556, 4.365998], [50.840548, 4.366055], [50.840503, 4.366246], [50.840391, 4.366823], [50.840324, 4.367132], [50.840324, 4.367132], [50.840239, 4.367517], [50.84023, 4.367557], [50.840006, 4.368658], [50.839998, 4.3687], [50.839951, 4.368921], [50.839862, 4.369363], [50.839862, 4.369363], [50.839777, 4.369791], [50.839747, 4.369923], [50.839738, 4.369965], [50.839629, 4.370476], [50.839518, 4.37099], [50.83951, 4.371029], [50.839293, 4.372039], [50.839172, 4.372205], [50.839172, 4.372205], [50.83906, 4.372293], [50.838963, 4.372747], [50.838963, 4.372747], [50.838937, 4.372891], [50.83889, 4.372998], [50.83887, 4.373035], [50.838832, 4.373058], [50.838761, 4.373058], [50.837988, 4.372649], [50.83775, 4.37251], [50.837659, 4.372369], [50.837512, 4.372131], [50.837493, 4.372101], [50.837346, 4.371864], [50.837135, 4.371546], [50.83703, 4.371387], [50.836925, 4.371229], [50.836925, 4.371229], [50.836547, 4.37066], [50.836515, 4.370612], [50.836474, 4.370606], [50.83614, 4.371049], [50.835967, 4.371276], [50.835878, 4.371394], [50.835813, 4.371482], [50.83543, 4.371885], [50.835189, 4.372192], [50.835189, 4.372192], [50.834925, 4.372528], [50.834585, 4.372953], [50.834563, 4.37298], [50.834164, 4.373439], [50.833908, 4.373755], [50.833436, 4.374373], [50.833276, 4.374571], [50.833254, 4.374596], [50.832987, 4.374941], [50.832941, 4.374849], [50.832914, 4.374914], [50.832887, 4.375045], [50.832862, 4.375102], [50.832823, 4.375151], [50.832719, 4.375278], [50.832355, 4.375715], [50.832334, 4.37574], [50.831529, 4.376748], [50.831409, 4.376887], [50.82995, 4.378702], [50.82995, 4.378702], [50.829691, 4.379024], [50.829667, 4.379054], [50.829578, 4.379168], [50.829528, 4.379229], [50.829507, 4.379256], [50.827786, 4.381401], [50.827671, 4.381552], [50.827649, 4.38158], [50.82731, 4.382003], [50.82731, 4.382003], [50.826796, 4.382646], [50.825813, 4.383855], [50.825793, 4.383882], [50.825773, 4.383907], [50.825726, 4.383963], [50.825168, 4.384672], [50.82492, 4.38497], [50.824898, 4.384996], [50.824619, 4.385343], [50.82453, 4.385457], [50.82445, 4.385557], [50.824429, 4.385584], [50.824182, 4.385894], [50.824182, 4.385894], [50.823968, 4.386163], [50.823191, 4.387127], [50.822916, 4.38747], [50.822896, 4.387495], [50.822116, 4.388497], [50.822095, 4.388523], [50.822007, 4.388615], [50.82198, 4.388646], [50.821958, 4.388672], [50.821677, 4.388995], [50.821677, 4.388995], [50.821612, 4.389072], [50.821163, 4.389562], [50.82114, 4.389588], [50.820463, 4.390314], [50.820163, 4.390625], [50.82014, 4.390649], [50.81938, 4.391477], [50.819038, 4.391825], [50.818634, 4.392171], [50.818397, 4.392355], [50.818326, 4.392395], [50.818058, 4.39252], [50.817849, 4.392561], [50.817849, 4.392561], [50.817736, 4.392561], [50.817516, 4.392524], [50.817352, 4.392494], [50.817096, 4.392382], [50.816852, 4.392218], [50.816822, 4.392198], [50.816724, 4.392133], [50.816645, 4.392088], [50.816503, 4.391892], [50.816399, 4.391648], [50.816385, 4.391611], [50.815979, 4.39061], [50.815979, 4.39061], [50.815818, 4.390139], [50.815811, 4.390091], [50.81581, 4.390031], [50.815823, 4.389926], [50.815818, 4.389847], [50.815789, 4.389766], [50.815763, 4.389735], [50.815706, 4.389693], [50.815655, 4.389685], [50.815626, 4.389696], [50.815602, 4.38972], [50.815581, 4.389773], [50.81556, 4.389855], [50.815555, 4.389893], [50.81555, 4.389946], [50.815533, 4.38999], [50.815533, 4.389993], [50.815453, 4.390126], [50.815359, 4.390157], [50.815243, 4.390177], [50.815116, 4.39015], [50.81492, 4.390082], [50.814784, 4.390033], [50.814677, 4.390012], [50.814636, 4.390008], [50.814608, 4.390006], [50.814486, 4.390005], [50.814432, 4.390009], [50.81435, 4.390022], [50.814172, 4.390113], [50.814111, 4.390157], [50.814076, 4.390185], [50.813835, 4.390419], [50.813622, 4.390652], [50.813524, 4.390751], [50.813351, 4.390949], [50.813319, 4.390989], [50.813034, 4.391355], [50.813009, 4.391386], [50.812857, 4.391551], [50.812668, 4.391725], [50.812434, 4.391893], [50.812276, 4.392023], [50.812192, 4.392104], [50.812082, 4.392256], [50.811913, 4.392518], [50.811865, 4.392576], [50.811816, 4.39261], [50.811782, 4.392627], [50.811762, 4.39268], [50.811771, 4.392759], [50.81177, 4.39279], [50.811706, 4.393056], [50.811706, 4.393056], [50.811469, 4.39404], [50.811215, 4.395083], [50.811113, 4.395493], [50.811049, 4.395723], [50.810962, 4.395903], [50.810899, 4.396004], [50.810879, 4.396036], [50.810252, 4.397038], [50.810252, 4.397038], [50.810245, 4.397047], [50.810199, 4.397135], [50.810179, 4.397177], [50.810157, 4.397218], [50.810119, 4.397369], [50.810099, 4.39744], [50.810083, 4.397503], [50.810044, 4.397676], [50.810028, 4.397765], [50.810006, 4.397799], [50.809992, 4.397809], [50.809991, 4.397811], [50.809974, 4.397833], [50.809971, 4.397839], [50.809963, 4.39786], [50.809958, 4.397886], [50.809956, 4.397921], [50.809957, 4.397928], [50.809962, 4.397962], [50.809973, 4.397989], [50.809987, 4.398018], [50.809995, 4.398052], [50.810006, 4.398181], [50.810081, 4.398621], [50.810116, 4.398807], [50.81018, 4.399152], [50.810188, 4.399206], [50.810221, 4.399336], [50.810242, 4.399467], [50.810297, 4.39978], [50.81032, 4.400073], [50.810405, 4.400288], [50.810542, 4.400547], [50.810614, 4.400754], [50.810644, 4.401019], [50.810649, 4.401134], [50.81063, 4.401284], [50.810586, 4.401483], [50.810079, 4.402782], [50.809917, 4.403097], [50.809637, 4.40348], [50.809637, 4.40348], [50.809516, 4.403636], [50.809486, 4.403674], [50.809336, 4.403869], [50.808944, 4.404311], [50.808753, 4.404525], [50.808647, 4.404644], [50.808276, 4.40502], [50.807698, 4.405556], [50.807428, 4.405799], [50.807404, 4.405819], [50.807317, 4.405886], [50.807302, 4.405896], [50.80721, 4.405944], [50.807041, 4.406006], [50.806651, 4.406132], [50.806488, 4.406193], [50.806417, 4.40623], [50.80628, 4.406311], [50.805906, 4.406542], [50.805818, 4.406581], [50.805791, 4.406583], [50.80577, 4.406574], [50.805756, 4.40655], [50.805741, 4.406516], [50.805725, 4.4065], [50.805699, 4.40648], [50.805682, 4.406478], [50.805639, 4.406487], [50.805612, 4.406497], [50.805556, 4.406546], [50.805513, 4.406578], [50.805446, 4.406625], [50.805276, 4.406709], [50.805232, 4.406724], [50.805207, 4.406734], [50.805207, 4.406734], [50.805186, 4.406742], [50.805135, 4.406771], [50.805102, 4.406788], [50.805057, 4.406809], [50.805028, 4.406839], [50.804944, 4.406901], [50.804602, 4.407081], [50.8042, 4.407301], [50.80399, 4.40743], [50.803141, 4.408123], [50.803112, 4.408157], [50.803077, 4.408714], [50.803075, 4.408757], [50.803043, 4.409781], [50.803043, 4.409781], [50.803038, 4.409938], [50.80301, 4.410438], [50.802974, 4.41075], [50.802816, 4.411504], [50.802677, 4.412127], [50.802667, 4.412171], [50.802591, 4.412483], [50.802585, 4.412504], [50.802585, 4.412504], [50.802569, 4.412559], [50.802545, 4.412636], [50.802547, 4.41272], [50.80255, 4.412725], [50.802598, 4.412845], [50.802748, 4.413191], [50.802799, 4.413276], [50.802849, 4.413385], [50.802832, 4.413405], [50.802803, 4.413456], [50.802801, 4.41346], [50.8028, 4.413462], [50.802784, 4.413519], [50.80278, 4.413557], [50.802779, 4.413599], [50.802783, 4.413649], [50.802792, 4.413699], [50.802809, 4.413746], [50.802817, 4.413761], [50.802836, 4.413794], [50.802859, 4.413819], [50.80286, 4.413821], [50.802863, 4.413822], [50.802914, 4.413846], [50.802959, 4.413852], [50.802999, 4.413839], [50.803048, 4.414034], [50.803121, 4.414356], [50.803176, 4.41465], [50.803243, 4.415075], [50.803256, 4.41521], [50.803262, 4.415402], [50.803274, 4.415578], [50.803273, 4.415908], [50.803262, 4.416121], [50.803244, 4.416409], [50.803193, 4.416834], [50.803116, 4.417234], [50.803066, 4.417453], [50.803045, 4.417519], [50.803006, 4.417648], [50.802993, 4.417688], [50.802947, 4.41784], [50.802935, 4.41788], [50.802898, 4.41799], [50.80269, 4.418616], [50.802632, 4.418784], [50.802632, 4.418784], [50.80262, 4.41883], [50.802452, 4.419332], [50.802264, 4.419846], [50.801906, 4.420872], [50.801852, 4.421026], [50.80184, 4.421065], [50.801774, 4.421267], [50.801435, 4.422233], [50.801398, 4.422345], [50.801384, 4.422383], [50.801377, 4.422405], [50.801377, 4.422405], [50.801362, 4.422453], [50.801349, 4.42249], [50.80129, 4.422551], [50.801209, 4.422524], [50.800939, 4.422347], [50.800796, 4.422263], [50.800488, 4.422089], [50.800292, 4.421958], [50.800156, 4.42186], [50.8, 4.421762], [50.799805, 4.421603], [50.799667, 4.421473], [50.79948, 4.421253], [50.799296, 4.421026], [50.79918, 4.420849], [50.799032, 4.420634], [50.798886, 4.420366], [50.798831, 4.420227], [50.798639, 4.419776]],
+                {"bubblingMouseEvents": true, "color": "#306196", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#306196", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_ae23aaca9a3f9d7777fc2f1c7f26b8b6);
+        
+    
+            var feature_group_1bbc24cfe913eb2c4271f54ded88fc05 = L.featureGroup(
+                {}
+            ).addTo(map_ae23aaca9a3f9d7777fc2f1c7f26b8b6);
+        
+    
+            var marker_b49c5231a7da576cd250d624f95115c0 = L.marker(
+                [50.84477, 4.351983],
+                {"name": "GRAND-PLACE"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_7769046c1f736f958b119a242c891dcc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b49c5231a7da576cd250d624f95115c0.setIcon(icon_7769046c1f736f958b119a242c891dcc);
+        
+    
+        var popup_ec1f7a34c87e5329b2d0a589b5af659f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f0198ca41f4a81977dbd4c29f2dc7e26 = $(`<div id="html_f0198ca41f4a81977dbd4c29f2dc7e26" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GRAND-PLACE</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_ec1f7a34c87e5329b2d0a589b5af659f.setContent(html_f0198ca41f4a81977dbd4c29f2dc7e26);
+            
+        
+
+        marker_b49c5231a7da576cd250d624f95115c0.bindPopup(popup_ec1f7a34c87e5329b2d0a589b5af659f)
+        ;
+
+        
+    
+    
+            marker_b49c5231a7da576cd250d624f95115c0.bindTooltip(
+                `<div>
+                     GRAND-PLACE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_99eb701f21d72829cff2a95dec6e85ac = L.marker(
+                [50.843431, 4.354454],
+                {"name": "BIBLIOTHEQUE"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_adfc32481c5e1974b9b2f58a70bd8a0c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_99eb701f21d72829cff2a95dec6e85ac.setIcon(icon_adfc32481c5e1974b9b2f58a70bd8a0c);
+        
+    
+        var popup_331c53f01f451572a2e6b4e67b663497 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_771e1ec21848553f77342ef1b16ac958 = $(`<div id="html_771e1ec21848553f77342ef1b16ac958" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BIBLIOTHEQUE</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 92.0</h6></center>         </div>`)[0];
+                popup_331c53f01f451572a2e6b4e67b663497.setContent(html_771e1ec21848553f77342ef1b16ac958);
+            
+        
+
+        marker_99eb701f21d72829cff2a95dec6e85ac.bindPopup(popup_331c53f01f451572a2e6b4e67b663497)
+        ;
+
+        
+    
+    
+            marker_99eb701f21d72829cff2a95dec6e85ac.bindTooltip(
+                `<div>
+                     BIBLIOTHEQUE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f91a58ac6f3b50839231356495254f6b = L.marker(
+                [50.841731, 4.353972],
+                {"name": "GRAND SABLON"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_684f1207ee5ae5fec3aa19d59460dba4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f91a58ac6f3b50839231356495254f6b.setIcon(icon_684f1207ee5ae5fec3aa19d59460dba4);
+        
+    
+        var popup_bc866c96e860a52d1082dd27090ede22 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a000430ba861f6109812d4af2e23ef95 = $(`<div id="html_a000430ba861f6109812d4af2e23ef95" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GRAND SABLON</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 84.0</h6></center>         </div>`)[0];
+                popup_bc866c96e860a52d1082dd27090ede22.setContent(html_a000430ba861f6109812d4af2e23ef95);
+            
+        
+
+        marker_f91a58ac6f3b50839231356495254f6b.bindPopup(popup_bc866c96e860a52d1082dd27090ede22)
+        ;
+
+        
+    
+    
+            marker_f91a58ac6f3b50839231356495254f6b.bindTooltip(
+                `<div>
+                     GRAND SABLON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_81303ca839cf51b85849fed46716eeb6 = L.marker(
+                [50.839898, 4.355875],
+                {"name": "PETIT SABLON"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_dac7261bb142d5b2ab71c7a27b689313 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_81303ca839cf51b85849fed46716eeb6.setIcon(icon_dac7261bb142d5b2ab71c7a27b689313);
+        
+    
+        var popup_94c0ce664a513d4cf0dd9b41897864dd = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2ad664761c2be9d0b2540e75a619bac9 = $(`<div id="html_2ad664761c2be9d0b2540e75a619bac9" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PETIT SABLON</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 76.0</h6></center>         </div>`)[0];
+                popup_94c0ce664a513d4cf0dd9b41897864dd.setContent(html_2ad664761c2be9d0b2540e75a619bac9);
+            
+        
+
+        marker_81303ca839cf51b85849fed46716eeb6.bindPopup(popup_94c0ce664a513d4cf0dd9b41897864dd)
+        ;
+
+        
+    
+    
+            marker_81303ca839cf51b85849fed46716eeb6.bindTooltip(
+                `<div>
+                     PETIT SABLON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8fb09610849f546c91033e4e7f699997 = L.marker(
+                [50.841545, 4.358548],
+                {"name": "ROYALE"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_aad96e8c7bc68b53ef031732ed9bb924 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8fb09610849f546c91033e4e7f699997.setIcon(icon_aad96e8c7bc68b53ef031732ed9bb924);
+        
+    
+        var popup_99c20ddaab6cb9d1bb645ef8bf31c217 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d026c65b12ec2703c6c11f92370bab1e = $(`<div id="html_d026c65b12ec2703c6c11f92370bab1e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ROYALE</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 68.0</h6></center>         </div>`)[0];
+                popup_99c20ddaab6cb9d1bb645ef8bf31c217.setContent(html_d026c65b12ec2703c6c11f92370bab1e);
+            
+        
+
+        marker_8fb09610849f546c91033e4e7f699997.bindPopup(popup_99c20ddaab6cb9d1bb645ef8bf31c217)
+        ;
+
+        
+    
+    
+            marker_8fb09610849f546c91033e4e7f699997.bindTooltip(
+                `<div>
+                     ROYALE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_16c1d383ec0d0dd9deec9ce32f35708a = L.marker(
+                [50.840303, 4.367119],
+                {"name": "TRONE"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_7a21a9c338d7b7264db9e900309d8444 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_16c1d383ec0d0dd9deec9ce32f35708a.setIcon(icon_7a21a9c338d7b7264db9e900309d8444);
+        
+    
+        var popup_ec547745b2eb8108c8cdbeb45e1e0717 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_965c6c66f0a4066e2fedcd1d5945a026 = $(`<div id="html_965c6c66f0a4066e2fedcd1d5945a026" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TRONE</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_ec547745b2eb8108c8cdbeb45e1e0717.setContent(html_965c6c66f0a4066e2fedcd1d5945a026);
+            
+        
+
+        marker_16c1d383ec0d0dd9deec9ce32f35708a.bindPopup(popup_ec547745b2eb8108c8cdbeb45e1e0717)
+        ;
+
+        
+    
+    
+            marker_16c1d383ec0d0dd9deec9ce32f35708a.bindTooltip(
+                `<div>
+                     TRONE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3747468b0e8311cf2527b287f078d0e6 = L.marker(
+                [50.839842, 4.369371],
+                {"name": "SCIENCE"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_f7444722dc5ba60c6061e692434df32b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3747468b0e8311cf2527b287f078d0e6.setIcon(icon_f7444722dc5ba60c6061e692434df32b);
+        
+    
+        var popup_d8235c37e7983958a06a921cee1d8767 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2abab808ae79ffd80619489a3f701aae = $(`<div id="html_2abab808ae79ffd80619489a3f701aae" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SCIENCE</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 52.0</h6></center>         </div>`)[0];
+                popup_d8235c37e7983958a06a921cee1d8767.setContent(html_2abab808ae79ffd80619489a3f701aae);
+            
+        
+
+        marker_3747468b0e8311cf2527b287f078d0e6.bindPopup(popup_d8235c37e7983958a06a921cee1d8767)
+        ;
+
+        
+    
+    
+            marker_3747468b0e8311cf2527b287f078d0e6.bindTooltip(
+                `<div>
+                     SCIENCE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c8462cd74ff833ebd039d31858343239 = L.marker(
+                [50.838936, 4.372733],
+                {"name": "LUXEMBOURG"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_b8b5faa1a8a0cb46677935d7da6ca49f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c8462cd74ff833ebd039d31858343239.setIcon(icon_b8b5faa1a8a0cb46677935d7da6ca49f);
+        
+    
+        var popup_691933264afb4780b69d4be82e4178c6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_305f515be1fdd831ee1bc8a84378fa12 = $(`<div id="html_305f515be1fdd831ee1bc8a84378fa12" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LUXEMBOURG</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 44.0</h6></center>         </div>`)[0];
+                popup_691933264afb4780b69d4be82e4178c6.setContent(html_305f515be1fdd831ee1bc8a84378fa12);
+            
+        
+
+        marker_c8462cd74ff833ebd039d31858343239.bindPopup(popup_691933264afb4780b69d4be82e4178c6)
+        ;
+
+        
+    
+    
+            marker_c8462cd74ff833ebd039d31858343239.bindTooltip(
+                `<div>
+                     LUXEMBOURG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fdc4699b6925317e909ad15e1a518465 = L.marker(
+                [50.835179, 4.372173],
+                {"name": "IDALIE"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_c1deb550f959ff668c9868833524cdd4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fdc4699b6925317e909ad15e1a518465.setIcon(icon_c1deb550f959ff668c9868833524cdd4);
+        
+    
+        var popup_fe16e39b8fab84bf677fe25b7c769ab0 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_43ec5f1a7fe75a806e3f1be117ef861a = $(`<div id="html_43ec5f1a7fe75a806e3f1be117ef861a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: IDALIE</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 36.0</h6></center>         </div>`)[0];
+                popup_fe16e39b8fab84bf677fe25b7c769ab0.setContent(html_43ec5f1a7fe75a806e3f1be117ef861a);
+            
+        
+
+        marker_fdc4699b6925317e909ad15e1a518465.bindPopup(popup_fe16e39b8fab84bf677fe25b7c769ab0)
+        ;
+
+        
+    
+    
+            marker_fdc4699b6925317e909ad15e1a518465.bindTooltip(
+                `<div>
+                     IDALIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_85426920b8f0f70bd3e9a57aea37dad3 = L.marker(
+                [50.83294, 4.374842],
+                {"name": "BLYCKAERTS"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_3a999e423e8474c5f7c2cf0b6049b141 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_85426920b8f0f70bd3e9a57aea37dad3.setIcon(icon_3a999e423e8474c5f7c2cf0b6049b141);
+        
+    
+        var popup_14ac3fb7faa28ef1b0f2c447b0264c50 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3867740409435138211813c7c810a526 = $(`<div id="html_3867740409435138211813c7c810a526" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BLYCKAERTS</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 28.0</h6></center>         </div>`)[0];
+                popup_14ac3fb7faa28ef1b0f2c447b0264c50.setContent(html_3867740409435138211813c7c810a526);
+            
+        
+
+        marker_85426920b8f0f70bd3e9a57aea37dad3.bindPopup(popup_14ac3fb7faa28ef1b0f2c447b0264c50)
+        ;
+
+        
+    
+    
+            marker_85426920b8f0f70bd3e9a57aea37dad3.bindTooltip(
+                `<div>
+                     BLYCKAERTS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cce6cf4668c268cb0cf3e3364f1c15c0 = L.marker(
+                [50.829929, 4.37866],
+                {"name": "GERMOIR"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_bcc76b652bb211ef363bbadc2f5c63b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_cce6cf4668c268cb0cf3e3364f1c15c0.setIcon(icon_bcc76b652bb211ef363bbadc2f5c63b0);
+        
+    
+        var popup_6defac2283a1b445bd5b86dbd70d1ede = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ee3be569692a5078a5517c3db273f4ed = $(`<div id="html_ee3be569692a5078a5517c3db273f4ed" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GERMOIR</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_6defac2283a1b445bd5b86dbd70d1ede.setContent(html_ee3be569692a5078a5517c3db273f4ed);
+            
+        
+
+        marker_cce6cf4668c268cb0cf3e3364f1c15c0.bindPopup(popup_6defac2283a1b445bd5b86dbd70d1ede)
+        ;
+
+        
+    
+    
+            marker_cce6cf4668c268cb0cf3e3364f1c15c0.bindTooltip(
+                `<div>
+                     GERMOIR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8e3fa67bab236d0f76981c575de27f06 = L.marker(
+                [50.827285, 4.381952],
+                {"name": "RODIN"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_ca1904a0c101bc74a289651161082bdf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8e3fa67bab236d0f76981c575de27f06.setIcon(icon_ca1904a0c101bc74a289651161082bdf);
+        
+    
+        var popup_c66e19b4bf8f0af5f3733613d274b822 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d524a693759bcaebb817c6e90e8b9f07 = $(`<div id="html_d524a693759bcaebb817c6e90e8b9f07" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: RODIN</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 12.0</h6></center>         </div>`)[0];
+                popup_c66e19b4bf8f0af5f3733613d274b822.setContent(html_d524a693759bcaebb817c6e90e8b9f07);
+            
+        
+
+        marker_8e3fa67bab236d0f76981c575de27f06.bindPopup(popup_c66e19b4bf8f0af5f3733613d274b822)
+        ;
+
+        
+    
+    
+            marker_8e3fa67bab236d0f76981c575de27f06.bindTooltip(
+                `<div>
+                     RODIN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_033a1d3bac21357254019f4f7b1a071e = L.marker(
+                [50.824183, 4.385896],
+                {"name": "DELPORTE"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_3822f8f11448fb01b5bc80b77db2f0af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_033a1d3bac21357254019f4f7b1a071e.setIcon(icon_3822f8f11448fb01b5bc80b77db2f0af);
+        
+    
+        var popup_70bb2b381e69a0c8ebd24926e1ca1bc5 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2b489815de59980cd07d37078ef5a743 = $(`<div id="html_2b489815de59980cd07d37078ef5a743" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DELPORTE</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 4.0</h6></center>         </div>`)[0];
+                popup_70bb2b381e69a0c8ebd24926e1ca1bc5.setContent(html_2b489815de59980cd07d37078ef5a743);
+            
+        
+
+        marker_033a1d3bac21357254019f4f7b1a071e.bindPopup(popup_70bb2b381e69a0c8ebd24926e1ca1bc5)
+        ;
+
+        
+    
+    
+            marker_033a1d3bac21357254019f4f7b1a071e.bindTooltip(
+                `<div>
+                     DELPORTE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_575e2933225f98ef70c8b4c1112d4bf3 = L.marker(
+                [50.821675, 4.388989],
+                {"name": "ETTERBEEK GARE"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_cf00f8dea583cdd6f0536cc990241586 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_575e2933225f98ef70c8b4c1112d4bf3.setIcon(icon_cf00f8dea583cdd6f0536cc990241586);
+        
+    
+        var popup_aed6a7de96ef01273a1614d85c178fa2 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ca0b7a774c6bb856048fc8438996bdb2 = $(`<div id="html_ca0b7a774c6bb856048fc8438996bdb2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ETTERBEEK GARE</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 4.0</h6></center>         </div>`)[0];
+                popup_aed6a7de96ef01273a1614d85c178fa2.setContent(html_ca0b7a774c6bb856048fc8438996bdb2);
+            
+        
+
+        marker_575e2933225f98ef70c8b4c1112d4bf3.bindPopup(popup_aed6a7de96ef01273a1614d85c178fa2)
+        ;
+
+        
+    
+    
+            marker_575e2933225f98ef70c8b4c1112d4bf3.bindTooltip(
+                `<div>
+                     ETTERBEEK GARE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3b52bfa16df5087099c13b8b74888286 = L.marker(
+                [50.817854, 4.392422],
+                {"name": "THYS"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_2e1959113e8cd92e1d493502eecfe913 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3b52bfa16df5087099c13b8b74888286.setIcon(icon_2e1959113e8cd92e1d493502eecfe913);
+        
+    
+        var popup_ce4034a80c7dde57c47ceed004c8513b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_9de89a7aa068b2934c1473c297deb1dd = $(`<div id="html_9de89a7aa068b2934c1473c297deb1dd" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: THYS</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 12.0</h6></center>         </div>`)[0];
+                popup_ce4034a80c7dde57c47ceed004c8513b.setContent(html_9de89a7aa068b2934c1473c297deb1dd);
+            
+        
+
+        marker_3b52bfa16df5087099c13b8b74888286.bindPopup(popup_ce4034a80c7dde57c47ceed004c8513b)
+        ;
+
+        
+    
+    
+            marker_3b52bfa16df5087099c13b8b74888286.bindTooltip(
+                `<div>
+                     THYS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2d8f199fda8c7aa1053f7c0bb3b3f909 = L.marker(
+                [50.815984, 4.390604],
+                {"name": "CIM. D\u0027IXELLES"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_f1821455f3a55f93ce41b2231af63add = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2d8f199fda8c7aa1053f7c0bb3b3f909.setIcon(icon_f1821455f3a55f93ce41b2231af63add);
+        
+    
+        var popup_5e2c27ea2dd439deb5d56e4b1cf5f069 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_26076415d29df0e84fe790ef65b32da7 = $(`<div id="html_26076415d29df0e84fe790ef65b32da7" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CIM. D'IXELLES</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_5e2c27ea2dd439deb5d56e4b1cf5f069.setContent(html_26076415d29df0e84fe790ef65b32da7);
+            
+        
+
+        marker_2d8f199fda8c7aa1053f7c0bb3b3f909.bindPopup(popup_5e2c27ea2dd439deb5d56e4b1cf5f069)
+        ;
+
+        
+    
+    
+            marker_2d8f199fda8c7aa1053f7c0bb3b3f909.bindTooltip(
+                `<div>
+                     CIM. D'IXELLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_790527673ae898b99a8424adc5e19f26 = L.marker(
+                [50.811687, 4.393043],
+                {"name": "RELAIS"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_56f1469466a6d3dd9d19ea2e531d0099 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_790527673ae898b99a8424adc5e19f26.setIcon(icon_56f1469466a6d3dd9d19ea2e531d0099);
+        
+    
+        var popup_f8ca4f137fc19ad5eef7604a4bce1d38 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_b7959b6828e1450b706b13ac6426fc14 = $(`<div id="html_b7959b6828e1450b706b13ac6426fc14" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: RELAIS</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 28.0</h6></center>         </div>`)[0];
+                popup_f8ca4f137fc19ad5eef7604a4bce1d38.setContent(html_b7959b6828e1450b706b13ac6426fc14);
+            
+        
+
+        marker_790527673ae898b99a8424adc5e19f26.bindPopup(popup_f8ca4f137fc19ad5eef7604a4bce1d38)
+        ;
+
+        
+    
+    
+            marker_790527673ae898b99a8424adc5e19f26.bindTooltip(
+                `<div>
+                     RELAIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6e824bd55dad55a1d4c85214ba7f1e42 = L.marker(
+                [50.810238, 4.397015],
+                {"name": "ARCADES"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_c93af01de195842da84832a1902a297c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6e824bd55dad55a1d4c85214ba7f1e42.setIcon(icon_c93af01de195842da84832a1902a297c);
+        
+    
+        var popup_36efe91220a29c2add923efc510a0d4d = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e08456d82ac4368f755ea863e5b202ea = $(`<div id="html_e08456d82ac4368f755ea863e5b202ea" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ARCADES</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 36.0</h6></center>         </div>`)[0];
+                popup_36efe91220a29c2add923efc510a0d4d.setContent(html_e08456d82ac4368f755ea863e5b202ea);
+            
+        
+
+        marker_6e824bd55dad55a1d4c85214ba7f1e42.bindPopup(popup_36efe91220a29c2add923efc510a0d4d)
+        ;
+
+        
+    
+    
+            marker_6e824bd55dad55a1d4c85214ba7f1e42.bindTooltip(
+                `<div>
+                     ARCADES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f9b55015bf8e432fadedb2d7f090f9b7 = L.marker(
+                [50.809616, 4.403442],
+                {"name": "KEYM"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_9ef3f994fde41fa5197a6d5da3a9f406 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f9b55015bf8e432fadedb2d7f090f9b7.setIcon(icon_9ef3f994fde41fa5197a6d5da3a9f406);
+        
+    
+        var popup_f9922131208d62d4f3bf98003473c5ec = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_cb61ac67e65abbf3e00df75e4b26eccc = $(`<div id="html_cb61ac67e65abbf3e00df75e4b26eccc" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: KEYM</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 44.0</h6></center>         </div>`)[0];
+                popup_f9922131208d62d4f3bf98003473c5ec.setContent(html_cb61ac67e65abbf3e00df75e4b26eccc);
+            
+        
+
+        marker_f9b55015bf8e432fadedb2d7f090f9b7.bindPopup(popup_f9922131208d62d4f3bf98003473c5ec)
+        ;
+
+        
+    
+    
+            marker_f9b55015bf8e432fadedb2d7f090f9b7.bindTooltip(
+                `<div>
+                     KEYM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ce2fc5a18b992382dfd33a075a996eed = L.marker(
+                [50.805201, 4.406701],
+                {"name": "VANDER ELST"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_8244b14238d35ff65e2087d4e18e304e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ce2fc5a18b992382dfd33a075a996eed.setIcon(icon_8244b14238d35ff65e2087d4e18e304e);
+        
+    
+        var popup_b2dd088199fb3b882a44521a138c503f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_4d352f5d1c88c8bd933e51ee57fa2697 = $(`<div id="html_4d352f5d1c88c8bd933e51ee57fa2697" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VANDER ELST</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 52.0</h6></center>         </div>`)[0];
+                popup_b2dd088199fb3b882a44521a138c503f.setContent(html_4d352f5d1c88c8bd933e51ee57fa2697);
+            
+        
+
+        marker_ce2fc5a18b992382dfd33a075a996eed.bindPopup(popup_b2dd088199fb3b882a44521a138c503f)
+        ;
+
+        
+    
+    
+            marker_ce2fc5a18b992382dfd33a075a996eed.bindTooltip(
+                `<div>
+                     VANDER ELST
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_88b397edaacd3e7275d8b53b2c6797ca = L.marker(
+                [50.803007, 4.409778],
+                {"name": "CALYPSO 2000"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_a8ab812af366a26c2a6785b71c6bd5e3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_88b397edaacd3e7275d8b53b2c6797ca.setIcon(icon_a8ab812af366a26c2a6785b71c6bd5e3);
+        
+    
+        var popup_7fb75981d4f7c7af24b83cead3df32f7 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_9227693c324212ef68e14f4737b07f8d = $(`<div id="html_9227693c324212ef68e14f4737b07f8d" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CALYPSO 2000</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_7fb75981d4f7c7af24b83cead3df32f7.setContent(html_9227693c324212ef68e14f4737b07f8d);
+            
+        
+
+        marker_88b397edaacd3e7275d8b53b2c6797ca.bindPopup(popup_7fb75981d4f7c7af24b83cead3df32f7)
+        ;
+
+        
+    
+    
+            marker_88b397edaacd3e7275d8b53b2c6797ca.bindTooltip(
+                `<div>
+                     CALYPSO 2000
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_be1766ad2f468827de6916db304b62c4 = L.marker(
+                [50.802583, 4.412501],
+                {"name": "LES 3 TILLEULS"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_c78d7265b38722dde4fef8c27612b7f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_be1766ad2f468827de6916db304b62c4.setIcon(icon_c78d7265b38722dde4fef8c27612b7f3);
+        
+    
+        var popup_2c98ab554c451d37790cf1d7b05221f6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_409e5f5e5cd5a81188b335dc29c6370e = $(`<div id="html_409e5f5e5cd5a81188b335dc29c6370e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LES 3 TILLEULS</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 68.0</h6></center>         </div>`)[0];
+                popup_2c98ab554c451d37790cf1d7b05221f6.setContent(html_409e5f5e5cd5a81188b335dc29c6370e);
+            
+        
+
+        marker_be1766ad2f468827de6916db304b62c4.bindPopup(popup_2c98ab554c451d37790cf1d7b05221f6)
+        ;
+
+        
+    
+    
+            marker_be1766ad2f468827de6916db304b62c4.bindTooltip(
+                `<div>
+                     LES 3 TILLEULS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_756f5e44523792146182029efa23e9c6 = L.marker(
+                [50.802617, 4.418772],
+                {"name": "CERISAIE"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_25263dcb31ddd23fac2f8e987b584758 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_756f5e44523792146182029efa23e9c6.setIcon(icon_25263dcb31ddd23fac2f8e987b584758);
+        
+    
+        var popup_6547ce1ef891e5cbad274de63c7b4690 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_5c44ff70f143ea87e53516031e93c15a = $(`<div id="html_5c44ff70f143ea87e53516031e93c15a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CERISAIE</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 76.0</h6></center>         </div>`)[0];
+                popup_6547ce1ef891e5cbad274de63c7b4690.setContent(html_5c44ff70f143ea87e53516031e93c15a);
+            
+        
+
+        marker_756f5e44523792146182029efa23e9c6.bindPopup(popup_6547ce1ef891e5cbad274de63c7b4690)
+        ;
+
+        
+    
+    
+            marker_756f5e44523792146182029efa23e9c6.bindTooltip(
+                `<div>
+                     CERISAIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d3dbac96a57979971dc8c512530fac20 = L.marker(
+                [50.801357, 4.422388],
+                {"name": "FAUCONNERIE"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_fd793436e4dd4c22c76e789b31918e1f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d3dbac96a57979971dc8c512530fac20.setIcon(icon_fd793436e4dd4c22c76e789b31918e1f);
+        
+    
+        var popup_f76b8c7058671b9f4efbcebc51db648c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_43500d07e76c982067025a71a2bdc474 = $(`<div id="html_43500d07e76c982067025a71a2bdc474" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FAUCONNERIE</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 84.0</h6></center>         </div>`)[0];
+                popup_f76b8c7058671b9f4efbcebc51db648c.setContent(html_43500d07e76c982067025a71a2bdc474);
+            
+        
+
+        marker_d3dbac96a57979971dc8c512530fac20.bindPopup(popup_f76b8c7058671b9f4efbcebc51db648c)
+        ;
+
+        
+    
+    
+            marker_d3dbac96a57979971dc8c512530fac20.bindTooltip(
+                `<div>
+                     FAUCONNERIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_89d0cce3f0e1a2515fef86858a07b54f = L.marker(
+                [50.798643, 4.419774],
+                {"name": "WIENER"}
+            ).addTo(feature_group_1bbc24cfe913eb2c4271f54ded88fc05);
+        
+    
+            var icon_2e9ec45245c325e9ca1b4e9657fdaacc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_89d0cce3f0e1a2515fef86858a07b54f.setIcon(icon_2e9ec45245c325e9ca1b4e9657fdaacc);
+        
+    
+        var popup_d5398db545abc55298a6b364f04272de = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_dc5b21b847a0a579d02f3476ee4d41f9 = $(`<div id="html_dc5b21b847a0a579d02f3476ee4d41f9" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WIENER</h4></center>         <center><h5>Line: 95 GRAND-PLACE - WIENER</h5></center>         <center><h6>Score: 92.0</h6></center>         </div>`)[0];
+                popup_d5398db545abc55298a6b364f04272de.setContent(html_dc5b21b847a0a579d02f3476ee4d41f9);
+            
+        
+
+        marker_89d0cce3f0e1a2515fef86858a07b54f.bindPopup(popup_d5398db545abc55298a6b364f04272de)
+        ;
+
+        
+    
+    
+            marker_89d0cce3f0e1a2515fef86858a07b54f.bindTooltip(
+                `<div>
+                     WIENER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_d612fd45326dedbee7224312c75c5f4f = L.featureGroup(
+                {}
+            ).addTo(map_ae23aaca9a3f9d7777fc2f1c7f26b8b6);
+        
+    
+            var marker_29a5a34c905e6c358bab38edab58a457 = L.marker(
+                [50.84478, 4.351992999999999],
+                {"name": "GRAND-PLACE"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_c26c81a8a343e1f507ab0f37117994fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_29a5a34c905e6c358bab38edab58a457.setIcon(icon_c26c81a8a343e1f507ab0f37117994fc);
+        
+    
+            marker_29a5a34c905e6c358bab38edab58a457.bindTooltip(
+                `<div>
+                     GRAND-PLACE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_819dbed251a80d870fe480f74fad4634 = L.marker(
+                [50.843441000000006, 4.354463999999999],
+                {"name": "BIBLIOTHEQUE"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_c8ec3a117ab46ccf82be1393a3e3fcff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_819dbed251a80d870fe480f74fad4634.setIcon(icon_c8ec3a117ab46ccf82be1393a3e3fcff);
+        
+    
+            marker_819dbed251a80d870fe480f74fad4634.bindTooltip(
+                `<div>
+                     BIBLIOTHEQUE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8e9c28f2dc239caab662c7b846ad2dac = L.marker(
+                [50.841741000000006, 4.353981999999999],
+                {"name": "GRAND SABLON"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_0d4551d7372de87f8634b74d93a957e2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8e9c28f2dc239caab662c7b846ad2dac.setIcon(icon_0d4551d7372de87f8634b74d93a957e2);
+        
+    
+            marker_8e9c28f2dc239caab662c7b846ad2dac.bindTooltip(
+                `<div>
+                     GRAND SABLON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f0584d93749bb783f08967c75d3ade6f = L.marker(
+                [50.839908, 4.355885],
+                {"name": "PETIT SABLON"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_16d36f13a09b407222d2deca441a5451 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f0584d93749bb783f08967c75d3ade6f.setIcon(icon_16d36f13a09b407222d2deca441a5451);
+        
+    
+            marker_f0584d93749bb783f08967c75d3ade6f.bindTooltip(
+                `<div>
+                     PETIT SABLON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2300ceafcbd0c0f47354e09f9c030a6b = L.marker(
+                [50.84155500000001, 4.3585579999999995],
+                {"name": "ROYALE"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_e111824d46a8d4545eddd51a302b051d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2300ceafcbd0c0f47354e09f9c030a6b.setIcon(icon_e111824d46a8d4545eddd51a302b051d);
+        
+    
+            marker_2300ceafcbd0c0f47354e09f9c030a6b.bindTooltip(
+                `<div>
+                     ROYALE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1b0f8c0bfb6ce67824b7788b0dad364a = L.marker(
+                [50.840313, 4.367128999999999],
+                {"name": "TRONE"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_658dcc7a7e13ee6d322e8bd2849baf2b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1b0f8c0bfb6ce67824b7788b0dad364a.setIcon(icon_658dcc7a7e13ee6d322e8bd2849baf2b);
+        
+    
+            marker_1b0f8c0bfb6ce67824b7788b0dad364a.bindTooltip(
+                `<div>
+                     TRONE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_434d92826d1105d764d5609564ac8af7 = L.marker(
+                [50.839852, 4.369381],
+                {"name": "SCIENCE"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_fc1c88c7ebe7a9f6ad6836e2e8345ce2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_434d92826d1105d764d5609564ac8af7.setIcon(icon_fc1c88c7ebe7a9f6ad6836e2e8345ce2);
+        
+    
+            marker_434d92826d1105d764d5609564ac8af7.bindTooltip(
+                `<div>
+                     SCIENCE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6e25813d09b95b7d548e53345dd176f3 = L.marker(
+                [50.838946, 4.372743],
+                {"name": "LUXEMBOURG"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_e3f82509bd4ef210adb73521cde760a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6e25813d09b95b7d548e53345dd176f3.setIcon(icon_e3f82509bd4ef210adb73521cde760a9);
+        
+    
+            marker_6e25813d09b95b7d548e53345dd176f3.bindTooltip(
+                `<div>
+                     LUXEMBOURG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f727326e33bb04acf08f0fb65c35706d = L.marker(
+                [50.835189, 4.372183],
+                {"name": "IDALIE"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_533deddf023f5a3358c29ca44567b6ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f727326e33bb04acf08f0fb65c35706d.setIcon(icon_533deddf023f5a3358c29ca44567b6ab);
+        
+    
+            marker_f727326e33bb04acf08f0fb65c35706d.bindTooltip(
+                `<div>
+                     IDALIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b2243c91eb8f2a2ed508a9024e18f46b = L.marker(
+                [50.832950000000004, 4.374852],
+                {"name": "BLYCKAERTS"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_5991d23ab3b546891b360c631b33dd77 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b2243c91eb8f2a2ed508a9024e18f46b.setIcon(icon_5991d23ab3b546891b360c631b33dd77);
+        
+    
+            marker_b2243c91eb8f2a2ed508a9024e18f46b.bindTooltip(
+                `<div>
+                     BLYCKAERTS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9c5725c2259b94e24c1150e093b30f2f = L.marker(
+                [50.829939, 4.37867],
+                {"name": "GERMOIR"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_34fe3acdb1a023b4298adcb6063509d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9c5725c2259b94e24c1150e093b30f2f.setIcon(icon_34fe3acdb1a023b4298adcb6063509d8);
+        
+    
+            marker_9c5725c2259b94e24c1150e093b30f2f.bindTooltip(
+                `<div>
+                     GERMOIR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9441fd6b673d27f731f579f1f3dca948 = L.marker(
+                [50.82729500000001, 4.381962],
+                {"name": "RODIN"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_5cf31f8ef95f070bb4e72682aa1df2a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9441fd6b673d27f731f579f1f3dca948.setIcon(icon_5cf31f8ef95f070bb4e72682aa1df2a1);
+        
+    
+            marker_9441fd6b673d27f731f579f1f3dca948.bindTooltip(
+                `<div>
+                     RODIN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f0ed7f5402d5b6620642867e4d13d065 = L.marker(
+                [50.824193, 4.385905999999999],
+                {"name": "DELPORTE"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_8634d17b1aff7bd3eef9a1253fb06444 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f0ed7f5402d5b6620642867e4d13d065.setIcon(icon_8634d17b1aff7bd3eef9a1253fb06444);
+        
+    
+            marker_f0ed7f5402d5b6620642867e4d13d065.bindTooltip(
+                `<div>
+                     DELPORTE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eb4d3e4026cd8c2f4647159ab401abb6 = L.marker(
+                [50.821685, 4.388998999999999],
+                {"name": "ETTERBEEK GARE"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_a48bad88da73c71ce407126431d44e06 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_eb4d3e4026cd8c2f4647159ab401abb6.setIcon(icon_a48bad88da73c71ce407126431d44e06);
+        
+    
+            marker_eb4d3e4026cd8c2f4647159ab401abb6.bindTooltip(
+                `<div>
+                     ETTERBEEK GARE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f05267eaae5a020120bdfbf9a4bc6588 = L.marker(
+                [50.817864, 4.3924319999999994],
+                {"name": "THYS"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_3c7a54fa3261eff41b1bfa7c79b5e683 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f05267eaae5a020120bdfbf9a4bc6588.setIcon(icon_3c7a54fa3261eff41b1bfa7c79b5e683);
+        
+    
+            marker_f05267eaae5a020120bdfbf9a4bc6588.bindTooltip(
+                `<div>
+                     THYS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_12c51134b22ea5c14eeebfbee260f783 = L.marker(
+                [50.815994, 4.390613999999999],
+                {"name": "CIM. D\u0027IXELLES"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_5679f2ae0a811a9e02edf1661e86950d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_12c51134b22ea5c14eeebfbee260f783.setIcon(icon_5679f2ae0a811a9e02edf1661e86950d);
+        
+    
+            marker_12c51134b22ea5c14eeebfbee260f783.bindTooltip(
+                `<div>
+                     CIM. D'IXELLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d16324ce30087bb7f0cc54c270b2b05f = L.marker(
+                [50.811697, 4.393052999999999],
+                {"name": "RELAIS"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_a64c7fbcc28f0cb50f6a28ca43275870 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d16324ce30087bb7f0cc54c270b2b05f.setIcon(icon_a64c7fbcc28f0cb50f6a28ca43275870);
+        
+    
+            marker_d16324ce30087bb7f0cc54c270b2b05f.bindTooltip(
+                `<div>
+                     RELAIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7698ae2b5215efa03053ca687e1b6f99 = L.marker(
+                [50.810248, 4.397024999999999],
+                {"name": "ARCADES"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_6271bac165b5db4df1d2b15b27347c8d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7698ae2b5215efa03053ca687e1b6f99.setIcon(icon_6271bac165b5db4df1d2b15b27347c8d);
+        
+    
+            marker_7698ae2b5215efa03053ca687e1b6f99.bindTooltip(
+                `<div>
+                     ARCADES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2188fc016a195bd62e72428b024e0591 = L.marker(
+                [50.809626, 4.403452],
+                {"name": "KEYM"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_fec0ed32cdc08747a6f4bd82ca6454dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2188fc016a195bd62e72428b024e0591.setIcon(icon_fec0ed32cdc08747a6f4bd82ca6454dc);
+        
+    
+            marker_2188fc016a195bd62e72428b024e0591.bindTooltip(
+                `<div>
+                     KEYM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_916ee3307076508d5131f3320111dfa4 = L.marker(
+                [50.805211, 4.406711],
+                {"name": "VANDER ELST"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_fdf80d9011dd5154e3117fd5470ffb08 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_916ee3307076508d5131f3320111dfa4.setIcon(icon_fdf80d9011dd5154e3117fd5470ffb08);
+        
+    
+            marker_916ee3307076508d5131f3320111dfa4.bindTooltip(
+                `<div>
+                     VANDER ELST
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9e20a40ef33df8cc0cbd157efc7a2d09 = L.marker(
+                [50.803017000000004, 4.409788],
+                {"name": "CALYPSO 2000"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_68b5eec2c7dfaf5eecee70963758bf3d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9e20a40ef33df8cc0cbd157efc7a2d09.setIcon(icon_68b5eec2c7dfaf5eecee70963758bf3d);
+        
+    
+            marker_9e20a40ef33df8cc0cbd157efc7a2d09.bindTooltip(
+                `<div>
+                     CALYPSO 2000
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2564c856b724a4fd0168464edc2b5138 = L.marker(
+                [50.802593, 4.412510999999999],
+                {"name": "LES 3 TILLEULS"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_e99706d950332ac656331ef9d195adcb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2564c856b724a4fd0168464edc2b5138.setIcon(icon_e99706d950332ac656331ef9d195adcb);
+        
+    
+            marker_2564c856b724a4fd0168464edc2b5138.bindTooltip(
+                `<div>
+                     LES 3 TILLEULS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5b181656ee08a3808a0a1e157ec786ce = L.marker(
+                [50.802627, 4.418781999999999],
+                {"name": "CERISAIE"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_623b04873b7db217b5c63e37d453535e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5b181656ee08a3808a0a1e157ec786ce.setIcon(icon_623b04873b7db217b5c63e37d453535e);
+        
+    
+            marker_5b181656ee08a3808a0a1e157ec786ce.bindTooltip(
+                `<div>
+                     CERISAIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed986dd42bdc23608e5f683a5bde2768 = L.marker(
+                [50.801367000000006, 4.422397999999999],
+                {"name": "FAUCONNERIE"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_38d514a00436735c61391d05916f92cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ed986dd42bdc23608e5f683a5bde2768.setIcon(icon_38d514a00436735c61391d05916f92cf);
+        
+    
+            marker_ed986dd42bdc23608e5f683a5bde2768.bindTooltip(
+                `<div>
+                     FAUCONNERIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3b37299c2a0962d2441b8a24da9ee58c = L.marker(
+                [50.798653, 4.419784],
+                {"name": "WIENER"}
+            ).addTo(feature_group_d612fd45326dedbee7224312c75c5f4f);
+        
+    
+            var icon_d2c73acd4d8727ca4d62c0e101e56078 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3b37299c2a0962d2441b8a24da9ee58c.setIcon(icon_d2c73acd4d8727ca4d62c0e101e56078);
+        
+    
+            marker_3b37299c2a0962d2441b8a24da9ee58c.bindTooltip(
+                `<div>
+                     WIENER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_aba7272f26a0c51da2a5123b8f0a2b06 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_be0f552482a59f8da3887d9ba13117f5,
+                },
+                overlays :  {
+                    "95 GRAND-PLACE - WIENER" : feature_group_1bbc24cfe913eb2c4271f54ded88fc05,
+                    "95 GRAND-PLACE - WIENER SCORES" : feature_group_d612fd45326dedbee7224312c75c5f4f,
+                },
+            };
+            L.control.layers(
+                layer_control_aba7272f26a0c51da2a5123b8f0a2b06.base_layers,
+                layer_control_aba7272f26a0c51da2a5123b8f0a2b06.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_ae23aaca9a3f9d7777fc2f1c7f26b8b6);
+            feature_group_d612fd45326dedbee7224312c75c5f4f.remove();
+        
+</script>
+</html>

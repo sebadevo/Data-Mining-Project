@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2ae01251276ea96e8808fee90176fbe3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2ae01251276ea96e8808fee90176fbe3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2ae01251276ea96e8808fee90176fbe3 = L.map(
+                "map_2ae01251276ea96e8808fee90176fbe3",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a6099dac426fb25484da9c22e67d172e = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2ae01251276ea96e8808fee90176fbe3);
+        
+    
+            var poly_line_724893eb8073bb14c12e26de5682f6eb = L.polyline(
+                [[50.860911, 4.358353], [50.860978, 4.35803], [50.861052, 4.357699], [50.861117, 4.357399], [50.861224, 4.35685], [50.861341, 4.35628], [50.861385, 4.35609], [50.861456, 4.35579], [50.861506, 4.355547], [50.861506, 4.355547], [50.861634, 4.354902], [50.861827, 4.353907], [50.861837, 4.35383], [50.861872, 4.353786], [50.862233, 4.354039], [50.862254, 4.354009], [50.862288, 4.353771], [50.862307, 4.353695], [50.862333, 4.353607], [50.862357, 4.353556], [50.862381, 4.353524], [50.862421, 4.353486], [50.86253, 4.353442], [50.862586, 4.353439], [50.862643, 4.353442], [50.862683, 4.353449], [50.862744, 4.353469], [50.862799, 4.3535], [50.863346, 4.353943], [50.863346, 4.353943], [50.863602, 4.35415], [50.863875, 4.354372], [50.864034, 4.3545], [50.864045, 4.354494], [50.864058, 4.354473], [50.864103, 4.354343], [50.864127, 4.354275], [50.864191, 4.354109], [50.864247, 4.353964], [50.864292, 4.353835], [50.864311, 4.353785], [50.864326, 4.353742], [50.864391, 4.353551], [50.864427, 4.353447], [50.864504, 4.35324], [50.864628, 4.352859], [50.864763, 4.35245], [50.864861, 4.35214], [50.864903, 4.352011], [50.864946, 4.351881], [50.865016, 4.351658], [50.865112, 4.351367], [50.865288, 4.350832], [50.865337, 4.350684], [50.865337, 4.350637], [50.865262, 4.350576], [50.864944, 4.350316], [50.864944, 4.350316], [50.863012, 4.348742], [50.863012, 4.348742], [50.862905, 4.348655], [50.862778, 4.348523], [50.86276, 4.348429], [50.862787, 4.34827], [50.86302, 4.34753], [50.863126, 4.34721], [50.863384, 4.346418], [50.863903, 4.344801], [50.86395, 4.344656], [50.864427, 4.343147], [50.864427, 4.343147], [50.864916, 4.341579], [50.864924, 4.341536], [50.864966, 4.341033], [50.865062, 4.339729], [50.865076, 4.339689], [50.865532, 4.339398], [50.865639, 4.339341], [50.86579, 4.33923], [50.865835, 4.339141], [50.865888, 4.339042], [50.865936, 4.338909], [50.866106, 4.338615], [50.86621, 4.338427], [50.86621, 4.338427], [50.867072, 4.336865], [50.86709, 4.336833], [50.867213, 4.336608], [50.867762, 4.335626], [50.867762, 4.335626], [50.867787, 4.335584], [50.867864, 4.335554], [50.86791, 4.335538], [50.867947, 4.335537], [50.867987, 4.335527], [50.868018, 4.335512], [50.868059, 4.335488], [50.868082, 4.335468], [50.8681, 4.335447], [50.868118, 4.335413], [50.868119, 4.335409], [50.868134, 4.33537], [50.868135, 4.335367], [50.868136, 4.335363], [50.868144, 4.335308], [50.868151, 4.335235], [50.86815, 4.335169], [50.868147, 4.335146], [50.868143, 4.335079], [50.86815, 4.335015], [50.868211, 4.33491], [50.86823, 4.334877], [50.868306, 4.334738], [50.868661, 4.334151], [50.869012, 4.333583], [50.86925, 4.333186], [50.869428, 4.332925], [50.869448, 4.332895], [50.869559, 4.332713], [50.869578, 4.332681], [50.869912, 4.332102], [50.870087, 4.33181], [50.870142, 4.331705], [50.870163, 4.33167], [50.870321, 4.331408], [50.871013, 4.33022], [50.871013, 4.33022], [50.871069, 4.330132], [50.871069, 4.330132], [50.871176, 4.32996], [50.871194, 4.329928], [50.871325, 4.329705], [50.871413, 4.32956], [50.871548, 4.329353], [50.871661, 4.329171], [50.872095, 4.328596], [50.872272, 4.328382], [50.872319, 4.328324], [50.872369, 4.328289], [50.872412, 4.328311], [50.87247, 4.328387], [50.872577, 4.328497], [50.872644, 4.328556], [50.872758, 4.328631], [50.87281, 4.328654], [50.872811, 4.328654], [50.872863, 4.328677], [50.872964, 4.328707], [50.873035, 4.328718], [50.873077, 4.328721], [50.873189, 4.328716], [50.873258, 4.328701], [50.873348, 4.328666], [50.873463, 4.32862], [50.87356, 4.328584], [50.873732, 4.328521], [50.873836, 4.328496], [50.873868, 4.328488], [50.874001, 4.328466], [50.87412, 4.328461], [50.874189, 4.328477], [50.874205, 4.328482], [50.874282, 4.328509], [50.87437, 4.328553], [50.874394, 4.328569], [50.874552, 4.328701], [50.874607, 4.328756], [50.874655, 4.328805], [50.874798, 4.328965], [50.874814, 4.328982], [50.875099, 4.32932], [50.875192, 4.329432], [50.87523, 4.329475], [50.875497, 4.329786], [50.875626, 4.329936], [50.875754, 4.330087], [50.875973, 4.330315], [50.87709, 4.331609], [50.87709, 4.331609], [50.877631, 4.332231], [50.877956, 4.332577], [50.878048, 4.332688], [50.878089, 4.332738], [50.878132, 4.332787], [50.878178, 4.332826], [50.878231, 4.332853], [50.878327, 4.332845], [50.878364, 4.332837], [50.878531, 4.332796], [50.87856, 4.33279], [50.878749, 4.332734], [50.879094, 4.332637], [50.879094, 4.332637], [50.879141, 4.332629], [50.879403, 4.332572], [50.879712, 4.332485], [50.879814, 4.332434], [50.879833, 4.332414], [50.879846, 4.332343], [50.879898, 4.332046], [50.879998, 4.3314], [50.880006, 4.331358], [50.880053, 4.331054], [50.88006, 4.33101], [50.88006, 4.33101], [50.880091, 4.330826], [50.880169, 4.330332], [50.880225, 4.329944], [50.880225, 4.329944], [50.88029, 4.329668], [50.880357, 4.329471], [50.880371, 4.329391], [50.880365, 4.329343], [50.880349, 4.32931], [50.880329, 4.329289], [50.880298, 4.329293], [50.880262, 4.329316], [50.880235, 4.32936], [50.880216, 4.329415], [50.880204, 4.329479], [50.8802, 4.329572], [50.880203, 4.329636], [50.88021, 4.329689], [50.880213, 4.329759], [50.880208, 4.32986], [50.880204, 4.329988], [50.880133, 4.330474], [50.880133, 4.330474], [50.880133, 4.330474], [50.880064, 4.330815], [50.880031, 4.331014], [50.879989, 4.33128], [50.879999, 4.331348], [50.880032, 4.331373], [50.880365, 4.331412], [50.880474, 4.331456], [50.880555, 4.33147], [50.880659, 4.331461], [50.880852, 4.33142], [50.880996, 4.331398], [50.881131, 4.331371], [50.881198, 4.33135], [50.881267, 4.331348], [50.881358, 4.331335], [50.881409, 4.331328], [50.881572, 4.331321], [50.881734, 4.331291], [50.882055, 4.331227], [50.88236, 4.331147], [50.882384, 4.33114], [50.882384, 4.33114], [50.882442, 4.331127], [50.88249, 4.33113], [50.882517, 4.331153], [50.882552, 4.33119], [50.882592, 4.331209], [50.882645, 4.331215], [50.882654, 4.331215], [50.882681, 4.331211], [50.882716, 4.331199], [50.882758, 4.331178], [50.882781, 4.331155], [50.882796, 4.331135], [50.882969, 4.331088], [50.883206, 4.331019], [50.883429, 4.330939], [50.883727, 4.330818], [50.884016, 4.33067], [50.88419, 4.330566], [50.884606, 4.330287], [50.884724, 4.330209], [50.884724, 4.330209], [50.884757, 4.330189], [50.884814, 4.330158], [50.884849, 4.330146], [50.884878, 4.330175], [50.884878, 4.330175], [50.884915, 4.330175], [50.884937, 4.330166], [50.884961, 4.330157], [50.884988, 4.330142], [50.885011, 4.33012], [50.885028, 4.330095], [50.885031, 4.330086], [50.885046, 4.330049], [50.885063, 4.329965], [50.885063, 4.329916], [50.885062, 4.329896], [50.885053, 4.329855], [50.885046, 4.329838], [50.885034, 4.329809], [50.885021, 4.329791], [50.885008, 4.329778], [50.884985, 4.329767], [50.884969, 4.329731], [50.884962, 4.329551], [50.884972, 4.329184], [50.884979, 4.32882], [50.884985, 4.32863], [50.88499, 4.328283], [50.885003, 4.327977], [50.885008, 4.32751], [50.885005, 4.32714], [50.885004, 4.327098], [50.884961, 4.326265], [50.884943, 4.32585], [50.884927, 4.325567], [50.884917, 4.325309], [50.884916, 4.325091], [50.88492, 4.324783], [50.884935, 4.324484], [50.884946, 4.324297], [50.88496, 4.324122], [50.884961, 4.324069], [50.884978, 4.323303], [50.885, 4.322655], [50.885012, 4.322299], [50.885014, 4.322256], [50.885031, 4.321811], [50.885033, 4.321746], [50.885033, 4.321746], [50.885032, 4.321318], [50.885043, 4.320963], [50.885044, 4.320896], [50.885061, 4.320282], [50.885076, 4.31989], [50.885089, 4.319606], [50.885091, 4.319563], [50.885104, 4.319272], [50.88512, 4.318857], [50.885141, 4.318364], [50.885165, 4.318061], [50.885199, 4.317781], [50.885259, 4.317596], [50.88533, 4.317455], [50.885436, 4.317275], [50.885475, 4.31716], [50.885482, 4.317043], [50.885504, 4.316782], [50.885526, 4.316487], [50.885543, 4.316268], [50.885543, 4.316268], [50.88556, 4.316058], [50.885615, 4.315471], [50.885618, 4.315437], [50.885666, 4.3149], [50.885739, 4.313943], [50.885773, 4.313683], [50.885818, 4.313449], [50.885878, 4.313218], [50.885938, 4.313004], [50.886004, 4.312803], [50.886081, 4.312596], [50.886168, 4.312407], [50.886169, 4.312402], [50.88617, 4.312398], [50.886191, 4.312272], [50.88622, 4.312189], [50.886278, 4.312159], [50.886282, 4.312158], [50.886286, 4.312153], [50.886406, 4.311979], [50.886732, 4.311457], [50.886732, 4.311457], [50.886786, 4.31137], [50.886857, 4.311256], [50.886859, 4.31125], [50.886861, 4.311245], [50.886865, 4.311218], [50.886871, 4.311178], [50.886882, 4.311098], [50.886882, 4.311093], [50.886888, 4.311027], [50.886916, 4.310965], [50.887067, 4.310868], [50.887209, 4.310781], [50.887376, 4.31069], [50.887572, 4.31058], [50.88784, 4.310423], [50.887998, 4.310334], [50.888153, 4.310243], [50.888426, 4.310094], [50.888657, 4.309966], [50.88888, 4.309839], [50.889116, 4.309707], [50.889323, 4.309589], [50.88952, 4.309481], [50.889692, 4.309384], [50.889692, 4.309384], [50.88975, 4.309351], [50.890001, 4.309213], [50.890203, 4.309095], [50.890323, 4.30904], [50.890393, 4.30901], [50.89047, 4.308988], [50.890531, 4.308976], [50.890613, 4.308965], [50.890697, 4.308963], [50.890803, 4.308967], [50.890848, 4.308976], [50.890911, 4.30899], [50.890973, 4.309007], [50.891052, 4.309041], [50.891112, 4.309069], [50.891181, 4.30911], [50.891196, 4.309119], [50.891269, 4.309173], [50.891325, 4.309214], [50.891365, 4.309248], [50.891403, 4.309291], [50.891491, 4.309389], [50.891544, 4.309451], [50.891624, 4.309562], [50.891659, 4.30962], [50.891733, 4.309755], [50.891786, 4.309852], [50.891805, 4.3099], [50.891852, 4.310013], [50.891906, 4.310167], [50.891992, 4.310408], [50.892083, 4.310656], [50.892203, 4.310999], [50.892295, 4.311255], [50.892395, 4.311535], [50.892449, 4.311688], [50.892527, 4.311926], [50.892618, 4.312196], [50.892673, 4.312355], [50.892689, 4.312403], [50.892808, 4.312743], [50.892884, 4.312957], [50.892916, 4.313052], [50.892951, 4.313155], [50.89303, 4.313371], [50.893077, 4.313496], [50.893077, 4.313496], [50.893099, 4.313551], [50.893193, 4.313778], [50.893204, 4.31382], [50.893212, 4.313874], [50.893208, 4.31397], [50.893193, 4.314119], [50.893168, 4.314336], [50.893143, 4.314518], [50.893133, 4.314581], [50.893116, 4.31467], [50.893082, 4.31484], [50.893051, 4.315029], [50.89302, 4.315281], [50.892996, 4.315508], [50.892993, 4.315551], [50.892988, 4.315676], [50.892986, 4.315719], [50.892981, 4.31595], [50.892981, 4.316196], [50.892987, 4.316425], [50.893001, 4.316705], [50.893024, 4.316957], [50.893056, 4.317238], [50.893094, 4.317471], [50.893166, 4.317863], [50.893206, 4.317963], [50.893248, 4.318079], [50.893311, 4.318447], [50.893383, 4.318778], [50.893427, 4.319063], [50.893454, 4.319213], [50.893478, 4.319345], [50.89351, 4.319549], [50.893516, 4.319579], [50.893556, 4.31978], [50.89363, 4.320143], [50.893638, 4.320185], [50.893638, 4.320185], [50.893648, 4.320246], [50.893667, 4.320353], [50.893674, 4.32039], [50.893684, 4.320536], [50.893683, 4.32063], [50.893682, 4.320694], [50.893691, 4.320784], [50.8937, 4.320872], [50.893719, 4.320978], [50.893743, 4.321115], [50.893769, 4.321244], [50.893786, 4.321328], [50.893795, 4.321372], [50.893833, 4.321561], [50.893852, 4.321662], [50.893885, 4.321837], [50.893896, 4.321899], [50.893914, 4.322003], [50.893933, 4.322112], [50.893948, 4.322196], [50.893963, 4.322283], [50.893975, 4.322351], [50.893986, 4.322412], [50.894006, 4.322517], [50.894028, 4.322678], [50.894037, 4.322745], [50.894047, 4.322843], [50.894054, 4.322932], [50.894062, 4.323057], [50.894068, 4.323138], [50.894072, 4.323264], [50.894075, 4.32333], [50.894078, 4.323428], [50.894078, 4.323538], [50.894077, 4.323646], [50.894076, 4.3237], [50.894076, 4.32373], [50.894071, 4.323873], [50.894067, 4.323963], [50.894063, 4.324058], [50.894052, 4.324183], [50.894045, 4.324254], [50.894037, 4.324348], [50.894032, 4.324399], [50.893999, 4.324669], [50.893994, 4.324711], [50.893987, 4.324773], [50.893971, 4.324948], [50.893957, 4.325103], [50.893941, 4.325282], [50.89393, 4.325397], [50.893915, 4.325562], [50.893903, 4.325691], [50.89389, 4.325835], [50.893859, 4.326168], [50.893859, 4.326168], [50.893835, 4.326445], [50.893822, 4.326561], [50.893807, 4.326652], [50.893786, 4.326745], [50.893755, 4.326846], [50.893737, 4.326932], [50.893744, 4.326992], [50.893771, 4.327049], [50.893815, 4.327103], [50.893869, 4.327172], [50.893931, 4.327269], [50.894001, 4.32734], [50.894074, 4.327424], [50.89411, 4.327459], [50.894147, 4.327478], [50.894187, 4.327476], [50.894327, 4.327436], [50.894442, 4.327408], [50.894558, 4.327381], [50.894731, 4.327337], [50.89515, 4.327244], [50.895272, 4.327217], [50.895298, 4.327211], [50.895647, 4.327147], [50.896018, 4.327065], [50.896018, 4.327065], [50.896057, 4.327057], [50.896185, 4.327031], [50.896216, 4.327067], [50.896249, 4.327116], [50.896262, 4.327185], [50.896338, 4.327652], [50.896397, 4.327958], [50.896487, 4.328397], [50.89655, 4.328636], [50.896561, 4.328678], [50.896585, 4.328771], [50.896596, 4.328813], [50.896628, 4.32895], [50.896714, 4.329353], [50.896825, 4.329871], [50.896825, 4.329871], [50.896906, 4.330249], [50.896974, 4.330534], [50.897035, 4.330802], [50.897151, 4.331323], [50.897341, 4.33215], [50.897446, 4.33266], [50.897474, 4.332855], [50.897508, 4.333188], [50.897518, 4.333336], [50.897524, 4.333537], [50.897517, 4.334208], [50.897511, 4.334254], [50.8975, 4.334272], [50.897447, 4.334285], [50.897389, 4.334321], [50.897347, 4.334366], [50.897105, 4.334715], [50.897086, 4.334743], [50.897002, 4.334868], [50.896993, 4.334939], [50.896987, 4.335009], [50.896979, 4.335074], [50.89695, 4.335137], [50.896441, 4.335879]],
+                {"bubblingMouseEvents": true, "color": "#F29DC3", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#F29DC3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_2ae01251276ea96e8808fee90176fbe3);
+        
+    
+            var feature_group_edb0d454a91a4e4f1a42a4534e95e6d7 = L.featureGroup(
+                {}
+            ).addTo(map_2ae01251276ea96e8808fee90176fbe3);
+        
+    
+            var marker_8f591a3c3844d7b0114a498721324daa = L.marker(
+                [50.860915, 4.358355],
+                {"name": "GARE DU NORD"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_56eed7671c5c2be349e504f9e0eab92c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8f591a3c3844d7b0114a498721324daa.setIcon(icon_56eed7671c5c2be349e504f9e0eab92c);
+        
+    
+        var popup_0d004b6e74ecd6feee7750ac70d4b079 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a5978f3ba2b827a2c849f7dd8bf03001 = $(`<div id="html_a5978f3ba2b827a2c849f7dd8bf03001" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARE DU NORD</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_0d004b6e74ecd6feee7750ac70d4b079.setContent(html_a5978f3ba2b827a2c849f7dd8bf03001);
+            
+        
+
+        marker_8f591a3c3844d7b0114a498721324daa.bindPopup(popup_0d004b6e74ecd6feee7750ac70d4b079)
+        ;
+
+        
+    
+    
+            marker_8f591a3c3844d7b0114a498721324daa.bindTooltip(
+                `<div>
+                     GARE DU NORD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a15ef313b813e3b39e6e95434b48f715 = L.marker(
+                [50.861527, 4.355557],
+                {"name": "WTC"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_4adbf9c666eb6712b03702af76b7f9fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a15ef313b813e3b39e6e95434b48f715.setIcon(icon_4adbf9c666eb6712b03702af76b7f9fc);
+        
+    
+        var popup_493cab4b7f5c38fac23160b30ee8e69a = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_69c5fef805654e335319ddd033744670 = $(`<div id="html_69c5fef805654e335319ddd033744670" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WTC</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 92.0</h6></center>         </div>`)[0];
+                popup_493cab4b7f5c38fac23160b30ee8e69a.setContent(html_69c5fef805654e335319ddd033744670);
+            
+        
+
+        marker_a15ef313b813e3b39e6e95434b48f715.bindPopup(popup_493cab4b7f5c38fac23160b30ee8e69a)
+        ;
+
+        
+    
+    
+            marker_a15ef313b813e3b39e6e95434b48f715.bindTooltip(
+                `<div>
+                     WTC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eb9b0688cfc06fd5780f816ca401a448 = L.marker(
+                [50.863315, 4.354037],
+                {"name": "WILLEBROEK"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_1f3853a97746eebc6d840c82690a20a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_eb9b0688cfc06fd5780f816ca401a448.setIcon(icon_1f3853a97746eebc6d840c82690a20a1);
+        
+    
+        var popup_03502bc53b12bfdd3fc67d0d0f66094d = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_160fb84709a4095a151be790c8d2d6a2 = $(`<div id="html_160fb84709a4095a151be790c8d2d6a2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WILLEBROEK</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 84.0</h6></center>         </div>`)[0];
+                popup_03502bc53b12bfdd3fc67d0d0f66094d.setContent(html_160fb84709a4095a151be790c8d2d6a2);
+            
+        
+
+        marker_eb9b0688cfc06fd5780f816ca401a448.bindPopup(popup_03502bc53b12bfdd3fc67d0d0f66094d)
+        ;
+
+        
+    
+    
+            marker_eb9b0688cfc06fd5780f816ca401a448.bindTooltip(
+                `<div>
+                     WILLEBROEK
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a1ed3578ceb484ec7e4964b32838abf2 = L.marker(
+                [50.864968, 4.350239],
+                {"name": "TOUR ET TAXIS"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_f24c67d5f46076c2d4ecd514aae045e1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a1ed3578ceb484ec7e4964b32838abf2.setIcon(icon_f24c67d5f46076c2d4ecd514aae045e1);
+        
+    
+        var popup_d838a6dfa3b974638087ca22a336ba90 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3c4edb1ab00da050c65f6d4c19fd5fb8 = $(`<div id="html_3c4edb1ab00da050c65f6d4c19fd5fb8" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TOUR ET TAXIS</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 76.0</h6></center>         </div>`)[0];
+                popup_d838a6dfa3b974638087ca22a336ba90.setContent(html_3c4edb1ab00da050c65f6d4c19fd5fb8);
+            
+        
+
+        marker_a1ed3578ceb484ec7e4964b32838abf2.bindPopup(popup_d838a6dfa3b974638087ca22a336ba90)
+        ;
+
+        
+    
+    
+            marker_a1ed3578ceb484ec7e4964b32838abf2.bindTooltip(
+                `<div>
+                     TOUR ET TAXIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_930ae18da9595c3efbe7988d4ab968b2 = L.marker(
+                [50.863018, 4.348724],
+                {"name": "AVENUE DU PORT"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_bc9317cc44ffcfa6e0dc831dd2c754e7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_930ae18da9595c3efbe7988d4ab968b2.setIcon(icon_bc9317cc44ffcfa6e0dc831dd2c754e7);
+        
+    
+        var popup_7abb4757235da03a3cf91c2a0b693945 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e79377c0f5d7f8fc67059a93491742dc = $(`<div id="html_e79377c0f5d7f8fc67059a93491742dc" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: AVENUE DU PORT</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 68.0</h6></center>         </div>`)[0];
+                popup_7abb4757235da03a3cf91c2a0b693945.setContent(html_e79377c0f5d7f8fc67059a93491742dc);
+            
+        
+
+        marker_930ae18da9595c3efbe7988d4ab968b2.bindPopup(popup_7abb4757235da03a3cf91c2a0b693945)
+        ;
+
+        
+    
+    
+            marker_930ae18da9595c3efbe7988d4ab968b2.bindTooltip(
+                `<div>
+                     AVENUE DU PORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c72a9bddf45dcd6b64413723270855a1 = L.marker(
+                [50.864456, 4.343166],
+                {"name": "PICARD"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_6d2218f6897121fbc93f3eb2d59fa511 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c72a9bddf45dcd6b64413723270855a1.setIcon(icon_6d2218f6897121fbc93f3eb2d59fa511);
+        
+    
+        var popup_5d6ec83558861df3f077f0810701f6ab = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0dee13394d7faef34b458dc40105422a = $(`<div id="html_0dee13394d7faef34b458dc40105422a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PICARD</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_5d6ec83558861df3f077f0810701f6ab.setContent(html_0dee13394d7faef34b458dc40105422a);
+            
+        
+
+        marker_c72a9bddf45dcd6b64413723270855a1.bindPopup(popup_5d6ec83558861df3f077f0810701f6ab)
+        ;
+
+        
+    
+    
+            marker_c72a9bddf45dcd6b64413723270855a1.bindTooltip(
+                `<div>
+                     PICARD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c6f5447655eb9f0f34ea77cc900764fb = L.marker(
+                [50.866198, 4.33841],
+                {"name": "VANDERSTICHELEN"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_131260637767ddc6b2df3b76a6822992 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c6f5447655eb9f0f34ea77cc900764fb.setIcon(icon_131260637767ddc6b2df3b76a6822992);
+        
+    
+        var popup_6465000a5e13f4d52e345a674cc72ec3 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_cee2b06f3709f0dcf9e9b840d1f5c49f = $(`<div id="html_cee2b06f3709f0dcf9e9b840d1f5c49f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VANDERSTICHELEN</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 52.0</h6></center>         </div>`)[0];
+                popup_6465000a5e13f4d52e345a674cc72ec3.setContent(html_cee2b06f3709f0dcf9e9b840d1f5c49f);
+            
+        
+
+        marker_c6f5447655eb9f0f34ea77cc900764fb.bindPopup(popup_6465000a5e13f4d52e345a674cc72ec3)
+        ;
+
+        
+    
+    
+            marker_c6f5447655eb9f0f34ea77cc900764fb.bindTooltip(
+                `<div>
+                     VANDERSTICHELEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ce46bde4e74e3dd1ad3cd3a29325b321 = L.marker(
+                [50.867752, 4.335611],
+                {"name": "BELGICA"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_aa6c117d8eb4838732c3bb42f445f192 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ce46bde4e74e3dd1ad3cd3a29325b321.setIcon(icon_aa6c117d8eb4838732c3bb42f445f192);
+        
+    
+        var popup_4f3c9440f1cbfea11f6a19b6ca3f94bc = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_806d91a2a24013e37300bc493ccb790f = $(`<div id="html_806d91a2a24013e37300bc493ccb790f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BELGICA</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 44.0</h6></center>         </div>`)[0];
+                popup_4f3c9440f1cbfea11f6a19b6ca3f94bc.setContent(html_806d91a2a24013e37300bc493ccb790f);
+            
+        
+
+        marker_ce46bde4e74e3dd1ad3cd3a29325b321.bindPopup(popup_4f3c9440f1cbfea11f6a19b6ca3f94bc)
+        ;
+
+        
+    
+    
+            marker_ce46bde4e74e3dd1ad3cd3a29325b321.bindTooltip(
+                `<div>
+                     BELGICA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f927612f82804f3440e6f5840ab7fee4 = L.marker(
+                [50.871086, 4.330171],
+                {"name": "FIRMIN LECHARLIER"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_8f01ab97d55581e2c6578aefc6795591 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f927612f82804f3440e6f5840ab7fee4.setIcon(icon_8f01ab97d55581e2c6578aefc6795591);
+        
+    
+        var popup_eb2c1752f1f56f85e08b331e03bb8b58 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_cf4107d19f63b378908a733e430b6c12 = $(`<div id="html_cf4107d19f63b378908a733e430b6c12" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FIRMIN LECHARLIER</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 36.0</h6></center>         </div>`)[0];
+                popup_eb2c1752f1f56f85e08b331e03bb8b58.setContent(html_cf4107d19f63b378908a733e430b6c12);
+            
+        
+
+        marker_f927612f82804f3440e6f5840ab7fee4.bindPopup(popup_eb2c1752f1f56f85e08b331e03bb8b58)
+        ;
+
+        
+    
+    
+            marker_f927612f82804f3440e6f5840ab7fee4.bindTooltip(
+                `<div>
+                     FIRMIN LECHARLIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d99425356bf9dcba32c6b8d0be0329b6 = L.marker(
+                [50.872802, 4.328702],
+                {"name": "LEOPOLD I"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_f7e460d846cf23c8421a0916c28e30f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d99425356bf9dcba32c6b8d0be0329b6.setIcon(icon_f7e460d846cf23c8421a0916c28e30f2);
+        
+    
+        var popup_2bdd0b3b8653558b915f50015fef4fc7 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2c85b519c3d3b98dbb81554cc3f0eb5f = $(`<div id="html_2c85b519c3d3b98dbb81554cc3f0eb5f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LEOPOLD I</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 28.0</h6></center>         </div>`)[0];
+                popup_2bdd0b3b8653558b915f50015fef4fc7.setContent(html_2c85b519c3d3b98dbb81554cc3f0eb5f);
+            
+        
+
+        marker_d99425356bf9dcba32c6b8d0be0329b6.bindPopup(popup_2bdd0b3b8653558b915f50015fef4fc7)
+        ;
+
+        
+    
+    
+            marker_d99425356bf9dcba32c6b8d0be0329b6.bindTooltip(
+                `<div>
+                     LEOPOLD I
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_060cc5703d772e6cede67f337cfe3257 = L.marker(
+                [50.877071, 4.331647],
+                {"name": "VERBEYST"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_ac20f91790511a88eb1f631b448e7e5f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_060cc5703d772e6cede67f337cfe3257.setIcon(icon_ac20f91790511a88eb1f631b448e7e5f);
+        
+    
+        var popup_c911e0d5ae7d2a2c83a639b13f7a4846 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a8e017f8ce06af5625999e7602e37730 = $(`<div id="html_a8e017f8ce06af5625999e7602e37730" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VERBEYST</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_c911e0d5ae7d2a2c83a639b13f7a4846.setContent(html_a8e017f8ce06af5625999e7602e37730);
+            
+        
+
+        marker_060cc5703d772e6cede67f337cfe3257.bindPopup(popup_c911e0d5ae7d2a2c83a639b13f7a4846)
+        ;
+
+        
+    
+    
+            marker_060cc5703d772e6cede67f337cfe3257.bindTooltip(
+                `<div>
+                     VERBEYST
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dd58806eaec10d0547949ea0c3eac903 = L.marker(
+                [50.879096, 4.332662],
+                {"name": "DEMINEURS"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_d9ce662c3711052b0d4f927c3c396691 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_dd58806eaec10d0547949ea0c3eac903.setIcon(icon_d9ce662c3711052b0d4f927c3c396691);
+        
+    
+        var popup_4b173ba766ab68c53c0fe74718534715 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f0bfce07c0e8d8b821bd70604f771d61 = $(`<div id="html_f0bfce07c0e8d8b821bd70604f771d61" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DEMINEURS</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 12.0</h6></center>         </div>`)[0];
+                popup_4b173ba766ab68c53c0fe74718534715.setContent(html_f0bfce07c0e8d8b821bd70604f771d61);
+            
+        
+
+        marker_dd58806eaec10d0547949ea0c3eac903.bindPopup(popup_4b173ba766ab68c53c0fe74718534715)
+        ;
+
+        
+    
+    
+            marker_dd58806eaec10d0547949ea0c3eac903.bindTooltip(
+                `<div>
+                     DEMINEURS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a6a13dc923cd2611ca28f2702907a8f3 = L.marker(
+                [50.880128, 4.330471],
+                {"name": "GARE DE JETTE"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_df9b6922403e3ccd936c6f5f949200dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a6a13dc923cd2611ca28f2702907a8f3.setIcon(icon_df9b6922403e3ccd936c6f5f949200dc);
+        
+    
+        var popup_28b106370401f1a9a0d5e9e55880ba48 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_bb16d009ffbc662e59e79cd934ec2f2e = $(`<div id="html_bb16d009ffbc662e59e79cd934ec2f2e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARE DE JETTE</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 4.0</h6></center>         </div>`)[0];
+                popup_28b106370401f1a9a0d5e9e55880ba48.setContent(html_bb16d009ffbc662e59e79cd934ec2f2e);
+            
+        
+
+        marker_a6a13dc923cd2611ca28f2702907a8f3.bindPopup(popup_28b106370401f1a9a0d5e9e55880ba48)
+        ;
+
+        
+    
+    
+            marker_a6a13dc923cd2611ca28f2702907a8f3.bindTooltip(
+                `<div>
+                     GARE DE JETTE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7fbb86b083f78315194464abb9cf9d78 = L.marker(
+                [50.882386, 4.331153],
+                {"name": "LORGE"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_6e7279f8f1fc923a3dfc9253cd396604 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7fbb86b083f78315194464abb9cf9d78.setIcon(icon_6e7279f8f1fc923a3dfc9253cd396604);
+        
+    
+        var popup_cb788fa471e5dda13fc5053cf16d8546 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_5dae3768176ad763ca191ae3bef39e08 = $(`<div id="html_5dae3768176ad763ca191ae3bef39e08" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LORGE</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 4.0</h6></center>         </div>`)[0];
+                popup_cb788fa471e5dda13fc5053cf16d8546.setContent(html_5dae3768176ad763ca191ae3bef39e08);
+            
+        
+
+        marker_7fbb86b083f78315194464abb9cf9d78.bindPopup(popup_cb788fa471e5dda13fc5053cf16d8546)
+        ;
+
+        
+    
+    
+            marker_7fbb86b083f78315194464abb9cf9d78.bindTooltip(
+                `<div>
+                     LORGE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52c1a5dbaefc4b1dad38796c79cf7963 = L.marker(
+                [50.884726, 4.330214],
+                {"name": "CROCQ"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_4b8e3785cce17395026bb4c6115c0a63 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_52c1a5dbaefc4b1dad38796c79cf7963.setIcon(icon_4b8e3785cce17395026bb4c6115c0a63);
+        
+    
+        var popup_dd34f1f5eafb72fcab63c8948f5db270 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_57dbf39cc117f395be49120fe71ff35f = $(`<div id="html_57dbf39cc117f395be49120fe71ff35f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CROCQ</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 12.0</h6></center>         </div>`)[0];
+                popup_dd34f1f5eafb72fcab63c8948f5db270.setContent(html_57dbf39cc117f395be49120fe71ff35f);
+            
+        
+
+        marker_52c1a5dbaefc4b1dad38796c79cf7963.bindPopup(popup_dd34f1f5eafb72fcab63c8948f5db270)
+        ;
+
+        
+    
+    
+            marker_52c1a5dbaefc4b1dad38796c79cf7963.bindTooltip(
+                `<div>
+                     CROCQ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_76180c5ff56e1c0e433f96fb2a5b083b = L.marker(
+                [50.885043, 4.321743],
+                {"name": "BONAVENTURE"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_1e453d4b674b1e5362272287f284369c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_76180c5ff56e1c0e433f96fb2a5b083b.setIcon(icon_1e453d4b674b1e5362272287f284369c);
+        
+    
+        var popup_6d0be4a04443be4a3e3015dc5f643d3e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f17fc761a4bfe03044cddc348b332681 = $(`<div id="html_f17fc761a4bfe03044cddc348b332681" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BONAVENTURE</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_6d0be4a04443be4a3e3015dc5f643d3e.setContent(html_f17fc761a4bfe03044cddc348b332681);
+            
+        
+
+        marker_76180c5ff56e1c0e433f96fb2a5b083b.bindPopup(popup_6d0be4a04443be4a3e3015dc5f643d3e)
+        ;
+
+        
+    
+    
+            marker_76180c5ff56e1c0e433f96fb2a5b083b.bindTooltip(
+                `<div>
+                     BONAVENTURE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6fe0207f69081426127ccbcf4b4d2d00 = L.marker(
+                [50.885545, 4.316271],
+                {"name": "ANCIENNE BARRIERE"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_9849ac972ca3396de8abcb718eaa7a73 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6fe0207f69081426127ccbcf4b4d2d00.setIcon(icon_9849ac972ca3396de8abcb718eaa7a73);
+        
+    
+        var popup_87459dda7de0ed93a572abb9187384a6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_da75610b902ea1bb05d9183a87f47bfc = $(`<div id="html_da75610b902ea1bb05d9183a87f47bfc" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ANCIENNE BARRIERE</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 28.0</h6></center>         </div>`)[0];
+                popup_87459dda7de0ed93a572abb9187384a6.setContent(html_da75610b902ea1bb05d9183a87f47bfc);
+            
+        
+
+        marker_6fe0207f69081426127ccbcf4b4d2d00.bindPopup(popup_87459dda7de0ed93a572abb9187384a6)
+        ;
+
+        
+    
+    
+            marker_6fe0207f69081426127ccbcf4b4d2d00.bindTooltip(
+                `<div>
+                     ANCIENNE BARRIERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9e5264973c0804f4a193ffcad560d267 = L.marker(
+                [50.886729, 4.311452],
+                {"name": "UZ BRUSSEL"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_b4eef3cf3f2d612abe2cd12df8c812de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9e5264973c0804f4a193ffcad560d267.setIcon(icon_b4eef3cf3f2d612abe2cd12df8c812de);
+        
+    
+        var popup_fae50e1a22c0145a1310e71a00682f1d = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_40b23f04e974af8f3bb96f8c1f3f26b5 = $(`<div id="html_40b23f04e974af8f3bb96f8c1f3f26b5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: UZ BRUSSEL</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 36.0</h6></center>         </div>`)[0];
+                popup_fae50e1a22c0145a1310e71a00682f1d.setContent(html_40b23f04e974af8f3bb96f8c1f3f26b5);
+            
+        
+
+        marker_9e5264973c0804f4a193ffcad560d267.bindPopup(popup_fae50e1a22c0145a1310e71a00682f1d)
+        ;
+
+        
+    
+    
+            marker_9e5264973c0804f4a193ffcad560d267.bindTooltip(
+                `<div>
+                     UZ BRUSSEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_505e75221791f142edf4b87b89e28967 = L.marker(
+                [50.889696, 4.309404],
+                {"name": "UZ-PEDIATRIE"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_488bf37dc7d26821d0c86717f4f6c53a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_505e75221791f142edf4b87b89e28967.setIcon(icon_488bf37dc7d26821d0c86717f4f6c53a);
+        
+    
+        var popup_04d4f3b87a88596589322b18e14f9382 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_488b1e303e9103a16b0ef0e6f0d6b769 = $(`<div id="html_488b1e303e9103a16b0ef0e6f0d6b769" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: UZ-PEDIATRIE</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 44.0</h6></center>         </div>`)[0];
+                popup_04d4f3b87a88596589322b18e14f9382.setContent(html_488b1e303e9103a16b0ef0e6f0d6b769);
+            
+        
+
+        marker_505e75221791f142edf4b87b89e28967.bindPopup(popup_04d4f3b87a88596589322b18e14f9382)
+        ;
+
+        
+    
+    
+            marker_505e75221791f142edf4b87b89e28967.bindTooltip(
+                `<div>
+                     UZ-PEDIATRIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_35221c9f22e7d954727e76af14aee322 = L.marker(
+                [50.893066, 4.313506],
+                {"name": "ARBRE BALLON"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_81a377daaea60f05a022c6bd456a68bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_35221c9f22e7d954727e76af14aee322.setIcon(icon_81a377daaea60f05a022c6bd456a68bb);
+        
+    
+        var popup_470b042ebb6b0f6d67b1a08e1d9c4daa = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_bc2608416f38c0b415d9319fc5f277ca = $(`<div id="html_bc2608416f38c0b415d9319fc5f277ca" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ARBRE BALLON</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 52.0</h6></center>         </div>`)[0];
+                popup_470b042ebb6b0f6d67b1a08e1d9c4daa.setContent(html_bc2608416f38c0b415d9319fc5f277ca);
+            
+        
+
+        marker_35221c9f22e7d954727e76af14aee322.bindPopup(popup_470b042ebb6b0f6d67b1a08e1d9c4daa)
+        ;
+
+        
+    
+    
+            marker_35221c9f22e7d954727e76af14aee322.bindTooltip(
+                `<div>
+                     ARBRE BALLON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c54c8e95b7660bbdb5d2c1f4f670a4d5 = L.marker(
+                [50.893633, 4.320188],
+                {"name": "DE HEYN"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_bddbabcb78e9ab9f1974dbb13b142029 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c54c8e95b7660bbdb5d2c1f4f670a4d5.setIcon(icon_bddbabcb78e9ab9f1974dbb13b142029);
+        
+    
+        var popup_4c9f51b2ef31e18b5c27d0912bed8cbb = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c1d76210fd61eec2bec9dd4728eaba3d = $(`<div id="html_c1d76210fd61eec2bec9dd4728eaba3d" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DE HEYN</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_4c9f51b2ef31e18b5c27d0912bed8cbb.setContent(html_c1d76210fd61eec2bec9dd4728eaba3d);
+            
+        
+
+        marker_c54c8e95b7660bbdb5d2c1f4f670a4d5.bindPopup(popup_4c9f51b2ef31e18b5c27d0912bed8cbb)
+        ;
+
+        
+    
+    
+            marker_c54c8e95b7660bbdb5d2c1f4f670a4d5.bindTooltip(
+                `<div>
+                     DE HEYN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0aa0997bdecc46b4792efc0f5385c7be = L.marker(
+                [50.893864, 4.326169],
+                {"name": "PALFIJN"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_025531cb68d34ad94b66a16ee5a14577 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0aa0997bdecc46b4792efc0f5385c7be.setIcon(icon_025531cb68d34ad94b66a16ee5a14577);
+        
+    
+        var popup_b2d3c533dfe8c1e998593372fe2ccf82 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_cbf6f603e102cdc39a6869670f844c3b = $(`<div id="html_cbf6f603e102cdc39a6869670f844c3b" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PALFIJN</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 68.0</h6></center>         </div>`)[0];
+                popup_b2d3c533dfe8c1e998593372fe2ccf82.setContent(html_cbf6f603e102cdc39a6869670f844c3b);
+            
+        
+
+        marker_0aa0997bdecc46b4792efc0f5385c7be.bindPopup(popup_b2d3c533dfe8c1e998593372fe2ccf82)
+        ;
+
+        
+    
+    
+            marker_0aa0997bdecc46b4792efc0f5385c7be.bindTooltip(
+                `<div>
+                     PALFIJN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5bf26bc87368e4df8a53f7033d557117 = L.marker(
+                [50.896021, 4.327105],
+                {"name": "AMETHYSTE"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_b550cd765661816a0f5faa28cc59d173 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5bf26bc87368e4df8a53f7033d557117.setIcon(icon_b550cd765661816a0f5faa28cc59d173);
+        
+    
+        var popup_f2de1737899f2578973167a118a010ed = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e78e7f624bc4fcc059c5048d6ddb4627 = $(`<div id="html_e78e7f624bc4fcc059c5048d6ddb4627" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: AMETHYSTE</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 76.0</h6></center>         </div>`)[0];
+                popup_f2de1737899f2578973167a118a010ed.setContent(html_e78e7f624bc4fcc059c5048d6ddb4627);
+            
+        
+
+        marker_5bf26bc87368e4df8a53f7033d557117.bindPopup(popup_f2de1737899f2578973167a118a010ed)
+        ;
+
+        
+    
+    
+            marker_5bf26bc87368e4df8a53f7033d557117.bindTooltip(
+                `<div>
+                     AMETHYSTE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6be0e67a32c25011c61b21ead900adbe = L.marker(
+                [50.896813, 4.329876],
+                {"name": "ROI BAUDOUIN"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_7bab8e8f3f0fc140a9abbebdd5184fc9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6be0e67a32c25011c61b21ead900adbe.setIcon(icon_7bab8e8f3f0fc140a9abbebdd5184fc9);
+        
+    
+        var popup_768cc78ec7b1420b61493b0235381148 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_df4a2c135abfb1e89203c365e6e79107 = $(`<div id="html_df4a2c135abfb1e89203c365e6e79107" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ROI BAUDOUIN</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 84.0</h6></center>         </div>`)[0];
+                popup_768cc78ec7b1420b61493b0235381148.setContent(html_df4a2c135abfb1e89203c365e6e79107);
+            
+        
+
+        marker_6be0e67a32c25011c61b21ead900adbe.bindPopup(popup_768cc78ec7b1420b61493b0235381148)
+        ;
+
+        
+    
+    
+            marker_6be0e67a32c25011c61b21ead900adbe.bindTooltip(
+                `<div>
+                     ROI BAUDOUIN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_097a365cea624c97824f5f8170777ccc = L.marker(
+                [50.896429, 4.335858],
+                {"name": "HEYSEL"}
+            ).addTo(feature_group_edb0d454a91a4e4f1a42a4534e95e6d7);
+        
+    
+            var icon_600accc6fb6be31355e49871fbb50065 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_097a365cea624c97824f5f8170777ccc.setIcon(icon_600accc6fb6be31355e49871fbb50065);
+        
+    
+        var popup_c22681a922d43314858c8399e8286716 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_635ba60726c0411ada85393d496beb96 = $(`<div id="html_635ba60726c0411ada85393d496beb96" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HEYSEL</h4></center>         <center><h5>Line: 14 HEYSEL - GARE DU NORD</h5></center>         <center><h6>Score: 92.0</h6></center>         </div>`)[0];
+                popup_c22681a922d43314858c8399e8286716.setContent(html_635ba60726c0411ada85393d496beb96);
+            
+        
+
+        marker_097a365cea624c97824f5f8170777ccc.bindPopup(popup_c22681a922d43314858c8399e8286716)
+        ;
+
+        
+    
+    
+            marker_097a365cea624c97824f5f8170777ccc.bindTooltip(
+                `<div>
+                     HEYSEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_0ae1c087b8381f89984355a56603dbde = L.featureGroup(
+                {}
+            ).addTo(map_2ae01251276ea96e8808fee90176fbe3);
+        
+    
+            var marker_dd9af5dcefbcac4e9e08f20e84fb2c8e = L.marker(
+                [50.860925, 4.358365],
+                {"name": "GARE DU NORD"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_642d1f6d64b0fd46fc2e79f5b2039611 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_dd9af5dcefbcac4e9e08f20e84fb2c8e.setIcon(icon_642d1f6d64b0fd46fc2e79f5b2039611);
+        
+    
+            marker_dd9af5dcefbcac4e9e08f20e84fb2c8e.bindTooltip(
+                `<div>
+                     GARE DU NORD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_340a4195bffd611be2007be0fba74efa = L.marker(
+                [50.861537000000006, 4.355567],
+                {"name": "WTC"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_d7981b7e7e4111d13f2edc2cb47403e3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_340a4195bffd611be2007be0fba74efa.setIcon(icon_d7981b7e7e4111d13f2edc2cb47403e3);
+        
+    
+            marker_340a4195bffd611be2007be0fba74efa.bindTooltip(
+                `<div>
+                     WTC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_614564fcef78a452c7a77136d7e94a4e = L.marker(
+                [50.863325, 4.354047],
+                {"name": "WILLEBROEK"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_90dc77118dbd5aa48cc804c63f40199e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_614564fcef78a452c7a77136d7e94a4e.setIcon(icon_90dc77118dbd5aa48cc804c63f40199e);
+        
+    
+            marker_614564fcef78a452c7a77136d7e94a4e.bindTooltip(
+                `<div>
+                     WILLEBROEK
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e37eca4b368eafad914e5e14e8fc8d7c = L.marker(
+                [50.864978, 4.350249],
+                {"name": "TOUR ET TAXIS"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_2982bebd334775e81796836567f755b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e37eca4b368eafad914e5e14e8fc8d7c.setIcon(icon_2982bebd334775e81796836567f755b2);
+        
+    
+            marker_e37eca4b368eafad914e5e14e8fc8d7c.bindTooltip(
+                `<div>
+                     TOUR ET TAXIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_baea2487712d6bfe4cdfca31efbe6684 = L.marker(
+                [50.863028, 4.348733999999999],
+                {"name": "AVENUE DU PORT"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_294f32a5e5b85da1e22e8886c9619575 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_baea2487712d6bfe4cdfca31efbe6684.setIcon(icon_294f32a5e5b85da1e22e8886c9619575);
+        
+    
+            marker_baea2487712d6bfe4cdfca31efbe6684.bindTooltip(
+                `<div>
+                     AVENUE DU PORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f4c2d6b2267428bc0c170eaf7edcb156 = L.marker(
+                [50.864466, 4.343176],
+                {"name": "PICARD"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_8db9a668d4f5ee89940d22fc580a2043 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f4c2d6b2267428bc0c170eaf7edcb156.setIcon(icon_8db9a668d4f5ee89940d22fc580a2043);
+        
+    
+            marker_f4c2d6b2267428bc0c170eaf7edcb156.bindTooltip(
+                `<div>
+                     PICARD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a74f70f07225a7e7ea929098a448066d = L.marker(
+                [50.866208, 4.338419999999999],
+                {"name": "VANDERSTICHELEN"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_2e8f0a98d7882a00778165d8204ad12b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a74f70f07225a7e7ea929098a448066d.setIcon(icon_2e8f0a98d7882a00778165d8204ad12b);
+        
+    
+            marker_a74f70f07225a7e7ea929098a448066d.bindTooltip(
+                `<div>
+                     VANDERSTICHELEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_93f7cdb1695a805b95b32377f6484a8f = L.marker(
+                [50.867762000000006, 4.335621],
+                {"name": "BELGICA"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_938e31aa94bb96754f9ff8074a4576ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_93f7cdb1695a805b95b32377f6484a8f.setIcon(icon_938e31aa94bb96754f9ff8074a4576ef);
+        
+    
+            marker_93f7cdb1695a805b95b32377f6484a8f.bindTooltip(
+                `<div>
+                     BELGICA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_75a7725abbb5e1421d1d94391bb0edf4 = L.marker(
+                [50.871096, 4.330181],
+                {"name": "FIRMIN LECHARLIER"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_cc636b9b00ba3fad0c695bcde22508bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_75a7725abbb5e1421d1d94391bb0edf4.setIcon(icon_cc636b9b00ba3fad0c695bcde22508bf);
+        
+    
+            marker_75a7725abbb5e1421d1d94391bb0edf4.bindTooltip(
+                `<div>
+                     FIRMIN LECHARLIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_19b44ea2083e3f4b26c1296185bf719f = L.marker(
+                [50.872812, 4.3287119999999994],
+                {"name": "LEOPOLD I"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_a8c823c49f06b88bb3bb439cd82b0c77 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_19b44ea2083e3f4b26c1296185bf719f.setIcon(icon_a8c823c49f06b88bb3bb439cd82b0c77);
+        
+    
+            marker_19b44ea2083e3f4b26c1296185bf719f.bindTooltip(
+                `<div>
+                     LEOPOLD I
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_208f41739719e70cea8256fad83539d6 = L.marker(
+                [50.877081000000004, 4.331657],
+                {"name": "VERBEYST"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_37d0d5cd685423152a5fd6bdf5bca56c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_208f41739719e70cea8256fad83539d6.setIcon(icon_37d0d5cd685423152a5fd6bdf5bca56c);
+        
+    
+            marker_208f41739719e70cea8256fad83539d6.bindTooltip(
+                `<div>
+                     VERBEYST
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c0e8434bf1d476281fdc02d6d86597e6 = L.marker(
+                [50.879106, 4.332672],
+                {"name": "DEMINEURS"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_901906b3e922e981207e2c53219273d4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c0e8434bf1d476281fdc02d6d86597e6.setIcon(icon_901906b3e922e981207e2c53219273d4);
+        
+    
+            marker_c0e8434bf1d476281fdc02d6d86597e6.bindTooltip(
+                `<div>
+                     DEMINEURS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_aba49a4ac0e734cc46eccc0a188bdae0 = L.marker(
+                [50.880138, 4.330481],
+                {"name": "GARE DE JETTE"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_fba88ef7cb455ff84940e94d0ccd5105 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_aba49a4ac0e734cc46eccc0a188bdae0.setIcon(icon_fba88ef7cb455ff84940e94d0ccd5105);
+        
+    
+            marker_aba49a4ac0e734cc46eccc0a188bdae0.bindTooltip(
+                `<div>
+                     GARE DE JETTE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ef58aeda3fa4180b988a4a0397a23fb1 = L.marker(
+                [50.882396, 4.331162999999999],
+                {"name": "LORGE"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_19d03b289424b68082498d14c2487841 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ef58aeda3fa4180b988a4a0397a23fb1.setIcon(icon_19d03b289424b68082498d14c2487841);
+        
+    
+            marker_ef58aeda3fa4180b988a4a0397a23fb1.bindTooltip(
+                `<div>
+                     LORGE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7d8e39a53d85cc2bd3a7646abbab9969 = L.marker(
+                [50.884736000000004, 4.330223999999999],
+                {"name": "CROCQ"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_65814d9289385d094d47127b88390ee8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7d8e39a53d85cc2bd3a7646abbab9969.setIcon(icon_65814d9289385d094d47127b88390ee8);
+        
+    
+            marker_7d8e39a53d85cc2bd3a7646abbab9969.bindTooltip(
+                `<div>
+                     CROCQ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed309fca8b6e2ff31bf3cb1d1bc80abc = L.marker(
+                [50.885053000000006, 4.321752999999999],
+                {"name": "BONAVENTURE"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_2a96c10be3d94de3c6cfd187812144e2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ed309fca8b6e2ff31bf3cb1d1bc80abc.setIcon(icon_2a96c10be3d94de3c6cfd187812144e2);
+        
+    
+            marker_ed309fca8b6e2ff31bf3cb1d1bc80abc.bindTooltip(
+                `<div>
+                     BONAVENTURE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_62b4d207ac8b930d1bc99d88098c97e5 = L.marker(
+                [50.885555000000004, 4.316281],
+                {"name": "ANCIENNE BARRIERE"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_ae4bb66bd67056e73966e2569709f73f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_62b4d207ac8b930d1bc99d88098c97e5.setIcon(icon_ae4bb66bd67056e73966e2569709f73f);
+        
+    
+            marker_62b4d207ac8b930d1bc99d88098c97e5.bindTooltip(
+                `<div>
+                     ANCIENNE BARRIERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7b88d002d4b18c3798483eae8bf41405 = L.marker(
+                [50.886739000000006, 4.311462],
+                {"name": "UZ BRUSSEL"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_46a8aa9de5b421205a197ccecd347804 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7b88d002d4b18c3798483eae8bf41405.setIcon(icon_46a8aa9de5b421205a197ccecd347804);
+        
+    
+            marker_7b88d002d4b18c3798483eae8bf41405.bindTooltip(
+                `<div>
+                     UZ BRUSSEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_44f5910d5bce15e99f2b871cf759d542 = L.marker(
+                [50.889706000000004, 4.309413999999999],
+                {"name": "UZ-PEDIATRIE"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_383230295720247068942f3ca668bed2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_44f5910d5bce15e99f2b871cf759d542.setIcon(icon_383230295720247068942f3ca668bed2);
+        
+    
+            marker_44f5910d5bce15e99f2b871cf759d542.bindTooltip(
+                `<div>
+                     UZ-PEDIATRIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_098fef2f920d57aae8f5cd06d3f9f61c = L.marker(
+                [50.893076, 4.313516],
+                {"name": "ARBRE BALLON"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_759ede7720a9d88fffdd6dacf69450b3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_098fef2f920d57aae8f5cd06d3f9f61c.setIcon(icon_759ede7720a9d88fffdd6dacf69450b3);
+        
+    
+            marker_098fef2f920d57aae8f5cd06d3f9f61c.bindTooltip(
+                `<div>
+                     ARBRE BALLON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1761d8a623bc95daff5523f43042a581 = L.marker(
+                [50.893643000000004, 4.3201979999999995],
+                {"name": "DE HEYN"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_17808f35f640f23c7d4ee1af555ea65d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1761d8a623bc95daff5523f43042a581.setIcon(icon_17808f35f640f23c7d4ee1af555ea65d);
+        
+    
+            marker_1761d8a623bc95daff5523f43042a581.bindTooltip(
+                `<div>
+                     DE HEYN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d80566b44b19869bc67d7174a1b83c72 = L.marker(
+                [50.893874000000004, 4.326179],
+                {"name": "PALFIJN"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_299ea0a311042161e128e4e16bb09fd1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d80566b44b19869bc67d7174a1b83c72.setIcon(icon_299ea0a311042161e128e4e16bb09fd1);
+        
+    
+            marker_d80566b44b19869bc67d7174a1b83c72.bindTooltip(
+                `<div>
+                     PALFIJN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e93b18fe6f0b680c3a01e0ecb4c32562 = L.marker(
+                [50.896031, 4.327115],
+                {"name": "AMETHYSTE"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_0a27aed443c057bb9b14c698fd096018 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e93b18fe6f0b680c3a01e0ecb4c32562.setIcon(icon_0a27aed443c057bb9b14c698fd096018);
+        
+    
+            marker_e93b18fe6f0b680c3a01e0ecb4c32562.bindTooltip(
+                `<div>
+                     AMETHYSTE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_544a8d36365df1947148d6496355c9eb = L.marker(
+                [50.896823000000005, 4.329885999999999],
+                {"name": "ROI BAUDOUIN"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_86174996f06ace7ee4532383e72f8c43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_544a8d36365df1947148d6496355c9eb.setIcon(icon_86174996f06ace7ee4532383e72f8c43);
+        
+    
+            marker_544a8d36365df1947148d6496355c9eb.bindTooltip(
+                `<div>
+                     ROI BAUDOUIN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8be07a8ce51d580b67e7b8b7841a29a2 = L.marker(
+                [50.896439, 4.335868],
+                {"name": "HEYSEL"}
+            ).addTo(feature_group_0ae1c087b8381f89984355a56603dbde);
+        
+    
+            var icon_8dea115af21b2d4b5084ff427503b925 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8be07a8ce51d580b67e7b8b7841a29a2.setIcon(icon_8dea115af21b2d4b5084ff427503b925);
+        
+    
+            marker_8be07a8ce51d580b67e7b8b7841a29a2.bindTooltip(
+                `<div>
+                     HEYSEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_30b2c3080e8b91c01564d70d4ae536c4 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_a6099dac426fb25484da9c22e67d172e,
+                },
+                overlays :  {
+                    "14 HEYSEL - GARE DU NORD" : feature_group_edb0d454a91a4e4f1a42a4534e95e6d7,
+                    "14 HEYSEL - GARE DU NORD SCORES" : feature_group_0ae1c087b8381f89984355a56603dbde,
+                },
+            };
+            L.control.layers(
+                layer_control_30b2c3080e8b91c01564d70d4ae536c4.base_layers,
+                layer_control_30b2c3080e8b91c01564d70d4ae536c4.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_2ae01251276ea96e8808fee90176fbe3);
+            feature_group_0ae1c087b8381f89984355a56603dbde.remove();
+        
+</script>
+</html>

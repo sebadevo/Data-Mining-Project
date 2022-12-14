@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_86dda7c615c468f69f4fe17bd418430a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_86dda7c615c468f69f4fe17bd418430a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_86dda7c615c468f69f4fe17bd418430a = L.map(
+                "map_86dda7c615c468f69f4fe17bd418430a",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b3a4a1ee99eb92a82fe306a9b627ccf7 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_86dda7c615c468f69f4fe17bd418430a);
+        
+    
+            var poly_line_ff24df6e4cfe372368d7a1a8ad1f3dac = L.polyline(
+                [[50.837838, 4.407093], [50.837826, 4.407031], [50.837824, 4.406911], [50.837851, 4.40674], [50.83786, 4.406697], [50.837916, 4.40643], [50.837969, 4.40616], [50.838, 4.406017], [50.838, 4.406017], [50.838, 4.406017], [50.838021, 4.405877], [50.83803, 4.405691], [50.838049, 4.40557], [50.838328, 4.404243], [50.83865, 4.402694], [50.838896, 4.401519], [50.838938, 4.401314], [50.838975, 4.401138], [50.839088, 4.400593], [50.839409, 4.399118], [50.839581, 4.398223], [50.839581, 4.398221], [50.8396, 4.39815], [50.839623, 4.398071], [50.839639, 4.398028], [50.839667, 4.397953], [50.839707, 4.397856], [50.839774, 4.397786], [50.839826, 4.397754], [50.83984, 4.397743], [50.839865, 4.39772], [50.840395, 4.397236], [50.840915, 4.396758], [50.840939, 4.396737], [50.841492, 4.396245], [50.841789, 4.395955], [50.842041, 4.395717], [50.842091, 4.395704], [50.842141, 4.395694], [50.842223, 4.39571], [50.842321, 4.395704], [50.842445, 4.395704], [50.842512, 4.395743], [50.842605, 4.3958], [50.842766, 4.395883], [50.842766, 4.395883], [50.843123, 4.396058], [50.843144, 4.396061], [50.843201, 4.396068], [50.843225, 4.396071], [50.843253, 4.396075], [50.84329, 4.396083], [50.843345, 4.396078], [50.843407, 4.396064], [50.843433, 4.396054], [50.844014, 4.395792], [50.844216, 4.395695], [50.844676, 4.39546], [50.844702, 4.395446], [50.844836, 4.395344], [50.844836, 4.395344], [50.844947, 4.395259], [50.844971, 4.395239], [50.845077, 4.395146], [50.845164, 4.395074], [50.845568, 4.394712], [50.845913, 4.394399], [50.846016, 4.394294], [50.846115, 4.3942], [50.846266, 4.394059], [50.846549, 4.393788], [50.846633, 4.393709], [50.846674, 4.393668], [50.846695, 4.393645], [50.846725, 4.393617], [50.846817, 4.393493], [50.846898, 4.393388], [50.84703, 4.393207], [50.84703, 4.393207], [50.847036, 4.393198], [50.84722, 4.392951], [50.847265, 4.392877], [50.847353, 4.392718], [50.847487, 4.392474], [50.847985, 4.391531], [50.848217, 4.391144], [50.848379, 4.390891], [50.848872, 4.390169], [50.84891, 4.390115], [50.849085, 4.389828], [50.849095, 4.389812], [50.849095, 4.389812], [50.849131, 4.389757], [50.849175, 4.389699], [50.849194, 4.389666], [50.849351, 4.389382], [50.849642, 4.388897], [50.849776, 4.388667], [50.8503, 4.387814], [50.850918, 4.38679], [50.850949, 4.386739], [50.850973, 4.386757], [50.851049, 4.386814], [50.85109, 4.38683], [50.851518, 4.387132], [50.851584, 4.387188], [50.851628, 4.387233], [50.851658, 4.38727], [50.851679, 4.387299], [50.851808, 4.387497], [50.852145, 4.387679], [50.852145, 4.387679], [50.85218, 4.387701], [50.852259, 4.387733], [50.852324, 4.387732], [50.85236, 4.387718], [50.852384, 4.387702], [50.852433, 4.38766], [50.852541, 4.387521], [50.852551, 4.387509], [50.852573, 4.387484], [50.852624, 4.387421], [50.853157, 4.386816], [50.853157, 4.386816], [50.85332, 4.386632], [50.8537, 4.386203], [50.85372, 4.386131], [50.853745, 4.385849], [50.853748, 4.385803], [50.853796, 4.385225], [50.853903, 4.383962], [50.853903, 4.383962], [50.853913, 4.383759], [50.853917, 4.383709], [50.853921, 4.38368], [50.853926, 4.383634], [50.853932, 4.383552], [50.853934, 4.383509], [50.853936, 4.383457], [50.854134, 4.380866], [50.854136, 4.380807], [50.854128, 4.380765], [50.854113, 4.380741], [50.85409, 4.380727], [50.854045, 4.380714], [50.854002, 4.380709], [50.853517, 4.380703], [50.853517, 4.380703], [50.85347, 4.380703], [50.853423, 4.380697], [50.853395, 4.380691], [50.853364, 4.380684], [50.853332, 4.380666], [50.853292, 4.380616], [50.85284, 4.380058], [50.852868, 4.378787], [50.852868, 4.37874], [50.852866, 4.378607], [50.852877, 4.378438], [50.852891, 4.377796], [50.852891, 4.377796], [50.852895, 4.377556], [50.8529, 4.377438], [50.852902, 4.377395], [50.852928, 4.376388], [50.852946, 4.376356], [50.853514, 4.376293], [50.85353, 4.376256], [50.853543, 4.375092], [50.853559, 4.374703], [50.853562, 4.374659], [50.85357, 4.374599], [50.853772, 4.373591], [50.853781, 4.37355], [50.853862, 4.37316], [50.853862, 4.37316], [50.853959, 4.372689], [50.853969, 4.372648], [50.854286, 4.371435], [50.854363, 4.371125], [50.854374, 4.371086], [50.854498, 4.370648], [50.854904, 4.369268], [50.85498, 4.368987], [50.854974, 4.368954], [50.854961, 4.368938], [50.854923, 4.368916], [50.854551, 4.368924], [50.854551, 4.368924], [50.854238, 4.36892], [50.85421, 4.36892], [50.8539, 4.36892], [50.853161, 4.368927], [50.853134, 4.368927], [50.852903, 4.36892], [50.852798, 4.36892], [50.852798, 4.36892], [50.852701, 4.368914], [50.852674, 4.368874], [50.852668, 4.368825], [50.852694, 4.368747], [50.8527, 4.368667], [50.852704, 4.368588], [50.852697, 4.368517], [50.852683, 4.36846], [50.852665, 4.36834], [50.852641, 4.368237], [50.852632, 4.368194], [50.852595, 4.368086], [50.852571, 4.368044], [50.852543, 4.367971], [50.852523, 4.367889], [50.852523, 4.367843], [50.852606, 4.367578], [50.852646, 4.367442], [50.85287, 4.366656], [50.852934, 4.366536], [50.852967, 4.366483], [50.85302, 4.366391], [50.853021, 4.366386], [50.853022, 4.366385], [50.853093, 4.366145], [50.853093, 4.366145], [50.853132, 4.366014], [50.853137, 4.365982], [50.853138, 4.365976], [50.853138, 4.365975], [50.853134, 4.36581], [50.85314, 4.365767], [50.853171, 4.365692], [50.853198, 4.365615], [50.85321, 4.365574], [50.853764, 4.363613], [50.853874, 4.363232], [50.853949, 4.362967], [50.854156, 4.362248], [50.854339, 4.361617], [50.854486, 4.361137], [50.85456, 4.360912], [50.854626, 4.360684], [50.854709, 4.360457], [50.854911, 4.359811], [50.855196, 4.358855], [50.855349, 4.358327], [50.855386, 4.358297], [50.855411, 4.358298], [50.855454, 4.358318], [50.855494, 4.358338], [50.855644, 4.358419], [50.855707, 4.358453], [50.855814, 4.358511], [50.855814, 4.358511], [50.855986, 4.358598], [50.856167, 4.358713], [50.856192, 4.35873], [50.856289, 4.358784], [50.856397, 4.358842], [50.856768, 4.359011], [50.856794, 4.359022], [50.856999, 4.359119], [50.857024, 4.359132], [50.857189, 4.359211], [50.857965, 4.359567], [50.858299, 4.359707], [50.858478, 4.359776], [50.85855, 4.359809], [50.858595, 4.359826], [50.858651, 4.359844], [50.858684, 4.359853], [50.858743, 4.359877], [50.858828, 4.359912], [50.858931, 4.359961], [50.858982, 4.359975], [50.859017, 4.359968], [50.859046, 4.359954], [50.859064, 4.359939], [50.859068, 4.359935], [50.859069, 4.359934], [50.859082, 4.359917], [50.859094, 4.359867], [50.859111, 4.359785], [50.859124, 4.359731], [50.859145, 4.359694], [50.859187, 4.359648], [50.859217, 4.359617], [50.859427, 4.359547], [50.859484, 4.359527], [50.859511, 4.359505], [50.859554, 4.359441], [50.859582, 4.359419], [50.859614, 4.359417], [50.859659, 4.359422], [50.859818, 4.35949], [50.861406, 4.360352], [50.861525, 4.360473], [50.861575, 4.360536], [50.861602, 4.360628], [50.861608, 4.360672], [50.861612, 4.360729], [50.861607, 4.360778], [50.861593, 4.360827], [50.861582, 4.360851], [50.861541, 4.360885], [50.861504, 4.360901], [50.86147, 4.360902], [50.861428, 4.360874], [50.861344, 4.360781], [50.861291, 4.360736], [50.861138, 4.360652], [50.860105, 4.36014]],
+                {"bubblingMouseEvents": true, "color": "#FFDC01", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FFDC01", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_86dda7c615c468f69f4fe17bd418430a);
+        
+    
+            var feature_group_0447b5f816bb8bac5a01182f80a82b49 = L.featureGroup(
+                {}
+            ).addTo(map_86dda7c615c468f69f4fe17bd418430a);
+        
+    
+            var marker_5a3b38c29d26674cb34eec7a84e7c7be = L.marker(
+                [50.837869, 4.407055],
+                {"name": "MONTGOMERY"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_01366949a8262ff98bd42907c1e8e604 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5a3b38c29d26674cb34eec7a84e7c7be.setIcon(icon_01366949a8262ff98bd42907c1e8e604);
+        
+    
+        var popup_3cde7f8d501c443627de092b58ae8c46 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_74406f140f57e1d0f0f8575d968ff9c6 = $(`<div id="html_74406f140f57e1d0f0f8575d968ff9c6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MONTGOMERY</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_3cde7f8d501c443627de092b58ae8c46.setContent(html_74406f140f57e1d0f0f8575d968ff9c6);
+            
+        
+
+        marker_5a3b38c29d26674cb34eec7a84e7c7be.bindPopup(popup_3cde7f8d501c443627de092b58ae8c46)
+        ;
+
+        
+    
+    
+            marker_5a3b38c29d26674cb34eec7a84e7c7be.bindTooltip(
+                `<div>
+                     MONTGOMERY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_923d245424f1ca09a3c8a2a6cdad61f7 = L.marker(
+                [50.838007, 4.406021],
+                {"name": "MONTGOMERY"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_ec04f14985e45327a5cf47afe0361e3b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_923d245424f1ca09a3c8a2a6cdad61f7.setIcon(icon_ec04f14985e45327a5cf47afe0361e3b);
+        
+    
+        var popup_bdb1c540e2a0fbf74d4c19940410d720 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_5f9be65f3687cf68826180dc8db9a81e = $(`<div id="html_5f9be65f3687cf68826180dc8db9a81e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MONTGOMERY</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 88.89</h6></center>         </div>`)[0];
+                popup_bdb1c540e2a0fbf74d4c19940410d720.setContent(html_5f9be65f3687cf68826180dc8db9a81e);
+            
+        
+
+        marker_923d245424f1ca09a3c8a2a6cdad61f7.bindPopup(popup_bdb1c540e2a0fbf74d4c19940410d720)
+        ;
+
+        
+    
+    
+            marker_923d245424f1ca09a3c8a2a6cdad61f7.bindTooltip(
+                `<div>
+                     MONTGOMERY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_25fc1d760f7454053477a9284f8067c6 = L.marker(
+                [50.839607, 4.398226],
+                {"name": "MERODE"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_ff12f950461327def9a8b0010f06cf13 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_25fc1d760f7454053477a9284f8067c6.setIcon(icon_ff12f950461327def9a8b0010f06cf13);
+        
+    
+        var popup_1d52955a2902f12ff87b48f180b13249 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_00be15733496c5a3780d8a3882578d74 = $(`<div id="html_00be15733496c5a3780d8a3882578d74" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MERODE</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 77.78</h6></center>         </div>`)[0];
+                popup_1d52955a2902f12ff87b48f180b13249.setContent(html_00be15733496c5a3780d8a3882578d74);
+            
+        
+
+        marker_25fc1d760f7454053477a9284f8067c6.bindPopup(popup_1d52955a2902f12ff87b48f180b13249)
+        ;
+
+        
+    
+    
+            marker_25fc1d760f7454053477a9284f8067c6.bindTooltip(
+                `<div>
+                     MERODE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_66966838318ec9f0d910ea2afa15705e = L.marker(
+                [50.842763, 4.395899],
+                {"name": "CHEVALERIE"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_3763b290c3472e0d65ccf55e23934165 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_66966838318ec9f0d910ea2afa15705e.setIcon(icon_3763b290c3472e0d65ccf55e23934165);
+        
+    
+        var popup_c72fa8dad3df7c41a38b4ddd0feef35a = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_74c7e36fd1df2060a5d5145702d12f82 = $(`<div id="html_74c7e36fd1df2060a5d5145702d12f82" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CHEVALERIE</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 66.67</h6></center>         </div>`)[0];
+                popup_c72fa8dad3df7c41a38b4ddd0feef35a.setContent(html_74c7e36fd1df2060a5d5145702d12f82);
+            
+        
+
+        marker_66966838318ec9f0d910ea2afa15705e.bindPopup(popup_c72fa8dad3df7c41a38b4ddd0feef35a)
+        ;
+
+        
+    
+    
+            marker_66966838318ec9f0d910ea2afa15705e.bindTooltip(
+                `<div>
+                     CHEVALERIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a59a28f4bf4b3fcda5e6c84c4fa6f36f = L.marker(
+                [50.84484, 4.395358],
+                {"name": "WAPPERS"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_717f08cf6d6ec58ca3a420a731b71e1d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a59a28f4bf4b3fcda5e6c84c4fa6f36f.setIcon(icon_717f08cf6d6ec58ca3a420a731b71e1d);
+        
+    
+        var popup_ced61623dc654e7c39bad6cb641e05a4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_bf78721f867f0103ad1857d39fce32ab = $(`<div id="html_bf78721f867f0103ad1857d39fce32ab" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WAPPERS</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 55.56</h6></center>         </div>`)[0];
+                popup_ced61623dc654e7c39bad6cb641e05a4.setContent(html_bf78721f867f0103ad1857d39fce32ab);
+            
+        
+
+        marker_a59a28f4bf4b3fcda5e6c84c4fa6f36f.bindPopup(popup_ced61623dc654e7c39bad6cb641e05a4)
+        ;
+
+        
+    
+    
+            marker_a59a28f4bf4b3fcda5e6c84c4fa6f36f.bindTooltip(
+                `<div>
+                     WAPPERS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d3b34c359f3306c40baa10a0eaff89b6 = L.marker(
+                [50.84706, 4.39326],
+                {"name": "JAMBLINNE DE MEUX"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_20f9491b651579459448f851535156cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d3b34c359f3306c40baa10a0eaff89b6.setIcon(icon_20f9491b651579459448f851535156cb);
+        
+    
+        var popup_60d9a955ba9a7bb1f685a856382bf9b7 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_55951cb990260ac07f53173f23c408d9 = $(`<div id="html_55951cb990260ac07f53173f23c408d9" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: JAMBLINNE DE MEUX</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 44.44</h6></center>         </div>`)[0];
+                popup_60d9a955ba9a7bb1f685a856382bf9b7.setContent(html_55951cb990260ac07f53173f23c408d9);
+            
+        
+
+        marker_d3b34c359f3306c40baa10a0eaff89b6.bindPopup(popup_60d9a955ba9a7bb1f685a856382bf9b7)
+        ;
+
+        
+    
+    
+            marker_d3b34c359f3306c40baa10a0eaff89b6.bindTooltip(
+                `<div>
+                     JAMBLINNE DE MEUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5704ff99211a560cc23f484c075a4d72 = L.marker(
+                [50.849111, 4.389839],
+                {"name": "CHASSEURS ARDEN."}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_930f1d0d8b1a64df60508031b160d723 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5704ff99211a560cc23f484c075a4d72.setIcon(icon_930f1d0d8b1a64df60508031b160d723);
+        
+    
+        var popup_6dffc077e83056af7e0b495bfd4baa86 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_fa854b4e4dc80c5eea91029ff89a4005 = $(`<div id="html_fa854b4e4dc80c5eea91029ff89a4005" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CHASSEURS ARDEN.</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_6dffc077e83056af7e0b495bfd4baa86.setContent(html_fa854b4e4dc80c5eea91029ff89a4005);
+            
+        
+
+        marker_5704ff99211a560cc23f484c075a4d72.bindPopup(popup_6dffc077e83056af7e0b495bfd4baa86)
+        ;
+
+        
+    
+    
+            marker_5704ff99211a560cc23f484c075a4d72.bindTooltip(
+                `<div>
+                     CHASSEURS ARDEN.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4384ab078adf18118a0b204778176ebf = L.marker(
+                [50.852119, 4.387783],
+                {"name": "BRABANCONNE"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_bb86cdca3630de27666ff07a5879aeff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4384ab078adf18118a0b204778176ebf.setIcon(icon_bb86cdca3630de27666ff07a5879aeff);
+        
+    
+        var popup_d067c07a3bbbc11db92c4bdeb671178d = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d522cf7afc42e9cd960bff246d45d74b = $(`<div id="html_d522cf7afc42e9cd960bff246d45d74b" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BRABANCONNE</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 22.22</h6></center>         </div>`)[0];
+                popup_d067c07a3bbbc11db92c4bdeb671178d.setContent(html_d522cf7afc42e9cd960bff246d45d74b);
+            
+        
+
+        marker_4384ab078adf18118a0b204778176ebf.bindPopup(popup_d067c07a3bbbc11db92c4bdeb671178d)
+        ;
+
+        
+    
+    
+            marker_4384ab078adf18118a0b204778176ebf.bindTooltip(
+                `<div>
+                     BRABANCONNE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed26e24c71672b5d878a7ea4adc09d8a = L.marker(
+                [50.853183, 4.386873],
+                {"name": "DAILLY"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_b40b59ebba2cc9a5fe2124849f56290b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ed26e24c71672b5d878a7ea4adc09d8a.setIcon(icon_b40b59ebba2cc9a5fe2124849f56290b);
+        
+    
+        var popup_8468038d74ac16939ca69c1c2d869a32 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_1d9dc52cf6945826321ae47e5e341af1 = $(`<div id="html_1d9dc52cf6945826321ae47e5e341af1" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DAILLY</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 11.11</h6></center>         </div>`)[0];
+                popup_8468038d74ac16939ca69c1c2d869a32.setContent(html_1d9dc52cf6945826321ae47e5e341af1);
+            
+        
+
+        marker_ed26e24c71672b5d878a7ea4adc09d8a.bindPopup(popup_8468038d74ac16939ca69c1c2d869a32)
+        ;
+
+        
+    
+    
+            marker_ed26e24c71672b5d878a7ea4adc09d8a.bindTooltip(
+                `<div>
+                     DAILLY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_342f9e3bca77afa0716cc11c7c8620e2 = L.marker(
+                [50.853903, 4.383962],
+                {"name": "CLAYS"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_33a5f7cd7c5335637cfefd284a7784c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_342f9e3bca77afa0716cc11c7c8620e2.setIcon(icon_33a5f7cd7c5335637cfefd284a7784c9);
+        
+    
+        var popup_df26c40ddfd35187d21ba85323d7e7cc = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_5a3748ba4cbac1459cd83fe9896c2919 = $(`<div id="html_5a3748ba4cbac1459cd83fe9896c2919" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CLAYS</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 0.0</h6></center>         </div>`)[0];
+                popup_df26c40ddfd35187d21ba85323d7e7cc.setContent(html_5a3748ba4cbac1459cd83fe9896c2919);
+            
+        
+
+        marker_342f9e3bca77afa0716cc11c7c8620e2.bindPopup(popup_df26c40ddfd35187d21ba85323d7e7cc)
+        ;
+
+        
+    
+    
+            marker_342f9e3bca77afa0716cc11c7c8620e2.bindTooltip(
+                `<div>
+                     CLAYS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7932022cadc1adbea8b7c416c2bb09f6 = L.marker(
+                [50.853517, 4.380696],
+                {"name": "FUSS"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_5e4c4046d12a9503843d2747b95294b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7932022cadc1adbea8b7c416c2bb09f6.setIcon(icon_5e4c4046d12a9503843d2747b95294b2);
+        
+    
+        var popup_decc7aad69f9607d21dbcd2936cdfee1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_365c8921d23db9dcb28aec73048e9600 = $(`<div id="html_365c8921d23db9dcb28aec73048e9600" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FUSS</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 11.11</h6></center>         </div>`)[0];
+                popup_decc7aad69f9607d21dbcd2936cdfee1.setContent(html_365c8921d23db9dcb28aec73048e9600);
+            
+        
+
+        marker_7932022cadc1adbea8b7c416c2bb09f6.bindPopup(popup_decc7aad69f9607d21dbcd2936cdfee1)
+        ;
+
+        
+    
+    
+            marker_7932022cadc1adbea8b7c416c2bb09f6.bindTooltip(
+                `<div>
+                     FUSS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fffeaf120a3edd7f50441563728581de = L.marker(
+                [50.852933, 4.377799],
+                {"name": "STEURS"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_ed37a53fa256fc68332802f9805db6b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fffeaf120a3edd7f50441563728581de.setIcon(icon_ed37a53fa256fc68332802f9805db6b7);
+        
+    
+        var popup_4cea2fde161cf828dc910b65cdc86549 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ab66f0a691a10c3690577a23410ebaa9 = $(`<div id="html_ab66f0a691a10c3690577a23410ebaa9" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: STEURS</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 22.22</h6></center>         </div>`)[0];
+                popup_4cea2fde161cf828dc910b65cdc86549.setContent(html_ab66f0a691a10c3690577a23410ebaa9);
+            
+        
+
+        marker_fffeaf120a3edd7f50441563728581de.bindPopup(popup_4cea2fde161cf828dc910b65cdc86549)
+        ;
+
+        
+    
+    
+            marker_fffeaf120a3edd7f50441563728581de.bindTooltip(
+                `<div>
+                     STEURS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_024da390d2b135027d40f20c92efa23b = L.marker(
+                [50.85385, 4.373155],
+                {"name": "BOSSUET"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_0bf82fa8a6a10de27383fb6fcfe21835 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_024da390d2b135027d40f20c92efa23b.setIcon(icon_0bf82fa8a6a10de27383fb6fcfe21835);
+        
+    
+        var popup_20f49b838b6cdbd13c241a459f9ce53b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_41c4178004b3fdc78b9ec8c937bd56be = $(`<div id="html_41c4178004b3fdc78b9ec8c937bd56be" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BOSSUET</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_20f49b838b6cdbd13c241a459f9ce53b.setContent(html_41c4178004b3fdc78b9ec8c937bd56be);
+            
+        
+
+        marker_024da390d2b135027d40f20c92efa23b.bindPopup(popup_20f49b838b6cdbd13c241a459f9ce53b)
+        ;
+
+        
+    
+    
+            marker_024da390d2b135027d40f20c92efa23b.bindTooltip(
+                `<div>
+                     BOSSUET
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_90d36423d08c1aa7ce6e935157e2224d = L.marker(
+                [50.854551, 4.368894],
+                {"name": "RUE TRAVERSIERE"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_a21b951f3d30cef3cbc54962ab7da80c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_90d36423d08c1aa7ce6e935157e2224d.setIcon(icon_a21b951f3d30cef3cbc54962ab7da80c);
+        
+    
+        var popup_a6f64bde3e573a44cee8cda1f8d1f205 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_fe2760c145a7a154c8847d6653478bda = $(`<div id="html_fe2760c145a7a154c8847d6653478bda" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: RUE TRAVERSIERE</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 44.44</h6></center>         </div>`)[0];
+                popup_a6f64bde3e573a44cee8cda1f8d1f205.setContent(html_fe2760c145a7a154c8847d6653478bda);
+            
+        
+
+        marker_90d36423d08c1aa7ce6e935157e2224d.bindPopup(popup_a6f64bde3e573a44cee8cda1f8d1f205)
+        ;
+
+        
+    
+    
+            marker_90d36423d08c1aa7ce6e935157e2224d.bindTooltip(
+                `<div>
+                     RUE TRAVERSIERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b2e3b68befb2d8a4546a34f7a195665a = L.marker(
+                [50.852798, 4.368894],
+                {"name": "QUETELET"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_da103ab072d400bedb997249905e9f76 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b2e3b68befb2d8a4546a34f7a195665a.setIcon(icon_da103ab072d400bedb997249905e9f76);
+        
+    
+        var popup_b09059a0c9aee6b6deac4519799c2527 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0c44465ed1f0ff25414ec521ace1accb = $(`<div id="html_0c44465ed1f0ff25414ec521ace1accb" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: QUETELET</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 55.56</h6></center>         </div>`)[0];
+                popup_b09059a0c9aee6b6deac4519799c2527.setContent(html_0c44465ed1f0ff25414ec521ace1accb);
+            
+        
+
+        marker_b2e3b68befb2d8a4546a34f7a195665a.bindPopup(popup_b09059a0c9aee6b6deac4519799c2527)
+        ;
+
+        
+    
+    
+            marker_b2e3b68befb2d8a4546a34f7a195665a.bindTooltip(
+                `<div>
+                     QUETELET
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ffa6cf9c1b57b607566425d3d7cdebb9 = L.marker(
+                [50.853104, 4.366154],
+                {"name": "BOTANIQUE"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_592861e3b767da45781b187df0025111 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ffa6cf9c1b57b607566425d3d7cdebb9.setIcon(icon_592861e3b767da45781b187df0025111);
+        
+    
+        var popup_d009a5234ae023fcf93cceff062956e4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a2ceea9c24c64cc2042e1a3834b14fc6 = $(`<div id="html_a2ceea9c24c64cc2042e1a3834b14fc6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BOTANIQUE</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 66.67</h6></center>         </div>`)[0];
+                popup_d009a5234ae023fcf93cceff062956e4.setContent(html_a2ceea9c24c64cc2042e1a3834b14fc6);
+            
+        
+
+        marker_ffa6cf9c1b57b607566425d3d7cdebb9.bindPopup(popup_d009a5234ae023fcf93cceff062956e4)
+        ;
+
+        
+    
+    
+            marker_ffa6cf9c1b57b607566425d3d7cdebb9.bindTooltip(
+                `<div>
+                     BOTANIQUE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5c0eb369e83b5542ce54610677c89d78 = L.marker(
+                [50.855827, 4.358456],
+                {"name": "ROGIER"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_cffe64ae1375903a61b770c385a70ad1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5c0eb369e83b5542ce54610677c89d78.setIcon(icon_cffe64ae1375903a61b770c385a70ad1);
+        
+    
+        var popup_7d5e5075ff19c18b999d173df5d133f6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e1358d793aee305edf99e2bd1f1ac65c = $(`<div id="html_e1358d793aee305edf99e2bd1f1ac65c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ROGIER</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 77.78</h6></center>         </div>`)[0];
+                popup_7d5e5075ff19c18b999d173df5d133f6.setContent(html_e1358d793aee305edf99e2bd1f1ac65c);
+            
+        
+
+        marker_5c0eb369e83b5542ce54610677c89d78.bindPopup(popup_7d5e5075ff19c18b999d173df5d133f6)
+        ;
+
+        
+    
+    
+            marker_5c0eb369e83b5542ce54610677c89d78.bindTooltip(
+                `<div>
+                     ROGIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7e710e481a446cb94080f1a7f740f016 = L.marker(
+                [50.86008, 4.360273],
+                {"name": "GARE DU NORD"}
+            ).addTo(feature_group_0447b5f816bb8bac5a01182f80a82b49);
+        
+    
+            var icon_e3b494cbc8be68361cb5585ec46496e3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#FFDC01", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7e710e481a446cb94080f1a7f740f016.setIcon(icon_e3b494cbc8be68361cb5585ec46496e3);
+        
+    
+        var popup_76a1d55b6dd43d01dde34b5698dbd35f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ca3a4b187c2167ca82501f117ff41337 = $(`<div id="html_ca3a4b187c2167ca82501f117ff41337" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARE DU NORD</h4></center>         <center><h5>Line: 61 GARE DU NORD - MONTGOMERY</h5></center>         <center><h6>Score: 88.89</h6></center>         </div>`)[0];
+                popup_76a1d55b6dd43d01dde34b5698dbd35f.setContent(html_ca3a4b187c2167ca82501f117ff41337);
+            
+        
+
+        marker_7e710e481a446cb94080f1a7f740f016.bindPopup(popup_76a1d55b6dd43d01dde34b5698dbd35f)
+        ;
+
+        
+    
+    
+            marker_7e710e481a446cb94080f1a7f740f016.bindTooltip(
+                `<div>
+                     GARE DU NORD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_d3e2315a0313d423ffc4ccda3f627921 = L.featureGroup(
+                {}
+            ).addTo(map_86dda7c615c468f69f4fe17bd418430a);
+        
+    
+            var marker_abb5bcfef869e3e22b680b30a75f00bd = L.marker(
+                [50.837879, 4.407064999999999],
+                {"name": "MONTGOMERY"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_2d147510385a3a54982cfd8d1850e30e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_abb5bcfef869e3e22b680b30a75f00bd.setIcon(icon_2d147510385a3a54982cfd8d1850e30e);
+        
+    
+            marker_abb5bcfef869e3e22b680b30a75f00bd.bindTooltip(
+                `<div>
+                     MONTGOMERY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c317a52af6fe650742ee5a5c1db65d03 = L.marker(
+                [50.838017, 4.406031],
+                {"name": "MONTGOMERY"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_9c7c3291a84b943339bedcded2eb60de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c317a52af6fe650742ee5a5c1db65d03.setIcon(icon_9c7c3291a84b943339bedcded2eb60de);
+        
+    
+            marker_c317a52af6fe650742ee5a5c1db65d03.bindTooltip(
+                `<div>
+                     MONTGOMERY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4fa40bb6b79792e0941200605af63b0c = L.marker(
+                [50.839617000000004, 4.398236],
+                {"name": "MERODE"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_f0135bba60bc4b6357e068791bcd0d45 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4fa40bb6b79792e0941200605af63b0c.setIcon(icon_f0135bba60bc4b6357e068791bcd0d45);
+        
+    
+            marker_4fa40bb6b79792e0941200605af63b0c.bindTooltip(
+                `<div>
+                     MERODE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_92c4714ac2f44c522dfe954343b606d3 = L.marker(
+                [50.842773, 4.395909],
+                {"name": "CHEVALERIE"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_13d9d2cd6e758e849ce609d686088b40 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_92c4714ac2f44c522dfe954343b606d3.setIcon(icon_13d9d2cd6e758e849ce609d686088b40);
+        
+    
+            marker_92c4714ac2f44c522dfe954343b606d3.bindTooltip(
+                `<div>
+                     CHEVALERIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2104afcea97a114c907a089870db5c88 = L.marker(
+                [50.84485, 4.3953679999999995],
+                {"name": "WAPPERS"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_578ba262554f1e445604268606615aee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2104afcea97a114c907a089870db5c88.setIcon(icon_578ba262554f1e445604268606615aee);
+        
+    
+            marker_2104afcea97a114c907a089870db5c88.bindTooltip(
+                `<div>
+                     WAPPERS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_33dd48d127f9985a9ea85144eb5d9fe1 = L.marker(
+                [50.84707, 4.393269999999999],
+                {"name": "JAMBLINNE DE MEUX"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_8dd155801b18b050fed3665f99f3349f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_33dd48d127f9985a9ea85144eb5d9fe1.setIcon(icon_8dd155801b18b050fed3665f99f3349f);
+        
+    
+            marker_33dd48d127f9985a9ea85144eb5d9fe1.bindTooltip(
+                `<div>
+                     JAMBLINNE DE MEUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5918a88db3335ce3d6b470c1de58b4ce = L.marker(
+                [50.849121000000004, 4.389849],
+                {"name": "CHASSEURS ARDEN."}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_3d2be95db7894c50837bc513be0d2b0b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5918a88db3335ce3d6b470c1de58b4ce.setIcon(icon_3d2be95db7894c50837bc513be0d2b0b);
+        
+    
+            marker_5918a88db3335ce3d6b470c1de58b4ce.bindTooltip(
+                `<div>
+                     CHASSEURS ARDEN.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b720e2e30ae3d966a3e7adf6bdcc383d = L.marker(
+                [50.852129000000005, 4.387792999999999],
+                {"name": "BRABANCONNE"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_66022dbc1e4e1959a1e28d9e2eaf521b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b720e2e30ae3d966a3e7adf6bdcc383d.setIcon(icon_66022dbc1e4e1959a1e28d9e2eaf521b);
+        
+    
+            marker_b720e2e30ae3d966a3e7adf6bdcc383d.bindTooltip(
+                `<div>
+                     BRABANCONNE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9bea0a27057bc4879df5eb3fbf943f26 = L.marker(
+                [50.853193000000005, 4.386882999999999],
+                {"name": "DAILLY"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_cd1f526f4899248001081ca860c59b95 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9bea0a27057bc4879df5eb3fbf943f26.setIcon(icon_cd1f526f4899248001081ca860c59b95);
+        
+    
+            marker_9bea0a27057bc4879df5eb3fbf943f26.bindTooltip(
+                `<div>
+                     DAILLY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c527e2999b75957453f8bddbd531a668 = L.marker(
+                [50.853913000000006, 4.383972],
+                {"name": "CLAYS"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_8c3ea806a171a4970113413783d0b008 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c527e2999b75957453f8bddbd531a668.setIcon(icon_8c3ea806a171a4970113413783d0b008);
+        
+    
+            marker_c527e2999b75957453f8bddbd531a668.bindTooltip(
+                `<div>
+                     CLAYS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_29596c93aa3b84541de379d3d8c40aae = L.marker(
+                [50.853527, 4.380706],
+                {"name": "FUSS"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_b743416fe5d9f4e2f8855055cddfbd86 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_29596c93aa3b84541de379d3d8c40aae.setIcon(icon_b743416fe5d9f4e2f8855055cddfbd86);
+        
+    
+            marker_29596c93aa3b84541de379d3d8c40aae.bindTooltip(
+                `<div>
+                     FUSS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eb93b6e75d74a728a96b97730b576ad1 = L.marker(
+                [50.852943, 4.377809],
+                {"name": "STEURS"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_5d0a15d33e953262e419b106f89f6b8a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_eb93b6e75d74a728a96b97730b576ad1.setIcon(icon_5d0a15d33e953262e419b106f89f6b8a);
+        
+    
+            marker_eb93b6e75d74a728a96b97730b576ad1.bindTooltip(
+                `<div>
+                     STEURS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4024ee6e11733d3dfa37b53b627185d4 = L.marker(
+                [50.853860000000005, 4.373164999999999],
+                {"name": "BOSSUET"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_deb8f8b6fe4f4fd26beb8fe937471709 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4024ee6e11733d3dfa37b53b627185d4.setIcon(icon_deb8f8b6fe4f4fd26beb8fe937471709);
+        
+    
+            marker_4024ee6e11733d3dfa37b53b627185d4.bindTooltip(
+                `<div>
+                     BOSSUET
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dd2098c466a419f483179b2ee2d23d4e = L.marker(
+                [50.854561000000004, 4.368904],
+                {"name": "RUE TRAVERSIERE"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_2a10c4894243583d7067c6c2d7043f8a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_dd2098c466a419f483179b2ee2d23d4e.setIcon(icon_2a10c4894243583d7067c6c2d7043f8a);
+        
+    
+            marker_dd2098c466a419f483179b2ee2d23d4e.bindTooltip(
+                `<div>
+                     RUE TRAVERSIERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_79f80a65116ccc4f68955f01f147ea1c = L.marker(
+                [50.852808, 4.368904],
+                {"name": "QUETELET"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_ae43b4d80bf66143840d40576a1c73fe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_79f80a65116ccc4f68955f01f147ea1c.setIcon(icon_ae43b4d80bf66143840d40576a1c73fe);
+        
+    
+            marker_79f80a65116ccc4f68955f01f147ea1c.bindTooltip(
+                `<div>
+                     QUETELET
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5659f9f536ad9997238e73151db9dde6 = L.marker(
+                [50.853114000000005, 4.3661639999999995],
+                {"name": "BOTANIQUE"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_e95a87ee89987cdc1270c1bcaa99ecea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5659f9f536ad9997238e73151db9dde6.setIcon(icon_e95a87ee89987cdc1270c1bcaa99ecea);
+        
+    
+            marker_5659f9f536ad9997238e73151db9dde6.bindTooltip(
+                `<div>
+                     BOTANIQUE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2b2640570d1cf3fd4b7f66444f34a2b0 = L.marker(
+                [50.855837, 4.358466],
+                {"name": "ROGIER"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_cc6f6a140232be8f11b6dfa34704a8d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2b2640570d1cf3fd4b7f66444f34a2b0.setIcon(icon_cc6f6a140232be8f11b6dfa34704a8d7);
+        
+    
+            marker_2b2640570d1cf3fd4b7f66444f34a2b0.bindTooltip(
+                `<div>
+                     ROGIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b1fe480987071c2863b061477c46ca33 = L.marker(
+                [50.86009000000001, 4.360283],
+                {"name": "GARE DU NORD"}
+            ).addTo(feature_group_d3e2315a0313d423ffc4ccda3f627921);
+        
+    
+            var icon_100e8d2433398403c80a3786a6060c4e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b1fe480987071c2863b061477c46ca33.setIcon(icon_100e8d2433398403c80a3786a6060c4e);
+        
+    
+            marker_b1fe480987071c2863b061477c46ca33.bindTooltip(
+                `<div>
+                     GARE DU NORD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_f8fb7550213dba72077da872b23bcef8 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_b3a4a1ee99eb92a82fe306a9b627ccf7,
+                },
+                overlays :  {
+                    "61 GARE DU NORD - MONTGOMERY" : feature_group_0447b5f816bb8bac5a01182f80a82b49,
+                    "61 GARE DU NORD - MONTGOMERY SCORES" : feature_group_d3e2315a0313d423ffc4ccda3f627921,
+                },
+            };
+            L.control.layers(
+                layer_control_f8fb7550213dba72077da872b23bcef8.base_layers,
+                layer_control_f8fb7550213dba72077da872b23bcef8.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_86dda7c615c468f69f4fe17bd418430a);
+            feature_group_d3e2315a0313d423ffc4ccda3f627921.remove();
+        
+</script>
+</html>

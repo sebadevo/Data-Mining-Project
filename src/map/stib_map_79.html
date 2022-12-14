@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_29ecea051718f917abc7627c47108ef1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_29ecea051718f917abc7627c47108ef1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_29ecea051718f917abc7627c47108ef1 = L.map(
+                "map_29ecea051718f917abc7627c47108ef1",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_aa9583c1a4f3c3dab464bdd6c582fc19 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_29ecea051718f917abc7627c47108ef1);
+        
+    
+            var poly_line_9da1a2b3acf72519e08c0a1db0514076 = L.polyline(
+                [[50.843435, 4.383873], [50.842895, 4.383912], [50.842707, 4.383924], [50.842705, 4.383879], [50.842696, 4.383805], [50.842678, 4.383716], [50.842658, 4.383653], [50.842631, 4.383592], [50.8426, 4.383537], [50.842576, 4.383504], [50.842553, 4.38348], [50.84253, 4.38346], [50.842482, 4.383423], [50.842438, 4.383406], [50.842403, 4.383397], [50.842383, 4.383395], [50.842356, 4.383393], [50.842337, 4.383395], [50.842308, 4.383406], [50.842276, 4.383416], [50.84224, 4.383437], [50.842209, 4.383463], [50.842181, 4.38349], [50.842159, 4.383518], [50.842139, 4.383546], [50.842122, 4.383571], [50.842092, 4.383629], [50.842065, 4.38369], [50.842046, 4.383759], [50.842037, 4.383825], [50.84203, 4.38391], [50.842032, 4.384011], [50.84204, 4.384067], [50.842048, 4.384107], [50.842064, 4.384168], [50.842088, 4.384228], [50.842118, 4.384285], [50.842151, 4.384333], [50.842191, 4.384377], [50.842215, 4.384403], [50.842244, 4.38443], [50.842282, 4.384447], [50.842331, 4.384464], [50.842359, 4.384469], [50.842391, 4.384468], [50.842422, 4.384462], [50.842462, 4.384445], [50.842502, 4.384423], [50.842544, 4.384389], [50.842566, 4.384362], [50.842586, 4.384336], [50.842609, 4.384299], [50.842634, 4.384257], [50.842662, 4.3842], [50.842681, 4.384132], [50.8427, 4.384042], [50.842707, 4.383967], [50.842897, 4.383954], [50.843678, 4.3839], [50.843678, 4.3839], [50.843872, 4.383886], [50.844035, 4.383878], [50.844073, 4.383876], [50.844137, 4.383874], [50.844153, 4.383872], [50.844203, 4.383983], [50.844257, 4.384112], [50.844704, 4.385233], [50.844955, 4.385853], [50.844969, 4.38589], [50.845132, 4.386315], [50.845233, 4.386575], [50.845233, 4.386575], [50.845421, 4.387052], [50.845435, 4.387089], [50.845784, 4.387972], [50.845798, 4.388009], [50.846015, 4.388556], [50.846202, 4.389016], [50.846216, 4.389053], [50.846346, 4.389395], [50.846506, 4.389798], [50.846607, 4.390064], [50.846621, 4.390099], [50.846841, 4.390649], [50.84701, 4.391087], [50.847023, 4.391123], [50.847111, 4.391354], [50.847113, 4.391361], [50.847113, 4.391361], [50.847151, 4.391484], [50.847167, 4.391554], [50.847175, 4.391632], [50.84718, 4.391768], [50.847194, 4.392286], [50.847219, 4.392898], [50.84722, 4.392951], [50.847227, 4.393174], [50.847245, 4.393729], [50.847245, 4.393729], [50.847246, 4.393789], [50.847254, 4.393847], [50.847273, 4.393908], [50.847324, 4.394025], [50.847384, 4.394157], [50.8474, 4.394192], [50.847506, 4.394422], [50.847545, 4.394513], [50.847559, 4.394549], [50.847598, 4.394644], [50.847636, 4.39473], [50.847646, 4.394807], [50.847658, 4.394864], [50.847679, 4.394929], [50.847778, 4.395149], [50.84778, 4.395154], [50.847784, 4.395157], [50.847802, 4.395192], [50.847802, 4.395236], [50.847788, 4.395303], [50.847755, 4.39536], [50.847683, 4.39547], [50.847423, 4.395753], [50.847409, 4.395819], [50.84754, 4.396389], [50.847618, 4.396774], [50.847705, 4.397146], [50.847751, 4.397352], [50.847757, 4.397377], [50.847757, 4.397377], [50.847867, 4.397823], [50.847961, 4.398221], [50.84802, 4.398495], [50.848213, 4.399371], [50.84843, 4.400266], [50.848439, 4.400307], [50.848597, 4.401005], [50.848843, 4.402134], [50.848963, 4.402686], [50.848985, 4.402713], [50.849007, 4.402716], [50.849025, 4.402706], [50.849082, 4.402679], [50.849143, 4.402644], [50.849341, 4.402519], [50.849495, 4.402421], [50.849495, 4.402421], [50.849657, 4.402317], [50.849688, 4.4023], [50.849758, 4.402268], [50.849969, 4.402151], [50.850086, 4.402078], [50.850276, 4.401971], [50.850318, 4.402001], [50.850452, 4.402581], [50.850488, 4.402721], [50.85062, 4.403237], [50.850627, 4.403262], [50.850722, 4.403619], [50.850737, 4.40365], [50.850753, 4.40366], [50.850921, 4.403575], [50.850987, 4.40354], [50.851031, 4.403552], [50.851056, 4.403602], [50.851076, 4.403694], [50.851097, 4.403797], [50.851136, 4.403943], [50.851379, 4.404971], [50.851705, 4.406423], [50.852098, 4.408076], [50.852127, 4.408259], [50.852175, 4.408488], [50.852184, 4.408561], [50.85216, 4.40868], [50.852149, 4.408786], [50.852156, 4.408843], [50.852178, 4.408884], [50.852231, 4.408927], [50.85228, 4.408977], [50.852431, 4.409471], [50.85243, 4.409468], [50.852607, 4.410089], [50.852725, 4.410494], [50.853054, 4.41134], [50.853096, 4.411454], [50.85315, 4.411564], [50.853247, 4.411767], [50.853284, 4.411838], [50.853324, 4.411922], [50.853327, 4.411994], [50.853337, 4.412051], [50.853357, 4.412092], [50.853376, 4.412119], [50.853398, 4.412139], [50.853415, 4.412176], [50.853436, 4.412217], [50.853459, 4.412258], [50.853608, 4.412595], [50.853782, 4.413017], [50.854424, 4.41451], [50.854589, 4.414901], [50.854704, 4.415206], [50.854704, 4.415206], [50.854792, 4.415412], [50.854788, 4.415469], [50.854772, 4.415524], [50.854512, 4.415841], [50.853769, 4.417046], [50.853705, 4.417124], [50.853656, 4.417151], [50.853628, 4.417235], [50.853636, 4.417328], [50.853771, 4.41748], [50.853806, 4.417566], [50.853898, 4.417938], [50.853907, 4.417978], [50.853946, 4.418137], [50.853946, 4.418137], [50.853972, 4.418284], [50.85398, 4.418326], [50.854041, 4.418621], [50.85405, 4.418662], [50.854086, 4.41882], [50.854129, 4.419036], [50.854159, 4.419152], [50.854205, 4.419255], [50.85427, 4.41941], [50.854376, 4.419617], [50.854398, 4.419657], [50.854551, 4.419911], [50.854573, 4.419948], [50.854617, 4.420022], [50.854638, 4.420058], [50.855011, 4.420723], [50.855029, 4.420755], [50.855188, 4.42103], [50.855188, 4.42103], [50.855253, 4.421143], [50.855311, 4.421247], [50.855319, 4.421268], [50.855335, 4.421389], [50.855341, 4.421433], [50.855369, 4.421646], [50.855423, 4.422211], [50.855427, 4.422254], [50.855516, 4.423123], [50.855521, 4.423167], [50.855579, 4.423797], [50.855582, 4.423839], [50.855581, 4.423883], [50.855575, 4.423914], [50.855561, 4.423958], [50.855533, 4.424017], [50.855512, 4.424059], [50.855487, 4.424086], [50.855445, 4.424149], [50.85527, 4.424391], [50.854919, 4.424788], [50.854896, 4.424814], [50.854798, 4.424926], [50.854483, 4.425258], [50.854483, 4.425258], [50.85405, 4.425729], [50.854031, 4.425823], [50.854065, 4.425908], [50.85415, 4.42603], [50.854497, 4.426525], [50.854618, 4.426705], [50.854705, 4.42683], [50.855109, 4.427423], [50.855098, 4.427511], [50.855102, 4.427663], [50.855122, 4.427768], [50.855166, 4.427858], [50.855222, 4.427909], [50.85531, 4.427902], [50.855374, 4.42796], [50.855461, 4.428206], [50.855573, 4.428533], [50.855573, 4.428533], [50.855598, 4.428605], [50.855719, 4.428971], [50.855956, 4.429651], [50.856153, 4.430222], [50.856282, 4.43062], [50.856368, 4.430945], [50.856447, 4.431286], [50.856521, 4.431654], [50.856528, 4.431697], [50.856621, 4.432316], [50.856621, 4.432316], [50.856629, 4.432367], [50.856661, 4.432671], [50.856677, 4.432842], [50.856694, 4.43318], [50.856704, 4.433579], [50.856696, 4.433953], [50.856684, 4.434235], [50.856666, 4.434509], [50.856621, 4.434914], [50.856548, 4.435419], [50.856496, 4.435702], [50.856381, 4.436203], [50.856166, 4.436974], [50.855831, 4.43809], [50.855451, 4.439343], [50.855397, 4.439414], [50.855381, 4.43938], [50.85536, 4.439352], [50.855311, 4.439305], [50.855297, 4.439298], [50.855256, 4.439288], [50.855211, 4.439283], [50.855172, 4.439288], [50.855152, 4.439299], [50.855143, 4.439303], [50.855119, 4.439324], [50.855032, 4.439415], [50.855029, 4.439419], [50.855027, 4.439425], [50.85501, 4.4395], [50.855008, 4.439591], [50.855008, 4.439597], [50.855008, 4.439597], [50.855001, 4.439712], [50.854812, 4.440258], [50.854796, 4.440307], [50.854796, 4.440307], [50.854501, 4.44119], [50.854085, 4.442399], [50.853963, 4.44281], [50.853931, 4.442852], [50.853872, 4.442985], [50.85375, 4.443483], [50.853704, 4.443647], [50.853642, 4.443891], [50.853621, 4.44397], [50.853609, 4.444009], [50.85358, 4.444098], [50.853599, 4.444156], [50.853679, 4.444209], [50.854054, 4.444495], [50.854485, 4.444827], [50.854776, 4.44506], [50.854817, 4.445093], [50.854833, 4.445107], [50.854833, 4.445107], [50.85511, 4.44535], [50.855213, 4.445478], [50.855271, 4.445602], [50.855289, 4.445694], [50.8553, 4.445768], [50.855187, 4.445987], [50.855102, 4.446126], [50.854377, 4.447564], [50.854263, 4.447891], [50.854263, 4.447891], [50.854249, 4.447933], [50.854196, 4.448047], [50.85415, 4.448053], [50.854005, 4.447876], [50.85386, 4.44768], [50.853745, 4.447538], [50.853591, 4.447445], [50.853472, 4.447415], [50.853324, 4.447422], [50.853151, 4.447473], [50.852998, 4.447571], [50.852959, 4.447606], [50.852948, 4.447613], [50.852796, 4.447749], [50.852675, 4.447921], [50.852459, 4.448334], [50.852114, 4.449003], [50.852, 4.449184], [50.851911, 4.449301], [50.851725, 4.449523], [50.851659, 4.449588], [50.85164, 4.449619], [50.851571, 4.449761], [50.851488, 4.449977], [50.851452, 4.450137], [50.851415, 4.450317], [50.851371, 4.450605], [50.851341, 4.450767], [50.851305, 4.451128], [50.851234, 4.451591], [50.851224, 4.451663], [50.851224, 4.451663], [50.851178, 4.451991], [50.851133, 4.452258], [50.850989, 4.452885], [50.850763, 4.453631], [50.850722, 4.453789], [50.850689, 4.453939], [50.850677, 4.454027], [50.850671, 4.454069], [50.850656, 4.454181], [50.850656, 4.454181], [50.850652, 4.454215], [50.850641, 4.454377], [50.850639, 4.454504], [50.850642, 4.4547], [50.850657, 4.455093], [50.850668, 4.455447], [50.850671, 4.45566], [50.85065, 4.455938], [50.850401, 4.457446], [50.850323, 4.457934], [50.850323, 4.457934], [50.850275, 4.45811], [50.850238, 4.458215], [50.850203, 4.458378], [50.850193, 4.458428], [50.850141, 4.458749], [50.850049, 4.459209], [50.849974, 4.459402], [50.849894, 4.45958], [50.849787, 4.459776], [50.849688, 4.459932], [50.849646, 4.459969], [50.8496, 4.459923], [50.849557, 4.459761], [50.849523, 4.459649], [50.849455, 4.459447], [50.849291, 4.458949], [50.849255, 4.458889], [50.849236, 4.458882], [50.849212, 4.458885], [50.849028, 4.459036]],
+                {"bubblingMouseEvents": true, "color": "#306196", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#306196", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_29ecea051718f917abc7627c47108ef1);
+        
+    
+            var feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da = L.featureGroup(
+                {}
+            ).addTo(map_29ecea051718f917abc7627c47108ef1);
+        
+    
+            var marker_960bf31426b3fa2d0a60277a44159a64 = L.marker(
+                [50.843434, 4.383842],
+                {"name": "SCHUMAN"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_6038f4cb975eb33f2380affbb4872ff8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_960bf31426b3fa2d0a60277a44159a64.setIcon(icon_6038f4cb975eb33f2380affbb4872ff8);
+        
+    
+        var popup_ad27457f3477b0a99bf5953d4663ebef = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_278d5818df05678711fd383da6b7bdba = $(`<div id="html_278d5818df05678711fd383da6b7bdba" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SCHUMAN</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_ad27457f3477b0a99bf5953d4663ebef.setContent(html_278d5818df05678711fd383da6b7bdba);
+            
+        
+
+        marker_960bf31426b3fa2d0a60277a44159a64.bindPopup(popup_ad27457f3477b0a99bf5953d4663ebef)
+        ;
+
+        
+    
+    
+            marker_960bf31426b3fa2d0a60277a44159a64.bindTooltip(
+                `<div>
+                     SCHUMAN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6f4bf2f46c44d1b49a0c4a3421d17420 = L.marker(
+                [50.843679, 4.383925],
+                {"name": "SCHUMAN"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_99fddf87b2497a923cb4e9a76a4d0238 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6f4bf2f46c44d1b49a0c4a3421d17420.setIcon(icon_99fddf87b2497a923cb4e9a76a4d0238);
+        
+    
+        var popup_9b12bcee415de2db502b2389c6327aaa = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_967e2eef16371a05ba122230e41415a0 = $(`<div id="html_967e2eef16371a05ba122230e41415a0" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SCHUMAN</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 90.48</h6></center>         </div>`)[0];
+                popup_9b12bcee415de2db502b2389c6327aaa.setContent(html_967e2eef16371a05ba122230e41415a0);
+            
+        
+
+        marker_6f4bf2f46c44d1b49a0c4a3421d17420.bindPopup(popup_9b12bcee415de2db502b2389c6327aaa)
+        ;
+
+        
+    
+    
+            marker_6f4bf2f46c44d1b49a0c4a3421d17420.bindTooltip(
+                `<div>
+                     SCHUMAN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cf817ad12e5e616fed60a9e341a62ce5 = L.marker(
+                [50.845205, 4.386602],
+                {"name": "MICHEL-ANGE"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_9f03bf0ec0f556be20690336cd2813f9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_cf817ad12e5e616fed60a9e341a62ce5.setIcon(icon_9f03bf0ec0f556be20690336cd2813f9);
+        
+    
+        var popup_c7d8532caa0c108e3fc71be6e55d4593 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_061dafc73554cd6a59b0c51eeb804fbb = $(`<div id="html_061dafc73554cd6a59b0c51eeb804fbb" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MICHEL-ANGE</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 80.95</h6></center>         </div>`)[0];
+                popup_c7d8532caa0c108e3fc71be6e55d4593.setContent(html_061dafc73554cd6a59b0c51eeb804fbb);
+            
+        
+
+        marker_cf817ad12e5e616fed60a9e341a62ce5.bindPopup(popup_c7d8532caa0c108e3fc71be6e55d4593)
+        ;
+
+        
+    
+    
+            marker_cf817ad12e5e616fed60a9e341a62ce5.bindTooltip(
+                `<div>
+                     MICHEL-ANGE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0d0c02764d9a28a1777330296229f5af = L.marker(
+                [50.847115, 4.391358],
+                {"name": "GUEUX"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_6cd195c5a76d073dea90cee9cbc916de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0d0c02764d9a28a1777330296229f5af.setIcon(icon_6cd195c5a76d073dea90cee9cbc916de);
+        
+    
+        var popup_5c44821ab189b3b45586d916fc156b4c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a41698870c20fdbc44ea6c6c8f61dbb0 = $(`<div id="html_a41698870c20fdbc44ea6c6c8f61dbb0" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GUEUX</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 71.43</h6></center>         </div>`)[0];
+                popup_5c44821ab189b3b45586d916fc156b4c.setContent(html_a41698870c20fdbc44ea6c6c8f61dbb0);
+            
+        
+
+        marker_0d0c02764d9a28a1777330296229f5af.bindPopup(popup_5c44821ab189b3b45586d916fc156b4c)
+        ;
+
+        
+    
+    
+            marker_0d0c02764d9a28a1777330296229f5af.bindTooltip(
+                `<div>
+                     GUEUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d2c62292937612e8fd9d890fb79bf9a5 = L.marker(
+                [50.84724, 4.393729],
+                {"name": "JAMBLINNE DE MEUX"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_158c49c99b379f87a239faccf04fc7f8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d2c62292937612e8fd9d890fb79bf9a5.setIcon(icon_158c49c99b379f87a239faccf04fc7f8);
+        
+    
+        var popup_c519dd0054eed3d9b9c5da9f86ea97ad = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_8831afdb7166bbe07fc008da304ffae5 = $(`<div id="html_8831afdb7166bbe07fc008da304ffae5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: JAMBLINNE DE MEUX</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 61.9</h6></center>         </div>`)[0];
+                popup_c519dd0054eed3d9b9c5da9f86ea97ad.setContent(html_8831afdb7166bbe07fc008da304ffae5);
+            
+        
+
+        marker_d2c62292937612e8fd9d890fb79bf9a5.bindPopup(popup_c519dd0054eed3d9b9c5da9f86ea97ad)
+        ;
+
+        
+    
+    
+            marker_d2c62292937612e8fd9d890fb79bf9a5.bindTooltip(
+                `<div>
+                     JAMBLINNE DE MEUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_78f6fe60f5882b6d5bb7b6196a5aad80 = L.marker(
+                [50.847707, 4.397407],
+                {"name": "VICTOR HUGO"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_280b174aa5a01ca4d56fcbaad40e82ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_78f6fe60f5882b6d5bb7b6196a5aad80.setIcon(icon_280b174aa5a01ca4d56fcbaad40e82ed);
+        
+    
+        var popup_d1b901af9987b0d4348afd7c3a279f4e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2b690f2413f47a2962bfd502256aec75 = $(`<div id="html_2b690f2413f47a2962bfd502256aec75" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VICTOR HUGO</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 52.38</h6></center>         </div>`)[0];
+                popup_d1b901af9987b0d4348afd7c3a279f4e.setContent(html_2b690f2413f47a2962bfd502256aec75);
+            
+        
+
+        marker_78f6fe60f5882b6d5bb7b6196a5aad80.bindPopup(popup_d1b901af9987b0d4348afd7c3a279f4e)
+        ;
+
+        
+    
+    
+            marker_78f6fe60f5882b6d5bb7b6196a5aad80.bindTooltip(
+                `<div>
+                     VICTOR HUGO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af29f491892692e4aeb936d4ce744409 = L.marker(
+                [50.849465, 4.402304],
+                {"name": "DIAMANT"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_48c7940884c26484354fe6de8092a94b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_af29f491892692e4aeb936d4ce744409.setIcon(icon_48c7940884c26484354fe6de8092a94b);
+        
+    
+        var popup_1f4519edf9718b9e048559d0321a6bee = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_fa175b95ce521334eccbdc6f38cf7722 = $(`<div id="html_fa175b95ce521334eccbdc6f38cf7722" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DIAMANT</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 42.86</h6></center>         </div>`)[0];
+                popup_1f4519edf9718b9e048559d0321a6bee.setContent(html_fa175b95ce521334eccbdc6f38cf7722);
+            
+        
+
+        marker_af29f491892692e4aeb936d4ce744409.bindPopup(popup_1f4519edf9718b9e048559d0321a6bee)
+        ;
+
+        
+    
+    
+            marker_af29f491892692e4aeb936d4ce744409.bindTooltip(
+                `<div>
+                     DIAMANT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1501374d37260de47aafe443307e8e08 = L.marker(
+                [50.852396, 4.409495],
+                {"name": "COLONEL BOURG"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_5a77642259d1b9bbe7aa94d65b2eb397 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1501374d37260de47aafe443307e8e08.setIcon(icon_5a77642259d1b9bbe7aa94d65b2eb397);
+        
+    
+        var popup_41fb5fc70e7333d2820802a771d9f82b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_59f8d42dbafad2e9375912d4882595a1 = $(`<div id="html_59f8d42dbafad2e9375912d4882595a1" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: COLONEL BOURG</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_41fb5fc70e7333d2820802a771d9f82b.setContent(html_59f8d42dbafad2e9375912d4882595a1);
+            
+        
+
+        marker_1501374d37260de47aafe443307e8e08.bindPopup(popup_41fb5fc70e7333d2820802a771d9f82b)
+        ;
+
+        
+    
+    
+            marker_1501374d37260de47aafe443307e8e08.bindTooltip(
+                `<div>
+                     COLONEL BOURG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2a7e9a4cdac75329bb19c0a20e744b6b = L.marker(
+                [50.854704, 4.415206],
+                {"name": "CARENE"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_352acf4f533b044e08872b14b37c1c82 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2a7e9a4cdac75329bb19c0a20e744b6b.setIcon(icon_352acf4f533b044e08872b14b37c1c82);
+        
+    
+        var popup_5357f54a5c65505566d028976ca08122 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e2e5068de753174da2469014ca87c3cb = $(`<div id="html_e2e5068de753174da2469014ca87c3cb" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CARENE</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 23.81</h6></center>         </div>`)[0];
+                popup_5357f54a5c65505566d028976ca08122.setContent(html_e2e5068de753174da2469014ca87c3cb);
+            
+        
+
+        marker_2a7e9a4cdac75329bb19c0a20e744b6b.bindPopup(popup_5357f54a5c65505566d028976ca08122)
+        ;
+
+        
+    
+    
+            marker_2a7e9a4cdac75329bb19c0a20e744b6b.bindTooltip(
+                `<div>
+                     CARENE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e2a11aa47fa254018428cb9d020abc9b = L.marker(
+                [50.853929, 4.418145],
+                {"name": "PLEIADES"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_6e036735494c7db7806d0b8f0c038e79 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e2a11aa47fa254018428cb9d020abc9b.setIcon(icon_6e036735494c7db7806d0b8f0c038e79);
+        
+    
+        var popup_492b000cd966acc608e9440385669c62 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_eafac4cdd7a03297e9251edb3c95c171 = $(`<div id="html_eafac4cdd7a03297e9251edb3c95c171" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PLEIADES</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 14.29</h6></center>         </div>`)[0];
+                popup_492b000cd966acc608e9440385669c62.setContent(html_eafac4cdd7a03297e9251edb3c95c171);
+            
+        
+
+        marker_e2a11aa47fa254018428cb9d020abc9b.bindPopup(popup_492b000cd966acc608e9440385669c62)
+        ;
+
+        
+    
+    
+            marker_e2a11aa47fa254018428cb9d020abc9b.bindTooltip(
+                `<div>
+                     PLEIADES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_03dbc21fb836368a26c6632aab2c299b = L.marker(
+                [50.855187, 4.42103],
+                {"name": "CAPRICORNE"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_528d6180cd5f5c0a5ac65e42499bfa7b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_03dbc21fb836368a26c6632aab2c299b.setIcon(icon_528d6180cd5f5c0a5ac65e42499bfa7b);
+        
+    
+        var popup_04c02f80b0efb64d453c5434dbe9a979 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_cfc7c2549e54d76c0142cd9fb2f55168 = $(`<div id="html_cfc7c2549e54d76c0142cd9fb2f55168" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CAPRICORNE</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 4.76</h6></center>         </div>`)[0];
+                popup_04c02f80b0efb64d453c5434dbe9a979.setContent(html_cfc7c2549e54d76c0142cd9fb2f55168);
+            
+        
+
+        marker_03dbc21fb836368a26c6632aab2c299b.bindPopup(popup_04c02f80b0efb64d453c5434dbe9a979)
+        ;
+
+        
+    
+    
+            marker_03dbc21fb836368a26c6632aab2c299b.bindTooltip(
+                `<div>
+                     CAPRICORNE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_197e4bf25bc6566aeb82178873081ade = L.marker(
+                [50.854456, 4.425251],
+                {"name": "ANDROMEDE"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_837212b58439af380ddb502c30c32a78 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_197e4bf25bc6566aeb82178873081ade.setIcon(icon_837212b58439af380ddb502c30c32a78);
+        
+    
+        var popup_083998fafa7ed834bedda34cc6c845a8 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ca2ae936d6b37ac38d05cf10a74cffd7 = $(`<div id="html_ca2ae936d6b37ac38d05cf10a74cffd7" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ANDROMEDE</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 4.76</h6></center>         </div>`)[0];
+                popup_083998fafa7ed834bedda34cc6c845a8.setContent(html_ca2ae936d6b37ac38d05cf10a74cffd7);
+            
+        
+
+        marker_197e4bf25bc6566aeb82178873081ade.bindPopup(popup_083998fafa7ed834bedda34cc6c845a8)
+        ;
+
+        
+    
+    
+            marker_197e4bf25bc6566aeb82178873081ade.bindTooltip(
+                `<div>
+                     ANDROMEDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af08cc1a80c0a1bbb4adee844924c3e3 = L.marker(
+                [50.855561, 4.428543],
+                {"name": "GULLEDELLE"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_5cb5150d41f6761d68680f283c6551b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_af08cc1a80c0a1bbb4adee844924c3e3.setIcon(icon_5cb5150d41f6761d68680f283c6551b0);
+        
+    
+        var popup_9a6e037a753f484a32cf1cb9747dc095 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_99787e72851ed756b039e3a0eddd0d0f = $(`<div id="html_99787e72851ed756b039e3a0eddd0d0f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GULLEDELLE</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 14.29</h6></center>         </div>`)[0];
+                popup_9a6e037a753f484a32cf1cb9747dc095.setContent(html_99787e72851ed756b039e3a0eddd0d0f);
+            
+        
+
+        marker_af08cc1a80c0a1bbb4adee844924c3e3.bindPopup(popup_9a6e037a753f484a32cf1cb9747dc095)
+        ;
+
+        
+    
+    
+            marker_af08cc1a80c0a1bbb4adee844924c3e3.bindTooltip(
+                `<div>
+                     GULLEDELLE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cf3f58cfd73465e467f85390112382c5 = L.marker(
+                [50.85661, 4.432322],
+                {"name": "ARIANE"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_6ea2ed281fba987a7b9ed9da2ca090cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_cf3f58cfd73465e467f85390112382c5.setIcon(icon_6ea2ed281fba987a7b9ed9da2ca090cf);
+        
+    
+        var popup_4b682ce91a6a20585c2b27c26f47fbd5 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ca953669691379eae545aea5acbc857a = $(`<div id="html_ca953669691379eae545aea5acbc857a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ARIANE</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 23.81</h6></center>         </div>`)[0];
+                popup_4b682ce91a6a20585c2b27c26f47fbd5.setContent(html_ca953669691379eae545aea5acbc857a);
+            
+        
+
+        marker_cf3f58cfd73465e467f85390112382c5.bindPopup(popup_4b682ce91a6a20585c2b27c26f47fbd5)
+        ;
+
+        
+    
+    
+            marker_cf3f58cfd73465e467f85390112382c5.bindTooltip(
+                `<div>
+                     ARIANE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3bb7b53d1422083d8703114e54995715 = L.marker(
+                [50.85479, 4.440301],
+                {"name": "MARCEL THIRY"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_e5b810c34882286cfedbd8ff1bd2bcc7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3bb7b53d1422083d8703114e54995715.setIcon(icon_e5b810c34882286cfedbd8ff1bd2bcc7);
+        
+    
+        var popup_b6c4df0fa11b8f24d03b7acae09805ec = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_9853d308ba1ea08cb35b504d8de33b76 = $(`<div id="html_9853d308ba1ea08cb35b504d8de33b76" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MARCEL THIRY</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_b6c4df0fa11b8f24d03b7acae09805ec.setContent(html_9853d308ba1ea08cb35b504d8de33b76);
+            
+        
+
+        marker_3bb7b53d1422083d8703114e54995715.bindPopup(popup_b6c4df0fa11b8f24d03b7acae09805ec)
+        ;
+
+        
+    
+    
+            marker_3bb7b53d1422083d8703114e54995715.bindTooltip(
+                `<div>
+                     MARCEL THIRY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_24168e47e29c0be02c51192d620ae022 = L.marker(
+                [50.854805, 4.445186],
+                {"name": "THIRY-WOLUWE"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_886e82118907da512482b939f1ebe44d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_24168e47e29c0be02c51192d620ae022.setIcon(icon_886e82118907da512482b939f1ebe44d);
+        
+    
+        var popup_afd549dc5b342fad1eff39f668cb252b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_be8df89a124aacdc56f65894df3040f5 = $(`<div id="html_be8df89a124aacdc56f65894df3040f5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: THIRY-WOLUWE</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 42.86</h6></center>         </div>`)[0];
+                popup_afd549dc5b342fad1eff39f668cb252b.setContent(html_be8df89a124aacdc56f65894df3040f5);
+            
+        
+
+        marker_24168e47e29c0be02c51192d620ae022.bindPopup(popup_afd549dc5b342fad1eff39f668cb252b)
+        ;
+
+        
+    
+    
+            marker_24168e47e29c0be02c51192d620ae022.bindTooltip(
+                `<div>
+                     THIRY-WOLUWE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dffefb814723b434306570052024db2c = L.marker(
+                [50.854208, 4.447844],
+                {"name": "HOF TER MUSSCHEN"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_d35a0d5211cb9ea0e3ba0241e5a942cc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_dffefb814723b434306570052024db2c.setIcon(icon_d35a0d5211cb9ea0e3ba0241e5a942cc);
+        
+    
+        var popup_863fe6a919f3d8484c7b6599546b6066 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_fd2ed50a94c6e8976e09f5bb3ead6bbd = $(`<div id="html_fd2ed50a94c6e8976e09f5bb3ead6bbd" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HOF TER MUSSCHEN</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 52.38</h6></center>         </div>`)[0];
+                popup_863fe6a919f3d8484c7b6599546b6066.setContent(html_fd2ed50a94c6e8976e09f5bb3ead6bbd);
+            
+        
+
+        marker_dffefb814723b434306570052024db2c.bindPopup(popup_863fe6a919f3d8484c7b6599546b6066)
+        ;
+
+        
+    
+    
+            marker_dffefb814723b434306570052024db2c.bindTooltip(
+                `<div>
+                     HOF TER MUSSCHEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bf81d1ed3c018f7033d6ad71c3a02891 = L.marker(
+                [50.851204, 4.451656],
+                {"name": "CLINIQUES-UCL"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_aa490180d7df0ebaeffe6d918e4242d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_bf81d1ed3c018f7033d6ad71c3a02891.setIcon(icon_aa490180d7df0ebaeffe6d918e4242d7);
+        
+    
+        var popup_64e6db0a2a6a8845f7d958915e88d6d5 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6c5e8fc5168daaae1cc8d942977c2375 = $(`<div id="html_6c5e8fc5168daaae1cc8d942977c2375" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CLINIQUES-UCL</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 61.9</h6></center>         </div>`)[0];
+                popup_64e6db0a2a6a8845f7d958915e88d6d5.setContent(html_6c5e8fc5168daaae1cc8d942977c2375);
+            
+        
+
+        marker_bf81d1ed3c018f7033d6ad71c3a02891.bindPopup(popup_64e6db0a2a6a8845f7d958915e88d6d5)
+        ;
+
+        
+    
+    
+            marker_bf81d1ed3c018f7033d6ad71c3a02891.bindTooltip(
+                `<div>
+                     CLINIQUES-UCL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9b638e38752f3612f479402c82a5e9d2 = L.marker(
+                [50.850663, 4.454183],
+                {"name": "AUDITOIRES-UCL"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_ccd1d44a7f1617ffa2ee8b0999eb5f09 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9b638e38752f3612f479402c82a5e9d2.setIcon(icon_ccd1d44a7f1617ffa2ee8b0999eb5f09);
+        
+    
+        var popup_04fdb1c6f19fd8f38233c88e0ab3c634 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_98a782968f318506edd4eb60ca2e8d56 = $(`<div id="html_98a782968f318506edd4eb60ca2e8d56" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: AUDITOIRES-UCL</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 71.43</h6></center>         </div>`)[0];
+                popup_04fdb1c6f19fd8f38233c88e0ab3c634.setContent(html_98a782968f318506edd4eb60ca2e8d56);
+            
+        
+
+        marker_9b638e38752f3612f479402c82a5e9d2.bindPopup(popup_04fdb1c6f19fd8f38233c88e0ab3c634)
+        ;
+
+        
+    
+    
+            marker_9b638e38752f3612f479402c82a5e9d2.bindTooltip(
+                `<div>
+                     AUDITOIRES-UCL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cd92f8b23c425ad163a5b79ec4efd063 = L.marker(
+                [50.85031, 4.457931],
+                {"name": "MOUNIER"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_b077cd88c0b8789c6c0b5165054f60b3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_cd92f8b23c425ad163a5b79ec4efd063.setIcon(icon_b077cd88c0b8789c6c0b5165054f60b3);
+        
+    
+        var popup_a4002ac418da606193671a95e6098462 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a1d1bc1e0e9c5ad9723f228be5ae6d4c = $(`<div id="html_a1d1bc1e0e9c5ad9723f228be5ae6d4c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MOUNIER</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 80.95</h6></center>         </div>`)[0];
+                popup_a4002ac418da606193671a95e6098462.setContent(html_a1d1bc1e0e9c5ad9723f228be5ae6d4c);
+            
+        
+
+        marker_cd92f8b23c425ad163a5b79ec4efd063.bindPopup(popup_a4002ac418da606193671a95e6098462)
+        ;
+
+        
+    
+    
+            marker_cd92f8b23c425ad163a5b79ec4efd063.bindTooltip(
+                `<div>
+                     MOUNIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_50f229f23a3d8473362a2a58d9e8ec84 = L.marker(
+                [50.849022, 4.459021],
+                {"name": "KRAAINEM"}
+            ).addTo(feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da);
+        
+    
+            var icon_b674d0106b14329c00ee1c57bb6ea2a8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#306196", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_50f229f23a3d8473362a2a58d9e8ec84.setIcon(icon_b674d0106b14329c00ee1c57bb6ea2a8);
+        
+    
+        var popup_ed5525544fb16d893f9b9f10bd2c6291 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_03f2ffa07f1899030664ce77a14046af = $(`<div id="html_03f2ffa07f1899030664ce77a14046af" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: KRAAINEM</h4></center>         <center><h5>Line: 79 KRAAINEM - SCHUMAN</h5></center>         <center><h6>Score: 90.48</h6></center>         </div>`)[0];
+                popup_ed5525544fb16d893f9b9f10bd2c6291.setContent(html_03f2ffa07f1899030664ce77a14046af);
+            
+        
+
+        marker_50f229f23a3d8473362a2a58d9e8ec84.bindPopup(popup_ed5525544fb16d893f9b9f10bd2c6291)
+        ;
+
+        
+    
+    
+            marker_50f229f23a3d8473362a2a58d9e8ec84.bindTooltip(
+                `<div>
+                     KRAAINEM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_ad4aa1a8adf87b466d2abf7344578c35 = L.featureGroup(
+                {}
+            ).addTo(map_29ecea051718f917abc7627c47108ef1);
+        
+    
+            var marker_d9d9e42a2392c3e2e150ecbeddd552c0 = L.marker(
+                [50.843444000000005, 4.383851999999999],
+                {"name": "SCHUMAN"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_f58e9779d0fdb156d05b721973471ad1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d9d9e42a2392c3e2e150ecbeddd552c0.setIcon(icon_f58e9779d0fdb156d05b721973471ad1);
+        
+    
+            marker_d9d9e42a2392c3e2e150ecbeddd552c0.bindTooltip(
+                `<div>
+                     SCHUMAN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8317ec6652633f7de384c72e91686922 = L.marker(
+                [50.843689000000005, 4.383934999999999],
+                {"name": "SCHUMAN"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_845d62861a9b1cfa92fda5100218a011 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8317ec6652633f7de384c72e91686922.setIcon(icon_845d62861a9b1cfa92fda5100218a011);
+        
+    
+            marker_8317ec6652633f7de384c72e91686922.bindTooltip(
+                `<div>
+                     SCHUMAN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_84c9a71275c2d41df4f5603cb4de3205 = L.marker(
+                [50.845215, 4.3866119999999995],
+                {"name": "MICHEL-ANGE"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_6af385e7024d1135dfc03f4a331528fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_84c9a71275c2d41df4f5603cb4de3205.setIcon(icon_6af385e7024d1135dfc03f4a331528fc);
+        
+    
+            marker_84c9a71275c2d41df4f5603cb4de3205.bindTooltip(
+                `<div>
+                     MICHEL-ANGE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ada83e4598ef1f191049506a3703ff5c = L.marker(
+                [50.847125000000005, 4.391368],
+                {"name": "GUEUX"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_ae64fd83e77153a6f26f4220423d5764 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ada83e4598ef1f191049506a3703ff5c.setIcon(icon_ae64fd83e77153a6f26f4220423d5764);
+        
+    
+            marker_ada83e4598ef1f191049506a3703ff5c.bindTooltip(
+                `<div>
+                     GUEUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fee0771e013424de3030bfa495c746cd = L.marker(
+                [50.84725, 4.393739],
+                {"name": "JAMBLINNE DE MEUX"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_282fd50c8590e4e9ba53233a2afbefdd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fee0771e013424de3030bfa495c746cd.setIcon(icon_282fd50c8590e4e9ba53233a2afbefdd);
+        
+    
+            marker_fee0771e013424de3030bfa495c746cd.bindTooltip(
+                `<div>
+                     JAMBLINNE DE MEUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fb2d6405a864b5ae5be2d583d20505e6 = L.marker(
+                [50.847717, 4.397417],
+                {"name": "VICTOR HUGO"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_a774574f516ccba0ad7562b0860b76c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fb2d6405a864b5ae5be2d583d20505e6.setIcon(icon_a774574f516ccba0ad7562b0860b76c5);
+        
+    
+            marker_fb2d6405a864b5ae5be2d583d20505e6.bindTooltip(
+                `<div>
+                     VICTOR HUGO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8ce88f92eabfdb2937ced240a988b269 = L.marker(
+                [50.849475000000005, 4.402314],
+                {"name": "DIAMANT"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_ae502d3ac87fca0056329ae05e002d5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8ce88f92eabfdb2937ced240a988b269.setIcon(icon_ae502d3ac87fca0056329ae05e002d5c);
+        
+    
+            marker_8ce88f92eabfdb2937ced240a988b269.bindTooltip(
+                `<div>
+                     DIAMANT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bcc79dfd192256ee256a1498f76a1b40 = L.marker(
+                [50.852406, 4.409504999999999],
+                {"name": "COLONEL BOURG"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_174e83b54850df2b5582756ba24a742c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_bcc79dfd192256ee256a1498f76a1b40.setIcon(icon_174e83b54850df2b5582756ba24a742c);
+        
+    
+            marker_bcc79dfd192256ee256a1498f76a1b40.bindTooltip(
+                `<div>
+                     COLONEL BOURG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f20e5cc38992a5dc101e832ee58af22a = L.marker(
+                [50.854714, 4.415216],
+                {"name": "CARENE"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_9ae7ea0ed82de1c6ddfb390310d8be56 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f20e5cc38992a5dc101e832ee58af22a.setIcon(icon_9ae7ea0ed82de1c6ddfb390310d8be56);
+        
+    
+            marker_f20e5cc38992a5dc101e832ee58af22a.bindTooltip(
+                `<div>
+                     CARENE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0d5df6beeae07c2c8841021ea703b32d = L.marker(
+                [50.853939000000004, 4.418155],
+                {"name": "PLEIADES"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_e3ce296e62809a92dd3f7ad87f2577b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0d5df6beeae07c2c8841021ea703b32d.setIcon(icon_e3ce296e62809a92dd3f7ad87f2577b7);
+        
+    
+            marker_0d5df6beeae07c2c8841021ea703b32d.bindTooltip(
+                `<div>
+                     PLEIADES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2eb3cc9db32ba3ea8162a957e11e41f8 = L.marker(
+                [50.855197000000004, 4.42104],
+                {"name": "CAPRICORNE"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_542ab6396b834bfbaf7929df6f45b7f1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2eb3cc9db32ba3ea8162a957e11e41f8.setIcon(icon_542ab6396b834bfbaf7929df6f45b7f1);
+        
+    
+            marker_2eb3cc9db32ba3ea8162a957e11e41f8.bindTooltip(
+                `<div>
+                     CAPRICORNE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c5a617c17bb0df596fb8a21e340d43b6 = L.marker(
+                [50.854466, 4.425261],
+                {"name": "ANDROMEDE"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_919cc367a96d604692a20586423611e4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c5a617c17bb0df596fb8a21e340d43b6.setIcon(icon_919cc367a96d604692a20586423611e4);
+        
+    
+            marker_c5a617c17bb0df596fb8a21e340d43b6.bindTooltip(
+                `<div>
+                     ANDROMEDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c68ac7a1ddc8794733cd1334310ec4b4 = L.marker(
+                [50.855571000000005, 4.428553],
+                {"name": "GULLEDELLE"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_b61ab12aa0afb37011273a26910664f5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c68ac7a1ddc8794733cd1334310ec4b4.setIcon(icon_b61ab12aa0afb37011273a26910664f5);
+        
+    
+            marker_c68ac7a1ddc8794733cd1334310ec4b4.bindTooltip(
+                `<div>
+                     GULLEDELLE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_860012fc6829e18c26966036fa713597 = L.marker(
+                [50.85662000000001, 4.432332],
+                {"name": "ARIANE"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_a6120bb47cbd6c6ac4acd018e8c7a8f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_860012fc6829e18c26966036fa713597.setIcon(icon_a6120bb47cbd6c6ac4acd018e8c7a8f7);
+        
+    
+            marker_860012fc6829e18c26966036fa713597.bindTooltip(
+                `<div>
+                     ARIANE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d2fd45fb85b4afde544a61d28373b960 = L.marker(
+                [50.854800000000004, 4.4403109999999995],
+                {"name": "MARCEL THIRY"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_592d99aa9ce11d3abf1eee7685cd38d4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d2fd45fb85b4afde544a61d28373b960.setIcon(icon_592d99aa9ce11d3abf1eee7685cd38d4);
+        
+    
+            marker_d2fd45fb85b4afde544a61d28373b960.bindTooltip(
+                `<div>
+                     MARCEL THIRY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3b5d211f10559eae2752ea1104050fe9 = L.marker(
+                [50.854815, 4.445195999999999],
+                {"name": "THIRY-WOLUWE"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_ec6d96ad8cd80cd4deedc2a0f62f90d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3b5d211f10559eae2752ea1104050fe9.setIcon(icon_ec6d96ad8cd80cd4deedc2a0f62f90d8);
+        
+    
+            marker_3b5d211f10559eae2752ea1104050fe9.bindTooltip(
+                `<div>
+                     THIRY-WOLUWE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6cafa8fb7324e81f2674e67727e51d2e = L.marker(
+                [50.854218, 4.4478539999999995],
+                {"name": "HOF TER MUSSCHEN"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_6badaae77c335cc4a0d188415ea3875b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6cafa8fb7324e81f2674e67727e51d2e.setIcon(icon_6badaae77c335cc4a0d188415ea3875b);
+        
+    
+            marker_6cafa8fb7324e81f2674e67727e51d2e.bindTooltip(
+                `<div>
+                     HOF TER MUSSCHEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a58a21b0e8bb49a1612d945aba281de0 = L.marker(
+                [50.851214000000006, 4.4516659999999995],
+                {"name": "CLINIQUES-UCL"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_b4da02f3c50d2dfc9e04000954789b7c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a58a21b0e8bb49a1612d945aba281de0.setIcon(icon_b4da02f3c50d2dfc9e04000954789b7c);
+        
+    
+            marker_a58a21b0e8bb49a1612d945aba281de0.bindTooltip(
+                `<div>
+                     CLINIQUES-UCL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fa6d3c77dc008ed559cac735485b08cb = L.marker(
+                [50.850673, 4.454192999999999],
+                {"name": "AUDITOIRES-UCL"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_422523964179f509a23419ceb7fc5bfc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fa6d3c77dc008ed559cac735485b08cb.setIcon(icon_422523964179f509a23419ceb7fc5bfc);
+        
+    
+            marker_fa6d3c77dc008ed559cac735485b08cb.bindTooltip(
+                `<div>
+                     AUDITOIRES-UCL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fdd0a24c4b309854f034d0f8aa21ee78 = L.marker(
+                [50.85032, 4.457941],
+                {"name": "MOUNIER"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_892f4039980468f8ac16edc0932ba1a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fdd0a24c4b309854f034d0f8aa21ee78.setIcon(icon_892f4039980468f8ac16edc0932ba1a6);
+        
+    
+            marker_fdd0a24c4b309854f034d0f8aa21ee78.bindTooltip(
+                `<div>
+                     MOUNIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_97cd9980808005451075829d5633c655 = L.marker(
+                [50.849032, 4.4590309999999995],
+                {"name": "KRAAINEM"}
+            ).addTo(feature_group_ad4aa1a8adf87b466d2abf7344578c35);
+        
+    
+            var icon_f7116f94bbbaa0cddc39a2c207bb18ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_97cd9980808005451075829d5633c655.setIcon(icon_f7116f94bbbaa0cddc39a2c207bb18ed);
+        
+    
+            marker_97cd9980808005451075829d5633c655.bindTooltip(
+                `<div>
+                     KRAAINEM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_6df79da75f391795cef96ed88f37a708 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_aa9583c1a4f3c3dab464bdd6c582fc19,
+                },
+                overlays :  {
+                    "79 KRAAINEM - SCHUMAN" : feature_group_c7d5be20ee33d62ac2c839f6fe1cf8da,
+                    "79 KRAAINEM - SCHUMAN SCORES" : feature_group_ad4aa1a8adf87b466d2abf7344578c35,
+                },
+            };
+            L.control.layers(
+                layer_control_6df79da75f391795cef96ed88f37a708.base_layers,
+                layer_control_6df79da75f391795cef96ed88f37a708.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_29ecea051718f917abc7627c47108ef1);
+            feature_group_ad4aa1a8adf87b466d2abf7344578c35.remove();
+        
+</script>
+</html>

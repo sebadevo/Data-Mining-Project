@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_10bcb7fcb2c6d2d5fea4a87e3fcc8562 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_10bcb7fcb2c6d2d5fea4a87e3fcc8562" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_10bcb7fcb2c6d2d5fea4a87e3fcc8562 = L.map(
+                "map_10bcb7fcb2c6d2d5fea4a87e3fcc8562",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_99a40071e7fa4f0ec0be87c8d778bd13 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_10bcb7fcb2c6d2d5fea4a87e3fcc8562);
+        
+    
+            var poly_line_d89202f62061f84f9e49e1e29d1b27ec = L.polyline(
+                [[50.836104, 4.355371], [50.836104, 4.355371], [50.836082, 4.355318], [50.836012, 4.355164], [50.836017, 4.355101], [50.836027, 4.355044], [50.83605, 4.354976], [50.8363, 4.354715], [50.83664, 4.354361], [50.836687, 4.354302], [50.836849, 4.354074], [50.83701, 4.353873], [50.837031, 4.353844], [50.837085, 4.353758], [50.837191, 4.353541], [50.837322, 4.353316], [50.837396, 4.353187], [50.83746, 4.353272], [50.837498, 4.35332], [50.837522, 4.353343], [50.837547, 4.353359], [50.837571, 4.353366], [50.837612, 4.353367], [50.837638, 4.353362], [50.837674, 4.353349], [50.837702, 4.353326], [50.837729, 4.353289], [50.837777, 4.353207], [50.837914, 4.353393], [50.838028, 4.353546], [50.838028, 4.353546], [50.838404, 4.35405], [50.838778, 4.354585], [50.838819, 4.354646], [50.83884, 4.354676], [50.839132, 4.35509], [50.839372, 4.355428], [50.839372, 4.355428], [50.839733, 4.355919], [50.83985, 4.356084], [50.839971, 4.356268], [50.839991, 4.356297], [50.840363, 4.356812], [50.840386, 4.356845], [50.840507, 4.357012], [50.840526, 4.357041], [50.840596, 4.357139], [50.840624, 4.35712], [50.840656, 4.357051], [50.840672, 4.357011], [50.840673, 4.357008], [50.840674, 4.357004], [50.840685, 4.356913], [50.840746, 4.355983], [50.84076, 4.355865], [50.840777, 4.355756], [50.840807, 4.355632], [50.840874, 4.355472], [50.84089, 4.355438], [50.841066, 4.355093], [50.841083, 4.35506], [50.841169, 4.354918], [50.841247, 4.354794], [50.841274, 4.354736], [50.841418, 4.354455], [50.841477, 4.354324], [50.841544, 4.354158], [50.84156, 4.354144], [50.841562, 4.354143], [50.841563, 4.354138], [50.841587, 4.354117], [50.841652, 4.354089], [50.841744, 4.35408], [50.841777, 4.354089], [50.841846, 4.354107], [50.841952, 4.35413], [50.842048, 4.354141], [50.84219, 4.354148], [50.84219, 4.354148], [50.842226, 4.35415], [50.842297, 4.354157], [50.842374, 4.354178], [50.842442, 4.354208], [50.842501, 4.354245], [50.842568, 4.354293], [50.842676, 4.354402], [50.842785, 4.354541], [50.842852, 4.35466], [50.842911, 4.354754], [50.842946, 4.35481], [50.84295, 4.354812], [50.842951, 4.354814], [50.84297, 4.354822], [50.843, 4.354828], [50.843044, 4.354838], [50.84313, 4.354825], [50.843241, 4.354753], [50.843314, 4.354673], [50.843406, 4.354575], [50.843458, 4.35453], [50.843555, 4.354415], [50.843634, 4.354321], [50.843705, 4.35423], [50.843751, 4.354168], [50.843846, 4.354031], [50.843977, 4.35379], [50.844133, 4.353524], [50.84429, 4.353266], [50.844417, 4.353094], [50.844438, 4.353066], [50.844559, 4.352888], [50.844607, 4.352797], [50.844632, 4.35274], [50.84466, 4.352658], [50.844673, 4.352617], [50.844745, 4.352324], [50.844804, 4.352128], [50.844873, 4.351942], [50.844931, 4.35182], [50.844993, 4.351714], [50.844993, 4.351714], [50.844999, 4.351704], [50.845057, 4.351618], [50.845077, 4.35159], [50.845256, 4.351342], [50.84541, 4.351138], [50.845496, 4.351004], [50.845559, 4.350894], [50.845592, 4.350832], [50.845608, 4.350798], [50.845668, 4.350653], [50.8458, 4.350316], [50.845985, 4.349829], [50.846051, 4.349661], [50.846067, 4.349626], [50.846201, 4.349328], [50.846324, 4.349048], [50.846337, 4.34902], [50.846353, 4.348985], [50.84639, 4.348903], [50.846434, 4.348787], [50.846548, 4.348379], [50.846577, 4.34828], [50.846577, 4.34828], [50.84663, 4.348089], [50.84667, 4.347933], [50.846681, 4.347893], [50.846729, 4.347719], [50.846786, 4.347445], [50.846906, 4.346945], [50.846925, 4.346882], [50.846936, 4.346843], [50.846957, 4.346777], [50.846977, 4.346712], [50.84699, 4.346635], [50.847001, 4.346539], [50.847003, 4.346364], [50.84701, 4.345924], [50.847658, 4.34584], [50.847746, 4.345824], [50.847746, 4.345824], [50.847793, 4.345816], [50.84789, 4.3458], [50.847957, 4.345925], [50.847974, 4.345957], [50.848172, 4.346381], [50.848339, 4.346735], [50.848506, 4.347095], [50.848654, 4.347433], [50.848777, 4.347695], [50.848795, 4.347729], [50.848946, 4.348005], [50.848981, 4.348002], [50.849006, 4.347931], [50.849039, 4.34786], [50.849106, 4.347743], [50.849224, 4.347554], [50.849325, 4.347409], [50.849359, 4.347358], [50.849359, 4.347358], [50.849448, 4.347226], [50.849827, 4.346736], [50.849945, 4.346597], [50.849967, 4.346573], [50.85009, 4.346455], [50.850111, 4.346431], [50.850258, 4.346255], [50.850527, 4.345881], [50.850961, 4.345313], [50.85098, 4.345284], [50.851227, 4.344928]],
+                {"bubblingMouseEvents": true, "color": "#F29DC3", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#F29DC3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_10bcb7fcb2c6d2d5fea4a87e3fcc8562);
+        
+    
+            var feature_group_751cc956198418685e4314e20ff16ec0 = L.featureGroup(
+                {}
+            ).addTo(map_10bcb7fcb2c6d2d5fea4a87e3fcc8562);
+        
+    
+            var marker_0f7f3448dd395b46671e7553a1aca6fa = L.marker(
+                [50.83615, 4.355323],
+                {"name": "LOUISE"}
+            ).addTo(feature_group_751cc956198418685e4314e20ff16ec0);
+        
+    
+            var icon_1cb94ef6a3132d7a063b9eff9fcc2dc6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0f7f3448dd395b46671e7553a1aca6fa.setIcon(icon_1cb94ef6a3132d7a063b9eff9fcc2dc6);
+        
+    
+        var popup_428e7bcdcb4755907ed56affe8300706 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_38113dd10fea5c2f31d381fcffd96ebe = $(`<div id="html_38113dd10fea5c2f31d381fcffd96ebe" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LOUISE</h4></center>         <center><h5>Line: 33 DANSAERT - LOUISE</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_428e7bcdcb4755907ed56affe8300706.setContent(html_38113dd10fea5c2f31d381fcffd96ebe);
+            
+        
+
+        marker_0f7f3448dd395b46671e7553a1aca6fa.bindPopup(popup_428e7bcdcb4755907ed56affe8300706)
+        ;
+
+        
+    
+    
+            marker_0f7f3448dd395b46671e7553a1aca6fa.bindTooltip(
+                `<div>
+                     LOUISE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5fe8a9684d6e9976826a8d2b79cf3120 = L.marker(
+                [50.838003, 4.353594],
+                {"name": "POELAERT"}
+            ).addTo(feature_group_751cc956198418685e4314e20ff16ec0);
+        
+    
+            var icon_84ef96978ff536b47517a045af215316 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5fe8a9684d6e9976826a8d2b79cf3120.setIcon(icon_84ef96978ff536b47517a045af215316);
+        
+    
+        var popup_7b5bad42232ce3fcb971877f4b05a95b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6120340b83220e642028ab6ad3d82f00 = $(`<div id="html_6120340b83220e642028ab6ad3d82f00" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: POELAERT</h4></center>         <center><h5>Line: 33 DANSAERT - LOUISE</h5></center>         <center><h6>Score: 77.78</h6></center>         </div>`)[0];
+                popup_7b5bad42232ce3fcb971877f4b05a95b.setContent(html_6120340b83220e642028ab6ad3d82f00);
+            
+        
+
+        marker_5fe8a9684d6e9976826a8d2b79cf3120.bindPopup(popup_7b5bad42232ce3fcb971877f4b05a95b)
+        ;
+
+        
+    
+    
+            marker_5fe8a9684d6e9976826a8d2b79cf3120.bindTooltip(
+                `<div>
+                     POELAERT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_750deee590df1dea066af55ff81fa870 = L.marker(
+                [50.839354, 4.355459],
+                {"name": "PETIT SABLON"}
+            ).addTo(feature_group_751cc956198418685e4314e20ff16ec0);
+        
+    
+            var icon_ce141865b7db55508f17b9f78adb9da4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_750deee590df1dea066af55ff81fa870.setIcon(icon_ce141865b7db55508f17b9f78adb9da4);
+        
+    
+        var popup_c8682a3bad99358a8448efc9f4437e2c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2cf9e670f86d0a15580c101348b674c6 = $(`<div id="html_2cf9e670f86d0a15580c101348b674c6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PETIT SABLON</h4></center>         <center><h5>Line: 33 DANSAERT - LOUISE</h5></center>         <center><h6>Score: 55.56</h6></center>         </div>`)[0];
+                popup_c8682a3bad99358a8448efc9f4437e2c.setContent(html_2cf9e670f86d0a15580c101348b674c6);
+            
+        
+
+        marker_750deee590df1dea066af55ff81fa870.bindPopup(popup_c8682a3bad99358a8448efc9f4437e2c)
+        ;
+
+        
+    
+    
+            marker_750deee590df1dea066af55ff81fa870.bindTooltip(
+                `<div>
+                     PETIT SABLON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2ff70f2acc97d1b3194fded5143ffdc9 = L.marker(
+                [50.842189, 4.354148],
+                {"name": "GRAND SABLON"}
+            ).addTo(feature_group_751cc956198418685e4314e20ff16ec0);
+        
+    
+            var icon_8720effab59eed5872477e70147e5585 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2ff70f2acc97d1b3194fded5143ffdc9.setIcon(icon_8720effab59eed5872477e70147e5585);
+        
+    
+        var popup_95a12b86f50c355fcf3e551354105f11 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_1f8332b2503e9a3651c2b4d2943fd140 = $(`<div id="html_1f8332b2503e9a3651c2b4d2943fd140" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GRAND SABLON</h4></center>         <center><h5>Line: 33 DANSAERT - LOUISE</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_95a12b86f50c355fcf3e551354105f11.setContent(html_1f8332b2503e9a3651c2b4d2943fd140);
+            
+        
+
+        marker_2ff70f2acc97d1b3194fded5143ffdc9.bindPopup(popup_95a12b86f50c355fcf3e551354105f11)
+        ;
+
+        
+    
+    
+            marker_2ff70f2acc97d1b3194fded5143ffdc9.bindTooltip(
+                `<div>
+                     GRAND SABLON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_29c1f85d67b42c90dc29677159d59175 = L.marker(
+                [50.845003, 4.351728],
+                {"name": "GRAND-PLACE"}
+            ).addTo(feature_group_751cc956198418685e4314e20ff16ec0);
+        
+    
+            var icon_c899966fa0a5c2840e81a93852141693 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_29c1f85d67b42c90dc29677159d59175.setIcon(icon_c899966fa0a5c2840e81a93852141693);
+        
+    
+        var popup_5965d317ac79dc12b2dedf91c3a4edf1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_14a602fd0e8f2b01b8c521af18f43b8d = $(`<div id="html_14a602fd0e8f2b01b8c521af18f43b8d" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GRAND-PLACE</h4></center>         <center><h5>Line: 33 DANSAERT - LOUISE</h5></center>         <center><h6>Score: 11.11</h6></center>         </div>`)[0];
+                popup_5965d317ac79dc12b2dedf91c3a4edf1.setContent(html_14a602fd0e8f2b01b8c521af18f43b8d);
+            
+        
+
+        marker_29c1f85d67b42c90dc29677159d59175.bindPopup(popup_5965d317ac79dc12b2dedf91c3a4edf1)
+        ;
+
+        
+    
+    
+            marker_29c1f85d67b42c90dc29677159d59175.bindTooltip(
+                `<div>
+                     GRAND-PLACE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5e8d177b059e097aaf87f01ba6e96b95 = L.marker(
+                [50.846598, 4.348295],
+                {"name": "BOURSE"}
+            ).addTo(feature_group_751cc956198418685e4314e20ff16ec0);
+        
+    
+            var icon_0686b8265895b17b9e0a9217cddb9640 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5e8d177b059e097aaf87f01ba6e96b95.setIcon(icon_0686b8265895b17b9e0a9217cddb9640);
+        
+    
+        var popup_df15b6aac7f6b56bb26b1130f0c90bcf = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_417eccc3290dfd5d4cb23f3187a9c8e6 = $(`<div id="html_417eccc3290dfd5d4cb23f3187a9c8e6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BOURSE</h4></center>         <center><h5>Line: 33 DANSAERT - LOUISE</h5></center>         <center><h6>Score: 11.11</h6></center>         </div>`)[0];
+                popup_df15b6aac7f6b56bb26b1130f0c90bcf.setContent(html_417eccc3290dfd5d4cb23f3187a9c8e6);
+            
+        
+
+        marker_5e8d177b059e097aaf87f01ba6e96b95.bindPopup(popup_df15b6aac7f6b56bb26b1130f0c90bcf)
+        ;
+
+        
+    
+    
+            marker_5e8d177b059e097aaf87f01ba6e96b95.bindTooltip(
+                `<div>
+                     BOURSE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_787a370bb28552aa9019cd91f7b88aea = L.marker(
+                [50.84775, 4.345878],
+                {"name": "SAINT-GERY"}
+            ).addTo(feature_group_751cc956198418685e4314e20ff16ec0);
+        
+    
+            var icon_2ad58173529eb2c1a398849c14a1258d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_787a370bb28552aa9019cd91f7b88aea.setIcon(icon_2ad58173529eb2c1a398849c14a1258d);
+        
+    
+        var popup_d64b323e70b36c07dba725bda2b39e29 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_356cb718072c087fa78a760bd63e48b8 = $(`<div id="html_356cb718072c087fa78a760bd63e48b8" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SAINT-GERY</h4></center>         <center><h5>Line: 33 DANSAERT - LOUISE</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_d64b323e70b36c07dba725bda2b39e29.setContent(html_356cb718072c087fa78a760bd63e48b8);
+            
+        
+
+        marker_787a370bb28552aa9019cd91f7b88aea.bindPopup(popup_d64b323e70b36c07dba725bda2b39e29)
+        ;
+
+        
+    
+    
+            marker_787a370bb28552aa9019cd91f7b88aea.bindTooltip(
+                `<div>
+                     SAINT-GERY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5ead8438b4a0518ee634327788ac2081 = L.marker(
+                [50.849372, 4.347381],
+                {"name": "BOURSE"}
+            ).addTo(feature_group_751cc956198418685e4314e20ff16ec0);
+        
+    
+            var icon_2870dc62f0df15517c78c7816d88e8ea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5ead8438b4a0518ee634327788ac2081.setIcon(icon_2870dc62f0df15517c78c7816d88e8ea);
+        
+    
+        var popup_fb652c78ea5368e9693778012099faa5 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_75dcb4f4a0f181d368c631ad306a04e2 = $(`<div id="html_75dcb4f4a0f181d368c631ad306a04e2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BOURSE</h4></center>         <center><h5>Line: 33 DANSAERT - LOUISE</h5></center>         <center><h6>Score: 55.56</h6></center>         </div>`)[0];
+                popup_fb652c78ea5368e9693778012099faa5.setContent(html_75dcb4f4a0f181d368c631ad306a04e2);
+            
+        
+
+        marker_5ead8438b4a0518ee634327788ac2081.bindPopup(popup_fb652c78ea5368e9693778012099faa5)
+        ;
+
+        
+    
+    
+            marker_5ead8438b4a0518ee634327788ac2081.bindTooltip(
+                `<div>
+                     BOURSE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c4a64908719202f14518ceb1086dd365 = L.marker(
+                [50.851241, 4.344952],
+                {"name": "DANSAERT"}
+            ).addTo(feature_group_751cc956198418685e4314e20ff16ec0);
+        
+    
+            var icon_0f3f2f0d3ce0338f1e3162c9d7650b2d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F29DC3", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c4a64908719202f14518ceb1086dd365.setIcon(icon_0f3f2f0d3ce0338f1e3162c9d7650b2d);
+        
+    
+        var popup_e9ef1452d7549431d5660d8a0fa3fbbe = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_fdd58a2975fe8c1afae1c0cb105bf98a = $(`<div id="html_fdd58a2975fe8c1afae1c0cb105bf98a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DANSAERT</h4></center>         <center><h5>Line: 33 DANSAERT - LOUISE</h5></center>         <center><h6>Score: 77.78</h6></center>         </div>`)[0];
+                popup_e9ef1452d7549431d5660d8a0fa3fbbe.setContent(html_fdd58a2975fe8c1afae1c0cb105bf98a);
+            
+        
+
+        marker_c4a64908719202f14518ceb1086dd365.bindPopup(popup_e9ef1452d7549431d5660d8a0fa3fbbe)
+        ;
+
+        
+    
+    
+            marker_c4a64908719202f14518ceb1086dd365.bindTooltip(
+                `<div>
+                     DANSAERT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_4028c39b95a4bfa09dd88ed008c1deeb = L.featureGroup(
+                {}
+            ).addTo(map_10bcb7fcb2c6d2d5fea4a87e3fcc8562);
+        
+    
+            var marker_28e105d6d673d01aed90416fe1c21b1e = L.marker(
+                [50.83616000000001, 4.355333],
+                {"name": "LOUISE"}
+            ).addTo(feature_group_4028c39b95a4bfa09dd88ed008c1deeb);
+        
+    
+            var icon_b28b225d2f4fac227eb8527a0efe8fce = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_28e105d6d673d01aed90416fe1c21b1e.setIcon(icon_b28b225d2f4fac227eb8527a0efe8fce);
+        
+    
+            marker_28e105d6d673d01aed90416fe1c21b1e.bindTooltip(
+                `<div>
+                     LOUISE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3cfa31a10809329d9d88f34bdecd2cdf = L.marker(
+                [50.838013000000004, 4.353604],
+                {"name": "POELAERT"}
+            ).addTo(feature_group_4028c39b95a4bfa09dd88ed008c1deeb);
+        
+    
+            var icon_da6487b788faecf2edef3c650d9f750f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3cfa31a10809329d9d88f34bdecd2cdf.setIcon(icon_da6487b788faecf2edef3c650d9f750f);
+        
+    
+            marker_3cfa31a10809329d9d88f34bdecd2cdf.bindTooltip(
+                `<div>
+                     POELAERT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_20448bc425804fdf1c985db62ca410ad = L.marker(
+                [50.839364, 4.355468999999999],
+                {"name": "PETIT SABLON"}
+            ).addTo(feature_group_4028c39b95a4bfa09dd88ed008c1deeb);
+        
+    
+            var icon_74efae6e5f1b0f38b5e2e44ce3c30af2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_20448bc425804fdf1c985db62ca410ad.setIcon(icon_74efae6e5f1b0f38b5e2e44ce3c30af2);
+        
+    
+            marker_20448bc425804fdf1c985db62ca410ad.bindTooltip(
+                `<div>
+                     PETIT SABLON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c602248da8c715be8daec44d404431ca = L.marker(
+                [50.842199, 4.354158],
+                {"name": "GRAND SABLON"}
+            ).addTo(feature_group_4028c39b95a4bfa09dd88ed008c1deeb);
+        
+    
+            var icon_f8ee9801b620f80c133871eb9cc5b3f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c602248da8c715be8daec44d404431ca.setIcon(icon_f8ee9801b620f80c133871eb9cc5b3f2);
+        
+    
+            marker_c602248da8c715be8daec44d404431ca.bindTooltip(
+                `<div>
+                     GRAND SABLON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5b4e5ca95a32fd128d500856b1a390c1 = L.marker(
+                [50.845013, 4.351737999999999],
+                {"name": "GRAND-PLACE"}
+            ).addTo(feature_group_4028c39b95a4bfa09dd88ed008c1deeb);
+        
+    
+            var icon_45438c275f93cf39cca0e1722de0bc27 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5b4e5ca95a32fd128d500856b1a390c1.setIcon(icon_45438c275f93cf39cca0e1722de0bc27);
+        
+    
+            marker_5b4e5ca95a32fd128d500856b1a390c1.bindTooltip(
+                `<div>
+                     GRAND-PLACE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5c222d7559a9137a2d442111a5d8dc9c = L.marker(
+                [50.846608, 4.348305],
+                {"name": "BOURSE"}
+            ).addTo(feature_group_4028c39b95a4bfa09dd88ed008c1deeb);
+        
+    
+            var icon_63e42773dd7816cec0c03b5a5ccf390f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5c222d7559a9137a2d442111a5d8dc9c.setIcon(icon_63e42773dd7816cec0c03b5a5ccf390f);
+        
+    
+            marker_5c222d7559a9137a2d442111a5d8dc9c.bindTooltip(
+                `<div>
+                     BOURSE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ec32426c71e56c67421cc76880bc256f = L.marker(
+                [50.84776, 4.3458879999999995],
+                {"name": "SAINT-GERY"}
+            ).addTo(feature_group_4028c39b95a4bfa09dd88ed008c1deeb);
+        
+    
+            var icon_40a173a5f5296e1d874976bc387d8eec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ec32426c71e56c67421cc76880bc256f.setIcon(icon_40a173a5f5296e1d874976bc387d8eec);
+        
+    
+            marker_ec32426c71e56c67421cc76880bc256f.bindTooltip(
+                `<div>
+                     SAINT-GERY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d2b3ed711b5c74ffae1c6255d8e7e4a3 = L.marker(
+                [50.849382000000006, 4.347391],
+                {"name": "BOURSE"}
+            ).addTo(feature_group_4028c39b95a4bfa09dd88ed008c1deeb);
+        
+    
+            var icon_4ecb7c77fcd3e67032f4dd751c17f7b3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d2b3ed711b5c74ffae1c6255d8e7e4a3.setIcon(icon_4ecb7c77fcd3e67032f4dd751c17f7b3);
+        
+    
+            marker_d2b3ed711b5c74ffae1c6255d8e7e4a3.bindTooltip(
+                `<div>
+                     BOURSE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b1cb6ad52d742bde89cd7e6d63e38b02 = L.marker(
+                [50.851251000000005, 4.344962],
+                {"name": "DANSAERT"}
+            ).addTo(feature_group_4028c39b95a4bfa09dd88ed008c1deeb);
+        
+    
+            var icon_ba5c2c873495a5c9e099f35193e05cdb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b1cb6ad52d742bde89cd7e6d63e38b02.setIcon(icon_ba5c2c873495a5c9e099f35193e05cdb);
+        
+    
+            marker_b1cb6ad52d742bde89cd7e6d63e38b02.bindTooltip(
+                `<div>
+                     DANSAERT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_2812708adf585957be7198edd5609671 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_99a40071e7fa4f0ec0be87c8d778bd13,
+                },
+                overlays :  {
+                    "33 DANSAERT - LOUISE" : feature_group_751cc956198418685e4314e20ff16ec0,
+                    "33 DANSAERT - LOUISE SCORES" : feature_group_4028c39b95a4bfa09dd88ed008c1deeb,
+                },
+            };
+            L.control.layers(
+                layer_control_2812708adf585957be7198edd5609671.base_layers,
+                layer_control_2812708adf585957be7198edd5609671.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_10bcb7fcb2c6d2d5fea4a87e3fcc8562);
+            feature_group_4028c39b95a4bfa09dd88ed008c1deeb.remove();
+        
+</script>
+</html>

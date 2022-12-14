@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1cbfa472af9b41f4bc1a9204b62afb70 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1cbfa472af9b41f4bc1a9204b62afb70" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1cbfa472af9b41f4bc1a9204b62afb70 = L.map(
+                "map_1cbfa472af9b41f4bc1a9204b62afb70",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bc3687cb4425858ca3259072e289faea = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1cbfa472af9b41f4bc1a9204b62afb70);
+        
+    
+            var poly_line_6b58198858525023e3409140ffa255db = L.polyline(
+                [[50.849673, 4.352683], [50.849594, 4.352794], [50.849525, 4.35294], [50.84951, 4.352976], [50.849405, 4.353224], [50.849301, 4.353463], [50.849236, 4.353621], [50.849221, 4.353656], [50.849169, 4.35378], [50.849118, 4.353903], [50.849104, 4.35394], [50.849067, 4.35403], [50.848992, 4.354241], [50.848936, 4.354423], [50.848887, 4.354613], [50.848805, 4.354953], [50.848796, 4.354994], [50.848764, 4.355147], [50.848732, 4.355292], [50.848702, 4.355434], [50.848673, 4.355546], [50.848645, 4.355654], [50.848604, 4.355781], [50.848581, 4.35584], [50.84856, 4.355881], [50.848466, 4.356055], [50.848391, 4.356177], [50.848289, 4.356319], [50.848171, 4.356488], [50.848171, 4.356488], [50.848157, 4.356508], [50.848014, 4.356735], [50.847734, 4.357131], [50.847713, 4.357157], [50.847691, 4.357178], [50.847553, 4.357099], [50.847441, 4.357008], [50.847272, 4.35688], [50.84713, 4.356796], [50.846984, 4.356714], [50.846836, 4.356646], [50.846757, 4.356619], [50.84673, 4.35661], [50.846654, 4.356588], [50.846626, 4.356581], [50.846591, 4.356573], [50.846547, 4.356561], [50.846387, 4.356518], [50.846245, 4.356488], [50.845983, 4.356452], [50.845979, 4.356452], [50.845977, 4.356453], [50.845914, 4.3565], [50.845911, 4.356503], [50.845908, 4.356507], [50.845874, 4.356575], [50.845849, 4.356652], [50.845844, 4.35669], [50.845834, 4.356775], [50.845837, 4.356878], [50.84592, 4.357633], [50.845935, 4.357789], [50.845935, 4.357789], [50.845989, 4.358324], [50.845996, 4.358393], [50.845997, 4.358405], [50.845996, 4.3585], [50.845982, 4.358586], [50.845924, 4.358725], [50.845883, 4.358817], [50.845813, 4.358958], [50.845738, 4.35908], [50.845684, 4.359151], [50.845615, 4.359228], [50.845554, 4.359284], [50.845479, 4.359344], [50.845349, 4.359433], [50.845216, 4.35951], [50.845097, 4.35956], [50.845015, 4.35958], [50.844938, 4.359585], [50.844864, 4.359581], [50.844701, 4.359547], [50.844577, 4.359492], [50.84446, 4.359434], [50.844378, 4.359371], [50.844355, 4.35935], [50.8442, 4.359182], [50.844113, 4.359074], [50.844113, 4.359074], [50.8441, 4.359057], [50.843903, 4.358796], [50.843774, 4.358636], [50.843671, 4.358497], [50.843649, 4.35847], [50.843583, 4.358396], [50.84356, 4.358379], [50.843524, 4.358349], [50.843471, 4.358326], [50.843426, 4.358306], [50.843409, 4.358299], [50.843348, 4.358295], [50.843257, 4.358304], [50.843158, 4.358324], [50.843049, 4.35837], [50.843015, 4.358385], [50.842945, 4.358433], [50.842884, 4.35849], [50.84282, 4.358571], [50.842659, 4.358833], [50.842528, 4.359035], [50.842528, 4.359035], [50.842429, 4.359082], [50.842303, 4.359019], [50.842239, 4.358987], [50.842151, 4.358987], [50.842151, 4.358987], [50.842085, 4.359088], [50.842039, 4.359167], [50.842021, 4.359197], [50.842007, 4.359228], [50.842004, 4.359302], [50.842018, 4.359382], [50.842035, 4.359443], [50.842055, 4.359504], [50.842079, 4.359553], [50.842097, 4.359576], [50.842299, 4.359853], [50.842398, 4.359903], [50.842424, 4.359905], [50.842448, 4.359907], [50.842457, 4.359907], [50.842467, 4.359908], [50.842494, 4.359921], [50.842529, 4.359931], [50.842601, 4.359962], [50.842621, 4.359991], [50.842836, 4.360287], [50.842867, 4.360362], [50.84289, 4.360426], [50.842909, 4.360524], [50.842918, 4.360601], [50.84291, 4.360791], [50.842672, 4.361967], [50.842337, 4.363584], [50.8422, 4.364276], [50.842152, 4.364527], [50.84212, 4.364588], [50.842007, 4.364684], [50.841282, 4.364788], [50.84109, 4.364815], [50.841056, 4.364818], [50.840924, 4.364821], [50.840654, 4.364814], [50.840654, 4.364814], [50.840482, 4.364839], [50.840448, 4.364834], [50.840399, 4.364821], [50.840322, 4.364734], [50.839967, 4.364063], [50.839802, 4.363732], [50.839597, 4.363339], [50.839078, 4.362298], [50.839025, 4.362212], [50.838911, 4.361983], [50.838863, 4.361884], [50.838841, 4.361842], [50.838785, 4.3618], [50.838713, 4.361776], [50.838684, 4.361769], [50.838652, 4.361772], [50.838638, 4.361773], [50.838606, 4.361791], [50.838319, 4.361874], [50.838212, 4.361898], [50.838081, 4.361928], [50.838024, 4.361938], [50.837768, 4.361977], [50.837553, 4.362027], [50.837553, 4.362027], [50.837505, 4.36204], [50.837447, 4.36207], [50.837365, 4.362125], [50.837209, 4.362226], [50.836824, 4.362483], [50.836505, 4.36272], [50.836479, 4.362739], [50.836407, 4.362787], [50.836328, 4.362844], [50.836256, 4.3629], [50.836083, 4.363057], [50.835974, 4.363166], [50.835513, 4.363616], [50.83549, 4.36364], [50.835469, 4.363661], [50.835136, 4.363998], [50.835112, 4.364019], [50.835112, 4.364019], [50.834985, 4.364134], [50.834947, 4.364168], [50.834858, 4.364256], [50.834744, 4.364373], [50.834684, 4.364444], [50.83447, 4.364726], [50.834055, 4.365354], [50.833685, 4.365947], [50.833666, 4.365977], [50.833448, 4.366288], [50.833399, 4.366329], [50.83326, 4.366404], [50.833059, 4.366492], [50.833059, 4.366492], [50.833008, 4.366518], [50.832977, 4.366532], [50.832781, 4.366626], [50.832574, 4.366728], [50.832483, 4.366782], [50.832345, 4.366887], [50.832256, 4.366982], [50.83219, 4.36706], [50.832156, 4.367105], [50.832081, 4.367232], [50.832062, 4.36726], [50.831882, 4.36755], [50.831703, 4.367873], [50.831573, 4.368076], [50.831441, 4.368235], [50.83142, 4.368258], [50.831246, 4.368431], [50.830395, 4.369171], [50.829966, 4.369548], [50.829966, 4.369548], [50.829876, 4.369626], [50.829852, 4.369648], [50.829504, 4.36996], [50.829397, 4.370049], [50.829373, 4.370069], [50.828904, 4.370464], [50.82888, 4.370485], [50.827842, 4.371409], [50.827804, 4.371443], [50.827733, 4.371555], [50.827708, 4.371589], [50.827362, 4.371921], [50.827362, 4.371921], [50.827248, 4.372012], [50.827229, 4.372029], [50.827186, 4.372066], [50.827135, 4.372106], [50.827114, 4.37212], [50.826968, 4.372205], [50.826931, 4.372222], [50.826869, 4.372244], [50.826785, 4.372268], [50.826409, 4.372346], [50.826244, 4.372384], [50.826065, 4.372427], [50.825805, 4.372507], [50.825713, 4.372541], [50.825432, 4.372641], [50.825295, 4.372702], [50.82506, 4.372817], [50.824831, 4.372946], [50.824407, 4.373223], [50.82414, 4.373433], [50.82414, 4.373433], [50.824057, 4.373498], [50.823922, 4.373636], [50.823899, 4.37366], [50.823787, 4.373783], [50.823765, 4.37381], [50.823562, 4.374075], [50.823356, 4.374324], [50.82316, 4.374522], [50.823041, 4.374627], [50.822734, 4.374883], [50.822711, 4.374903], [50.822427, 4.37517], [50.822248, 4.375323], [50.821666, 4.375828], [50.820527, 4.376784], [50.820496, 4.376824], [50.820385, 4.37692], [50.82026, 4.377047], [50.82026, 4.377047], [50.820161, 4.377147], [50.819209, 4.378385], [50.81864, 4.379026], [50.818618, 4.37905], [50.818366, 4.379348], [50.818344, 4.379376], [50.818295, 4.379435], [50.818231, 4.379498], [50.81821, 4.379527], [50.818064, 4.379738], [50.817728, 4.380245], [50.817442, 4.380675], [50.817442, 4.380675], [50.817247, 4.380968], [50.816964, 4.381438], [50.816509, 4.382154], [50.816491, 4.382184], [50.81644, 4.382268], [50.816421, 4.382299], [50.816319, 4.382465], [50.815963, 4.383024], [50.815885, 4.383125], [50.815819, 4.383199], [50.815677, 4.383342], [50.815591, 4.383392], [50.81551, 4.383448], [50.815207, 4.383672], [50.814958, 4.383827], [50.814748, 4.38394], [50.814581, 4.38401], [50.814104, 4.384126], [50.814068, 4.384136], [50.814068, 4.384136], [50.813829, 4.384188], [50.813797, 4.384218], [50.813779, 4.384254], [50.813765, 4.384303], [50.813764, 4.384362], [50.813938, 4.384932], [50.814091, 4.385419], [50.814103, 4.385517], [50.814098, 4.385619], [50.814117, 4.385755], [50.814157, 4.385847], [50.814213, 4.385894], [50.814253, 4.385944], [50.814581, 4.386926], [50.814593, 4.386964], [50.814832, 4.387738], [50.814846, 4.38778], [50.814855, 4.38783], [50.814851, 4.387887], [50.814863, 4.387945], [50.814882, 4.387986], [50.814905, 4.388009], [50.814922, 4.388024], [50.814948, 4.388044], [50.815202, 4.38868], [50.815536, 4.389546], [50.815585, 4.389693], [50.815581, 4.389773], [50.81556, 4.389855], [50.815555, 4.389893], [50.815558, 4.389943], [50.81556, 4.389984], [50.815582, 4.390055], [50.815628, 4.390108], [50.815674, 4.390125], [50.815723, 4.390133], [50.81574, 4.39013], [50.815957, 4.390644], [50.815977, 4.390692], [50.815977, 4.390692], [50.816369, 4.391653], [50.816542, 4.392157], [50.817136, 4.393684], [50.817356, 4.394268], [50.817451, 4.394512], [50.817535, 4.394692], [50.817699, 4.395061], [50.81772, 4.395114], [50.817754, 4.39521], [50.817768, 4.39526], [50.817784, 4.395317], [50.817805, 4.395427], [50.817805, 4.395612], [50.817759, 4.39591], [50.817739, 4.396003], [50.81774, 4.396002], [50.817693, 4.396145], [50.817641, 4.396247], [50.817607, 4.396314], [50.81747, 4.396612], [50.817358, 4.396853], [50.817278, 4.397063], [50.817205, 4.397265], [50.817122, 4.397538], [50.817088, 4.397692], [50.817052, 4.397875], [50.81702, 4.398049], [50.81699, 4.398252], [50.816957, 4.398478], [50.81693, 4.398868], [50.81693, 4.399001], [50.81693, 4.399092], [50.81693, 4.399245], [50.81693, 4.399446], [50.816915, 4.399624], [50.816921, 4.399793], [50.81694, 4.399971], [50.817001, 4.400361], [50.817022, 4.400455], [50.817043, 4.400554], [50.817087, 4.400754], [50.817101, 4.400801], [50.817101, 4.400801], [50.817194, 4.401136], [50.817296, 4.401423], [50.817439, 4.401743], [50.817584, 4.402024], [50.817705, 4.402247], [50.817815, 4.402405], [50.818033, 4.402676], [50.818074, 4.40277], [50.818076, 4.402774], [50.818077, 4.402775], [50.818235, 4.402937], [50.81828, 4.402997], [50.818299, 4.403027], [50.818308, 4.403049], [50.818316, 4.403088], [50.818318, 4.403147], [50.818259, 4.403406], [50.81825, 4.403445], [50.818201, 4.40366], [50.818172, 4.403789], [50.818136, 4.403932], [50.817962, 4.404587], [50.817825, 4.404844], [50.817703, 4.405012], [50.817633, 4.405014], [50.81749, 4.40501], [50.817327, 4.405], [50.817096, 4.404996], [50.816942, 4.405028], [50.816745, 4.405075]],
+                {"bubblingMouseEvents": true, "color": "#4C8B33", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#4C8B33", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_1cbfa472af9b41f4bc1a9204b62afb70);
+        
+    
+            var feature_group_7fd8fad702d1f51d7f6b178ec3d534fc = L.featureGroup(
+                {}
+            ).addTo(map_1cbfa472af9b41f4bc1a9204b62afb70);
+        
+    
+            var marker_2d8fe2d47ddd1566ce9b1a3bc7c3121c = L.marker(
+                [50.849654, 4.352651],
+                {"name": "DE BROUCKERE"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_2322beb80c6d6265f8b0cb8e693d15d0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2d8fe2d47ddd1566ce9b1a3bc7c3121c.setIcon(icon_2322beb80c6d6265f8b0cb8e693d15d0);
+        
+    
+        var popup_42527a213f8839087823c300e34a09f6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2f862dad0dd350387b75dae9ebc72264 = $(`<div id="html_2f862dad0dd350387b75dae9ebc72264" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DE BROUCKERE</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_42527a213f8839087823c300e34a09f6.setContent(html_2f862dad0dd350387b75dae9ebc72264);
+            
+        
+
+        marker_2d8fe2d47ddd1566ce9b1a3bc7c3121c.bindPopup(popup_42527a213f8839087823c300e34a09f6)
+        ;
+
+        
+    
+    
+            marker_2d8fe2d47ddd1566ce9b1a3bc7c3121c.bindTooltip(
+                `<div>
+                     DE BROUCKERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2b7a84d0d3b0b8989cfdf81a919b6d44 = L.marker(
+                [50.848168, 4.356484],
+                {"name": "ARENBERG"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_3b07f5ec1e92dc1e502e46b03f984a06 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2b7a84d0d3b0b8989cfdf81a919b6d44.setIcon(icon_3b07f5ec1e92dc1e502e46b03f984a06);
+        
+    
+        var popup_6ca2cc90028785c0a1672f4bff9af15e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a8af0aadd66e384cae1d7305adfbb5ea = $(`<div id="html_a8af0aadd66e384cae1d7305adfbb5ea" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ARENBERG</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 89.47</h6></center>         </div>`)[0];
+                popup_6ca2cc90028785c0a1672f4bff9af15e.setContent(html_a8af0aadd66e384cae1d7305adfbb5ea);
+            
+        
+
+        marker_2b7a84d0d3b0b8989cfdf81a919b6d44.bindPopup(popup_6ca2cc90028785c0a1672f4bff9af15e)
+        ;
+
+        
+    
+    
+            marker_2b7a84d0d3b0b8989cfdf81a919b6d44.bindTooltip(
+                `<div>
+                     ARENBERG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0648711511827018f824d108bd1219ea = L.marker(
+                [50.84593, 4.357791],
+                {"name": "GARE CENTRALE"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_10c3788eb5e93969f08bf45143f28584 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0648711511827018f824d108bd1219ea.setIcon(icon_10c3788eb5e93969f08bf45143f28584);
+        
+    
+        var popup_f2544ecdba2b9e93b5812a83706f26b4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d96656fa15aad3b25d27905a0d3091ef = $(`<div id="html_d96656fa15aad3b25d27905a0d3091ef" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARE CENTRALE</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 78.95</h6></center>         </div>`)[0];
+                popup_f2544ecdba2b9e93b5812a83706f26b4.setContent(html_d96656fa15aad3b25d27905a0d3091ef);
+            
+        
+
+        marker_0648711511827018f824d108bd1219ea.bindPopup(popup_f2544ecdba2b9e93b5812a83706f26b4)
+        ;
+
+        
+    
+    
+            marker_0648711511827018f824d108bd1219ea.bindTooltip(
+                `<div>
+                     GARE CENTRALE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_77204b157fa714be5801340835d4f5c1 = L.marker(
+                [50.844123, 4.359055],
+                {"name": "BOZAR"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_4e8c95edfbd75267297f3d2d63f4a5e9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_77204b157fa714be5801340835d4f5c1.setIcon(icon_4e8c95edfbd75267297f3d2d63f4a5e9);
+        
+    
+        var popup_b56d1ba28c2072c17fbb3a380aca5c92 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0d732f44802dfe75d02a315e44d8179b = $(`<div id="html_0d732f44802dfe75d02a315e44d8179b" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BOZAR</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 68.42</h6></center>         </div>`)[0];
+                popup_b56d1ba28c2072c17fbb3a380aca5c92.setContent(html_0d732f44802dfe75d02a315e44d8179b);
+            
+        
+
+        marker_77204b157fa714be5801340835d4f5c1.bindPopup(popup_b56d1ba28c2072c17fbb3a380aca5c92)
+        ;
+
+        
+    
+    
+            marker_77204b157fa714be5801340835d4f5c1.bindTooltip(
+                `<div>
+                     BOZAR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_98f1675a6cd8f0e4b1b880d07b80db2d = L.marker(
+                [50.842487, 4.35897],
+                {"name": "ROYALE"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_f94c6614eb653a649d97ea1ff9cab159 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_98f1675a6cd8f0e4b1b880d07b80db2d.setIcon(icon_f94c6614eb653a649d97ea1ff9cab159);
+        
+    
+        var popup_5725d96321ff343cf1aa3942ac6591d6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_bafccc88937695aed08071977d1ffdcf = $(`<div id="html_bafccc88937695aed08071977d1ffdcf" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ROYALE</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 57.89</h6></center>         </div>`)[0];
+                popup_5725d96321ff343cf1aa3942ac6591d6.setContent(html_bafccc88937695aed08071977d1ffdcf);
+            
+        
+
+        marker_98f1675a6cd8f0e4b1b880d07b80db2d.bindPopup(popup_5725d96321ff343cf1aa3942ac6591d6)
+        ;
+
+        
+    
+    
+            marker_98f1675a6cd8f0e4b1b880d07b80db2d.bindTooltip(
+                `<div>
+                     ROYALE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3871cc76fc7dc2b0d0cfed22116f2467 = L.marker(
+                [50.840654, 4.364805],
+                {"name": "TRONE"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_ceb12ddcd5235ced33174e286c0195b6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3871cc76fc7dc2b0d0cfed22116f2467.setIcon(icon_ceb12ddcd5235ced33174e286c0195b6);
+        
+    
+        var popup_242713d8da4c940a5ffcdc5525e33695 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_07ab5ba92b59d668762e2480013e8f66 = $(`<div id="html_07ab5ba92b59d668762e2480013e8f66" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TRONE</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 47.37</h6></center>         </div>`)[0];
+                popup_242713d8da4c940a5ffcdc5525e33695.setContent(html_07ab5ba92b59d668762e2480013e8f66);
+            
+        
+
+        marker_3871cc76fc7dc2b0d0cfed22116f2467.bindPopup(popup_242713d8da4c940a5ffcdc5525e33695)
+        ;
+
+        
+    
+    
+            marker_3871cc76fc7dc2b0d0cfed22116f2467.bindTooltip(
+                `<div>
+                     TRONE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2858717299d9815053186a2448c83d47 = L.marker(
+                [50.837543, 4.362009],
+                {"name": "PORTE DE NAMUR"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_f31571e785f88ea20a4086ea237888fb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2858717299d9815053186a2448c83d47.setIcon(icon_f31571e785f88ea20a4086ea237888fb);
+        
+    
+        var popup_c8fe79c3941bbce2879106033e66b2c4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e1d6c75db99ab0d1606fd612ad0bb54e = $(`<div id="html_e1d6c75db99ab0d1606fd612ad0bb54e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PORTE DE NAMUR</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 36.84</h6></center>         </div>`)[0];
+                popup_c8fe79c3941bbce2879106033e66b2c4.setContent(html_e1d6c75db99ab0d1606fd612ad0bb54e);
+            
+        
+
+        marker_2858717299d9815053186a2448c83d47.bindPopup(popup_c8fe79c3941bbce2879106033e66b2c4)
+        ;
+
+        
+    
+    
+            marker_2858717299d9815053186a2448c83d47.bindTooltip(
+                `<div>
+                     PORTE DE NAMUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4b42169b925f2557525d59ae2cbf2c0e = L.marker(
+                [50.835086, 4.363978],
+                {"name": "QUART.ST-BONIFACE"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_6dde2810ecda493f02049cb9bc3ec1ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4b42169b925f2557525d59ae2cbf2c0e.setIcon(icon_6dde2810ecda493f02049cb9bc3ec1ae);
+        
+    
+        var popup_05958a3e8bae6307acae76c0f8d2f0d6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f402eca5c5a67ea4b17bf6173e65b098 = $(`<div id="html_f402eca5c5a67ea4b17bf6173e65b098" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: QUART.ST-BONIFACE</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 26.32</h6></center>         </div>`)[0];
+                popup_05958a3e8bae6307acae76c0f8d2f0d6.setContent(html_f402eca5c5a67ea4b17bf6173e65b098);
+            
+        
+
+        marker_4b42169b925f2557525d59ae2cbf2c0e.bindPopup(popup_05958a3e8bae6307acae76c0f8d2f0d6)
+        ;
+
+        
+    
+    
+            marker_4b42169b925f2557525d59ae2cbf2c0e.bindTooltip(
+                `<div>
+                     QUART.ST-BONIFACE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5512385238f5f37ff9b7e26d0c76203a = L.marker(
+                [50.833057, 4.366481],
+                {"name": "FERNAND COCQ"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_fa36aa49c456522ea2fe8efa5afa11c8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5512385238f5f37ff9b7e26d0c76203a.setIcon(icon_fa36aa49c456522ea2fe8efa5afa11c8);
+        
+    
+        var popup_eee98fb95e18a36cc62bfa92dff88dc0 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_7d0695bc7725136fff1e3e24f51a3a06 = $(`<div id="html_7d0695bc7725136fff1e3e24f51a3a06" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FERNAND COCQ</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 15.79</h6></center>         </div>`)[0];
+                popup_eee98fb95e18a36cc62bfa92dff88dc0.setContent(html_7d0695bc7725136fff1e3e24f51a3a06);
+            
+        
+
+        marker_5512385238f5f37ff9b7e26d0c76203a.bindPopup(popup_eee98fb95e18a36cc62bfa92dff88dc0)
+        ;
+
+        
+    
+    
+            marker_5512385238f5f37ff9b7e26d0c76203a.bindTooltip(
+                `<div>
+                     FERNAND COCQ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a2ba3b1b2d3a8c5f45b513e436e85504 = L.marker(
+                [50.829965, 4.369547],
+                {"name": "MUSEE D\u0027IXELLES"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_acd785583256f8d936b9cdf7f49d7a9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a2ba3b1b2d3a8c5f45b513e436e85504.setIcon(icon_acd785583256f8d936b9cdf7f49d7a9a);
+        
+    
+        var popup_e98f01c8d0d7e49569d1db6f1af98146 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_71587a7cd11b414dda80c11fd15d1440 = $(`<div id="html_71587a7cd11b414dda80c11fd15d1440" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MUSEE D'IXELLES</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 5.26</h6></center>         </div>`)[0];
+                popup_e98f01c8d0d7e49569d1db6f1af98146.setContent(html_71587a7cd11b414dda80c11fd15d1440);
+            
+        
+
+        marker_a2ba3b1b2d3a8c5f45b513e436e85504.bindPopup(popup_e98f01c8d0d7e49569d1db6f1af98146)
+        ;
+
+        
+    
+    
+            marker_a2ba3b1b2d3a8c5f45b513e436e85504.bindTooltip(
+                `<div>
+                     MUSEE D'IXELLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_19be5f1af4ef500e2619f71b389ac24b = L.marker(
+                [50.827349, 4.371889],
+                {"name": "FLAGEY"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_75b8a9ac0c5f956d1dc7ede01c839ad6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_19be5f1af4ef500e2619f71b389ac24b.setIcon(icon_75b8a9ac0c5f956d1dc7ede01c839ad6);
+        
+    
+        var popup_108c9ed5241dcde6b718a10cbf5f625e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3ec1326ea2977b7a54190a436455c088 = $(`<div id="html_3ec1326ea2977b7a54190a436455c088" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FLAGEY</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 5.26</h6></center>         </div>`)[0];
+                popup_108c9ed5241dcde6b718a10cbf5f625e.setContent(html_3ec1326ea2977b7a54190a436455c088);
+            
+        
+
+        marker_19be5f1af4ef500e2619f71b389ac24b.bindPopup(popup_108c9ed5241dcde6b718a10cbf5f625e)
+        ;
+
+        
+    
+    
+            marker_19be5f1af4ef500e2619f71b389ac24b.bindTooltip(
+                `<div>
+                     FLAGEY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f6f37f02ca4bcb19c28a7b3f9ba69873 = L.marker(
+                [50.82414, 4.373435],
+                {"name": "ETANGS D\u0027IXELLES"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_66af26f9575c80ddab2db9739d867e9d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f6f37f02ca4bcb19c28a7b3f9ba69873.setIcon(icon_66af26f9575c80ddab2db9739d867e9d);
+        
+    
+        var popup_7f6a282662c1e56e2b850dbbcd2facf4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f4097d68836ba57511621f2359a61b30 = $(`<div id="html_f4097d68836ba57511621f2359a61b30" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ETANGS D'IXELLES</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 15.79</h6></center>         </div>`)[0];
+                popup_7f6a282662c1e56e2b850dbbcd2facf4.setContent(html_f4097d68836ba57511621f2359a61b30);
+            
+        
+
+        marker_f6f37f02ca4bcb19c28a7b3f9ba69873.bindPopup(popup_7f6a282662c1e56e2b850dbbcd2facf4)
+        ;
+
+        
+    
+    
+            marker_f6f37f02ca4bcb19c28a7b3f9ba69873.bindTooltip(
+                `<div>
+                     ETANGS D'IXELLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ebcb55f2b0d0654372af791ff4d14296 = L.marker(
+                [50.820259, 4.377041],
+                {"name": "GEO BERNIER"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_d7ffdf1ef79ec4eda951397a60a8e937 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ebcb55f2b0d0654372af791ff4d14296.setIcon(icon_d7ffdf1ef79ec4eda951397a60a8e937);
+        
+    
+        var popup_10f42e048050a600530d9a23873ac243 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_b2090f8a4ac316603f1a9cb9120c171e = $(`<div id="html_b2090f8a4ac316603f1a9cb9120c171e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GEO BERNIER</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 26.32</h6></center>         </div>`)[0];
+                popup_10f42e048050a600530d9a23873ac243.setContent(html_b2090f8a4ac316603f1a9cb9120c171e);
+            
+        
+
+        marker_ebcb55f2b0d0654372af791ff4d14296.bindPopup(popup_10f42e048050a600530d9a23873ac243)
+        ;
+
+        
+    
+    
+            marker_ebcb55f2b0d0654372af791ff4d14296.bindTooltip(
+                `<div>
+                     GEO BERNIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_886becbb0f76cdb4cfab786f94dd0e7e = L.marker(
+                [50.817442, 4.380672],
+                {"name": "BUYL"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_55d90be5c642ee289a195aa926f68ea5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_886becbb0f76cdb4cfab786f94dd0e7e.setIcon(icon_55d90be5c642ee289a195aa926f68ea5);
+        
+    
+        var popup_d02b255f29cad0c8811898d1a5b90530 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_5a528c7c7daa41e7b9a86bfda4ebe783 = $(`<div id="html_5a528c7c7daa41e7b9a86bfda4ebe783" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BUYL</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 36.84</h6></center>         </div>`)[0];
+                popup_d02b255f29cad0c8811898d1a5b90530.setContent(html_5a528c7c7daa41e7b9a86bfda4ebe783);
+            
+        
+
+        marker_886becbb0f76cdb4cfab786f94dd0e7e.bindPopup(popup_d02b255f29cad0c8811898d1a5b90530)
+        ;
+
+        
+    
+    
+            marker_886becbb0f76cdb4cfab786f94dd0e7e.bindTooltip(
+                `<div>
+                     BUYL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7d03916bc8f4512e198625b443f6c27f = L.marker(
+                [50.814061, 4.384119],
+                {"name": "ULB"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_8d07bcef7841077344edbfc9b46ce010 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7d03916bc8f4512e198625b443f6c27f.setIcon(icon_8d07bcef7841077344edbfc9b46ce010);
+        
+    
+        var popup_313050202bae654a35b78db574759d6b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a72839c23351b472d069e3b003cc7a24 = $(`<div id="html_a72839c23351b472d069e3b003cc7a24" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ULB</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 47.37</h6></center>         </div>`)[0];
+                popup_313050202bae654a35b78db574759d6b.setContent(html_a72839c23351b472d069e3b003cc7a24);
+            
+        
+
+        marker_7d03916bc8f4512e198625b443f6c27f.bindPopup(popup_313050202bae654a35b78db574759d6b)
+        ;
+
+        
+    
+    
+            marker_7d03916bc8f4512e198625b443f6c27f.bindTooltip(
+                `<div>
+                     ULB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a836eb250f97595d93d173a79d3bb25d = L.marker(
+                [50.815966, 4.390704],
+                {"name": "CIM. D\u0027IXELLES"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_4eebead1f4a2a56ce1ae911b8345ead1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a836eb250f97595d93d173a79d3bb25d.setIcon(icon_4eebead1f4a2a56ce1ae911b8345ead1);
+        
+    
+        var popup_58b1b274c79e25ebf89ae9b1c12fd937 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_167ff0db8afc2cd8ec09b42e1aa7ef81 = $(`<div id="html_167ff0db8afc2cd8ec09b42e1aa7ef81" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CIM. D'IXELLES</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 57.89</h6></center>         </div>`)[0];
+                popup_58b1b274c79e25ebf89ae9b1c12fd937.setContent(html_167ff0db8afc2cd8ec09b42e1aa7ef81);
+            
+        
+
+        marker_a836eb250f97595d93d173a79d3bb25d.bindPopup(popup_58b1b274c79e25ebf89ae9b1c12fd937)
+        ;
+
+        
+    
+    
+            marker_a836eb250f97595d93d173a79d3bb25d.bindTooltip(
+                `<div>
+                     CIM. D'IXELLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5fb0f08aee2e1743c6b4b7faa82cf7a1 = L.marker(
+                [50.817709, 4.395984],
+                {"name": "FRAITEUR"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_0e2c2937d6ccc36d2a75e1ffbf4224d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5fb0f08aee2e1743c6b4b7faa82cf7a1.setIcon(icon_0e2c2937d6ccc36d2a75e1ffbf4224d8);
+        
+    
+        var popup_280568ddc03ef3ef1a92e3aac2018aa0 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d7bc0eacd640262ee6b9d7910fe2a3e5 = $(`<div id="html_d7bc0eacd640262ee6b9d7910fe2a3e5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FRAITEUR</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 68.42</h6></center>         </div>`)[0];
+                popup_280568ddc03ef3ef1a92e3aac2018aa0.setContent(html_d7bc0eacd640262ee6b9d7910fe2a3e5);
+            
+        
+
+        marker_5fb0f08aee2e1743c6b4b7faa82cf7a1.bindPopup(popup_280568ddc03ef3ef1a92e3aac2018aa0)
+        ;
+
+        
+    
+    
+            marker_5fb0f08aee2e1743c6b4b7faa82cf7a1.bindTooltip(
+                `<div>
+                     FRAITEUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c4ec547ef085cd6c0c6c831c9593f3aa = L.marker(
+                [50.817082, 4.400814],
+                {"name": "CHIREC"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_684b6c1348f4c622e6e342e060dedcee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c4ec547ef085cd6c0c6c831c9593f3aa.setIcon(icon_684b6c1348f4c622e6e342e060dedcee);
+        
+    
+        var popup_d441302ac5485abe8a3b780b036fb473 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e1e15f6d58f0d48996ed86f832446473 = $(`<div id="html_e1e15f6d58f0d48996ed86f832446473" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CHIREC</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 78.95</h6></center>         </div>`)[0];
+                popup_d441302ac5485abe8a3b780b036fb473.setContent(html_e1e15f6d58f0d48996ed86f832446473);
+            
+        
+
+        marker_c4ec547ef085cd6c0c6c831c9593f3aa.bindPopup(popup_d441302ac5485abe8a3b780b036fb473)
+        ;
+
+        
+    
+    
+            marker_c4ec547ef085cd6c0c6c831c9593f3aa.bindTooltip(
+                `<div>
+                     CHIREC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c2193961999d0279971f35b4a5e3d3c6 = L.marker(
+                [50.816744, 4.405058],
+                {"name": "DELTA"}
+            ).addTo(feature_group_7fd8fad702d1f51d7f6b178ec3d534fc);
+        
+    
+            var icon_5d92882d4fe8a1443c370e2af9fbc8b9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#4C8B33", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c2193961999d0279971f35b4a5e3d3c6.setIcon(icon_5d92882d4fe8a1443c370e2af9fbc8b9);
+        
+    
+        var popup_c6a327a643216749649b9618ff01fd30 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_279800d281a6b7023d494f09d54e472c = $(`<div id="html_279800d281a6b7023d494f09d54e472c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DELTA</h4></center>         <center><h5>Line: 71 DE BROUCKERE - DELTA</h5></center>         <center><h6>Score: 89.47</h6></center>         </div>`)[0];
+                popup_c6a327a643216749649b9618ff01fd30.setContent(html_279800d281a6b7023d494f09d54e472c);
+            
+        
+
+        marker_c2193961999d0279971f35b4a5e3d3c6.bindPopup(popup_c6a327a643216749649b9618ff01fd30)
+        ;
+
+        
+    
+    
+            marker_c2193961999d0279971f35b4a5e3d3c6.bindTooltip(
+                `<div>
+                     DELTA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_e6d23d1633f7eadc5a7f25cfe7227572 = L.featureGroup(
+                {}
+            ).addTo(map_1cbfa472af9b41f4bc1a9204b62afb70);
+        
+    
+            var marker_3cf79d96b4933a0fb368e3849536fb3a = L.marker(
+                [50.849664000000004, 4.3526609999999994],
+                {"name": "DE BROUCKERE"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_827f0d5d4fbe63c4698e057b83bf5cd7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3cf79d96b4933a0fb368e3849536fb3a.setIcon(icon_827f0d5d4fbe63c4698e057b83bf5cd7);
+        
+    
+            marker_3cf79d96b4933a0fb368e3849536fb3a.bindTooltip(
+                `<div>
+                     DE BROUCKERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ff9e7a4ebd7c3387f8bf175e28140e3c = L.marker(
+                [50.848178000000004, 4.356494],
+                {"name": "ARENBERG"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_f292c37c3797b1fa42a591291ce0e611 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ff9e7a4ebd7c3387f8bf175e28140e3c.setIcon(icon_f292c37c3797b1fa42a591291ce0e611);
+        
+    
+            marker_ff9e7a4ebd7c3387f8bf175e28140e3c.bindTooltip(
+                `<div>
+                     ARENBERG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d9b1656131c821dcd6b1af11ad5f657a = L.marker(
+                [50.845940000000006, 4.357800999999999],
+                {"name": "GARE CENTRALE"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_3fa22b2513667bbc6ce4aa820aeba849 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d9b1656131c821dcd6b1af11ad5f657a.setIcon(icon_3fa22b2513667bbc6ce4aa820aeba849);
+        
+    
+            marker_d9b1656131c821dcd6b1af11ad5f657a.bindTooltip(
+                `<div>
+                     GARE CENTRALE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5dd3485a057b7a367a0d6e00e417e4d6 = L.marker(
+                [50.84413300000001, 4.359064999999999],
+                {"name": "BOZAR"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_37167542f0a44e7385657c06273c7f87 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5dd3485a057b7a367a0d6e00e417e4d6.setIcon(icon_37167542f0a44e7385657c06273c7f87);
+        
+    
+            marker_5dd3485a057b7a367a0d6e00e417e4d6.bindTooltip(
+                `<div>
+                     BOZAR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a45e71c2e1c96841e014f2fd7479185d = L.marker(
+                [50.842497, 4.35898],
+                {"name": "ROYALE"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_231563b0c4e1c31d41ec0792d38f9036 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a45e71c2e1c96841e014f2fd7479185d.setIcon(icon_231563b0c4e1c31d41ec0792d38f9036);
+        
+    
+            marker_a45e71c2e1c96841e014f2fd7479185d.bindTooltip(
+                `<div>
+                     ROYALE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b14eb93a3d8ae91c0bbae93ab2e24300 = L.marker(
+                [50.840664000000004, 4.364814999999999],
+                {"name": "TRONE"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_7e7bc87134835c25cec916b8e9ca7b3b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b14eb93a3d8ae91c0bbae93ab2e24300.setIcon(icon_7e7bc87134835c25cec916b8e9ca7b3b);
+        
+    
+            marker_b14eb93a3d8ae91c0bbae93ab2e24300.bindTooltip(
+                `<div>
+                     TRONE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9397a9e17db44bf6c409b276d854dfad = L.marker(
+                [50.837553, 4.362018999999999],
+                {"name": "PORTE DE NAMUR"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_e244e46cf3891ef29d29c8800141a4cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9397a9e17db44bf6c409b276d854dfad.setIcon(icon_e244e46cf3891ef29d29c8800141a4cb);
+        
+    
+            marker_9397a9e17db44bf6c409b276d854dfad.bindTooltip(
+                `<div>
+                     PORTE DE NAMUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52af2588083346625deae7278e2d9ee6 = L.marker(
+                [50.835096, 4.363988],
+                {"name": "QUART.ST-BONIFACE"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_90671f5412cddc73e2254d75f41022d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_52af2588083346625deae7278e2d9ee6.setIcon(icon_90671f5412cddc73e2254d75f41022d8);
+        
+    
+            marker_52af2588083346625deae7278e2d9ee6.bindTooltip(
+                `<div>
+                     QUART.ST-BONIFACE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_046e43c80694eb8e4d3577524acb803f = L.marker(
+                [50.833067, 4.366491],
+                {"name": "FERNAND COCQ"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_10839f95fdbc241a2080f49bdf00ee64 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_046e43c80694eb8e4d3577524acb803f.setIcon(icon_10839f95fdbc241a2080f49bdf00ee64);
+        
+    
+            marker_046e43c80694eb8e4d3577524acb803f.bindTooltip(
+                `<div>
+                     FERNAND COCQ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3b8ddc5a0f9e7afb0c20f10a8fec58b3 = L.marker(
+                [50.829975000000005, 4.3695569999999995],
+                {"name": "MUSEE D\u0027IXELLES"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_ff630bb2e8e43bfff40231d09395ccbe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3b8ddc5a0f9e7afb0c20f10a8fec58b3.setIcon(icon_ff630bb2e8e43bfff40231d09395ccbe);
+        
+    
+            marker_3b8ddc5a0f9e7afb0c20f10a8fec58b3.bindTooltip(
+                `<div>
+                     MUSEE D'IXELLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ac39fd6afdf5733bc394e2fc9270574a = L.marker(
+                [50.827359, 4.371899],
+                {"name": "FLAGEY"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_229e1826b7f8ca5d678a3827527aab85 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ac39fd6afdf5733bc394e2fc9270574a.setIcon(icon_229e1826b7f8ca5d678a3827527aab85);
+        
+    
+            marker_ac39fd6afdf5733bc394e2fc9270574a.bindTooltip(
+                `<div>
+                     FLAGEY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c855ec5a41da653263209d67510fb657 = L.marker(
+                [50.82415, 4.373444999999999],
+                {"name": "ETANGS D\u0027IXELLES"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_511f8ceb483f6ac49e2a109e4d68540d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c855ec5a41da653263209d67510fb657.setIcon(icon_511f8ceb483f6ac49e2a109e4d68540d);
+        
+    
+            marker_c855ec5a41da653263209d67510fb657.bindTooltip(
+                `<div>
+                     ETANGS D'IXELLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5409c93250beb47542d71441d3f8ae43 = L.marker(
+                [50.820269, 4.377051],
+                {"name": "GEO BERNIER"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_82a62b34c1301d77ebec7746716b3eec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5409c93250beb47542d71441d3f8ae43.setIcon(icon_82a62b34c1301d77ebec7746716b3eec);
+        
+    
+            marker_5409c93250beb47542d71441d3f8ae43.bindTooltip(
+                `<div>
+                     GEO BERNIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52f3685fd3a682c5448220e2dbf214f0 = L.marker(
+                [50.817452, 4.380681999999999],
+                {"name": "BUYL"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_7018fd926a46191c9f86af11376e8368 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_52f3685fd3a682c5448220e2dbf214f0.setIcon(icon_7018fd926a46191c9f86af11376e8368);
+        
+    
+            marker_52f3685fd3a682c5448220e2dbf214f0.bindTooltip(
+                `<div>
+                     BUYL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a4a80c9a850b95f60deef4b8d40cfa59 = L.marker(
+                [50.814071000000006, 4.384129],
+                {"name": "ULB"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_1a8f7bedc589cc56c6509430e452069a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a4a80c9a850b95f60deef4b8d40cfa59.setIcon(icon_1a8f7bedc589cc56c6509430e452069a);
+        
+    
+            marker_a4a80c9a850b95f60deef4b8d40cfa59.bindTooltip(
+                `<div>
+                     ULB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d00bf3f549b7c2fb38230eb09239a84a = L.marker(
+                [50.815976000000006, 4.390714],
+                {"name": "CIM. D\u0027IXELLES"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_9177f35165f84cd7f94a84bff30422bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d00bf3f549b7c2fb38230eb09239a84a.setIcon(icon_9177f35165f84cd7f94a84bff30422bf);
+        
+    
+            marker_d00bf3f549b7c2fb38230eb09239a84a.bindTooltip(
+                `<div>
+                     CIM. D'IXELLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a244ca1e04060bfcdb1815cebf436287 = L.marker(
+                [50.817719000000004, 4.395994],
+                {"name": "FRAITEUR"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_1fe19d377f0dba0f6ffbd4820c05394a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a244ca1e04060bfcdb1815cebf436287.setIcon(icon_1fe19d377f0dba0f6ffbd4820c05394a);
+        
+    
+            marker_a244ca1e04060bfcdb1815cebf436287.bindTooltip(
+                `<div>
+                     FRAITEUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bc09a76b43e1ddbdb71e07984ddd8ecc = L.marker(
+                [50.817092, 4.400823999999999],
+                {"name": "CHIREC"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_8149bfdaaad62793b64afbd761ad8803 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_bc09a76b43e1ddbdb71e07984ddd8ecc.setIcon(icon_8149bfdaaad62793b64afbd761ad8803);
+        
+    
+            marker_bc09a76b43e1ddbdb71e07984ddd8ecc.bindTooltip(
+                `<div>
+                     CHIREC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2e8f1a7dcd493a5ea16cc1b55bf4c206 = L.marker(
+                [50.816754, 4.405068],
+                {"name": "DELTA"}
+            ).addTo(feature_group_e6d23d1633f7eadc5a7f25cfe7227572);
+        
+    
+            var icon_bfb545eb7739bd3daf0267b26b7aa4b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2e8f1a7dcd493a5ea16cc1b55bf4c206.setIcon(icon_bfb545eb7739bd3daf0267b26b7aa4b0);
+        
+    
+            marker_2e8f1a7dcd493a5ea16cc1b55bf4c206.bindTooltip(
+                `<div>
+                     DELTA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_0c3e186ef7c56ccee61ad3a5ad315318 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_bc3687cb4425858ca3259072e289faea,
+                },
+                overlays :  {
+                    "71 DE BROUCKERE - DELTA" : feature_group_7fd8fad702d1f51d7f6b178ec3d534fc,
+                    "71 DE BROUCKERE - DELTA SCORES" : feature_group_e6d23d1633f7eadc5a7f25cfe7227572,
+                },
+            };
+            L.control.layers(
+                layer_control_0c3e186ef7c56ccee61ad3a5ad315318.base_layers,
+                layer_control_0c3e186ef7c56ccee61ad3a5ad315318.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_1cbfa472af9b41f4bc1a9204b62afb70);
+            feature_group_e6d23d1633f7eadc5a7f25cfe7227572.remove();
+        
+</script>
+</html>

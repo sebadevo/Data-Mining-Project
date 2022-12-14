@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_84605072b6afc5e185e21fd27b952389 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_84605072b6afc5e185e21fd27b952389" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_84605072b6afc5e185e21fd27b952389 = L.map(
+                "map_84605072b6afc5e185e21fd27b952389",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_db5b8a313ba5184718cdea84ed828fc0 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_84605072b6afc5e185e21fd27b952389);
+        
+    
+            var poly_line_5032335d8307a2c2f0d264ea5a966825 = L.polyline(
+                [[50.89646, 4.327959], [50.896661, 4.328982], [50.896725, 4.329288], [50.896774, 4.329505], [50.896821, 4.329706], [50.897006, 4.330473], [50.897091, 4.330827], [50.897472, 4.332405], [50.897515, 4.332584], [50.897558, 4.332787], [50.897586, 4.332945], [50.897603, 4.333061], [50.897614, 4.333152], [50.897624, 4.333266], [50.897633, 4.333401], [50.897636, 4.333529], [50.897635, 4.333692], [50.897629, 4.333829], [50.89762, 4.333941], [50.897608, 4.334061], [50.897591, 4.334187], [50.897566, 4.334324], [50.897542, 4.334439], [50.897528, 4.3345], [50.897495, 4.334622], [50.897479, 4.33468], [50.897468, 4.334719], [50.897427, 4.334847], [50.897357, 4.335054], [50.897198, 4.335515], [50.897198, 4.335515], [50.896718, 4.336898], [50.896647, 4.337096], [50.896595, 4.33723], [50.896545, 4.337356], [50.896498, 4.33747], [50.89644, 4.337606], [50.896352, 4.337804], [50.89633, 4.337851], [50.896235, 4.338057], [50.896233, 4.338059], [50.896102, 4.338339], [50.896015, 4.338521], [50.895958, 4.338629], [50.895903, 4.338724], [50.895842, 4.338819], [50.89578, 4.338909], [50.895714, 4.338994], [50.895637, 4.339084], [50.8956, 4.339124], [50.895538, 4.339183], [50.895467, 4.339246], [50.895399, 4.3393], [50.895354, 4.339333], [50.895311, 4.33936], [50.895253, 4.339395], [50.895176, 4.339435], [50.895115, 4.339462], [50.895031, 4.339494], [50.894964, 4.339513], [50.894871, 4.339533], [50.89479, 4.339543], [50.894718, 4.339548], [50.894623, 4.339546], [50.894546, 4.339538], [50.894474, 4.339525], [50.894381, 4.339501], [50.894319, 4.33948], [50.89425, 4.339453], [50.894185, 4.339422], [50.894108, 4.339379], [50.894037, 4.339334], [50.893967, 4.339284], [50.893903, 4.339231], [50.893839, 4.339173], [50.893781, 4.339116], [50.893703, 4.339032], [50.893692, 4.33902], [50.893681, 4.339008], [50.89287, 4.338061], [50.892771, 4.337947], [50.892662, 4.337822], [50.892559, 4.337708], [50.892548, 4.337697], [50.892481, 4.337625], [50.892469, 4.337613], [50.892377, 4.337515], [50.892358, 4.337497], [50.892298, 4.337434], [50.892286, 4.337423], [50.89221, 4.337346], [50.892058, 4.337194], [50.891974, 4.337113], [50.891879, 4.337031], [50.891822, 4.336987], [50.891719, 4.336914], [50.891639, 4.336868], [50.891566, 4.336831], [50.891483, 4.336795], [50.891412, 4.33677], [50.891341, 4.336748], [50.891279, 4.336734], [50.89118, 4.336719], [50.891086, 4.336712], [50.890972, 4.336713], [50.890883, 4.336723], [50.890798, 4.336739], [50.890717, 4.33676], [50.890664, 4.336777], [50.890612, 4.336796], [50.890555, 4.33682], [50.89046, 4.336867], [50.890388, 4.33691], [50.890281, 4.336982], [50.8902, 4.337046], [50.890114, 4.337124], [50.890037, 4.337203], [50.889963, 4.337285], [50.889873, 4.337392], [50.88982, 4.337457], [50.88981, 4.337471], [50.8896, 4.337736], [50.8896, 4.337736], [50.889028, 4.338455], [50.888935, 4.338565], [50.888837, 4.338664], [50.88875, 4.338747], [50.888649, 4.338845], [50.888596, 4.338901], [50.888516, 4.33899], [50.888485, 4.339029], [50.888088, 4.339526], [50.887788, 4.339906], [50.887673, 4.340051], [50.887532, 4.34023], [50.887431, 4.340358], [50.887421, 4.340372], [50.887315, 4.340507], [50.887217, 4.340631], [50.887207, 4.340645], [50.887185, 4.340672], [50.887112, 4.340765], [50.886975, 4.340939], [50.886888, 4.34105], [50.886878, 4.341065], [50.886801, 4.341167], [50.886735, 4.341255], [50.886725, 4.341269], [50.886631, 4.341402], [50.886562, 4.341502], [50.886479, 4.341623], [50.886448, 4.341669], [50.886393, 4.341751], [50.886272, 4.341925], [50.886184, 4.342046], [50.886073, 4.342193], [50.885968, 4.342327], [50.88564, 4.342738], [50.88564, 4.342738], [50.885186, 4.343311], [50.8851, 4.343415], [50.885043, 4.34348], [50.885031, 4.343491], [50.884965, 4.343564], [50.884953, 4.343575], [50.88487, 4.343661], [50.884859, 4.343672], [50.884768, 4.343764], [50.884719, 4.343816], [50.884708, 4.343827], [50.884648, 4.343891], [50.884604, 4.343939], [50.884593, 4.343952], [50.884582, 4.343964], [50.884416, 4.34416], [50.884303, 4.344302], [50.883721, 4.345035], [50.883718, 4.345037], [50.882374, 4.346727], [50.882339, 4.346771], [50.882217, 4.346919], [50.882133, 4.347014], [50.882047, 4.347104], [50.881978, 4.347171], [50.881924, 4.34722], [50.881849, 4.347284], [50.881776, 4.347341], [50.881636, 4.347439], [50.881543, 4.347495], [50.881441, 4.347549], [50.881341, 4.347594], [50.881275, 4.34762], [50.881169, 4.347657], [50.88107, 4.347684], [50.880936, 4.347712], [50.880757, 4.347742], [50.880067, 4.347851], [50.879152, 4.347993], [50.879152, 4.347993], [50.878498, 4.348094], [50.878391, 4.348107], [50.878319, 4.348111], [50.878224, 4.348111], [50.878144, 4.348103], [50.87805, 4.348083], [50.877979, 4.348062], [50.877957, 4.348053], [50.877896, 4.348028], [50.877823, 4.347991], [50.877734, 4.347936], [50.877697, 4.34791], [50.877617, 4.347845], [50.877547, 4.347779], [50.877504, 4.347732], [50.877492, 4.347721], [50.877381, 4.347588], [50.877291, 4.34747], [50.877281, 4.347455], [50.876792, 4.346801], [50.876719, 4.346705], [50.876709, 4.346691], [50.876632, 4.346593], [50.876622, 4.346579], [50.876516, 4.346447], [50.876495, 4.34642], [50.876338, 4.34623], [50.876165, 4.346027], [50.876044, 4.345889], [50.875933, 4.345767], [50.875849, 4.345674], [50.875837, 4.345663], [50.875727, 4.345547], [50.875469, 4.345277], [50.875342, 4.345142], [50.875255, 4.345047], [50.874778, 4.344521], [50.874649, 4.344376], [50.874639, 4.344364], [50.874627, 4.344352], [50.874381, 4.344064], [50.873614, 4.343137], [50.873614, 4.343137], [50.868474, 4.336964], [50.868474, 4.336964], [50.86312, 4.330479], [50.86312, 4.330479], [50.862474, 4.329697], [50.862228, 4.329407], [50.862148, 4.329315], [50.861192, 4.328222], [50.861085, 4.328099], [50.861019, 4.328025], [50.860941, 4.327941], [50.86093, 4.32793], [50.860853, 4.327852], [50.860744, 4.327751], [50.860626, 4.327649], [50.86055, 4.327586], [50.859996, 4.327134], [50.859787, 4.326964], [50.859634, 4.326843], [50.859539, 4.326772], [50.85939, 4.326668], [50.859237, 4.326573], [50.859073, 4.326478], [50.85685, 4.325245], [50.85685, 4.325245], [50.856716, 4.325171], [50.85664, 4.325127], [50.856472, 4.325026], [50.85623, 4.324873], [50.856147, 4.324819], [50.855908, 4.324653], [50.85585, 4.324614], [50.855822, 4.324592], [50.855765, 4.324551], [50.855741, 4.324533], [50.85563, 4.324452], [50.855606, 4.324434], [50.855499, 4.324358], [50.855475, 4.32434], [50.855347, 4.324253], [50.855214, 4.324164], [50.855027, 4.324045], [50.854884, 4.323958], [50.854702, 4.323854], [50.854579, 4.323785], [50.853636, 4.323272], [50.853349, 4.323116], [50.853349, 4.323116], [50.852774, 4.322804], [50.851382, 4.322046], [50.851223, 4.321965], [50.851106, 4.321911], [50.850999, 4.321869], [50.85088, 4.321829], [50.850782, 4.321804], [50.850697, 4.321787], [50.850603, 4.321773], [50.8505, 4.321763], [50.85041, 4.32176], [50.850296, 4.321762], [50.850161, 4.321773], [50.849933, 4.321802], [50.849857, 4.321808], [50.849748, 4.321808], [50.849663, 4.321796], [50.849591, 4.321779], [50.849531, 4.321761], [50.849448, 4.321727], [50.849353, 4.32168], [50.849203, 4.321598], [50.848922, 4.321442], [50.848922, 4.321442], [50.848636, 4.321285], [50.84858, 4.321255], [50.848519, 4.32123], [50.848476, 4.321213], [50.848405, 4.321188], [50.848255, 4.321142], [50.84817, 4.321122], [50.848094, 4.321111], [50.848022, 4.321106], [50.847954, 4.321108], [50.847877, 4.321118], [50.847824, 4.321129], [50.847761, 4.321146], [50.847691, 4.321174], [50.847617, 4.321209], [50.847554, 4.321246], [50.847467, 4.321307], [50.847386, 4.321378], [50.847324, 4.321441], [50.847256, 4.321518], [50.847179, 4.321617], [50.847135, 4.321677], [50.846593, 4.322457], [50.846412, 4.322711], [50.846084, 4.323163], [50.846015, 4.323257], [50.845881, 4.323446], [50.845261, 4.324342], [50.845025, 4.32468], [50.844982, 4.324744], [50.844982, 4.324744], [50.844828, 4.32497], [50.844712, 4.325145], [50.844609, 4.325313], [50.844538, 4.325436], [50.844453, 4.325597], [50.844352, 4.325801], [50.844223, 4.32608], [50.844075, 4.326387], [50.84399, 4.326554], [50.843927, 4.326676], [50.84369, 4.327124], [50.842416, 4.329405], [50.842043, 4.33008], [50.841995, 4.330159], [50.841902, 4.330304], [50.841835, 4.330398], [50.841777, 4.330473], [50.841708, 4.330551], [50.841636, 4.330628], [50.841494, 4.330763], [50.84069, 4.331465], [50.84069, 4.331465], [50.84036, 4.331754], [50.840297, 4.331812], [50.840239, 4.33187], [50.84019, 4.331924], [50.840125, 4.332004], [50.84003, 4.332129], [50.839705, 4.33261], [50.838988, 4.333678], [50.838891, 4.333813], [50.838729, 4.334028], [50.838488, 4.334325], [50.838365, 4.334495], [50.838272, 4.33463], [50.838169, 4.334791], [50.838117, 4.334877], [50.838008, 4.335082], [50.83774, 4.335594], [50.837121, 4.336796], [50.836921, 4.337164], [50.836796, 4.337401], [50.836656, 4.337675], [50.836258, 4.33847], [50.836258, 4.33847], [50.836072, 4.338839], [50.835985, 4.339004], [50.835945, 4.339074], [50.835829, 4.33926], [50.835568, 4.339642], [50.835513, 4.339726], [50.835412, 4.339889], [50.835324, 4.340047], [50.835217, 4.340255], [50.835058, 4.340568], [50.834901, 4.340882], [50.834709, 4.341258], [50.834592, 4.341482], [50.834501, 4.341665], [50.834464, 4.341743], [50.834417, 4.341854], [50.834348, 4.34203], [50.834278, 4.342225], [50.834232, 4.342343], [50.834172, 4.342483], [50.834147, 4.342537], [50.833737, 4.34346], [50.833713, 4.343513], [50.833713, 4.343513], [50.833601, 4.343757], [50.83335, 4.344301], [50.833317, 4.34438], [50.833279, 4.344485], [50.833242, 4.344613], [50.833224, 4.344687], [50.833194, 4.344849], [50.833168, 4.344996], [50.833127, 4.34527], [50.833092, 4.345551], [50.833053, 4.345942], [50.833028, 4.346268], [50.833026, 4.34646], [50.83303, 4.346767], [50.833039, 4.347151], [50.833043, 4.347292], [50.833057, 4.347553], [50.83307, 4.347719], [50.833092, 4.347892], [50.833115, 4.348058], [50.833162, 4.348348], [50.833309, 4.349219], [50.833309, 4.349219], [50.833395, 4.349725], [50.833453, 4.350058], [50.833483, 4.350216], [50.833527, 4.350422], [50.833543, 4.35049], [50.833596, 4.350691], [50.833657, 4.35089], [50.833734, 4.351119], [50.833801, 4.351297], [50.833935, 4.351625], [50.834481, 4.352935], [50.834691, 4.353445], [50.834733, 4.353551], [50.834894, 4.353943], [50.835174, 4.354616], [50.835174, 4.354616], [50.835407, 4.355179], [50.835492, 4.355394], [50.83562, 4.355737], [50.835809, 4.356252], [50.835944, 4.3566], [50.836086, 4.356944], [50.836235, 4.35728], [50.836384, 4.357601], [50.836575, 4.357993], [50.836711, 4.358275], [50.83688, 4.358641], [50.837018, 4.358957], [50.837644, 4.36042], [50.83818, 4.361689], [50.83818, 4.361689], [50.838464, 4.362361], [50.838554, 4.362568], [50.838712, 4.362916], [50.838919, 4.363346], [50.840153, 4.365757], [50.840214, 4.365869], [50.840272, 4.365965], [50.840319, 4.366031], [50.840385, 4.36611], [50.840454, 4.366181], [50.840539, 4.366249], [50.840569, 4.36627], [50.840642, 4.366314], [50.840725, 4.366358], [50.84099, 4.366493], [50.84099, 4.366493], [50.843707, 4.367878], [50.843942, 4.367995], [50.844276, 4.36817], [50.84464, 4.36837], [50.844925, 4.368522], [50.844983, 4.368551], [50.845574, 4.36886], [50.845574, 4.36886], [50.845951, 4.369059], [50.846357, 4.369269], [50.846473, 4.369326], [50.846602, 4.369384], [50.846756, 4.369445], [50.846838, 4.369474], [50.846997, 4.369522], [50.847126, 4.369555], [50.847278, 4.369586], [50.847399, 4.369604], [50.847575, 4.369621], [50.847741, 4.369628], [50.847871, 4.369627], [50.848047, 4.369616], [50.848177, 4.3696], [50.848323, 4.369576], [50.848466, 4.369545], [50.848693, 4.369488], [50.849921, 4.369167], [50.849921, 4.369167], [50.850421, 4.369036], [50.850581, 4.368995], [50.852496, 4.368495], [50.852567, 4.368473], [50.852664, 4.368436], [50.85272, 4.368409], [50.852805, 4.368362], [50.852888, 4.368305], [50.852977, 4.368233], [50.853047, 4.368167], [50.853131, 4.368074], [50.853202, 4.367984], [50.853281, 4.367868], [50.853349, 4.367753], [50.853408, 4.367636], [50.853465, 4.367507], [50.853522, 4.367349], [50.853544, 4.367284], [50.853607, 4.367058], [50.853772, 4.366439], [50.85386, 4.366119], [50.8541, 4.365277], [50.8541, 4.365277], [50.85446, 4.364016], [50.854512, 4.363837], [50.854585, 4.363567], [50.85462, 4.363432], [50.85465, 4.363303], [50.854677, 4.363181], [50.854708, 4.363026], [50.854741, 4.362822], [50.854772, 4.362575], [50.854795, 4.36234], [50.85482, 4.361997], [50.854862, 4.361309], [50.854879, 4.3611], [50.854895, 4.360956], [50.854904, 4.360885], [50.854934, 4.360684], [50.854972, 4.360487], [50.855044, 4.360183], [50.855084, 4.36003], [50.855271, 4.359362], [50.855539, 4.358412], [50.85556, 4.358317], [50.85556, 4.358317], [50.855965, 4.356512], [50.856008, 4.356341], [50.856072, 4.356107], [50.856552, 4.354392], [50.856688, 4.353907], [50.8568, 4.353489], [50.856921, 4.353005], [50.857036, 4.352516], [50.857106, 4.352199], [50.857321, 4.351197], [50.857321, 4.351197], [50.85787, 4.348629], [50.857931, 4.34836], [50.857982, 4.348144], [50.858066, 4.34781], [50.85813, 4.347576], [50.858191, 4.347364], [50.858285, 4.347055], [50.858947, 4.344947], [50.859041, 4.344629], [50.859139, 4.344285], [50.859905, 4.341547], [50.859978, 4.341297], [50.860123, 4.340833], [50.860515, 4.339486], [50.860515, 4.339486], [50.860723, 4.33877], [50.860891, 4.338183], [50.861143, 4.337259], [50.861411, 4.336307], [50.862136, 4.333799], [50.862462, 4.332668], [50.862547, 4.332384], [50.862638, 4.332117], [50.862731, 4.331857], [50.863138, 4.330743]],
+                {"bubblingMouseEvents": true, "color": "#0078AD", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#0078AD", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_84605072b6afc5e185e21fd27b952389);
+        
+    
+            var feature_group_415d3f63151112d970e6549a96d57715 = L.featureGroup(
+                {}
+            ).addTo(map_84605072b6afc5e185e21fd27b952389);
+        
+    
+            var marker_1bb9ad5ec1329424e746930fed840023 = L.marker(
+                [50.89646, 4.327959],
+                {"name": "ROI BAUDOUIN"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_5f2039f5502d4b78ede2596900117a20 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1bb9ad5ec1329424e746930fed840023.setIcon(icon_5f2039f5502d4b78ede2596900117a20);
+        
+    
+        var popup_ac291f66e867a9285a99a4ca369c45e8 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_40dd79e81f94a3a9ee2fae2a4004f2d6 = $(`<div id="html_40dd79e81f94a3a9ee2fae2a4004f2d6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ROI BAUDOUIN</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_ac291f66e867a9285a99a4ca369c45e8.setContent(html_40dd79e81f94a3a9ee2fae2a4004f2d6);
+            
+        
+
+        marker_1bb9ad5ec1329424e746930fed840023.bindPopup(popup_ac291f66e867a9285a99a4ca369c45e8)
+        ;
+
+        
+    
+    
+            marker_1bb9ad5ec1329424e746930fed840023.bindTooltip(
+                `<div>
+                     ROI BAUDOUIN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d07241677dff687fe081cd7f81836923 = L.marker(
+                [50.897198, 4.335515],
+                {"name": "HEYSEL"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_0c86eb9c7d6bb19262e4df4ff464aaec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d07241677dff687fe081cd7f81836923.setIcon(icon_0c86eb9c7d6bb19262e4df4ff464aaec);
+        
+    
+        var popup_45585dc19fbb911e9354793df56aa955 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_67b297ffe5da7d96c4d99fe85d94e85d = $(`<div id="html_67b297ffe5da7d96c4d99fe85d94e85d" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HEYSEL</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 92.31</h6></center>         </div>`)[0];
+                popup_45585dc19fbb911e9354793df56aa955.setContent(html_67b297ffe5da7d96c4d99fe85d94e85d);
+            
+        
+
+        marker_d07241677dff687fe081cd7f81836923.bindPopup(popup_45585dc19fbb911e9354793df56aa955)
+        ;
+
+        
+    
+    
+            marker_d07241677dff687fe081cd7f81836923.bindTooltip(
+                `<div>
+                     HEYSEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5e936f32a7c8acca3e8e8c614356edad = L.marker(
+                [50.8896, 4.337736],
+                {"name": "HOUBA-BRUGMANN"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_2d36c56c85802a87cc42f558696c17d1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5e936f32a7c8acca3e8e8c614356edad.setIcon(icon_2d36c56c85802a87cc42f558696c17d1);
+        
+    
+        var popup_747ff43079330cdb1f47f23d908a5bd6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c82c6f34c7e672626cc87f71f19818d1 = $(`<div id="html_c82c6f34c7e672626cc87f71f19818d1" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HOUBA-BRUGMANN</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 84.62</h6></center>         </div>`)[0];
+                popup_747ff43079330cdb1f47f23d908a5bd6.setContent(html_c82c6f34c7e672626cc87f71f19818d1);
+            
+        
+
+        marker_5e936f32a7c8acca3e8e8c614356edad.bindPopup(popup_747ff43079330cdb1f47f23d908a5bd6)
+        ;
+
+        
+    
+    
+            marker_5e936f32a7c8acca3e8e8c614356edad.bindTooltip(
+                `<div>
+                     HOUBA-BRUGMANN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9bb8555f910de7fe1e50e525beec1edb = L.marker(
+                [50.88564, 4.342738],
+                {"name": "STUYVENBERGH"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_bbfbce3b282ef64ce255f64dd9d194b9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9bb8555f910de7fe1e50e525beec1edb.setIcon(icon_bbfbce3b282ef64ce255f64dd9d194b9);
+        
+    
+        var popup_bacefdb1c811cad151e001e5f19f63f1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3ff49fdbd6000e5f6df04e4f9fe5c19f = $(`<div id="html_3ff49fdbd6000e5f6df04e4f9fe5c19f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: STUYVENBERGH</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 76.92</h6></center>         </div>`)[0];
+                popup_bacefdb1c811cad151e001e5f19f63f1.setContent(html_3ff49fdbd6000e5f6df04e4f9fe5c19f);
+            
+        
+
+        marker_9bb8555f910de7fe1e50e525beec1edb.bindPopup(popup_bacefdb1c811cad151e001e5f19f63f1)
+        ;
+
+        
+    
+    
+            marker_9bb8555f910de7fe1e50e525beec1edb.bindTooltip(
+                `<div>
+                     STUYVENBERGH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8d67c6f6264a9bb92d47ea2d5027784f = L.marker(
+                [50.879152, 4.347993],
+                {"name": "BOCKSTAEL"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_3bdcdbeb1539ab0a99ae40cd6f0cc43e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8d67c6f6264a9bb92d47ea2d5027784f.setIcon(icon_3bdcdbeb1539ab0a99ae40cd6f0cc43e);
+        
+    
+        var popup_e75da5ec2a073017b8074c249f2a4b50 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_dc27ccccff9f972db381045726bf4ddf = $(`<div id="html_dc27ccccff9f972db381045726bf4ddf" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BOCKSTAEL</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 69.23</h6></center>         </div>`)[0];
+                popup_e75da5ec2a073017b8074c249f2a4b50.setContent(html_dc27ccccff9f972db381045726bf4ddf);
+            
+        
+
+        marker_8d67c6f6264a9bb92d47ea2d5027784f.bindPopup(popup_e75da5ec2a073017b8074c249f2a4b50)
+        ;
+
+        
+    
+    
+            marker_8d67c6f6264a9bb92d47ea2d5027784f.bindTooltip(
+                `<div>
+                     BOCKSTAEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_287ffa77043ce63ca962433009f2d039 = L.marker(
+                [50.873614, 4.343137],
+                {"name": "PANNENHUIS"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_f832d86a56ca1f9f988a8f3b04823230 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_287ffa77043ce63ca962433009f2d039.setIcon(icon_f832d86a56ca1f9f988a8f3b04823230);
+        
+    
+        var popup_1e3f40259ff93713958e2605c7097a5e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0203c3423b00f2e2384431ab60dd102f = $(`<div id="html_0203c3423b00f2e2384431ab60dd102f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PANNENHUIS</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 61.54</h6></center>         </div>`)[0];
+                popup_1e3f40259ff93713958e2605c7097a5e.setContent(html_0203c3423b00f2e2384431ab60dd102f);
+            
+        
+
+        marker_287ffa77043ce63ca962433009f2d039.bindPopup(popup_1e3f40259ff93713958e2605c7097a5e)
+        ;
+
+        
+    
+    
+            marker_287ffa77043ce63ca962433009f2d039.bindTooltip(
+                `<div>
+                     PANNENHUIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9064ff6991edab121dc31b0d9039ff7c = L.marker(
+                [50.868474, 4.336964],
+                {"name": "BELGICA"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_7f7dd7c6a3a3260b02a6b9005a42a817 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9064ff6991edab121dc31b0d9039ff7c.setIcon(icon_7f7dd7c6a3a3260b02a6b9005a42a817);
+        
+    
+        var popup_b8359db9ef30a2fc070c4078229a8dec = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0fb28cc5b724169cd74d78f662b2e467 = $(`<div id="html_0fb28cc5b724169cd74d78f662b2e467" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BELGICA</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 53.85</h6></center>         </div>`)[0];
+                popup_b8359db9ef30a2fc070c4078229a8dec.setContent(html_0fb28cc5b724169cd74d78f662b2e467);
+            
+        
+
+        marker_9064ff6991edab121dc31b0d9039ff7c.bindPopup(popup_b8359db9ef30a2fc070c4078229a8dec)
+        ;
+
+        
+    
+    
+            marker_9064ff6991edab121dc31b0d9039ff7c.bindTooltip(
+                `<div>
+                     BELGICA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f8b78e67c48557bdd4070d961558eebe = L.marker(
+                [50.86312, 4.330479],
+                {"name": "SIMONIS"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_d12dac4d0c57a354ce5a820e63428d9c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f8b78e67c48557bdd4070d961558eebe.setIcon(icon_d12dac4d0c57a354ce5a820e63428d9c);
+        
+    
+        var popup_1fb13a6b7115d1565236a6a9fd28049c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_1a0abf9cf3277759926adebf812c803e = $(`<div id="html_1a0abf9cf3277759926adebf812c803e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SIMONIS</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 46.15</h6></center>         </div>`)[0];
+                popup_1fb13a6b7115d1565236a6a9fd28049c.setContent(html_1a0abf9cf3277759926adebf812c803e);
+            
+        
+
+        marker_f8b78e67c48557bdd4070d961558eebe.bindPopup(popup_1fb13a6b7115d1565236a6a9fd28049c)
+        ;
+
+        
+    
+    
+            marker_f8b78e67c48557bdd4070d961558eebe.bindTooltip(
+                `<div>
+                     SIMONIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52f9beea04321299a65dc3fbfe16a885 = L.marker(
+                [50.85685, 4.325246],
+                {"name": "OSSEGHEM"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_4d840853aaa0714e95da709fa95ed991 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_52f9beea04321299a65dc3fbfe16a885.setIcon(icon_4d840853aaa0714e95da709fa95ed991);
+        
+    
+        var popup_0d606cb35f54dbf64c17521c21d8089f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_df7e02f20f087c7629cc5e3ef4d11810 = $(`<div id="html_df7e02f20f087c7629cc5e3ef4d11810" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: OSSEGHEM</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 38.46</h6></center>         </div>`)[0];
+                popup_0d606cb35f54dbf64c17521c21d8089f.setContent(html_df7e02f20f087c7629cc5e3ef4d11810);
+            
+        
+
+        marker_52f9beea04321299a65dc3fbfe16a885.bindPopup(popup_0d606cb35f54dbf64c17521c21d8089f)
+        ;
+
+        
+    
+    
+            marker_52f9beea04321299a65dc3fbfe16a885.bindTooltip(
+                `<div>
+                     OSSEGHEM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a51988649883814cc8230ff7f411e943 = L.marker(
+                [50.85335, 4.323113],
+                {"name": "BEEKKANT"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_906edff6dfb539a1eb9baa6a897fea59 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a51988649883814cc8230ff7f411e943.setIcon(icon_906edff6dfb539a1eb9baa6a897fea59);
+        
+    
+        var popup_d026a6a7024e74810ff1d4d2db3682ea = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_046779d19111ce56fa57fcf0b754f83e = $(`<div id="html_046779d19111ce56fa57fcf0b754f83e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BEEKKANT</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 30.77</h6></center>         </div>`)[0];
+                popup_d026a6a7024e74810ff1d4d2db3682ea.setContent(html_046779d19111ce56fa57fcf0b754f83e);
+            
+        
+
+        marker_a51988649883814cc8230ff7f411e943.bindPopup(popup_d026a6a7024e74810ff1d4d2db3682ea)
+        ;
+
+        
+    
+    
+            marker_a51988649883814cc8230ff7f411e943.bindTooltip(
+                `<div>
+                     BEEKKANT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5b9f50334259cbbaea5f952ac55dede7 = L.marker(
+                [50.848922, 4.321442],
+                {"name": "GARE DE L\u0027OUEST"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_ec7a5fbbba64fb59f0e6f1ae1593b781 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5b9f50334259cbbaea5f952ac55dede7.setIcon(icon_ec7a5fbbba64fb59f0e6f1ae1593b781);
+        
+    
+        var popup_c483bdccd121203a2eca19b975eaadd6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_be6f1c6ce6c93f9de7b57401b45c5298 = $(`<div id="html_be6f1c6ce6c93f9de7b57401b45c5298" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARE DE L'OUEST</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 23.08</h6></center>         </div>`)[0];
+                popup_c483bdccd121203a2eca19b975eaadd6.setContent(html_be6f1c6ce6c93f9de7b57401b45c5298);
+            
+        
+
+        marker_5b9f50334259cbbaea5f952ac55dede7.bindPopup(popup_c483bdccd121203a2eca19b975eaadd6)
+        ;
+
+        
+    
+    
+            marker_5b9f50334259cbbaea5f952ac55dede7.bindTooltip(
+                `<div>
+                     GARE DE L'OUEST
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e7269a9d0dd44b565963eecfe269f3ef = L.marker(
+                [50.844982, 4.324744],
+                {"name": "DELACROIX"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_66b6c129906253dda64da0d8b549d161 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e7269a9d0dd44b565963eecfe269f3ef.setIcon(icon_66b6c129906253dda64da0d8b549d161);
+        
+    
+        var popup_daf19950097065a5c3286cd87dd4a388 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ce6ba48483e69ce9180d563e3579dc4e = $(`<div id="html_ce6ba48483e69ce9180d563e3579dc4e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DELACROIX</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 15.38</h6></center>         </div>`)[0];
+                popup_daf19950097065a5c3286cd87dd4a388.setContent(html_ce6ba48483e69ce9180d563e3579dc4e);
+            
+        
+
+        marker_e7269a9d0dd44b565963eecfe269f3ef.bindPopup(popup_daf19950097065a5c3286cd87dd4a388)
+        ;
+
+        
+    
+    
+            marker_e7269a9d0dd44b565963eecfe269f3ef.bindTooltip(
+                `<div>
+                     DELACROIX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4737fab599e70fa1afb53ea78ce5c7ee = L.marker(
+                [50.84069, 4.331467],
+                {"name": "CLEMENCEAU"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_c5933f31576fd8a3f52c49a7838141fb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4737fab599e70fa1afb53ea78ce5c7ee.setIcon(icon_c5933f31576fd8a3f52c49a7838141fb);
+        
+    
+        var popup_f4ad3112a7f86355023fed14dbdf3aad = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_44836552009ff1f351ade5f450e381da = $(`<div id="html_44836552009ff1f351ade5f450e381da" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CLEMENCEAU</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 7.69</h6></center>         </div>`)[0];
+                popup_f4ad3112a7f86355023fed14dbdf3aad.setContent(html_44836552009ff1f351ade5f450e381da);
+            
+        
+
+        marker_4737fab599e70fa1afb53ea78ce5c7ee.bindPopup(popup_f4ad3112a7f86355023fed14dbdf3aad)
+        ;
+
+        
+    
+    
+            marker_4737fab599e70fa1afb53ea78ce5c7ee.bindTooltip(
+                `<div>
+                     CLEMENCEAU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3e80c204150f0e311b87fb719389ef2c = L.marker(
+                [50.836258, 4.33847],
+                {"name": "GARE DU MIDI"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_4bbbe461e1980c13d43813c1a9a07ec1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3e80c204150f0e311b87fb719389ef2c.setIcon(icon_4bbbe461e1980c13d43813c1a9a07ec1);
+        
+    
+        var popup_1c0650e9c6debdfe1306935bddebd844 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e866f0a551be9ae142bfe77766cd0c6a = $(`<div id="html_e866f0a551be9ae142bfe77766cd0c6a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARE DU MIDI</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 0.0</h6></center>         </div>`)[0];
+                popup_1c0650e9c6debdfe1306935bddebd844.setContent(html_e866f0a551be9ae142bfe77766cd0c6a);
+            
+        
+
+        marker_3e80c204150f0e311b87fb719389ef2c.bindPopup(popup_1c0650e9c6debdfe1306935bddebd844)
+        ;
+
+        
+    
+    
+            marker_3e80c204150f0e311b87fb719389ef2c.bindTooltip(
+                `<div>
+                     GARE DU MIDI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a89814bcfc50b3032ebf3956ac6bda92 = L.marker(
+                [50.833713, 4.343513],
+                {"name": "PORTE DE HAL"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_d1b3292d533eaec613525813974d5413 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a89814bcfc50b3032ebf3956ac6bda92.setIcon(icon_d1b3292d533eaec613525813974d5413);
+        
+    
+        var popup_3bf7a8b80884a5c709446b7f192dbbc8 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_700597b3dd5ee74d93bb6b0bc0d26b8b = $(`<div id="html_700597b3dd5ee74d93bb6b0bc0d26b8b" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PORTE DE HAL</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 7.69</h6></center>         </div>`)[0];
+                popup_3bf7a8b80884a5c709446b7f192dbbc8.setContent(html_700597b3dd5ee74d93bb6b0bc0d26b8b);
+            
+        
+
+        marker_a89814bcfc50b3032ebf3956ac6bda92.bindPopup(popup_3bf7a8b80884a5c709446b7f192dbbc8)
+        ;
+
+        
+    
+    
+            marker_a89814bcfc50b3032ebf3956ac6bda92.bindTooltip(
+                `<div>
+                     PORTE DE HAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9f9aed2463a15ba4d100f13351cea913 = L.marker(
+                [50.833309, 4.349219],
+                {"name": "HOTEL DES MONNAIES"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_72e20d0f3ac711c5285449cca5873493 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9f9aed2463a15ba4d100f13351cea913.setIcon(icon_72e20d0f3ac711c5285449cca5873493);
+        
+    
+        var popup_b159297da695f7f9b1ec7db0281e76de = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c1ddefa70b9e9b1e777e6378f0797fdd = $(`<div id="html_c1ddefa70b9e9b1e777e6378f0797fdd" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HOTEL DES MONNAIES</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 15.38</h6></center>         </div>`)[0];
+                popup_b159297da695f7f9b1ec7db0281e76de.setContent(html_c1ddefa70b9e9b1e777e6378f0797fdd);
+            
+        
+
+        marker_9f9aed2463a15ba4d100f13351cea913.bindPopup(popup_b159297da695f7f9b1ec7db0281e76de)
+        ;
+
+        
+    
+    
+            marker_9f9aed2463a15ba4d100f13351cea913.bindTooltip(
+                `<div>
+                     HOTEL DES MONNAIES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_153908520cfe8f837df54cf83ff49d96 = L.marker(
+                [50.835176, 4.354622],
+                {"name": "LOUISE"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_2c79c7257f83a676c3a48d3a5e513e53 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_153908520cfe8f837df54cf83ff49d96.setIcon(icon_2c79c7257f83a676c3a48d3a5e513e53);
+        
+    
+        var popup_c229604a04d28025c6d147ab818823ba = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c9e60a66169d1ed066c0a87110f35560 = $(`<div id="html_c9e60a66169d1ed066c0a87110f35560" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LOUISE</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 23.08</h6></center>         </div>`)[0];
+                popup_c229604a04d28025c6d147ab818823ba.setContent(html_c9e60a66169d1ed066c0a87110f35560);
+            
+        
+
+        marker_153908520cfe8f837df54cf83ff49d96.bindPopup(popup_c229604a04d28025c6d147ab818823ba)
+        ;
+
+        
+    
+    
+            marker_153908520cfe8f837df54cf83ff49d96.bindTooltip(
+                `<div>
+                     LOUISE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8e944c1664cd5d7be2b7599102f6666b = L.marker(
+                [50.838185, 4.361699],
+                {"name": "PORTE DE NAMUR"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_bcdc51b5cafaba5f3438e46dba5afd94 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8e944c1664cd5d7be2b7599102f6666b.setIcon(icon_bcdc51b5cafaba5f3438e46dba5afd94);
+        
+    
+        var popup_ff09cb1906145a1c583d6391b2a4c6bc = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_90e2ed4e958e4a8fc71ceb86211883db = $(`<div id="html_90e2ed4e958e4a8fc71ceb86211883db" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PORTE DE NAMUR</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 30.77</h6></center>         </div>`)[0];
+                popup_ff09cb1906145a1c583d6391b2a4c6bc.setContent(html_90e2ed4e958e4a8fc71ceb86211883db);
+            
+        
+
+        marker_8e944c1664cd5d7be2b7599102f6666b.bindPopup(popup_ff09cb1906145a1c583d6391b2a4c6bc)
+        ;
+
+        
+    
+    
+            marker_8e944c1664cd5d7be2b7599102f6666b.bindTooltip(
+                `<div>
+                     PORTE DE NAMUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_98544aaa5adef9d07ac790080df3e4bc = L.marker(
+                [50.841001, 4.366499],
+                {"name": "TRONE"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_a3706cda864b449abbfaee0cbcb0e532 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_98544aaa5adef9d07ac790080df3e4bc.setIcon(icon_a3706cda864b449abbfaee0cbcb0e532);
+        
+    
+        var popup_3675cd7aa833912542ff1bdb9314eda4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d5073f7e74d35902fa22e814deba55aa = $(`<div id="html_d5073f7e74d35902fa22e814deba55aa" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TRONE</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 38.46</h6></center>         </div>`)[0];
+                popup_3675cd7aa833912542ff1bdb9314eda4.setContent(html_d5073f7e74d35902fa22e814deba55aa);
+            
+        
+
+        marker_98544aaa5adef9d07ac790080df3e4bc.bindPopup(popup_3675cd7aa833912542ff1bdb9314eda4)
+        ;
+
+        
+    
+    
+            marker_98544aaa5adef9d07ac790080df3e4bc.bindTooltip(
+                `<div>
+                     TRONE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9d217eb4b52c6db351099e8dcfc92dc7 = L.marker(
+                [50.845585, 4.368867],
+                {"name": "ARTS-LOI"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_4301d3e1df1bba7d79128eff11e0af19 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9d217eb4b52c6db351099e8dcfc92dc7.setIcon(icon_4301d3e1df1bba7d79128eff11e0af19);
+        
+    
+        var popup_dc3705a1dd0b27b8f253603e13e93a12 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_212a6110ce3f3434dcceeb76fd592fcf = $(`<div id="html_212a6110ce3f3434dcceeb76fd592fcf" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ARTS-LOI</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 46.15</h6></center>         </div>`)[0];
+                popup_dc3705a1dd0b27b8f253603e13e93a12.setContent(html_212a6110ce3f3434dcceeb76fd592fcf);
+            
+        
+
+        marker_9d217eb4b52c6db351099e8dcfc92dc7.bindPopup(popup_dc3705a1dd0b27b8f253603e13e93a12)
+        ;
+
+        
+    
+    
+            marker_9d217eb4b52c6db351099e8dcfc92dc7.bindTooltip(
+                `<div>
+                     ARTS-LOI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e58a5ab0ec0030036cf61e5ba96c9de3 = L.marker(
+                [50.84993, 4.369164],
+                {"name": "MADOU"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_0a5f629be2100caff117e92cb2b5006e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e58a5ab0ec0030036cf61e5ba96c9de3.setIcon(icon_0a5f629be2100caff117e92cb2b5006e);
+        
+    
+        var popup_25184bb441c5758f1cea41e691e013c1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0e548172da559c66ab6be8adcc4ca838 = $(`<div id="html_0e548172da559c66ab6be8adcc4ca838" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MADOU</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 53.85</h6></center>         </div>`)[0];
+                popup_25184bb441c5758f1cea41e691e013c1.setContent(html_0e548172da559c66ab6be8adcc4ca838);
+            
+        
+
+        marker_e58a5ab0ec0030036cf61e5ba96c9de3.bindPopup(popup_25184bb441c5758f1cea41e691e013c1)
+        ;
+
+        
+    
+    
+            marker_e58a5ab0ec0030036cf61e5ba96c9de3.bindTooltip(
+                `<div>
+                     MADOU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6bd3e8af6434b720730d3838fd0e1989 = L.marker(
+                [50.854102, 4.365272],
+                {"name": "BOTANIQUE"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_ac089bd1f1f49347213437733efcd06d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6bd3e8af6434b720730d3838fd0e1989.setIcon(icon_ac089bd1f1f49347213437733efcd06d);
+        
+    
+        var popup_e1a6186b7e646e6a897209fc496dd0e7 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_8fafa2820eb542bed1b788aa357adae5 = $(`<div id="html_8fafa2820eb542bed1b788aa357adae5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BOTANIQUE</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 61.54</h6></center>         </div>`)[0];
+                popup_e1a6186b7e646e6a897209fc496dd0e7.setContent(html_8fafa2820eb542bed1b788aa357adae5);
+            
+        
+
+        marker_6bd3e8af6434b720730d3838fd0e1989.bindPopup(popup_e1a6186b7e646e6a897209fc496dd0e7)
+        ;
+
+        
+    
+    
+            marker_6bd3e8af6434b720730d3838fd0e1989.bindTooltip(
+                `<div>
+                     BOTANIQUE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e001bb6fda727a277284b56adcaa25d2 = L.marker(
+                [50.85556, 4.358317],
+                {"name": "ROGIER"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_4df34e9a0c7b546b9966811d699e5d2a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e001bb6fda727a277284b56adcaa25d2.setIcon(icon_4df34e9a0c7b546b9966811d699e5d2a);
+        
+    
+        var popup_8053dd0946acfb39e1be73dd4de8b02c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_334ce580b5470d5fdb7a9a828ac07370 = $(`<div id="html_334ce580b5470d5fdb7a9a828ac07370" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ROGIER</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 69.23</h6></center>         </div>`)[0];
+                popup_8053dd0946acfb39e1be73dd4de8b02c.setContent(html_334ce580b5470d5fdb7a9a828ac07370);
+            
+        
+
+        marker_e001bb6fda727a277284b56adcaa25d2.bindPopup(popup_8053dd0946acfb39e1be73dd4de8b02c)
+        ;
+
+        
+    
+    
+            marker_e001bb6fda727a277284b56adcaa25d2.bindTooltip(
+                `<div>
+                     ROGIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b9a290551cb7d074581338878b5f1346 = L.marker(
+                [50.857321, 4.351197],
+                {"name": "YSER"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_5f1eac307accab60527ec01163889034 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b9a290551cb7d074581338878b5f1346.setIcon(icon_5f1eac307accab60527ec01163889034);
+        
+    
+        var popup_b85e6b6dd91360856e57329d50cf8dad = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f785a0a98fc5dbea5527abc19bf0f403 = $(`<div id="html_f785a0a98fc5dbea5527abc19bf0f403" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: YSER</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 76.92</h6></center>         </div>`)[0];
+                popup_b85e6b6dd91360856e57329d50cf8dad.setContent(html_f785a0a98fc5dbea5527abc19bf0f403);
+            
+        
+
+        marker_b9a290551cb7d074581338878b5f1346.bindPopup(popup_b85e6b6dd91360856e57329d50cf8dad)
+        ;
+
+        
+    
+    
+            marker_b9a290551cb7d074581338878b5f1346.bindTooltip(
+                `<div>
+                     YSER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_361bde517698bcf5a5180d6fb2ff11a4 = L.marker(
+                [50.860515, 4.339486],
+                {"name": "RIBAUCOURT"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_948ff199bf1a19df3ef17a74a7756873 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_361bde517698bcf5a5180d6fb2ff11a4.setIcon(icon_948ff199bf1a19df3ef17a74a7756873);
+        
+    
+        var popup_6bdbfe0f57a674a9c13271af14fabbdf = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_47df6fdc27c7502da25b27f48a9c78bb = $(`<div id="html_47df6fdc27c7502da25b27f48a9c78bb" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: RIBAUCOURT</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 84.62</h6></center>         </div>`)[0];
+                popup_6bdbfe0f57a674a9c13271af14fabbdf.setContent(html_47df6fdc27c7502da25b27f48a9c78bb);
+            
+        
+
+        marker_361bde517698bcf5a5180d6fb2ff11a4.bindPopup(popup_6bdbfe0f57a674a9c13271af14fabbdf)
+        ;
+
+        
+    
+    
+            marker_361bde517698bcf5a5180d6fb2ff11a4.bindTooltip(
+                `<div>
+                     RIBAUCOURT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3dd1383d2ce4652771ec4328167bf9b1 = L.marker(
+                [50.863138, 4.330743],
+                {"name": "ELISABETH"}
+            ).addTo(feature_group_415d3f63151112d970e6549a96d57715);
+        
+    
+            var icon_d79e2386d1fb5953bd05fee1d2da8d56 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#0078AD", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3dd1383d2ce4652771ec4328167bf9b1.setIcon(icon_d79e2386d1fb5953bd05fee1d2da8d56);
+        
+    
+        var popup_ce5885223cda63b5d4c85d937a7f9cc9 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_10954f084a209aa487787ea07aa35fab = $(`<div id="html_10954f084a209aa487787ea07aa35fab" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ELISABETH</h4></center>         <center><h5>Line: 6 ROI BAUDOUIN - ELISABETH</h5></center>         <center><h6>Score: 92.31</h6></center>         </div>`)[0];
+                popup_ce5885223cda63b5d4c85d937a7f9cc9.setContent(html_10954f084a209aa487787ea07aa35fab);
+            
+        
+
+        marker_3dd1383d2ce4652771ec4328167bf9b1.bindPopup(popup_ce5885223cda63b5d4c85d937a7f9cc9)
+        ;
+
+        
+    
+    
+            marker_3dd1383d2ce4652771ec4328167bf9b1.bindTooltip(
+                `<div>
+                     ELISABETH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_a30781ebe084ced386e223380184105f = L.featureGroup(
+                {}
+            ).addTo(map_84605072b6afc5e185e21fd27b952389);
+        
+    
+            var marker_84711ee0b10e817f0d350af1129f91d7 = L.marker(
+                [50.89647, 4.3279689999999995],
+                {"name": "ROI BAUDOUIN"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_c2faa8d03c7f2979924172ef92613294 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_84711ee0b10e817f0d350af1129f91d7.setIcon(icon_c2faa8d03c7f2979924172ef92613294);
+        
+    
+            marker_84711ee0b10e817f0d350af1129f91d7.bindTooltip(
+                `<div>
+                     ROI BAUDOUIN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2da2c233003bb7084336f6128e4e58d8 = L.marker(
+                [50.897208000000006, 4.335525],
+                {"name": "HEYSEL"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_2a3c659c6cb87263d6798f5227f5f5f8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2da2c233003bb7084336f6128e4e58d8.setIcon(icon_2a3c659c6cb87263d6798f5227f5f5f8);
+        
+    
+            marker_2da2c233003bb7084336f6128e4e58d8.bindTooltip(
+                `<div>
+                     HEYSEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f4aaf1e022b5ff729aa165bd4f726202 = L.marker(
+                [50.889610000000005, 4.337745999999999],
+                {"name": "HOUBA-BRUGMANN"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_91c6738a6fef399c046ebca59af171a7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f4aaf1e022b5ff729aa165bd4f726202.setIcon(icon_91c6738a6fef399c046ebca59af171a7);
+        
+    
+            marker_f4aaf1e022b5ff729aa165bd4f726202.bindTooltip(
+                `<div>
+                     HOUBA-BRUGMANN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2578147413266186c996b07683e3a0d3 = L.marker(
+                [50.885650000000005, 4.342747999999999],
+                {"name": "STUYVENBERGH"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_000bc8471e6696065877c8f0154e0a4b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2578147413266186c996b07683e3a0d3.setIcon(icon_000bc8471e6696065877c8f0154e0a4b);
+        
+    
+            marker_2578147413266186c996b07683e3a0d3.bindTooltip(
+                `<div>
+                     STUYVENBERGH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_60fb58ef3280d002bd7b5d60d94af1b5 = L.marker(
+                [50.879162, 4.348002999999999],
+                {"name": "BOCKSTAEL"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_67c6d4d453f124f2a8b4ff1704b0277b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_60fb58ef3280d002bd7b5d60d94af1b5.setIcon(icon_67c6d4d453f124f2a8b4ff1704b0277b);
+        
+    
+            marker_60fb58ef3280d002bd7b5d60d94af1b5.bindTooltip(
+                `<div>
+                     BOCKSTAEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a8a9418fdfa58bbf116679341d2b89f6 = L.marker(
+                [50.87362400000001, 4.343146999999999],
+                {"name": "PANNENHUIS"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_f4a402308ce5b132c7dd02768cdb0dc4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a8a9418fdfa58bbf116679341d2b89f6.setIcon(icon_f4a402308ce5b132c7dd02768cdb0dc4);
+        
+    
+            marker_a8a9418fdfa58bbf116679341d2b89f6.bindTooltip(
+                `<div>
+                     PANNENHUIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a7abfe60ee6f088b03326cd83a2ada46 = L.marker(
+                [50.868484, 4.336974],
+                {"name": "BELGICA"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_533a4d52aafff710cd9cec66ba9f94b4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a7abfe60ee6f088b03326cd83a2ada46.setIcon(icon_533a4d52aafff710cd9cec66ba9f94b4);
+        
+    
+            marker_a7abfe60ee6f088b03326cd83a2ada46.bindTooltip(
+                `<div>
+                     BELGICA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f46223880691e04e802218144b388d8c = L.marker(
+                [50.863130000000005, 4.330489],
+                {"name": "SIMONIS"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_a5dba283d74789fb6794b1eba2a9121b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f46223880691e04e802218144b388d8c.setIcon(icon_a5dba283d74789fb6794b1eba2a9121b);
+        
+    
+            marker_f46223880691e04e802218144b388d8c.bindTooltip(
+                `<div>
+                     SIMONIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_304b9fdde636e4d3ed5805be536abdd7 = L.marker(
+                [50.856860000000005, 4.3252559999999995],
+                {"name": "OSSEGHEM"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_d1589224a50fa34a42f0cbf7b5762029 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_304b9fdde636e4d3ed5805be536abdd7.setIcon(icon_d1589224a50fa34a42f0cbf7b5762029);
+        
+    
+            marker_304b9fdde636e4d3ed5805be536abdd7.bindTooltip(
+                `<div>
+                     OSSEGHEM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0758cf6929047f13bbddd7e28a0edb13 = L.marker(
+                [50.85336, 4.323123],
+                {"name": "BEEKKANT"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_ff78aebc137fc625e0e32529e79f4ba6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0758cf6929047f13bbddd7e28a0edb13.setIcon(icon_ff78aebc137fc625e0e32529e79f4ba6);
+        
+    
+            marker_0758cf6929047f13bbddd7e28a0edb13.bindTooltip(
+                `<div>
+                     BEEKKANT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7997cb388d394a42008e5fb953b823f9 = L.marker(
+                [50.848932000000005, 4.321452],
+                {"name": "GARE DE L\u0027OUEST"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_6aca5c619909b1500aee2bdc1a8ad592 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7997cb388d394a42008e5fb953b823f9.setIcon(icon_6aca5c619909b1500aee2bdc1a8ad592);
+        
+    
+            marker_7997cb388d394a42008e5fb953b823f9.bindTooltip(
+                `<div>
+                     GARE DE L'OUEST
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_83fa200abcdace2278ca84183e8b264b = L.marker(
+                [50.844992000000005, 4.3247539999999995],
+                {"name": "DELACROIX"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_38c645f4e0ff15ab81354ee3d6de5448 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_83fa200abcdace2278ca84183e8b264b.setIcon(icon_38c645f4e0ff15ab81354ee3d6de5448);
+        
+    
+            marker_83fa200abcdace2278ca84183e8b264b.bindTooltip(
+                `<div>
+                     DELACROIX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f7488c2e93272e1722b706059d57a899 = L.marker(
+                [50.840700000000005, 4.331477],
+                {"name": "CLEMENCEAU"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_61d14cd008c4295d7caba60e1886a8bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f7488c2e93272e1722b706059d57a899.setIcon(icon_61d14cd008c4295d7caba60e1886a8bb);
+        
+    
+            marker_f7488c2e93272e1722b706059d57a899.bindTooltip(
+                `<div>
+                     CLEMENCEAU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_37ecb12e8e83720191de061e1eb6e743 = L.marker(
+                [50.836268000000004, 4.33848],
+                {"name": "GARE DU MIDI"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_ba52b4c5ebb9839ae4e73a73f0e663eb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_37ecb12e8e83720191de061e1eb6e743.setIcon(icon_ba52b4c5ebb9839ae4e73a73f0e663eb);
+        
+    
+            marker_37ecb12e8e83720191de061e1eb6e743.bindTooltip(
+                `<div>
+                     GARE DU MIDI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4c38924c402df153caf5395ba259d800 = L.marker(
+                [50.833723000000006, 4.343522999999999],
+                {"name": "PORTE DE HAL"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_fcf47c95535ab007f4c5c1b080f30358 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4c38924c402df153caf5395ba259d800.setIcon(icon_fcf47c95535ab007f4c5c1b080f30358);
+        
+    
+            marker_4c38924c402df153caf5395ba259d800.bindTooltip(
+                `<div>
+                     PORTE DE HAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_83dfcc51163e8ab0bd0e606133ff5c59 = L.marker(
+                [50.833319, 4.349228999999999],
+                {"name": "HOTEL DES MONNAIES"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_859423560810aa7ca4188e2f088b2896 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_83dfcc51163e8ab0bd0e606133ff5c59.setIcon(icon_859423560810aa7ca4188e2f088b2896);
+        
+    
+            marker_83dfcc51163e8ab0bd0e606133ff5c59.bindTooltip(
+                `<div>
+                     HOTEL DES MONNAIES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d0d6aa29e48be953339744028223256f = L.marker(
+                [50.835186, 4.354632],
+                {"name": "LOUISE"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_164168f0b2138e990a2be39f2cb9a7a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d0d6aa29e48be953339744028223256f.setIcon(icon_164168f0b2138e990a2be39f2cb9a7a3);
+        
+    
+            marker_d0d6aa29e48be953339744028223256f.bindTooltip(
+                `<div>
+                     LOUISE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_30de3d548f0e560867fe1abb9a65f23e = L.marker(
+                [50.838195000000006, 4.361708999999999],
+                {"name": "PORTE DE NAMUR"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_c46307c3254b09871c5e9402042e5ee0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_30de3d548f0e560867fe1abb9a65f23e.setIcon(icon_c46307c3254b09871c5e9402042e5ee0);
+        
+    
+            marker_30de3d548f0e560867fe1abb9a65f23e.bindTooltip(
+                `<div>
+                     PORTE DE NAMUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_790ddb61cdb4bb67e05730c274d54837 = L.marker(
+                [50.841011, 4.366509],
+                {"name": "TRONE"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_dec7903068b787fe6a6763f8e29bfe7d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_790ddb61cdb4bb67e05730c274d54837.setIcon(icon_dec7903068b787fe6a6763f8e29bfe7d);
+        
+    
+            marker_790ddb61cdb4bb67e05730c274d54837.bindTooltip(
+                `<div>
+                     TRONE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_82411e9137c4acf2d6d2f3fdab098f76 = L.marker(
+                [50.845595, 4.3688769999999995],
+                {"name": "ARTS-LOI"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_779e7fc52244f7f627da58f05a1ed2e7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_82411e9137c4acf2d6d2f3fdab098f76.setIcon(icon_779e7fc52244f7f627da58f05a1ed2e7);
+        
+    
+            marker_82411e9137c4acf2d6d2f3fdab098f76.bindTooltip(
+                `<div>
+                     ARTS-LOI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f28d01d8d77f4e9e03c778ea1f2c8e50 = L.marker(
+                [50.849940000000004, 4.369173999999999],
+                {"name": "MADOU"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_f049586c2ed0292d315acde5b3016644 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f28d01d8d77f4e9e03c778ea1f2c8e50.setIcon(icon_f049586c2ed0292d315acde5b3016644);
+        
+    
+            marker_f28d01d8d77f4e9e03c778ea1f2c8e50.bindTooltip(
+                `<div>
+                     MADOU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_21201bc59de71e32635a2a87d7baf255 = L.marker(
+                [50.854112, 4.365282],
+                {"name": "BOTANIQUE"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_6c7e28c2e54e1dbd7bdf2c2a96a25ee0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_21201bc59de71e32635a2a87d7baf255.setIcon(icon_6c7e28c2e54e1dbd7bdf2c2a96a25ee0);
+        
+    
+            marker_21201bc59de71e32635a2a87d7baf255.bindTooltip(
+                `<div>
+                     BOTANIQUE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_67f055866bfc3585fc41bef90a99af04 = L.marker(
+                [50.85557, 4.358327],
+                {"name": "ROGIER"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_86e34f8b9743a012c06ede364e9e26be = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_67f055866bfc3585fc41bef90a99af04.setIcon(icon_86e34f8b9743a012c06ede364e9e26be);
+        
+    
+            marker_67f055866bfc3585fc41bef90a99af04.bindTooltip(
+                `<div>
+                     ROGIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_81fc82273c8f825a4fbb5422ec096888 = L.marker(
+                [50.857331, 4.351207],
+                {"name": "YSER"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_74a18ad5cec21fddd1ab29a027c5e58b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_81fc82273c8f825a4fbb5422ec096888.setIcon(icon_74a18ad5cec21fddd1ab29a027c5e58b);
+        
+    
+            marker_81fc82273c8f825a4fbb5422ec096888.bindTooltip(
+                `<div>
+                     YSER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a6fcb2491003adb424bfeea996ab5e5b = L.marker(
+                [50.860525, 4.339496],
+                {"name": "RIBAUCOURT"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_0d4eaebd0b5074c168b458b8280250f9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a6fcb2491003adb424bfeea996ab5e5b.setIcon(icon_0d4eaebd0b5074c168b458b8280250f9);
+        
+    
+            marker_a6fcb2491003adb424bfeea996ab5e5b.bindTooltip(
+                `<div>
+                     RIBAUCOURT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_32a14f0c935a4562c883df91235f3659 = L.marker(
+                [50.863148, 4.330753],
+                {"name": "ELISABETH"}
+            ).addTo(feature_group_a30781ebe084ced386e223380184105f);
+        
+    
+            var icon_0b045e2082a5eaa3cfd369fe314ea08c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_32a14f0c935a4562c883df91235f3659.setIcon(icon_0b045e2082a5eaa3cfd369fe314ea08c);
+        
+    
+            marker_32a14f0c935a4562c883df91235f3659.bindTooltip(
+                `<div>
+                     ELISABETH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_faa1bd83228bc83b0f1e85623123399c = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_db5b8a313ba5184718cdea84ed828fc0,
+                },
+                overlays :  {
+                    "6 ROI BAUDOUIN - ELISABETH" : feature_group_415d3f63151112d970e6549a96d57715,
+                    "6 ROI BAUDOUIN - ELISABETH SCORES" : feature_group_a30781ebe084ced386e223380184105f,
+                },
+            };
+            L.control.layers(
+                layer_control_faa1bd83228bc83b0f1e85623123399c.base_layers,
+                layer_control_faa1bd83228bc83b0f1e85623123399c.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_84605072b6afc5e185e21fd27b952389);
+            feature_group_a30781ebe084ced386e223380184105f.remove();
+        
+</script>
+</html>
