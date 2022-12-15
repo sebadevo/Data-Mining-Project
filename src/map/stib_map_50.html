@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fade5829ed337f0cb12c58093c818ed2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_fade5829ed337f0cb12c58093c818ed2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fade5829ed337f0cb12c58093c818ed2 = L.map(
+                "map_fade5829ed337f0cb12c58093c818ed2",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_33b99b53b31fd2dde13199f67cdad583 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_fade5829ed337f0cb12c58093c818ed2);
+        
+    
+            var poly_line_47cfc72bb3e514bed96928f48899b1e5 = L.polyline(
+                [[50.836338, 4.337838], [50.836261, 4.337983], [50.83613, 4.338225], [50.836065, 4.338249], [50.835974, 4.338215], [50.835884, 4.338144], [50.835491, 4.337642], [50.835396, 4.337524], [50.83533, 4.337439], [50.835017, 4.337041], [50.834949, 4.336956], [50.834715, 4.336657], [50.834489, 4.336362], [50.834087, 4.335834], [50.834087, 4.335834], [50.834039, 4.335774], [50.833809, 4.335498], [50.833421, 4.335004], [50.832875, 4.334305], [50.832488, 4.333807], [50.832078, 4.333287], [50.832005, 4.333197], [50.831939, 4.333089], [50.831896, 4.333018], [50.831803, 4.33289], [50.831395, 4.332364], [50.831351, 4.332301], [50.831351, 4.332301], [50.831212, 4.332154], [50.830684, 4.331474], [50.830141, 4.330785], [50.829624, 4.330125], [50.829483, 4.329941], [50.829389, 4.329825], [50.829273, 4.329647], [50.828936, 4.329212], [50.828936, 4.329212], [50.828773, 4.329056], [50.828418, 4.328608], [50.828266, 4.328422], [50.828102, 4.328113], [50.82784, 4.327826], [50.827393, 4.327386], [50.827136, 4.327175], [50.827136, 4.327175], [50.827132, 4.327171], [50.827007, 4.327082], [50.826433, 4.326707], [50.82605, 4.326509], [50.8258, 4.32639], [50.825554, 4.326305], [50.825077, 4.326162], [50.824853, 4.326113], [50.824709, 4.326094], [50.824465, 4.326056], [50.824264, 4.326035], [50.824237, 4.326032], [50.824186, 4.326025], [50.824184, 4.32596], [50.824184, 4.325858], [50.824184, 4.325394], [50.824184, 4.325394], [50.824184, 4.325321], [50.824183, 4.32511], [50.824178, 4.324707], [50.824178, 4.324524], [50.824174, 4.324396], [50.824152, 4.32429], [50.824113, 4.324189], [50.824112, 4.324186], [50.824109, 4.324183], [50.824071, 4.324138], [50.823427, 4.323564], [50.823396, 4.323537], [50.82245, 4.322693], [50.822108, 4.32239], [50.821959, 4.322259], [50.821936, 4.322238], [50.821659, 4.321991], [50.821659, 4.321991], [50.820884, 4.321302], [50.820758, 4.321185], [50.820683, 4.321117], [50.820635, 4.321084], [50.820531, 4.321032], [50.820429, 4.320982], [50.8189, 4.320801], [50.818464, 4.320741], [50.818436, 4.320739], [50.818247, 4.320716], [50.818071, 4.320712], [50.817971, 4.320704], [50.817955, 4.320663], [50.817954, 4.320661], [50.817951, 4.320657], [50.817918, 4.320623], [50.817881, 4.320607], [50.817845, 4.320602], [50.817812, 4.320602], [50.817774, 4.320582], [50.817681, 4.320471], [50.817638, 4.320432], [50.817544, 4.320372], [50.817309, 4.320223], [50.817114, 4.320089], [50.817088, 4.320076], [50.817037, 4.320055], [50.817034, 4.320053], [50.817032, 4.320053], [50.81698, 4.320063], [50.81665, 4.319864], [50.81665, 4.319864], [50.816331, 4.319671], [50.815833, 4.319362], [50.815587, 4.319226], [50.81534, 4.31908], [50.815259, 4.319035], [50.815143, 4.318974], [50.814924, 4.318828], [50.814626, 4.318654], [50.814538, 4.318587], [50.81442, 4.318543], [50.814303, 4.318809], [50.814249, 4.318867], [50.814149, 4.3189], [50.814122, 4.318898], [50.812916, 4.31889], [50.812799, 4.318891], [50.8121, 4.318875], [50.8121, 4.318875], [50.812056, 4.318874], [50.812029, 4.318875], [50.811914, 4.318885], [50.811811, 4.318905], [50.811786, 4.318872], [50.811737, 4.318823], [50.811681, 4.318776], [50.811657, 4.318756], [50.81127, 4.318425], [50.811245, 4.318405], [50.811217, 4.318379], [50.811083, 4.318255], [50.810509, 4.317852], [50.810359, 4.31776], [50.81027, 4.317715], [50.810201, 4.317682], [50.81017, 4.31767], [50.810141, 4.31766], [50.810098, 4.317653], [50.809934, 4.317606], [50.809897, 4.317596], [50.809897, 4.317596], [50.809855, 4.317586], [50.809812, 4.317581], [50.809784, 4.317576], [50.809721, 4.317565], [50.80959, 4.317521], [50.80951, 4.317494], [50.809423, 4.317436], [50.809338, 4.317368], [50.809246, 4.317265], [50.809117, 4.317136], [50.808948, 4.316988], [50.808796, 4.316902], [50.808587, 4.316806], [50.808368, 4.3167], [50.808274, 4.316633], [50.808256, 4.316616], [50.808233, 4.316593], [50.808143, 4.316511], [50.807979, 4.316317], [50.807878, 4.316168], [50.807125, 4.315101], [50.807105, 4.315072], [50.806405, 4.314081], [50.806405, 4.314081], [50.806337, 4.313985], [50.80624, 4.313833], [50.806189, 4.31377], [50.806152, 4.313727], [50.806089, 4.313673], [50.806063, 4.313658], [50.805591, 4.313428], [50.805564, 4.313417], [50.805395, 4.313343], [50.805211, 4.313264], [50.805138, 4.313244], [50.805096, 4.313239], [50.805068, 4.313239], [50.804967, 4.313253], [50.804868, 4.313277], [50.804768, 4.313327], [50.804689, 4.313381], [50.804575, 4.313488], [50.804415, 4.313652], [50.804147, 4.313918], [50.803838, 4.314222], [50.803772, 4.314283], [50.803478, 4.31455], [50.803274, 4.314749], [50.803192, 4.314838], [50.803127, 4.314907], [50.803093, 4.314946], [50.802932, 4.315158], [50.802782, 4.315372], [50.80263, 4.315599], [50.802443, 4.31588], [50.802322, 4.316081], [50.802186, 4.316279], [50.802177, 4.316294], [50.802177, 4.316294], [50.802081, 4.316431], [50.802055, 4.316464], [50.80193, 4.316656], [50.801798, 4.316843], [50.801674, 4.317002], [50.801611, 4.317056], [50.801515, 4.317118], [50.801402, 4.317182], [50.801377, 4.317197], [50.800933, 4.317443], [50.800826, 4.317509], [50.800826, 4.317509], [50.800671, 4.317606], [50.800583, 4.317678], [50.800503, 4.317761], [50.800446, 4.317835], [50.800387, 4.317747], [50.800212, 4.317409], [50.800193, 4.317379], [50.800177, 4.317357], [50.800107, 4.317232], [50.799977, 4.317019], [50.799864, 4.316861], [50.799798, 4.316753], [50.799646, 4.316494], [50.799601, 4.316408], [50.799515, 4.3162], [50.799465, 4.316071], [50.799352, 4.315692], [50.79934, 4.315653], [50.799124, 4.314911], [50.799112, 4.314871], [50.798771, 4.313711], [50.798559, 4.313028], [50.798424, 4.312708], [50.798411, 4.312681], [50.798411, 4.312681], [50.798358, 4.312569], [50.798241, 4.312316], [50.798147, 4.312115], [50.798031, 4.311851], [50.797868, 4.31148], [50.797849, 4.311443], [50.797811, 4.311376], [50.797489, 4.310872], [50.797204, 4.310438], [50.796984, 4.310088], [50.796964, 4.310057], [50.79662, 4.309524], [50.796585, 4.30947], [50.796585, 4.30947], [50.795529, 4.3078], [50.794791, 4.306641], [50.794791, 4.306641], [50.794499, 4.306182], [50.794206, 4.305716], [50.794116, 4.305635], [50.793978, 4.305746], [50.793978, 4.305746], [50.793978, 4.305746], [50.793775, 4.30599], [50.793327, 4.306605], [50.793189, 4.306791], [50.793158, 4.306838], [50.793115, 4.306903], [50.793046, 4.306994], [50.793001, 4.307032], [50.792911, 4.307107], [50.792788, 4.307171], [50.792654, 4.307103], [50.792559, 4.306984], [50.792524, 4.306762], [50.792516, 4.306568], [50.79249, 4.305908], [50.792512, 4.305332], [50.792542, 4.304758], [50.792592, 4.304132], [50.792783, 4.301017], [50.792783, 4.301019], [50.792787, 4.300928], [50.79277, 4.300738], [50.792682, 4.300542], [50.792531, 4.300472], [50.792263, 4.300422], [50.79226, 4.300422], [50.792258, 4.300422], [50.792124, 4.300471], [50.791662, 4.300384], [50.791386, 4.300336], [50.790984, 4.300263], [50.790795, 4.300188], [50.790657, 4.300111], [50.790587, 4.300012], [50.790497, 4.299848], [50.790439, 4.299727], [50.790381, 4.299594], [50.79034, 4.299454], [50.790325, 4.299251], [50.790318, 4.299025], [50.790326, 4.298881], [50.790356, 4.298847], [50.790376, 4.298794], [50.790372, 4.298719], [50.790334, 4.298682], [50.790295, 4.298694], [50.790237, 4.298688], [50.790019, 4.298558], [50.789986, 4.298542], [50.789893, 4.298489], [50.789893, 4.298489], [50.789845, 4.298467], [50.789807, 4.298446], [50.789468, 4.298223], [50.789193, 4.298077], [50.789054, 4.29801], [50.788977, 4.297968], [50.788901, 4.297947], [50.788826, 4.297934], [50.788649, 4.297917], [50.78851, 4.297899], [50.78835, 4.297877], [50.788228, 4.29784], [50.788056, 4.297805], [50.787927, 4.297714], [50.78778, 4.297591], [50.787609, 4.29743], [50.787429, 4.297278], [50.787115, 4.296967], [50.78704, 4.296878], [50.786912, 4.296719], [50.786888, 4.296692], [50.786888, 4.296692], [50.786697, 4.296457], [50.786404, 4.29607], [50.78638, 4.296038], [50.78613, 4.29575], [50.785964, 4.295531], [50.785796, 4.295327], [50.785694, 4.295192], [50.785642, 4.295111], [50.784923, 4.294012], [50.784816, 4.29385], [50.784787, 4.293805], [50.784465, 4.293323], [50.784115, 4.292764], [50.783936, 4.292474], [50.783936, 4.292474], [50.783783, 4.292219], [50.783463, 4.291711], [50.782868, 4.290873], [50.782515, 4.290359], [50.782405, 4.290238], [50.782311, 4.290136], [50.782219, 4.290029], [50.78202, 4.289815], [50.781909, 4.28969], [50.781881, 4.289654], [50.781771, 4.289499], [50.781662, 4.289366], [50.781582, 4.289247], [50.781538, 4.289188], [50.781486, 4.289117], [50.781486, 4.289117], [50.781424, 4.289032], [50.781403, 4.289002], [50.781388, 4.288981], [50.781318, 4.288878], [50.781206, 4.288678], [50.78108, 4.28846], [50.781002, 4.288318], [50.780622, 4.287678], [50.78037, 4.287328], [50.780175, 4.287076], [50.779958, 4.286812], [50.779771, 4.286553], [50.779434, 4.286041], [50.779434, 4.286041], [50.779281, 4.285807], [50.77902, 4.285398], [50.778919, 4.285245], [50.778859, 4.285171], [50.77867, 4.28502], [50.778579, 4.284955], [50.778475, 4.284878], [50.777932, 4.284457], [50.777835, 4.284366], [50.777788, 4.284329], [50.776665, 4.283425], [50.776135, 4.283025], [50.775583, 4.282592], [50.775379, 4.282421], [50.775055, 4.282164], [50.774234, 4.281475], [50.774126, 4.281388], [50.774126, 4.281388], [50.773742, 4.281079], [50.773023, 4.2805], [50.772003, 4.27964], [50.771539, 4.279238], [50.770801, 4.278596], [50.770682, 4.278498], [50.770682, 4.278498], [50.770643, 4.278466], [50.770345, 4.278142], [50.769569, 4.277348], [50.769412, 4.277188], [50.769183, 4.277006], [50.768528, 4.276507], [50.768516, 4.276471], [50.768487, 4.276423], [50.768462, 4.276392], [50.768435, 4.276366], [50.768405, 4.276351], [50.768358, 4.276345], [50.768328, 4.276308], [50.768219, 4.276151], [50.767534, 4.275467], [50.767085, 4.274993], [50.766891, 4.274792], [50.766651, 4.274567], [50.766591, 4.274548], [50.766514, 4.274458], [50.766353, 4.274292], [50.766207, 4.274147], [50.766045, 4.273961], [50.765842, 4.273732]],
+                {"bubblingMouseEvents": true, "color": "#B4BD10", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#B4BD10", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_fade5829ed337f0cb12c58093c818ed2);
+        
+    
+            var feature_group_64c95395f55119abc1cda6fe42d3dd0b = L.featureGroup(
+                {}
+            ).addTo(map_fade5829ed337f0cb12c58093c818ed2);
+        
+    
+            var marker_8aeecee73c26351751eb0fa824637c6a = L.marker(
+                [50.836335, 4.337833],
+                {"name": "GARE DU MIDI"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_bfec4933008d6d2fee04e73f1144df15 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8aeecee73c26351751eb0fa824637c6a.setIcon(icon_bfec4933008d6d2fee04e73f1144df15);
+        
+    
+        var popup_46e64536873b056e898914b99a344aef = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_374f30f1103a254b5564d36c34ddae66 = $(`<div id="html_374f30f1103a254b5564d36c34ddae66" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARE DU MIDI</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_46e64536873b056e898914b99a344aef.setContent(html_374f30f1103a254b5564d36c34ddae66);
+            
+        
+
+        marker_8aeecee73c26351751eb0fa824637c6a.bindPopup(popup_46e64536873b056e898914b99a344aef)
+        ;
+
+        
+    
+    
+            marker_8aeecee73c26351751eb0fa824637c6a.bindTooltip(
+                `<div>
+                     GARE DU MIDI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_01d1884d1c02176ac36fd6c4d75832dc = L.marker(
+                [50.834096, 4.335818],
+                {"name": "SUEDE"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_5bf2680d15cbf1d73087f1035d4aaa4b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_01d1884d1c02176ac36fd6c4d75832dc.setIcon(icon_5bf2680d15cbf1d73087f1035d4aaa4b);
+        
+    
+        var popup_2e2f875452feb5f39b0da2c8712b005a = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c71d0f61c868fd27920ee1933054689b = $(`<div id="html_c71d0f61c868fd27920ee1933054689b" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SUEDE</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 91.67</h6></center>         </div>`)[0];
+                popup_2e2f875452feb5f39b0da2c8712b005a.setContent(html_c71d0f61c868fd27920ee1933054689b);
+            
+        
+
+        marker_01d1884d1c02176ac36fd6c4d75832dc.bindPopup(popup_2e2f875452feb5f39b0da2c8712b005a)
+        ;
+
+        
+    
+    
+            marker_01d1884d1c02176ac36fd6c4d75832dc.bindTooltip(
+                `<div>
+                     SUEDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3534aa7d927881d3eed295af67cc3b0b = L.marker(
+                [50.831389, 4.332229],
+                {"name": "AVENUE DU ROI"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_7309c82fe11a763d4b98526151b21169 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3534aa7d927881d3eed295af67cc3b0b.setIcon(icon_7309c82fe11a763d4b98526151b21169);
+        
+    
+        var popup_dc0b3a86d9f56d5da953eb15f607d8ff = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_cbe0f5225d71fb537202c69b420247ad = $(`<div id="html_cbe0f5225d71fb537202c69b420247ad" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: AVENUE DU ROI</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 83.33</h6></center>         </div>`)[0];
+                popup_dc0b3a86d9f56d5da953eb15f607d8ff.setContent(html_cbe0f5225d71fb537202c69b420247ad);
+            
+        
+
+        marker_3534aa7d927881d3eed295af67cc3b0b.bindPopup(popup_dc0b3a86d9f56d5da953eb15f607d8ff)
+        ;
+
+        
+    
+    
+            marker_3534aa7d927881d3eed295af67cc3b0b.bindTooltip(
+                `<div>
+                     AVENUE DU ROI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8ff18fdbf075000310fa520b814e751b = L.marker(
+                [50.828952, 4.329179],
+                {"name": "IMPRIMERIE"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_419bc161fc001f877a813780ebe38906 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8ff18fdbf075000310fa520b814e751b.setIcon(icon_419bc161fc001f877a813780ebe38906);
+        
+    
+        var popup_8c2bc1f00ce6e091a2cdfaa11be0e4f1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f0a178f6c41ebfc65687bd0d8595c8fc = $(`<div id="html_f0a178f6c41ebfc65687bd0d8595c8fc" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: IMPRIMERIE</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 75.0</h6></center>         </div>`)[0];
+                popup_8c2bc1f00ce6e091a2cdfaa11be0e4f1.setContent(html_f0a178f6c41ebfc65687bd0d8595c8fc);
+            
+        
+
+        marker_8ff18fdbf075000310fa520b814e751b.bindPopup(popup_8c2bc1f00ce6e091a2cdfaa11be0e4f1)
+        ;
+
+        
+    
+    
+            marker_8ff18fdbf075000310fa520b814e751b.bindTooltip(
+                `<div>
+                     IMPRIMERIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7fa74a02cb50e1a6cf9ab039ca7c9f36 = L.marker(
+                [50.827135, 4.327179],
+                {"name": "ORBAN"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_90c3a8ac4e373790b9a8d0c1ece0625c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7fa74a02cb50e1a6cf9ab039ca7c9f36.setIcon(icon_90c3a8ac4e373790b9a8d0c1ece0625c);
+        
+    
+        var popup_2f29bfb37371e9836fd31b3406cc0f68 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d0ac8d16a9fff02dd1087682a590eb61 = $(`<div id="html_d0ac8d16a9fff02dd1087682a590eb61" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ORBAN</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 66.67</h6></center>         </div>`)[0];
+                popup_2f29bfb37371e9836fd31b3406cc0f68.setContent(html_d0ac8d16a9fff02dd1087682a590eb61);
+            
+        
+
+        marker_7fa74a02cb50e1a6cf9ab039ca7c9f36.bindPopup(popup_2f29bfb37371e9836fd31b3406cc0f68)
+        ;
+
+        
+    
+    
+            marker_7fa74a02cb50e1a6cf9ab039ca7c9f36.bindTooltip(
+                `<div>
+                     ORBAN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e27a06e483470958bc32ed2f62e39ddc = L.marker(
+                [50.824159, 4.325394],
+                {"name": "WIELS"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_0ab208d829fbbac2f9744185e34be789 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e27a06e483470958bc32ed2f62e39ddc.setIcon(icon_0ab208d829fbbac2f9744185e34be789);
+        
+    
+        var popup_3f4e89cece5b8982ca93beb44c1e37fd = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c3c87482e703a48cc1647c6c5cf086ef = $(`<div id="html_c3c87482e703a48cc1647c6c5cf086ef" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WIELS</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 58.33</h6></center>         </div>`)[0];
+                popup_3f4e89cece5b8982ca93beb44c1e37fd.setContent(html_c3c87482e703a48cc1647c6c5cf086ef);
+            
+        
+
+        marker_e27a06e483470958bc32ed2f62e39ddc.bindPopup(popup_3f4e89cece5b8982ca93beb44c1e37fd)
+        ;
+
+        
+    
+    
+            marker_e27a06e483470958bc32ed2f62e39ddc.bindTooltip(
+                `<div>
+                     WIELS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e892ff92623c2c8facf1131827c11bc2 = L.marker(
+                [50.821668, 4.32197],
+                {"name": "CHARROI"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_cc2e0b554d78e16378d0a4e6da7f1fba = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e892ff92623c2c8facf1131827c11bc2.setIcon(icon_cc2e0b554d78e16378d0a4e6da7f1fba);
+        
+    
+        var popup_5ce9aaed2c4f7c35ff062069ca7dff99 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6c664bab3b69127ccab8b7c79efe3e17 = $(`<div id="html_6c664bab3b69127ccab8b7c79efe3e17" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CHARROI</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 50.0</h6></center>         </div>`)[0];
+                popup_5ce9aaed2c4f7c35ff062069ca7dff99.setContent(html_6c664bab3b69127ccab8b7c79efe3e17);
+            
+        
+
+        marker_e892ff92623c2c8facf1131827c11bc2.bindPopup(popup_5ce9aaed2c4f7c35ff062069ca7dff99)
+        ;
+
+        
+    
+    
+            marker_e892ff92623c2c8facf1131827c11bc2.bindTooltip(
+                `<div>
+                     CHARROI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a5b05cf61547b62d2cd4edd3cb62286f = L.marker(
+                [50.816648, 4.319873],
+                {"name": "BERVOETS"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_e0d33a411ab5c60cea38508d0a496f34 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a5b05cf61547b62d2cd4edd3cb62286f.setIcon(icon_e0d33a411ab5c60cea38508d0a496f34);
+        
+    
+        var popup_7ea788499c1cf837dda5f22b64f9a9c1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d3f5729f31c53985fe2e327e022a2140 = $(`<div id="html_d3f5729f31c53985fe2e327e022a2140" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BERVOETS</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 41.67</h6></center>         </div>`)[0];
+                popup_7ea788499c1cf837dda5f22b64f9a9c1.setContent(html_d3f5729f31c53985fe2e327e022a2140);
+            
+        
+
+        marker_a5b05cf61547b62d2cd4edd3cb62286f.bindPopup(popup_7ea788499c1cf837dda5f22b64f9a9c1)
+        ;
+
+        
+    
+    
+            marker_a5b05cf61547b62d2cd4edd3cb62286f.bindTooltip(
+                `<div>
+                     BERVOETS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d3032b55d770104b33d3146b9b99b0fe = L.marker(
+                [50.812101, 4.318835],
+                {"name": "FOREST CENTRE"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_8bf3d3a31cd83cd754afcfec9b9fa369 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d3032b55d770104b33d3146b9b99b0fe.setIcon(icon_8bf3d3a31cd83cd754afcfec9b9fa369);
+        
+    
+        var popup_38e3f37efdf5ce8c7fd39c6b3f1571c1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a424ea15718008d9531b634b3c49893f = $(`<div id="html_a424ea15718008d9531b634b3c49893f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FOREST CENTRE</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_38e3f37efdf5ce8c7fd39c6b3f1571c1.setContent(html_a424ea15718008d9531b634b3c49893f);
+            
+        
+
+        marker_d3032b55d770104b33d3146b9b99b0fe.bindPopup(popup_38e3f37efdf5ce8c7fd39c6b3f1571c1)
+        ;
+
+        
+    
+    
+            marker_d3032b55d770104b33d3146b9b99b0fe.bindTooltip(
+                `<div>
+                     FOREST CENTRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dac677200cc5d9604f4261c1fabbbd2e = L.marker(
+                [50.809901, 4.317548],
+                {"name": "SAINT-DENIS"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_546a4b8ecda62eae71f1ae6ad8c687ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_dac677200cc5d9604f4261c1fabbbd2e.setIcon(icon_546a4b8ecda62eae71f1ae6ad8c687ae);
+        
+    
+        var popup_305af28790ee61d064363cb7aa29be58 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f8cb2914eaad3d44d5fa2ef902dd6de2 = $(`<div id="html_f8cb2914eaad3d44d5fa2ef902dd6de2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SAINT-DENIS</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 25.0</h6></center>         </div>`)[0];
+                popup_305af28790ee61d064363cb7aa29be58.setContent(html_f8cb2914eaad3d44d5fa2ef902dd6de2);
+            
+        
+
+        marker_dac677200cc5d9604f4261c1fabbbd2e.bindPopup(popup_305af28790ee61d064363cb7aa29be58)
+        ;
+
+        
+    
+    
+            marker_dac677200cc5d9604f4261c1fabbbd2e.bindTooltip(
+                `<div>
+                     SAINT-DENIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_aaaca7b2839df8094fcca157e3181929 = L.marker(
+                [50.806398, 4.314093],
+                {"name": "MAX WALLER"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_8fb4c5206a8d6497df19421a818583b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_aaaca7b2839df8094fcca157e3181929.setIcon(icon_8fb4c5206a8d6497df19421a818583b0);
+        
+    
+        var popup_7c8c26cb6e6eb62ab5ca1d982865c09d = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0291538a22f7c3c46bcfd6bb0c07a257 = $(`<div id="html_0291538a22f7c3c46bcfd6bb0c07a257" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MAX WALLER</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 16.67</h6></center>         </div>`)[0];
+                popup_7c8c26cb6e6eb62ab5ca1d982865c09d.setContent(html_0291538a22f7c3c46bcfd6bb0c07a257);
+            
+        
+
+        marker_aaaca7b2839df8094fcca157e3181929.bindPopup(popup_7c8c26cb6e6eb62ab5ca1d982865c09d)
+        ;
+
+        
+    
+    
+            marker_aaaca7b2839df8094fcca157e3181929.bindTooltip(
+                `<div>
+                     MAX WALLER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c2f04fe51f02c4fc8cdb9db1fb524503 = L.marker(
+                [50.802176, 4.316292],
+                {"name": "BEMPT"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_cd8af0eb7d7dae66932504e16c231268 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c2f04fe51f02c4fc8cdb9db1fb524503.setIcon(icon_cd8af0eb7d7dae66932504e16c231268);
+        
+    
+        var popup_1b248e53bf0ab6e79bbbdfaaa7c27d7a = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6620863474dc8bd2e8d1b7f8301bf3a1 = $(`<div id="html_6620863474dc8bd2e8d1b7f8301bf3a1" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BEMPT</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 8.33</h6></center>         </div>`)[0];
+                popup_1b248e53bf0ab6e79bbbdfaaa7c27d7a.setContent(html_6620863474dc8bd2e8d1b7f8301bf3a1);
+            
+        
+
+        marker_c2f04fe51f02c4fc8cdb9db1fb524503.bindPopup(popup_1b248e53bf0ab6e79bbbdfaaa7c27d7a)
+        ;
+
+        
+    
+    
+            marker_c2f04fe51f02c4fc8cdb9db1fb524503.bindTooltip(
+                `<div>
+                     BEMPT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c971191d8c4bf1fa537241d3205e396d = L.marker(
+                [50.800828, 4.317514],
+                {"name": "NEERSTALLE"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_ffb24643b5d3ad1c31d9577b4f8371f6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c971191d8c4bf1fa537241d3205e396d.setIcon(icon_ffb24643b5d3ad1c31d9577b4f8371f6);
+        
+    
+        var popup_2eea62d052b262422b9703f3385dcfdb = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_9c4807a99f213fdb8bdf18f70ebac232 = $(`<div id="html_9c4807a99f213fdb8bdf18f70ebac232" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: NEERSTALLE</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 0.0</h6></center>         </div>`)[0];
+                popup_2eea62d052b262422b9703f3385dcfdb.setContent(html_9c4807a99f213fdb8bdf18f70ebac232);
+            
+        
+
+        marker_c971191d8c4bf1fa537241d3205e396d.bindPopup(popup_2eea62d052b262422b9703f3385dcfdb)
+        ;
+
+        
+    
+    
+            marker_c971191d8c4bf1fa537241d3205e396d.bindTooltip(
+                `<div>
+                     NEERSTALLE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d59485a4ffa702626ccec73c681fd9db = L.marker(
+                [50.798433, 4.312655],
+                {"name": "UCCLE SPORT"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_b123c4134c5250d875edc420d121557b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d59485a4ffa702626ccec73c681fd9db.setIcon(icon_b123c4134c5250d875edc420d121557b);
+        
+    
+        var popup_74fe291cc28b211f8886c32106b8af02 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_7b846702ffd0c56ba89e67d6174410e5 = $(`<div id="html_7b846702ffd0c56ba89e67d6174410e5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: UCCLE SPORT</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 8.33</h6></center>         </div>`)[0];
+                popup_74fe291cc28b211f8886c32106b8af02.setContent(html_7b846702ffd0c56ba89e67d6174410e5);
+            
+        
+
+        marker_d59485a4ffa702626ccec73c681fd9db.bindPopup(popup_74fe291cc28b211f8886c32106b8af02)
+        ;
+
+        
+    
+    
+            marker_d59485a4ffa702626ccec73c681fd9db.bindTooltip(
+                `<div>
+                     UCCLE SPORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_76db4f8fa1d7b54cbae68ff3d917746b = L.marker(
+                [50.796599, 4.309433],
+                {"name": "RUE LONGUE"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_3c1a90ca918c6b626abe15e999948a0b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_76db4f8fa1d7b54cbae68ff3d917746b.setIcon(icon_3c1a90ca918c6b626abe15e999948a0b);
+        
+    
+        var popup_9678a6e25c537e4742c6e5a285bc3998 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c18ff428611eb52767a60cc7c71f75bd = $(`<div id="html_c18ff428611eb52767a60cc7c71f75bd" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: RUE LONGUE</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 16.67</h6></center>         </div>`)[0];
+                popup_9678a6e25c537e4742c6e5a285bc3998.setContent(html_c18ff428611eb52767a60cc7c71f75bd);
+            
+        
+
+        marker_76db4f8fa1d7b54cbae68ff3d917746b.bindPopup(popup_9678a6e25c537e4742c6e5a285bc3998)
+        ;
+
+        
+    
+    
+            marker_76db4f8fa1d7b54cbae68ff3d917746b.bindTooltip(
+                `<div>
+                     RUE LONGUE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f7226e22de67fa44ff40709438e2b081 = L.marker(
+                [50.794791, 4.306641],
+                {"name": "GILSON"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_8d904148725fbc39651d858cac26fb12 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f7226e22de67fa44ff40709438e2b081.setIcon(icon_8d904148725fbc39651d858cac26fb12);
+        
+    
+        var popup_415c3b1d090aa5e2202affcf2b688700 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ab11ceb379c40e7eb433bf9dac5abf1a = $(`<div id="html_ab11ceb379c40e7eb433bf9dac5abf1a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GILSON</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 25.0</h6></center>         </div>`)[0];
+                popup_415c3b1d090aa5e2202affcf2b688700.setContent(html_ab11ceb379c40e7eb433bf9dac5abf1a);
+            
+        
+
+        marker_f7226e22de67fa44ff40709438e2b081.bindPopup(popup_415c3b1d090aa5e2202affcf2b688700)
+        ;
+
+        
+    
+    
+            marker_f7226e22de67fa44ff40709438e2b081.bindTooltip(
+                `<div>
+                     GILSON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_20811ebf3a5e43aad791f8c33e487c8a = L.marker(
+                [50.789905, 4.29845],
+                {"name": "KERK RUISBROEK"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_c629349838ede44921a481236bb4e288 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_20811ebf3a5e43aad791f8c33e487c8a.setIcon(icon_c629349838ede44921a481236bb4e288);
+        
+    
+        var popup_9cf84018cd419d59c527772b3477fa06 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_1d8a00e6bb124856956b5a8012d1f6c6 = $(`<div id="html_1d8a00e6bb124856956b5a8012d1f6c6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: KERK RUISBROEK</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_9cf84018cd419d59c527772b3477fa06.setContent(html_1d8a00e6bb124856956b5a8012d1f6c6);
+            
+        
+
+        marker_20811ebf3a5e43aad791f8c33e487c8a.bindPopup(popup_9cf84018cd419d59c527772b3477fa06)
+        ;
+
+        
+    
+    
+            marker_20811ebf3a5e43aad791f8c33e487c8a.bindTooltip(
+                `<div>
+                     KERK RUISBROEK
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4639d02b7b92d86274f1ba6ca183e98b = L.marker(
+                [50.786901, 4.296668],
+                {"name": "RUISBROEK CENTRUM"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_6a1ce76585c9b07447f97c25542bd5cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4639d02b7b92d86274f1ba6ca183e98b.setIcon(icon_6a1ce76585c9b07447f97c25542bd5cf);
+        
+    
+        var popup_f8fc6c3d30c508668a18978546f9b72f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c1dde2d1a9428b00039e4edf84869617 = $(`<div id="html_c1dde2d1a9428b00039e4edf84869617" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: RUISBROEK CENTRUM</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 41.67</h6></center>         </div>`)[0];
+                popup_f8fc6c3d30c508668a18978546f9b72f.setContent(html_c1dde2d1a9428b00039e4edf84869617);
+            
+        
+
+        marker_4639d02b7b92d86274f1ba6ca183e98b.bindPopup(popup_f8fc6c3d30c508668a18978546f9b72f)
+        ;
+
+        
+    
+    
+            marker_4639d02b7b92d86274f1ba6ca183e98b.bindTooltip(
+                `<div>
+                     RUISBROEK CENTRUM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2984dc5b9d365b513fb256558d5055a1 = L.marker(
+                [50.783959, 4.292447],
+                {"name": "SPORTCENTRUM"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_e3699fc7d0270545c17780d712566cf9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2984dc5b9d365b513fb256558d5055a1.setIcon(icon_e3699fc7d0270545c17780d712566cf9);
+        
+    
+        var popup_c49824aa45b2098438914a74873d9142 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e84ba061901ae1ed34036dcb452016ed = $(`<div id="html_e84ba061901ae1ed34036dcb452016ed" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SPORTCENTRUM</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 50.0</h6></center>         </div>`)[0];
+                popup_c49824aa45b2098438914a74873d9142.setContent(html_e84ba061901ae1ed34036dcb452016ed);
+            
+        
+
+        marker_2984dc5b9d365b513fb256558d5055a1.bindPopup(popup_c49824aa45b2098438914a74873d9142)
+        ;
+
+        
+    
+    
+            marker_2984dc5b9d365b513fb256558d5055a1.bindTooltip(
+                `<div>
+                     SPORTCENTRUM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c0ea1d92f4650bd55e5073bbaf8b58f7 = L.marker(
+                [50.781484, 4.289118],
+                {"name": "KAPEL RUISBROEK"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_4922a6f9ed749dfbe254c26abbea1a71 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c0ea1d92f4650bd55e5073bbaf8b58f7.setIcon(icon_4922a6f9ed749dfbe254c26abbea1a71);
+        
+    
+        var popup_235b31d061e740caf5a683b31a735ea1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_9457886969c4bd0ab538b179ca128bb6 = $(`<div id="html_9457886969c4bd0ab538b179ca128bb6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: KAPEL RUISBROEK</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 58.33</h6></center>         </div>`)[0];
+                popup_235b31d061e740caf5a683b31a735ea1.setContent(html_9457886969c4bd0ab538b179ca128bb6);
+            
+        
+
+        marker_c0ea1d92f4650bd55e5073bbaf8b58f7.bindPopup(popup_235b31d061e740caf5a683b31a735ea1)
+        ;
+
+        
+    
+    
+            marker_c0ea1d92f4650bd55e5073bbaf8b58f7.bindTooltip(
+                `<div>
+                     KAPEL RUISBROEK
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e2efd5f27e1f7100fe02bbaa8e08f522 = L.marker(
+                [50.779433, 4.286045],
+                {"name": "VOETBALCLUB"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_03ea0307d6988ed9f690aadfe78d05f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e2efd5f27e1f7100fe02bbaa8e08f522.setIcon(icon_03ea0307d6988ed9f690aadfe78d05f2);
+        
+    
+        var popup_53e64accec5d6a62c7d686b6639fe0ba = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6fe68165912a801bae79860eacdbcf16 = $(`<div id="html_6fe68165912a801bae79860eacdbcf16" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VOETBALCLUB</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 66.67</h6></center>         </div>`)[0];
+                popup_53e64accec5d6a62c7d686b6639fe0ba.setContent(html_6fe68165912a801bae79860eacdbcf16);
+            
+        
+
+        marker_e2efd5f27e1f7100fe02bbaa8e08f522.bindPopup(popup_53e64accec5d6a62c7d686b6639fe0ba)
+        ;
+
+        
+    
+    
+            marker_e2efd5f27e1f7100fe02bbaa8e08f522.bindTooltip(
+                `<div>
+                     VOETBALCLUB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_562d0a584898ec2483df507b1a6a6601 = L.marker(
+                [50.774125, 4.28139],
+                {"name": "BEKA"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_2a7a6b51f28de8a22e7a32a639cdf059 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_562d0a584898ec2483df507b1a6a6601.setIcon(icon_2a7a6b51f28de8a22e7a32a639cdf059);
+        
+    
+        var popup_292e485dbecbd5c1d174356f0ef21a5f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_b3f931213e2c9fa6700b4ddab4c0bead = $(`<div id="html_b3f931213e2c9fa6700b4ddab4c0bead" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BEKA</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 75.0</h6></center>         </div>`)[0];
+                popup_292e485dbecbd5c1d174356f0ef21a5f.setContent(html_b3f931213e2c9fa6700b4ddab4c0bead);
+            
+        
+
+        marker_562d0a584898ec2483df507b1a6a6601.bindPopup(popup_292e485dbecbd5c1d174356f0ef21a5f)
+        ;
+
+        
+    
+    
+            marker_562d0a584898ec2483df507b1a6a6601.bindTooltip(
+                `<div>
+                     BEKA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_11440726349a4fadd0aec4c042682f16 = L.marker(
+                [50.77068, 4.278504],
+                {"name": "WATERBURY"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_4e968d998dec59102381ef00e6aff30c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_11440726349a4fadd0aec4c042682f16.setIcon(icon_4e968d998dec59102381ef00e6aff30c);
+        
+    
+        var popup_d0df7b34f9e0b44ec992acd57f0238ff = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_753c74f7c79fcd2c400d4971f57bcac2 = $(`<div id="html_753c74f7c79fcd2c400d4971f57bcac2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WATERBURY</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 83.33</h6></center>         </div>`)[0];
+                popup_d0df7b34f9e0b44ec992acd57f0238ff.setContent(html_753c74f7c79fcd2c400d4971f57bcac2);
+            
+        
+
+        marker_11440726349a4fadd0aec4c042682f16.bindPopup(popup_d0df7b34f9e0b44ec992acd57f0238ff)
+        ;
+
+        
+    
+    
+            marker_11440726349a4fadd0aec4c042682f16.bindTooltip(
+                `<div>
+                     WATERBURY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3c0db57469bfd10c8db5610cadc71412 = L.marker(
+                [50.765858, 4.273708],
+                {"name": "LOT STATION"}
+            ).addTo(feature_group_64c95395f55119abc1cda6fe42d3dd0b);
+        
+    
+            var icon_489e7a02d6bcf97f4d3e0a334069434b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#B4BD10", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3c0db57469bfd10c8db5610cadc71412.setIcon(icon_489e7a02d6bcf97f4d3e0a334069434b);
+        
+    
+        var popup_9553827be23845345b4f834bcb924404 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_dfce5b85f76c423ca3ebd3ce5a8a4d09 = $(`<div id="html_dfce5b85f76c423ca3ebd3ce5a8a4d09" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LOT STATION</h4></center>         <center><h5>Line: 50 GARE DU MIDI - LOT STATION</h5></center>         <center><h6>Score: 91.67</h6></center>         </div>`)[0];
+                popup_9553827be23845345b4f834bcb924404.setContent(html_dfce5b85f76c423ca3ebd3ce5a8a4d09);
+            
+        
+
+        marker_3c0db57469bfd10c8db5610cadc71412.bindPopup(popup_9553827be23845345b4f834bcb924404)
+        ;
+
+        
+    
+    
+            marker_3c0db57469bfd10c8db5610cadc71412.bindTooltip(
+                `<div>
+                     LOT STATION
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_f9e79b1e51a4c61c9856b013140d9a3f = L.featureGroup(
+                {}
+            ).addTo(map_fade5829ed337f0cb12c58093c818ed2);
+        
+    
+            var marker_24fe656312eb7eab605a72868441cd69 = L.marker(
+                [50.836345, 4.3378429999999994],
+                {"name": "GARE DU MIDI"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_97c866625b477590e3c64c5fee4e48eb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_24fe656312eb7eab605a72868441cd69.setIcon(icon_97c866625b477590e3c64c5fee4e48eb);
+        
+    
+            marker_24fe656312eb7eab605a72868441cd69.bindTooltip(
+                `<div>
+                     GARE DU MIDI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6047daf307d0ff3db76280deb0976b4e = L.marker(
+                [50.834106000000006, 4.335827999999999],
+                {"name": "SUEDE"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_0200d1a722fd70b9957c599300389bcf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6047daf307d0ff3db76280deb0976b4e.setIcon(icon_0200d1a722fd70b9957c599300389bcf);
+        
+    
+            marker_6047daf307d0ff3db76280deb0976b4e.bindTooltip(
+                `<div>
+                     SUEDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a1524917492c77030f0b63a814c9113e = L.marker(
+                [50.831399000000005, 4.3322389999999995],
+                {"name": "AVENUE DU ROI"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_cf5dc9620f1013580787a4ecef330a7b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a1524917492c77030f0b63a814c9113e.setIcon(icon_cf5dc9620f1013580787a4ecef330a7b);
+        
+    
+            marker_a1524917492c77030f0b63a814c9113e.bindTooltip(
+                `<div>
+                     AVENUE DU ROI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4641acb49a18d1a1d9870a2b339defc3 = L.marker(
+                [50.828962000000004, 4.3291889999999995],
+                {"name": "IMPRIMERIE"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_84a5dfc0520ccc022cec398f88c9d8f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4641acb49a18d1a1d9870a2b339defc3.setIcon(icon_84a5dfc0520ccc022cec398f88c9d8f7);
+        
+    
+            marker_4641acb49a18d1a1d9870a2b339defc3.bindTooltip(
+                `<div>
+                     IMPRIMERIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4a3851a9d6c5b845fa08cc3810a6d3b9 = L.marker(
+                [50.827145, 4.327189],
+                {"name": "ORBAN"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_a042fe4904ef2561ece2583849d1c20a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4a3851a9d6c5b845fa08cc3810a6d3b9.setIcon(icon_a042fe4904ef2561ece2583849d1c20a);
+        
+    
+            marker_4a3851a9d6c5b845fa08cc3810a6d3b9.bindTooltip(
+                `<div>
+                     ORBAN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a84c5229671515ae2338d4347a486206 = L.marker(
+                [50.824169000000005, 4.325404],
+                {"name": "WIELS"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_2a5ef368981af188f17f4cb82757b43b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a84c5229671515ae2338d4347a486206.setIcon(icon_2a5ef368981af188f17f4cb82757b43b);
+        
+    
+            marker_a84c5229671515ae2338d4347a486206.bindTooltip(
+                `<div>
+                     WIELS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d3e264e503a0f00cbc3e3e9551cbbcfb = L.marker(
+                [50.821678000000006, 4.32198],
+                {"name": "CHARROI"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_29b28a043b0b303f74635b56a935a512 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d3e264e503a0f00cbc3e3e9551cbbcfb.setIcon(icon_29b28a043b0b303f74635b56a935a512);
+        
+    
+            marker_d3e264e503a0f00cbc3e3e9551cbbcfb.bindTooltip(
+                `<div>
+                     CHARROI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c3e03b0ba7c006bc0808df2513ac851f = L.marker(
+                [50.816658000000004, 4.319883],
+                {"name": "BERVOETS"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_1889d9195aff4efc030a99aa10fd10a0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c3e03b0ba7c006bc0808df2513ac851f.setIcon(icon_1889d9195aff4efc030a99aa10fd10a0);
+        
+    
+            marker_c3e03b0ba7c006bc0808df2513ac851f.bindTooltip(
+                `<div>
+                     BERVOETS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_56043dd8c60f4c0511406cbc8ac5c444 = L.marker(
+                [50.812111, 4.318845],
+                {"name": "FOREST CENTRE"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_66b8d19a818849bd7fe6df37f5563b86 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_56043dd8c60f4c0511406cbc8ac5c444.setIcon(icon_66b8d19a818849bd7fe6df37f5563b86);
+        
+    
+            marker_56043dd8c60f4c0511406cbc8ac5c444.bindTooltip(
+                `<div>
+                     FOREST CENTRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4256a91c206eefcc5d0c08cddbfc6b77 = L.marker(
+                [50.80991100000001, 4.317558],
+                {"name": "SAINT-DENIS"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_f376f42ad6c6c04611b0c4edcba293e8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4256a91c206eefcc5d0c08cddbfc6b77.setIcon(icon_f376f42ad6c6c04611b0c4edcba293e8);
+        
+    
+            marker_4256a91c206eefcc5d0c08cddbfc6b77.bindTooltip(
+                `<div>
+                     SAINT-DENIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9f7bf41040fa707b3db78992b60b6714 = L.marker(
+                [50.806408000000005, 4.314102999999999],
+                {"name": "MAX WALLER"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_8493ba3bdc02cad3a853876fde762e85 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9f7bf41040fa707b3db78992b60b6714.setIcon(icon_8493ba3bdc02cad3a853876fde762e85);
+        
+    
+            marker_9f7bf41040fa707b3db78992b60b6714.bindTooltip(
+                `<div>
+                     MAX WALLER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_396955f9ba80239e4d7dfd2dfe9fd3c2 = L.marker(
+                [50.802186000000006, 4.316301999999999],
+                {"name": "BEMPT"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_a4e94c1e8cca2725aa86da65d99d3ad9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_396955f9ba80239e4d7dfd2dfe9fd3c2.setIcon(icon_a4e94c1e8cca2725aa86da65d99d3ad9);
+        
+    
+            marker_396955f9ba80239e4d7dfd2dfe9fd3c2.bindTooltip(
+                `<div>
+                     BEMPT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_750a5a27fbb5630fd17cf292743aa5de = L.marker(
+                [50.800838000000006, 4.317524],
+                {"name": "NEERSTALLE"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_962bd66f2d21b4c2b0aad371fef8a1d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_750a5a27fbb5630fd17cf292743aa5de.setIcon(icon_962bd66f2d21b4c2b0aad371fef8a1d5);
+        
+    
+            marker_750a5a27fbb5630fd17cf292743aa5de.bindTooltip(
+                `<div>
+                     NEERSTALLE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c6926e411cb4c934f577a37acc2afb02 = L.marker(
+                [50.798443000000006, 4.312665],
+                {"name": "UCCLE SPORT"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_ef3a9892918079d5bc34dfeda68c72fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c6926e411cb4c934f577a37acc2afb02.setIcon(icon_ef3a9892918079d5bc34dfeda68c72fc);
+        
+    
+            marker_c6926e411cb4c934f577a37acc2afb02.bindTooltip(
+                `<div>
+                     UCCLE SPORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9bd302c5a4f06a91b4ff3b173032ba67 = L.marker(
+                [50.796609000000004, 4.309443],
+                {"name": "RUE LONGUE"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_8c22749807f13845bdff5a3f19046037 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9bd302c5a4f06a91b4ff3b173032ba67.setIcon(icon_8c22749807f13845bdff5a3f19046037);
+        
+    
+            marker_9bd302c5a4f06a91b4ff3b173032ba67.bindTooltip(
+                `<div>
+                     RUE LONGUE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8e08bd6c0158a6136f58b9a10edc18ad = L.marker(
+                [50.794801, 4.306651],
+                {"name": "GILSON"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_e451945a483cea645a368ba1a6915372 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8e08bd6c0158a6136f58b9a10edc18ad.setIcon(icon_e451945a483cea645a368ba1a6915372);
+        
+    
+            marker_8e08bd6c0158a6136f58b9a10edc18ad.bindTooltip(
+                `<div>
+                     GILSON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2e4f34481d33868d88677c4e66fef37c = L.marker(
+                [50.789915, 4.2984599999999995],
+                {"name": "KERK RUISBROEK"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_065710440345ec1154c2cbe3371c85a7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2e4f34481d33868d88677c4e66fef37c.setIcon(icon_065710440345ec1154c2cbe3371c85a7);
+        
+    
+            marker_2e4f34481d33868d88677c4e66fef37c.bindTooltip(
+                `<div>
+                     KERK RUISBROEK
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1b2c01b6bc59f83b3eddb6c02ee0a445 = L.marker(
+                [50.786911, 4.296678],
+                {"name": "RUISBROEK CENTRUM"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_f4dae3613c015c9f7e05aa40a5347db1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1b2c01b6bc59f83b3eddb6c02ee0a445.setIcon(icon_f4dae3613c015c9f7e05aa40a5347db1);
+        
+    
+            marker_1b2c01b6bc59f83b3eddb6c02ee0a445.bindTooltip(
+                `<div>
+                     RUISBROEK CENTRUM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_083617b92566a79bb1e1eb13674e93ea = L.marker(
+                [50.783969000000006, 4.292457],
+                {"name": "SPORTCENTRUM"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_d42ac5ef18c395907ee8758f467a7d02 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_083617b92566a79bb1e1eb13674e93ea.setIcon(icon_d42ac5ef18c395907ee8758f467a7d02);
+        
+    
+            marker_083617b92566a79bb1e1eb13674e93ea.bindTooltip(
+                `<div>
+                     SPORTCENTRUM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a9132fd04dcee999453679d29be69da6 = L.marker(
+                [50.781494, 4.289128],
+                {"name": "KAPEL RUISBROEK"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_90b5c672c4556458cc164a9f2e61750b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a9132fd04dcee999453679d29be69da6.setIcon(icon_90b5c672c4556458cc164a9f2e61750b);
+        
+    
+            marker_a9132fd04dcee999453679d29be69da6.bindTooltip(
+                `<div>
+                     KAPEL RUISBROEK
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_31b7d0f947a79fb10a5bb65b1177f36b = L.marker(
+                [50.779443, 4.286054999999999],
+                {"name": "VOETBALCLUB"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_a5699effe7348401173a699f1f7dc644 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_31b7d0f947a79fb10a5bb65b1177f36b.setIcon(icon_a5699effe7348401173a699f1f7dc644);
+        
+    
+            marker_31b7d0f947a79fb10a5bb65b1177f36b.bindTooltip(
+                `<div>
+                     VOETBALCLUB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9ab0f981ada5da99af20e1e03ee6d718 = L.marker(
+                [50.774135, 4.2814],
+                {"name": "BEKA"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_83f42fa49e16b364c88b709007e91e1d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9ab0f981ada5da99af20e1e03ee6d718.setIcon(icon_83f42fa49e16b364c88b709007e91e1d);
+        
+    
+            marker_9ab0f981ada5da99af20e1e03ee6d718.bindTooltip(
+                `<div>
+                     BEKA
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c9094234bb2601ea0e900e5ec5457f2e = L.marker(
+                [50.77069, 4.2785139999999995],
+                {"name": "WATERBURY"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_625e890c2703c43bc623852b613d5e7c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c9094234bb2601ea0e900e5ec5457f2e.setIcon(icon_625e890c2703c43bc623852b613d5e7c);
+        
+    
+            marker_c9094234bb2601ea0e900e5ec5457f2e.bindTooltip(
+                `<div>
+                     WATERBURY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_882c740e1f8722ba76fcc96cc900981b = L.marker(
+                [50.765868000000005, 4.273718],
+                {"name": "LOT STATION"}
+            ).addTo(feature_group_f9e79b1e51a4c61c9856b013140d9a3f);
+        
+    
+            var icon_965267adf65d9530776bde403cec33d2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_882c740e1f8722ba76fcc96cc900981b.setIcon(icon_965267adf65d9530776bde403cec33d2);
+        
+    
+            marker_882c740e1f8722ba76fcc96cc900981b.bindTooltip(
+                `<div>
+                     LOT STATION
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_0982d952729b516e92b6cdb418289afd = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_33b99b53b31fd2dde13199f67cdad583,
+                },
+                overlays :  {
+                    "50 GARE DU MIDI - LOT STATION" : feature_group_64c95395f55119abc1cda6fe42d3dd0b,
+                    "50 GARE DU MIDI - LOT STATION SCORES" : feature_group_f9e79b1e51a4c61c9856b013140d9a3f,
+                },
+            };
+            L.control.layers(
+                layer_control_0982d952729b516e92b6cdb418289afd.base_layers,
+                layer_control_0982d952729b516e92b6cdb418289afd.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_fade5829ed337f0cb12c58093c818ed2);
+            feature_group_f9e79b1e51a4c61c9856b013140d9a3f.remove();
+        
+</script>
+</html>

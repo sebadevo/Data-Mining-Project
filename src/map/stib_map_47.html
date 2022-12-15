@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3051d7641a13e247f2e27aedda3a0fd8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_3051d7641a13e247f2e27aedda3a0fd8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3051d7641a13e247f2e27aedda3a0fd8 = L.map(
+                "map_3051d7641a13e247f2e27aedda3a0fd8",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c6e6b921ed0732ad884fce5340050d0f = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_3051d7641a13e247f2e27aedda3a0fd8);
+        
+    
+            var poly_line_26738a22624aa179264b29342148cb07 = L.polyline(
+                [[50.888839, 4.374682], [50.888856, 4.374654], [50.888858, 4.374648], [50.888859, 4.374642], [50.888867, 4.374541], [50.888867, 4.374533], [50.888866, 4.374527], [50.888823, 4.374414], [50.88882, 4.374408], [50.888816, 4.374405], [50.888762, 4.374371], [50.888757, 4.374369], [50.888752, 4.374371], [50.888704, 4.374404], [50.888183, 4.375079], [50.888181, 4.375086], [50.888179, 4.375094], [50.888177, 4.375137], [50.888183, 4.375162], [50.888291, 4.375374], [50.888335, 4.375471], [50.888408, 4.375619], [50.888474, 4.375671], [50.888499, 4.375698], [50.88858, 4.375826], [50.88865, 4.375924], [50.888766, 4.376062], [50.888902, 4.376211], [50.889135, 4.376486], [50.889314, 4.376696], [50.889499, 4.376901], [50.889702, 4.377113], [50.889906, 4.3773], [50.890177, 4.377538], [50.890204, 4.377562], [50.890318, 4.377664], [50.890393, 4.377742], [50.89042, 4.377772], [50.890491, 4.377863], [50.890574, 4.377987], [50.890626, 4.378078], [50.890679, 4.378183], [50.890729, 4.378301], [50.890769, 4.378406], [50.890815, 4.378551], [50.890853, 4.378685], [50.890898, 4.378874], [50.890945, 4.379095], [50.891002, 4.379408], [50.891032, 4.379647], [50.89108, 4.380163], [50.89108, 4.380163], [50.89109, 4.380268], [50.891105, 4.380407], [50.891162, 4.380676], [50.891174, 4.380713], [50.891717, 4.381763], [50.891737, 4.381793], [50.891863, 4.381964], [50.891955, 4.382076], [50.892058, 4.382187], [50.89215, 4.382268], [50.892261, 4.382348], [50.892387, 4.382413], [50.892599, 4.382501], [50.892898, 4.382615], [50.892926, 4.382627], [50.893649, 4.382912], [50.893734, 4.38293], [50.893784, 4.382928], [50.893838, 4.382908], [50.893864, 4.382895], [50.894248, 4.382718], [50.894358, 4.382668], [50.894358, 4.382668], [50.894467, 4.382618], [50.894571, 4.382673], [50.894627, 4.38283], [50.894649, 4.382988], [50.894654, 4.383031], [50.894681, 4.383272], [50.894746, 4.383793], [50.894774, 4.384044], [50.894782, 4.384139], [50.894785, 4.384276], [50.894786, 4.384319], [50.894784, 4.384611], [50.89479, 4.384958], [50.894788, 4.385206], [50.894791, 4.38566], [50.894793, 4.385851], [50.894796, 4.385953], [50.894806, 4.386048], [50.894874, 4.38637], [50.895028, 4.387019], [50.895283, 4.388085], [50.895363, 4.388432], [50.895372, 4.388472], [50.895459, 4.388828], [50.895512, 4.389045], [50.89554, 4.389173], [50.89554, 4.389173], [50.895612, 4.389493], [50.895647, 4.38969], [50.895698, 4.389953], [50.895817, 4.390614], [50.896033, 4.39185], [50.896118, 4.392322], [50.896136, 4.392467], [50.896138, 4.392529], [50.896125, 4.39259], [50.896104, 4.392639], [50.89608, 4.39267], [50.896068, 4.39268], [50.896049, 4.392697], [50.896045, 4.392701], [50.896035, 4.392713], [50.896013, 4.392755], [50.896011, 4.392762], [50.896002, 4.392799], [50.895997, 4.392846], [50.896018, 4.392948], [50.89603, 4.392991], [50.896064, 4.393045], [50.896079, 4.393066], [50.896122, 4.393113], [50.896149, 4.393166], [50.896162, 4.393183], [50.896167, 4.393216], [50.896156, 4.393301], [50.896136, 4.393423], [50.896111, 4.393514], [50.896056, 4.393658], [50.895978, 4.39383], [50.895814, 4.394115], [50.895755, 4.394229], [50.895745, 4.394259], [50.895745, 4.394259], [50.895722, 4.394334], [50.895714, 4.394377], [50.895705, 4.394483], [50.895707, 4.39461], [50.895717, 4.394681], [50.895739, 4.394771], [50.895777, 4.39491], [50.895816, 4.395045], [50.895861, 4.395181], [50.895901, 4.395287], [50.895954, 4.39541], [50.895995, 4.395496], [50.896062, 4.395607], [50.896116, 4.395689], [50.896459, 4.396155], [50.896683, 4.396465], [50.896704, 4.396495], [50.89681, 4.396636], [50.897006, 4.396875], [50.897195, 4.39707], [50.897335, 4.397208], [50.897491, 4.397354], [50.897833, 4.397682], [50.897969, 4.397825], [50.898103, 4.397972], [50.898349, 4.398258], [50.898821, 4.398785], [50.898898, 4.398859], [50.89899, 4.398925], [50.899016, 4.398939], [50.899243, 4.399029], [50.899302, 4.399041], [50.899302, 4.399041], [50.899405, 4.399091], [50.899465, 4.399114], [50.899554, 4.399117], [50.899554, 4.399117], [50.899634, 4.399096], [50.899661, 4.39909], [50.899712, 4.399079], [50.899745, 4.399063], [50.899807, 4.399022], [50.899832, 4.399002], [50.899878, 4.398955], [50.899901, 4.398931], [50.899915, 4.398912], [50.899982, 4.398797], [50.900288, 4.398264], [50.900367, 4.398108], [50.900467, 4.397936], [50.900629, 4.397655], [50.90072, 4.397508], [50.900784, 4.397446], [50.900882, 4.397351], [50.90099, 4.397294], [50.901105, 4.397249], [50.901194, 4.39725], [50.901384, 4.397274], [50.901853, 4.397543], [50.902208, 4.397757], [50.902535, 4.397947], [50.902778, 4.398098], [50.902778, 4.398098], [50.903026, 4.398248], [50.903263, 4.398377], [50.903421, 4.398511], [50.903597, 4.398675], [50.903801, 4.398928], [50.903928, 4.399133], [50.904066, 4.399416], [50.904168, 4.399628], [50.904508, 4.400363], [50.905113, 4.401646], [50.905176, 4.401782], [50.905176, 4.401782], [50.905287, 4.401983], [50.905347, 4.402081], [50.90539, 4.402111], [50.905418, 4.402092], [50.905533, 4.401859], [50.905595, 4.401605], [50.905596, 4.4016], [50.905596, 4.401596], [50.905588, 4.40129], [50.90554, 4.400958], [50.905481, 4.400595], [50.905373, 4.399992], [50.905255, 4.399352], [50.90522, 4.398957], [50.905224, 4.398747], [50.905232, 4.39857], [50.905243, 4.39845], [50.905263, 4.398333], [50.905349, 4.398077], [50.905449, 4.397865], [50.905514, 4.39777], [50.905605, 4.397664], [50.905925, 4.39738], [50.906007, 4.3973], [50.906063, 4.397213], [50.906096, 4.397146], [50.906125, 4.397074], [50.906152, 4.396969], [50.906165, 4.396871], [50.906171, 4.396828], [50.906175, 4.396801], [50.906176, 4.39662], [50.906158, 4.396436], [50.90615, 4.396345], [50.90615, 4.396345], [50.906122, 4.396018], [50.906119, 4.395975], [50.90607, 4.39549], [50.905939, 4.393992], [50.905922, 4.393497], [50.905924, 4.392533], [50.905923, 4.392227], [50.905916, 4.392129], [50.905907, 4.392079], [50.905889, 4.392032], [50.905888, 4.39203], [50.905886, 4.392027], [50.905852, 4.391987], [50.905813, 4.391963], [50.905784, 4.391944], [50.905743, 4.39191], [50.905711, 4.391867], [50.905678, 4.391781], [50.905667, 4.39172], [50.905661, 4.391516], [50.90566, 4.391404], [50.905662, 4.390918], [50.905662, 4.390918], [50.905664, 4.390385], [50.90566, 4.390075], [50.905643, 4.389769], [50.905778, 4.389492], [50.905924, 4.389185], [50.90637, 4.388382], [50.906428, 4.388376], [50.906482, 4.388367], [50.906573, 4.388366], [50.906573, 4.388366], [50.906666, 4.388396], [50.906686, 4.388405], [50.906798, 4.38845], [50.906986, 4.388527], [50.907111, 4.388607], [50.907213, 4.388673], [50.907446, 4.38883], [50.907601, 4.388942], [50.907601, 4.388942], [50.908001, 4.389321], [50.908252, 4.389615], [50.908383, 4.389806], [50.908418, 4.389979], [50.908455, 4.390036], [50.908511, 4.390072], [50.908511, 4.390072], [50.908551, 4.39007], [50.908578, 4.390062], [50.908679, 4.390085], [50.908793, 4.390174], [50.908863, 4.390232], [50.909181, 4.390571], [50.90926, 4.390655], [50.909265, 4.390661], [50.909279, 4.390673], [50.909374, 4.390759], [50.909457, 4.390843], [50.909656, 4.39104], [50.909718, 4.391156], [50.909753, 4.391238], [50.909776, 4.39135], [50.909787, 4.391395], [50.909827, 4.391451], [50.909934, 4.39148], [50.909955, 4.391466], [50.910025, 4.391326], [50.910111, 4.391169], [50.910159, 4.391075], [50.910289, 4.39085], [50.910292, 4.390846], [50.910452, 4.390579], [50.910666, 4.390339], [50.910828, 4.39026], [50.910974, 4.390218], [50.911075, 4.390208], [50.911244, 4.390219], [50.911368, 4.390265], [50.911499, 4.390336], [50.911772, 4.390618], [50.911958, 4.390895], [50.912254, 4.391225], [50.9124, 4.391409], [50.91251, 4.391545], [50.912639, 4.391707], [50.912792, 4.391912], [50.912826, 4.391963], [50.912952, 4.392146], [50.913169, 4.392414], [50.913208, 4.392511], [50.91326, 4.392817], [50.913285, 4.393347], [50.913309, 4.393659], [50.913503, 4.394492], [50.91369, 4.395169], [50.913763, 4.395357], [50.913866, 4.39562], [50.913867, 4.39569], [50.913855, 4.395755], [50.913856, 4.395835], [50.913869, 4.395894], [50.913893, 4.395937], [50.913928, 4.39597], [50.913964, 4.395994], [50.913984, 4.396045], [50.914194, 4.398841], [50.914217, 4.399064], [50.914217, 4.399064], [50.914254, 4.399644], [50.914254, 4.399644], [50.9143, 4.40019], [50.914395, 4.401527], [50.914386, 4.401583], [50.914368, 4.401619], [50.914349, 4.401654], [50.914336, 4.401691], [50.914336, 4.401736], [50.914337, 4.401769], [50.914342, 4.401794], [50.914359, 4.401831], [50.914388, 4.401854], [50.914412, 4.401871], [50.91444, 4.401875], [50.91446, 4.401866], [50.914501, 4.401821], [50.914526, 4.401782], [50.914544, 4.40175], [50.914555, 4.401736], [50.914578, 4.401723], [50.914744, 4.401694], [50.915061, 4.401641], [50.915733, 4.401487], [50.915894, 4.40147], [50.916058, 4.401447], [50.916187, 4.401416], [50.916539, 4.401321], [50.916584, 4.401327], [50.916601, 4.401344], [50.916619, 4.401381], [50.916689, 4.401614], [50.916882, 4.402246], [50.916882, 4.402246], [50.916995, 4.402608], [50.917056, 4.402792], [50.917104, 4.402876], [50.917136, 4.402883], [50.917291, 4.402886], [50.917338, 4.402926], [50.917363, 4.402977], [50.917381, 4.403038], [50.917472, 4.403425], [50.917551, 4.403755], [50.91776, 4.404702], [50.917926, 4.405338], [50.918224, 4.406348], [50.918468, 4.407004], [50.918646, 4.40743], [50.918801, 4.407706], [50.918937, 4.407874], [50.919038, 4.407967], [50.919133, 4.408014], [50.919399, 4.408188], [50.919399, 4.408188], [50.919531, 4.4083], [50.919843, 4.408572], [50.92006, 4.408716], [50.920086, 4.408737], [50.920086, 4.408737], [50.920309, 4.40887], [50.92104, 4.409263], [50.921059, 4.40927], [50.921059, 4.40927], [50.921271, 4.409428], [50.921332, 4.409485], [50.921776, 4.410171], [50.921842, 4.410286], [50.922405, 4.411161], [50.922707, 4.411631], [50.922789, 4.411762], [50.922846, 4.411856], [50.922893, 4.411952], [50.922937, 4.412122], [50.922942, 4.412214], [50.922928, 4.412322], [50.922904, 4.412408], [50.922881, 4.412575], [50.922875, 4.412665], [50.922875, 4.412937], [50.922835, 4.413304], [50.922822, 4.413429], [50.922777, 4.413796], [50.922777, 4.413796], [50.92276, 4.413926], [50.922746, 4.414238], [50.922746, 4.414305], [50.922747, 4.414312], [50.922748, 4.414316], [50.922767, 4.414908], [50.922767, 4.414909], [50.922768, 4.414915], [50.922804, 4.415117], [50.922815, 4.415211], [50.922842, 4.415347], [50.922889, 4.415532], [50.922956, 4.415767], [50.922994, 4.415859], [50.923028, 4.415912], [50.923194, 4.416164], [50.923363, 4.416295], [50.923388, 4.416311], [50.923653, 4.416466], [50.923684, 4.416483], [50.924012, 4.416648], [50.924086, 4.416695], [50.924127, 4.416731], [50.924182, 4.416794], [50.924267, 4.416963], [50.924334, 4.417128], [50.924463, 4.417444], [50.924501, 4.417573], [50.924726, 4.418199], [50.924891, 4.418712], [50.92495, 4.418885], [50.925187, 4.419668], [50.925594, 4.4209], [50.925975, 4.422007], [50.926344, 4.423084], [50.926404, 4.423309], [50.926404, 4.423309], [50.926481, 4.423643], [50.926513, 4.423822], [50.926544, 4.424023], [50.92655, 4.424161], [50.926534, 4.424187], [50.92652, 4.424219], [50.926507, 4.424259], [50.926502, 4.424298], [50.926499, 4.42434], [50.926502, 4.424381], [50.926505, 4.424399], [50.926514, 4.42444], [50.92652, 4.424458], [50.926537, 4.424494], [50.926552, 4.424596], [50.926503, 4.424901], [50.926454, 4.425039], [50.926454, 4.425039], [50.926374, 4.425292], [50.926365, 4.425319], [50.926328, 4.425442], [50.926267, 4.425555], [50.926211, 4.425636], [50.926087, 4.425741], [50.925398, 4.42592], [50.925093, 4.426015], [50.924509, 4.426202], [50.923995, 4.426377], [50.923602, 4.426544], [50.923602, 4.426544], [50.923206, 4.426746], [50.922793, 4.426924], [50.922217, 4.427088], [50.922063, 4.427107], [50.921851, 4.427101], [50.921675, 4.427088], [50.921496, 4.427072], [50.921368, 4.42705], [50.92107, 4.42698], [50.921045, 4.427005], [50.921031, 4.427053], [50.921009, 4.42714], [50.921009, 4.427228], [50.921026, 4.42729], [50.921058, 4.427374], [50.921132, 4.427569], [50.921346, 4.428091], [50.921477, 4.42839], [50.921597, 4.428627], [50.921597, 4.428627], [50.921627, 4.428686], [50.921648, 4.428732], [50.921665, 4.42877], [50.92176, 4.428979], [50.921895, 4.429217], [50.922189, 4.429748], [50.922255, 4.42985], [50.922501, 4.430142], [50.922735, 4.430406], [50.922908, 4.430577], [50.923071, 4.43074], [50.92322, 4.430874], [50.923405, 4.431027], [50.923585, 4.431155], [50.924019, 4.431487], [50.924218, 4.431638], [50.924428, 4.431822], [50.924543, 4.431922]],
+                {"bubblingMouseEvents": true, "color": "#A67CB0", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#A67CB0", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_3051d7641a13e247f2e27aedda3a0fd8);
+        
+    
+            var feature_group_19dd7e811176d87d3e094833cee5cf52 = L.featureGroup(
+                {}
+            ).addTo(map_3051d7641a13e247f2e27aedda3a0fd8);
+        
+    
+            var marker_09b6033f046aef1a15a6f3ed3ddb4cfb = L.marker(
+                [50.888855, 4.374708],
+                {"name": "HEEMBEEK"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_010028ece91f9a2a7b6e4d0cd59045fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_09b6033f046aef1a15a6f3ed3ddb4cfb.setIcon(icon_010028ece91f9a2a7b6e4d0cd59045fc);
+        
+    
+        var popup_6ea9cba63f44f6f5da232031baba8322 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f7a297e6e62416281cf73eb9f4c8fbfd = $(`<div id="html_f7a297e6e62416281cf73eb9f4c8fbfd" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HEEMBEEK</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_6ea9cba63f44f6f5da232031baba8322.setContent(html_f7a297e6e62416281cf73eb9f4c8fbfd);
+            
+        
+
+        marker_09b6033f046aef1a15a6f3ed3ddb4cfb.bindPopup(popup_6ea9cba63f44f6f5da232031baba8322)
+        ;
+
+        
+    
+    
+            marker_09b6033f046aef1a15a6f3ed3ddb4cfb.bindTooltip(
+                `<div>
+                     HEEMBEEK
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_16ffeb157caec656ec70cdf697a79b68 = L.marker(
+                [50.891066, 4.380166],
+                {"name": "PRES COMMUNS"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_a3b3e49b1f40c677b6f62c63af3143bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_16ffeb157caec656ec70cdf697a79b68.setIcon(icon_a3b3e49b1f40c677b6f62c63af3143bc);
+        
+    
+        var popup_008b44fe17f3f17898c3d2abef4ae134 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e4518f3a45813cb9da3c17e52220cee6 = $(`<div id="html_e4518f3a45813cb9da3c17e52220cee6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PRES COMMUNS</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 90.48</h6></center>         </div>`)[0];
+                popup_008b44fe17f3f17898c3d2abef4ae134.setContent(html_e4518f3a45813cb9da3c17e52220cee6);
+            
+        
+
+        marker_16ffeb157caec656ec70cdf697a79b68.bindPopup(popup_008b44fe17f3f17898c3d2abef4ae134)
+        ;
+
+        
+    
+    
+            marker_16ffeb157caec656ec70cdf697a79b68.bindTooltip(
+                `<div>
+                     PRES COMMUNS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f969576a315b80a452388b01a5105e82 = L.marker(
+                [50.894356, 4.382654],
+                {"name": "ZAVELPUT"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_1ef4f81d7da2f154ccd8e249cb60cd6f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f969576a315b80a452388b01a5105e82.setIcon(icon_1ef4f81d7da2f154ccd8e249cb60cd6f);
+        
+    
+        var popup_ef23085079e5122d30d2601db5ef98d1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ce7b25a1fabca054bdf033f63f62a073 = $(`<div id="html_ce7b25a1fabca054bdf033f63f62a073" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ZAVELPUT</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 80.95</h6></center>         </div>`)[0];
+                popup_ef23085079e5122d30d2601db5ef98d1.setContent(html_ce7b25a1fabca054bdf033f63f62a073);
+            
+        
+
+        marker_f969576a315b80a452388b01a5105e82.bindPopup(popup_ef23085079e5122d30d2601db5ef98d1)
+        ;
+
+        
+    
+    
+            marker_f969576a315b80a452388b01a5105e82.bindTooltip(
+                `<div>
+                     ZAVELPUT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_861c4981f8003cc37e1d8a6e05eb6923 = L.marker(
+                [50.895522, 4.389181],
+                {"name": "PETER BENOIT"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_1d2735795226c338785380f944ee63dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_861c4981f8003cc37e1d8a6e05eb6923.setIcon(icon_1d2735795226c338785380f944ee63dc);
+        
+    
+        var popup_1d1ac2eff851d957ea609ebb74064097 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_25d5d57a64fe946fc255a6c69b923eed = $(`<div id="html_25d5d57a64fe946fc255a6c69b923eed" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PETER BENOIT</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 71.43</h6></center>         </div>`)[0];
+                popup_1d1ac2eff851d957ea609ebb74064097.setContent(html_25d5d57a64fe946fc255a6c69b923eed);
+            
+        
+
+        marker_861c4981f8003cc37e1d8a6e05eb6923.bindPopup(popup_1d1ac2eff851d957ea609ebb74064097)
+        ;
+
+        
+    
+    
+            marker_861c4981f8003cc37e1d8a6e05eb6923.bindTooltip(
+                `<div>
+                     PETER BENOIT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e671b73e651ce266edd218b7bbd9a206 = L.marker(
+                [50.895756, 4.394267],
+                {"name": "RAMIER"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_c3fe68e792c2795036615ea114415041 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e671b73e651ce266edd218b7bbd9a206.setIcon(icon_c3fe68e792c2795036615ea114415041);
+        
+    
+        var popup_acd06d22cc7520cea422d0dedeb88ed9 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_72891fffa3d17daaa483cb5a6211ff6f = $(`<div id="html_72891fffa3d17daaa483cb5a6211ff6f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: RAMIER</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 61.9</h6></center>         </div>`)[0];
+                popup_acd06d22cc7520cea422d0dedeb88ed9.setContent(html_72891fffa3d17daaa483cb5a6211ff6f);
+            
+        
+
+        marker_e671b73e651ce266edd218b7bbd9a206.bindPopup(popup_acd06d22cc7520cea422d0dedeb88ed9)
+        ;
+
+        
+    
+    
+            marker_e671b73e651ce266edd218b7bbd9a206.bindTooltip(
+                `<div>
+                     RAMIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6be0d82b06f1c610113fd47a47cfc78b = L.marker(
+                [50.899306, 4.399017],
+                {"name": "CHEMIN VERT"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_c3d61a1785a3e1e0f7931fe9f3e8f304 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6be0d82b06f1c610113fd47a47cfc78b.setIcon(icon_c3d61a1785a3e1e0f7931fe9f3e8f304);
+        
+    
+        var popup_23d93ca695df4b143dde115f2b55db29 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_54c7a2ab0ea898ff3a85c627db7abb2c = $(`<div id="html_54c7a2ab0ea898ff3a85c627db7abb2c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CHEMIN VERT</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 52.38</h6></center>         </div>`)[0];
+                popup_23d93ca695df4b143dde115f2b55db29.setContent(html_54c7a2ab0ea898ff3a85c627db7abb2c);
+            
+        
+
+        marker_6be0d82b06f1c610113fd47a47cfc78b.bindPopup(popup_23d93ca695df4b143dde115f2b55db29)
+        ;
+
+        
+    
+    
+            marker_6be0d82b06f1c610113fd47a47cfc78b.bindTooltip(
+                `<div>
+                     CHEMIN VERT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b17a8cd870c206bdc51ac15d51a0cf4d = L.marker(
+                [50.902785, 4.398081],
+                {"name": "TRASSERSWEG"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_5103069c67b5130555cd7a320486de76 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b17a8cd870c206bdc51ac15d51a0cf4d.setIcon(icon_5103069c67b5130555cd7a320486de76);
+        
+    
+        var popup_111f192f12eb6f1b0a2cbd7062407a18 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_bf658db676d5b5dcd03b7b640ff50bea = $(`<div id="html_bf658db676d5b5dcd03b7b640ff50bea" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TRASSERSWEG</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 42.86</h6></center>         </div>`)[0];
+                popup_111f192f12eb6f1b0a2cbd7062407a18.setContent(html_bf658db676d5b5dcd03b7b640ff50bea);
+            
+        
+
+        marker_b17a8cd870c206bdc51ac15d51a0cf4d.bindPopup(popup_111f192f12eb6f1b0a2cbd7062407a18)
+        ;
+
+        
+    
+    
+            marker_b17a8cd870c206bdc51ac15d51a0cf4d.bindTooltip(
+                `<div>
+                     TRASSERSWEG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_071bd8045add861caa2195092b163d9a = L.marker(
+                [50.905166, 4.401793],
+                {"name": "ANTOON VAN OSS"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_ba027ca86255c4d5ec3344f4ceb5bc01 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_071bd8045add861caa2195092b163d9a.setIcon(icon_ba027ca86255c4d5ec3344f4ceb5bc01);
+        
+    
+        var popup_82a3870538ac710f8fcaa83d64be6069 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_894ed71a65af6c37ce56e7804e2359b7 = $(`<div id="html_894ed71a65af6c37ce56e7804e2359b7" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ANTOON VAN OSS</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_82a3870538ac710f8fcaa83d64be6069.setContent(html_894ed71a65af6c37ce56e7804e2359b7);
+            
+        
+
+        marker_071bd8045add861caa2195092b163d9a.bindPopup(popup_82a3870538ac710f8fcaa83d64be6069)
+        ;
+
+        
+    
+    
+            marker_071bd8045add861caa2195092b163d9a.bindTooltip(
+                `<div>
+                     ANTOON VAN OSS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b649c5f13eef42d0254d371153cf7830 = L.marker(
+                [50.906156, 4.396363],
+                {"name": "DGHR DOMAINE MIL."}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_c415c6a2f5c5c5a5d3822e4e36c0f458 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b649c5f13eef42d0254d371153cf7830.setIcon(icon_c415c6a2f5c5c5a5d3822e4e36c0f458);
+        
+    
+        var popup_9491814b4791bbce9e5539d8409dbd67 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_5c85ed9365f52bb75486f86289966bb2 = $(`<div id="html_5c85ed9365f52bb75486f86289966bb2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DGHR DOMAINE MIL.</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 23.81</h6></center>         </div>`)[0];
+                popup_9491814b4791bbce9e5539d8409dbd67.setContent(html_5c85ed9365f52bb75486f86289966bb2);
+            
+        
+
+        marker_b649c5f13eef42d0254d371153cf7830.bindPopup(popup_9491814b4791bbce9e5539d8409dbd67)
+        ;
+
+        
+    
+    
+            marker_b649c5f13eef42d0254d371153cf7830.bindTooltip(
+                `<div>
+                     DGHR DOMAINE MIL.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5f96059e4c3335fa207f8ebbfb10b7f2 = L.marker(
+                [50.905654, 4.390918],
+                {"name": "SAO"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_d4574784eddc61d91e04c4a7933749bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5f96059e4c3335fa207f8ebbfb10b7f2.setIcon(icon_d4574784eddc61d91e04c4a7933749bd);
+        
+    
+        var popup_a55d7f268f070a17f7e457139f01c0e8 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_42c59c8eb27bdd52eea9e3a287dad3d8 = $(`<div id="html_42c59c8eb27bdd52eea9e3a287dad3d8" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SAO</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 14.29</h6></center>         </div>`)[0];
+                popup_a55d7f268f070a17f7e457139f01c0e8.setContent(html_42c59c8eb27bdd52eea9e3a287dad3d8);
+            
+        
+
+        marker_5f96059e4c3335fa207f8ebbfb10b7f2.bindPopup(popup_a55d7f268f070a17f7e457139f01c0e8)
+        ;
+
+        
+    
+    
+            marker_5f96059e4c3335fa207f8ebbfb10b7f2.bindTooltip(
+                `<div>
+                     SAO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_656a788f8fda6ff8fc8337c1b4c23b40 = L.marker(
+                [50.907587, 4.388971],
+                {"name": "HOP. MILITAIRE"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_81d9825288f804c174e3085b014e8d0a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_656a788f8fda6ff8fc8337c1b4c23b40.setIcon(icon_81d9825288f804c174e3085b014e8d0a);
+        
+    
+        var popup_79999a562c42c7b92ab7d1a3d76410fc = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_cdef35d08dd67d3699cd56a22ce93c9a = $(`<div id="html_cdef35d08dd67d3699cd56a22ce93c9a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HOP. MILITAIRE</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 4.76</h6></center>         </div>`)[0];
+                popup_79999a562c42c7b92ab7d1a3d76410fc.setContent(html_cdef35d08dd67d3699cd56a22ce93c9a);
+            
+        
+
+        marker_656a788f8fda6ff8fc8337c1b4c23b40.bindPopup(popup_79999a562c42c7b92ab7d1a3d76410fc)
+        ;
+
+        
+    
+    
+            marker_656a788f8fda6ff8fc8337c1b4c23b40.bindTooltip(
+                `<div>
+                     HOP. MILITAIRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_71086ac5d8f7b568ef9ce9c9f04bbca6 = L.marker(
+                [50.910302, 4.390863],
+                {"name": "HOOGVELD"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_8f18abd53e6f95bb46d7635326c4bca2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_71086ac5d8f7b568ef9ce9c9f04bbca6.setIcon(icon_8f18abd53e6f95bb46d7635326c4bca2);
+        
+    
+        var popup_1d0307f061f0b59db0377b3440d5289e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c165db996cc995b924c83fa5030a302b = $(`<div id="html_c165db996cc995b924c83fa5030a302b" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HOOGVELD</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 4.76</h6></center>         </div>`)[0];
+                popup_1d0307f061f0b59db0377b3440d5289e.setContent(html_c165db996cc995b924c83fa5030a302b);
+            
+        
+
+        marker_71086ac5d8f7b568ef9ce9c9f04bbca6.bindPopup(popup_1d0307f061f0b59db0377b3440d5289e)
+        ;
+
+        
+    
+    
+            marker_71086ac5d8f7b568ef9ce9c9f04bbca6.bindTooltip(
+                `<div>
+                     HOOGVELD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ad3a2553aed97d3bb25c9b4d463e5227 = L.marker(
+                [50.914183, 4.39907],
+                {"name": "VTM"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_4074b34a85bdea400c5a1981f565135a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ad3a2553aed97d3bb25c9b4d463e5227.setIcon(icon_4074b34a85bdea400c5a1981f565135a);
+        
+    
+        var popup_babc3b54dc6e319c4930640f46040a33 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_4f1dbfffee9c5cfd63f01b9f57b9b7d6 = $(`<div id="html_4f1dbfffee9c5cfd63f01b9f57b9b7d6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VTM</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 14.29</h6></center>         </div>`)[0];
+                popup_babc3b54dc6e319c4930640f46040a33.setContent(html_4f1dbfffee9c5cfd63f01b9f57b9b7d6);
+            
+        
+
+        marker_ad3a2553aed97d3bb25c9b4d463e5227.bindPopup(popup_babc3b54dc6e319c4930640f46040a33)
+        ;
+
+        
+    
+    
+            marker_ad3a2553aed97d3bb25c9b4d463e5227.bindTooltip(
+                `<div>
+                     VTM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d2a1ac127240dd201a6d1d89eba4ba57 = L.marker(
+                [50.91687, 4.402257],
+                {"name": "TWEE LEEUWENWEG"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_400b15cca88ee764bcbb0d7c7260048d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d2a1ac127240dd201a6d1d89eba4ba57.setIcon(icon_400b15cca88ee764bcbb0d7c7260048d);
+        
+    
+        var popup_35ec01723a1aede449d15dc7caaed8b2 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_20c54159902c33e1c436c259fcc7071f = $(`<div id="html_20c54159902c33e1c436c259fcc7071f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TWEE LEEUWENWEG</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 23.81</h6></center>         </div>`)[0];
+                popup_35ec01723a1aede449d15dc7caaed8b2.setContent(html_20c54159902c33e1c436c259fcc7071f);
+            
+        
+
+        marker_d2a1ac127240dd201a6d1d89eba4ba57.bindPopup(popup_35ec01723a1aede449d15dc7caaed8b2)
+        ;
+
+        
+    
+    
+            marker_d2a1ac127240dd201a6d1d89eba4ba57.bindTooltip(
+                `<div>
+                     TWEE LEEUWENWEG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_085566f1b0f882164fc8e182962c5c4c = L.marker(
+                [50.919385, 4.408232],
+                {"name": "ENNEPETAL"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_1dcda8ddecd85f1bb5b39b6b31c645c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_085566f1b0f882164fc8e182962c5c4c.setIcon(icon_1dcda8ddecd85f1bb5b39b6b31c645c5);
+        
+    
+        var popup_260e7f1c31b9a0070892058936006a62 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3755908b08e76c1c6ce94d206485e4d7 = $(`<div id="html_3755908b08e76c1c6ce94d206485e4d7" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ENNEPETAL</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_260e7f1c31b9a0070892058936006a62.setContent(html_3755908b08e76c1c6ce94d206485e4d7);
+            
+        
+
+        marker_085566f1b0f882164fc8e182962c5c4c.bindPopup(popup_260e7f1c31b9a0070892058936006a62)
+        ;
+
+        
+    
+    
+            marker_085566f1b0f882164fc8e182962c5c4c.bindTooltip(
+                `<div>
+                     ENNEPETAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ac61391d889cbf391d6b0164a3b76a9c = L.marker(
+                [50.921057, 4.4093],
+                {"name": "MINNEMOLEN"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_5b44981eb648e1af4cd05f328a73afb5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ac61391d889cbf391d6b0164a3b76a9c.setIcon(icon_5b44981eb648e1af4cd05f328a73afb5);
+        
+    
+        var popup_0e7e4830c2780a6eadfb1f45301745cf = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_dbdc494b32d97b439891a60e08b430c0 = $(`<div id="html_dbdc494b32d97b439891a60e08b430c0" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MINNEMOLEN</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 42.86</h6></center>         </div>`)[0];
+                popup_0e7e4830c2780a6eadfb1f45301745cf.setContent(html_dbdc494b32d97b439891a60e08b430c0);
+            
+        
+
+        marker_ac61391d889cbf391d6b0164a3b76a9c.bindPopup(popup_0e7e4830c2780a6eadfb1f45301745cf)
+        ;
+
+        
+    
+    
+            marker_ac61391d889cbf391d6b0164a3b76a9c.bindTooltip(
+                `<div>
+                     MINNEMOLEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_12d6760cd281eef474323eedc5170b8f = L.marker(
+                [50.922736, 4.413781],
+                {"name": "VLIERKENS"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_d9ae5fd5fad0f18e01c07799e17920dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_12d6760cd281eef474323eedc5170b8f.setIcon(icon_d9ae5fd5fad0f18e01c07799e17920dc);
+        
+    
+        var popup_ef41c637a29921a2a82c93b28d0147e6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_62f5d1db18278950e04dc0e2843868f0 = $(`<div id="html_62f5d1db18278950e04dc0e2843868f0" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VLIERKENS</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 52.38</h6></center>         </div>`)[0];
+                popup_ef41c637a29921a2a82c93b28d0147e6.setContent(html_62f5d1db18278950e04dc0e2843868f0);
+            
+        
+
+        marker_12d6760cd281eef474323eedc5170b8f.bindPopup(popup_ef41c637a29921a2a82c93b28d0147e6)
+        ;
+
+        
+    
+    
+            marker_12d6760cd281eef474323eedc5170b8f.bindTooltip(
+                `<div>
+                     VLIERKENS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_292a45bd2797e1732a2460dcf66af23e = L.marker(
+                [50.926373, 4.423329],
+                {"name": "KERK VILVOORDE"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_8934743ae7924799bb77f35d11a3643b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_292a45bd2797e1732a2460dcf66af23e.setIcon(icon_8934743ae7924799bb77f35d11a3643b);
+        
+    
+        var popup_a2c770f742e9a7a721639c8678fbbc82 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3562c35e5e7b031b89efbf6a8837e301 = $(`<div id="html_3562c35e5e7b031b89efbf6a8837e301" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: KERK VILVOORDE</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 61.9</h6></center>         </div>`)[0];
+                popup_a2c770f742e9a7a721639c8678fbbc82.setContent(html_3562c35e5e7b031b89efbf6a8837e301);
+            
+        
+
+        marker_292a45bd2797e1732a2460dcf66af23e.bindPopup(popup_a2c770f742e9a7a721639c8678fbbc82)
+        ;
+
+        
+    
+    
+            marker_292a45bd2797e1732a2460dcf66af23e.bindTooltip(
+                `<div>
+                     KERK VILVOORDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b219276647cd92c4340903a729d5dd3d = L.marker(
+                [50.923607, 4.426533],
+                {"name": "HANSSENSPARK"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_a682a6af088aada54ab6079680792fca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b219276647cd92c4340903a729d5dd3d.setIcon(icon_a682a6af088aada54ab6079680792fca);
+        
+    
+        var popup_552757ba46e43df7b03707031a8773e5 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0adb749a9c5ee54494cd67d2be82e6a0 = $(`<div id="html_0adb749a9c5ee54494cd67d2be82e6a0" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HANSSENSPARK</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 71.43</h6></center>         </div>`)[0];
+                popup_552757ba46e43df7b03707031a8773e5.setContent(html_0adb749a9c5ee54494cd67d2be82e6a0);
+            
+        
+
+        marker_b219276647cd92c4340903a729d5dd3d.bindPopup(popup_552757ba46e43df7b03707031a8773e5)
+        ;
+
+        
+    
+    
+            marker_b219276647cd92c4340903a729d5dd3d.bindTooltip(
+                `<div>
+                     HANSSENSPARK
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e04fbf5dd38b72d60cdba3c71fa3fe5d = L.marker(
+                [50.92158, 4.428648],
+                {"name": "BLOKKEN"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_3abc9a6d6150c3fb5ce573d50251bd83 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e04fbf5dd38b72d60cdba3c71fa3fe5d.setIcon(icon_3abc9a6d6150c3fb5ce573d50251bd83);
+        
+    
+        var popup_a43ff7dd46d0c7cc87c37a5115f3cf5e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ed6dde0840d75f547b7b75fbd4269a08 = $(`<div id="html_ed6dde0840d75f547b7b75fbd4269a08" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BLOKKEN</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 80.95</h6></center>         </div>`)[0];
+                popup_a43ff7dd46d0c7cc87c37a5115f3cf5e.setContent(html_ed6dde0840d75f547b7b75fbd4269a08);
+            
+        
+
+        marker_e04fbf5dd38b72d60cdba3c71fa3fe5d.bindPopup(popup_a43ff7dd46d0c7cc87c37a5115f3cf5e)
+        ;
+
+        
+    
+    
+            marker_e04fbf5dd38b72d60cdba3c71fa3fe5d.bindTooltip(
+                `<div>
+                     BLOKKEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e1a6e2b42fa4e8c3e5428b48a205824b = L.marker(
+                [50.924533, 4.431944],
+                {"name": "VILVOORDE STATION"}
+            ).addTo(feature_group_19dd7e811176d87d3e094833cee5cf52);
+        
+    
+            var icon_d665388e949f19e78e154b088fa1ef5b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e1a6e2b42fa4e8c3e5428b48a205824b.setIcon(icon_d665388e949f19e78e154b088fa1ef5b);
+        
+    
+        var popup_8d846c39d36b865045b67172506a3f15 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f23eefe15ccb92cedc058a5d6e8142fd = $(`<div id="html_f23eefe15ccb92cedc058a5d6e8142fd" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VILVOORDE STATION</h4></center>         <center><h5>Line: 47 HEEMBEEK - VILVOORDE STATION</h5></center>         <center><h6>Score: 90.48</h6></center>         </div>`)[0];
+                popup_8d846c39d36b865045b67172506a3f15.setContent(html_f23eefe15ccb92cedc058a5d6e8142fd);
+            
+        
+
+        marker_e1a6e2b42fa4e8c3e5428b48a205824b.bindPopup(popup_8d846c39d36b865045b67172506a3f15)
+        ;
+
+        
+    
+    
+            marker_e1a6e2b42fa4e8c3e5428b48a205824b.bindTooltip(
+                `<div>
+                     VILVOORDE STATION
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_cec6c26d92a89aed3c5ad881e7e35eec = L.featureGroup(
+                {}
+            ).addTo(map_3051d7641a13e247f2e27aedda3a0fd8);
+        
+    
+            var marker_05ca53eba6ef3fa1d096aec906ec8b9d = L.marker(
+                [50.888865, 4.374718],
+                {"name": "HEEMBEEK"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_a7d1a195e5ffa395c58082f8c18d69d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_05ca53eba6ef3fa1d096aec906ec8b9d.setIcon(icon_a7d1a195e5ffa395c58082f8c18d69d5);
+        
+    
+            marker_05ca53eba6ef3fa1d096aec906ec8b9d.bindTooltip(
+                `<div>
+                     HEEMBEEK
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7280bc686b4c1b0467b7c67a958d3437 = L.marker(
+                [50.891076000000005, 4.380176],
+                {"name": "PRES COMMUNS"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_f37f3fbecdadcd4b41e507b71ea222fa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7280bc686b4c1b0467b7c67a958d3437.setIcon(icon_f37f3fbecdadcd4b41e507b71ea222fa);
+        
+    
+            marker_7280bc686b4c1b0467b7c67a958d3437.bindTooltip(
+                `<div>
+                     PRES COMMUNS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f12373ba8ca80ce0d3ea6e75d677e51d = L.marker(
+                [50.894366000000005, 4.382663999999999],
+                {"name": "ZAVELPUT"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_8976f0d85deffa63dd3d909e7ca5fce2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f12373ba8ca80ce0d3ea6e75d677e51d.setIcon(icon_8976f0d85deffa63dd3d909e7ca5fce2);
+        
+    
+            marker_f12373ba8ca80ce0d3ea6e75d677e51d.bindTooltip(
+                `<div>
+                     ZAVELPUT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bab8c40643926318a88c56bc3113199c = L.marker(
+                [50.895532, 4.389190999999999],
+                {"name": "PETER BENOIT"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_4ed2c71b28c7603a45c0ad2a2196e414 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_bab8c40643926318a88c56bc3113199c.setIcon(icon_4ed2c71b28c7603a45c0ad2a2196e414);
+        
+    
+            marker_bab8c40643926318a88c56bc3113199c.bindTooltip(
+                `<div>
+                     PETER BENOIT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0d8e129b05a94f74546e799a4fdc17cd = L.marker(
+                [50.895766, 4.394277],
+                {"name": "RAMIER"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_faca820a99bf70ae3e696c502596a629 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0d8e129b05a94f74546e799a4fdc17cd.setIcon(icon_faca820a99bf70ae3e696c502596a629);
+        
+    
+            marker_0d8e129b05a94f74546e799a4fdc17cd.bindTooltip(
+                `<div>
+                     RAMIER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8a989fed1bc24f3da34e45df9aa1f6fb = L.marker(
+                [50.899316000000006, 4.399026999999999],
+                {"name": "CHEMIN VERT"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_83e7906f2f06484af27de79b0f01b05d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8a989fed1bc24f3da34e45df9aa1f6fb.setIcon(icon_83e7906f2f06484af27de79b0f01b05d);
+        
+    
+            marker_8a989fed1bc24f3da34e45df9aa1f6fb.bindTooltip(
+                `<div>
+                     CHEMIN VERT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ae8157342c51d1555e779ba12ec1b347 = L.marker(
+                [50.902795000000005, 4.398091],
+                {"name": "TRASSERSWEG"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_c9e65b2fab80eff691d4d09fbcfecd74 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ae8157342c51d1555e779ba12ec1b347.setIcon(icon_c9e65b2fab80eff691d4d09fbcfecd74);
+        
+    
+            marker_ae8157342c51d1555e779ba12ec1b347.bindTooltip(
+                `<div>
+                     TRASSERSWEG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_915b43337b48739d62f32f1f036d3ef9 = L.marker(
+                [50.905176000000004, 4.401802999999999],
+                {"name": "ANTOON VAN OSS"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_2409ada755f3db7a8afe3f6c52a18295 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_915b43337b48739d62f32f1f036d3ef9.setIcon(icon_2409ada755f3db7a8afe3f6c52a18295);
+        
+    
+            marker_915b43337b48739d62f32f1f036d3ef9.bindTooltip(
+                `<div>
+                     ANTOON VAN OSS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_20421f318d07d3b9e1aacb3f89772033 = L.marker(
+                [50.906166000000006, 4.396373],
+                {"name": "DGHR DOMAINE MIL."}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_561d473e588c29b65a6697b45a8fa2df = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_20421f318d07d3b9e1aacb3f89772033.setIcon(icon_561d473e588c29b65a6697b45a8fa2df);
+        
+    
+            marker_20421f318d07d3b9e1aacb3f89772033.bindTooltip(
+                `<div>
+                     DGHR DOMAINE MIL.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_197e058a10dd52505b50d2aad4bb5a36 = L.marker(
+                [50.905664, 4.390928],
+                {"name": "SAO"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_584c832785335556642b5597f42f2605 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_197e058a10dd52505b50d2aad4bb5a36.setIcon(icon_584c832785335556642b5597f42f2605);
+        
+    
+            marker_197e058a10dd52505b50d2aad4bb5a36.bindTooltip(
+                `<div>
+                     SAO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3a0e4e8a8c9e877aab829aac1d8021eb = L.marker(
+                [50.907597, 4.388980999999999],
+                {"name": "HOP. MILITAIRE"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_5d5ae253497d08580b30fe7f1522252b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3a0e4e8a8c9e877aab829aac1d8021eb.setIcon(icon_5d5ae253497d08580b30fe7f1522252b);
+        
+    
+            marker_3a0e4e8a8c9e877aab829aac1d8021eb.bindTooltip(
+                `<div>
+                     HOP. MILITAIRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_edaa28fee75eaca03230ad71360eaa27 = L.marker(
+                [50.910312000000005, 4.390873],
+                {"name": "HOOGVELD"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_4088a8b19d1868cd57fce62188f3b742 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_edaa28fee75eaca03230ad71360eaa27.setIcon(icon_4088a8b19d1868cd57fce62188f3b742);
+        
+    
+            marker_edaa28fee75eaca03230ad71360eaa27.bindTooltip(
+                `<div>
+                     HOOGVELD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d3483cb13897701c4841d9c0e64a6166 = L.marker(
+                [50.914193000000004, 4.39908],
+                {"name": "VTM"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_09f75b7aca6e76e8e01e8e09352de1a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d3483cb13897701c4841d9c0e64a6166.setIcon(icon_09f75b7aca6e76e8e01e8e09352de1a6);
+        
+    
+            marker_d3483cb13897701c4841d9c0e64a6166.bindTooltip(
+                `<div>
+                     VTM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8b1130cf5550e1f0f5ec1020d5830295 = L.marker(
+                [50.916880000000006, 4.402266999999999],
+                {"name": "TWEE LEEUWENWEG"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_6ad6f01294696e6c6589b84b70448b52 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8b1130cf5550e1f0f5ec1020d5830295.setIcon(icon_6ad6f01294696e6c6589b84b70448b52);
+        
+    
+            marker_8b1130cf5550e1f0f5ec1020d5830295.bindTooltip(
+                `<div>
+                     TWEE LEEUWENWEG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5a8e0055fad58a625b0d24eea70f93f0 = L.marker(
+                [50.919395, 4.4082419999999995],
+                {"name": "ENNEPETAL"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_0b4150c870681d8b94222c6e7e2bc020 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5a8e0055fad58a625b0d24eea70f93f0.setIcon(icon_0b4150c870681d8b94222c6e7e2bc020);
+        
+    
+            marker_5a8e0055fad58a625b0d24eea70f93f0.bindTooltip(
+                `<div>
+                     ENNEPETAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_461ac2d7bd9128b46ba7f21156e2bf4a = L.marker(
+                [50.921067, 4.40931],
+                {"name": "MINNEMOLEN"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_bd33bc9b5528f3484cd95b569adc34ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_461ac2d7bd9128b46ba7f21156e2bf4a.setIcon(icon_bd33bc9b5528f3484cd95b569adc34ff);
+        
+    
+            marker_461ac2d7bd9128b46ba7f21156e2bf4a.bindTooltip(
+                `<div>
+                     MINNEMOLEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5b4c916cad44e87feb466e4efb686121 = L.marker(
+                [50.922746000000004, 4.413791],
+                {"name": "VLIERKENS"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_bd6c2cd828c83533cb7069b429f77959 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5b4c916cad44e87feb466e4efb686121.setIcon(icon_bd6c2cd828c83533cb7069b429f77959);
+        
+    
+            marker_5b4c916cad44e87feb466e4efb686121.bindTooltip(
+                `<div>
+                     VLIERKENS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3bcce5719dd770e3b07e105e2c4032d8 = L.marker(
+                [50.926383, 4.4233389999999995],
+                {"name": "KERK VILVOORDE"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_8630140b3de15aa374ece38398bb1f4b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3bcce5719dd770e3b07e105e2c4032d8.setIcon(icon_8630140b3de15aa374ece38398bb1f4b);
+        
+    
+            marker_3bcce5719dd770e3b07e105e2c4032d8.bindTooltip(
+                `<div>
+                     KERK VILVOORDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f5c5ba2dbb35a75795c259d0c66a8f25 = L.marker(
+                [50.923617, 4.426543],
+                {"name": "HANSSENSPARK"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_b8fb5c2af3c402ec1e92a3abc31bd460 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f5c5ba2dbb35a75795c259d0c66a8f25.setIcon(icon_b8fb5c2af3c402ec1e92a3abc31bd460);
+        
+    
+            marker_f5c5ba2dbb35a75795c259d0c66a8f25.bindTooltip(
+                `<div>
+                     HANSSENSPARK
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8aceb31ed7dce009da15a25fb7c43069 = L.marker(
+                [50.92159, 4.4286579999999995],
+                {"name": "BLOKKEN"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_f5640aee74c735d51f0d4ed98ebee052 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8aceb31ed7dce009da15a25fb7c43069.setIcon(icon_f5640aee74c735d51f0d4ed98ebee052);
+        
+    
+            marker_8aceb31ed7dce009da15a25fb7c43069.bindTooltip(
+                `<div>
+                     BLOKKEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b4a6fc351ac08bfb68ce7f2262889dfb = L.marker(
+                [50.924543, 4.431953999999999],
+                {"name": "VILVOORDE STATION"}
+            ).addTo(feature_group_cec6c26d92a89aed3c5ad881e7e35eec);
+        
+    
+            var icon_e388416ce5173c4d7bf28fb3f098b92b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b4a6fc351ac08bfb68ce7f2262889dfb.setIcon(icon_e388416ce5173c4d7bf28fb3f098b92b);
+        
+    
+            marker_b4a6fc351ac08bfb68ce7f2262889dfb.bindTooltip(
+                `<div>
+                     VILVOORDE STATION
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_6fbbb3e1ec6f98905f3138edcdf28420 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_c6e6b921ed0732ad884fce5340050d0f,
+                },
+                overlays :  {
+                    "47 HEEMBEEK - VILVOORDE STATION" : feature_group_19dd7e811176d87d3e094833cee5cf52,
+                    "47 HEEMBEEK - VILVOORDE STATION SCORES" : feature_group_cec6c26d92a89aed3c5ad881e7e35eec,
+                },
+            };
+            L.control.layers(
+                layer_control_6fbbb3e1ec6f98905f3138edcdf28420.base_layers,
+                layer_control_6fbbb3e1ec6f98905f3138edcdf28420.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_3051d7641a13e247f2e27aedda3a0fd8);
+            feature_group_cec6c26d92a89aed3c5ad881e7e35eec.remove();
+        
+</script>
+</html>

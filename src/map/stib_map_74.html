@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a42db98c099804cc99d09a0e677cd3d0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a42db98c099804cc99d09a0e677cd3d0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a42db98c099804cc99d09a0e677cd3d0 = L.map(
+                "map_a42db98c099804cc99d09a0e677cd3d0",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c39ec8d6960fa1249ba0849f3fc17c37 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a42db98c099804cc99d09a0e677cd3d0);
+        
+    
+            var poly_line_1b6ab7f3e7818336ee3b508345585631 = L.polyline(
+                [[50.818284, 4.266926], [50.817584, 4.264707], [50.817368, 4.264164], [50.817143, 4.263713], [50.816997, 4.263452], [50.816804, 4.263169], [50.816623, 4.262929], [50.816405, 4.26268], [50.816193, 4.262478], [50.816018, 4.262302], [50.815801, 4.262127], [50.815776, 4.262059], [50.815772, 4.261986], [50.815767, 4.261944], [50.815762, 4.261918], [50.815759, 4.26189], [50.815735, 4.261803], [50.815713, 4.261731], [50.815662, 4.261632], [50.81566, 4.261627], [50.815658, 4.261626], [50.815596, 4.261564], [50.815509, 4.261534], [50.815438, 4.261541], [50.815369, 4.261573], [50.81531, 4.261611], [50.815261, 4.261668], [50.815231, 4.261746], [50.815203, 4.261834], [50.815194, 4.261948], [50.81518, 4.262041], [50.81516, 4.262107], [50.815084, 4.262213], [50.815031, 4.262275], [50.814981, 4.262331], [50.814943, 4.262405], [50.814898, 4.26255], [50.814878, 4.262654], [50.814843, 4.262794], [50.814824, 4.262982], [50.814816, 4.263105], [50.814822, 4.263297], [50.814912, 4.264153], [50.814923, 4.264251], [50.814934, 4.264399], [50.814947, 4.264554], [50.814965, 4.264823], [50.815014, 4.265462], [50.815046, 4.265808], [50.81508, 4.266252], [50.815084, 4.266318], [50.815084, 4.266318], [50.815167, 4.267453], [50.815175, 4.267549], [50.815266, 4.268753], [50.815316, 4.269221], [50.815325, 4.269286], [50.815357, 4.269594], [50.81547, 4.270799], [50.815483, 4.271017], [50.815622, 4.272795], [50.815647, 4.272984], [50.815647, 4.272984], [50.815712, 4.273575], [50.815745, 4.273846], [50.815769, 4.274004], [50.815756, 4.274105], [50.815753, 4.27415], [50.815754, 4.274227], [50.815766, 4.274295], [50.815774, 4.274336], [50.815803, 4.274441], [50.815805, 4.274445], [50.815808, 4.274449], [50.815841, 4.274499], [50.815863, 4.274614], [50.815906, 4.274869], [50.815978, 4.275219], [50.816072, 4.275695], [50.816205, 4.27627], [50.816358, 4.276843], [50.816926, 4.278989], [50.816926, 4.278989], [50.816959, 4.279114], [50.817099, 4.279629], [50.81711, 4.279672], [50.81714, 4.279789], [50.817177, 4.279908], [50.817187, 4.279952], [50.817224, 4.280172], [50.817272, 4.280497], [50.817376, 4.280955], [50.817428, 4.281222], [50.8175, 4.281483], [50.817564, 4.281674], [50.817651, 4.281898], [50.817736, 4.28209], [50.817793, 4.282198], [50.8179, 4.282375], [50.817921, 4.282405], [50.818007, 4.282512], [50.818102, 4.282618], [50.818208, 4.282715], [50.818309, 4.282784], [50.818467, 4.282886], [50.818551, 4.282934], [50.818734, 4.283033], [50.819019, 4.283159], [50.819184, 4.283237], [50.819184, 4.283237], [50.819373, 4.283326], [50.819601, 4.283432], [50.819793, 4.283511], [50.820044, 4.283569], [50.820148, 4.283604], [50.820501, 4.283728], [50.820684, 4.283817], [50.820713, 4.283831], [50.820782, 4.283861], [50.821195, 4.28405], [50.82144, 4.284154], [50.821507, 4.284181], [50.821507, 4.284181], [50.821559, 4.284202], [50.821584, 4.284212], [50.821857, 4.28433], [50.821882, 4.284342], [50.822157, 4.28446], [50.822449, 4.284579], [50.822585, 4.284631], [50.822971, 4.284797], [50.823001, 4.284811], [50.823173, 4.284891], [50.823277, 4.284954], [50.823406, 4.28504], [50.823514, 4.285121], [50.823571, 4.285173], [50.82369, 4.285292], [50.823791, 4.285403], [50.823923, 4.285566], [50.823981, 4.285645], [50.824045, 4.285743], [50.824137, 4.285875], [50.824161, 4.285913], [50.82435, 4.286211], [50.824636, 4.286642], [50.824657, 4.286674], [50.824917, 4.287067], [50.824996, 4.287189], [50.82521, 4.287505], [50.825427, 4.287852], [50.825503, 4.287977], [50.825561, 4.288078], [50.825561, 4.288078], [50.825564, 4.288085], [50.825666, 4.288285], [50.825682, 4.288317], [50.825779, 4.288524], [50.825802, 4.28858], [50.825889, 4.288775], [50.825965, 4.288964], [50.826021, 4.289119], [50.826087, 4.289317], [50.826204, 4.289649], [50.826215, 4.28969], [50.826215, 4.28969], [50.826311, 4.290017], [50.826359, 4.290208], [50.82639, 4.290322], [50.82639, 4.290352], [50.826397, 4.290391], [50.826409, 4.29043], [50.826432, 4.290466], [50.82646, 4.290635], [50.82648, 4.290705], [50.826522, 4.290867], [50.826683, 4.291506], [50.826903, 4.292522], [50.826913, 4.292565], [50.826922, 4.292623], [50.82693, 4.292667], [50.827034, 4.29309], [50.827047, 4.293134], [50.827055, 4.293172], [50.82707, 4.29322], [50.827413, 4.294743], [50.827539, 4.295261], [50.827549, 4.295302], [50.827668, 4.295793], [50.827668, 4.295793], [50.827852, 4.296545], [50.828176, 4.297902], [50.828302, 4.298464], [50.828434, 4.29914], [50.828459, 4.299329], [50.828482, 4.299598], [50.828482, 4.299608], [50.828482, 4.299608], [50.828488, 4.299831], [50.828465, 4.299842], [50.828434, 4.299874], [50.828427, 4.299888], [50.828411, 4.299922], [50.828384, 4.300006], [50.828369, 4.300071], [50.82836, 4.300146], [50.828355, 4.300229], [50.828358, 4.300305], [50.828369, 4.300375], [50.828383, 4.300436], [50.828384, 4.30044], [50.828386, 4.300443], [50.828405, 4.300478], [50.828424, 4.300508], [50.82845, 4.300546], [50.828491, 4.300589], [50.828528, 4.30062], [50.828578, 4.30064], [50.828678, 4.30193], [50.82875, 4.30277], [50.82881, 4.303345], [50.82881, 4.303345], [50.828818, 4.303426], [50.828819, 4.303461], [50.828815, 4.303505], [50.828809, 4.303532], [50.828804, 4.303544], [50.828798, 4.303552], [50.828758, 4.303591], [50.828727, 4.303606], [50.828699, 4.303593], [50.828677, 4.303569], [50.828605, 4.303481], [50.828518, 4.303499], [50.828481, 4.30352], [50.828447, 4.303565], [50.828423, 4.303609], [50.828393, 4.303682], [50.828393, 4.303682], [50.828417, 4.303849], [50.828479, 4.30412], [50.828455, 4.304238], [50.828437, 4.304305], [50.828414, 4.30435], [50.828388, 4.304382], [50.828319, 4.304427], [50.828115, 4.304547], [50.827965, 4.304609], [50.827344, 4.304739], [50.827317, 4.304745], [50.826914, 4.304836], [50.826587, 4.304895], [50.826587, 4.304895], [50.826362, 4.304935], [50.826269, 4.304958], [50.826021, 4.305021], [50.825802, 4.305103], [50.825588, 4.305264], [50.825446, 4.305416], [50.825315, 4.305621], [50.825039, 4.306136], [50.824849, 4.306521], [50.82475, 4.306737], [50.82462, 4.307039], [50.824369, 4.307614], [50.824216, 4.308002], [50.824, 4.308838], [50.823951, 4.309037], [50.823919, 4.309246], [50.823866, 4.309574], [50.823839, 4.30986], [50.823805, 4.310465], [50.823805, 4.310465], [50.823711, 4.312042], [50.82366, 4.312864], [50.823614, 4.313578], [50.823534, 4.314688], [50.823403, 4.315888], [50.823283, 4.316585], [50.823283, 4.316585], [50.82316, 4.317245], [50.823167, 4.317394], [50.823109, 4.317629], [50.822996, 4.318084], [50.822753, 4.31907], [50.822461, 4.320221], [50.82229, 4.320933], [50.822223, 4.321219], [50.822176, 4.32142], [50.822106, 4.321706], [50.822059, 4.321858], [50.821984, 4.322167], [50.821968, 4.322227], [50.821936, 4.322238], [50.821659, 4.321991], [50.821659, 4.321991], [50.820884, 4.321302], [50.820758, 4.321185], [50.820683, 4.321117], [50.820635, 4.321084], [50.820531, 4.321032], [50.820429, 4.320982], [50.8189, 4.320801], [50.818464, 4.320741], [50.818436, 4.320739], [50.818247, 4.320716], [50.818071, 4.320712], [50.817971, 4.320704], [50.817955, 4.320663], [50.817954, 4.320661], [50.817951, 4.320657], [50.817918, 4.320623], [50.817881, 4.320607], [50.817845, 4.320602], [50.817812, 4.320602], [50.817774, 4.320582], [50.817681, 4.320471], [50.817638, 4.320432], [50.817544, 4.320372], [50.817309, 4.320223], [50.817114, 4.320089], [50.817088, 4.320076], [50.817037, 4.320055], [50.817034, 4.320053], [50.817032, 4.320053], [50.81698, 4.320063], [50.81665, 4.319864], [50.81665, 4.319864], [50.816331, 4.319671], [50.815833, 4.319362], [50.815587, 4.319226], [50.81534, 4.31908], [50.815259, 4.319035], [50.815143, 4.318974], [50.814924, 4.318828], [50.814626, 4.318654], [50.814538, 4.318587], [50.81442, 4.318543], [50.814303, 4.318809], [50.814249, 4.318867], [50.814149, 4.3189], [50.814122, 4.318898], [50.812916, 4.31889], [50.812799, 4.318891], [50.8121, 4.318875], [50.8121, 4.318875], [50.812056, 4.318874], [50.812029, 4.318875], [50.811914, 4.318885], [50.811811, 4.318905], [50.811786, 4.318872], [50.811737, 4.318823], [50.811681, 4.318776], [50.811657, 4.318756], [50.81127, 4.318425], [50.811245, 4.318405], [50.811217, 4.318379], [50.811083, 4.318255], [50.810509, 4.317852], [50.810359, 4.31776], [50.81027, 4.317715], [50.810201, 4.317682], [50.81017, 4.31767], [50.810141, 4.31766], [50.810098, 4.317653], [50.809934, 4.317606], [50.809897, 4.317596], [50.809897, 4.317596], [50.809855, 4.317586], [50.809812, 4.317581], [50.809786, 4.317619], [50.809782, 4.317745], [50.809756, 4.318101], [50.809679, 4.31908], [50.809663, 4.319204], [50.809645, 4.319278], [50.80959, 4.319417], [50.809401, 4.319905], [50.809377, 4.319973], [50.809331, 4.320105], [50.809319, 4.320145], [50.809228, 4.3205], [50.809192, 4.320667], [50.809153, 4.320839], [50.809153, 4.320839], [50.809095, 4.321087], [50.809056, 4.321277], [50.80903, 4.321395], [50.809022, 4.321438], [50.808979, 4.321645], [50.808967, 4.321733], [50.808963, 4.321808], [50.808963, 4.321869], [50.808972, 4.32191], [50.808984, 4.321948], [50.809302, 4.322693], [50.809681, 4.323605], [50.809695, 4.323642], [50.810015, 4.324707], [50.809899, 4.324771], [50.80955, 4.324988], [50.80955, 4.324988], [50.809508, 4.325014], [50.809482, 4.32503], [50.808712, 4.325484], [50.808477, 4.325609], [50.808418, 4.325641], [50.808359, 4.325672], [50.808253, 4.325729], [50.808228, 4.325744], [50.807669, 4.326097], [50.807325, 4.32629], [50.807325, 4.32629], [50.807186, 4.326368], [50.80716, 4.326382], [50.806802, 4.326577], [50.806699, 4.326631], [50.806014, 4.326969], [50.805728, 4.32712], [50.805368, 4.327317], [50.804938, 4.327535], [50.804832, 4.327606], [50.804772, 4.32767], [50.804734, 4.327722], [50.804711, 4.327772], [50.804709, 4.327776], [50.804708, 4.327781], [50.804696, 4.327887], [50.804691, 4.328023], [50.8044, 4.327955], [50.804317, 4.327948], [50.804317, 4.327948], [50.804241, 4.327909], [50.804223, 4.327869], [50.804222, 4.327865], [50.80422, 4.327862], [50.804171, 4.327836], [50.804122, 4.327815], [50.804054, 4.327852], [50.804034, 4.327917], [50.804034, 4.327964], [50.804038, 4.328007], [50.804057, 4.328062], [50.80408, 4.32811], [50.804083, 4.328166], [50.804069, 4.328263], [50.804002, 4.32869], [50.803724, 4.330518], [50.803708, 4.330562], [50.803679, 4.330587], [50.803636, 4.330597], [50.80302, 4.330543], [50.802943, 4.330528], [50.802943, 4.330528], [50.802838, 4.330509], [50.802801, 4.330513], [50.802798, 4.330513], [50.802722, 4.33054], [50.802661, 4.33057], [50.802578, 4.33063], [50.802546, 4.330652], [50.802493, 4.330689], [50.802379, 4.330757], [50.802349, 4.330779], [50.802321, 4.330801], [50.802297, 4.330818], [50.801943, 4.331053], [50.801771, 4.331144], [50.801649, 4.331201], [50.801503, 4.331252], [50.801465, 4.331246], [50.801442, 4.331225], [50.801421, 4.331185], [50.80138, 4.331069], [50.800919, 4.329527], [50.800453, 4.327933], [50.800337, 4.32755], [50.800337, 4.32755], [50.800325, 4.327508], [50.800322, 4.327398], [50.800342, 4.32733], [50.800375, 4.327264], [50.800384, 4.327237], [50.800388, 4.327203], [50.800389, 4.327159], [50.800385, 4.327137], [50.800378, 4.327113], [50.800377, 4.327108], [50.800376, 4.327106], [50.800356, 4.327075], [50.800355, 4.327074], [50.800351, 4.327071], [50.800341, 4.327065], [50.800514, 4.326658], [50.800534, 4.326617], [50.80075, 4.326182], [50.800992, 4.325674], [50.801076, 4.325511], [50.801099, 4.325483], [50.801135, 4.325442], [50.801275, 4.325318], [50.801661, 4.32501], [50.801686, 4.32499], [50.802083, 4.324622], [50.802324, 4.324416], [50.802361, 4.324392], [50.802628, 4.324192], [50.802638, 4.324178], [50.802646, 4.324151], [50.802648, 4.324129], [50.802649, 4.324105], [50.802648, 4.324083], [50.802642, 4.324061], [50.802634, 4.324047], [50.802629, 4.324039], [50.802621, 4.324024], [50.802614, 4.324015], [50.802594, 4.324002], [50.802572, 4.323998], [50.802533, 4.324012], [50.802476, 4.324053], [50.802438, 4.324084], [50.802398, 4.324114], [50.802368, 4.324134], [50.802322, 4.324167]],
+                {"bubblingMouseEvents": true, "color": "#A67CB0", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#A67CB0", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_a42db98c099804cc99d09a0e677cd3d0);
+        
+    
+            var feature_group_719604e88ec8d3b164480241bce13246 = L.featureGroup(
+                {}
+            ).addTo(map_a42db98c099804cc99d09a0e677cd3d0);
+        
+    
+            var marker_458de51606e7cd6782938091e71ffb40 = L.marker(
+                [50.818299, 4.266915],
+                {"name": "CLEMENCE EVERARD"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_cae62f85d8b5375f8d3675b554a3391a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_458de51606e7cd6782938091e71ffb40.setIcon(icon_cae62f85d8b5375f8d3675b554a3391a);
+        
+    
+        var popup_7bcc13a02594117b98044f2ddff4f79c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_460b3c48b5a0bdd2ec69a15d3067d2c7 = $(`<div id="html_460b3c48b5a0bdd2ec69a15d3067d2c7" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CLEMENCE EVERARD</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_7bcc13a02594117b98044f2ddff4f79c.setContent(html_460b3c48b5a0bdd2ec69a15d3067d2c7);
+            
+        
+
+        marker_458de51606e7cd6782938091e71ffb40.bindPopup(popup_7bcc13a02594117b98044f2ddff4f79c)
+        ;
+
+        
+    
+    
+            marker_458de51606e7cd6782938091e71ffb40.bindTooltip(
+                `<div>
+                     CLEMENCE EVERARD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bfe23666891115abbbef709e46a94cd1 = L.marker(
+                [50.815052, 4.266326],
+                {"name": "ERASME"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_846c29950eb40d393c3e4d5a627bc74a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_bfe23666891115abbbef709e46a94cd1.setIcon(icon_846c29950eb40d393c3e4d5a627bc74a);
+        
+    
+        var popup_0083609af3277b189d8d4e9bbd6d61da = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_eddae502d801087055aad4268a307872 = $(`<div id="html_eddae502d801087055aad4268a307872" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ERASME</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 92.0</h6></center>         </div>`)[0];
+                popup_0083609af3277b189d8d4e9bbd6d61da.setContent(html_eddae502d801087055aad4268a307872);
+            
+        
+
+        marker_bfe23666891115abbbef709e46a94cd1.bindPopup(popup_0083609af3277b189d8d4e9bbd6d61da)
+        ;
+
+        
+    
+    
+            marker_bfe23666891115abbbef709e46a94cd1.bindTooltip(
+                `<div>
+                     ERASME
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6ac18dd0f1a19a82e77220fed9dc2804 = L.marker(
+                [50.815638, 4.272987],
+                {"name": "MEYLEMEERSCH"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_4ad006f18a38d99c6dba80153406f4da = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6ac18dd0f1a19a82e77220fed9dc2804.setIcon(icon_4ad006f18a38d99c6dba80153406f4da);
+        
+    
+        var popup_44edc8c8f352ec9ff860b36d72f24415 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_73a79b9ea709c70c4bcc57f01bc29e05 = $(`<div id="html_73a79b9ea709c70c4bcc57f01bc29e05" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MEYLEMEERSCH</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 84.0</h6></center>         </div>`)[0];
+                popup_44edc8c8f352ec9ff860b36d72f24415.setContent(html_73a79b9ea709c70c4bcc57f01bc29e05);
+            
+        
+
+        marker_6ac18dd0f1a19a82e77220fed9dc2804.bindPopup(popup_44edc8c8f352ec9ff860b36d72f24415)
+        ;
+
+        
+    
+    
+            marker_6ac18dd0f1a19a82e77220fed9dc2804.bindTooltip(
+                `<div>
+                     MEYLEMEERSCH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dca149b00fd0208cef198fac925dd259 = L.marker(
+                [50.816904, 4.279004],
+                {"name": "EDDY MERCKX"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_10276071b5ddd88c998c974b4c3c8292 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_dca149b00fd0208cef198fac925dd259.setIcon(icon_10276071b5ddd88c998c974b4c3c8292);
+        
+    
+        var popup_73b3f60ba840ba5f6494672c641d3a93 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_4a35b6a7230c20d312d7587f621b81d1 = $(`<div id="html_4a35b6a7230c20d312d7587f621b81d1" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: EDDY MERCKX</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 76.0</h6></center>         </div>`)[0];
+                popup_73b3f60ba840ba5f6494672c641d3a93.setContent(html_4a35b6a7230c20d312d7587f621b81d1);
+            
+        
+
+        marker_dca149b00fd0208cef198fac925dd259.bindPopup(popup_73b3f60ba840ba5f6494672c641d3a93)
+        ;
+
+        
+    
+    
+            marker_dca149b00fd0208cef198fac925dd259.bindTooltip(
+                `<div>
+                     EDDY MERCKX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_87e60504a95f252807f2d389ab5fdf4f = L.marker(
+                [50.819177, 4.283268],
+                {"name": "TREFLES"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_fd304d555731f3a3f99cc576c470d57b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_87e60504a95f252807f2d389ab5fdf4f.setIcon(icon_fd304d555731f3a3f99cc576c470d57b);
+        
+    
+        var popup_b631b7cb0681faf4bb2e48bab9391838 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_79a78a5bfeeb079f7cffe23409eb15d7 = $(`<div id="html_79a78a5bfeeb079f7cffe23409eb15d7" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TREFLES</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 68.0</h6></center>         </div>`)[0];
+                popup_b631b7cb0681faf4bb2e48bab9391838.setContent(html_79a78a5bfeeb079f7cffe23409eb15d7);
+            
+        
+
+        marker_87e60504a95f252807f2d389ab5fdf4f.bindPopup(popup_b631b7cb0681faf4bb2e48bab9391838)
+        ;
+
+        
+    
+    
+            marker_87e60504a95f252807f2d389ab5fdf4f.bindTooltip(
+                `<div>
+                     TREFLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a401f3ae102e82b75cb37002dabc109a = L.marker(
+                [50.8215, 4.284226],
+                {"name": "MARIE CURIE"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_3d2be3ff4c5a215eb283af1a438aa34a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a401f3ae102e82b75cb37002dabc109a.setIcon(icon_3d2be3ff4c5a215eb283af1a438aa34a);
+        
+    
+        var popup_e566b2bef64b2f6fcc5571336d06d7e9 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_8525027be34eb9990323e78dffdda73f = $(`<div id="html_8525027be34eb9990323e78dffdda73f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MARIE CURIE</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_e566b2bef64b2f6fcc5571336d06d7e9.setContent(html_8525027be34eb9990323e78dffdda73f);
+            
+        
+
+        marker_a401f3ae102e82b75cb37002dabc109a.bindPopup(popup_e566b2bef64b2f6fcc5571336d06d7e9)
+        ;
+
+        
+    
+    
+            marker_a401f3ae102e82b75cb37002dabc109a.bindTooltip(
+                `<div>
+                     MARIE CURIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_33eed1d1a47ff47b8e1ec4b614729db0 = L.marker(
+                [50.825555, 4.288086],
+                {"name": "MARTIN LUTH. KING"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_de3d7a05d7f6dd4b4747f0a73e7539a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_33eed1d1a47ff47b8e1ec4b614729db0.setIcon(icon_de3d7a05d7f6dd4b4747f0a73e7539a1);
+        
+    
+        var popup_827f2e8e1647283a4c7f02f601e78138 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_55403f4ce4eadae565eeb4e9b7a10420 = $(`<div id="html_55403f4ce4eadae565eeb4e9b7a10420" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MARTIN LUTH. KING</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 52.0</h6></center>         </div>`)[0];
+                popup_827f2e8e1647283a4c7f02f601e78138.setContent(html_55403f4ce4eadae565eeb4e9b7a10420);
+            
+        
+
+        marker_33eed1d1a47ff47b8e1ec4b614729db0.bindPopup(popup_827f2e8e1647283a4c7f02f601e78138)
+        ;
+
+        
+    
+    
+            marker_33eed1d1a47ff47b8e1ec4b614729db0.bindTooltip(
+                `<div>
+                     MARTIN LUTH. KING
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ece69c86e51fc8b9c0d537b238184926 = L.marker(
+                [50.826205, 4.289699],
+                {"name": "FRANS HALS"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_09162a91039bdeaa81985d0b1f2c8756 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ece69c86e51fc8b9c0d537b238184926.setIcon(icon_09162a91039bdeaa81985d0b1f2c8756);
+        
+    
+        var popup_07fa527ce7ffb07676c9d9f77fb79ae0 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2bd5ff18624f6bb840c6b82246b62068 = $(`<div id="html_2bd5ff18624f6bb840c6b82246b62068" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FRANS HALS</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 44.0</h6></center>         </div>`)[0];
+                popup_07fa527ce7ffb07676c9d9f77fb79ae0.setContent(html_2bd5ff18624f6bb840c6b82246b62068);
+            
+        
+
+        marker_ece69c86e51fc8b9c0d537b238184926.bindPopup(popup_07fa527ce7ffb07676c9d9f77fb79ae0)
+        ;
+
+        
+    
+    
+            marker_ece69c86e51fc8b9c0d537b238184926.bindTooltip(
+                `<div>
+                     FRANS HALS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_38ec3aff4a66f237e80cf18ad912fd82 = L.marker(
+                [50.827658, 4.295798],
+                {"name": "DEBUSSY"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_9175e8ace60780205c02790512c28d39 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_38ec3aff4a66f237e80cf18ad912fd82.setIcon(icon_9175e8ace60780205c02790512c28d39);
+        
+    
+        var popup_03074f1169faf28ff90dce82d12af39c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_aa6f84e8b02d6ef2ad1988eccff0c97a = $(`<div id="html_aa6f84e8b02d6ef2ad1988eccff0c97a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DEBUSSY</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 36.0</h6></center>         </div>`)[0];
+                popup_03074f1169faf28ff90dce82d12af39c.setContent(html_aa6f84e8b02d6ef2ad1988eccff0c97a);
+            
+        
+
+        marker_38ec3aff4a66f237e80cf18ad912fd82.bindPopup(popup_03074f1169faf28ff90dce82d12af39c)
+        ;
+
+        
+    
+    
+            marker_38ec3aff4a66f237e80cf18ad912fd82.bindTooltip(
+                `<div>
+                     DEBUSSY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6e24cea33d41be29925669619901fea9 = L.marker(
+                [50.828449, 4.299611],
+                {"name": "VEEWEYDE"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_1728677648bf843720a028f0c682f7ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6e24cea33d41be29925669619901fea9.setIcon(icon_1728677648bf843720a028f0c682f7ee);
+        
+    
+        var popup_42cfa8a588c70326256eebc56975c65e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_dbb510b37439ea74fe87cc26e8a837dd = $(`<div id="html_dbb510b37439ea74fe87cc26e8a837dd" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VEEWEYDE</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 28.0</h6></center>         </div>`)[0];
+                popup_42cfa8a588c70326256eebc56975c65e.setContent(html_dbb510b37439ea74fe87cc26e8a837dd);
+            
+        
+
+        marker_6e24cea33d41be29925669619901fea9.bindPopup(popup_42cfa8a588c70326256eebc56975c65e)
+        ;
+
+        
+    
+    
+            marker_6e24cea33d41be29925669619901fea9.bindTooltip(
+                `<div>
+                     VEEWEYDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a2d9c1c046da8f4c5a750c619b11b743 = L.marker(
+                [50.828805, 4.303346],
+                {"name": "ARISTIDE BRIAND"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_b183092b0c25c988d2013dfc8e3fa719 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a2d9c1c046da8f4c5a750c619b11b743.setIcon(icon_b183092b0c25c988d2013dfc8e3fa719);
+        
+    
+        var popup_17d0e65093f346d0133f30bfd70e417b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3fae1176601961da5a6d5038a4c181a7 = $(`<div id="html_3fae1176601961da5a6d5038a4c181a7" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ARISTIDE BRIAND</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_17d0e65093f346d0133f30bfd70e417b.setContent(html_3fae1176601961da5a6d5038a4c181a7);
+            
+        
+
+        marker_a2d9c1c046da8f4c5a750c619b11b743.bindPopup(popup_17d0e65093f346d0133f30bfd70e417b)
+        ;
+
+        
+    
+    
+            marker_a2d9c1c046da8f4c5a750c619b11b743.bindTooltip(
+                `<div>
+                     ARISTIDE BRIAND
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cbdb43b398e05df3eb1cafb5da9c045c = L.marker(
+                [50.826586, 4.304877],
+                {"name": "VAN KALKEN"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_ed3c3fe665297d4e1c680b2b51fd7ddd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_cbdb43b398e05df3eb1cafb5da9c045c.setIcon(icon_ed3c3fe665297d4e1c680b2b51fd7ddd);
+        
+    
+        var popup_44d4ebaf495e3d9cd5a8c28f50a451fb = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_1825fbd3034ec45943a2c48cfb1e0834 = $(`<div id="html_1825fbd3034ec45943a2c48cfb1e0834" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VAN KALKEN</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 12.0</h6></center>         </div>`)[0];
+                popup_44d4ebaf495e3d9cd5a8c28f50a451fb.setContent(html_1825fbd3034ec45943a2c48cfb1e0834);
+            
+        
+
+        marker_cbdb43b398e05df3eb1cafb5da9c045c.bindPopup(popup_44d4ebaf495e3d9cd5a8c28f50a451fb)
+        ;
+
+        
+    
+    
+            marker_cbdb43b398e05df3eb1cafb5da9c045c.bindTooltip(
+                `<div>
+                     VAN KALKEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_caf3b9d08f39f0c1e39ca01feede1709 = L.marker(
+                [50.823802, 4.310464],
+                {"name": "DIGUE DU CANAL"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_52211d4710a1c5ec1d2d42ff0dfdacb3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_caf3b9d08f39f0c1e39ca01feede1709.setIcon(icon_52211d4710a1c5ec1d2d42ff0dfdacb3);
+        
+    
+        var popup_cc9f8108ba0cc8f6d06078b13dbedd13 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6be838f622092d8ca221e56d9751e02c = $(`<div id="html_6be838f622092d8ca221e56d9751e02c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DIGUE DU CANAL</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 4.0</h6></center>         </div>`)[0];
+                popup_cc9f8108ba0cc8f6d06078b13dbedd13.setContent(html_6be838f622092d8ca221e56d9751e02c);
+            
+        
+
+        marker_caf3b9d08f39f0c1e39ca01feede1709.bindPopup(popup_cc9f8108ba0cc8f6d06078b13dbedd13)
+        ;
+
+        
+    
+    
+            marker_caf3b9d08f39f0c1e39ca01feede1709.bindTooltip(
+                `<div>
+                     DIGUE DU CANAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_04a5a07d40c688e964414e5ff605e143 = L.marker(
+                [50.823274, 4.316581],
+                {"name": "ILE SAINTE-HELENE"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_b75dcef0bc9a3c56d81d9b76e3de08cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_04a5a07d40c688e964414e5ff605e143.setIcon(icon_b75dcef0bc9a3c56d81d9b76e3de08cb);
+        
+    
+        var popup_cbcb5346cdf6f2be99d75e5754381dea = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a5862735c17ca8e1a33c00de6896670c = $(`<div id="html_a5862735c17ca8e1a33c00de6896670c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ILE SAINTE-HELENE</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 4.0</h6></center>         </div>`)[0];
+                popup_cbcb5346cdf6f2be99d75e5754381dea.setContent(html_a5862735c17ca8e1a33c00de6896670c);
+            
+        
+
+        marker_04a5a07d40c688e964414e5ff605e143.bindPopup(popup_cbcb5346cdf6f2be99d75e5754381dea)
+        ;
+
+        
+    
+    
+            marker_04a5a07d40c688e964414e5ff605e143.bindTooltip(
+                `<div>
+                     ILE SAINTE-HELENE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d2dac61761c7f5c45b23262e42ca9292 = L.marker(
+                [50.821668, 4.32197],
+                {"name": "CHARROI"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_1e7f78c3cde94e124a9193e3418a4e90 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d2dac61761c7f5c45b23262e42ca9292.setIcon(icon_1e7f78c3cde94e124a9193e3418a4e90);
+        
+    
+        var popup_5a399fee38a40ba77c1973485eb6d1c9 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_4404ec92ed296edc97e836b8808d5f96 = $(`<div id="html_4404ec92ed296edc97e836b8808d5f96" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CHARROI</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 12.0</h6></center>         </div>`)[0];
+                popup_5a399fee38a40ba77c1973485eb6d1c9.setContent(html_4404ec92ed296edc97e836b8808d5f96);
+            
+        
+
+        marker_d2dac61761c7f5c45b23262e42ca9292.bindPopup(popup_5a399fee38a40ba77c1973485eb6d1c9)
+        ;
+
+        
+    
+    
+            marker_d2dac61761c7f5c45b23262e42ca9292.bindTooltip(
+                `<div>
+                     CHARROI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fd3b560576c186d33d17bb22c3c068bd = L.marker(
+                [50.816648, 4.319873],
+                {"name": "BERVOETS"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_e963bf90ebdccebf34ae32171bd3abec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fd3b560576c186d33d17bb22c3c068bd.setIcon(icon_e963bf90ebdccebf34ae32171bd3abec);
+        
+    
+        var popup_45fa3ced23df6ecd4ddd0fec1be9f190 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_73bbcbf0f3f456ba287fad82eee450c5 = $(`<div id="html_73bbcbf0f3f456ba287fad82eee450c5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BERVOETS</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_45fa3ced23df6ecd4ddd0fec1be9f190.setContent(html_73bbcbf0f3f456ba287fad82eee450c5);
+            
+        
+
+        marker_fd3b560576c186d33d17bb22c3c068bd.bindPopup(popup_45fa3ced23df6ecd4ddd0fec1be9f190)
+        ;
+
+        
+    
+    
+            marker_fd3b560576c186d33d17bb22c3c068bd.bindTooltip(
+                `<div>
+                     BERVOETS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_05c5c72266fc11c3bde9bfd0670121fc = L.marker(
+                [50.812101, 4.318835],
+                {"name": "FOREST CENTRE"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_e3bb9febcc0a0b18a101d89c25d51ce3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_05c5c72266fc11c3bde9bfd0670121fc.setIcon(icon_e3bb9febcc0a0b18a101d89c25d51ce3);
+        
+    
+        var popup_1b7ee70c8b6484f86e1478fdd83650e6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e50c16c7aedf43a7dcf75cfcbc7d7602 = $(`<div id="html_e50c16c7aedf43a7dcf75cfcbc7d7602" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FOREST CENTRE</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 28.0</h6></center>         </div>`)[0];
+                popup_1b7ee70c8b6484f86e1478fdd83650e6.setContent(html_e50c16c7aedf43a7dcf75cfcbc7d7602);
+            
+        
+
+        marker_05c5c72266fc11c3bde9bfd0670121fc.bindPopup(popup_1b7ee70c8b6484f86e1478fdd83650e6)
+        ;
+
+        
+    
+    
+            marker_05c5c72266fc11c3bde9bfd0670121fc.bindTooltip(
+                `<div>
+                     FOREST CENTRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d731803ee132c561da1deda37c967a63 = L.marker(
+                [50.809901, 4.317548],
+                {"name": "SAINT-DENIS"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_94e3ed89e26115334da5380713ebc6cc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d731803ee132c561da1deda37c967a63.setIcon(icon_94e3ed89e26115334da5380713ebc6cc);
+        
+    
+        var popup_4006f3689ff6b9e54ea575944ea65078 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_99e889877c619e539b708b9491a91899 = $(`<div id="html_99e889877c619e539b708b9491a91899" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SAINT-DENIS</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 36.0</h6></center>         </div>`)[0];
+                popup_4006f3689ff6b9e54ea575944ea65078.setContent(html_99e889877c619e539b708b9491a91899);
+            
+        
+
+        marker_d731803ee132c561da1deda37c967a63.bindPopup(popup_4006f3689ff6b9e54ea575944ea65078)
+        ;
+
+        
+    
+    
+            marker_d731803ee132c561da1deda37c967a63.bindTooltip(
+                `<div>
+                     SAINT-DENIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d253744797cc5bc47712dcc1d005cac2 = L.marker(
+                [50.809127, 4.320825],
+                {"name": "GARE FOREST-EST"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_692955a6181e37c4b0af5b21e4d5a432 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d253744797cc5bc47712dcc1d005cac2.setIcon(icon_692955a6181e37c4b0af5b21e4d5a432);
+        
+    
+        var popup_90c4911a683ad8b35e57938322a38788 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_41e85adfacc22089731c91f58382cf77 = $(`<div id="html_41e85adfacc22089731c91f58382cf77" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARE FOREST-EST</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 44.0</h6></center>         </div>`)[0];
+                popup_90c4911a683ad8b35e57938322a38788.setContent(html_41e85adfacc22089731c91f58382cf77);
+            
+        
+
+        marker_d253744797cc5bc47712dcc1d005cac2.bindPopup(popup_90c4911a683ad8b35e57938322a38788)
+        ;
+
+        
+    
+    
+            marker_d253744797cc5bc47712dcc1d005cac2.bindTooltip(
+                `<div>
+                     GARE FOREST-EST
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a9a32780dd637b8daf671c76f1395f02 = L.marker(
+                [50.809541, 4.324953],
+                {"name": "FOREST NATIONAL"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_910c4ae658a0426731d189a7eac9379b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a9a32780dd637b8daf671c76f1395f02.setIcon(icon_910c4ae658a0426731d189a7eac9379b);
+        
+    
+        var popup_a6e35b5e6c0e75cd5d2765443faf37d3 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_046c91594454984cb528a4573a9513f6 = $(`<div id="html_046c91594454984cb528a4573a9513f6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FOREST NATIONAL</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 52.0</h6></center>         </div>`)[0];
+                popup_a6e35b5e6c0e75cd5d2765443faf37d3.setContent(html_046c91594454984cb528a4573a9513f6);
+            
+        
+
+        marker_a9a32780dd637b8daf671c76f1395f02.bindPopup(popup_a6e35b5e6c0e75cd5d2765443faf37d3)
+        ;
+
+        
+    
+    
+            marker_a9a32780dd637b8daf671c76f1395f02.bindTooltip(
+                `<div>
+                     FOREST NATIONAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_388e9defda2097ea5ab172a00457c2b0 = L.marker(
+                [50.807323, 4.326279],
+                {"name": "FORESTOISE"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_c820702642c77c6599810c0fb9a319f4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_388e9defda2097ea5ab172a00457c2b0.setIcon(icon_c820702642c77c6599810c0fb9a319f4);
+        
+    
+        var popup_b90278b5cc01205727061a55612b6aa8 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_559d3a74f6fb68e4d94424db817f396b = $(`<div id="html_559d3a74f6fb68e4d94424db817f396b" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FORESTOISE</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_b90278b5cc01205727061a55612b6aa8.setContent(html_559d3a74f6fb68e4d94424db817f396b);
+            
+        
+
+        marker_388e9defda2097ea5ab172a00457c2b0.bindPopup(popup_b90278b5cc01205727061a55612b6aa8)
+        ;
+
+        
+    
+    
+            marker_388e9defda2097ea5ab172a00457c2b0.bindTooltip(
+                `<div>
+                     FORESTOISE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_aa4a12cc40dee8d593b8e43de10ee958 = L.marker(
+                [50.80432, 4.32788],
+                {"name": "DECROLY"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_8e2eac47a47c41c632564683e014011a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_aa4a12cc40dee8d593b8e43de10ee958.setIcon(icon_8e2eac47a47c41c632564683e014011a);
+        
+    
+        var popup_fa989cc03afc838974d2aa36f501b13c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_356f981338b2cedef8b9d6d4a9009a6f = $(`<div id="html_356f981338b2cedef8b9d6d4a9009a6f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DECROLY</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 68.0</h6></center>         </div>`)[0];
+                popup_fa989cc03afc838974d2aa36f501b13c.setContent(html_356f981338b2cedef8b9d6d4a9009a6f);
+            
+        
+
+        marker_aa4a12cc40dee8d593b8e43de10ee958.bindPopup(popup_fa989cc03afc838974d2aa36f501b13c)
+        ;
+
+        
+    
+    
+            marker_aa4a12cc40dee8d593b8e43de10ee958.bindTooltip(
+                `<div>
+                     DECROLY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_be9222a36e48af772f08ac7365d5bfff = L.marker(
+                [50.802945, 4.330492],
+                {"name": "AULNE"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_6a856651572af3936b3aa05b144222ec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_be9222a36e48af772f08ac7365d5bfff.setIcon(icon_6a856651572af3936b3aa05b144222ec);
+        
+    
+        var popup_817a90c5288e0633c428b30e9707c7ff = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_66b4be0b18647fb8431603496a954864 = $(`<div id="html_66b4be0b18647fb8431603496a954864" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: AULNE</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 76.0</h6></center>         </div>`)[0];
+                popup_817a90c5288e0633c428b30e9707c7ff.setContent(html_66b4be0b18647fb8431603496a954864);
+            
+        
+
+        marker_be9222a36e48af772f08ac7365d5bfff.bindPopup(popup_817a90c5288e0633c428b30e9707c7ff)
+        ;
+
+        
+    
+    
+            marker_be9222a36e48af772f08ac7365d5bfff.bindTooltip(
+                `<div>
+                     AULNE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2045650c82e2f04dc8303f511456c43b = L.marker(
+                [50.800361, 4.327532],
+                {"name": "VICTOR ALLARD"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_d35966a9dadc6d11484e273b7742968f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2045650c82e2f04dc8303f511456c43b.setIcon(icon_d35966a9dadc6d11484e273b7742968f);
+        
+    
+        var popup_ec11ddd13bee5300f29c042175706319 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0f023895f8207f8b081f967fa66fde9d = $(`<div id="html_0f023895f8207f8b081f967fa66fde9d" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VICTOR ALLARD</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 84.0</h6></center>         </div>`)[0];
+                popup_ec11ddd13bee5300f29c042175706319.setContent(html_0f023895f8207f8b081f967fa66fde9d);
+            
+        
+
+        marker_2045650c82e2f04dc8303f511456c43b.bindPopup(popup_ec11ddd13bee5300f29c042175706319)
+        ;
+
+        
+    
+    
+            marker_2045650c82e2f04dc8303f511456c43b.bindTooltip(
+                `<div>
+                     VICTOR ALLARD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5d453f8ca0852ee78ec6c67486762c25 = L.marker(
+                [50.802314, 4.324151],
+                {"name": "UCCLE-STALLE"}
+            ).addTo(feature_group_719604e88ec8d3b164480241bce13246);
+        
+    
+            var icon_630af90d5dc5d09f265e70118718618e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#A67CB0", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5d453f8ca0852ee78ec6c67486762c25.setIcon(icon_630af90d5dc5d09f265e70118718618e);
+        
+    
+        var popup_6b700486dcd252cef99b7d0c5ccb8a7c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d12d177ff7e68a32a0702b51b3e2aa98 = $(`<div id="html_d12d177ff7e68a32a0702b51b3e2aa98" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: UCCLE-STALLE</h4></center>         <center><h5>Line: 74 CLEMENCE EVERARD - UCCLE STALLE</h5></center>         <center><h6>Score: 92.0</h6></center>         </div>`)[0];
+                popup_6b700486dcd252cef99b7d0c5ccb8a7c.setContent(html_d12d177ff7e68a32a0702b51b3e2aa98);
+            
+        
+
+        marker_5d453f8ca0852ee78ec6c67486762c25.bindPopup(popup_6b700486dcd252cef99b7d0c5ccb8a7c)
+        ;
+
+        
+    
+    
+            marker_5d453f8ca0852ee78ec6c67486762c25.bindTooltip(
+                `<div>
+                     UCCLE-STALLE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_2a80ba4e231c110b9de035c9572d7d73 = L.featureGroup(
+                {}
+            ).addTo(map_a42db98c099804cc99d09a0e677cd3d0);
+        
+    
+            var marker_ba8ef2198713ea10d64af37002fcbd80 = L.marker(
+                [50.818309000000006, 4.266925],
+                {"name": "CLEMENCE EVERARD"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_a1d9e0b9ce91244e1b5c5341ab5d22d0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ba8ef2198713ea10d64af37002fcbd80.setIcon(icon_a1d9e0b9ce91244e1b5c5341ab5d22d0);
+        
+    
+            marker_ba8ef2198713ea10d64af37002fcbd80.bindTooltip(
+                `<div>
+                     CLEMENCE EVERARD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_77d75a486a272df31ad77a9f78e6332b = L.marker(
+                [50.815062000000005, 4.266336],
+                {"name": "ERASME"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_9a5a2708270e9c3e8cd1afc2cd7c645f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_77d75a486a272df31ad77a9f78e6332b.setIcon(icon_9a5a2708270e9c3e8cd1afc2cd7c645f);
+        
+    
+            marker_77d75a486a272df31ad77a9f78e6332b.bindTooltip(
+                `<div>
+                     ERASME
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2bcb3b3c9a9f153d296214485e9d5366 = L.marker(
+                [50.815648, 4.272996999999999],
+                {"name": "MEYLEMEERSCH"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_a2fd5a9c2c8ddebd301b779a8c0c8d5f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2bcb3b3c9a9f153d296214485e9d5366.setIcon(icon_a2fd5a9c2c8ddebd301b779a8c0c8d5f);
+        
+    
+            marker_2bcb3b3c9a9f153d296214485e9d5366.bindTooltip(
+                `<div>
+                     MEYLEMEERSCH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1156331a8382e01f1914a4fe0c683716 = L.marker(
+                [50.816914000000004, 4.279013999999999],
+                {"name": "EDDY MERCKX"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_4b30864922e59958aa0e390de5af60c8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1156331a8382e01f1914a4fe0c683716.setIcon(icon_4b30864922e59958aa0e390de5af60c8);
+        
+    
+            marker_1156331a8382e01f1914a4fe0c683716.bindTooltip(
+                `<div>
+                     EDDY MERCKX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_affbc597ad05dea6a3efffa9248b58a4 = L.marker(
+                [50.81918700000001, 4.283277999999999],
+                {"name": "TREFLES"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_5b748088c06481c757b6da216b79b63d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_affbc597ad05dea6a3efffa9248b58a4.setIcon(icon_5b748088c06481c757b6da216b79b63d);
+        
+    
+            marker_affbc597ad05dea6a3efffa9248b58a4.bindTooltip(
+                `<div>
+                     TREFLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_526dd4e5ea9226ac135ef4f3ac03e4fa = L.marker(
+                [50.82151, 4.284236],
+                {"name": "MARIE CURIE"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_6d3ed661b7afc86074b757ef7d3e72f5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_526dd4e5ea9226ac135ef4f3ac03e4fa.setIcon(icon_6d3ed661b7afc86074b757ef7d3e72f5);
+        
+    
+            marker_526dd4e5ea9226ac135ef4f3ac03e4fa.bindTooltip(
+                `<div>
+                     MARIE CURIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bdfceaf4016c35437fa6d3dac809cb26 = L.marker(
+                [50.825565000000005, 4.2880959999999995],
+                {"name": "MARTIN LUTH. KING"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_9ac75efe532c6299c79bd4dd87d8e41d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_bdfceaf4016c35437fa6d3dac809cb26.setIcon(icon_9ac75efe532c6299c79bd4dd87d8e41d);
+        
+    
+            marker_bdfceaf4016c35437fa6d3dac809cb26.bindTooltip(
+                `<div>
+                     MARTIN LUTH. KING
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_95d71d755a9293be357e7483208a1951 = L.marker(
+                [50.826215000000005, 4.289708999999999],
+                {"name": "FRANS HALS"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_ed49f1508d689c808918d43ba7d47bb8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_95d71d755a9293be357e7483208a1951.setIcon(icon_ed49f1508d689c808918d43ba7d47bb8);
+        
+    
+            marker_95d71d755a9293be357e7483208a1951.bindTooltip(
+                `<div>
+                     FRANS HALS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5143c4414790df0926b225c65bbb8274 = L.marker(
+                [50.827668, 4.295807999999999],
+                {"name": "DEBUSSY"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_83a27611c0a609d81c58088676a6b294 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5143c4414790df0926b225c65bbb8274.setIcon(icon_83a27611c0a609d81c58088676a6b294);
+        
+    
+            marker_5143c4414790df0926b225c65bbb8274.bindTooltip(
+                `<div>
+                     DEBUSSY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_64279b81cdbe4c08fa7db2c5a1c89500 = L.marker(
+                [50.828459, 4.299620999999999],
+                {"name": "VEEWEYDE"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_f42e8e98967798db304cca480cdf4b84 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_64279b81cdbe4c08fa7db2c5a1c89500.setIcon(icon_f42e8e98967798db304cca480cdf4b84);
+        
+    
+            marker_64279b81cdbe4c08fa7db2c5a1c89500.bindTooltip(
+                `<div>
+                     VEEWEYDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cc6ce7ef90ca13c9f76ea2aaa1e10034 = L.marker(
+                [50.828815000000006, 4.303356],
+                {"name": "ARISTIDE BRIAND"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_540b4e6e64700c257f90d8652df29c13 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_cc6ce7ef90ca13c9f76ea2aaa1e10034.setIcon(icon_540b4e6e64700c257f90d8652df29c13);
+        
+    
+            marker_cc6ce7ef90ca13c9f76ea2aaa1e10034.bindTooltip(
+                `<div>
+                     ARISTIDE BRIAND
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4f6d7389829ef8e6f11af5e869e2b63d = L.marker(
+                [50.826596, 4.304887],
+                {"name": "VAN KALKEN"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_5b471422434ff7e52eaf3aead9e93964 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4f6d7389829ef8e6f11af5e869e2b63d.setIcon(icon_5b471422434ff7e52eaf3aead9e93964);
+        
+    
+            marker_4f6d7389829ef8e6f11af5e869e2b63d.bindTooltip(
+                `<div>
+                     VAN KALKEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a384f499fb9d1888cecb506229a09bf5 = L.marker(
+                [50.823812000000004, 4.310473999999999],
+                {"name": "DIGUE DU CANAL"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_958636e89e9a1bdbd2177b5f69dc7a55 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a384f499fb9d1888cecb506229a09bf5.setIcon(icon_958636e89e9a1bdbd2177b5f69dc7a55);
+        
+    
+            marker_a384f499fb9d1888cecb506229a09bf5.bindTooltip(
+                `<div>
+                     DIGUE DU CANAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_99c094517f714b6e705cc87a7b27fec2 = L.marker(
+                [50.823284, 4.316591],
+                {"name": "ILE SAINTE-HELENE"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_67a02016964c8ef46fc9d9c278b2a812 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_99c094517f714b6e705cc87a7b27fec2.setIcon(icon_67a02016964c8ef46fc9d9c278b2a812);
+        
+    
+            marker_99c094517f714b6e705cc87a7b27fec2.bindTooltip(
+                `<div>
+                     ILE SAINTE-HELENE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_016acdc9f01818aca561ba5867745431 = L.marker(
+                [50.821678000000006, 4.32198],
+                {"name": "CHARROI"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_35fae700c10c42f924ee4879c113544f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_016acdc9f01818aca561ba5867745431.setIcon(icon_35fae700c10c42f924ee4879c113544f);
+        
+    
+            marker_016acdc9f01818aca561ba5867745431.bindTooltip(
+                `<div>
+                     CHARROI
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b3d9a9be1585d22b40c504b778ceccbf = L.marker(
+                [50.816658000000004, 4.319883],
+                {"name": "BERVOETS"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_484aeb255ace3eb6debb7dfe6928b75c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b3d9a9be1585d22b40c504b778ceccbf.setIcon(icon_484aeb255ace3eb6debb7dfe6928b75c);
+        
+    
+            marker_b3d9a9be1585d22b40c504b778ceccbf.bindTooltip(
+                `<div>
+                     BERVOETS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5119e364b1a61bbeba77af6a626c80a0 = L.marker(
+                [50.812111, 4.318845],
+                {"name": "FOREST CENTRE"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_a0fd63392188331240dbe7ae8601c290 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5119e364b1a61bbeba77af6a626c80a0.setIcon(icon_a0fd63392188331240dbe7ae8601c290);
+        
+    
+            marker_5119e364b1a61bbeba77af6a626c80a0.bindTooltip(
+                `<div>
+                     FOREST CENTRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f45df3ab731245fa7e73dbb484d976b3 = L.marker(
+                [50.80991100000001, 4.317558],
+                {"name": "SAINT-DENIS"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_10614f20c940904ffef163af8da5de09 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f45df3ab731245fa7e73dbb484d976b3.setIcon(icon_10614f20c940904ffef163af8da5de09);
+        
+    
+            marker_f45df3ab731245fa7e73dbb484d976b3.bindTooltip(
+                `<div>
+                     SAINT-DENIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_91aa0786e1bca4edab304fbcf52f196c = L.marker(
+                [50.809137, 4.320835],
+                {"name": "GARE FOREST-EST"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_c1333723daae82c57ca06a93c61d4be9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_91aa0786e1bca4edab304fbcf52f196c.setIcon(icon_c1333723daae82c57ca06a93c61d4be9);
+        
+    
+            marker_91aa0786e1bca4edab304fbcf52f196c.bindTooltip(
+                `<div>
+                     GARE FOREST-EST
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_341d457fff81fc88881752315eb9be5c = L.marker(
+                [50.809551000000006, 4.3249629999999994],
+                {"name": "FOREST NATIONAL"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_d0ae7e38e5006e1b83dc8d8f9407ee11 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_341d457fff81fc88881752315eb9be5c.setIcon(icon_d0ae7e38e5006e1b83dc8d8f9407ee11);
+        
+    
+            marker_341d457fff81fc88881752315eb9be5c.bindTooltip(
+                `<div>
+                     FOREST NATIONAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_be608b82b90e5e4ac58104a62df1dc38 = L.marker(
+                [50.807333, 4.326289],
+                {"name": "FORESTOISE"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_aa1c95f60040f4e414ffc0b866d1802b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_be608b82b90e5e4ac58104a62df1dc38.setIcon(icon_aa1c95f60040f4e414ffc0b866d1802b);
+        
+    
+            marker_be608b82b90e5e4ac58104a62df1dc38.bindTooltip(
+                `<div>
+                     FORESTOISE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f89606b0b89abeb7ecd991638e02971c = L.marker(
+                [50.80433, 4.32789],
+                {"name": "DECROLY"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_ac14cf4d849d5b1345e23779a69864f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f89606b0b89abeb7ecd991638e02971c.setIcon(icon_ac14cf4d849d5b1345e23779a69864f2);
+        
+    
+            marker_f89606b0b89abeb7ecd991638e02971c.bindTooltip(
+                `<div>
+                     DECROLY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c1a5792927a184c6122f9ec74f17c412 = L.marker(
+                [50.802955000000004, 4.330501999999999],
+                {"name": "AULNE"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_1e363a7215579fd554b5a9487dd3d8ea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c1a5792927a184c6122f9ec74f17c412.setIcon(icon_1e363a7215579fd554b5a9487dd3d8ea);
+        
+    
+            marker_c1a5792927a184c6122f9ec74f17c412.bindTooltip(
+                `<div>
+                     AULNE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1facaaa4d794bb3da7bfbef6417f307a = L.marker(
+                [50.800371000000005, 4.327541999999999],
+                {"name": "VICTOR ALLARD"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_b1749355a1aa8905ef6db9656afdde8f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1facaaa4d794bb3da7bfbef6417f307a.setIcon(icon_b1749355a1aa8905ef6db9656afdde8f);
+        
+    
+            marker_1facaaa4d794bb3da7bfbef6417f307a.bindTooltip(
+                `<div>
+                     VICTOR ALLARD
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_feb0e7ca35d125a3e77e284228423415 = L.marker(
+                [50.802324000000006, 4.324160999999999],
+                {"name": "UCCLE-STALLE"}
+            ).addTo(feature_group_2a80ba4e231c110b9de035c9572d7d73);
+        
+    
+            var icon_552d6a0ad26dcb6a99abc39eab4f884c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_feb0e7ca35d125a3e77e284228423415.setIcon(icon_552d6a0ad26dcb6a99abc39eab4f884c);
+        
+    
+            marker_feb0e7ca35d125a3e77e284228423415.bindTooltip(
+                `<div>
+                     UCCLE-STALLE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_65b2db7514d80875e4376d9091e39bca = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_c39ec8d6960fa1249ba0849f3fc17c37,
+                },
+                overlays :  {
+                    "74 CLEMENCE EVERARD - UCCLE STALLE" : feature_group_719604e88ec8d3b164480241bce13246,
+                    "74 CLEMENCE EVERARD - UCCLE STALLE SCORES" : feature_group_2a80ba4e231c110b9de035c9572d7d73,
+                },
+            };
+            L.control.layers(
+                layer_control_65b2db7514d80875e4376d9091e39bca.base_layers,
+                layer_control_65b2db7514d80875e4376d9091e39bca.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_a42db98c099804cc99d09a0e677cd3d0);
+            feature_group_2a80ba4e231c110b9de035c9572d7d73.remove();
+        
+</script>
+</html>

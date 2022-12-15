@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e537ae4c7da7c4944c6209ac4c556b39 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e537ae4c7da7c4944c6209ac4c556b39" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e537ae4c7da7c4944c6209ac4c556b39 = L.map(
+                "map_e537ae4c7da7c4944c6209ac4c556b39",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_22bc0bb2c17c33e504d694c628611163 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e537ae4c7da7c4944c6209ac4c556b39);
+        
+    
+            var poly_line_e2795dc9a1f61368fcbe0cd8d1c34052 = L.polyline(
+                [[50.789559, 4.420386], [50.789628, 4.420347], [50.789706, 4.420338], [50.789922, 4.420304], [50.790189, 4.420297], [50.790192, 4.420301], [50.790196, 4.420304], [50.790239, 4.420318], [50.790901, 4.420225], [50.791094, 4.42017], [50.791233, 4.420112], [50.791367, 4.420046], [50.791417, 4.420025], [50.791651, 4.419892], [50.792035, 4.419669], [50.792192, 4.419586], [50.792192, 4.419586], [50.792468, 4.419439], [50.792834, 4.419256], [50.792915, 4.419199], [50.793287, 4.418915], [50.793488, 4.418698], [50.793647, 4.418456], [50.793675, 4.418378], [50.793688, 4.418338], [50.793714, 4.418298], [50.793735, 4.418266], [50.793753, 4.418236], [50.793828, 4.418101], [50.793922, 4.417911], [50.793926, 4.417903], [50.793926, 4.417903], [50.7941, 4.417523], [50.79428, 4.417082], [50.794322, 4.416968], [50.794405, 4.416702], [50.794462, 4.416492], [50.794484, 4.416444], [50.79455, 4.416342], [50.794593, 4.416261], [50.794632, 4.416193], [50.794682, 4.416099], [50.79478, 4.416067], [50.794814, 4.416063], [50.794888, 4.416067], [50.794935, 4.416078], [50.794981, 4.4161], [50.795035, 4.416138], [50.795078, 4.416179], [50.795489, 4.416612], [50.796024, 4.417187], [50.796221, 4.417393], [50.796316, 4.417491], [50.796347, 4.417518], [50.796453, 4.417593], [50.796541, 4.417642], [50.796613, 4.417664], [50.796613, 4.417664], [50.79666, 4.417672], [50.796729, 4.417673], [50.797404, 4.417669], [50.797567, 4.41767], [50.79764, 4.417677], [50.797677, 4.417688], [50.797706, 4.417707], [50.797771, 4.417805], [50.79783, 4.417903], [50.797877, 4.417988], [50.79796, 4.418179], [50.798006, 4.418358], [50.798223, 4.41932], [50.798223, 4.41932], [50.798229, 4.419382], [50.79823, 4.419388], [50.798231, 4.419391], [50.798247, 4.419429], [50.79826, 4.419452], [50.798282, 4.419478], [50.798297, 4.419493], [50.798299, 4.419495], [50.798302, 4.419496], [50.798328, 4.419502], [50.798355, 4.419502], [50.798378, 4.419496], [50.798394, 4.419485], [50.798433, 4.419439], [50.798434, 4.419437], [50.798436, 4.419432], [50.798444, 4.419408], [50.798455, 4.419366], [50.798458, 4.419323], [50.798543, 4.419276], [50.798678, 4.419139], [50.798678, 4.419139], [50.798684, 4.419133], [50.798708, 4.419102], [50.798744, 4.419048], [50.798788, 4.418975], [50.798961, 4.418558], [50.799034, 4.418385], [50.799121, 4.418217], [50.799116, 4.418165], [50.799087, 4.418132], [50.799066, 4.418098], [50.799033, 4.418024], [50.798982, 4.417897], [50.798939, 4.417806], [50.79893, 4.417742], [50.798896, 4.417575], [50.798782, 4.416983], [50.798719, 4.416633], [50.798658, 4.416302], [50.798617, 4.416154], [50.798612, 4.416081], [50.798641, 4.416007], [50.798791, 4.41582], [50.799153, 4.415379], [50.799222, 4.41529], [50.799276, 4.415217], [50.79938, 4.415073], [50.799693, 4.41466], [50.79991, 4.414387], [50.80003, 4.414256], [50.800226, 4.414013], [50.800226, 4.414013], [50.800363, 4.413841], [50.800388, 4.413828], [50.800417, 4.41382], [50.800484, 4.41381], [50.800568, 4.413809], [50.800671, 4.413819], [50.800708, 4.413822], [50.801132, 4.41387], [50.80125, 4.413894], [50.801393, 4.413905], [50.801447, 4.413913], [50.801475, 4.413917], [50.801587, 4.413932], [50.801649, 4.413935], [50.801733, 4.413922], [50.801789, 4.413909], [50.80186, 4.413874], [50.801886, 4.413858], [50.801918, 4.41384], [50.801969, 4.413806], [50.802168, 4.413701], [50.802423, 4.413603], [50.802533, 4.413595], [50.802779, 4.413599], [50.802783, 4.413649], [50.802792, 4.413699], [50.802809, 4.413746], [50.802817, 4.413761], [50.802836, 4.413794], [50.802859, 4.413819], [50.80286, 4.413821], [50.802863, 4.413822], [50.802914, 4.413846], [50.802959, 4.413852], [50.802999, 4.413839], [50.803023, 4.413821], [50.803052, 4.413791], [50.803055, 4.413788], [50.803056, 4.413787], [50.803077, 4.413742], [50.803091, 4.413696], [50.803099, 4.413651], [50.803102, 4.413608], [50.803102, 4.413571], [50.803094, 4.413506], [50.803081, 4.413462], [50.80308, 4.413461], [50.803078, 4.413456], [50.803059, 4.413422], [50.803038, 4.413393], [50.80303, 4.413383], [50.803005, 4.413361], [50.802971, 4.413347], [50.802926, 4.413343], [50.802891, 4.41335], [50.802872, 4.413364], [50.802821, 4.413252], [50.802795, 4.413144], [50.80275, 4.412995], [50.802723, 4.412886], [50.802723, 4.412886], [50.80272, 4.412872], [50.802703, 4.412787], [50.802696, 4.41271], [50.802689, 4.412609], [50.802689, 4.412504], [50.802692, 4.412385], [50.8027, 4.412151], [50.802841, 4.411518], [50.803, 4.410761], [50.803037, 4.410443], [50.803065, 4.409941], [50.803095, 4.408996], [50.803095, 4.408996], [50.803102, 4.408755], [50.803105, 4.408711], [50.803131, 4.40827], [50.803148, 4.408178], [50.803198, 4.408123], [50.804, 4.407469], [50.804209, 4.40734], [50.804611, 4.407121], [50.804954, 4.406941], [50.805039, 4.406879], [50.805066, 4.406857], [50.805128, 4.406819], [50.805194, 4.406784], [50.805238, 4.406767], [50.805281, 4.406751], [50.80539, 4.406754], [50.80539, 4.406754], [50.805478, 4.406773], [50.805503, 4.406777], [50.805534, 4.406782], [50.805564, 4.406775], [50.805619, 4.406758], [50.805709, 4.406716], [50.805774, 4.406665], [50.805914, 4.406581], [50.806289, 4.40635], [50.806426, 4.40627], [50.806495, 4.406234], [50.806656, 4.406175], [50.807046, 4.406049], [50.807217, 4.405985], [50.807312, 4.405936], [50.807329, 4.405924], [50.807427, 4.405848], [50.807712, 4.405593], [50.808291, 4.405057], [50.808669, 4.404661], [50.808692, 4.404637], [50.80896, 4.404345], [50.809351, 4.403903], [50.809548, 4.40369], [50.809568, 4.403673], [50.80959, 4.40365], [50.809658, 4.403578], [50.809683, 4.403548], [50.809855, 4.40332], [50.809944, 4.403192], [50.80999, 4.403114], [50.80999, 4.403114], [50.810074, 4.402974], [50.810194, 4.402697], [50.8104, 4.402245], [50.810414, 4.402208], [50.810675, 4.401572], [50.810822, 4.401215], [50.810881, 4.401155], [50.81092, 4.401127], [50.810946, 4.401126], [50.810962, 4.40113], [50.811219, 4.401231], [50.811525, 4.401245], [50.811577, 4.40126], [50.811608, 4.401289], [50.811662, 4.401498], [50.811716, 4.401624], [50.8118, 4.401725], [50.811913, 4.401846], [50.811913, 4.401846], [50.811956, 4.401904], [50.812048, 4.402029], [50.812161, 4.40223], [50.812238, 4.402441], [50.8123, 4.402642], [50.81234, 4.402811], [50.812363, 4.402947], [50.812368, 4.402988], [50.812396, 4.403258], [50.812406, 4.403386], [50.812411, 4.403489], [50.812398, 4.403852], [50.812373, 4.404111], [50.812336, 4.404375], [50.812324, 4.404558], [50.812324, 4.404749], [50.812324, 4.404749], [50.812324, 4.404861], [50.812305, 4.404904], [50.812294, 4.404922], [50.812283, 4.404956], [50.812279, 4.404975], [50.812283, 4.405017], [50.812294, 4.405056], [50.812295, 4.405058], [50.812297, 4.405061], [50.812313, 4.405078], [50.812344, 4.405117], [50.81235, 4.405267], [50.812364, 4.405681], [50.812376, 4.406387], [50.812401, 4.407486], [50.812408, 4.407953], [50.812417, 4.40864], [50.812422, 4.408875], [50.812435, 4.409122], [50.812458, 4.409327], [50.812494, 4.409544], [50.812604, 4.409938], [50.812653, 4.410134], [50.812752, 4.410503], [50.812752, 4.410503], [50.812918, 4.411125], [50.81319, 4.412155], [50.813263, 4.412438], [50.813294, 4.412615], [50.813322, 4.412912], [50.813301, 4.413299], [50.813211, 4.414017], [50.813197, 4.414214], [50.81318, 4.414401], [50.813194, 4.414557], [50.813218, 4.414671], [50.813265, 4.41481], [50.81341, 4.415145], [50.813413, 4.415151], [50.813415, 4.415152], [50.813442, 4.415175], [50.813472, 4.415152], [50.813488, 4.415122], [50.813516, 4.415066], [50.813534, 4.415042], [50.813566, 4.415005], [50.81359, 4.414975], [50.813676, 4.414863], [50.813676, 4.414863], [50.813728, 4.414796], [50.813821, 4.414663], [50.813863, 4.414598], [50.813924, 4.414472], [50.813979, 4.414335], [50.814031, 4.414171], [50.814062, 4.414025], [50.814091, 4.413784], [50.814093, 4.413469], [50.81408, 4.411715], [50.814067, 4.410696], [50.814075, 4.410375], [50.814108, 4.410117], [50.814153, 4.40992], [50.814219, 4.409737], [50.81431, 4.409534], [50.814372, 4.409425], [50.814527, 4.409269], [50.814684, 4.409094], [50.814814, 4.408953], [50.814914, 4.408846], [50.814945, 4.408808], [50.815034, 4.408689], [50.815076, 4.408632], [50.815223, 4.408438], [50.81536, 4.408258], [50.815405, 4.408197]],
+                {"bubblingMouseEvents": true, "color": "#E43C2E", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#E43C2E", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_e537ae4c7da7c4944c6209ac4c556b39);
+        
+    
+            var feature_group_daa532b4f526d1f4296556e84af3e896 = L.featureGroup(
+                {}
+            ).addTo(map_e537ae4c7da7c4944c6209ac4c556b39);
+        
+    
+            var marker_bd9b99730bef53894cd98b8c6aed8dd9 = L.marker(
+                [50.789581, 4.420431],
+                {"name": "HEILIGENBORRE"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_c9af61e5afeb33a57c8e684e48a30cc3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_bd9b99730bef53894cd98b8c6aed8dd9.setIcon(icon_c9af61e5afeb33a57c8e684e48a30cc3);
+        
+    
+        var popup_38d4958db8927eb52f6fc572f525cf00 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f571f55c68a2c266df3a8eb78e57f845 = $(`<div id="html_f571f55c68a2c266df3a8eb78e57f845" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HEILIGENBORRE</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_38d4958db8927eb52f6fc572f525cf00.setContent(html_f571f55c68a2c266df3a8eb78e57f845);
+            
+        
+
+        marker_bd9b99730bef53894cd98b8c6aed8dd9.bindPopup(popup_38d4958db8927eb52f6fc572f525cf00)
+        ;
+
+        
+    
+    
+            marker_bd9b99730bef53894cd98b8c6aed8dd9.bindTooltip(
+                `<div>
+                     HEILIGENBORRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9e7cb32ee40151fab1dfeeecf0d3605b = L.marker(
+                [50.792197, 4.419611],
+                {"name": "INTERNAT. SCHOOL"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_8f93d5fec0f87db8a66051d30b77692c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9e7cb32ee40151fab1dfeeecf0d3605b.setIcon(icon_8f93d5fec0f87db8a66051d30b77692c);
+        
+    
+        var popup_09bacd7f65215a1d54430d4185beb513 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_9bba5dc078d61b6556221e79dcd527c4 = $(`<div id="html_9bba5dc078d61b6556221e79dcd527c4" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: INTERNAT. SCHOOL</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 86.67</h6></center>         </div>`)[0];
+                popup_09bacd7f65215a1d54430d4185beb513.setContent(html_9bba5dc078d61b6556221e79dcd527c4);
+            
+        
+
+        marker_9e7cb32ee40151fab1dfeeecf0d3605b.bindPopup(popup_09bacd7f65215a1d54430d4185beb513)
+        ;
+
+        
+    
+    
+            marker_9e7cb32ee40151fab1dfeeecf0d3605b.bindTooltip(
+                `<div>
+                     INTERNAT. SCHOOL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fd47b8d18add7d27eadac9f99c2af6d3 = L.marker(
+                [50.79396, 4.41794],
+                {"name": "ETANGS BOITSFORT"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_22a4994867f671de2aff4f81a77bf845 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fd47b8d18add7d27eadac9f99c2af6d3.setIcon(icon_22a4994867f671de2aff4f81a77bf845);
+        
+    
+        var popup_46403d30be1306edf45dc910c879b98f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f5558fbf868b159b8c14bd89d5309889 = $(`<div id="html_f5558fbf868b159b8c14bd89d5309889" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ETANGS BOITSFORT</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 73.33</h6></center>         </div>`)[0];
+                popup_46403d30be1306edf45dc910c879b98f.setContent(html_f5558fbf868b159b8c14bd89d5309889);
+            
+        
+
+        marker_fd47b8d18add7d27eadac9f99c2af6d3.bindPopup(popup_46403d30be1306edf45dc910c879b98f)
+        ;
+
+        
+    
+    
+            marker_fd47b8d18add7d27eadac9f99c2af6d3.bindTooltip(
+                `<div>
+                     ETANGS BOITSFORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5f5b6d8174b649560924991d652bf213 = L.marker(
+                [50.796612, 4.417673],
+                {"name": "DIABOLO"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_ab4bdf95a7d78eb999df01e719b81ce1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5f5b6d8174b649560924991d652bf213.setIcon(icon_ab4bdf95a7d78eb999df01e719b81ce1);
+        
+    
+        var popup_058e70f0c252d5f0b88e648764bce3ef = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2ab5cb8ea810c7a6a63525bd9342e8d1 = $(`<div id="html_2ab5cb8ea810c7a6a63525bd9342e8d1" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DIABOLO</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_058e70f0c252d5f0b88e648764bce3ef.setContent(html_2ab5cb8ea810c7a6a63525bd9342e8d1);
+            
+        
+
+        marker_5f5b6d8174b649560924991d652bf213.bindPopup(popup_058e70f0c252d5f0b88e648764bce3ef)
+        ;
+
+        
+    
+    
+            marker_5f5b6d8174b649560924991d652bf213.bindTooltip(
+                `<div>
+                     DIABOLO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6a0d7a440936c5c317f378ceedbbd728 = L.marker(
+                [50.798688, 4.419164],
+                {"name": "WIENER"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_6deea05ea347b44d7e845d05468dcb86 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6a0d7a440936c5c317f378ceedbbd728.setIcon(icon_6deea05ea347b44d7e845d05468dcb86);
+        
+    
+        var popup_652aeefa3e1cf93caaf34b842b8af6a0 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a9c26e96e068c7f2a43c676289d7afa7 = $(`<div id="html_a9c26e96e068c7f2a43c676289d7afa7" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WIENER</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 46.67</h6></center>         </div>`)[0];
+                popup_652aeefa3e1cf93caaf34b842b8af6a0.setContent(html_a9c26e96e068c7f2a43c676289d7afa7);
+            
+        
+
+        marker_6a0d7a440936c5c317f378ceedbbd728.bindPopup(popup_652aeefa3e1cf93caaf34b842b8af6a0)
+        ;
+
+        
+    
+    
+            marker_6a0d7a440936c5c317f378ceedbbd728.bindTooltip(
+                `<div>
+                     WIENER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f0ddb50ddc359470eeffddb6324006b4 = L.marker(
+                [50.800227, 4.414017],
+                {"name": "MIRAVAL"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_a5497f10561a42e811b66480953179b4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f0ddb50ddc359470eeffddb6324006b4.setIcon(icon_a5497f10561a42e811b66480953179b4);
+        
+    
+        var popup_2c4897cf385b51c03870376c3f62fe1f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c6556d0ecd31dbf204ace2c23d596954 = $(`<div id="html_c6556d0ecd31dbf204ace2c23d596954" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MIRAVAL</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_2c4897cf385b51c03870376c3f62fe1f.setContent(html_c6556d0ecd31dbf204ace2c23d596954);
+            
+        
+
+        marker_f0ddb50ddc359470eeffddb6324006b4.bindPopup(popup_2c4897cf385b51c03870376c3f62fe1f)
+        ;
+
+        
+    
+    
+            marker_f0ddb50ddc359470eeffddb6324006b4.bindTooltip(
+                `<div>
+                     MIRAVAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_45eba9109a6cf769cf4b7982b82b8209 = L.marker(
+                [50.802745, 4.41287],
+                {"name": "LES 3 TILLEULS"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_ee137b49f643a57c60906ac69d155faf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_45eba9109a6cf769cf4b7982b82b8209.setIcon(icon_ee137b49f643a57c60906ac69d155faf);
+        
+    
+        var popup_a842db22d8afae0c179319a7f133a365 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d6e9985e89702ae93a6acb1e517f0c73 = $(`<div id="html_d6e9985e89702ae93a6acb1e517f0c73" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LES 3 TILLEULS</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_a842db22d8afae0c179319a7f133a365.setContent(html_d6e9985e89702ae93a6acb1e517f0c73);
+            
+        
+
+        marker_45eba9109a6cf769cf4b7982b82b8209.bindPopup(popup_a842db22d8afae0c179319a7f133a365)
+        ;
+
+        
+    
+    
+            marker_45eba9109a6cf769cf4b7982b82b8209.bindTooltip(
+                `<div>
+                     LES 3 TILLEULS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f83650cd56300439bf84141b88333553 = L.marker(
+                [50.803124, 4.408998],
+                {"name": "CALYPSO 2000"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_00d99940a13f89b31173a1514c7717c1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f83650cd56300439bf84141b88333553.setIcon(icon_00d99940a13f89b31173a1514c7717c1);
+        
+    
+        var popup_c9c923643b30c995dc58ac1514422850 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f7f5c3fa2c4aac4bdbd0d3115ab3e5cf = $(`<div id="html_f7f5c3fa2c4aac4bdbd0d3115ab3e5cf" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CALYPSO 2000</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 6.67</h6></center>         </div>`)[0];
+                popup_c9c923643b30c995dc58ac1514422850.setContent(html_f7f5c3fa2c4aac4bdbd0d3115ab3e5cf);
+            
+        
+
+        marker_f83650cd56300439bf84141b88333553.bindPopup(popup_c9c923643b30c995dc58ac1514422850)
+        ;
+
+        
+    
+    
+            marker_f83650cd56300439bf84141b88333553.bindTooltip(
+                `<div>
+                     CALYPSO 2000
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_aec02bbdfe4e1c1cb23e5815903d991b = L.marker(
+                [50.80539, 4.406772],
+                {"name": "VANDER ELST"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_ff42117082b67d5f666ab2074d5c03e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_aec02bbdfe4e1c1cb23e5815903d991b.setIcon(icon_ff42117082b67d5f666ab2074d5c03e6);
+        
+    
+        var popup_919a8ef9be88a31758e5c1bb562729a3 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2270d3b649865b134fee66a5945bf1ad = $(`<div id="html_2270d3b649865b134fee66a5945bf1ad" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VANDER ELST</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 6.67</h6></center>         </div>`)[0];
+                popup_919a8ef9be88a31758e5c1bb562729a3.setContent(html_2270d3b649865b134fee66a5945bf1ad);
+            
+        
+
+        marker_aec02bbdfe4e1c1cb23e5815903d991b.bindPopup(popup_919a8ef9be88a31758e5c1bb562729a3)
+        ;
+
+        
+    
+    
+            marker_aec02bbdfe4e1c1cb23e5815903d991b.bindTooltip(
+                `<div>
+                     VANDER ELST
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_85525937471844eaf04ce5eae624f6ed = L.marker(
+                [50.81003, 4.403172],
+                {"name": "KEYM"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_ce2c9576b07e36bcc24aa04a4b785029 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_85525937471844eaf04ce5eae624f6ed.setIcon(icon_ce2c9576b07e36bcc24aa04a4b785029);
+        
+    
+        var popup_0509c5bb9a83f3b522dcc45ad7379a3f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6abe055b18c52af5d3e73213f8e094cf = $(`<div id="html_6abe055b18c52af5d3e73213f8e094cf" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: KEYM</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_0509c5bb9a83f3b522dcc45ad7379a3f.setContent(html_6abe055b18c52af5d3e73213f8e094cf);
+            
+        
+
+        marker_85525937471844eaf04ce5eae624f6ed.bindPopup(popup_0509c5bb9a83f3b522dcc45ad7379a3f)
+        ;
+
+        
+    
+    
+            marker_85525937471844eaf04ce5eae624f6ed.bindTooltip(
+                `<div>
+                     KEYM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e6a4233d03de329900732cb804babe3 = L.marker(
+                [50.811909, 4.401854],
+                {"name": "BRILLANT"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_a5828bbdeabbd0cd9d1d8bfb448e5ac5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1e6a4233d03de329900732cb804babe3.setIcon(icon_a5828bbdeabbd0cd9d1d8bfb448e5ac5);
+        
+    
+        var popup_192b863d28767b42a8b545ec32f51375 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_b85341fa3222dc4063963966467bdc5f = $(`<div id="html_b85341fa3222dc4063963966467bdc5f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BRILLANT</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 33.33</h6></center>         </div>`)[0];
+                popup_192b863d28767b42a8b545ec32f51375.setContent(html_b85341fa3222dc4063963966467bdc5f);
+            
+        
+
+        marker_1e6a4233d03de329900732cb804babe3.bindPopup(popup_192b863d28767b42a8b545ec32f51375)
+        ;
+
+        
+    
+    
+            marker_1e6a4233d03de329900732cb804babe3.bindTooltip(
+                `<div>
+                     BRILLANT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dff297dc67ca1f3909ef7497a71546e9 = L.marker(
+                [50.812313, 4.404749],
+                {"name": "TERCOIGNE"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_1304f936575e80f9de88f6b6bb270675 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_dff297dc67ca1f3909ef7497a71546e9.setIcon(icon_1304f936575e80f9de88f6b6bb270675);
+        
+    
+        var popup_4e17d2df1d438bb659c43c9d5c260936 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_38d4b240a7b295ca780fae25d7a82da3 = $(`<div id="html_38d4b240a7b295ca780fae25d7a82da3" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TERCOIGNE</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 46.67</h6></center>         </div>`)[0];
+                popup_4e17d2df1d438bb659c43c9d5c260936.setContent(html_38d4b240a7b295ca780fae25d7a82da3);
+            
+        
+
+        marker_dff297dc67ca1f3909ef7497a71546e9.bindPopup(popup_4e17d2df1d438bb659c43c9d5c260936)
+        ;
+
+        
+    
+    
+            marker_dff297dc67ca1f3909ef7497a71546e9.bindTooltip(
+                `<div>
+                     TERCOIGNE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b314293fd515e6926d7295101248b11e = L.marker(
+                [50.812742, 4.41051],
+                {"name": "GARDON"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_0ef57d757d86d5dccd877ce2cffb651b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b314293fd515e6926d7295101248b11e.setIcon(icon_0ef57d757d86d5dccd877ce2cffb651b);
+        
+    
+        var popup_516dee062b13e4905d39b7e538d6f329 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_8752809771d3848191067403cffcd053 = $(`<div id="html_8752809771d3848191067403cffcd053" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARDON</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_516dee062b13e4905d39b7e538d6f329.setContent(html_8752809771d3848191067403cffcd053);
+            
+        
+
+        marker_b314293fd515e6926d7295101248b11e.bindPopup(popup_516dee062b13e4905d39b7e538d6f329)
+        ;
+
+        
+    
+    
+            marker_b314293fd515e6926d7295101248b11e.bindTooltip(
+                `<div>
+                     GARDON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a51590735bcc35245077ff6fae3ef7ab = L.marker(
+                [50.813685, 4.414881],
+                {"name": "BERENSHEIDE"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_c2ac8f412530d21cb0da34f9af86633e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a51590735bcc35245077ff6fae3ef7ab.setIcon(icon_c2ac8f412530d21cb0da34f9af86633e);
+        
+    
+        var popup_c96cb9fed75fa9686c0dfedc7067b786 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c3bb3ad0c8a5f8d27109da6c4de5f5f2 = $(`<div id="html_c3bb3ad0c8a5f8d27109da6c4de5f5f2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BERENSHEIDE</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 73.33</h6></center>         </div>`)[0];
+                popup_c96cb9fed75fa9686c0dfedc7067b786.setContent(html_c3bb3ad0c8a5f8d27109da6c4de5f5f2);
+            
+        
+
+        marker_a51590735bcc35245077ff6fae3ef7ab.bindPopup(popup_c96cb9fed75fa9686c0dfedc7067b786)
+        ;
+
+        
+    
+    
+            marker_a51590735bcc35245077ff6fae3ef7ab.bindTooltip(
+                `<div>
+                     BERENSHEIDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_caeedc89a9d0391cbc0cc5e1a33df768 = L.marker(
+                [50.815413, 4.408214],
+                {"name": "BEAULIEU"}
+            ).addTo(feature_group_daa532b4f526d1f4296556e84af3e896);
+        
+    
+            var icon_afe50496664f0ccf9726a2229b550ed4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#E43C2E", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_caeedc89a9d0391cbc0cc5e1a33df768.setIcon(icon_afe50496664f0ccf9726a2229b550ed4);
+        
+    
+        var popup_5c3c4b18c483f121d81f4bd5780762de = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_89f6487f8179dd05f9381c1b8988ab4b = $(`<div id="html_89f6487f8179dd05f9381c1b8988ab4b" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BEAULIEU</h4></center>         <center><h5>Line: 17 BEAULIEU - HEILIGENBORRE</h5></center>         <center><h6>Score: 86.67</h6></center>         </div>`)[0];
+                popup_5c3c4b18c483f121d81f4bd5780762de.setContent(html_89f6487f8179dd05f9381c1b8988ab4b);
+            
+        
+
+        marker_caeedc89a9d0391cbc0cc5e1a33df768.bindPopup(popup_5c3c4b18c483f121d81f4bd5780762de)
+        ;
+
+        
+    
+    
+            marker_caeedc89a9d0391cbc0cc5e1a33df768.bindTooltip(
+                `<div>
+                     BEAULIEU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_85f8893f86051efef7e3f4967c75f558 = L.featureGroup(
+                {}
+            ).addTo(map_e537ae4c7da7c4944c6209ac4c556b39);
+        
+    
+            var marker_c01417c40543c1a0c72e08afce5ea622 = L.marker(
+                [50.789591, 4.420440999999999],
+                {"name": "HEILIGENBORRE"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_a44218e00c696f450d147e7c814214c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c01417c40543c1a0c72e08afce5ea622.setIcon(icon_a44218e00c696f450d147e7c814214c3);
+        
+    
+            marker_c01417c40543c1a0c72e08afce5ea622.bindTooltip(
+                `<div>
+                     HEILIGENBORRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_348bab341f649bfc9e3bed7de7601063 = L.marker(
+                [50.792207000000005, 4.419620999999999],
+                {"name": "INTERNAT. SCHOOL"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_8b133488686ff9091e351d162e57a601 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_348bab341f649bfc9e3bed7de7601063.setIcon(icon_8b133488686ff9091e351d162e57a601);
+        
+    
+            marker_348bab341f649bfc9e3bed7de7601063.bindTooltip(
+                `<div>
+                     INTERNAT. SCHOOL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1f34ae48c9c3f43d9855bdf6294d2f14 = L.marker(
+                [50.79397, 4.417949999999999],
+                {"name": "ETANGS BOITSFORT"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_7bff0466bdfc20f143f83f5c2c65e46f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1f34ae48c9c3f43d9855bdf6294d2f14.setIcon(icon_7bff0466bdfc20f143f83f5c2c65e46f);
+        
+    
+            marker_1f34ae48c9c3f43d9855bdf6294d2f14.bindTooltip(
+                `<div>
+                     ETANGS BOITSFORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_65b9065892bf5a4a25f8d530a2489f54 = L.marker(
+                [50.796622000000006, 4.417682999999999],
+                {"name": "DIABOLO"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_1c5263b9570cb01fc9cd647c53af3180 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_65b9065892bf5a4a25f8d530a2489f54.setIcon(icon_1c5263b9570cb01fc9cd647c53af3180);
+        
+    
+            marker_65b9065892bf5a4a25f8d530a2489f54.bindTooltip(
+                `<div>
+                     DIABOLO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a599a72a923b467d84314ca195c86c9e = L.marker(
+                [50.798698, 4.419174],
+                {"name": "WIENER"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_0dcd0bde70431753c69a36719a47b8b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a599a72a923b467d84314ca195c86c9e.setIcon(icon_0dcd0bde70431753c69a36719a47b8b0);
+        
+    
+            marker_a599a72a923b467d84314ca195c86c9e.bindTooltip(
+                `<div>
+                     WIENER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_92088b572b2b4fee2896b41049b14f53 = L.marker(
+                [50.800237, 4.414027],
+                {"name": "MIRAVAL"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_3b3614aa9451a3e46c25eee8f437be05 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_92088b572b2b4fee2896b41049b14f53.setIcon(icon_3b3614aa9451a3e46c25eee8f437be05);
+        
+    
+            marker_92088b572b2b4fee2896b41049b14f53.bindTooltip(
+                `<div>
+                     MIRAVAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_51bd24c50e74c15c1994e203b7f05370 = L.marker(
+                [50.802755000000005, 4.4128799999999995],
+                {"name": "LES 3 TILLEULS"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_fcdb3bf05fea2ee6010c47adcd2c0502 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_51bd24c50e74c15c1994e203b7f05370.setIcon(icon_fcdb3bf05fea2ee6010c47adcd2c0502);
+        
+    
+            marker_51bd24c50e74c15c1994e203b7f05370.bindTooltip(
+                `<div>
+                     LES 3 TILLEULS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e296f875687d2bc265a7e8832fddcd90 = L.marker(
+                [50.803134, 4.409008],
+                {"name": "CALYPSO 2000"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_5ac67b9eacb052fe04b833a9681890bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e296f875687d2bc265a7e8832fddcd90.setIcon(icon_5ac67b9eacb052fe04b833a9681890bd);
+        
+    
+            marker_e296f875687d2bc265a7e8832fddcd90.bindTooltip(
+                `<div>
+                     CALYPSO 2000
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ede3b7142c59639759b19272e30e5b3b = L.marker(
+                [50.805400000000006, 4.406782],
+                {"name": "VANDER ELST"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_c2239c2c52058e2e7ed0709de2960ace = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ede3b7142c59639759b19272e30e5b3b.setIcon(icon_c2239c2c52058e2e7ed0709de2960ace);
+        
+    
+            marker_ede3b7142c59639759b19272e30e5b3b.bindTooltip(
+                `<div>
+                     VANDER ELST
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_be80a8079647c22c0954e726cec74549 = L.marker(
+                [50.81004, 4.403181999999999],
+                {"name": "KEYM"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_44fb0aec686fbf6c627d4bb99dd8ce75 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_be80a8079647c22c0954e726cec74549.setIcon(icon_44fb0aec686fbf6c627d4bb99dd8ce75);
+        
+    
+            marker_be80a8079647c22c0954e726cec74549.bindTooltip(
+                `<div>
+                     KEYM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe7451901cbca1cadd18f636be1ece6c = L.marker(
+                [50.811919, 4.401864],
+                {"name": "BRILLANT"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_6e0feeaed2b31bf7bec69386c84a3eae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fe7451901cbca1cadd18f636be1ece6c.setIcon(icon_6e0feeaed2b31bf7bec69386c84a3eae);
+        
+    
+            marker_fe7451901cbca1cadd18f636be1ece6c.bindTooltip(
+                `<div>
+                     BRILLANT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_324197b45b3bac3e904e56e428c76fc6 = L.marker(
+                [50.812323000000006, 4.404758999999999],
+                {"name": "TERCOIGNE"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_926855d6d1c3c20454a09bad3504034b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_324197b45b3bac3e904e56e428c76fc6.setIcon(icon_926855d6d1c3c20454a09bad3504034b);
+        
+    
+            marker_324197b45b3bac3e904e56e428c76fc6.bindTooltip(
+                `<div>
+                     TERCOIGNE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d28040251b5535563a8803bd310ab336 = L.marker(
+                [50.812752, 4.41052],
+                {"name": "GARDON"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_0f8d24b5667f3fb5c1bd8330201dc8f4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d28040251b5535563a8803bd310ab336.setIcon(icon_0f8d24b5667f3fb5c1bd8330201dc8f4);
+        
+    
+            marker_d28040251b5535563a8803bd310ab336.bindTooltip(
+                `<div>
+                     GARDON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3b46ad0bf88079bd5c3eb074ea63c6ce = L.marker(
+                [50.813695, 4.414891],
+                {"name": "BERENSHEIDE"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_872bc6e8ddcb7528bd0865840cab5cf0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3b46ad0bf88079bd5c3eb074ea63c6ce.setIcon(icon_872bc6e8ddcb7528bd0865840cab5cf0);
+        
+    
+            marker_3b46ad0bf88079bd5c3eb074ea63c6ce.bindTooltip(
+                `<div>
+                     BERENSHEIDE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_00827f0eb8829b0c987b347396989e4a = L.marker(
+                [50.815423, 4.408224],
+                {"name": "BEAULIEU"}
+            ).addTo(feature_group_85f8893f86051efef7e3f4967c75f558);
+        
+    
+            var icon_036ef498874f4020d399d6e9db98228d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_00827f0eb8829b0c987b347396989e4a.setIcon(icon_036ef498874f4020d399d6e9db98228d);
+        
+    
+            marker_00827f0eb8829b0c987b347396989e4a.bindTooltip(
+                `<div>
+                     BEAULIEU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_599ab832de931ddc9b37a6b0e81bf1c7 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_22bc0bb2c17c33e504d694c628611163,
+                },
+                overlays :  {
+                    "17 BEAULIEU - HEILIGENBORRE" : feature_group_daa532b4f526d1f4296556e84af3e896,
+                    "17 BEAULIEU - HEILIGENBORRE SCORES" : feature_group_85f8893f86051efef7e3f4967c75f558,
+                },
+            };
+            L.control.layers(
+                layer_control_599ab832de931ddc9b37a6b0e81bf1c7.base_layers,
+                layer_control_599ab832de931ddc9b37a6b0e81bf1c7.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_e537ae4c7da7c4944c6209ac4c556b39);
+            feature_group_85f8893f86051efef7e3f4967c75f558.remove();
+        
+</script>
+</html>

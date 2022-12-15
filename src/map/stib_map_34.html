@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f2c4486e7a874785e831e6240dd23b06 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f2c4486e7a874785e831e6240dd23b06" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f2c4486e7a874785e831e6240dd23b06 = L.map(
+                "map_f2c4486e7a874785e831e6240dd23b06",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9eb42d1161c219efff26ebc804b5bcdf = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f2c4486e7a874785e831e6240dd23b06);
+        
+    
+            var poly_line_2850aa7f97a7649028637910daf1b85c = L.polyline(
+                [[50.818217, 4.436555], [50.818111, 4.436576], [50.817968, 4.436614], [50.817781, 4.436671], [50.817359, 4.43678], [50.817332, 4.436787], [50.816712, 4.437001], [50.816672, 4.437008], [50.816513, 4.435639], [50.81644, 4.435], [50.816368, 4.434401], [50.816368, 4.434401], [50.81635, 4.434239], [50.816333, 4.434109], [50.816328, 4.434068], [50.816303, 4.433812], [50.816287, 4.433669], [50.816283, 4.433626], [50.816258, 4.433416], [50.816233, 4.433186], [50.816228, 4.433134], [50.816211, 4.432991], [50.816189, 4.432799], [50.816159, 4.432558], [50.81612, 4.43221], [50.816114, 4.432163], [50.816072, 4.431797], [50.816021, 4.431373], [50.815994, 4.431248], [50.815961, 4.431134], [50.815941, 4.431053], [50.81595, 4.430926], [50.815956, 4.430593], [50.815953, 4.4305], [50.815953, 4.430416], [50.815952, 4.430332], [50.815951, 4.430138], [50.815962, 4.429934], [50.815964, 4.429888], [50.815966, 4.429741], [50.816008, 4.429263], [50.81604, 4.429047], [50.816065, 4.428912], [50.816065, 4.428912], [50.816093, 4.428757], [50.8161, 4.428716], [50.81615, 4.428437], [50.816303, 4.427676], [50.816311, 4.427637], [50.816473, 4.426737], [50.816542, 4.426347], [50.816548, 4.426303], [50.816558, 4.426187], [50.816565, 4.426069], [50.816571, 4.426011], [50.816577, 4.425968], [50.816595, 4.425852], [50.816672, 4.425426], [50.816834, 4.424577], [50.816861, 4.424459], [50.816873, 4.424408], [50.816873, 4.424408], [50.816877, 4.424388], [50.816886, 4.424345], [50.816907, 4.42424], [50.81736, 4.421858], [50.817558, 4.420789], [50.817594, 4.420608], [50.817602, 4.420567], [50.817639, 4.420391], [50.817688, 4.420152], [50.817786, 4.419707], [50.817786, 4.419707], [50.817907, 4.419166], [50.818002, 4.418773], [50.818013, 4.418731], [50.818087, 4.418439], [50.818207, 4.417994], [50.818337, 4.417534], [50.818359, 4.417465], [50.818445, 4.417175], [50.818457, 4.417135], [50.818564, 4.41675], [50.818821, 4.415874], [50.818993, 4.415287], [50.818993, 4.415287], [50.819059, 4.415061], [50.819862, 4.412262], [50.819873, 4.412224], [50.819907, 4.412113], [50.819931, 4.412032], [50.819968, 4.411905], [50.820379, 4.410493], [50.82039, 4.410453], [50.82041, 4.410375], [50.820427, 4.41032], [50.820554, 4.409881], [50.820673, 4.409447], [50.820698, 4.409364], [50.820722, 4.409279], [50.820765, 4.409127], [50.820779, 4.409087], [50.82081, 4.409012], [50.820836, 4.408941], [50.820859, 4.40886], [50.82087, 4.40882], [50.820902, 4.408708], [50.820955, 4.408517], [50.821042, 4.408217], [50.821042, 4.408217], [50.821059, 4.408159], [50.821492, 4.406666], [50.821504, 4.406628], [50.821545, 4.406492], [50.821557, 4.406454], [50.821576, 4.406388], [50.821666, 4.406054], [50.821707, 4.405902], [50.821725, 4.405841], [50.821807, 4.405563], [50.821807, 4.405563], [50.821852, 4.405409], [50.821898, 4.405255], [50.821921, 4.405181], [50.822084, 4.40462], [50.822301, 4.403995], [50.822421, 4.40368], [50.822434, 4.403643], [50.822462, 4.403568], [50.822477, 4.403529], [50.822621, 4.403196], [50.822801, 4.402846], [50.822936, 4.402589], [50.823154, 4.402204], [50.823881, 4.400984], [50.823928, 4.400912], [50.82397, 4.400847], [50.82397, 4.400847], [50.823975, 4.400838], [50.824059, 4.400709], [50.824078, 4.400677], [50.824854, 4.399393], [50.824873, 4.39936], [50.825591, 4.398146], [50.825874, 4.397694], [50.825874, 4.397694], [50.826176, 4.397211], [50.826192, 4.397175], [50.826233, 4.397045], [50.82625, 4.397006], [50.826319, 4.396901], [50.826339, 4.396873], [50.826509, 4.396625], [50.826748, 4.396223], [50.826985, 4.39582], [50.82745, 4.395034], [50.827469, 4.395003], [50.828035, 4.394085], [50.828175, 4.393868], [50.828497, 4.393334], [50.828497, 4.393334], [50.828558, 4.393234], [50.828576, 4.393201], [50.828664, 4.393042], [50.828954, 4.392574], [50.829442, 4.391754], [50.829948, 4.390915], [50.829948, 4.390915], [50.829956, 4.390902], [50.830042, 4.390755], [50.830213, 4.390488], [50.830239, 4.39045], [50.83039, 4.39032], [50.830572, 4.3902], [50.830598, 4.390181], [50.830669, 4.390137], [50.830677, 4.390085], [50.830597, 4.389909], [50.830665, 4.38979], [50.831139, 4.389065], [50.831437, 4.388598], [50.831893, 4.387928], [50.83209, 4.387616], [50.83211, 4.387583], [50.832764, 4.386612], [50.832784, 4.386584], [50.833016, 4.386221], [50.833016, 4.386221], [50.833153, 4.386005], [50.833172, 4.385974], [50.833659, 4.385222], [50.833827, 4.38498], [50.834107, 4.38452], [50.834333, 4.384147], [50.834398, 4.384044], [50.834469, 4.383896], [50.834541, 4.383733], [50.834695, 4.383284], [50.834812, 4.382952], [50.83489, 4.382722], [50.834959, 4.382548], [50.834971, 4.382509], [50.83521, 4.381768], [50.83533, 4.381416], [50.835427, 4.381122], [50.835441, 4.381084], [50.835496, 4.380921], [50.835639, 4.380428], [50.83565, 4.380387], [50.835671, 4.380303], [50.835851, 4.379703], [50.835851, 4.379703], [50.835861, 4.37967], [50.835925, 4.379464], [50.835936, 4.379425], [50.835969, 4.379296], [50.835969, 4.379293], [50.835969, 4.379287], [50.835971, 4.379168], [50.835954, 4.378882], [50.835947, 4.378775], [50.835943, 4.378732], [50.835907, 4.378255], [50.835869, 4.377916], [50.835829, 4.377585], [50.835779, 4.377149], [50.835731, 4.376786], [50.835714, 4.376408], [50.835723, 4.375849], [50.835741, 4.37563], [50.835811, 4.374859], [50.835818, 4.37479], [50.835818, 4.37479], [50.835843, 4.374551], [50.835851, 4.374487], [50.835857, 4.374445], [50.835877, 4.374259], [50.835884, 4.374216], [50.835895, 4.374161], [50.835899, 4.37409], [50.835913, 4.373963], [50.835918, 4.373901], [50.835962, 4.373298], [50.835983, 4.372845], [50.835977, 4.372635], [50.835939, 4.372349], [50.835933, 4.372307], [50.835819, 4.371529], [50.835985, 4.371309], [50.836158, 4.371083], [50.836389, 4.370778], [50.836389, 4.370778], [50.836465, 4.370677], [50.836499, 4.370674], [50.83652, 4.370691], [50.836588, 4.370791], [50.836907, 4.371261], [50.837012, 4.371418], [50.837117, 4.371577], [50.837317, 4.37188], [50.837336, 4.371909], [50.837483, 4.372145], [50.83764, 4.372399], [50.837689, 4.372467], [50.837731, 4.372524], [50.837735, 4.372527], [50.837975, 4.372668], [50.838191, 4.372781], [50.838191, 4.372781], [50.838693, 4.373072], [50.838843, 4.373145], [50.83895, 4.373101], [50.839075, 4.373128], [50.83915, 4.373133], [50.839215, 4.373091], [50.83927, 4.37302], [50.839301, 4.372915], [50.839376, 4.37255], [50.839383, 4.372419], [50.839361, 4.372335], [50.839327, 4.372279], [50.83932, 4.372189], [50.839322, 4.372103], [50.839536, 4.371042], [50.839544, 4.371002], [50.839654, 4.37049], [50.839764, 4.369977], [50.839773, 4.369938], [50.839802, 4.369806], [50.839915, 4.369248], [50.839915, 4.369248], [50.839977, 4.368935], [50.840024, 4.368711], [50.840032, 4.368671], [50.840256, 4.367571], [50.840264, 4.36753], [50.840416, 4.366835], [50.840519, 4.366312], [50.840519, 4.366312], [50.840529, 4.366255], [50.840582, 4.366006], [50.840602, 4.365942], [50.840624, 4.365884], [50.840639, 4.365849], [50.84066, 4.365791], [50.840674, 4.36573], [50.840679, 4.365701], [50.840683, 4.36566], [50.840679, 4.365613], [50.840656, 4.365514], [50.840306, 4.364905], [50.840282, 4.364865], [50.8402, 4.364719], [50.840114, 4.364572], [50.839978, 4.36433], [50.839951, 4.36428], [50.839917, 4.364219], [50.839889, 4.364172], [50.839858, 4.364134], [50.839821, 4.364097], [50.839753, 4.36398], [50.839461, 4.363434], [50.83933, 4.363123], [50.839136, 4.362703], [50.839036, 4.362474], [50.838954, 4.362305], [50.838911, 4.362264], [50.838879, 4.362264], [50.838848, 4.362274], [50.838802, 4.362314], [50.838771, 4.362342], [50.838726, 4.362393], [50.838712, 4.362473], [50.83872, 4.362564], [50.838724, 4.362613], [50.838731, 4.362696], [50.838738, 4.362743], [50.838767, 4.362818], [50.838895, 4.36307]],
+                {"bubblingMouseEvents": true, "color": "#F3C300", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#F3C300", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_f2c4486e7a874785e831e6240dd23b06);
+        
+    
+            var feature_group_8fb04576e31935eac802da167e1eb723 = L.featureGroup(
+                {}
+            ).addTo(map_f2c4486e7a874785e831e6240dd23b06);
+        
+    
+            var marker_760c09efb4f5433654b80d2b9aeaddc6 = L.marker(
+                [50.818214, 4.436513],
+                {"name": "SAINTE-ANNE"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_d35a5aea7a015a43032c529154f3a027 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_760c09efb4f5433654b80d2b9aeaddc6.setIcon(icon_d35a5aea7a015a43032c529154f3a027);
+        
+    
+        var popup_210a67224434a4c368dd2ba12c16db2e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f561720d2478bbe15664faca9a8dfc66 = $(`<div id="html_f561720d2478bbe15664faca9a8dfc66" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SAINTE-ANNE</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_210a67224434a4c368dd2ba12c16db2e.setContent(html_f561720d2478bbe15664faca9a8dfc66);
+            
+        
+
+        marker_760c09efb4f5433654b80d2b9aeaddc6.bindPopup(popup_210a67224434a4c368dd2ba12c16db2e)
+        ;
+
+        
+    
+    
+            marker_760c09efb4f5433654b80d2b9aeaddc6.bindTooltip(
+                `<div>
+                     SAINTE-ANNE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f27f1f5529a80c9fe49c1eddd3a1b09b = L.marker(
+                [50.81639, 4.434396],
+                {"name": "DEUX CHAUSSEES"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_dfba4088c4ed9c1e9a920ddf56403955 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f27f1f5529a80c9fe49c1eddd3a1b09b.setIcon(icon_dfba4088c4ed9c1e9a920ddf56403955);
+        
+    
+        var popup_dfa5f77b4e2552243e6b40285a9fcb0e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_83e9747453ab486de9ae7117fc4eead2 = $(`<div id="html_83e9747453ab486de9ae7117fc4eead2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DEUX CHAUSSEES</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 90.0</h6></center>         </div>`)[0];
+                popup_dfa5f77b4e2552243e6b40285a9fcb0e.setContent(html_83e9747453ab486de9ae7117fc4eead2);
+            
+        
+
+        marker_f27f1f5529a80c9fe49c1eddd3a1b09b.bindPopup(popup_dfa5f77b4e2552243e6b40285a9fcb0e)
+        ;
+
+        
+    
+    
+            marker_f27f1f5529a80c9fe49c1eddd3a1b09b.bindTooltip(
+                `<div>
+                     DEUX CHAUSSEES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_74370344c79e66797129d1e476602495 = L.marker(
+                [50.816078, 4.428918],
+                {"name": "BERGOJE"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_06c4cbf71ae7487407e0a09f545dfc2c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_74370344c79e66797129d1e476602495.setIcon(icon_06c4cbf71ae7487407e0a09f545dfc2c);
+        
+    
+        var popup_13ce9493ad9087030ff07bbe109369c6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e5120fce79edb0fb126565dbad8c45cb = $(`<div id="html_e5120fce79edb0fb126565dbad8c45cb" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BERGOJE</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 80.0</h6></center>         </div>`)[0];
+                popup_13ce9493ad9087030ff07bbe109369c6.setContent(html_e5120fce79edb0fb126565dbad8c45cb);
+            
+        
+
+        marker_74370344c79e66797129d1e476602495.bindPopup(popup_13ce9493ad9087030ff07bbe109369c6)
+        ;
+
+        
+    
+    
+            marker_74370344c79e66797129d1e476602495.bindTooltip(
+                `<div>
+                     BERGOJE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cb30ea01ae745a1a3f83de5a42d2d957 = L.marker(
+                [50.816872, 4.424406],
+                {"name": "AUDERGHEM-SHOP."}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_d9966d7fb2553da0aa8340d51d7ebc63 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_cb30ea01ae745a1a3f83de5a42d2d957.setIcon(icon_d9966d7fb2553da0aa8340d51d7ebc63);
+        
+    
+        var popup_a8932bd6a4c09d1f04f8e75553780ef6 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6693f43ea1ea587ee5874d5f0ea73108 = $(`<div id="html_6693f43ea1ea587ee5874d5f0ea73108" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: AUDERGHEM-SHOP.</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 70.0</h6></center>         </div>`)[0];
+                popup_a8932bd6a4c09d1f04f8e75553780ef6.setContent(html_6693f43ea1ea587ee5874d5f0ea73108);
+            
+        
+
+        marker_cb30ea01ae745a1a3f83de5a42d2d957.bindPopup(popup_a8932bd6a4c09d1f04f8e75553780ef6)
+        ;
+
+        
+    
+    
+            marker_cb30ea01ae745a1a3f83de5a42d2d957.bindTooltip(
+                `<div>
+                     AUDERGHEM-SHOP.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4d2c51afa8b17e56b85852e42c4caf04 = L.marker(
+                [50.817791, 4.41971],
+                {"name": "VALDUC"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_42a36570536f1c7333169a3d351ddc2a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4d2c51afa8b17e56b85852e42c4caf04.setIcon(icon_42a36570536f1c7333169a3d351ddc2a);
+        
+    
+        var popup_1e262a9d2f176eee0785aa819cd13bfe = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_885b01a4baf6d970e0ae61ef0e181a1c = $(`<div id="html_885b01a4baf6d970e0ae61ef0e181a1c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VALDUC</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_1e262a9d2f176eee0785aa819cd13bfe.setContent(html_885b01a4baf6d970e0ae61ef0e181a1c);
+            
+        
+
+        marker_4d2c51afa8b17e56b85852e42c4caf04.bindPopup(popup_1e262a9d2f176eee0785aa819cd13bfe)
+        ;
+
+        
+    
+    
+            marker_4d2c51afa8b17e56b85852e42c4caf04.bindTooltip(
+                `<div>
+                     VALDUC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4b6050612fe61640768af613c4ba922a = L.marker(
+                [50.819006, 4.415298],
+                {"name": "VANDROMME"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_0dc70ddae054e67864affeafa49d9afb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4b6050612fe61640768af613c4ba922a.setIcon(icon_0dc70ddae054e67864affeafa49d9afb);
+        
+    
+        var popup_031ea005bec76e143182f87c6691a469 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d0e76a96b5159178f2b583f159444698 = $(`<div id="html_d0e76a96b5159178f2b583f159444698" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: VANDROMME</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 50.0</h6></center>         </div>`)[0];
+                popup_031ea005bec76e143182f87c6691a469.setContent(html_d0e76a96b5159178f2b583f159444698);
+            
+        
+
+        marker_4b6050612fe61640768af613c4ba922a.bindPopup(popup_031ea005bec76e143182f87c6691a469)
+        ;
+
+        
+    
+    
+            marker_4b6050612fe61640768af613c4ba922a.bindTooltip(
+                `<div>
+                     VANDROMME
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a24c41fa6ff8d18f2142a0e530cba088 = L.marker(
+                [50.821065, 4.408234],
+                {"name": "EGLISE ST-JULIEN"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_832bd1dfc7522eae3230a8eda3f76400 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a24c41fa6ff8d18f2142a0e530cba088.setIcon(icon_832bd1dfc7522eae3230a8eda3f76400);
+        
+    
+        var popup_d8db8034661af6f7178f1c29892829d0 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f6f655ec5c787b8c9a520c72730a8fa6 = $(`<div id="html_f6f655ec5c787b8c9a520c72730a8fa6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: EGLISE ST-JULIEN</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 40.0</h6></center>         </div>`)[0];
+                popup_d8db8034661af6f7178f1c29892829d0.setContent(html_f6f655ec5c787b8c9a520c72730a8fa6);
+            
+        
+
+        marker_a24c41fa6ff8d18f2142a0e530cba088.bindPopup(popup_d8db8034661af6f7178f1c29892829d0)
+        ;
+
+        
+    
+    
+            marker_a24c41fa6ff8d18f2142a0e530cba088.bindTooltip(
+                `<div>
+                     EGLISE ST-JULIEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_81960b1350f62d92570585801b77d556 = L.marker(
+                [50.821817, 4.40557],
+                {"name": "HANKAR"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_27f7cd6c82eb691ceb42fb294645d901 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_81960b1350f62d92570585801b77d556.setIcon(icon_27f7cd6c82eb691ceb42fb294645d901);
+        
+    
+        var popup_94b65537b4e8c211e4ee59d10112e03c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_66e867ad7f2b68b94e7f4d2cd19aac4f = $(`<div id="html_66e867ad7f2b68b94e7f4d2cd19aac4f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: HANKAR</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 30.0</h6></center>         </div>`)[0];
+                popup_94b65537b4e8c211e4ee59d10112e03c.setContent(html_66e867ad7f2b68b94e7f4d2cd19aac4f);
+            
+        
+
+        marker_81960b1350f62d92570585801b77d556.bindPopup(popup_94b65537b4e8c211e4ee59d10112e03c)
+        ;
+
+        
+    
+    
+            marker_81960b1350f62d92570585801b77d556.bindTooltip(
+                `<div>
+                     HANKAR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7240ddc0772b20ac8aca647e8ef187fa = L.marker(
+                [50.823982, 4.400869],
+                {"name": "STRATEGIE"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_96e46d0fce5c61cdc45a66876ff1866e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7240ddc0772b20ac8aca647e8ef187fa.setIcon(icon_96e46d0fce5c61cdc45a66876ff1866e);
+        
+    
+        var popup_ce5a12f30500caaaf7e68a3003ea422f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ec5df148e3b4a70232111c0e80f43bdf = $(`<div id="html_ec5df148e3b4a70232111c0e80f43bdf" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: STRATEGIE</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_ce5a12f30500caaaf7e68a3003ea422f.setContent(html_ec5df148e3b4a70232111c0e80f43bdf);
+            
+        
+
+        marker_7240ddc0772b20ac8aca647e8ef187fa.bindPopup(popup_ce5a12f30500caaaf7e68a3003ea422f)
+        ;
+
+        
+    
+    
+            marker_7240ddc0772b20ac8aca647e8ef187fa.bindTooltip(
+                `<div>
+                     STRATEGIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d8ad7d1c54a4d5fc6a4bef1c06532f13 = L.marker(
+                [50.825898, 4.397734],
+                {"name": "ARSENAL"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_fc6e78bde2de5b6c81caef0e4de04640 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d8ad7d1c54a4d5fc6a4bef1c06532f13.setIcon(icon_fc6e78bde2de5b6c81caef0e4de04640);
+        
+    
+        var popup_709dcc7dc8f5409114ea29b668a77be4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_0456fd1a13843bb21a6a8c92f15cbc64 = $(`<div id="html_0456fd1a13843bb21a6a8c92f15cbc64" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ARSENAL</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 10.0</h6></center>         </div>`)[0];
+                popup_709dcc7dc8f5409114ea29b668a77be4.setContent(html_0456fd1a13843bb21a6a8c92f15cbc64);
+            
+        
+
+        marker_d8ad7d1c54a4d5fc6a4bef1c06532f13.bindPopup(popup_709dcc7dc8f5409114ea29b668a77be4)
+        ;
+
+        
+    
+    
+            marker_d8ad7d1c54a4d5fc6a4bef1c06532f13.bindTooltip(
+                `<div>
+                     ARSENAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8bdc25b7a962cc9e94003f0bf82482e2 = L.marker(
+                [50.828506, 4.39335],
+                {"name": "BUEDTS"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_552ca45bdc52ec4951c82888467189a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8bdc25b7a962cc9e94003f0bf82482e2.setIcon(icon_552ca45bdc52ec4951c82888467189a9);
+        
+    
+        var popup_504d23b70b772700e07938cb4d2a4b48 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_8bcefee735d4f0fc63862d5ad9c16244 = $(`<div id="html_8bcefee735d4f0fc63862d5ad9c16244" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BUEDTS</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 0.0</h6></center>         </div>`)[0];
+                popup_504d23b70b772700e07938cb4d2a4b48.setContent(html_8bcefee735d4f0fc63862d5ad9c16244);
+            
+        
+
+        marker_8bdc25b7a962cc9e94003f0bf82482e2.bindPopup(popup_504d23b70b772700e07938cb4d2a4b48)
+        ;
+
+        
+    
+    
+            marker_8bdc25b7a962cc9e94003f0bf82482e2.bindTooltip(
+                `<div>
+                     BUEDTS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_37a51567ea5f810e17109bc43c9b595c = L.marker(
+                [50.829963, 4.390938],
+                {"name": "LA CHASSE"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_bf0bedcc62cfe9332fd726f5e2fbf618 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_37a51567ea5f810e17109bc43c9b595c.setIcon(icon_bf0bedcc62cfe9332fd726f5e2fbf618);
+        
+    
+        var popup_5c800fa6eca195e41e582fabc648e32e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_463402cd2b8be5724648e81bddf6bc8c = $(`<div id="html_463402cd2b8be5724648e81bddf6bc8c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LA CHASSE</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 10.0</h6></center>         </div>`)[0];
+                popup_5c800fa6eca195e41e582fabc648e32e.setContent(html_463402cd2b8be5724648e81bddf6bc8c);
+            
+        
+
+        marker_37a51567ea5f810e17109bc43c9b595c.bindPopup(popup_5c800fa6eca195e41e582fabc648e32e)
+        ;
+
+        
+    
+    
+            marker_37a51567ea5f810e17109bc43c9b595c.bindTooltip(
+                `<div>
+                     LA CHASSE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3fa9bc07a1a3d6bf7aece67556584dae = L.marker(
+                [50.833029, 4.386241],
+                {"name": "FETIS"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_160400dcc1b23bf7ce35eb4dd82552e0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3fa9bc07a1a3d6bf7aece67556584dae.setIcon(icon_160400dcc1b23bf7ce35eb4dd82552e0);
+        
+    
+        var popup_50ecee4b4332d0d2c6f8f75e4f1c0c46 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c5544ab23f2deada27c595263191c30a = $(`<div id="html_c5544ab23f2deada27c595263191c30a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FETIS</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_50ecee4b4332d0d2c6f8f75e4f1c0c46.setContent(html_c5544ab23f2deada27c595263191c30a);
+            
+        
+
+        marker_3fa9bc07a1a3d6bf7aece67556584dae.bindPopup(popup_50ecee4b4332d0d2c6f8f75e4f1c0c46)
+        ;
+
+        
+    
+    
+            marker_3fa9bc07a1a3d6bf7aece67556584dae.bindTooltip(
+                `<div>
+                     FETIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9f40f987c704289a54b462b32e3b987e = L.marker(
+                [50.835844, 4.379697],
+                {"name": "ETANGS"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_fad51fcffb476dce4132274083694ec8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9f40f987c704289a54b462b32e3b987e.setIcon(icon_fad51fcffb476dce4132274083694ec8);
+        
+    
+        var popup_e616b582ab58bf906fa0983c1fcd603b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_bef965d3c383337e03c661bd47128083 = $(`<div id="html_bef965d3c383337e03c661bd47128083" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ETANGS</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 30.0</h6></center>         </div>`)[0];
+                popup_e616b582ab58bf906fa0983c1fcd603b.setContent(html_bef965d3c383337e03c661bd47128083);
+            
+        
+
+        marker_9f40f987c704289a54b462b32e3b987e.bindPopup(popup_e616b582ab58bf906fa0983c1fcd603b)
+        ;
+
+        
+    
+    
+            marker_9f40f987c704289a54b462b32e3b987e.bindTooltip(
+                `<div>
+                     ETANGS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e6230855dcff0eb6848ec19be013561f = L.marker(
+                [50.835862, 4.3748],
+                {"name": "MUSEUM"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_94e138a291223fc7af1dea8ca15e78d4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e6230855dcff0eb6848ec19be013561f.setIcon(icon_94e138a291223fc7af1dea8ca15e78d4);
+        
+    
+        var popup_275ca1d456f4746f732a839b56db2faa = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_eb74f02b63be9e569081430e4e591afa = $(`<div id="html_eb74f02b63be9e569081430e4e591afa" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MUSEUM</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 40.0</h6></center>         </div>`)[0];
+                popup_275ca1d456f4746f732a839b56db2faa.setContent(html_eb74f02b63be9e569081430e4e591afa);
+            
+        
+
+        marker_e6230855dcff0eb6848ec19be013561f.bindPopup(popup_275ca1d456f4746f732a839b56db2faa)
+        ;
+
+        
+    
+    
+            marker_e6230855dcff0eb6848ec19be013561f.bindTooltip(
+                `<div>
+                     MUSEUM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e413d033114d48aab9f36c2d36bbcfc = L.marker(
+                [50.836428, 4.370853],
+                {"name": "IDALIE"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_58f0f24ba9be18abbc217de83af59517 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1e413d033114d48aab9f36c2d36bbcfc.setIcon(icon_58f0f24ba9be18abbc217de83af59517);
+        
+    
+        var popup_5af1fb53b53e39cb31f56dcb862b5938 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_3fd07cec79f957829cda3d018ae98347 = $(`<div id="html_3fd07cec79f957829cda3d018ae98347" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: IDALIE</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 50.0</h6></center>         </div>`)[0];
+                popup_5af1fb53b53e39cb31f56dcb862b5938.setContent(html_3fd07cec79f957829cda3d018ae98347);
+            
+        
+
+        marker_1e413d033114d48aab9f36c2d36bbcfc.bindPopup(popup_5af1fb53b53e39cb31f56dcb862b5938)
+        ;
+
+        
+    
+    
+            marker_1e413d033114d48aab9f36c2d36bbcfc.bindTooltip(
+                `<div>
+                     IDALIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c99121e0d435f41a3fd9a027dc1ff01b = L.marker(
+                [50.838181, 4.372827],
+                {"name": "LUXEMBOURG"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_c0f91052bcd98afead416e6291ceaaa7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c99121e0d435f41a3fd9a027dc1ff01b.setIcon(icon_c0f91052bcd98afead416e6291ceaaa7);
+        
+    
+        var popup_ce8e2d096c37793d5db9bba91c66891a = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6ceb3f9e3c01751f74994640b309774c = $(`<div id="html_6ceb3f9e3c01751f74994640b309774c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LUXEMBOURG</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_ce8e2d096c37793d5db9bba91c66891a.setContent(html_6ceb3f9e3c01751f74994640b309774c);
+            
+        
+
+        marker_c99121e0d435f41a3fd9a027dc1ff01b.bindPopup(popup_ce8e2d096c37793d5db9bba91c66891a)
+        ;
+
+        
+    
+    
+            marker_c99121e0d435f41a3fd9a027dc1ff01b.bindTooltip(
+                `<div>
+                     LUXEMBOURG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a82b0d2bd54448a20f3871ebf1d3d5d3 = L.marker(
+                [50.839925, 4.369258],
+                {"name": "SCIENCE"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_241c888c56a13eebe71be2a8dd35e735 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a82b0d2bd54448a20f3871ebf1d3d5d3.setIcon(icon_241c888c56a13eebe71be2a8dd35e735);
+        
+    
+        var popup_ddc22fa63cd59a978f5ec324a126289a = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a886962dc70f2e2bec7ffb0e92a363e5 = $(`<div id="html_a886962dc70f2e2bec7ffb0e92a363e5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SCIENCE</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 70.0</h6></center>         </div>`)[0];
+                popup_ddc22fa63cd59a978f5ec324a126289a.setContent(html_a886962dc70f2e2bec7ffb0e92a363e5);
+            
+        
+
+        marker_a82b0d2bd54448a20f3871ebf1d3d5d3.bindPopup(popup_ddc22fa63cd59a978f5ec324a126289a)
+        ;
+
+        
+    
+    
+            marker_a82b0d2bd54448a20f3871ebf1d3d5d3.bindTooltip(
+                `<div>
+                     SCIENCE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b563aa1b9a23f540ddd098e8da014f6f = L.marker(
+                [50.840537, 4.366324],
+                {"name": "TRONE"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_41e496bd7a1113e4f517063c9fee23f8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b563aa1b9a23f540ddd098e8da014f6f.setIcon(icon_41e496bd7a1113e4f517063c9fee23f8);
+        
+    
+        var popup_2900c8da1fcc96669f19a088dd8dddf4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_8b3343a7de74d805036943cb1d400513 = $(`<div id="html_8b3343a7de74d805036943cb1d400513" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TRONE</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 80.0</h6></center>         </div>`)[0];
+                popup_2900c8da1fcc96669f19a088dd8dddf4.setContent(html_8b3343a7de74d805036943cb1d400513);
+            
+        
+
+        marker_b563aa1b9a23f540ddd098e8da014f6f.bindPopup(popup_2900c8da1fcc96669f19a088dd8dddf4)
+        ;
+
+        
+    
+    
+            marker_b563aa1b9a23f540ddd098e8da014f6f.bindTooltip(
+                `<div>
+                     TRONE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5dc083841377dff20249d67056ef8820 = L.marker(
+                [50.838892, 4.363073],
+                {"name": "PORTE DE NAMUR"}
+            ).addTo(feature_group_8fb04576e31935eac802da167e1eb723);
+        
+    
+            var icon_0781773ffd77f60d09b00b25512db275 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#F3C300", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5dc083841377dff20249d67056ef8820.setIcon(icon_0781773ffd77f60d09b00b25512db275);
+        
+    
+        var popup_b1d85554d23c9d317c9ca116d39cbf53 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ac2d7e5a16c32fb0272d45c329191bb3 = $(`<div id="html_ac2d7e5a16c32fb0272d45c329191bb3" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PORTE DE NAMUR</h4></center>         <center><h5>Line: 34 PORTE DE NAMUR - SAINTE-ANNE</h5></center>         <center><h6>Score: 90.0</h6></center>         </div>`)[0];
+                popup_b1d85554d23c9d317c9ca116d39cbf53.setContent(html_ac2d7e5a16c32fb0272d45c329191bb3);
+            
+        
+
+        marker_5dc083841377dff20249d67056ef8820.bindPopup(popup_b1d85554d23c9d317c9ca116d39cbf53)
+        ;
+
+        
+    
+    
+            marker_5dc083841377dff20249d67056ef8820.bindTooltip(
+                `<div>
+                     PORTE DE NAMUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_e7d3a9bb70ba133b3d799837404ef484 = L.featureGroup(
+                {}
+            ).addTo(map_f2c4486e7a874785e831e6240dd23b06);
+        
+    
+            var marker_fdbdba2edb754ce83daac8f8a3ab7b1a = L.marker(
+                [50.818224, 4.436522999999999],
+                {"name": "SAINTE-ANNE"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_cce32f9412ca9357217830a5e0a20e9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fdbdba2edb754ce83daac8f8a3ab7b1a.setIcon(icon_cce32f9412ca9357217830a5e0a20e9a);
+        
+    
+            marker_fdbdba2edb754ce83daac8f8a3ab7b1a.bindTooltip(
+                `<div>
+                     SAINTE-ANNE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8674f848a9ee2a6e46f53f3d0385f1c0 = L.marker(
+                [50.8164, 4.434405999999999],
+                {"name": "DEUX CHAUSSEES"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_970a98f7f97ece417dd004c977482b43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8674f848a9ee2a6e46f53f3d0385f1c0.setIcon(icon_970a98f7f97ece417dd004c977482b43);
+        
+    
+            marker_8674f848a9ee2a6e46f53f3d0385f1c0.bindTooltip(
+                `<div>
+                     DEUX CHAUSSEES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_60a490d7fc1a4ed639772a145abfdaf9 = L.marker(
+                [50.816088, 4.428928],
+                {"name": "BERGOJE"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_3c25bb5edd64ba57a4a64a41c67dd905 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_60a490d7fc1a4ed639772a145abfdaf9.setIcon(icon_3c25bb5edd64ba57a4a64a41c67dd905);
+        
+    
+            marker_60a490d7fc1a4ed639772a145abfdaf9.bindTooltip(
+                `<div>
+                     BERGOJE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c053c63f28dc5cded749ed5e00589430 = L.marker(
+                [50.816882, 4.424416],
+                {"name": "AUDERGHEM-SHOP."}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_08ca40c0dd718d53c770ee25d5bd1f8b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c053c63f28dc5cded749ed5e00589430.setIcon(icon_08ca40c0dd718d53c770ee25d5bd1f8b);
+        
+    
+            marker_c053c63f28dc5cded749ed5e00589430.bindTooltip(
+                `<div>
+                     AUDERGHEM-SHOP.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0b3836d19d789e1c624b8e494d28da61 = L.marker(
+                [50.817801, 4.41972],
+                {"name": "VALDUC"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_0185de351956f3a2193174a6d1fe9f98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0b3836d19d789e1c624b8e494d28da61.setIcon(icon_0185de351956f3a2193174a6d1fe9f98);
+        
+    
+            marker_0b3836d19d789e1c624b8e494d28da61.bindTooltip(
+                `<div>
+                     VALDUC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_56e38b40b4ffcde28cf22da4ab0a8da5 = L.marker(
+                [50.819016000000005, 4.415308],
+                {"name": "VANDROMME"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_ea3e50a64f671f2118f2ef358c797293 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_56e38b40b4ffcde28cf22da4ab0a8da5.setIcon(icon_ea3e50a64f671f2118f2ef358c797293);
+        
+    
+            marker_56e38b40b4ffcde28cf22da4ab0a8da5.bindTooltip(
+                `<div>
+                     VANDROMME
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_484a8de3638c98799995784b9d1ff798 = L.marker(
+                [50.821075, 4.408244],
+                {"name": "EGLISE ST-JULIEN"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_65a18ee8fab069c47c849778a0722df3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_484a8de3638c98799995784b9d1ff798.setIcon(icon_65a18ee8fab069c47c849778a0722df3);
+        
+    
+            marker_484a8de3638c98799995784b9d1ff798.bindTooltip(
+                `<div>
+                     EGLISE ST-JULIEN
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d924ece996904d0abde2f9bfda35d6b6 = L.marker(
+                [50.821827000000006, 4.40558],
+                {"name": "HANKAR"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_b6b206c2f078868cb52bc32c82086d9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d924ece996904d0abde2f9bfda35d6b6.setIcon(icon_b6b206c2f078868cb52bc32c82086d9a);
+        
+    
+            marker_d924ece996904d0abde2f9bfda35d6b6.bindTooltip(
+                `<div>
+                     HANKAR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ea10f73587c9375811ec17777754b54b = L.marker(
+                [50.823992000000004, 4.400879],
+                {"name": "STRATEGIE"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_56c619f216e98e64606f832d0c8f4a98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ea10f73587c9375811ec17777754b54b.setIcon(icon_56c619f216e98e64606f832d0c8f4a98);
+        
+    
+            marker_ea10f73587c9375811ec17777754b54b.bindTooltip(
+                `<div>
+                     STRATEGIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_31e562fd2dd3e92441e9268933a7d222 = L.marker(
+                [50.825908000000005, 4.397743999999999],
+                {"name": "ARSENAL"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_b5148ce702411a0ea99cff14187e1f33 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_31e562fd2dd3e92441e9268933a7d222.setIcon(icon_b5148ce702411a0ea99cff14187e1f33);
+        
+    
+            marker_31e562fd2dd3e92441e9268933a7d222.bindTooltip(
+                `<div>
+                     ARSENAL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_392ef706a85d1d6b504e517f9cf19d82 = L.marker(
+                [50.828516, 4.3933599999999995],
+                {"name": "BUEDTS"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_e104b28ca0f206d9d416a2ffde4e06d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_392ef706a85d1d6b504e517f9cf19d82.setIcon(icon_e104b28ca0f206d9d416a2ffde4e06d7);
+        
+    
+            marker_392ef706a85d1d6b504e517f9cf19d82.bindTooltip(
+                `<div>
+                     BUEDTS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_695e44552bb7418cb01d806db890dafa = L.marker(
+                [50.829973, 4.390948],
+                {"name": "LA CHASSE"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_9b24f5ecc0d54b706be4edae3ed06e82 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_695e44552bb7418cb01d806db890dafa.setIcon(icon_9b24f5ecc0d54b706be4edae3ed06e82);
+        
+    
+            marker_695e44552bb7418cb01d806db890dafa.bindTooltip(
+                `<div>
+                     LA CHASSE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c32c7b2b5e34ab1a138adf4858cdacf2 = L.marker(
+                [50.83303900000001, 4.386251],
+                {"name": "FETIS"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_8300aa70a3e84364c0156a6bc7a988bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c32c7b2b5e34ab1a138adf4858cdacf2.setIcon(icon_8300aa70a3e84364c0156a6bc7a988bf);
+        
+    
+            marker_c32c7b2b5e34ab1a138adf4858cdacf2.bindTooltip(
+                `<div>
+                     FETIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_937dda0ca324f050775a9be8f817a9c8 = L.marker(
+                [50.835854000000005, 4.379707],
+                {"name": "ETANGS"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_bb072146df17484dcfa8d5e29359cf69 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_937dda0ca324f050775a9be8f817a9c8.setIcon(icon_bb072146df17484dcfa8d5e29359cf69);
+        
+    
+            marker_937dda0ca324f050775a9be8f817a9c8.bindTooltip(
+                `<div>
+                     ETANGS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e50daec4c509a90ce102acc82617580d = L.marker(
+                [50.835872, 4.374809999999999],
+                {"name": "MUSEUM"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_8efda46b30d4dc65b76e6c7ee2d25ffb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e50daec4c509a90ce102acc82617580d.setIcon(icon_8efda46b30d4dc65b76e6c7ee2d25ffb);
+        
+    
+            marker_e50daec4c509a90ce102acc82617580d.bindTooltip(
+                `<div>
+                     MUSEUM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_933472ee3acfaa6e4db83e082a4b00d1 = L.marker(
+                [50.836438, 4.370863],
+                {"name": "IDALIE"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_75ab243a7f282f1e9a78933eb87f5414 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_933472ee3acfaa6e4db83e082a4b00d1.setIcon(icon_75ab243a7f282f1e9a78933eb87f5414);
+        
+    
+            marker_933472ee3acfaa6e4db83e082a4b00d1.bindTooltip(
+                `<div>
+                     IDALIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f3686468174b8dea5cb1648ee0e43d8f = L.marker(
+                [50.838191, 4.372837],
+                {"name": "LUXEMBOURG"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_1e46dc64371c69ea513d442c2f05cd29 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f3686468174b8dea5cb1648ee0e43d8f.setIcon(icon_1e46dc64371c69ea513d442c2f05cd29);
+        
+    
+            marker_f3686468174b8dea5cb1648ee0e43d8f.bindTooltip(
+                `<div>
+                     LUXEMBOURG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_83da0e84267f82612c5e2175ee5c2512 = L.marker(
+                [50.839935000000004, 4.369268],
+                {"name": "SCIENCE"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_b3e882c339b527ed72bf8105b391a440 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_83da0e84267f82612c5e2175ee5c2512.setIcon(icon_b3e882c339b527ed72bf8105b391a440);
+        
+    
+            marker_83da0e84267f82612c5e2175ee5c2512.bindTooltip(
+                `<div>
+                     SCIENCE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8b2be383e3380c156c86728247e007fa = L.marker(
+                [50.840547, 4.366333999999999],
+                {"name": "TRONE"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_a2cf2eeb449bf685def2479ca15bd3c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8b2be383e3380c156c86728247e007fa.setIcon(icon_a2cf2eeb449bf685def2479ca15bd3c3);
+        
+    
+            marker_8b2be383e3380c156c86728247e007fa.bindTooltip(
+                `<div>
+                     TRONE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d6cddf246f2ec5c801bd46fd2bd52902 = L.marker(
+                [50.838902000000004, 4.363083],
+                {"name": "PORTE DE NAMUR"}
+            ).addTo(feature_group_e7d3a9bb70ba133b3d799837404ef484);
+        
+    
+            var icon_73a6a7e425c934bd255701a3b32e7292 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d6cddf246f2ec5c801bd46fd2bd52902.setIcon(icon_73a6a7e425c934bd255701a3b32e7292);
+        
+    
+            marker_d6cddf246f2ec5c801bd46fd2bd52902.bindTooltip(
+                `<div>
+                     PORTE DE NAMUR
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_fc2ee69f1965aae4683223974681d355 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_9eb42d1161c219efff26ebc804b5bcdf,
+                },
+                overlays :  {
+                    "34 PORTE DE NAMUR - SAINTE-ANNE" : feature_group_8fb04576e31935eac802da167e1eb723,
+                    "34 PORTE DE NAMUR - SAINTE-ANNE SCORES" : feature_group_e7d3a9bb70ba133b3d799837404ef484,
+                },
+            };
+            L.control.layers(
+                layer_control_fc2ee69f1965aae4683223974681d355.base_layers,
+                layer_control_fc2ee69f1965aae4683223974681d355.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_f2c4486e7a874785e831e6240dd23b06);
+            feature_group_e7d3a9bb70ba133b3d799837404ef484.remove();
+        
+</script>
+</html>

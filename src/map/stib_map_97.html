@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e9020a71a3372d867dde14749ea7f9fa {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e9020a71a3372d867dde14749ea7f9fa" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e9020a71a3372d867dde14749ea7f9fa = L.map(
+                "map_e9020a71a3372d867dde14749ea7f9fa",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_df28475cc4700e5eee4307fb34c49b9c = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e9020a71a3372d867dde14749ea7f9fa);
+        
+    
+            var poly_line_057ba76776ac5d1cd9e438db870793ac = L.polyline(
+                [[50.835678, 4.355181], [50.835312, 4.355564], [50.835082, 4.355804], [50.834933, 4.355957], [50.833917, 4.357008], [50.833864, 4.357059], [50.833795, 4.357115], [50.833751, 4.35714], [50.833715, 4.35715], [50.833676, 4.357156], [50.833638, 4.357154], [50.833582, 4.357142], [50.833327, 4.357061], [50.833327, 4.357061], [50.832966, 4.356944], [50.832655, 4.356845], [50.830332, 4.356102], [50.829856, 4.355942], [50.829513, 4.355832], [50.829513, 4.355832], [50.829357, 4.355783], [50.829032, 4.355686], [50.828203, 4.355423], [50.826445, 4.35486], [50.826079, 4.354745], [50.825779, 4.35465], [50.825779, 4.35465], [50.825761, 4.354644], [50.825706, 4.354623], [50.82567, 4.354604], [50.825638, 4.354585], [50.825601, 4.354546], [50.825576, 4.354508], [50.825562, 4.354481], [50.825526, 4.354389], [50.825512, 4.354345], [50.824347, 4.350795], [50.824347, 4.350795], [50.824289, 4.350619], [50.824263, 4.350537], [50.824235, 4.350438], [50.824203, 4.350304], [50.82418, 4.350189], [50.824086, 4.349703], [50.82406, 4.349566], [50.823842, 4.348438], [50.823823, 4.348329], [50.823816, 4.348264], [50.823817, 4.348207], [50.823823, 4.348157], [50.823835, 4.348109], [50.823852, 4.348065], [50.823885, 4.347998], [50.824327, 4.34721], [50.824327, 4.34721], [50.824457, 4.346976], [50.824763, 4.34643], [50.82485, 4.346288], [50.824909, 4.346198], [50.824998, 4.346078], [50.825113, 4.345943], [50.825209, 4.345835], [50.825228, 4.345808], [50.825247, 4.345775], [50.825261, 4.345745], [50.825283, 4.345683], [50.825295, 4.345622], [50.825317, 4.345486], [50.825323, 4.345454], [50.825343, 4.345389], [50.825357, 4.345359], [50.825373, 4.345331], [50.825408, 4.345287], [50.825449, 4.345256], [50.825521, 4.345214], [50.825635, 4.345159], [50.825721, 4.345116], [50.826536, 4.344711], [50.826568, 4.344699], [50.826568, 4.344699], [50.826586, 4.344692], [50.82664, 4.344682], [50.826678, 4.344687], [50.826701, 4.344697], [50.826726, 4.344713], [50.826778, 4.344765], [50.8268, 4.344789], [50.826819, 4.344808], [50.82686, 4.34483], [50.826886, 4.344836], [50.826911, 4.344835], [50.826933, 4.344829], [50.826956, 4.344819], [50.826976, 4.344803], [50.826998, 4.344781], [50.827017, 4.344752], [50.827028, 4.344732], [50.827041, 4.344701], [50.827056, 4.344639], [50.82706, 4.344602], [50.827061, 4.344565], [50.827059, 4.344538], [50.827053, 4.344497], [50.827043, 4.34446], [50.827032, 4.34443], [50.826935, 4.344205], [50.82691, 4.344134], [50.826754, 4.34361], [50.826738, 4.343555], [50.826738, 4.343555], [50.826519, 4.342819], [50.8265, 4.34275], [50.826471, 4.342612], [50.826445, 4.342482], [50.826428, 4.342416], [50.826367, 4.342204], [50.826347, 4.342138], [50.825603, 4.339641], [50.825409, 4.338967], [50.825311, 4.338636], [50.825311, 4.338636], [50.825267, 4.338486], [50.824781, 4.33685], [50.82462, 4.336307], [50.824574, 4.33616], [50.824355, 4.335511], [50.824355, 4.335511], [50.824337, 4.335459], [50.824309, 4.335348], [50.824297, 4.335284], [50.824288, 4.335215], [50.824283, 4.335151], [50.824282, 4.335036], [50.824281, 4.334397], [50.824273, 4.333631], [50.824263, 4.332673], [50.824253, 4.331826], [50.824233, 4.329965], [50.824233, 4.329965], [50.824219, 4.328632], [50.824207, 4.32732], [50.824203, 4.326742], [50.824201, 4.326467], [50.824194, 4.326404], [50.824183, 4.326349], [50.824172, 4.326316], [50.824151, 4.326268], [50.824132, 4.326235], [50.8241, 4.326194], [50.824071, 4.32617], [50.824042, 4.326153], [50.823988, 4.326136], [50.823935, 4.326126], [50.823682, 4.326092], [50.823682, 4.326092], [50.822794, 4.325977], [50.822691, 4.325958], [50.822526, 4.325925], [50.822387, 4.325903], [50.819573, 4.32555], [50.819573, 4.32555], [50.818978, 4.325475], [50.817164, 4.325248], [50.817164, 4.325248], [50.815272, 4.325012], [50.814261, 4.324886], [50.814109, 4.324872], [50.814016, 4.324867], [50.813889, 4.324861], [50.813745, 4.324854], [50.813622, 4.324841], [50.813622, 4.324841], [50.813596, 4.324839], [50.813551, 4.32483], [50.813511, 4.324816], [50.813468, 4.324789], [50.813444, 4.324768], [50.813422, 4.324744], [50.813389, 4.3247], [50.813334, 4.324602], [50.813301, 4.324544], [50.813263, 4.324487], [50.813224, 4.32444], [50.813195, 4.32441], [50.813105, 4.32433], [50.813075, 4.324298], [50.813049, 4.324269], [50.81302, 4.324225], [50.81301, 4.324209], [50.81298, 4.324154], [50.812957, 4.324101], [50.812934, 4.324039], [50.81291, 4.323962], [50.812885, 4.323863], [50.812874, 4.323803], [50.812864, 4.323734], [50.812858, 4.323647], [50.812859, 4.323564], [50.812868, 4.32345], [50.812939, 4.322752], [50.812943, 4.322691], [50.812943, 4.322691], [50.812944, 4.322661], [50.812946, 4.322567], [50.812942, 4.322461], [50.812931, 4.322356], [50.812925, 4.322314], [50.81292, 4.322279], [50.812898, 4.322129], [50.812882, 4.32204], [50.81286, 4.321953], [50.812836, 4.321871], [50.81274, 4.321586], [50.812659, 4.321365], [50.812602, 4.32122], [50.812534, 4.321044], [50.812467, 4.32086], [50.812391, 4.320631], [50.811906, 4.319175], [50.811906, 4.319175], [50.811891, 4.319129], [50.811866, 4.319061], [50.811834, 4.318989], [50.811807, 4.318941], [50.811787, 4.318911], [50.811755, 4.31887], [50.811741, 4.318853], [50.811722, 4.318831], [50.811664, 4.318777], [50.811137, 4.318314], [50.810987, 4.318192], [50.810909, 4.318133], [50.810755, 4.318031], [50.810423, 4.317824], [50.810278, 4.317733], [50.810177, 4.317674], [50.810127, 4.31765], [50.810031, 4.317623], [50.809871, 4.317589], [50.809871, 4.317589], [50.809681, 4.317549], [50.809634, 4.317538], [50.809586, 4.317521], [50.809539, 4.317501], [50.80945, 4.317452], [50.809363, 4.317385], [50.809289, 4.317314], [50.809075, 4.317099], [50.809014, 4.317044], [50.808937, 4.316986], [50.808883, 4.31695], [50.80881, 4.316912], [50.808372, 4.316702], [50.808325, 4.316676], [50.808282, 4.316646], [50.808217, 4.316589], [50.808071, 4.316435], [50.807996, 4.316348], [50.807909, 4.31623], [50.806697, 4.314487], [50.80641, 4.314074], [50.80641, 4.314074], [50.806252, 4.313847], [50.806201, 4.313782], [50.806152, 4.31373], [50.806101, 4.313684], [50.806057, 4.313652], [50.806, 4.313617], [50.805903, 4.313573], [50.805212, 4.31327], [50.805148, 4.313246], [50.80509, 4.313233], [50.805048, 4.313229], [50.804981, 4.313229], [50.804935, 4.313236], [50.804884, 4.31325], [50.804844, 4.313266], [50.804807, 4.313284], [50.804773, 4.313304], [50.804718, 4.313344], [50.80467, 4.313387], [50.803908, 4.314154], [50.803797, 4.314262], [50.803717, 4.314338], [50.803443, 4.314588], [50.803364, 4.314659], [50.803299, 4.314722], [50.80323, 4.314791], [50.803149, 4.31488], [50.803065, 4.314976], [50.802994, 4.315066], [50.802964, 4.315105], [50.802902, 4.315189], [50.802825, 4.3153], [50.802453, 4.315852], [50.802408, 4.31592], [50.802178, 4.316267], [50.802178, 4.316267], [50.801789, 4.316853], [50.801753, 4.316904], [50.801718, 4.316949], [50.801678, 4.316993], [50.801636, 4.317032], [50.801594, 4.317062], [50.801456, 4.317143], [50.800842, 4.317498], [50.800842, 4.317498], [50.800699, 4.31758], [50.800659, 4.317606], [50.800621, 4.317633], [50.800582, 4.317666], [50.800516, 4.317735], [50.800477, 4.317783], [50.800436, 4.317843], [50.800396, 4.317914], [50.800352, 4.318005], [50.800225, 4.31829], [50.800171, 4.318401], [50.800115, 4.318504], [50.800056, 4.318604], [50.799995, 4.318695], [50.799928, 4.318787], [50.799849, 4.318881], [50.799815, 4.318918], [50.799731, 4.318996], [50.799652, 4.319058], [50.799485, 4.319172], [50.799388, 4.319234], [50.799333, 4.319266], [50.799237, 4.31931], [50.799121, 4.31935], [50.799031, 4.319369], [50.798781, 4.319409], [50.798781, 4.319409], [50.798707, 4.319421], [50.798608, 4.319442], [50.798491, 4.319476], [50.798397, 4.319511], [50.798268, 4.319569], [50.798181, 4.319616], [50.798057, 4.319692], [50.797935, 4.319782], [50.797855, 4.319849], [50.797777, 4.31992], [50.797664, 4.320035], [50.797592, 4.320118], [50.797522, 4.320206], [50.797448, 4.32031], [50.797415, 4.32036], [50.797285, 4.320573], [50.797227, 4.320662], [50.797194, 4.320706], [50.797123, 4.320788], [50.797086, 4.320827], [50.79701, 4.320892], [50.796967, 4.320923], [50.796891, 4.32097], [50.79681, 4.321007], [50.796764, 4.321026], [50.79656, 4.32111], [50.79645, 4.321151], [50.796372, 4.321178], [50.796337, 4.321191], [50.796337, 4.321191], [50.796284, 4.321209], [50.796145, 4.321258], [50.79611, 4.321276], [50.79608, 4.321299], [50.796058, 4.321326], [50.796038, 4.321357], [50.796019, 4.321398], [50.796002, 4.321459], [50.795995, 4.321516], [50.795995, 4.321582], [50.796004, 4.32166], [50.796036, 4.321866], [50.796038, 4.32188], [50.796081, 4.322131], [50.796265, 4.323138], [50.796281, 4.323235], [50.796291, 4.32333], [50.796296, 4.323415], [50.796296, 4.323551], [50.79629, 4.32364], [50.796276, 4.323768], [50.796224, 4.324186], [50.796224, 4.324186], [50.796213, 4.324282], [50.796192, 4.324486], [50.796179, 4.324659], [50.796166, 4.324869], [50.796161, 4.325013], [50.796158, 4.325229], [50.796162, 4.325445], [50.796171, 4.325662], [50.796231, 4.326849], [50.796255, 4.327303], [50.796263, 4.327409], [50.796271, 4.327491], [50.796281, 4.327572], [50.796296, 4.327659], [50.796313, 4.327741], [50.796334, 4.327832], [50.796363, 4.327934], [50.796485, 4.328332], [50.796619, 4.32877], [50.796693, 4.329017], [50.796746, 4.329182], [50.796801, 4.329366], [50.796833, 4.329467], [50.796833, 4.329467], [50.797022, 4.330069], [50.797073, 4.330238], [50.797103, 4.330354], [50.797129, 4.330483], [50.797157, 4.330699], [50.797172, 4.330824], [50.797186, 4.330919], [50.7972, 4.330991], [50.797226, 4.331095], [50.797247, 4.331157], [50.797275, 4.331227], [50.797302, 4.331288], [50.797356, 4.331383], [50.797528, 4.331634], [50.798023, 4.332345], [50.798201, 4.332602], [50.798286, 4.332721], [50.798361, 4.332809], [50.798485, 4.332925], [50.79853, 4.332975], [50.798574, 4.333027], [50.798617, 4.333085], [50.798663, 4.333159], [50.798747, 4.333309], [50.798891, 4.333577], [50.79895, 4.333681], [50.799014, 4.333779], [50.799137, 4.333953], [50.799369, 4.334271], [50.799428, 4.33436], [50.799587, 4.334634], [50.799661, 4.334771], [50.799699, 4.33485], [50.799749, 4.334975], [50.799786, 4.33508], [50.799834, 4.335245], [50.799974, 4.335757], [50.800019, 4.33591], [50.800074, 4.336073], [50.800129, 4.336225], [50.800199, 4.336395], [50.800355, 4.336765], [50.800453, 4.337], [50.800693, 4.33758], [50.800643, 4.337458], [50.800701, 4.337599], [50.800879, 4.338013], [50.800953, 4.338193], [50.801462, 4.339431], [50.801483, 4.339485], [50.801593, 4.339756], [50.8016, 4.339774], [50.801684, 4.339979], [50.801715, 4.340058], [50.801736, 4.340128], [50.801743, 4.34017], [50.801748, 4.340214], [50.801747, 4.340258], [50.801742, 4.340302], [50.801734, 4.340343], [50.801717, 4.340389], [50.801707, 4.340413], [50.801687, 4.340444], [50.801667, 4.340468], [50.801639, 4.340492], [50.801576, 4.340533], [50.80156, 4.340542], [50.801437, 4.340609], [50.800824, 4.340954], [50.800824, 4.340954], [50.800667, 4.341043], [50.800595, 4.341086], [50.800473, 4.341161], [50.800374, 4.341226], [50.800225, 4.34133], [50.800148, 4.341387], [50.800078, 4.341439], [50.799661, 4.34176], [50.799457, 4.341923], [50.799313, 4.342043], [50.799108, 4.34222], [50.798925, 4.342386], [50.798874, 4.342433], [50.798812, 4.342491], [50.798667, 4.342632], [50.798518, 4.342779], [50.798424, 4.342876], [50.798312, 4.342993], [50.7983, 4.343005], [50.798217, 4.343094], [50.798119, 4.343205], [50.798001, 4.343347], [50.797968, 4.343391], [50.797968, 4.343391], [50.797934, 4.343433], [50.797881, 4.34351], [50.797826, 4.343594], [50.797756, 4.34371], [50.797713, 4.343788], [50.797649, 4.343913], [50.797579, 4.344053], [50.797486, 4.344252], [50.797428, 4.344381], [50.797413, 4.344415], [50.797406, 4.344434], [50.797341, 4.344587], [50.797334, 4.344605], [50.796718, 4.346153], [50.796584, 4.346489], [50.79652, 4.34665], [50.796489, 4.346733], [50.796462, 4.34682], [50.796372, 4.347126], [50.796353, 4.34719], [50.796337, 4.347253], [50.796321, 4.347335], [50.796317, 4.347386], [50.796318, 4.347444], [50.796323, 4.347495], [50.796336, 4.347549], [50.796351, 4.3476], [50.796523, 4.348114]],
+                {"bubblingMouseEvents": true, "color": "#A12944", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#A12944", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_e9020a71a3372d867dde14749ea7f9fa);
+        
+    
+            var feature_group_e0151afc985d6b77e24d788d89e24c8a = L.featureGroup(
+                {}
+            ).addTo(map_e9020a71a3372d867dde14749ea7f9fa);
+        
+    
+            var marker_a99a5dd79429d8768a71c9064524c351 = L.marker(
+                [50.835673, 4.355167],
+                {"name": "LOUISE"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_f1e57edc454df5b6f2d36888a13e68c0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a99a5dd79429d8768a71c9064524c351.setIcon(icon_f1e57edc454df5b6f2d36888a13e68c0);
+        
+    
+        var popup_fa5c365cab34ba3998144bb1b7c9aac3 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ebd296fc3a254c2a96befae9679dad36 = $(`<div id="html_ebd296fc3a254c2a96befae9679dad36" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LOUISE</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_fa5c365cab34ba3998144bb1b7c9aac3.setContent(html_ebd296fc3a254c2a96befae9679dad36);
+            
+        
+
+        marker_a99a5dd79429d8768a71c9064524c351.bindPopup(popup_fa5c365cab34ba3998144bb1b7c9aac3)
+        ;
+
+        
+    
+    
+            marker_a99a5dd79429d8768a71c9064524c351.bindTooltip(
+                `<div>
+                     LOUISE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_520b5ea9d6b34e9f131aa988dca415d4 = L.marker(
+                [50.833327, 4.357041],
+                {"name": "STEPHANIE"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_802ad589f0c9b3505b1ad9e99822323b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_520b5ea9d6b34e9f131aa988dca415d4.setIcon(icon_802ad589f0c9b3505b1ad9e99822323b);
+        
+    
+        var popup_c903dc414229c504a99c2cf94318b065 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_008e2161316ba9b6e4dec31ed979501e = $(`<div id="html_008e2161316ba9b6e4dec31ed979501e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: STEPHANIE</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 93.1</h6></center>         </div>`)[0];
+                popup_c903dc414229c504a99c2cf94318b065.setContent(html_008e2161316ba9b6e4dec31ed979501e);
+            
+        
+
+        marker_520b5ea9d6b34e9f131aa988dca415d4.bindPopup(popup_c903dc414229c504a99c2cf94318b065)
+        ;
+
+        
+    
+    
+            marker_520b5ea9d6b34e9f131aa988dca415d4.bindTooltip(
+                `<div>
+                     STEPHANIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af24942abcd52fad16df4b49828cc62c = L.marker(
+                [50.829515, 4.35585],
+                {"name": "FAIDER"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_0d7efebc0d2299899afcd8f044c057f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_af24942abcd52fad16df4b49828cc62c.setIcon(icon_0d7efebc0d2299899afcd8f044c057f3);
+        
+    
+        var popup_ae9c01db96304a2e51ee3bc27c0616eb = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6722810cccafa08ded8144306d10882f = $(`<div id="html_6722810cccafa08ded8144306d10882f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FAIDER</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 86.21</h6></center>         </div>`)[0];
+                popup_ae9c01db96304a2e51ee3bc27c0616eb.setContent(html_6722810cccafa08ded8144306d10882f);
+            
+        
+
+        marker_af24942abcd52fad16df4b49828cc62c.bindPopup(popup_ae9c01db96304a2e51ee3bc27c0616eb)
+        ;
+
+        
+    
+    
+            marker_af24942abcd52fad16df4b49828cc62c.bindTooltip(
+                `<div>
+                     FAIDER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9d9c324baadfb1cade9dcc5059d2afd2 = L.marker(
+                [50.825784, 4.354601],
+                {"name": "JANSON"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_b2d67c3ca326beed0e71341211e1050c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9d9c324baadfb1cade9dcc5059d2afd2.setIcon(icon_b2d67c3ca326beed0e71341211e1050c);
+        
+    
+        var popup_0a5290f1fdba3bbd8a816c408d5ecdc8 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6ab6044a4cabcab7a825da4364ddbee9 = $(`<div id="html_6ab6044a4cabcab7a825da4364ddbee9" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: JANSON</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 79.31</h6></center>         </div>`)[0];
+                popup_0a5290f1fdba3bbd8a816c408d5ecdc8.setContent(html_6ab6044a4cabcab7a825da4364ddbee9);
+            
+        
+
+        marker_9d9c324baadfb1cade9dcc5059d2afd2.bindPopup(popup_0a5290f1fdba3bbd8a816c408d5ecdc8)
+        ;
+
+        
+    
+    
+            marker_9d9c324baadfb1cade9dcc5059d2afd2.bindTooltip(
+                `<div>
+                     JANSON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8ceb40c30bb8681bc2a50d5f1740abea = L.marker(
+                [50.824363, 4.350784],
+                {"name": "MORIS"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_2519c964fee52e133f7392f6b6aaf423 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8ceb40c30bb8681bc2a50d5f1740abea.setIcon(icon_2519c964fee52e133f7392f6b6aaf423);
+        
+    
+        var popup_eeefdf074d7ba6418612861ce9ccaea7 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_5259a733f446225e1ec85f86f58188dd = $(`<div id="html_5259a733f446225e1ec85f86f58188dd" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MORIS</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 72.41</h6></center>         </div>`)[0];
+                popup_eeefdf074d7ba6418612861ce9ccaea7.setContent(html_5259a733f446225e1ec85f86f58188dd);
+            
+        
+
+        marker_8ceb40c30bb8681bc2a50d5f1740abea.bindPopup(popup_eeefdf074d7ba6418612861ce9ccaea7)
+        ;
+
+        
+    
+    
+            marker_8ceb40c30bb8681bc2a50d5f1740abea.bindTooltip(
+                `<div>
+                     MORIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b571ea77797aa81fe1f7ad58868a74e1 = L.marker(
+                [50.824336, 4.347222],
+                {"name": "LOMBARDIE"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_2e18fdc49dcee0456dffd5b27e71ca3c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b571ea77797aa81fe1f7ad58868a74e1.setIcon(icon_2e18fdc49dcee0456dffd5b27e71ca3c);
+        
+    
+        var popup_7e109544c73887d0ceabbbeece80399f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_01dc881c51ea8185b80116a3d3689408 = $(`<div id="html_01dc881c51ea8185b80116a3d3689408" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LOMBARDIE</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 65.52</h6></center>         </div>`)[0];
+                popup_7e109544c73887d0ceabbbeece80399f.setContent(html_01dc881c51ea8185b80116a3d3689408);
+            
+        
+
+        marker_b571ea77797aa81fe1f7ad58868a74e1.bindPopup(popup_7e109544c73887d0ceabbbeece80399f)
+        ;
+
+        
+    
+    
+            marker_b571ea77797aa81fe1f7ad58868a74e1.bindTooltip(
+                `<div>
+                     LOMBARDIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_810803bfb362ad8dccddbdee6fbaadbb = L.marker(
+                [50.826574, 4.344709],
+                {"name": "BARRIERE"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_46774ad8077fb7632d7d54470ca735dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_810803bfb362ad8dccddbdee6fbaadbb.setIcon(icon_46774ad8077fb7632d7d54470ca735dd);
+        
+    
+        var popup_e40c80199d7dd5d22d1144342b949dfe = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_e41bd0fdafed87400356b84a279b8ce2 = $(`<div id="html_e41bd0fdafed87400356b84a279b8ce2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BARRIERE</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 58.62</h6></center>         </div>`)[0];
+                popup_e40c80199d7dd5d22d1144342b949dfe.setContent(html_e41bd0fdafed87400356b84a279b8ce2);
+            
+        
+
+        marker_810803bfb362ad8dccddbdee6fbaadbb.bindPopup(popup_e40c80199d7dd5d22d1144342b949dfe)
+        ;
+
+        
+    
+    
+            marker_810803bfb362ad8dccddbdee6fbaadbb.bindTooltip(
+                `<div>
+                     BARRIERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d08b735e2844c17c97cc995f79aedf5d = L.marker(
+                [50.826762, 4.343545],
+                {"name": "BARRIERE"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_6721c610ae542225d283bdcc68e51b5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d08b735e2844c17c97cc995f79aedf5d.setIcon(icon_6721c610ae542225d283bdcc68e51b5c);
+        
+    
+        var popup_df566e6fc305d80f774160abb90bf6b8 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_04bfad3825b052d2180c6580f7850d00 = $(`<div id="html_04bfad3825b052d2180c6580f7850d00" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BARRIERE</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 51.72</h6></center>         </div>`)[0];
+                popup_df566e6fc305d80f774160abb90bf6b8.setContent(html_04bfad3825b052d2180c6580f7850d00);
+            
+        
+
+        marker_d08b735e2844c17c97cc995f79aedf5d.bindPopup(popup_df566e6fc305d80f774160abb90bf6b8)
+        ;
+
+        
+    
+    
+            marker_d08b735e2844c17c97cc995f79aedf5d.bindTooltip(
+                `<div>
+                     BARRIERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bf1d151020b62d7fafaf35cd526c467c = L.marker(
+                [50.825332, 4.33862],
+                {"name": "COMBAZ"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_bbef6aea4d916e873a8ed1d85aba1d55 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_bf1d151020b62d7fafaf35cd526c467c.setIcon(icon_bbef6aea4d916e873a8ed1d85aba1d55);
+        
+    
+        var popup_b71044eccb15f1631d77a29d94ecfe23 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_a7e6affc24193d0aa35f2fa2bcad1757 = $(`<div id="html_a7e6affc24193d0aa35f2fa2bcad1757" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: COMBAZ</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 44.83</h6></center>         </div>`)[0];
+                popup_b71044eccb15f1631d77a29d94ecfe23.setContent(html_a7e6affc24193d0aa35f2fa2bcad1757);
+            
+        
+
+        marker_bf1d151020b62d7fafaf35cd526c467c.bindPopup(popup_b71044eccb15f1631d77a29d94ecfe23)
+        ;
+
+        
+    
+    
+            marker_bf1d151020b62d7fafaf35cd526c467c.bindTooltip(
+                `<div>
+                     COMBAZ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_39e9ad87ff94a0f8d4746b95b3ff5bf8 = L.marker(
+                [50.824369, 4.335499],
+                {"name": "ROCHEFORT"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_37fe13aa84044458dcea4a7060003e3b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_39e9ad87ff94a0f8d4746b95b3ff5bf8.setIcon(icon_37fe13aa84044458dcea4a7060003e3b);
+        
+    
+        var popup_f421d7c5d19a397a937869d0103a6073 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_1f1adce5946eb8d8fec683c87712d027 = $(`<div id="html_1f1adce5946eb8d8fec683c87712d027" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ROCHEFORT</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 37.93</h6></center>         </div>`)[0];
+                popup_f421d7c5d19a397a937869d0103a6073.setContent(html_1f1adce5946eb8d8fec683c87712d027);
+            
+        
+
+        marker_39e9ad87ff94a0f8d4746b95b3ff5bf8.bindPopup(popup_f421d7c5d19a397a937869d0103a6073)
+        ;
+
+        
+    
+    
+            marker_39e9ad87ff94a0f8d4746b95b3ff5bf8.bindTooltip(
+                `<div>
+                     ROCHEFORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52be493f8cbf4bc33eb50b0bb41fbb05 = L.marker(
+                [50.82425, 4.329964],
+                {"name": "BERTHELOT"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_ee1048bc179a9ce4c60a3f73aace97ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_52be493f8cbf4bc33eb50b0bb41fbb05.setIcon(icon_ee1048bc179a9ce4c60a3f73aace97ee);
+        
+    
+        var popup_de543a09c2433c634a3448f3e9bac9d0 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f18fa9a219305662af5b56a48b7a70e6 = $(`<div id="html_f18fa9a219305662af5b56a48b7a70e6" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BERTHELOT</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 31.03</h6></center>         </div>`)[0];
+                popup_de543a09c2433c634a3448f3e9bac9d0.setContent(html_f18fa9a219305662af5b56a48b7a70e6);
+            
+        
+
+        marker_52be493f8cbf4bc33eb50b0bb41fbb05.bindPopup(popup_de543a09c2433c634a3448f3e9bac9d0)
+        ;
+
+        
+    
+    
+            marker_52be493f8cbf4bc33eb50b0bb41fbb05.bindTooltip(
+                `<div>
+                     BERTHELOT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_77863a86af111311909b1c5d678fc623 = L.marker(
+                [50.823683, 4.326075],
+                {"name": "WIELS"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_0b726f9959a807d045e5f66815988f60 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_77863a86af111311909b1c5d678fc623.setIcon(icon_0b726f9959a807d045e5f66815988f60);
+        
+    
+        var popup_95112a79a1c21fa5b8c28978b503e6fe = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d04eb1d561340c441b01827ce64cbab2 = $(`<div id="html_d04eb1d561340c441b01827ce64cbab2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WIELS</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 24.14</h6></center>         </div>`)[0];
+                popup_95112a79a1c21fa5b8c28978b503e6fe.setContent(html_d04eb1d561340c441b01827ce64cbab2);
+            
+        
+
+        marker_77863a86af111311909b1c5d678fc623.bindPopup(popup_95112a79a1c21fa5b8c28978b503e6fe)
+        ;
+
+        
+    
+    
+            marker_77863a86af111311909b1c5d678fc623.bindTooltip(
+                `<div>
+                     WIELS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a1e8d3e22fd240d8bd16623c380d8069 = L.marker(
+                [50.819574, 4.32554],
+                {"name": "UNION"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_018343413be02952361d025360282683 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_a1e8d3e22fd240d8bd16623c380d8069.setIcon(icon_018343413be02952361d025360282683);
+        
+    
+        var popup_1e38e5ad127f6a36a485251442981a57 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_685a740340525d46a6a34f0887f8ff20 = $(`<div id="html_685a740340525d46a6a34f0887f8ff20" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: UNION</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 17.24</h6></center>         </div>`)[0];
+                popup_1e38e5ad127f6a36a485251442981a57.setContent(html_685a740340525d46a6a34f0887f8ff20);
+            
+        
+
+        marker_a1e8d3e22fd240d8bd16623c380d8069.bindPopup(popup_1e38e5ad127f6a36a485251442981a57)
+        ;
+
+        
+    
+    
+            marker_a1e8d3e22fd240d8bd16623c380d8069.bindTooltip(
+                `<div>
+                     UNION
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6e1f8cfdc3ff4f599fccb87617b33f92 = L.marker(
+                [50.817165, 4.32523],
+                {"name": "CHATAIGNES"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_69426a217a74ee8f9d2d25c4cc526190 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6e1f8cfdc3ff4f599fccb87617b33f92.setIcon(icon_69426a217a74ee8f9d2d25c4cc526190);
+        
+    
+        var popup_9a12fbd164368bedf7a753b1a7fe8b46 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_64b8a5b537120ca199ad6530c29ef02f = $(`<div id="html_64b8a5b537120ca199ad6530c29ef02f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CHATAIGNES</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 10.34</h6></center>         </div>`)[0];
+                popup_9a12fbd164368bedf7a753b1a7fe8b46.setContent(html_64b8a5b537120ca199ad6530c29ef02f);
+            
+        
+
+        marker_6e1f8cfdc3ff4f599fccb87617b33f92.bindPopup(popup_9a12fbd164368bedf7a753b1a7fe8b46)
+        ;
+
+        
+    
+    
+            marker_6e1f8cfdc3ff4f599fccb87617b33f92.bindTooltip(
+                `<div>
+                     CHATAIGNES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_194753618ee7f5c6a9a60cba4baf5460 = L.marker(
+                [50.813623, 4.324822],
+                {"name": "ZAMAN-FOREST NAT."}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_f907a75acf1686f2a3264f32fa7b6eed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_194753618ee7f5c6a9a60cba4baf5460.setIcon(icon_f907a75acf1686f2a3264f32fa7b6eed);
+        
+    
+        var popup_ed9745bde257d2edcd2ff4cbd69d995d = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ca9f556b6d645a410d4fb6aeecda3583 = $(`<div id="html_ca9f556b6d645a410d4fb6aeecda3583" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ZAMAN-FOREST NAT.</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 3.45</h6></center>         </div>`)[0];
+                popup_ed9745bde257d2edcd2ff4cbd69d995d.setContent(html_ca9f556b6d645a410d4fb6aeecda3583);
+            
+        
+
+        marker_194753618ee7f5c6a9a60cba4baf5460.bindPopup(popup_ed9745bde257d2edcd2ff4cbd69d995d)
+        ;
+
+        
+    
+    
+            marker_194753618ee7f5c6a9a60cba4baf5460.bindTooltip(
+                `<div>
+                     ZAMAN-FOREST NAT.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_244e02dc03b79ae8a4b356aad970f7bc = L.marker(
+                [50.812957, 4.322694],
+                {"name": "MONACO"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_67e705bcbaf838ae76c00e473b7fb4dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_244e02dc03b79ae8a4b356aad970f7bc.setIcon(icon_67e705bcbaf838ae76c00e473b7fb4dc);
+        
+    
+        var popup_9182fc58fcc3010bfc05c5ed1714918f = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_138c60b9f89d46a8f7b6371bd943c47a = $(`<div id="html_138c60b9f89d46a8f7b6371bd943c47a" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MONACO</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 3.45</h6></center>         </div>`)[0];
+                popup_9182fc58fcc3010bfc05c5ed1714918f.setContent(html_138c60b9f89d46a8f7b6371bd943c47a);
+            
+        
+
+        marker_244e02dc03b79ae8a4b356aad970f7bc.bindPopup(popup_9182fc58fcc3010bfc05c5ed1714918f)
+        ;
+
+        
+    
+    
+            marker_244e02dc03b79ae8a4b356aad970f7bc.bindTooltip(
+                `<div>
+                     MONACO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_923fae8ae9ffad1f080e40baeab533c3 = L.marker(
+                [50.81194, 4.319148],
+                {"name": "FOREST CENTRE"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_05c6c68bf46a262344c8f63abac86f8d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_923fae8ae9ffad1f080e40baeab533c3.setIcon(icon_05c6c68bf46a262344c8f63abac86f8d);
+        
+    
+        var popup_068984e61b1c25eeff82d821a321832e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f87b920abb82d5fe3aba2bb1e5df3c62 = $(`<div id="html_f87b920abb82d5fe3aba2bb1e5df3c62" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FOREST CENTRE</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 10.34</h6></center>         </div>`)[0];
+                popup_068984e61b1c25eeff82d821a321832e.setContent(html_f87b920abb82d5fe3aba2bb1e5df3c62);
+            
+        
+
+        marker_923fae8ae9ffad1f080e40baeab533c3.bindPopup(popup_068984e61b1c25eeff82d821a321832e)
+        ;
+
+        
+    
+    
+            marker_923fae8ae9ffad1f080e40baeab533c3.bindTooltip(
+                `<div>
+                     FOREST CENTRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0a273b52001c825e24ad0b126521bda8 = L.marker(
+                [50.809871, 4.317575],
+                {"name": "SAINT-DENIS"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_0f35dfbcaea81792d4ba3d2a0ea06e7a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0a273b52001c825e24ad0b126521bda8.setIcon(icon_0f35dfbcaea81792d4ba3d2a0ea06e7a);
+        
+    
+        var popup_880c82b8dea6e293505b62222bff1771 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ee77677c1cea4dd554e44e08bf2230ee = $(`<div id="html_ee77677c1cea4dd554e44e08bf2230ee" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SAINT-DENIS</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 17.24</h6></center>         </div>`)[0];
+                popup_880c82b8dea6e293505b62222bff1771.setContent(html_ee77677c1cea4dd554e44e08bf2230ee);
+            
+        
+
+        marker_0a273b52001c825e24ad0b126521bda8.bindPopup(popup_880c82b8dea6e293505b62222bff1771)
+        ;
+
+        
+    
+    
+            marker_0a273b52001c825e24ad0b126521bda8.bindTooltip(
+                `<div>
+                     SAINT-DENIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ba4bc4c3bc09bb507f3dc50d67a40883 = L.marker(
+                [50.806418, 4.31406],
+                {"name": "MAX WALLER"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_2eb4bde72667bee81281dc5e5e1dc7a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ba4bc4c3bc09bb507f3dc50d67a40883.setIcon(icon_2eb4bde72667bee81281dc5e5e1dc7a6);
+        
+    
+        var popup_6bba44be162254246202fc952123ca58 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_73c3c220c79c9ce2297e227079d4bf63 = $(`<div id="html_73c3c220c79c9ce2297e227079d4bf63" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MAX WALLER</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 24.14</h6></center>         </div>`)[0];
+                popup_6bba44be162254246202fc952123ca58.setContent(html_73c3c220c79c9ce2297e227079d4bf63);
+            
+        
+
+        marker_ba4bc4c3bc09bb507f3dc50d67a40883.bindPopup(popup_6bba44be162254246202fc952123ca58)
+        ;
+
+        
+    
+    
+            marker_ba4bc4c3bc09bb507f3dc50d67a40883.bindTooltip(
+                `<div>
+                     MAX WALLER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_34591a80753e9337b55e4d35fd356eb5 = L.marker(
+                [50.802167, 4.31625],
+                {"name": "BEMPT"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_db85050638c4f20961a9e7784feee46a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_34591a80753e9337b55e4d35fd356eb5.setIcon(icon_db85050638c4f20961a9e7784feee46a);
+        
+    
+        var popup_0dc77e1a6e57375bd2e014f8e028853c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_bd9d70261919f1192e1186f42dc8f3c5 = $(`<div id="html_bd9d70261919f1192e1186f42dc8f3c5" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: BEMPT</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 31.03</h6></center>         </div>`)[0];
+                popup_0dc77e1a6e57375bd2e014f8e028853c.setContent(html_bd9d70261919f1192e1186f42dc8f3c5);
+            
+        
+
+        marker_34591a80753e9337b55e4d35fd356eb5.bindPopup(popup_0dc77e1a6e57375bd2e014f8e028853c)
+        ;
+
+        
+    
+    
+            marker_34591a80753e9337b55e4d35fd356eb5.bindTooltip(
+                `<div>
+                     BEMPT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7f6e34bacbdae16d6b36f6ab52b2200b = L.marker(
+                [50.800837, 4.317471],
+                {"name": "NEERSTALLE"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_8325f5ca41a5797cb028ee30902f81f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7f6e34bacbdae16d6b36f6ab52b2200b.setIcon(icon_8325f5ca41a5797cb028ee30902f81f2);
+        
+    
+        var popup_a5a9a9e96881146bb5d76d406bc36ec1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_1f2380641d8387d9a06a5c686e5cbd18 = $(`<div id="html_1f2380641d8387d9a06a5c686e5cbd18" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: NEERSTALLE</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 37.93</h6></center>         </div>`)[0];
+                popup_a5a9a9e96881146bb5d76d406bc36ec1.setContent(html_1f2380641d8387d9a06a5c686e5cbd18);
+            
+        
+
+        marker_7f6e34bacbdae16d6b36f6ab52b2200b.bindPopup(popup_a5a9a9e96881146bb5d76d406bc36ec1)
+        ;
+
+        
+    
+    
+            marker_7f6e34bacbdae16d6b36f6ab52b2200b.bindTooltip(
+                `<div>
+                     NEERSTALLE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7a799cc1b86afff9ffa885730560aabc = L.marker(
+                [50.798779, 4.319374],
+                {"name": "MERLO"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_c5a7f33fa6af7d9569cc759aa124ed0b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7a799cc1b86afff9ffa885730560aabc.setIcon(icon_c5a7f33fa6af7d9569cc759aa124ed0b);
+        
+    
+        var popup_34aecf8757a39dcd3ffd141b587f3ec3 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d5d4bb74f3714998586640639653a894 = $(`<div id="html_d5d4bb74f3714998586640639653a894" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MERLO</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 44.83</h6></center>         </div>`)[0];
+                popup_34aecf8757a39dcd3ffd141b587f3ec3.setContent(html_d5d4bb74f3714998586640639653a894);
+            
+        
+
+        marker_7a799cc1b86afff9ffa885730560aabc.bindPopup(popup_34aecf8757a39dcd3ffd141b587f3ec3)
+        ;
+
+        
+    
+    
+            marker_7a799cc1b86afff9ffa885730560aabc.bindTooltip(
+                `<div>
+                     MERLO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_052184188ef34493c5df57f5d1e70510 = L.marker(
+                [50.796326, 4.321178],
+                {"name": "CARREFOUR STALLE"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_01a792cbda5ade6ac6976c31078a64fe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_052184188ef34493c5df57f5d1e70510.setIcon(icon_01a792cbda5ade6ac6976c31078a64fe);
+        
+    
+        var popup_02296b5993c194efa0f11400f12a1270 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2da3ff6a1784c3018bd842c0b80bb9c1 = $(`<div id="html_2da3ff6a1784c3018bd842c0b80bb9c1" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CARREFOUR STALLE</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 51.72</h6></center>         </div>`)[0];
+                popup_02296b5993c194efa0f11400f12a1270.setContent(html_2da3ff6a1784c3018bd842c0b80bb9c1);
+            
+        
+
+        marker_052184188ef34493c5df57f5d1e70510.bindPopup(popup_02296b5993c194efa0f11400f12a1270)
+        ;
+
+        
+    
+    
+            marker_052184188ef34493c5df57f5d1e70510.bindTooltip(
+                `<div>
+                     CARREFOUR STALLE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2a886e70ffd3a71878e2b728f11436f4 = L.marker(
+                [50.796219, 4.324185],
+                {"name": "EGIDE VAN OPHEM"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_eef7a9fbdbaa63a65aedebcda420b623 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2a886e70ffd3a71878e2b728f11436f4.setIcon(icon_eef7a9fbdbaa63a65aedebcda420b623);
+        
+    
+        var popup_1f78a8c31cb8472252e52dca170d97aa = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c811b9a0593fc83389f6380f944a4ad3 = $(`<div id="html_c811b9a0593fc83389f6380f944a4ad3" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: EGIDE VAN OPHEM</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 58.62</h6></center>         </div>`)[0];
+                popup_1f78a8c31cb8472252e52dca170d97aa.setContent(html_c811b9a0593fc83389f6380f944a4ad3);
+            
+        
+
+        marker_2a886e70ffd3a71878e2b728f11436f4.bindPopup(popup_1f78a8c31cb8472252e52dca170d97aa)
+        ;
+
+        
+    
+    
+            marker_2a886e70ffd3a71878e2b728f11436f4.bindTooltip(
+                `<div>
+                     EGIDE VAN OPHEM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c56e8d3ce95932a250ad7220a0e751c9 = L.marker(
+                [50.796823, 4.329475],
+                {"name": "WAGON"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_3d1524100043cd51cf89394ce7378a0e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c56e8d3ce95932a250ad7220a0e751c9.setIcon(icon_3d1524100043cd51cf89394ce7378a0e);
+        
+    
+        var popup_63906b3f35ea8fcd2388239ea4dcb2bb = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6dee48afd93fb587a7b6e8d11085037c = $(`<div id="html_6dee48afd93fb587a7b6e8d11085037c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WAGON</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 65.52</h6></center>         </div>`)[0];
+                popup_63906b3f35ea8fcd2388239ea4dcb2bb.setContent(html_6dee48afd93fb587a7b6e8d11085037c);
+            
+        
+
+        marker_c56e8d3ce95932a250ad7220a0e751c9.bindPopup(popup_63906b3f35ea8fcd2388239ea4dcb2bb)
+        ;
+
+        
+    
+    
+            marker_c56e8d3ce95932a250ad7220a0e751c9.bindTooltip(
+                `<div>
+                     WAGON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1208def2bac184fa849c1d2df10eb7e8 = L.marker(
+                [50.800687, 4.337586],
+                {"name": "GLOBE"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_78c087a38a51b0a6c229dac94709be4a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1208def2bac184fa849c1d2df10eb7e8.setIcon(icon_78c087a38a51b0a6c229dac94709be4a);
+        
+    
+        var popup_a6eb02eb79a865c5d54a7f8ffca5e265 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_82769da0997fa83f6eb4e9c5996eb184 = $(`<div id="html_82769da0997fa83f6eb4e9c5996eb184" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GLOBE</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 72.41</h6></center>         </div>`)[0];
+                popup_a6eb02eb79a865c5d54a7f8ffca5e265.setContent(html_82769da0997fa83f6eb4e9c5996eb184);
+            
+        
+
+        marker_1208def2bac184fa849c1d2df10eb7e8.bindPopup(popup_a6eb02eb79a865c5d54a7f8ffca5e265)
+        ;
+
+        
+    
+    
+            marker_1208def2bac184fa849c1d2df10eb7e8.bindTooltip(
+                `<div>
+                     GLOBE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b2e543bbe1dfc1c0f02925008649d2c6 = L.marker(
+                [50.800814, 4.34091],
+                {"name": "MARLOW"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_f2f0d6ceea9c23fd6f7b20b2701f9833 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b2e543bbe1dfc1c0f02925008649d2c6.setIcon(icon_f2f0d6ceea9c23fd6f7b20b2701f9833);
+        
+    
+        var popup_a982762ab3f0cf945c6efb26d4990756 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_4602635724020531a7b9fa34ac0777f8 = $(`<div id="html_4602635724020531a7b9fa34ac0777f8" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MARLOW</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 79.31</h6></center>         </div>`)[0];
+                popup_a982762ab3f0cf945c6efb26d4990756.setContent(html_4602635724020531a7b9fa34ac0777f8);
+            
+        
+
+        marker_b2e543bbe1dfc1c0f02925008649d2c6.bindPopup(popup_a982762ab3f0cf945c6efb26d4990756)
+        ;
+
+        
+    
+    
+            marker_b2e543bbe1dfc1c0f02925008649d2c6.bindTooltip(
+                `<div>
+                     MARLOW
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0a94bcf93ead2b6b4f953db69773f069 = L.marker(
+                [50.797959, 4.343375],
+                {"name": "WOLVENDAEL"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_136350af247143695317decfcf782b10 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0a94bcf93ead2b6b4f953db69773f069.setIcon(icon_136350af247143695317decfcf782b10);
+        
+    
+        var popup_a6aeea1a588bd867a851a39f906a25af = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_cc2c6e52af53d15fec50e8fdb121d919 = $(`<div id="html_cc2c6e52af53d15fec50e8fdb121d919" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WOLVENDAEL</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 86.21</h6></center>         </div>`)[0];
+                popup_a6aeea1a588bd867a851a39f906a25af.setContent(html_cc2c6e52af53d15fec50e8fdb121d919);
+            
+        
+
+        marker_0a94bcf93ead2b6b4f953db69773f069.bindPopup(popup_a6aeea1a588bd867a851a39f906a25af)
+        ;
+
+        
+    
+    
+            marker_0a94bcf93ead2b6b4f953db69773f069.bindTooltip(
+                `<div>
+                     WOLVENDAEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_32aef4ae0ec9101ad752802aac0cf5f6 = L.marker(
+                [50.796526, 4.348173],
+                {"name": "DIEWEG"}
+            ).addTo(feature_group_e0151afc985d6b77e24d788d89e24c8a);
+        
+    
+            var icon_3b062968ad9b559e28efec90ce023143 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#A12944", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_32aef4ae0ec9101ad752802aac0cf5f6.setIcon(icon_3b062968ad9b559e28efec90ce023143);
+        
+    
+        var popup_231254eecf7e6e486839eafa35c3a689 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_13d08579228a3b187fcb6f130737b29c = $(`<div id="html_13d08579228a3b187fcb6f130737b29c" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: DIEWEG</h4></center>         <center><h5>Line: 97 LOUISE - DIEWEG</h5></center>         <center><h6>Score: 93.1</h6></center>         </div>`)[0];
+                popup_231254eecf7e6e486839eafa35c3a689.setContent(html_13d08579228a3b187fcb6f130737b29c);
+            
+        
+
+        marker_32aef4ae0ec9101ad752802aac0cf5f6.bindPopup(popup_231254eecf7e6e486839eafa35c3a689)
+        ;
+
+        
+    
+    
+            marker_32aef4ae0ec9101ad752802aac0cf5f6.bindTooltip(
+                `<div>
+                     DIEWEG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_bb4bdfec9ee80b8ec83df76e7553bd70 = L.featureGroup(
+                {}
+            ).addTo(map_e9020a71a3372d867dde14749ea7f9fa);
+        
+    
+            var marker_bc60ac209ed268c269049e50610c2c95 = L.marker(
+                [50.835683, 4.355176999999999],
+                {"name": "LOUISE"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_9c5a60c989c50dff569bf53196af02f5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_bc60ac209ed268c269049e50610c2c95.setIcon(icon_9c5a60c989c50dff569bf53196af02f5);
+        
+    
+            marker_bc60ac209ed268c269049e50610c2c95.bindTooltip(
+                `<div>
+                     LOUISE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ac2592718adf1d1da2260d6a59210d90 = L.marker(
+                [50.833337, 4.357050999999999],
+                {"name": "STEPHANIE"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_dcb8d5fc836855384471ede1da136d94 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ac2592718adf1d1da2260d6a59210d90.setIcon(icon_dcb8d5fc836855384471ede1da136d94);
+        
+    
+            marker_ac2592718adf1d1da2260d6a59210d90.bindTooltip(
+                `<div>
+                     STEPHANIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f5378262e48fc0e993ce3b6e5fd77e9d = L.marker(
+                [50.829525000000004, 4.35586],
+                {"name": "FAIDER"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_f04a6118c5081ce3bab8f910625676a8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f5378262e48fc0e993ce3b6e5fd77e9d.setIcon(icon_f04a6118c5081ce3bab8f910625676a8);
+        
+    
+            marker_f5378262e48fc0e993ce3b6e5fd77e9d.bindTooltip(
+                `<div>
+                     FAIDER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_81591328208bdd69ef9e2aada6496492 = L.marker(
+                [50.825794, 4.354610999999999],
+                {"name": "JANSON"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_628b87fe58a713f7d694a32e82b4bef0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_81591328208bdd69ef9e2aada6496492.setIcon(icon_628b87fe58a713f7d694a32e82b4bef0);
+        
+    
+            marker_81591328208bdd69ef9e2aada6496492.bindTooltip(
+                `<div>
+                     JANSON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d8aafbb5fd751c129a334f4cab7beb8d = L.marker(
+                [50.824373, 4.350794],
+                {"name": "MORIS"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_a3d983e5c9d10f7b3c88242ef7f2963c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d8aafbb5fd751c129a334f4cab7beb8d.setIcon(icon_a3d983e5c9d10f7b3c88242ef7f2963c);
+        
+    
+            marker_d8aafbb5fd751c129a334f4cab7beb8d.bindTooltip(
+                `<div>
+                     MORIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af33feb285df7569e6bf42a3dc7df150 = L.marker(
+                [50.824346000000006, 4.347232],
+                {"name": "LOMBARDIE"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_8e887786f79792aeddd21e1e98a586a4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_af33feb285df7569e6bf42a3dc7df150.setIcon(icon_8e887786f79792aeddd21e1e98a586a4);
+        
+    
+            marker_af33feb285df7569e6bf42a3dc7df150.bindTooltip(
+                `<div>
+                     LOMBARDIE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5ee2d17adc80b333f4df83648eaf585a = L.marker(
+                [50.826584000000004, 4.3447189999999996],
+                {"name": "BARRIERE"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_763dd497b6f704b4c081317cfc73bc8b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5ee2d17adc80b333f4df83648eaf585a.setIcon(icon_763dd497b6f704b4c081317cfc73bc8b);
+        
+    
+            marker_5ee2d17adc80b333f4df83648eaf585a.bindTooltip(
+                `<div>
+                     BARRIERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4de95379d13f5aa0b075b3ebc3619d5d = L.marker(
+                [50.826772000000005, 4.343554999999999],
+                {"name": "BARRIERE"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_595886851d5906b31e9467e1786346a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4de95379d13f5aa0b075b3ebc3619d5d.setIcon(icon_595886851d5906b31e9467e1786346a6);
+        
+    
+            marker_4de95379d13f5aa0b075b3ebc3619d5d.bindTooltip(
+                `<div>
+                     BARRIERE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dab2737aa18fbb99d3dec4fbbad1585c = L.marker(
+                [50.825342000000006, 4.338629999999999],
+                {"name": "COMBAZ"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_8953cde146ee0e79ce28cda331f06e75 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_dab2737aa18fbb99d3dec4fbbad1585c.setIcon(icon_8953cde146ee0e79ce28cda331f06e75);
+        
+    
+            marker_dab2737aa18fbb99d3dec4fbbad1585c.bindTooltip(
+                `<div>
+                     COMBAZ
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_56067bda601e300fe5e82bde1e876759 = L.marker(
+                [50.824379, 4.335509],
+                {"name": "ROCHEFORT"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_bfc5c354eb4a8af266bd77ce91f59e71 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_56067bda601e300fe5e82bde1e876759.setIcon(icon_bfc5c354eb4a8af266bd77ce91f59e71);
+        
+    
+            marker_56067bda601e300fe5e82bde1e876759.bindTooltip(
+                `<div>
+                     ROCHEFORT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_779b0f6e798c5e54a5bf801025497fa7 = L.marker(
+                [50.82426, 4.329974],
+                {"name": "BERTHELOT"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_a34286adeca05ddc21a0f166528682c4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_779b0f6e798c5e54a5bf801025497fa7.setIcon(icon_a34286adeca05ddc21a0f166528682c4);
+        
+    
+            marker_779b0f6e798c5e54a5bf801025497fa7.bindTooltip(
+                `<div>
+                     BERTHELOT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2a47e642580103a87c7b48c1e415402a = L.marker(
+                [50.823693000000006, 4.326085],
+                {"name": "WIELS"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_57cf4ed837fa2139514d03cfa55837a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2a47e642580103a87c7b48c1e415402a.setIcon(icon_57cf4ed837fa2139514d03cfa55837a1);
+        
+    
+            marker_2a47e642580103a87c7b48c1e415402a.bindTooltip(
+                `<div>
+                     WIELS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e9d104a0e77ffe1ac98b7e9fee8f01b9 = L.marker(
+                [50.819584000000006, 4.32555],
+                {"name": "UNION"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_e11ff08fd6fc6ee50ca249deae145e2f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e9d104a0e77ffe1ac98b7e9fee8f01b9.setIcon(icon_e11ff08fd6fc6ee50ca249deae145e2f);
+        
+    
+            marker_e9d104a0e77ffe1ac98b7e9fee8f01b9.bindTooltip(
+                `<div>
+                     UNION
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7a1cd8836660bf167e73e5209f08ced6 = L.marker(
+                [50.817175000000006, 4.32524],
+                {"name": "CHATAIGNES"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_cb6a902bc17fea8597f0983d4cc777b4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7a1cd8836660bf167e73e5209f08ced6.setIcon(icon_cb6a902bc17fea8597f0983d4cc777b4);
+        
+    
+            marker_7a1cd8836660bf167e73e5209f08ced6.bindTooltip(
+                `<div>
+                     CHATAIGNES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0d22f19e67a3180f3c876abdda56950c = L.marker(
+                [50.813633, 4.324832],
+                {"name": "ZAMAN-FOREST NAT."}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_1b2fecb1b0d3d8af236ab7890f7bdcd8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0d22f19e67a3180f3c876abdda56950c.setIcon(icon_1b2fecb1b0d3d8af236ab7890f7bdcd8);
+        
+    
+            marker_0d22f19e67a3180f3c876abdda56950c.bindTooltip(
+                `<div>
+                     ZAMAN-FOREST NAT.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_13961953f164720f126c86878d4500da = L.marker(
+                [50.812967, 4.322704],
+                {"name": "MONACO"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_f65835bdfe8683499134fe7f7a07865f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_13961953f164720f126c86878d4500da.setIcon(icon_f65835bdfe8683499134fe7f7a07865f);
+        
+    
+            marker_13961953f164720f126c86878d4500da.bindTooltip(
+                `<div>
+                     MONACO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_caea4c74e7274f708d86fb85b812c78e = L.marker(
+                [50.81195, 4.319158],
+                {"name": "FOREST CENTRE"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_0ccd047ab0be73c65b71ff1082817deb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_caea4c74e7274f708d86fb85b812c78e.setIcon(icon_0ccd047ab0be73c65b71ff1082817deb);
+        
+    
+            marker_caea4c74e7274f708d86fb85b812c78e.bindTooltip(
+                `<div>
+                     FOREST CENTRE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_90ca7bd57b96288c233a6fcfe0c64e54 = L.marker(
+                [50.809881000000004, 4.317584999999999],
+                {"name": "SAINT-DENIS"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_b13d7567b56bd147af6371af0ac79518 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_90ca7bd57b96288c233a6fcfe0c64e54.setIcon(icon_b13d7567b56bd147af6371af0ac79518);
+        
+    
+            marker_90ca7bd57b96288c233a6fcfe0c64e54.bindTooltip(
+                `<div>
+                     SAINT-DENIS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fdbf0af77ab3b6097edcb2969e520a49 = L.marker(
+                [50.806428000000004, 4.314069999999999],
+                {"name": "MAX WALLER"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_6413cf665170b451af3f09d54cf5f825 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fdbf0af77ab3b6097edcb2969e520a49.setIcon(icon_6413cf665170b451af3f09d54cf5f825);
+        
+    
+            marker_fdbf0af77ab3b6097edcb2969e520a49.bindTooltip(
+                `<div>
+                     MAX WALLER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4b330a1091c776e86201f2f972e1c98f = L.marker(
+                [50.802177, 4.31626],
+                {"name": "BEMPT"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_b497cf9d18b928453a2bc93d4f151187 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4b330a1091c776e86201f2f972e1c98f.setIcon(icon_b497cf9d18b928453a2bc93d4f151187);
+        
+    
+            marker_4b330a1091c776e86201f2f972e1c98f.bindTooltip(
+                `<div>
+                     BEMPT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f1859ceb236b90c6c9c274f0cdbc183b = L.marker(
+                [50.800847000000005, 4.317481],
+                {"name": "NEERSTALLE"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_a30338bc8b0144231d776680ea5ecc1e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f1859ceb236b90c6c9c274f0cdbc183b.setIcon(icon_a30338bc8b0144231d776680ea5ecc1e);
+        
+    
+            marker_f1859ceb236b90c6c9c274f0cdbc183b.bindTooltip(
+                `<div>
+                     NEERSTALLE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2a385bc4ab914d5eb399a618a4973c17 = L.marker(
+                [50.798789000000006, 4.3193839999999994],
+                {"name": "MERLO"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_f385eb5d4a455a403337ecfb64494a4d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2a385bc4ab914d5eb399a618a4973c17.setIcon(icon_f385eb5d4a455a403337ecfb64494a4d);
+        
+    
+            marker_2a385bc4ab914d5eb399a618a4973c17.bindTooltip(
+                `<div>
+                     MERLO
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2de0df9b1c6d1aae75920d0abad5a7d1 = L.marker(
+                [50.796336000000004, 4.321187999999999],
+                {"name": "CARREFOUR STALLE"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_c507fe56665165bbdba59935abf5b47e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2de0df9b1c6d1aae75920d0abad5a7d1.setIcon(icon_c507fe56665165bbdba59935abf5b47e);
+        
+    
+            marker_2de0df9b1c6d1aae75920d0abad5a7d1.bindTooltip(
+                `<div>
+                     CARREFOUR STALLE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_79f144d41e865fae43b31321e954b2a7 = L.marker(
+                [50.796229000000004, 4.324195],
+                {"name": "EGIDE VAN OPHEM"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_70db8b25be2478b8cb6110b73572e761 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_79f144d41e865fae43b31321e954b2a7.setIcon(icon_70db8b25be2478b8cb6110b73572e761);
+        
+    
+            marker_79f144d41e865fae43b31321e954b2a7.bindTooltip(
+                `<div>
+                     EGIDE VAN OPHEM
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7af09e3e56ea9da7580345e17f81d0b4 = L.marker(
+                [50.79683300000001, 4.329485],
+                {"name": "WAGON"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_aacea4da6421c7b26cbcd49148f4c106 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7af09e3e56ea9da7580345e17f81d0b4.setIcon(icon_aacea4da6421c7b26cbcd49148f4c106);
+        
+    
+            marker_7af09e3e56ea9da7580345e17f81d0b4.bindTooltip(
+                `<div>
+                     WAGON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_235b832d0d1cb409c0b992b0d635fd18 = L.marker(
+                [50.80069700000001, 4.337596],
+                {"name": "GLOBE"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_1904ec6ef9e170e6ab6da8086e31a747 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_235b832d0d1cb409c0b992b0d635fd18.setIcon(icon_1904ec6ef9e170e6ab6da8086e31a747);
+        
+    
+            marker_235b832d0d1cb409c0b992b0d635fd18.bindTooltip(
+                `<div>
+                     GLOBE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dc2630143a7ad1713738e22b81d80bb0 = L.marker(
+                [50.800824000000006, 4.34092],
+                {"name": "MARLOW"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_fabd4b5e7686e2a4d60d51310b97c9e9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_dc2630143a7ad1713738e22b81d80bb0.setIcon(icon_fabd4b5e7686e2a4d60d51310b97c9e9);
+        
+    
+            marker_dc2630143a7ad1713738e22b81d80bb0.bindTooltip(
+                `<div>
+                     MARLOW
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_abd35d27fd844e3e11adf3f4ee66e9c5 = L.marker(
+                [50.797969, 4.343385],
+                {"name": "WOLVENDAEL"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_5a3224b2dd703ae01c5429ae5374198e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_abd35d27fd844e3e11adf3f4ee66e9c5.setIcon(icon_5a3224b2dd703ae01c5429ae5374198e);
+        
+    
+            marker_abd35d27fd844e3e11adf3f4ee66e9c5.bindTooltip(
+                `<div>
+                     WOLVENDAEL
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_31d1dd2a1b50b5bc0a087485a539ce26 = L.marker(
+                [50.796536, 4.348183],
+                {"name": "DIEWEG"}
+            ).addTo(feature_group_bb4bdfec9ee80b8ec83df76e7553bd70);
+        
+    
+            var icon_45941bd0a549ad88898a0dd1ab266698 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_31d1dd2a1b50b5bc0a087485a539ce26.setIcon(icon_45941bd0a549ad88898a0dd1ab266698);
+        
+    
+            marker_31d1dd2a1b50b5bc0a087485a539ce26.bindTooltip(
+                `<div>
+                     DIEWEG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_a964230b8ef4e2f1b849b9aba5dd8772 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_df28475cc4700e5eee4307fb34c49b9c,
+                },
+                overlays :  {
+                    "97 LOUISE - DIEWEG" : feature_group_e0151afc985d6b77e24d788d89e24c8a,
+                    "97 LOUISE - DIEWEG SCORES" : feature_group_bb4bdfec9ee80b8ec83df76e7553bd70,
+                },
+            };
+            L.control.layers(
+                layer_control_a964230b8ef4e2f1b849b9aba5dd8772.base_layers,
+                layer_control_a964230b8ef4e2f1b849b9aba5dd8772.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_e9020a71a3372d867dde14749ea7f9fa);
+            feature_group_bb4bdfec9ee80b8ec83df76e7553bd70.remove();
+        
+</script>
+</html>

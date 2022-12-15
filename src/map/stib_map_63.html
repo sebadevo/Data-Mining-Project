@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bc39655c23d0e33dfe0a3db27fda75f6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_bc39655c23d0e33dfe0a3db27fda75f6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bc39655c23d0e33dfe0a3db27fda75f6 = L.map(
+                "map_bc39655c23d0e33dfe0a3db27fda75f6",
+                {
+                    center: [50.8476, 4.3572],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4908a7b74761d612467cb155261ee145 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_bc39655c23d0e33dfe0a3db27fda75f6);
+        
+    
+            var poly_line_f5b86576b82887c966b5d03215d8869e = L.polyline(
+                [[50.864246, 4.418203], [50.864218, 4.418122], [50.864175, 4.418028], [50.864144, 4.417976], [50.864124, 4.417946], [50.864124, 4.417916], [50.864117, 4.417848], [50.864116, 4.417842], [50.864115, 4.417839], [50.864098, 4.417797], [50.864077, 4.417768], [50.864072, 4.417765], [50.864036, 4.417745], [50.86401, 4.417744], [50.863983, 4.417565], [50.863976, 4.417348], [50.863978, 4.417186], [50.863985, 4.417129], [50.863995, 4.417089], [50.864014, 4.417037], [50.864108, 4.416856], [50.864205, 4.41666], [50.864276, 4.416534], [50.864327, 4.416382], [50.864367, 4.416264], [50.864386, 4.416225], [50.864424, 4.416192], [50.864461, 4.416179], [50.864496, 4.416139], [50.864515, 4.416097], [50.864515, 4.416017], [50.864496, 4.415963], [50.864475, 4.415747], [50.86442, 4.415398], [50.864375, 4.415176], [50.86427, 4.414798], [50.864217, 4.414645], [50.864138, 4.414427], [50.863772, 4.413509], [50.863691, 4.413298], [50.863656, 4.413208], [50.863656, 4.413208], [50.86353, 4.412888], [50.863169, 4.411938], [50.862916, 4.411341], [50.862922, 4.411279], [50.862949, 4.411196], [50.86295, 4.411191], [50.86295, 4.411188], [50.862956, 4.411087], [50.862947, 4.411004], [50.862937, 4.410963], [50.86292, 4.410912], [50.862893, 4.410867], [50.862874, 4.410835], [50.862855, 4.41081], [50.862853, 4.410807], [50.862851, 4.410805], [50.86277, 4.410763], [50.862732, 4.410757], [50.86269, 4.41074], [50.862558, 4.410396], [50.862273, 4.409632], [50.862098, 4.409174], [50.862098, 4.409174], [50.862034, 4.409007], [50.86202, 4.408968], [50.861817, 4.408366], [50.861732, 4.408119], [50.86172, 4.408082], [50.861267, 4.406645], [50.861098, 4.406155], [50.860816, 4.405365], [50.860655, 4.404993], [50.860532, 4.404683], [50.860532, 4.404683], [50.860469, 4.404484], [50.86047, 4.404403], [50.860472, 4.404359], [50.860467, 4.404295], [50.860459, 4.404257], [50.860446, 4.40422], [50.86042, 4.404172], [50.860402, 4.404152], [50.860396, 4.404147], [50.860369, 4.404129], [50.860342, 4.404122], [50.860323, 4.404123], [50.860312, 4.404108], [50.860257, 4.403961], [50.859916, 4.403068], [50.859454, 4.401894], [50.859195, 4.401215], [50.859167, 4.40115], [50.859167, 4.40115], [50.859154, 4.401117], [50.859148, 4.401082], [50.859144, 4.40102], [50.859146, 4.400959], [50.859159, 4.400915], [50.859185, 4.400856], [50.859281, 4.400626], [50.859295, 4.400589], [50.859372, 4.400408], [50.859376, 4.400363], [50.859319, 4.400289], [50.859239, 4.400191], [50.859215, 4.400174], [50.859152, 4.40014], [50.859114, 4.400123], [50.859043, 4.40009], [50.858964, 4.400001], [50.858876, 4.399868], [50.858667, 4.399503], [50.858553, 4.399279], [50.858423, 4.399007], [50.858296, 4.398712], [50.858198, 4.398308], [50.858122, 4.398007], [50.858048, 4.3977], [50.857969, 4.397344], [50.857946, 4.397259], [50.857922, 4.397196], [50.857884, 4.397127], [50.857865, 4.397095], [50.857828, 4.397041], [50.857771, 4.396975], [50.857744, 4.39695], [50.857668, 4.396928], [50.857613, 4.396928], [50.857611, 4.396928], [50.857607, 4.39693], [50.8574, 4.397092], [50.856918, 4.39746], [50.856779, 4.397563], [50.856779, 4.397563], [50.856399, 4.397847], [50.856155, 4.397993], [50.855975, 4.398105], [50.855867, 4.398173], [50.855695, 4.398251], [50.855432, 4.398332], [50.855346, 4.398238], [50.855313, 4.398182], [50.855289, 4.398139], [50.855268, 4.398102], [50.855268, 4.398102], [50.855256, 4.398069], [50.855242, 4.398031], [50.855235, 4.397944], [50.855223, 4.397909], [50.855221, 4.397903], [50.855192, 4.397817], [50.855189, 4.397808], [50.855189, 4.397808], [50.855168, 4.397751], [50.855168, 4.397751], [50.855109, 4.397667], [50.855049, 4.397639], [50.855022, 4.397632], [50.854949, 4.397628], [50.854844, 4.39766], [50.85482, 4.397677], [50.854763, 4.397744], [50.854716, 4.397826], [50.854685, 4.397892], [50.854685, 4.397892], [50.854679, 4.397897], [50.854654, 4.39792], [50.854594, 4.397937], [50.854546, 4.39793], [50.854513, 4.397921], [50.854432, 4.397998], [50.854388, 4.397998], [50.854388, 4.397998], [50.854368, 4.397991], [50.85396, 4.397809], [50.85396, 4.397809], [50.853635, 4.397661], [50.85358, 4.397539], [50.853564, 4.397502], [50.853539, 4.397476], [50.852751, 4.397105], [50.852724, 4.397094], [50.852629, 4.397048], [50.851282, 4.396434], [50.851277, 4.396373], [50.851269, 4.396312], [50.851252, 4.396215], [50.851225, 4.396121], [50.851202, 4.396056], [50.851142, 4.395961], [50.851142, 4.395961], [50.851128, 4.395938], [50.851097, 4.395904], [50.851074, 4.395886], [50.851039, 4.395866], [50.850973, 4.395844], [50.850876, 4.395841], [50.850809, 4.395853], [50.85077, 4.395877], [50.850745, 4.395894], [50.850693, 4.395942], [50.850598, 4.39608], [50.850577, 4.396117], [50.85002, 4.395869], [50.849717, 4.395709], [50.849688, 4.395694], [50.849516, 4.395618], [50.848233, 4.395059], [50.848233, 4.395059], [50.84814, 4.395002], [50.848108, 4.394988], [50.847803, 4.394854], [50.847753, 4.394824], [50.847703, 4.394775], [50.847661, 4.394711], [50.84762, 4.39462], [50.847574, 4.394509], [50.847528, 4.394398], [50.847414, 4.394151], [50.847345, 4.394], [50.847296, 4.393887], [50.84728, 4.393836], [50.847273, 4.393783], [50.847254, 4.393171], [50.847247, 4.392925], [50.847244, 4.392853], [50.847221, 4.392284], [50.847207, 4.391765], [50.847202, 4.391628], [50.847195, 4.391554], [50.847296, 4.391178], [50.847312, 4.391111], [50.847312, 4.391111], [50.847315, 4.391094], [50.847322, 4.391053], [50.847329, 4.39101], [50.847358, 4.390868], [50.847337, 4.390834], [50.84728, 4.390798], [50.847237, 4.390763], [50.847215, 4.390733], [50.847197, 4.390706], [50.847184, 4.390671], [50.847176, 4.390607], [50.847135, 4.389363], [50.847103, 4.388191], [50.847102, 4.388149], [50.847088, 4.387505], [50.847087, 4.387398], [50.847087, 4.387398], [50.847083, 4.387168], [50.847142, 4.387136], [50.847195, 4.387094], [50.847241, 4.387038], [50.847284, 4.386992], [50.847291, 4.386938], [50.847294, 4.38675], [50.847252, 4.385638], [50.847251, 4.385596], [50.847235, 4.384799], [50.84732, 4.384739], [50.847391, 4.384694], [50.847457, 4.384642], [50.847538, 4.384576], [50.847585, 4.384521], [50.847635, 4.384441], [50.847654, 4.384402], [50.847666, 4.384363], [50.847676, 4.384311], [50.847685, 4.384241], [50.847691, 4.383974], [50.847688, 4.383747], [50.847688, 4.383747], [50.847685, 4.383605], [50.847684, 4.383562], [50.847669, 4.383012], [50.847663, 4.382594], [50.847662, 4.382551], [50.84766, 4.382519], [50.847654, 4.382453], [50.847639, 4.382395], [50.847632, 4.382373], [50.847614, 4.382333], [50.847585, 4.382293], [50.84754, 4.382239], [50.847478, 4.382181], [50.847628, 4.381704], [50.847642, 4.38166], [50.847798, 4.381187], [50.847798, 4.381187], [50.848117, 4.380213], [50.848518, 4.379037], [50.84854, 4.378969], [50.84886, 4.377967], [50.848908, 4.377815], [50.848921, 4.377774], [50.848985, 4.37757], [50.849124, 4.37714], [50.849124, 4.37714], [50.849219, 4.376845], [50.849417, 4.376241], [50.849712, 4.375333], [50.849757, 4.375083], [50.849785, 4.374945], [50.849789, 4.374898], [50.849778, 4.374846], [50.849777, 4.374817], [50.849774, 4.374756], [50.84977, 4.37466], [50.849775, 4.374553], [50.849784, 4.374424], [50.849793, 4.374226], [50.849804, 4.374062], [50.849804, 4.374062], [50.849814, 4.373916], [50.849864, 4.373367], [50.84989, 4.373211], [50.849917, 4.373119], [50.849928, 4.373075], [50.849976, 4.372853], [50.850019, 4.372701], [50.850034, 4.372636], [50.850051, 4.372562], [50.850061, 4.372508], [50.850062, 4.37245], [50.85005, 4.372226], [50.850042, 4.371983], [50.850037, 4.371903], [50.850033, 4.371831], [50.850031, 4.371788], [50.850018, 4.371492], [50.849959, 4.370495], [50.849956, 4.370324], [50.849953, 4.370282], [50.84995, 4.370262], [50.849933, 4.370209], [50.849697, 4.369619], [50.849697, 4.369619], [50.849673, 4.369559], [50.849673, 4.369559], [50.849659, 4.369495], [50.849595, 4.36912], [50.849524, 4.369058], [50.849382, 4.369103], [50.849341, 4.36911], [50.849306, 4.369121], [50.84915, 4.36918], [50.849119, 4.369168], [50.849097, 4.369053], [50.849086, 4.369001], [50.849067, 4.368935], [50.849014, 4.36889], [50.848902, 4.368863], [50.848844, 4.368849], [50.848375, 4.368961], [50.848259, 4.368975], [50.848211, 4.368715], [50.84818, 4.36859], [50.848161, 4.368519], [50.848136, 4.36844], [50.848105, 4.368352], [50.848093, 4.368311], [50.847963, 4.36779], [50.847963, 4.36779], [50.847942, 4.367709], [50.8478, 4.367114], [50.84779, 4.367072], [50.847709, 4.366744], [50.847665, 4.36657], [50.847622, 4.366397], [50.847444, 4.365705], [50.847404, 4.365533], [50.847388, 4.365462], [50.847379, 4.36539], [50.847379, 4.365292], [50.847387, 4.365232], [50.847416, 4.365076], [50.847477, 4.364795], [50.847487, 4.364749], [50.847504, 4.364664], [50.847543, 4.364375], [50.847586, 4.363936], [50.847623, 4.363545], [50.847623, 4.363548], [50.847658, 4.363175], [50.847663, 4.363131], [50.847669, 4.363087], [50.847678, 4.362993], [50.847693, 4.362845], [50.847698, 4.362803], [50.84771, 4.362661], [50.847722, 4.362486], [50.847722, 4.362443], [50.847694, 4.362152], [50.847672, 4.361938], [50.847654, 4.361865], [50.847554, 4.361664], [50.847535, 4.36163], [50.847458, 4.361492], [50.847316, 4.361248], [50.847296, 4.361215], [50.847296, 4.361215], [50.84727, 4.361174], [50.847226, 4.361119], [50.847182, 4.36107], [50.847115, 4.361016], [50.847102, 4.360948], [50.847043, 4.360761], [50.846968, 4.360561], [50.846865, 4.360294], [50.846851, 4.360258], [50.846544, 4.359487], [50.846499, 4.359378]],
+                {"bubblingMouseEvents": true, "color": "#91BEE7", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#91BEE7", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_bc39655c23d0e33dfe0a3db27fda75f6);
+        
+    
+            var feature_group_d2dd440d4f236f0d71059fd6bc734975 = L.featureGroup(
+                {}
+            ).addTo(map_bc39655c23d0e33dfe0a3db27fda75f6);
+        
+    
+            var marker_3e1f9f88e311d27c800812b252deac21 = L.marker(
+                [50.864249, 4.418199],
+                {"name": "CIM. DE BRUXELLES"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_c7a00d5bd4d8d8d5c84fa2e5b3871392 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3e1f9f88e311d27c800812b252deac21.setIcon(icon_c7a00d5bd4d8d8d5c84fa2e5b3871392);
+        
+    
+        var popup_cb6e4622483af66550032a53facc561b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_77ff1dc98ff24ba50d46eb6f91f1a904 = $(`<div id="html_77ff1dc98ff24ba50d46eb6f91f1a904" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: CIM. DE BRUXELLES</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 100.0</h6></center>         </div>`)[0];
+                popup_cb6e4622483af66550032a53facc561b.setContent(html_77ff1dc98ff24ba50d46eb6f91f1a904);
+            
+        
+
+        marker_3e1f9f88e311d27c800812b252deac21.bindPopup(popup_cb6e4622483af66550032a53facc561b)
+        ;
+
+        
+    
+    
+            marker_3e1f9f88e311d27c800812b252deac21.bindTooltip(
+                `<div>
+                     CIM. DE BRUXELLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_18dbb29cd59ae80c734a2a745ea5ce44 = L.marker(
+                [50.863667, 4.413198],
+                {"name": "ARBRE UNIQUE"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_4b18633369fae7658659b5a65a2670e7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_18dbb29cd59ae80c734a2a745ea5ce44.setIcon(icon_4b18633369fae7658659b5a65a2670e7);
+        
+    
+        var popup_6963f403a7c359ed2f3d5b11fa9af37d = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_90f09244ad623ab3a70ba6a51e93b363 = $(`<div id="html_90f09244ad623ab3a70ba6a51e93b363" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ARBRE UNIQUE</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 90.0</h6></center>         </div>`)[0];
+                popup_6963f403a7c359ed2f3d5b11fa9af37d.setContent(html_90f09244ad623ab3a70ba6a51e93b363);
+            
+        
+
+        marker_18dbb29cd59ae80c734a2a745ea5ce44.bindPopup(popup_6963f403a7c359ed2f3d5b11fa9af37d)
+        ;
+
+        
+    
+    
+            marker_18dbb29cd59ae80c734a2a745ea5ce44.bindTooltip(
+                `<div>
+                     ARBRE UNIQUE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b27b2c2525b3a546c25765e851657219 = L.marker(
+                [50.862095, 4.409177],
+                {"name": "OPTIMISME"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_728d4b3f20b94d421e1f28314e28c7a7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b27b2c2525b3a546c25765e851657219.setIcon(icon_728d4b3f20b94d421e1f28314e28c7a7);
+        
+    
+        var popup_4c55517848873a2c74139c01461ac8ae = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_d6252221217d4b170b74ab1b9cc19f7d = $(`<div id="html_d6252221217d4b170b74ab1b9cc19f7d" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: OPTIMISME</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 80.0</h6></center>         </div>`)[0];
+                popup_4c55517848873a2c74139c01461ac8ae.setContent(html_d6252221217d4b170b74ab1b9cc19f7d);
+            
+        
+
+        marker_b27b2c2525b3a546c25765e851657219.bindPopup(popup_4c55517848873a2c74139c01461ac8ae)
+        ;
+
+        
+    
+    
+            marker_b27b2c2525b3a546c25765e851657219.bindTooltip(
+                `<div>
+                     OPTIMISME
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4e8cd605716db0ffe582d018dff5df7e = L.marker(
+                [50.860542, 4.404673],
+                {"name": "PAUL LEDUC"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_537c1685bbe0e2c71ad52fe39fd9c0bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4e8cd605716db0ffe582d018dff5df7e.setIcon(icon_537c1685bbe0e2c71ad52fe39fd9c0bc);
+        
+    
+        var popup_bb0d6ab517ff3eea9a6c06a6839ea81e = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_2448d0d43fba2223386480406b24ed22 = $(`<div id="html_2448d0d43fba2223386480406b24ed22" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PAUL LEDUC</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 70.0</h6></center>         </div>`)[0];
+                popup_bb0d6ab517ff3eea9a6c06a6839ea81e.setContent(html_2448d0d43fba2223386480406b24ed22);
+            
+        
+
+        marker_4e8cd605716db0ffe582d018dff5df7e.bindPopup(popup_bb0d6ab517ff3eea9a6c06a6839ea81e)
+        ;
+
+        
+    
+    
+            marker_4e8cd605716db0ffe582d018dff5df7e.bindTooltip(
+                `<div>
+                     PAUL LEDUC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b641c2d4a1bdffc4a1f7ac9fa4da504a = L.marker(
+                [50.859167, 4.40115],
+                {"name": "FRANS COURTENS"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_14fd35bdb2590f2d42353702ce84ddcd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b641c2d4a1bdffc4a1f7ac9fa4da504a.setIcon(icon_14fd35bdb2590f2d42353702ce84ddcd);
+        
+    
+        var popup_1b5426c00bde4ba87648f210520ff217 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c1855b69b0aca47012353543f5f98daa = $(`<div id="html_c1855b69b0aca47012353543f5f98daa" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: FRANS COURTENS</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_1b5426c00bde4ba87648f210520ff217.setContent(html_c1855b69b0aca47012353543f5f98daa);
+            
+        
+
+        marker_b641c2d4a1bdffc4a1f7ac9fa4da504a.bindPopup(popup_1b5426c00bde4ba87648f210520ff217)
+        ;
+
+        
+    
+    
+            marker_b641c2d4a1bdffc4a1f7ac9fa4da504a.bindTooltip(
+                `<div>
+                     FRANS COURTENS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fcc9741659332f828a167ae593e6cfe8 = L.marker(
+                [50.856759, 4.397583],
+                {"name": "LEOPOLD III"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_4a2e0edccac0f9ba7f04fa2e2a2aa607 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fcc9741659332f828a167ae593e6cfe8.setIcon(icon_4a2e0edccac0f9ba7f04fa2e2a2aa607);
+        
+    
+        var popup_d1487c1f5842aa48112ddba225ed7998 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_bd47550d8513985aeb612b1e9878e368 = $(`<div id="html_bd47550d8513985aeb612b1e9878e368" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: LEOPOLD III</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 50.0</h6></center>         </div>`)[0];
+                popup_d1487c1f5842aa48112ddba225ed7998.setContent(html_bd47550d8513985aeb612b1e9878e368);
+            
+        
+
+        marker_fcc9741659332f828a167ae593e6cfe8.bindPopup(popup_d1487c1f5842aa48112ddba225ed7998)
+        ;
+
+        
+    
+    
+            marker_fcc9741659332f828a167ae593e6cfe8.bindTooltip(
+                `<div>
+                     LEOPOLD III
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d010719163dd4d337817bb046185db3f = L.marker(
+                [50.853963, 4.397794],
+                {"name": "MEISER"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_7b2d0c52de6a93fc2daf2d1f05bb3d25 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d010719163dd4d337817bb046185db3f.setIcon(icon_7b2d0c52de6a93fc2daf2d1f05bb3d25);
+        
+    
+        var popup_6ab6a2a7dd73cadf278e7276eb6456f4 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_ce29ee4cffdfe0d8b6f4c8916127c8a4 = $(`<div id="html_ce29ee4cffdfe0d8b6f4c8916127c8a4" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MEISER</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 40.0</h6></center>         </div>`)[0];
+                popup_6ab6a2a7dd73cadf278e7276eb6456f4.setContent(html_ce29ee4cffdfe0d8b6f4c8916127c8a4);
+            
+        
+
+        marker_d010719163dd4d337817bb046185db3f.bindPopup(popup_6ab6a2a7dd73cadf278e7276eb6456f4)
+        ;
+
+        
+    
+    
+            marker_d010719163dd4d337817bb046185db3f.bindTooltip(
+                `<div>
+                     MEISER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_06c8ffb20a3f1244febdac1d23ed0cfd = L.marker(
+                [50.851141, 4.395961],
+                {"name": "PLASKY"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_97e027bd53f6b11aed6350e13a2249db = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_06c8ffb20a3f1244febdac1d23ed0cfd.setIcon(icon_97e027bd53f6b11aed6350e13a2249db);
+        
+    
+        var popup_0355846ce0081565b4e2c483fbf9f912 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_455ada11c0b4c0f9f68ea1f66c8bd8e7 = $(`<div id="html_455ada11c0b4c0f9f68ea1f66c8bd8e7" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PLASKY</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 30.0</h6></center>         </div>`)[0];
+                popup_0355846ce0081565b4e2c483fbf9f912.setContent(html_455ada11c0b4c0f9f68ea1f66c8bd8e7);
+            
+        
+
+        marker_06c8ffb20a3f1244febdac1d23ed0cfd.bindPopup(popup_0355846ce0081565b4e2c483fbf9f912)
+        ;
+
+        
+    
+    
+            marker_06c8ffb20a3f1244febdac1d23ed0cfd.bindTooltip(
+                `<div>
+                     PLASKY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2fc579606fe0bd2bf2500623090ddb9a = L.marker(
+                [50.848238, 4.395036],
+                {"name": "JAMBLINNE DE MEUX"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_eb588b154f9cc7fb4bbe68607ef7296f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2fc579606fe0bd2bf2500623090ddb9a.setIcon(icon_eb588b154f9cc7fb4bbe68607ef7296f);
+        
+    
+        var popup_3b21c98e8b0e36efc8c04a3dc1b28e65 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_9262625e46c354951b0bfc6aabc624f7 = $(`<div id="html_9262625e46c354951b0bfc6aabc624f7" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: JAMBLINNE DE MEUX</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_3b21c98e8b0e36efc8c04a3dc1b28e65.setContent(html_9262625e46c354951b0bfc6aabc624f7);
+            
+        
+
+        marker_2fc579606fe0bd2bf2500623090ddb9a.bindPopup(popup_3b21c98e8b0e36efc8c04a3dc1b28e65)
+        ;
+
+        
+    
+    
+            marker_2fc579606fe0bd2bf2500623090ddb9a.bindTooltip(
+                `<div>
+                     JAMBLINNE DE MEUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4a7ddfc1bff20478fcc82914a6eff361 = L.marker(
+                [50.847322, 4.391116],
+                {"name": "GUEUX"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_263234982a60c0f32d3f3cd94e5c85e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4a7ddfc1bff20478fcc82914a6eff361.setIcon(icon_263234982a60c0f32d3f3cd94e5c85e5);
+        
+    
+        var popup_93dd1f0399590f8fbababb5503adac02 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_7cbfb222e144cb80861bec693bdfaa27 = $(`<div id="html_7cbfb222e144cb80861bec693bdfaa27" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GUEUX</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 10.0</h6></center>         </div>`)[0];
+                popup_93dd1f0399590f8fbababb5503adac02.setContent(html_7cbfb222e144cb80861bec693bdfaa27);
+            
+        
+
+        marker_4a7ddfc1bff20478fcc82914a6eff361.bindPopup(popup_93dd1f0399590f8fbababb5503adac02)
+        ;
+
+        
+    
+    
+            marker_4a7ddfc1bff20478fcc82914a6eff361.bindTooltip(
+                `<div>
+                     GUEUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_59dfe58dc2aa3e42780ab96236b2d18e = L.marker(
+                [50.847097, 4.387396],
+                {"name": "MARGUERITE"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_79e791fd874733f3c561e4489dc646fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_59dfe58dc2aa3e42780ab96236b2d18e.setIcon(icon_79e791fd874733f3c561e4489dc646fc);
+        
+    
+        var popup_466c80987d9945ff19ddad62c50984b0 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_6943a6a23f160170b212e0072c291c4d = $(`<div id="html_6943a6a23f160170b212e0072c291c4d" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MARGUERITE</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 0.0</h6></center>         </div>`)[0];
+                popup_466c80987d9945ff19ddad62c50984b0.setContent(html_6943a6a23f160170b212e0072c291c4d);
+            
+        
+
+        marker_59dfe58dc2aa3e42780ab96236b2d18e.bindPopup(popup_466c80987d9945ff19ddad62c50984b0)
+        ;
+
+        
+    
+    
+            marker_59dfe58dc2aa3e42780ab96236b2d18e.bindTooltip(
+                `<div>
+                     MARGUERITE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_04f803b9f8c06338ef32383bfb33ac49 = L.marker(
+                [50.847682, 4.383747],
+                {"name": "AMBIORIX"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_8e9f97f9613c55461cbd77a6dd9130f5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_04f803b9f8c06338ef32383bfb33ac49.setIcon(icon_8e9f97f9613c55461cbd77a6dd9130f5);
+        
+    
+        var popup_3c56189251f58c843b1c460e99ce4a6d = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_fe937ac84a8b06e4311a149f2a655975 = $(`<div id="html_fe937ac84a8b06e4311a149f2a655975" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: AMBIORIX</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 10.0</h6></center>         </div>`)[0];
+                popup_3c56189251f58c843b1c460e99ce4a6d.setContent(html_fe937ac84a8b06e4311a149f2a655975);
+            
+        
+
+        marker_04f803b9f8c06338ef32383bfb33ac49.bindPopup(popup_3c56189251f58c843b1c460e99ce4a6d)
+        ;
+
+        
+    
+    
+            marker_04f803b9f8c06338ef32383bfb33ac49.bindTooltip(
+                `<div>
+                     AMBIORIX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3ec8fcd9a1c6a893d20feb3a89fab6ac = L.marker(
+                [50.847808, 4.381205],
+                {"name": "WATERLOO WILSON"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_cdad3d39153cb7089aa087ed2e36a2ea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_3ec8fcd9a1c6a893d20feb3a89fab6ac.setIcon(icon_cdad3d39153cb7089aa087ed2e36a2ea);
+        
+    
+        var popup_7d6a57e584fbddc0d69e8ea10275c63c = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_f231a5d0972e9c4f45c40a9800926757 = $(`<div id="html_f231a5d0972e9c4f45c40a9800926757" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: WATERLOO WILSON</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 20.0</h6></center>         </div>`)[0];
+                popup_7d6a57e584fbddc0d69e8ea10275c63c.setContent(html_f231a5d0972e9c4f45c40a9800926757);
+            
+        
+
+        marker_3ec8fcd9a1c6a893d20feb3a89fab6ac.bindPopup(popup_7d6a57e584fbddc0d69e8ea10275c63c)
+        ;
+
+        
+    
+    
+            marker_3ec8fcd9a1c6a893d20feb3a89fab6ac.bindTooltip(
+                `<div>
+                     WATERLOO WILSON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ea36c5370d805421182ede8a8fa954f9 = L.marker(
+                [50.84913, 4.377145],
+                {"name": "GUTENBERG"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_1bea8929e4ee4847ef4e0d8383a95a26 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ea36c5370d805421182ede8a8fa954f9.setIcon(icon_1bea8929e4ee4847ef4e0d8383a95a26);
+        
+    
+        var popup_3cd8446d51513e531858987b8902bed0 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_cbef4534d7232ab6558b8b7eb02ea962 = $(`<div id="html_cbef4534d7232ab6558b8b7eb02ea962" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GUTENBERG</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 30.0</h6></center>         </div>`)[0];
+                popup_3cd8446d51513e531858987b8902bed0.setContent(html_cbef4534d7232ab6558b8b7eb02ea962);
+            
+        
+
+        marker_ea36c5370d805421182ede8a8fa954f9.bindPopup(popup_3cd8446d51513e531858987b8902bed0)
+        ;
+
+        
+    
+    
+            marker_ea36c5370d805421182ede8a8fa954f9.bindTooltip(
+                `<div>
+                     GUTENBERG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5cd10942a0f188e78de4c854c928f2b4 = L.marker(
+                [50.849814, 4.374063],
+                {"name": "SAINT-JOSSE"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_8497033031e74cdd993ded28d478468f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_5cd10942a0f188e78de4c854c928f2b4.setIcon(icon_8497033031e74cdd993ded28d478468f);
+        
+    
+        var popup_f569231f002637d110cd914de9e9eac1 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_bcf566a62ba03d64e4f0d4466fe9dea3 = $(`<div id="html_bcf566a62ba03d64e4f0d4466fe9dea3" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: SAINT-JOSSE</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 40.0</h6></center>         </div>`)[0];
+                popup_f569231f002637d110cd914de9e9eac1.setContent(html_bcf566a62ba03d64e4f0d4466fe9dea3);
+            
+        
+
+        marker_5cd10942a0f188e78de4c854c928f2b4.bindPopup(popup_f569231f002637d110cd914de9e9eac1)
+        ;
+
+        
+    
+    
+            marker_5cd10942a0f188e78de4c854c928f2b4.bindTooltip(
+                `<div>
+                     SAINT-JOSSE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c920a7c446ccae679c2f3bdf6b8b6e30 = L.marker(
+                [50.849697, 4.369619],
+                {"name": "MADOU"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_70fefbd5a47257275c99bc402169e517 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c920a7c446ccae679c2f3bdf6b8b6e30.setIcon(icon_70fefbd5a47257275c99bc402169e517);
+        
+    
+        var popup_0c19133e651104dd4b8c561459680166 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_c6056e232f160d7ffb2174d04049097e = $(`<div id="html_c6056e232f160d7ffb2174d04049097e" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: MADOU</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 50.0</h6></center>         </div>`)[0];
+                popup_0c19133e651104dd4b8c561459680166.setContent(html_c6056e232f160d7ffb2174d04049097e);
+            
+        
+
+        marker_c920a7c446ccae679c2f3bdf6b8b6e30.bindPopup(popup_0c19133e651104dd4b8c561459680166)
+        ;
+
+        
+    
+    
+            marker_c920a7c446ccae679c2f3bdf6b8b6e30.bindTooltip(
+                `<div>
+                     MADOU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b02fef35e40d043e10f402cd45b2ef1e = L.marker(
+                [50.847976, 4.367781],
+                {"name": "PRESSE"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_019b2ef752bdf7636927af7358d1c68b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b02fef35e40d043e10f402cd45b2ef1e.setIcon(icon_019b2ef752bdf7636927af7358d1c68b);
+        
+    
+        var popup_6fd0347a754e1533bc0df2282245654b = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_089cf95384b28b09137dc41c81bbf6c3 = $(`<div id="html_089cf95384b28b09137dc41c81bbf6c3" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: PRESSE</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 60.0</h6></center>         </div>`)[0];
+                popup_6fd0347a754e1533bc0df2282245654b.setContent(html_089cf95384b28b09137dc41c81bbf6c3);
+            
+        
+
+        marker_b02fef35e40d043e10f402cd45b2ef1e.bindPopup(popup_6fd0347a754e1533bc0df2282245654b)
+        ;
+
+        
+    
+    
+            marker_b02fef35e40d043e10f402cd45b2ef1e.bindTooltip(
+                `<div>
+                     PRESSE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8636d941ca5f1157ddc04640eaae10cd = L.marker(
+                [50.847651, 4.36355],
+                {"name": "TREURENBERG"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_9995b208b976b30fa644f4fa1f555c25 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8636d941ca5f1157ddc04640eaae10cd.setIcon(icon_9995b208b976b30fa644f4fa1f555c25);
+        
+    
+        var popup_ac6246003e23ee374bbe734e09dd5955 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_9939ec832a4fa18f376d5f840d7e7d4f = $(`<div id="html_9939ec832a4fa18f376d5f840d7e7d4f" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: TREURENBERG</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 70.0</h6></center>         </div>`)[0];
+                popup_ac6246003e23ee374bbe734e09dd5955.setContent(html_9939ec832a4fa18f376d5f840d7e7d4f);
+            
+        
+
+        marker_8636d941ca5f1157ddc04640eaae10cd.bindPopup(popup_ac6246003e23ee374bbe734e09dd5955)
+        ;
+
+        
+    
+    
+            marker_8636d941ca5f1157ddc04640eaae10cd.bindTooltip(
+                `<div>
+                     TREURENBERG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7958396fd5edb9681d6684957201a1fb = L.marker(
+                [50.847297, 4.361212],
+                {"name": "ROSA PARKS"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_2a063b291f4e82da33a1c94327281198 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_7958396fd5edb9681d6684957201a1fb.setIcon(icon_2a063b291f4e82da33a1c94327281198);
+        
+    
+        var popup_52559bcce315fb73d543c5fe7f193f89 = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_b713fbe5896750e470737e3df5534ee2 = $(`<div id="html_b713fbe5896750e470737e3df5534ee2" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: ROSA PARKS</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 80.0</h6></center>         </div>`)[0];
+                popup_52559bcce315fb73d543c5fe7f193f89.setContent(html_b713fbe5896750e470737e3df5534ee2);
+            
+        
+
+        marker_7958396fd5edb9681d6684957201a1fb.bindPopup(popup_52559bcce315fb73d543c5fe7f193f89)
+        ;
+
+        
+    
+    
+            marker_7958396fd5edb9681d6684957201a1fb.bindTooltip(
+                `<div>
+                     ROSA PARKS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c698c02570f038f0ac9a60bb6de22a85 = L.marker(
+                [50.846496, 4.359381],
+                {"name": "GARE CENTRALE"}
+            ).addTo(feature_group_d2dd440d4f236f0d71059fd6bc734975);
+        
+    
+            var icon_4a8f73515efbbe0e8b31831c91c4efd6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#91BEE7", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c698c02570f038f0ac9a60bb6de22a85.setIcon(icon_4a8f73515efbbe0e8b31831c91c4efd6);
+        
+    
+        var popup_980055fb05fe820f3816750dafe161cd = L.popup({"maxWidth": 10000, "minWidth": 10});
+
+        
+            
+                var html_36a31e240c5ad1252baee3434ad02f84 = $(`<div id="html_36a31e240c5ad1252baee3434ad02f84" style="width: 100.0%; height: 100.0%;"><center><h4>Stop: GARE CENTRALE</h4></center>         <center><h5>Line: 63 GARE CENTRALE - CIMETIERE DE BRUXELLES</h5></center>         <center><h6>Score: 90.0</h6></center>         </div>`)[0];
+                popup_980055fb05fe820f3816750dafe161cd.setContent(html_36a31e240c5ad1252baee3434ad02f84);
+            
+        
+
+        marker_c698c02570f038f0ac9a60bb6de22a85.bindPopup(popup_980055fb05fe820f3816750dafe161cd)
+        ;
+
+        
+    
+    
+            marker_c698c02570f038f0ac9a60bb6de22a85.bindTooltip(
+                `<div>
+                     GARE CENTRALE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_1fe2fa645e99893b78a751526cf04e21 = L.featureGroup(
+                {}
+            ).addTo(map_bc39655c23d0e33dfe0a3db27fda75f6);
+        
+    
+            var marker_9420f9f73fe4a032afbe096d758ba8e9 = L.marker(
+                [50.864259000000004, 4.418209],
+                {"name": "CIM. DE BRUXELLES"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_915eb70e29d5d2f2f289b5ef0c2a8610 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#00ff00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9420f9f73fe4a032afbe096d758ba8e9.setIcon(icon_915eb70e29d5d2f2f289b5ef0c2a8610);
+        
+    
+            marker_9420f9f73fe4a032afbe096d758ba8e9.bindTooltip(
+                `<div>
+                     CIM. DE BRUXELLES
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d96053e3efcde18a5cad0e6b2a0289fe = L.marker(
+                [50.863677, 4.413208],
+                {"name": "ARBRE UNIQUE"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_686699a98bc6e84aad0728a3fe9bca6d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_d96053e3efcde18a5cad0e6b2a0289fe.setIcon(icon_686699a98bc6e84aad0728a3fe9bca6d);
+        
+    
+            marker_d96053e3efcde18a5cad0e6b2a0289fe.bindTooltip(
+                `<div>
+                     ARBRE UNIQUE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0158cd6308ae598cb7202d761c9a4522 = L.marker(
+                [50.862105, 4.409186999999999],
+                {"name": "OPTIMISME"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_d9923f1a1745d85854f9bd3dffa66498 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_0158cd6308ae598cb7202d761c9a4522.setIcon(icon_d9923f1a1745d85854f9bd3dffa66498);
+        
+    
+            marker_0158cd6308ae598cb7202d761c9a4522.bindTooltip(
+                `<div>
+                     OPTIMISME
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_458dcef5386b3b8b9340a6a551c8587e = L.marker(
+                [50.860552000000006, 4.4046829999999995],
+                {"name": "PAUL LEDUC"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_f2386b46b17f8be284700de34e7a5ef2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_458dcef5386b3b8b9340a6a551c8587e.setIcon(icon_f2386b46b17f8be284700de34e7a5ef2);
+        
+    
+            marker_458dcef5386b3b8b9340a6a551c8587e.bindTooltip(
+                `<div>
+                     PAUL LEDUC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2605662e2911329291f8bffe45a1735e = L.marker(
+                [50.859177, 4.40116],
+                {"name": "FRANS COURTENS"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_40b2baab6ba2956fbd75787ee2e388d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_2605662e2911329291f8bffe45a1735e.setIcon(icon_40b2baab6ba2956fbd75787ee2e388d9);
+        
+    
+            marker_2605662e2911329291f8bffe45a1735e.bindTooltip(
+                `<div>
+                     FRANS COURTENS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_368e4f152b57389246ec107aa5ec0a2f = L.marker(
+                [50.856769, 4.397593],
+                {"name": "LEOPOLD III"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_fe9c0251db0cf87594bcd52eb202b296 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_368e4f152b57389246ec107aa5ec0a2f.setIcon(icon_fe9c0251db0cf87594bcd52eb202b296);
+        
+    
+            marker_368e4f152b57389246ec107aa5ec0a2f.bindTooltip(
+                `<div>
+                     LEOPOLD III
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_40a314bbb2d6e447f3a6dcbd0a4e8d24 = L.marker(
+                [50.853973, 4.397804],
+                {"name": "MEISER"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_1c39c16979b68737e7ed3e5a720edcd2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_40a314bbb2d6e447f3a6dcbd0a4e8d24.setIcon(icon_1c39c16979b68737e7ed3e5a720edcd2);
+        
+    
+            marker_40a314bbb2d6e447f3a6dcbd0a4e8d24.bindTooltip(
+                `<div>
+                     MEISER
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_495cd539060e7a3ac710eb78089b099c = L.marker(
+                [50.851151, 4.395970999999999],
+                {"name": "PLASKY"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_e6161f6b8e30cd8b64f82e178319b97c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_495cd539060e7a3ac710eb78089b099c.setIcon(icon_e6161f6b8e30cd8b64f82e178319b97c);
+        
+    
+            marker_495cd539060e7a3ac710eb78089b099c.bindTooltip(
+                `<div>
+                     PLASKY
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f963689752a9d5b7a9f9516d54dbe053 = L.marker(
+                [50.848248000000005, 4.395046],
+                {"name": "JAMBLINNE DE MEUX"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_296579a9071c1a268e69d7a7c71cdfff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_f963689752a9d5b7a9f9516d54dbe053.setIcon(icon_296579a9071c1a268e69d7a7c71cdfff);
+        
+    
+            marker_f963689752a9d5b7a9f9516d54dbe053.bindTooltip(
+                `<div>
+                     JAMBLINNE DE MEUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ca9f7b7925876129f440dfe12c358bc0 = L.marker(
+                [50.847332, 4.391126],
+                {"name": "GUEUX"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_b0d9d9d9600598696c70b7d5f1b744a7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ca9f7b7925876129f440dfe12c358bc0.setIcon(icon_b0d9d9d9600598696c70b7d5f1b744a7);
+        
+    
+            marker_ca9f7b7925876129f440dfe12c358bc0.bindTooltip(
+                `<div>
+                     GUEUX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_20eec32d87a88c784a1d5f7062e56d38 = L.marker(
+                [50.847107, 4.3874059999999995],
+                {"name": "MARGUERITE"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_135484b645cabc8e14d46db2fa6840fa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_20eec32d87a88c784a1d5f7062e56d38.setIcon(icon_135484b645cabc8e14d46db2fa6840fa);
+        
+    
+            marker_20eec32d87a88c784a1d5f7062e56d38.bindTooltip(
+                `<div>
+                     MARGUERITE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_164edd108ba522c10244911f285ff9c3 = L.marker(
+                [50.847692, 4.383756999999999],
+                {"name": "AMBIORIX"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_981d1e53d757fddf49339a3672e4e20e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ff0000", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_164edd108ba522c10244911f285ff9c3.setIcon(icon_981d1e53d757fddf49339a3672e4e20e);
+        
+    
+            marker_164edd108ba522c10244911f285ff9c3.bindTooltip(
+                `<div>
+                     AMBIORIX
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8093f14b9c8a179a779ce29462de6730 = L.marker(
+                [50.847818000000004, 4.381214999999999],
+                {"name": "WATERLOO WILSON"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_89b1ed51f84d8afb960555a6e620b9f8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#fe4400", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8093f14b9c8a179a779ce29462de6730.setIcon(icon_89b1ed51f84d8afb960555a6e620b9f8);
+        
+    
+            marker_8093f14b9c8a179a779ce29462de6730.bindTooltip(
+                `<div>
+                     WATERLOO WILSON
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4a4d2388cbcc74c6d4d0ec9f74d41a0c = L.marker(
+                [50.849140000000006, 4.377154999999999],
+                {"name": "GUTENBERG"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_1396ba7583ff01d2b64232e560288f60 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#f86600", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_4a4d2388cbcc74c6d4d0ec9f74d41a0c.setIcon(icon_1396ba7583ff01d2b64232e560288f60);
+        
+    
+            marker_4a4d2388cbcc74c6d4d0ec9f74d41a0c.bindTooltip(
+                `<div>
+                     GUTENBERG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6d42b1f1cf3ccbc630067eb9f59c5387 = L.marker(
+                [50.849824000000005, 4.374072999999999],
+                {"name": "SAINT-JOSSE"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_54a4c369c8374774fa0a9eac90032e47 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#ee8200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6d42b1f1cf3ccbc630067eb9f59c5387.setIcon(icon_54a4c369c8374774fa0a9eac90032e47);
+        
+    
+            marker_6d42b1f1cf3ccbc630067eb9f59c5387.bindTooltip(
+                `<div>
+                     SAINT-JOSSE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_69de113c3e996ff0e121b37434314af5 = L.marker(
+                [50.849707, 4.369629],
+                {"name": "MADOU"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_29333cd896431e28a58f31d1c3f1c93c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#df9b00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_69de113c3e996ff0e121b37434314af5.setIcon(icon_29333cd896431e28a58f31d1c3f1c93c);
+        
+    
+            marker_69de113c3e996ff0e121b37434314af5.bindTooltip(
+                `<div>
+                     MADOU
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_606cffd25b4a9980dc74bac5767b657b = L.marker(
+                [50.847986000000006, 4.3677909999999995],
+                {"name": "PRESSE"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_d34e909f1718d21bd765f47311966d7a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#cdb200", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_606cffd25b4a9980dc74bac5767b657b.setIcon(icon_d34e909f1718d21bd765f47311966d7a);
+        
+    
+            marker_606cffd25b4a9980dc74bac5767b657b.bindTooltip(
+                `<div>
+                     PRESSE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9188a2306eb23e40d0c233e23099cae1 = L.marker(
+                [50.847661, 4.36356],
+                {"name": "TREURENBERG"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_6fca1aa56e1dc582817fb6394a3f90b1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#b6c700", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9188a2306eb23e40d0c233e23099cae1.setIcon(icon_6fca1aa56e1dc582817fb6394a3f90b1);
+        
+    
+            marker_9188a2306eb23e40d0c233e23099cae1.bindTooltip(
+                `<div>
+                     TREURENBERG
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e24b8368b95036d3f617561a99b2dcf6 = L.marker(
+                [50.847307, 4.361222],
+                {"name": "ROSA PARKS"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_8b33912b10d1b8acb5add2daa96347b8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#98db00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e24b8368b95036d3f617561a99b2dcf6.setIcon(icon_8b33912b10d1b8acb5add2daa96347b8);
+        
+    
+            marker_e24b8368b95036d3f617561a99b2dcf6.bindTooltip(
+                `<div>
+                     ROSA PARKS
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1501780ffd8b488d772d8e055b47881b = L.marker(
+                [50.846506000000005, 4.359391],
+                {"name": "GARE CENTRALE"}
+            ).addTo(feature_group_1fe2fa645e99893b78a751526cf04e21);
+        
+    
+            var icon_a77fbcf58d99ea5c78b55738cafa8a2f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "#6fed00", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_1501780ffd8b488d772d8e055b47881b.setIcon(icon_a77fbcf58d99ea5c78b55738cafa8a2f);
+        
+    
+            marker_1501780ffd8b488d772d8e055b47881b.bindTooltip(
+                `<div>
+                     GARE CENTRALE
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_db04a194ba25be2caea4334cb151fc84 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_4908a7b74761d612467cb155261ee145,
+                },
+                overlays :  {
+                    "63 GARE CENTRALE - CIMETIERE DE BRUXELLES" : feature_group_d2dd440d4f236f0d71059fd6bc734975,
+                    "63 GARE CENTRALE - CIMETIERE DE BRUXELLES SCORES" : feature_group_1fe2fa645e99893b78a751526cf04e21,
+                },
+            };
+            L.control.layers(
+                layer_control_db04a194ba25be2caea4334cb151fc84.base_layers,
+                layer_control_db04a194ba25be2caea4334cb151fc84.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_bc39655c23d0e33dfe0a3db27fda75f6);
+            feature_group_1fe2fa645e99893b78a751526cf04e21.remove();
+        
+</script>
+</html>

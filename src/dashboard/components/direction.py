@@ -1,7 +1,7 @@
 from dash import Dash, html
 from dash.dependencies import Output, Input
 import dash
-from . import ids
+from . import ids, map
 
 import pandas as pd
 from database.load_db import get_connection
@@ -37,6 +37,7 @@ def render(app : Dash):
 
     @app.callback(
         Output('directions-container', 'children'),
+        Output(ids.DIV_MAP, 'children'),
         Input(ids.SELECTED_LINE, 'data'),
         prevent_initial_call=True
         )
@@ -58,7 +59,7 @@ def render(app : Dash):
                 html.Button(
                     [headsign[1].strip()], className="direction direction--2 f navigable", id=ids.DIRECTION_2, disabled=True, tabIndex="0", value=headsign[1].strip())], 
                 className="direction-container")
-            ]
+            ] , map.display_map(value)
 
 
     return html.Div([
