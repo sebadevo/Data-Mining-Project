@@ -123,21 +123,21 @@ def render(app: Dash) -> html.Div:
         day = which_day(day)
         if (which_type(line_name) == 1): #For metros
             query = ( 
-                "select rd.time"
+                "select rd.time, rd.distanceFromPoint"
                 " from real_data rd" 
-                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint <= 1"
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s"
                 )
         elif (which_type(line_name) == 0): #For trams
             query = ( 
-                "select rd.time"
+                "select rd.time, rd.distanceFromPoint"
                 " from real_data rd" 
-                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 50"
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s"
                 )
         elif (which_type(line_name) == 3): #for buses
             query = ( 
-                "select rd.time"
+                "select rd.time, rd.distanceFromPoint"
                 " from real_data rd" 
-                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s and rd.distanceFromPoint < 50"
+                " where rd.lineID = %s and rd.pointID = %s and rd.date = %s"
                 )
         else: 
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"
@@ -164,10 +164,17 @@ def render(app: Dash) -> html.Div:
         
         time_real = map_to_sec(real_data.time.tolist())
         time_th = map_to_sec(data.arrival_time.tolist())
+        distance_real = real_data.distanceFromPoint.tolist()
 
-        
-
-        time_real = remove_duplicates(time_real)
+        if (which_type(line_name) == 1): #For metros
+            time_real = remove_duplicates_metro(time_real, distance_real)
+        elif (which_type(line_name) == 0): #For trams
+            time_real = remove_duplicates_tram(time_real, distance_real)
+        elif (which_type(line_name) == 3): #for buses
+            time_real = remove_duplicates_bus(time_real, distance_real)
+        else:
+            print("there was an error")
+            time_real = remove_duplicates(time_real)
 
 
         x,y = get_headway(time_th)

@@ -242,6 +242,38 @@ def remove_duplicates(real, threshold=45):
         i -= 1
     return real
 
+def remove_duplicates_metro(real, distances, threshold=45):
+    i = len(real)-1
+    while i > 0:
+        if real[i] - threshold < real[i-1]:
+            real.pop(i)
+        i -= 1
+    real = reasign_time(real, distances,speed=1/5)
+    return real
+
+def remove_duplicates_tram(real, distances, threshold_time=45):
+    i = len(real)-1
+    while i > 0:
+        if real[i] - threshold_time < real[i-1]:
+            real.pop(i)
+            distances.pop(i)
+    real = reasign_time(real, distances,speed=9)
+    return real
+
+def remove_duplicates_bus(real, distances, threshold_time=45):
+    i = len(real)-1
+    while i > 0:
+        if real[i] - threshold_time < real[i-1]:
+            real.pop(i)
+            distances.pop(i)
+    real = reasign_time(real, distances, speed=7)
+    return real
+
+def reasign_time(real, distances, speed = 10):
+    for i in range(len(real)):
+        if distances[i]:
+            real[i] -= round(distances[i]/speed)
+    return real
 
 def find_match_V1(short, long):
     shorted_index = []

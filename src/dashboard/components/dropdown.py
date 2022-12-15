@@ -135,7 +135,7 @@ def date_render(app: Dash):
     def query_date_name(line_name, stop_name, day_name):
         stop_name = stop_name.split(' - ')[0]
         query = (
-            "select c.monday, c.saturday, c.sunday, c.start_date, c.end_date"
+            "select distinct c.monday, c.saturday, c.sunday, CONCAT(c.start_date,' - ',c.end_date) as date"
             " from trips tr" 
             " inner join routes ro on tr.route_id = ro.routes_id"
             " inner join stop_times st on st.trip_id = tr.trip_id"
@@ -152,7 +152,7 @@ def date_render(app: Dash):
         else: 
             data = data[data.sunday == 1]
 
-        data['date'] = data[["start_date", "end_date"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
+        # data['date'] = data[["start_date", "end_date"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
                 
         return data.date.unique().tolist()
 
