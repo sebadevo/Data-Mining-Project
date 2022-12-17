@@ -3,7 +3,6 @@ from dash.dependencies import Output, Input, State
 
 import pandas as pd
 import datetime
-
 from database.load_db import get_connection
 from time import process_time
 from . import ids
@@ -184,6 +183,7 @@ def real_date_render(app: Dash):
                     State(ids.DAY, 'value')
                     ], prevent_initial_call=True
         )
+   
     def get_specific_date(date, day_type):
         start_date, end_date = date.split(" - ")
         start_year, start_month, start_day = int(start_date[:4]), int(start_date[4:6]), int(start_date[6:])

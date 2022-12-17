@@ -1,6 +1,8 @@
 import pandas as pd
 from math import floor, ceil
 from statistics import mean
+import datetime
+import calendar
 
 weekday_weights  = [4, 1, 0, 0, 0, 0, 20, 71, 100, 64, 35, 47, 61, 61, 66, 76, 64, 84, 76, 64, 48, 33, 20, 11]
 saturday_weights = [11, 1, 0, 0, 0, 3, 8, 14, 23, 32, 40, 46, 50, 52, 54, 57, 61, 62, 58, 49, 36, 26, 24, 23]
@@ -418,3 +420,45 @@ def get_closest_index(elements: list, value: int, beg: int, end:int) -> int:
             break
     
     return index
+
+def findDay(date):
+    date = str(date)
+    year, month, day = int(date[:4]), int(date[4:6]), int(date[6:])
+    day = datetime.date(year, month, day)
+    return day.strftime("%A")
+    
+
+
+
+
+def get_specific_date(date, day_type):
+        start_date, end_date = date.split(" - ")
+        start_year, start_month, start_day = int(start_date[:4]), int(start_date[4:6]), int(start_date[6:])
+        end_year, end_month, end_day = int(end_date[:4]), int(end_date[4:6]), int(end_date[6:])
+        start_date = datetime.date(start_year, start_month, start_day)
+        end_date = datetime.date(end_year, end_month, end_day)
+        delta = datetime.timedelta(days=1)
+        dates = []
+        while start_date <= end_date:
+            day_value = start_date.weekday()
+            date = "".join(str(start_date).split("-"))
+            if day_value  < 5 and day_type == "Weekday":
+                if day_value == 0:
+                    day = "Monday"
+                elif day_value == 1:
+                    day = "Tuesday"
+                elif day_value == 2:
+                    day = "Wednesday"
+                elif day_value == 3:
+                    day = "Thursday"
+                elif day_value == 4:
+                    day = "Friday"
+                dates.append(f"{date} - {day}")
+            elif day_value  == 5 and day_type == "Saturday":
+                day = "Saturday"
+                dates.append(f"{date} - {day}")
+            elif day_value  == 6 and day_type == "Sunday":
+                day = "Sunday"
+                dates.append(f"{date} - {day}")
+            start_date += delta
+        return dates

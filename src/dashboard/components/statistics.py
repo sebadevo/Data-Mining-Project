@@ -143,7 +143,6 @@ def render(app: Dash) -> html.Div:
             return html.Div(html.H4("This feature has not been implemented yet, would you kindly select a line from a metro and go on as if nothing happened ? \n"
             "from the developpers team."))
         connection = get_connection()
-        start_time = process_time()
         real_data = pd.read_sql(query, params=[line_name, stop_name, real_date_name], con= connection)
         query = (
             "select st.arrival_time, c.monday, c.saturday, c.sunday"
@@ -185,6 +184,8 @@ def render(app: Dash) -> html.Div:
         qualities = interval_score(scheduled_times, real_times, scheduled_headways_x, real_headways_x, scheduled_headways_y, real_headways_y, intervals, categories)
         fig_weights = plot_weight(day)
         fig_interval_scores = plot_interval_scores(qualities, intervals, day)
+
+        
 
         return html.Div([html.Div([
             dcc.Graph(figure=fig_interval_scores), 
