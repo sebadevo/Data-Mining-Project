@@ -1,5 +1,5 @@
 from dash import Dash, html ,dcc
-from . import dropdown, bar_chart,navbar, all_line,all_stop,direction, real_data_chart, map, metric_plot, statistics, stop_score_chart,map
+from . import dropdown, bar_chart,navbar, all_line,all_stop,direction, real_data_chart, map, metric_plot, statistics, stop_score_chart,map,reset
 import plotly.express as px
 from dash.dependencies import Output, Input,MATCH,State
 from . import ids
@@ -33,6 +33,7 @@ def create_dropdown_menu(app):
                 dropdown.day_render(app),
                 dropdown.date_render(app),
                 dropdown.real_date_render(app),
+                reset.render(app)
                 ], 
      )
 

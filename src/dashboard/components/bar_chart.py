@@ -1,4 +1,4 @@
-from dash import Dash, html, dcc
+from dash import Dash, html, dcc,ctx
 import plotly.express as px
 from utils import *
 from dash.dependencies import Output, Input, State
@@ -35,9 +35,12 @@ def render(app: Dash) -> html.Div:
             Input(ids.DATE, 'value'),
             State(ids.DAY, 'value'),
             State(ids.SELECTED_LINE,'data'),
+            Input("reset", "n_clicks"),
             prevent_initial_call=True
             )
-    def update_bar_chart(stop_name,date_name,day_name, line_name) -> html.Div:  
+    def update_bar_chart(stop_name,date_name,day_name, line_name,click) -> html.Div:  
+        if ctx.triggered_id == "reset":
+            return html.Div()
         stop_name = stop_name.split(' - ')[0]
         query = (
             "select st.arrival_time, c.monday, c.saturday, c.sunday"

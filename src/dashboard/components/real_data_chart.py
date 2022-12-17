@@ -1,4 +1,4 @@
-from dash import Dash, html, dcc
+from dash import Dash, html, dcc,ctx
 import plotly.express as px
 from utils import *
 from dash.dependencies import Output, Input, State
@@ -60,10 +60,13 @@ def render(app: Dash) -> html.Div:
             State(ids.STOP, 'value'),
             State(ids.DATE, 'value'),
             Input(ids.REAL_DATE, 'value'),
+            Input('reset', 'n_clicks'),
             prevent_initial_call=True
             )
 
-    def update_bar_chart(line_name, stop_name,date, real_date_name ) -> html.Div:  
+    def update_bar_chart(line_name, stop_name,date, real_date_name, click ) -> html.Div:  
+        if ctx.triggered_id == "reset":
+            return html.Div()
         stop_name = stop_name.split(' - ')[0]
         real_date_name = real_date_name.split('-')[0]
         if (which_type(line_name) == 1): #For metros
