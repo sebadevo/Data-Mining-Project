@@ -164,11 +164,41 @@ for line in metro:
             if iteration % 100 == 0:
                 print(iteration)
     print(f"The time taken is: {process_time()-previous_time}s")
-    break
+    
 
 stop_score_data.to_csv("metro_scores.csv", index=False)
 
 print("FININSHED WITH THE METRO")
+column_names = ["Line", "Stop", "Date", "Real_date", "Score"]
+stop_score_data = pd.DataFrame(columns= column_names)
+
+dates = "20210901 - 20210917"
+real_dates = [20210906, 20210907, 20210908 ,20210909, 20210910, 20210911, 20210912, 20210913,
+ 20210914, 20210915, 20210916, 20210917, 20210918, 20210919]
+
+iteration = 0
+for line in tram: 
+    previous_time = process_time()
+    theoric_data = get_data(True, 0, line)
+    stops = theoric_data.stop_id.unique()
+    for stop in stops: 
+        for real_date in  real_dates:
+            if real_date > 20210917:
+                continue
+            score = compute_score(line, stop, real_date, dates)
+            if score is not None: 
+                values=[line, stop, dates, real_date, score]
+                new_row = pd.Series(dict(zip(column_names, values)))
+                stop_score_data = pd.concat([stop_score_data, new_row.to_frame().T], ignore_index=True)
+            iteration += 1
+            if iteration % 100 == 0:
+                print(iteration)
+    print(f"The time taken is: {process_time()-previous_time}s")
+    
+
+stop_score_data.to_csv("tram_scores.csv", index=False)
+
+print("FININSHED WITH THE TRAM")
 
 
 # theoric_data = get_data(True, 3)
