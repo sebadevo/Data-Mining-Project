@@ -257,6 +257,7 @@ def remove_duplicates_tram(real, distances, threshold_time=45):
         if real[i] - threshold_time < real[i-1]:
             real.pop(i)
             distances.pop(i)
+        i -= 1
     real = reasign_time(real, distances,speed=9)
     return real
 
@@ -266,6 +267,7 @@ def remove_duplicates_bus(real, distances, threshold_time=45):
         if real[i] - threshold_time < real[i-1]:
             real.pop(i)
             distances.pop(i)
+        i -= 1
     real = reasign_time(real, distances, speed=7)
     return real
 

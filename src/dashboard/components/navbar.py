@@ -11,7 +11,7 @@ def render(app : Dash):
 
     ])
 
-    return html.Section([
+    return html.Div([
             html.Div(id="white-nav",children= [
                 html.A(
                     [html.Img(src=app.get_asset_url("stib_logo.png"), height="50px")],

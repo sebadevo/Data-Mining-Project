@@ -118,7 +118,7 @@ def render(app: Dash) -> html.Div:
             prevent_initial_call=True
             )
 
-    def update_bar_chart(line_name, stop_name,date, real_date_name ) -> html.Div:  
+    def update_bar_chart(line_name, stop_name,date, real_date_name, click ) -> html.Div:  
         if ctx.triggered_id == "reset":
             return html.Div()
         stop_name = stop_name.split(' - ')[0]
