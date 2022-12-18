@@ -54,7 +54,7 @@ def plot_weight( day, precision=60):
     fig.update_xaxes(title_text="Time",
                     range=[0,27]) 
     fig.update_layout(title={
-                    'text': "<b>Weights for personnalised metric<b>",
+                    'text': "<b>Weights used for metric<b>",
                     'y':0.87,
                     'x':0.5,
                     'xanchor': 'center',
