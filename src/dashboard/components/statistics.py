@@ -199,7 +199,7 @@ def render(app: Dash) -> html.Div:
         return html.Div([html.Div([
             dcc.Graph(figure=fig_interval_scores), 
             dcc.Graph(figure=fig_weights),
-            html.H1(f"The quality of the stop is: {round(stop_score(qualities, intervals, day)*100, 3)}%", style={'color': 'black', 'fontSize': 28})],
+            html.H1(f"The quality of the stop is: {round(stop_score(qualities, intervals, day)*100, 3)}%. The confidence is: {round((len(time_real)/len(time_th))*100, 2)}%", style={'color': 'black', 'fontSize': 28})],
             
     )], className="metric-plot", id=ids.INTERVAL_SCORE_CHART)
     return html.Div(id=ids.INTERVAL_SCORE_CHART)

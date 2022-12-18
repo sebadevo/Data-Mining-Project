@@ -53,6 +53,12 @@ def display_map(line):
         html.A('Interactive STIB Map'),
         html.Iframe(id=ids.MAP, srcDoc=open(f'src/map/stib_map_{line}.html', 'r').read(), width='100%', height='600')
     ])
+
+def display_map_score(date):
+    return html.Div([
+        html.A('Interactive STIB Map'),
+        html.Iframe(id=ids.MAP, srcDoc=open(f'src/map/stib_score_map_{date}.html', 'r').read(), width='100%', height='600')
+    ])
     
 def display_all_map():
-    return html.Div([html.A('Interactive STIB Map'), html.Iframe(id=ids.MAP, srcDoc=open('src/map/stib_map.html', 'r').read(), width='100%', height='600')])
+    return html.Div([html.A('Interactive STIB Map'), html.Iframe(id=ids.MAP, srcDoc=open('src/map/stib_map.html', 'r').read(), width='100%', height='600')], id=ids.ALL_MAP)

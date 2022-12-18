@@ -15,3 +15,7 @@ REAL_DATE = 'real-date-name'
 STOP_SCORE_CHART = 'stop-score-chart'
 MAP = 'map'
 DIV_MAP = 'div-map'
+DATE_SCORE = 'date-score'
+DATE_SCORE_CONTAINER = "dd-output-container"
+TABLE = 'table'
+ALL_MAP = 'all-map'
