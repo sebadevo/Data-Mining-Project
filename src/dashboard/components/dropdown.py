@@ -17,6 +17,7 @@ bus = ["12","13","14","T19","20","21","27","28","29","33","34","36","37","38",
     "41","42","43","45","46","47","48","49","50","52","53","54","56","57","58","59","60","61","63",
     "64","65","66","69","70","71","72","73","74","75","76","77","78","79","80","T81","T82","83","86","87","88","89","90","T92","95"]
 noctis = ["04","05","06","08","09","10","11","12","13","16","18"]
+aliases_2 = {"CIM. DE BRUXELLES":"CIM. BRUXELLES"}
 
 def which_type(value):
     if value in metro:
@@ -53,14 +54,19 @@ def stop_id_render(app: Dash):
             direction = dir_right
         elif "direction--inactive" in right_class: 
             direction = dir_left
+        if direction in aliases_2:
+            direction =  aliases_2[direction]
+        print(direction)
         query = (
-            "select distinct tr.direction_id"
+            "select distinct tr.direction_id, tr.trip_headsign"
             " from trips tr" 
             " inner join routes ro on tr.route_id = ro.routes_id"
             " where ro.route_type = %s and ro.routes_short_name = %s and  tr.trip_headsign = %s" # how do I use direction in this SQL querry ????
             )
         connection = get_connection()
-        direction = int(pd.read_sql(query, params=[which_type(line_name), line_name,direction], con= connection).iat[0,0])        
+        print(pd.read_sql(query, params=[which_type(line_name), line_name, direction], con= connection)) #direction
+        direction = int(pd.read_sql(query, params=[which_type(line_name), line_name, direction], con= connection).iat[0,0])  
+        print(direction)      
         query = (
             "select distinct CONCAT(st.stop_id,' - ',s.stop_name) as stops, st.stop_sequence "
             " from trips tr" 

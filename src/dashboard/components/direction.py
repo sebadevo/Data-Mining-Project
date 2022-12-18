@@ -13,6 +13,15 @@ bus = ["12","13","14","T19","20","21","27","28","29","33","34","36","37","38",
     "64","65","66","69","70","71","72","73","74","75","76","77","78","79","80","T81","T82","83","86","87","88","89","90","T92","95"]
 noctis = ["04","05","06","08","09","10","11","12","13","16","18"]
 
+aliases = {
+        'BRUSSELS CITY': 'TRONE',
+        'HOPITAL MILITAIRE': 'HOP. MILITAIRE',
+        'HOPITAL ETTERBEEK-IXELLES': 'HOP. ETT.-IXELLES',
+        'CIMETIERE DE BRUXELLES': 'CIM. DE BRUXELLES',
+        'UCCLE STALLE': 'UCCLE-STALLE',
+        'STALLE P': 'STALLE (P)'
+    }
+
 def which_type(value):
     if value in metro:
         return 1
@@ -49,15 +58,25 @@ def render(app : Dash):
             )
         connection = get_connection()
         data = pd.read_sql(query, params=[which_type(value), value ], con= connection)
-        headsign = data.routes_long_name.tolist()[0].split("-")
+        headsign = data.routes_long_name.tolist()[0].split(" - ")
+        if headsign[0].strip() in aliases:
+            headsign[0] = aliases[headsign[0].strip()]
+        else :
+            headsign[0] = headsign[0].strip()
+
+        if headsign[1].strip() in aliases:
+            headsign[1] = aliases[headsign[1].strip()]
+        else :
+            headsign[1] = headsign[1].strip()
+
         return [
             html.Div([
                 html.Button(
-                    [headsign[0].strip()], className="direction direction--2 v direction--inactive navigable", disabled=False, id=ids.DIRECTION_1, tabIndex="0", value=headsign[0].strip())],
+                    [headsign[0]], className="direction direction--2 v direction--inactive navigable", disabled=False, id=ids.DIRECTION_1, tabIndex="0", value=headsign[0].strip())],
                 className="direction-container"), 
             html.Div([
                 html.Button(
-                    [headsign[1].strip()], className="direction direction--2 f navigable", id=ids.DIRECTION_2, disabled=True, tabIndex="0", value=headsign[1].strip())], 
+                    [headsign[1]], className="direction direction--2 f navigable", id=ids.DIRECTION_2, disabled=True, tabIndex="0", value=headsign[1].strip())], 
                 className="direction-container")
             ] #, #map.display_map(value)
 
