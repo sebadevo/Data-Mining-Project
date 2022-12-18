@@ -7,7 +7,7 @@ def render(app : Dash):
     [   
         html.Li([html.A("Headways", href="#headway")]),
         html.Li([html.A("Statistics", href="#statistics")]),
-        html.Li([html.A("About", href="#about")]),
+        html.Li([html.A("Map", href="#about")]),
 
     ])
 

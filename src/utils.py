@@ -1,6 +1,7 @@
 import pandas as pd
 from math import floor, ceil
 from statistics import mean
+import matplotlib.pyplot as plt
 
 weekday_weights  = [4, 1, 0, 0, 0, 0, 20, 71, 100, 64, 35, 47, 61, 61, 66, 76, 64, 84, 76, 64, 48, 33, 20, 11]
 saturday_weights = [11, 1, 0, 0, 0, 3, 8, 14, 23, 32, 40, 46, 50, 52, 54, 57, 61, 62, 58, 49, 36, 26, 24, 23]
@@ -346,7 +347,7 @@ def regularity(scheduled_headways, real_headways):
 
 
 def harmonic_mean(qualities):
-    return 1/sum(1/quality for quality in qualities)
+    return len(qualities)/sum(1/quality for quality in qualities)
 
 def stop_score(qualities, interval, day, precision=60):
     """computes the score for a given stop. 
@@ -395,6 +396,7 @@ def stop_score(qualities, interval, day, precision=60):
         adjusted_qualities[i] = adjusted_qualities[i+values]
     adjusted_qualities = adjusted_qualities[:values]
     weights = [weights[floor(i/precision)] for i in range(values)]
+
 
     # compute the integral of the scalar product betwen adjusted_qualities and weights divided by integral of wieghts
     score = sum(q * w for q, w in zip(adjusted_qualities, weights))/sum(weights)

@@ -109,15 +109,14 @@ def plot_interval_scores(qualities, intervals, day):
 
 def render(app: Dash) -> html.Div:
     @app.callback(
-            Output(ids.INTERVAL_SCORE_CHART, "children"),
-            State(ids.SELECTED_LINE,'data'),
-            State(ids.STOP, 'value'),
-            State(ids.DATE, 'value'),
-            Input(ids.REAL_DATE, 'value'),
-            Input("reset","n_clicks"),
-            prevent_initial_call=True
-            )
-
+                Output(ids.INTERVAL_SCORE_CHART, "children"),
+                State(ids.SELECTED_LINE,'data'),
+                State(ids.STOP, 'value'),
+                State(ids.DATE, 'value'),
+                Input(ids.REAL_DATE, 'value'),
+                Input("reset","n_clicks"),
+                prevent_initial_call=True
+                )
     def update_bar_chart(line_name, stop_name,date, real_date_name, click ) -> html.Div:  
         if ctx.triggered_id == "reset":
             return html.Div()
@@ -162,9 +161,9 @@ def render(app: Dash) -> html.Div:
 
         if( len(real_data) < 5):
             return html.Div(html.H4(f"There is not enough data to plot a graph (number of lines in the data is: {len(real_data)})"))
-        
-        
-        
+
+
+
         time_real = map_to_sec(real_data.time.tolist())
         time_th = map_to_sec(data.arrival_time.tolist())
         distance_real = real_data.distanceFromPoint.tolist()
@@ -195,11 +194,13 @@ def render(app: Dash) -> html.Div:
         qualities = interval_score(scheduled_times, real_times, scheduled_headways_x, real_headways_x, scheduled_headways_y, real_headways_y, intervals, categories)
         fig_weights = plot_weight(day)
         fig_interval_scores = plot_interval_scores(qualities, intervals, day)
-
+        confidence = round((len(time_real)/len(time_th))*100, 2)
+        confidence = min(confidence, 100)
         return html.Div([html.Div([
             dcc.Graph(figure=fig_interval_scores), 
             dcc.Graph(figure=fig_weights),
-            html.H1(f"The quality of the stop is: {round(stop_score(qualities, intervals, day)*100, 3)}%. The confidence is: {round((len(time_real)/len(time_th))*100, 2)}%", style={'color': 'black', 'fontSize': 28})],
-            
-    )], className="metric-plot", id=ids.INTERVAL_SCORE_CHART)
+            html.H1(f"The quality of the stop is: {round(stop_score(qualities, intervals, day)*100, 3)}%. The confidence is: {confidence}%", style={'color': 'black', 'fontSize': 28})],
+
+        )], className="metric-plot", id=ids.INTERVAL_SCORE_CHART)
+
     return html.Div(id=ids.INTERVAL_SCORE_CHART)
