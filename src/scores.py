@@ -9,14 +9,18 @@ from database.load_db import get_connection
 import warnings
 warnings.simplefilter(action='ignore', category=UserWarning)
 from time import process_time
-
+import datetime
 
 metro = ["1","2","5","6"]
 tram = ["3","4","7","8","9","19","25","39","44","51","55","62","81","82","92","93","97"]
 bus = ["12","13","14","20","21","27","28","29","33","34","36","37","38",
     "41","42","43","45","46","47","48","49","50","52","53","54","56","57","58","59","60","61","63",
     "64","65","66","69","70","71","72","73","74","75","76","77","78","79","80","T81","T82","83","86","87","88","89","90","T92","95"]
-noctis = ["04","05","06","08","09","10","11","12","13","16","18"]
+# noctis = ["04","05","06","08","09","10","11","12","13","16","18"]
+
+
+from time import time 
+
 
 def which_type(value):
     if value in metro:
@@ -35,11 +39,11 @@ def get_data(theoric:bool, type_: int, line):
     connection = get_connection()
     if theoric: 
         query = ( 
-                "select ro.routes_short_name, st.stop_id" # ,c.start_date, c.end_date
+                "select ro.routes_short_name, st.stop_id ,c.start_date, c.end_date"
                 " from trips tr"
                 " inner join routes ro on tr.route_id = ro.routes_id" 
                 " inner join stop_times st on tr.trip_id = st.trip_id" 
-                # " inner join calendar c on c.service_id = tr.service_id"
+                " inner join calendar c on c.service_id = tr.service_id"
                 " where ro.route_type = %s and ro.routes_short_name = %s"
                 )
         return pd.read_sql(query,  params=[type_, line], con= connection)
@@ -83,7 +87,6 @@ def compute_score(line_name, stop_name, real_date_name,date ):
     real_data = pd.read_sql(
         query, params=[line_name, stop_name, real_date_name], con=connection
     )
-
     if len(real_data) < 5:
         return None
     query = (
@@ -138,80 +141,110 @@ def compute_score(line_name, stop_name, real_date_name,date ):
 column_names = ["Line", "Stop", "Date", "Real_date", "Score"]
 stop_score_data = pd.DataFrame(columns= column_names)
 
-dates = "20210901 - 20210917"
 real_dates = [20210906, 20210907, 20210908 ,20210909, 20210910, 20210911, 20210912, 20210913,
  20210914, 20210915, 20210916, 20210917, 20210918, 20210919]
 
-
-
-# -------------------------------------BUS----------------------------------------
-
-result = open('result_bus.txt', 'a')
-for line in bus: 
-    previous_time = process_time()
-    theoric_data = get_data(True, 3, line)
-    stops = theoric_data.stop_id.unique()
-    for stop in stops: 
-        for real_date in  real_dates:
-            if real_date > 20210917:
-                continue
-            print(f"{line}--{stop}--{real_date}--{dates}\n", file=result)
-            score = compute_score(line, stop, real_date, dates)
-            if score is not None: 
-                values=[line, stop, dates, real_date, score]
-                new_row = pd.Series(dict(zip(column_names, values)))
-                stop_score_data = pd.concat([stop_score_data, new_row.to_frame().T], ignore_index=True)
-
-    print(f"The time taken is: {process_time()-previous_time}s")
-
-stop_score_data.to_csv("bus_scores.csv", index=False)
+def findDay(date):
+    date = str(date)
+    year, month, day = int(date[:4]), int(date[4:6]), int(date[6:])
+    weekday = datetime.date(year, month, day)
+    return weekday.strftime("%A")
 
 
 
+
+
+
+def write_to_csv(liste:list):
+    with open("final_scores.csv","a") as f:
+        f.write("Line,Stop,Date,Real_date,Score\n")
+        for elem in liste: 
+            f.write(f"{elem[0]},{elem[1]},{elem[2]},{elem[3]},{elem[4]}\n")
+    
+
+
+
+
+
+
+
+
+
+
+
+
+result = []
 
 # -------------------------------------TRAM----------------------------------------
 
 
-result = open('result_tram.txt', 'a')
+
 for line in tram: 
-    previous_time = process_time()
+    print("line: ", line)
+    previous_time = time()
     theoric_data = get_data(True, 0, line)
+    theoric_data['date'] = theoric_data[["start_date", "end_date"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
     stops = theoric_data.stop_id.unique()
+    dates = theoric_data.date.unique()
     for stop in stops: 
-        for real_date in  real_dates:
-            if real_date > 20210917:
-                continue
-            print(f"{line}--{stop}--{real_date}--{dates}\n", file=result)
-            score = compute_score(line, stop, real_date, dates)
-            if score is not None: 
-                values=[line, stop, dates, real_date, score]
-                new_row = pd.Series(dict(zip(column_names, values)))
-                stop_score_data = pd.concat([stop_score_data, new_row.to_frame().T], ignore_index=True)
+        for real_date in real_dates:
+            for date in dates: 
+                score = compute_score(line, stop, real_date, date)
+                if score is not None: 
+                    values=[line, stop, date, real_date, score]
+                    result.append(values)
+                # new_row = pd.Series(dict(zip(column_names, values)))
+                # stop_score_data = pd.concat([stop_score_data, new_row.to_frame().T], ignore_index=True)
+    print(f"The time taken is: {time()-previous_time}s")
 
-    print(f"The time taken is: {process_time()-previous_time}s")
+# stop_score_data.to_csv("tram_scores.csv", index=False)
 
-stop_score_data.to_csv("tram_scores.csv", index=False)
+
+# # -------------------------------------BUS----------------------------------------
+
+print("starting bus")
+for line in bus: 
+    print("line: ", line)
+    previous_time = time()
+    theoric_data = get_data(True, 3, line)
+    theoric_data['date'] = theoric_data[["start_date", "end_date"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
+    stops = theoric_data.stop_id.unique()
+    dates = theoric_data.date.unique()
+    for stop in stops: 
+        for real_date in real_dates:
+            for date in dates: 
+                score = compute_score(line, stop, real_date, date)
+                if score is not None: 
+                    values=[line, stop, date, real_date, score]
+                    result.append(values)
+                # new_row = pd.Series(dict(zip(column_names, values)))
+                # stop_score_data = pd.concat([stop_score_data, new_row.to_frame().T], ignore_index=True)
+    print(f"The time taken is: {time()-previous_time}s")
+
+# stop_score_data.to_csv("bus_scores.csv", index=False)
 
 
 # -------------------------------------METRO----------------------------------------
 
 
-result = open('result_metro.txt', 'a')
+print("starting metro")
 for line in metro: 
-    previous_time = process_time()
+    print("line: ", line)
+    previous_time = time()
     theoric_data = get_data(True, 1, line)
+    theoric_data['date'] = theoric_data[["start_date", "end_date"]].apply(lambda x: ' - '.join(x.astype(str)), axis=1)
     stops = theoric_data.stop_id.unique()
+    dates = theoric_data.date.unique()
     for stop in stops: 
-        for real_date in  real_dates:
-            if real_date > 20210917:
-                continue
-            print(f"{line}--{stop}--{real_date}--{dates}\n", file=result)
-            score = compute_score(line, stop, real_date, dates)
-            if score is not None: 
-                values=[line, stop, dates, real_date, score]
-                new_row = pd.Series(dict(zip(column_names, values)))
-                stop_score_data = pd.concat([stop_score_data, new_row.to_frame().T], ignore_index=True)
+        for real_date in real_dates:
+            for date in dates: 
+                score = compute_score(line, stop, real_date, date)
+                if score is not None: 
+                    values=[line, stop, date, real_date, score]
+                    result.append(values)
+                # new_row = pd.Series(dict(zip(column_names, values)))
+                # stop_score_data = pd.concat([stop_score_data, new_row.to_frame().T], ignore_index=True)
+    print(f"The time taken is: {time()-previous_time}s")
+# stop_score_data.to_csv("metro_scores.csv", index=False)
 
-    print(f"The time taken is: {process_time()-previous_time}s")
-
-stop_score_data.to_csv("metro_scores.csv", index=False)
+write_to_csv(result)
