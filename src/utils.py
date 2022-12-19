@@ -396,10 +396,15 @@ def stop_score(qualities, interval, day, precision=60):
         adjusted_qualities[i] = adjusted_qualities[i+values]
     adjusted_qualities = adjusted_qualities[:values]
     weights = [weights[floor(i/precision)] for i in range(values)]
-
-
+    score = 0
+    weighted = 0
+    for i in range(len(weights)):
+        if i >= interval[0] and i<= interval[-1]:
+            score += adjusted_qualities[i]*weights[i]
+            weighted += weights[i]
+    score /= weighted
     # compute the integral of the scalar product betwen adjusted_qualities and weights divided by integral of wieghts
-    score = sum(q * w for q, w in zip(adjusted_qualities, weights))/sum(weights)
+    # score = sum(q * w for q, w in zip(adjusted_qualities, weights))/sum(weights)
     return round(score,4)
 
 
